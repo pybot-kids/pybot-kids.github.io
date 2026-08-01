@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      id="meta-description"
+      name="description"
+      content="Meet PyBot and try the expressions used throughout the course."
+      data-i18n-content="meta.meetDescription"
+    />
+    <meta name="theme-color" content="#fff8ec" />
+    <title>Meet PyBot — PyBot</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="meet-page" data-page="meet">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+
+    <header class="site-header lesson-site-header">
+      <a class="brand" href="index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>PyBot</span>
+      </a>
+      <div class="lesson-header-tools">
+        <a class="meet-home-link" href="index.html" data-i18n="course.home">Home</a>
+        <div
+          class="language-switch"
+          role="group"
+          aria-label="Choose language"
+          data-i18n-aria-label="a11y.language"
+        >
+          <button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button>
+          <button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="meet-main" id="main-content">
+      <header class="meet-intro">
+        <p class="eyebrow eyebrow-blue" data-i18n="meet.eyebrow">YOUR ROBOT GUIDE</p>
+        <h1 data-i18n="meet.title">Meet PyBot.</h1>
+        <p data-i18n="meet.intro">Choose a face. PyBot uses each one to help you learn.</p>
+      </header>
+
+      <section class="hero-stage meet-stage" aria-label="Try PyBot expressions" data-i18n-aria-label="a11y.moods">
+        <div class="spark spark-one" aria-hidden="true">+</div>
+        <div class="spark spark-two" aria-hidden="true">✦</div>
+        <div class="spark spark-three" aria-hidden="true">•</div>
+
+        <div class="speech-bubble" id="pybot-message" aria-live="polite">
+          <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+          <p>Hello! I am PyBot. Want to try one idea?</p>
+        </div>
+
+        <div class="pybot-wrap" data-mood="happy">
+          <div class="pybot" role="img" aria-label="PyBot is happy and waves hello">
+            <div class="antenna" aria-hidden="true"><span></span></div>
+            <div class="ear ear-left" aria-hidden="true"></div>
+            <div class="ear ear-right" aria-hidden="true"></div>
+            <div class="bot-head">
+              <div class="bot-screen">
+                <div class="brow brow-left" aria-hidden="true"></div>
+                <div class="brow brow-right" aria-hidden="true"></div>
+                <div class="eye eye-left" aria-hidden="true"><span></span></div>
+                <div class="eye eye-right" aria-hidden="true"><span></span></div>
+                <div class="cheek cheek-left" aria-hidden="true"></div>
+                <div class="cheek cheek-right" aria-hidden="true"></div>
+                <div class="mouth" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="bot-neck" aria-hidden="true"></div>
+            <div class="arm arm-left" aria-hidden="true"><span class="hand"></span></div>
+            <div class="arm arm-right" aria-hidden="true"><span class="hand"></span></div>
+            <div class="bot-body">
+              <div class="chest-light" aria-hidden="true"></div>
+              <span class="chest-code" aria-hidden="true">&lt;/&gt;</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mood-panel meet-mood-panel">
+          <p data-i18n="mood.prompt">Try a face</p>
+          <div class="mood-controls" role="group" aria-label="PyBot expressions" data-i18n-aria-label="a11y.moods">
+            <button class="mood-button is-active" type="button" data-mood="happy" aria-pressed="true">
+              <span aria-hidden="true">●</span><b data-i18n="mood.happy">Happy</b>
+            </button>
+            <button class="mood-button" type="button" data-mood="encouraging" aria-pressed="false">
+              <span aria-hidden="true">↗</span><b data-i18n="mood.encouraging">You can do it</b>
+            </button>
+            <button class="mood-button" type="button" data-mood="thinking" aria-pressed="false">
+              <span aria-hidden="true">?</span><b data-i18n="mood.thinking">Thinking</b>
+            </button>
+            <button class="mood-button" type="button" data-mood="celebrating" aria-pressed="false">
+              <span aria-hidden="true">★</span><b data-i18n="mood.celebrating">Celebrating</b>
+            </button>
+            <button class="mood-button" type="button" data-mood="surprised" aria-pressed="false">
+              <span aria-hidden="true">!</span><b data-i18n="mood.surprised">Surprised</b>
+            </button>
+            <button class="mood-button" type="button" data-mood="curious" aria-pressed="false">
+              <span aria-hidden="true">◌</span><b data-i18n="mood.curious">Curious</b>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-us" aria-labelledby="about-us-title">
+        <div class="about-us-orbit" aria-hidden="true">
+          <span class="about-planet"></span>
+          <span class="about-star star-a">✦</span>
+          <span class="about-star star-b">+</span>
+          <span class="about-rocket">↗</span>
+        </div>
+
+        <div class="about-us-copy">
+          <p class="eyebrow" data-i18n="about.eyebrow">THE PEOPLE BEHIND PYBOT</p>
+          <h2 id="about-us-title" data-i18n="about.title">PyBot began with us.</h2>
+          <p data-i18n="about.sorey">
+            Hi, I am Sorey García. I work in technology and built PyBot with María Ángel in mind.
+          </p>
+          <p data-i18n="about.maria">
+            She loves science, space, and programming. I wanted a playful path that could guide her one small step at a time, without rushing or overwhelming her.
+          </p>
+          <strong data-i18n="about.signature">Made by Sorey. Inspired by María Ángel.</strong>
+
+          <a class="about-profile" href="https://co.linkedin.com/in/soreygarcia" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="about.profile">Meet Sorey on LinkedIn</span> ↗
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

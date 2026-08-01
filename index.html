@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      id="meta-description"
+      name="description"
+      content="PyBot helps children discover Python through tiny ideas, clear steps, and playful practice."
+      data-i18n-content="meta.homeDescription"
+    />
+    <meta name="theme-color" content="#fff8ec" />
+    <title>PyBot — Python, one step at a time</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="home">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="PyBot, home" data-i18n-aria-label="a11y.home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>PyBot</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="a11y.mainNav">
+        <a href="course.html" data-i18n="nav.path">Learning path</a>
+        <a class="nav-pill" href="meet-pybot.html" data-i18n="nav.meet">Meet PyBot</a>
+        <div
+          class="language-switch"
+          role="group"
+          aria-label="Choose language"
+          data-i18n-aria-label="a11y.language"
+        >
+          <button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button>
+          <button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span aria-hidden="true">&lt;/&gt;</span>
+            <b data-i18n="hero.eyebrow">A Python adventure</b>
+          </p>
+          <h1>
+            <span class="title-line" data-i18n="hero.titleStart">Python, one small</span>
+            <span data-i18n="hero.titleEnd">step at a time.</span>
+          </h1>
+          <p class="hero-intro" data-i18n="hero.intro">
+            Meet PyBot. Try tiny ideas. See what your code does.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="course.html" data-i18n="hero.start">Start the path</a>
+            <a class="button button-secondary" href="meet-pybot.html">
+              <span data-i18n="hero.meet">Meet PyBot</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <ul class="trust-list" aria-label="Important features" data-i18n-aria-label="a11y.features">
+            <li><span aria-hidden="true">✓</span><b data-i18n="trust.accounts">No accounts</b></li>
+            <li><span aria-hidden="true">✓</span><b data-i18n="trust.pace">Your pace</b></li>
+            <li><span aria-hidden="true">✓</span><b data-i18n="trust.progress">Progress stays with you</b></li>
+          </ul>
+        </div>
+
+        <div class="hero-stage">
+          <div class="spark spark-one" aria-hidden="true">+</div>
+          <div class="spark spark-two" aria-hidden="true">✦</div>
+          <div class="spark spark-three" aria-hidden="true">•</div>
+
+          <div class="speech-bubble" id="pybot-message" aria-live="polite">
+            <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+            <p>Hello! I am PyBot. Want to try one idea?</p>
+          </div>
+
+          <div class="pybot-wrap" data-mood="happy">
+            <div
+              class="pybot"
+              role="img"
+              aria-label="PyBot is happy and waves hello"
+            >
+              <div class="antenna" aria-hidden="true"><span></span></div>
+              <div class="ear ear-left" aria-hidden="true"></div>
+              <div class="ear ear-right" aria-hidden="true"></div>
+              <div class="bot-head">
+                <div class="bot-screen">
+                  <div class="brow brow-left" aria-hidden="true"></div>
+                  <div class="brow brow-right" aria-hidden="true"></div>
+                  <div class="eye eye-left" aria-hidden="true"><span></span></div>
+                  <div class="eye eye-right" aria-hidden="true"><span></span></div>
+                  <div class="cheek cheek-left" aria-hidden="true"></div>
+                  <div class="cheek cheek-right" aria-hidden="true"></div>
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="bot-neck" aria-hidden="true"></div>
+              <div class="arm arm-left" aria-hidden="true"><span class="hand"></span></div>
+              <div class="arm arm-right" aria-hidden="true"><span class="hand"></span></div>
+              <div class="bot-body">
+                <div class="chest-light" aria-hidden="true"></div>
+                <span class="chest-code" aria-hidden="true">&lt;/&gt;</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="learner-name-card" data-name-panel>
+            <form class="learner-name-form" data-name-form novalidate>
+              <label for="learner-name" data-i18n="name.question">What would you like me to call you?</label>
+              <div class="learner-name-entry">
+                <input
+                  id="learner-name"
+                  name="learner-name"
+                  type="text"
+                  maxlength="24"
+                  autocomplete="nickname"
+                  placeholder="Name or nickname"
+                  data-i18n-placeholder="name.placeholder"
+                  aria-describedby="learner-name-note learner-name-error"
+                />
+                <button type="submit" data-i18n="name.save">That's me!</button>
+              </div>
+              <p id="learner-name-note" class="learner-name-note" data-i18n="name.privateNote">
+                Only this browser remembers it.
+              </p>
+              <p id="learner-name-error" class="learner-name-error" data-i18n="name.error" aria-live="polite" hidden>
+                Please type a name or nickname.
+              </p>
+              <button class="learner-name-forget" type="button" data-name-forget data-i18n="name.forget" hidden>
+                Forget this name
+              </button>
+            </form>
+
+            <div class="learner-name-saved" data-name-saved hidden>
+              <p><span data-i18n="name.savedPrefix">PyBot calls you</span> <strong data-learner-name></strong>.</p>
+              <button type="button" data-name-edit data-i18n="name.change">Change</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="learning-loop" id="how-it-works" aria-labelledby="loop-title">
+        <div class="section-heading">
+          <p class="eyebrow eyebrow-blue" data-i18n="loop.eyebrow">HOW WE LEARN</p>
+          <h2 id="loop-title">
+            <span data-i18n="loop.titleOne">See it. Try it.</span><br />
+            <span data-i18n="loop.titleTwo">Get it.</span>
+          </h2>
+          <p data-i18n="loop.intro">One idea on each page. One clear thing to do.</p>
+        </div>
+
+        <ol class="step-grid">
+          <li class="step-card step-orange">
+            <span class="step-number">1</span>
+            <div class="step-icon idea-icon" aria-hidden="true"><span></span></div>
+            <h3 data-i18n="loop.step1Title">See one idea</h3>
+            <p data-i18n="loop.step1Text">PyBot shows a tiny example.</p>
+          </li>
+          <li class="step-card step-blue">
+            <span class="step-number">2</span>
+            <div class="step-icon code-icon" aria-hidden="true">&lt;/&gt;</div>
+            <h3 data-i18n="loop.step2Title">Try the code</h3>
+            <p data-i18n="loop.step2Text">Change one part. Then run it.</p>
+          </li>
+          <li class="step-card step-yellow">
+            <span class="step-number">3</span>
+            <div class="step-icon result-icon" aria-hidden="true">✓</div>
+            <h3 data-i18n="loop.step3Title">Say what happened</h3>
+            <p data-i18n="loop.step3Text">Spot the line that made it happen.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="lesson-preview" aria-labelledby="preview-title">
+        <div class="preview-copy">
+          <p class="eyebrow eyebrow-blue" data-i18n="preview.eyebrow">YOUR FIRST MISSION</p>
+          <h2 id="preview-title" data-i18n="preview.title">Make PyBot say hello.</h2>
+          <p data-i18n="preview.text">Write Python here. Run it. See the answer right away.</p>
+          <div class="tiny-note">
+            <span class="tiny-note-icon" aria-hidden="true">⌁</span>
+            <p>
+              <strong data-i18n="preview.noteStrong">Stuck?</strong>
+              <span data-i18n="preview.noteText">PyBot gives one small hint at a time.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="code-window" aria-label="Python exercise" data-i18n-aria-label="a11y.codePreview" data-python-runner>
+          <div class="window-bar">
+            <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span data-i18n="preview.filename">my_first_program.py</span>
+            <span class="preview-tag" data-i18n="preview.tag">REAL PYTHON</span>
+          </div>
+          <div class="code-area">
+            <span class="line-number">1</span>
+            <label class="visually-hidden" for="python-code" data-i18n="preview.editorLabel">Python code</label>
+            <textarea id="python-code" data-python-editor rows="5" spellcheck="false" autocapitalize="off" autocomplete="off">print("Hello, PyBot!")</textarea>
+          </div>
+          <div class="output-area" role="status" aria-live="polite">
+            <span class="output-label" data-i18n="preview.output">OUTPUT</span>
+            <pre data-python-output data-i18n="preview.ready">Ready. Change the words, then run.</pre>
+          </div>
+          <div class="runner-actions">
+            <button class="run-button" type="button" data-python-run>
+              <span aria-hidden="true">▶</span>
+              <span data-i18n="preview.run">Run Python</span>
+            </button>
+            <button class="stop-button" type="button" data-python-stop disabled>
+              <span aria-hidden="true">■</span>
+              <span data-i18n="preview.stop">Stop</span>
+            </button>
+          </div>
+
+          <details class="runtime-credit">
+            <summary data-i18n="preview.creditSummary">Who makes Python run here?</summary>
+            <p data-i18n="preview.creditText">
+              Pyodide 314.0.3 runs CPython in your browser with WebAssembly.
+            </p>
+            <p data-i18n="preview.creditHistory">
+              Created in 2018 by Michael Droettboom at Mozilla for Iodide; now an independent, community-driven project.
+            </p>
+            <p>
+              <span data-i18n="preview.creditLicense">Open-source under the Mozilla Public License 2.0.</span>
+              <a href="https://github.com/pyodide/pyodide/graphs/contributors" target="_blank" rel="noopener noreferrer" data-i18n="preview.contributors">All contributors</a>
+              <span aria-hidden="true">·</span>
+              <a href="https://github.com/pyodide/pyodide/blob/314.0.3/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="preview.license">License</a>
+              <span aria-hidden="true">·</span>
+              <a href="https://github.com/pyodide/pyodide" target="_blank" rel="noopener noreferrer" data-i18n="preview.source">Source code</a>
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="local-first" aria-label="Privacy and progress" data-i18n-aria-label="a11y.privacy">
+        <div class="local-icon" aria-hidden="true"><span></span></div>
+        <div>
+          <p class="eyebrow" data-i18n="local.eyebrow">YOUR WORK IS YOURS</p>
+          <h2 data-i18n="local.title">No account. Your progress stays here.</h2>
+          <p data-i18n="local.text">This browser remembers your work. Ask an adult before clearing its data.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#top" aria-label="PyBot, back to top" data-i18n-aria-label="a11y.backTop">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>PyBot</span>
+      </a>
+      <p data-i18n="footer.line">Small steps. Real Python.</p>
+      <span class="footer-status" data-i18n="footer.status">First prototype</span>
+    </footer>
+  </body>
+</html>

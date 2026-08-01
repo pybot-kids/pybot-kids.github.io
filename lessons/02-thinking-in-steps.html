@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      id="meta-description"
+      name="description"
+      content="A playful lesson about the small plans children already make every day."
+      data-i18n-content="meta.thinkingDescription"
+    />
+    <meta name="theme-color" content="#fff8ec" />
+    <title>Your brain makes tiny plans — PyBot</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+  </head>
+  <body class="lesson-page" data-page="thinking">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+
+    <header class="site-header lesson-site-header">
+      <a class="brand" href="../index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>PyBot</span>
+      </a>
+      <div class="lesson-header-tools">
+        <span class="lesson-progress" data-i18n="lesson.progressTwo">START · 2 OF 3</span>
+        <div
+          class="language-switch"
+          role="group"
+          aria-label="Choose language"
+          data-i18n-aria-label="a11y.language"
+        >
+          <button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button>
+          <button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="lesson-main" id="main-content">
+      <a class="lesson-back" href="01-real-world.html">
+        <span aria-hidden="true">←</span>
+        <span data-i18n="lesson.previous">Previous page</span>
+      </a>
+
+      <section class="lesson-hero lesson-hero-thinking" aria-labelledby="lesson-title">
+        <div class="lesson-hero-copy">
+          <p class="eyebrow">
+            <span aria-hidden="true">02</span>
+            <b data-i18n="thinking.eyebrow">BEFORE PYTHON</b>
+          </p>
+          <h1 id="lesson-title" data-i18n="thinking.title">Your brain makes tiny plans.</h1>
+          <p class="lesson-lead" data-i18n="thinking.intro">A plan is a few steps in an order that works.</p>
+        </div>
+
+        <aside class="lesson-pybot-scene steps-pybot-scene">
+          <div class="lesson-pybot-bubble">
+            <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+            <p data-i18n="thinking.pybot" data-pybot-message="thinking.pybot">You already do this every day!</p>
+          </div>
+
+          <span class="plan-bubble plan-one" aria-hidden="true">1</span>
+          <span class="plan-bubble plan-two" aria-hidden="true">2</span>
+          <span class="plan-bubble plan-three" aria-hidden="true">3</span>
+
+          <div class="pybot-wrap lesson-pybot-figure" data-mood="encouraging">
+            <div
+              class="pybot"
+              role="img"
+              aria-label="PyBot follows three steps in order"
+              data-i18n-aria-label="thinking.robotLabel"
+            >
+              <div class="antenna" aria-hidden="true"><span></span></div>
+              <div class="ear ear-left" aria-hidden="true"></div>
+              <div class="ear ear-right" aria-hidden="true"></div>
+              <div class="bot-head">
+                <div class="bot-screen">
+                  <div class="brow brow-left" aria-hidden="true"></div>
+                  <div class="brow brow-right" aria-hidden="true"></div>
+                  <div class="eye eye-left" aria-hidden="true"><span></span></div>
+                  <div class="eye eye-right" aria-hidden="true"><span></span></div>
+                  <div class="cheek cheek-left" aria-hidden="true"></div>
+                  <div class="cheek cheek-right" aria-hidden="true"></div>
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="bot-neck" aria-hidden="true"></div>
+              <div class="arm arm-left" aria-hidden="true"><span class="hand"></span></div>
+              <div class="arm arm-right" aria-hidden="true"><span class="hand"></span></div>
+              <div class="bot-body">
+                <div class="chest-light" aria-hidden="true"></div>
+                <span class="chest-code" aria-hidden="true">&lt;/&gt;</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="thinking-confidence" aria-labelledby="confidence-title">
+        <div class="confidence-path" aria-hidden="true"><span>1</span><b>→</b><span>2</span><b>→</b><span>3</span></div>
+        <div>
+          <p class="eyebrow" data-i18n="thinking.confidenceEyebrow">YOU ALREADY KNOW THIS</p>
+          <h2 id="confidence-title" data-i18n="thinking.confidenceTitle">Your brain plans all day.</h2>
+          <p data-i18n="thinking.confidenceText">
+            When you get ready, play, or make something, your brain quietly chooses what happens first, next, and last.
+          </p>
+          <strong data-i18n="thinking.confidenceNote">Coding uses that same skill. You do not have to know everything at once.</strong>
+        </div>
+      </section>
+
+      <section class="thinking-practice" aria-labelledby="practice-title">
+        <div class="lesson-section-heading">
+          <p class="eyebrow eyebrow-blue" data-i18n="thinking.practiceEyebrow">YOUR TURN</p>
+          <h2 id="practice-title" data-i18n="thinking.practiceTitle">Finish the plan.</h2>
+          <p class="practice-intro" data-i18n="thinking.practiceIntro">Pick the last step. PyBot will check it.</p>
+        </div>
+
+        <div class="plan-progress-summary" aria-label="Plan progress" data-i18n-aria-label="progress.summaryLabel" aria-live="polite">
+          <div class="progress-complete">
+            <strong data-progress-complete>0</strong>
+            <span data-i18n="progress.completed">Completed</span>
+          </div>
+          <div class="progress-remaining">
+            <strong data-progress-remaining>10</strong>
+            <span data-i18n="progress.remaining">Not tried</span>
+          </div>
+          <div class="progress-review">
+            <strong data-progress-review>0</strong>
+            <span data-i18n="progress.review">Review</span>
+          </div>
+        </div>
+
+        <div class="all-plans">
+          <div class="step-activity-grid">
+          <article class="step-activity activity-water" data-activity-id="water">
+            <header class="step-activity-header">
+              <span aria-hidden="true">01</span>
+              <h3 data-i18n="thinking.waterTitle">Get a glass of water</h3>
+            </header>
+            <ol class="daily-plan">
+              <li><span>1</span><p data-i18n="thinking.waterStep1">Take a glass.</p></li>
+              <li><span>2</span><p data-i18n="thinking.waterStep2">Put it under the tap.</p></li>
+              <li><span>3</span><p data-i18n="thinking.waterStep3">Fill it with water.</p></li>
+              <li class="missing-step"><span>4</span><p aria-label="Missing step" data-i18n-aria-label="thinking.missingStep">?</p></li>
+            </ol>
+            <p class="activity-question" data-i18n="thinking.question">What comes next?</p>
+            <div
+              class="activity-options"
+              role="group"
+              aria-label="Choose the last step"
+              data-i18n-aria-label="thinking.chooseLabel"
+            >
+              <button type="button" data-correct="true" data-i18n="thinking.waterCorrect">Turn off the tap</button>
+              <button type="button" data-i18n="thinking.waterWrong1">Put on your shoes</button>
+              <button type="button" data-i18n="thinking.waterWrong2">Open your backpack</button>
+            </div>
+            <p class="activity-feedback" aria-live="polite"></p>
+          </article>
+
+          <article class="step-activity activity-bag" data-activity-id="bag">
+            <header class="step-activity-header">
+              <span aria-hidden="true">02</span>
+              <h3 data-i18n="thinking.bagTitle">Pack your school bag</h3>
+            </header>
+            <ol class="daily-plan">
+              <li><span>1</span><p data-i18n="thinking.bagStep1">Check what you need.</p></li>
+              <li><span>2</span><p data-i18n="thinking.bagStep2">Add your notebooks.</p></li>
+              <li><span>3</span><p data-i18n="thinking.bagStep3">Add your pencil case.</p></li>
+              <li class="missing-step"><span>4</span><p aria-label="Missing step" data-i18n-aria-label="thinking.missingStep">?</p></li>
+            </ol>
+            <p class="activity-question" data-i18n="thinking.question">What comes next?</p>
+            <div
+              class="activity-options"
+              role="group"
+              aria-label="Choose the last step"
+              data-i18n-aria-label="thinking.chooseLabel"
+            >
+              <button type="button" data-i18n="thinking.bagWrong1">Turn on the tap</button>
+              <button type="button" data-i18n="thinking.bagWrong2">Brush your teeth</button>
+              <button type="button" data-correct="true" data-i18n="thinking.bagCorrect">Close the bag</button>
+            </div>
+            <p class="activity-feedback" aria-live="polite"></p>
+          </article>
+
+          <article class="step-activity" data-activity-id="hands">
+            <header class="step-activity-header">
+              <span aria-hidden="true">03</span>
+              <h3 data-i18n="thinking.handsTitle">Wash your hands</h3>
+            </header>
+            <ol class="daily-plan">
+              <li><span>1</span><p data-i18n="thinking.handsStep1">Wet your hands.</p></li>
+              <li><span>2</span><p data-i18n="thinking.handsStep2">Add soap.</p></li>
+              <li><span>3</span><p data-i18n="thinking.handsStep3">Scrub and rinse.</p></li>
+              <li class="missing-step"><span>4</span><p aria-label="Missing step" data-i18n-aria-label="thinking.missingStep">?</p></li>
+            </ol>
+            <p class="activity-question" data-i18n="thinking.question">What comes next?</p>
+            <div class="activity-options" role="group" aria-label="Choose the last step" data-i18n-aria-label="thinking.chooseLabel">
+              <button type="button" data-i18n="thinking.handsWrong1">Close your backpack</button>
+              <button type="button" data-correct="true" data-i18n="thinking.handsCorrect">Turn off the tap</button>
+              <button type="button" data-i18n="thinking.handsWrong2">Open a book</button>
+            </div>
+            <p class="activity-feedback" aria-live="polite"></p>
+          </article>
+
+          <article class="step-activity" data-activity-id="teeth">
+            <header class="step-activity-header">
+              <span aria-hidden="true">04</span>
+              <h3 data-i18n="thinking.teethTitle">Brush your teeth</h3>
+            </header>
+            <ol class="daily-plan">
+              <li><span>1</span><p data-i18n="thinking.teethStep1">Put toothpaste on the brush.</p></li>
+              <li><span>2</span><p data-i18n="thinking.teethStep2">Brush your teeth.</p></li>
+              <li><span>3</span><p data-i18n="thinking.teethStep3">Rinse the toothbrush.</p></li>
+              <li class="missing-step"><span>4</span><p aria-label="Missing step" data-i18n-aria-label="thinking.missingStep">?</p></li>
+            </ol>
+            <p class="activity-question" data-i18n="thinking.question">What comes next?</p>
+            <div class="activity-options" role="group" aria-label="Choose the last step" data-i18n-aria-label="thinking.chooseLabel">
+              <button type="button" data-correct="true" data-i18n="thinking.teethCorrect">Put the toothbrush away</button>
+              <button type="button" data-i18n="thinking.teethWrong1">Turn on the camera</button>
+              <button type="button" data-i18n="thinking.teethWrong2">Pick up a spoon</button>
+            </div>
+            <p class="activity-feedback" aria-live="polite"></p>
+          </article>
+
+          <article class="step-activity" data-activity-id="dressed">
+            <header class="step-activity-header">
+              <span aria-hidden="true">05</span>
+              <h3 data-i18n="thinking.dressedTitle">Get dressed</h3>
+            </header>
+            <ol class="daily-plan">
+              <li><span>1</span><p data-i18n="thinking.dressedStep1">Put on your shirt.</p></li>
+              <li><span>2</span><p data-i18n="thinking.dressedStep2">Put on your pants.</p></li>
+              <li><span>3</span><p data-i18n="thinking.dressedStep3">Put on your socks.</p></li>
+              <li class="missing-step"><span>4</span><p aria-label="Missing step" data-i18n-aria-label="thinking.missingStep">?</p></li>
+            </ol>
+            <p class="activity-question" data-i18n="thinking.question">What comes next?</p>
+            <div class="activity-options" role="group" aria-label="Choose the last step" data-i18n-aria-label="thinking.chooseLabel">
+              <button type="button" data-i18n="thinking.dressedWrong1">Close a book</button>
+              <button type="button" data-i18n="thinking.dressedWrong2">Pour cereal</button>
+              <button type="button" data-correct="true" data-i18n="thinking.dressedCorrect">Put on your shoes</button>
+            </div>
+            <p class="activity-feedback" aria-live="polite"></p>
+          </article>
+
+          <article class="step-activity" data-activity-id="cereal">
+            <header class="step-activity-header">
+              <span aria-hidden="true">06</span>
+              <h3 data-i18n="thinking.cerealTitle">Make a bowl of cereal</h3>
+            </header>
+            <ol class="daily-plan">
+              <li><span>1</span><p data-i18n="thinking.cerealStep1">Get a bowl.</p></li>
+              <li><span>2</span><p data-i18n="thinking.cerealStep2">Pour in the cereal.</p></li>
+              <li><span>3</span><p data-i18n="thinking.cerealStep3">Add milk.</p></li>
+              <li class="missing-step"><span>4</span><p aria-label="Missing step" data-i18n-aria-label="thinking.missingStep">?</p></li>
+            </ol>
+            <p class="activity-question" data-i18n="thinking.question">What comes next?</p>
+            <div class="activity-options" role="group" aria-label="Choose the last step" data-i18n-aria-label="thinking.chooseLabel">
+              <button type="button" data-i18n="thinking.cerealWrong1">Turn off the light</button>
+              <button type="button" data-correct="true" data-i18n="thinking.cerealCorrect">Get a spoon</button>
+              <button type="button" data-i18n="thinking.cerealWrong2">Open the camera</button>
+            </div>
+            <p class="activity-feedback" aria-live="polite"></p>
+          </article>
+
+          <article class="step-activity" data-activity-id="drawing">
+            <header class="step-activity-header">
+              <span aria-hidden="true">07</span>
+              <h3 data-i18n="thinking.drawingTitle">Draw a picture</h3>
+            </header>
+            <ol class="daily-plan">
+              <li><span>1</span><p data-i18n="thinking.drawingStep1">Get a sheet of paper.</p></li>
+              <li><span>2</span><p data-i18n="thinking.drawingStep2">Choose your crayons.</p></li>
+              <li><span>3</span><p data-i18n="thinking.drawingStep3">Draw your picture.</p></li>
+              <li class="missing-step"><span>4</span><p aria-label="Missing step" data-i18n-aria-label="thinking.missingStep">?</p></li>
+            </ol>
+            <p class="activity-question" data-i18n="thinking.question">What comes next?</p>
+            <div class="activity-options" role="group" aria-label="Choose the last step" data-i18n-aria-label="thinking.chooseLabel">
+              <button type="button" data-correct="true" data-i18n="thinking.drawingCorrect">Put the crayons away</button>
+              <button type="button" data-i18n="thinking.drawingWrong1">Put on your socks</button>
+              <button type="button" data-i18n="thinking.drawingWrong2">Fill a glass</button>
+            </div>
+            <p class="activity-feedback" aria-live="polite"></p>
+          </article>
+
+          <article class="step-activity" data-activity-id="bedtime">
+            <header class="step-activity-header">
+              <span aria-hidden="true">08</span>
+              <h3 data-i18n="thinking.bedtimeTitle">Get ready for bed</h3>
+            </header>
+            <ol class="daily-plan">
+              <li><span>1</span><p data-i18n="thinking.bedtimeStep1">Put on your pajamas.</p></li>
+              <li><span>2</span><p data-i18n="thinking.bedtimeStep2">Brush your teeth.</p></li>
+              <li><span>3</span><p data-i18n="thinking.bedtimeStep3">Get into bed.</p></li>
+              <li class="missing-step"><span>4</span><p aria-label="Missing step" data-i18n-aria-label="thinking.missingStep">?</p></li>
+            </ol>
+            <p class="activity-question" data-i18n="thinking.question">What comes next?</p>
+            <div class="activity-options" role="group" aria-label="Choose the last step" data-i18n-aria-label="thinking.chooseLabel">
+              <button type="button" data-i18n="thinking.bedtimeWrong1">Add milk</button>
+              <button type="button" data-i18n="thinking.bedtimeWrong2">Open your backpack</button>
+              <button type="button" data-correct="true" data-i18n="thinking.bedtimeCorrect">Turn off the light</button>
+            </div>
+            <p class="activity-feedback" aria-live="polite"></p>
+          </article>
+
+          <article class="step-activity" data-activity-id="reading">
+            <header class="step-activity-header">
+              <span aria-hidden="true">09</span>
+              <h3 data-i18n="thinking.readingTitle">Read a book</h3>
+            </header>
+            <ol class="daily-plan">
+              <li><span>1</span><p data-i18n="thinking.readingStep1">Choose a book.</p></li>
+              <li><span>2</span><p data-i18n="thinking.readingStep2">Sit somewhere comfortable.</p></li>
+              <li><span>3</span><p data-i18n="thinking.readingStep3">Open the book.</p></li>
+              <li class="missing-step"><span>4</span><p aria-label="Missing step" data-i18n-aria-label="thinking.missingStep">?</p></li>
+            </ol>
+            <p class="activity-question" data-i18n="thinking.question">What comes next?</p>
+            <div class="activity-options" role="group" aria-label="Choose the last step" data-i18n-aria-label="thinking.chooseLabel">
+              <button type="button" data-i18n="thinking.readingWrong1">Turn on the tap</button>
+              <button type="button" data-correct="true" data-i18n="thinking.readingCorrect">Start reading</button>
+              <button type="button" data-i18n="thinking.readingWrong2">Put on your shoes</button>
+            </div>
+            <p class="activity-feedback" aria-live="polite"></p>
+          </article>
+
+          <article class="step-activity" data-activity-id="photo">
+            <header class="step-activity-header">
+              <span aria-hidden="true">10</span>
+              <h3 data-i18n="thinking.photoTitle">Take a photo</h3>
+            </header>
+            <ol class="daily-plan">
+              <li><span>1</span><p data-i18n="thinking.photoStep1">Open the camera.</p></li>
+              <li><span>2</span><p data-i18n="thinking.photoStep2">Point at your subject.</p></li>
+              <li><span>3</span><p data-i18n="thinking.photoStep3">Hold the device still.</p></li>
+              <li class="missing-step"><span>4</span><p aria-label="Missing step" data-i18n-aria-label="thinking.missingStep">?</p></li>
+            </ol>
+            <p class="activity-question" data-i18n="thinking.question">What comes next?</p>
+            <div class="activity-options" role="group" aria-label="Choose the last step" data-i18n-aria-label="thinking.chooseLabel">
+              <button type="button" data-i18n="thinking.photoWrong1">Close your bag</button>
+              <button type="button" data-i18n="thinking.photoWrong2">Get a spoon</button>
+              <button type="button" data-correct="true" data-i18n="thinking.photoCorrect">Tap the photo button</button>
+            </div>
+            <p class="activity-feedback" aria-live="polite"></p>
+          </article>
+          </div>
+
+        </div>
+
+        <div class="page-progress-tools">
+          <div>
+            <strong data-i18n="progress.savedTitle">Your plans are saved here.</strong>
+            <p data-i18n="progress.savedText">Want a fresh start? Clear only this page.</p>
+          </div>
+          <button type="button" data-reset-activities>
+            <span aria-hidden="true">↺</span>
+            <span data-i18n="progress.resetPage">Clear this page's progress</span>
+          </button>
+          <p class="progress-reset-status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="lesson-big-idea">
+        <span class="big-idea-mark" aria-hidden="true">!</span>
+        <div>
+          <span class="big-idea-label" data-i18n="lesson.bigIdea">BIG IDEA</span>
+          <h2 data-i18n="thinking.bigTitle">Order helps a plan work.</h2>
+          <p data-i18n="thinking.bigText">Computers need steps in an order too.</p>
+        </div>
+      </section>
+
+      <nav class="lesson-actions" aria-label="Lesson navigation" data-i18n-aria-label="a11y.lessonNav">
+        <a class="button button-secondary" href="01-real-world.html">
+          <span aria-hidden="true">←</span>
+          <span data-i18n="lesson.previous">Previous page</span>
+        </a>
+        <a class="button button-primary" href="03-programming-language.html">
+          <span data-i18n="thinking.next">What is a programming language?</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </nav>
+    </main>
+  </body>
+</html>

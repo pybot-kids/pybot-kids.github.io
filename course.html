@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      id="meta-description"
+      name="description"
+      content="A short foundation and seven small Python missions for children, guided by PyBot."
+      data-i18n-content="meta.courseDescription"
+    />
+    <meta name="theme-color" content="#fff8ec" />
+    <title>Learning path — PyBot</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="course-page" data-page="course">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>PyBot</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="a11y.mainNav">
+        <a href="index.html" data-i18n="course.home">Home</a>
+        <a class="nav-pill" href="index.html#meet-pybot" data-i18n="nav.meet">Meet PyBot</a>
+        <div
+          class="language-switch"
+          role="group"
+          aria-label="Choose language"
+          data-i18n-aria-label="a11y.language"
+        >
+          <button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button>
+          <button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="course-main" id="main-content">
+      <section class="course-intro" aria-labelledby="course-title">
+        <div>
+          <p class="eyebrow">
+            <span aria-hidden="true">01—06</span>
+            <b data-i18n="course.eyebrow">YOUR FIRST PATH</b>
+          </p>
+          <h1 id="course-title">
+            <span data-i18n="course.titleStart">Start with the basics.</span>
+            <span data-i18n="course.titleEnd">Then 6 small zones.</span>
+          </h1>
+          <p data-i18n="course.intro">Go slowly. Each zone has one idea and one small activity.</p>
+        </div>
+        <div class="course-rule">
+          <span aria-hidden="true">→</span>
+          <div>
+            <p data-i18n="course.rule">One idea. One clear next step.</p>
+            <a href="lessons/01-real-world.html" data-path-continue data-i18n="course.start">Start →</a>
+          </div>
+        </div>
+      </section>
+
+      <ol class="mission-list" aria-label="Learning zones" data-i18n-aria-label="a11y.missions">
+        <li class="mission-card mission-foundation">
+          <span class="mission-number">00</span>
+          <div class="mission-copy">
+            <span class="mission-concept" data-i18n="mission0.concept">BEFORE PYTHON</span>
+            <h2 data-i18n="mission0.title">Start Here</h2>
+            <p data-i18n="mission0.text">See what code can do. Think in steps. Then learn its rules.</p>
+          </div>
+          <a class="mission-start" href="lessons/01-real-world.html" data-i18n="course.open">Open →</a>
+
+          <nav class="foundation-route" aria-label="Start here pages" data-i18n-aria-label="path.foundationLabel">
+            <a href="lessons/01-real-world.html" data-path-step="world">
+              <span>1</span>
+              <b data-i18n="path.world">Code in your world</b>
+              <small data-path-status></small>
+            </a>
+            <a href="lessons/02-thinking-in-steps.html" data-path-step="thinking">
+              <span>2</span>
+              <b data-i18n="path.thinking">Tiny plans</b>
+              <small data-path-status></small>
+            </a>
+            <a href="lessons/03-programming-language.html" data-path-step="language">
+              <span>3</span>
+              <b data-i18n="path.language">Programming languages</b>
+              <small data-path-status></small>
+            </a>
+          </nav>
+        </li>
+
+        <li class="mission-card mission-orange" data-course-step="keyboard">
+          <span class="mission-number">01</span>
+          <div class="mission-copy">
+            <span class="mission-concept" data-i18n="mission1.concept">KEYBOARD</span>
+            <h2 data-i18n="mission1.title">Keyboard Moves</h2>
+            <p data-i18n="mission1.text">Meet useful keys and a few safe shortcuts.</p>
+          </div>
+          <span class="course-step-status" data-course-status></span>
+          <a class="mission-start" href="lessons/04-keyboard.html" data-i18n="course.open">Open →</a>
+        </li>
+
+        <li class="mission-card mission-blue" data-course-step="environment">
+          <span class="mission-number">02</span>
+          <div class="mission-copy">
+            <span class="mission-concept" data-i18n="mission2.concept">OUR SPACE</span>
+            <h2 data-i18n="mission2.title">Where Python Runs</h2>
+            <p data-i18n="mission2.text">Meet the browser, editor, Pyodide, and Python version.</p>
+          </div>
+          <span class="course-step-status" data-course-status></span>
+          <a class="mission-start" href="lessons/05-environment.html" data-i18n="course.open">Open →</a>
+        </li>
+
+        <li class="mission-card mission-yellow" data-course-step="symbols">
+          <span class="mission-number">03</span>
+          <div class="mission-copy">
+            <span class="mission-concept" data-i18n="mission3.concept">SYMBOLS</span>
+            <h2 data-i18n="mission3.title">Python's Special Marks</h2>
+            <p data-i18n="mission3.text">See the small marks that give code meaning.</p>
+          </div>
+          <span class="course-step-status" data-course-status></span>
+          <a class="mission-start" href="lessons/06-symbols.html" data-i18n="course.open">Open →</a>
+        </li>
+
+        <li class="mission-card mission-orange" data-course-step="variables">
+          <span class="mission-number">04</span>
+          <div class="mission-copy">
+            <span class="mission-concept" data-i18n="mission4.concept">MEMORY + VARIABLES</span>
+            <h2 data-i18n="mission4.title">Memory Boxes</h2>
+            <p data-i18n="mission4.text">See how a computer remembers a value by name.</p>
+          </div>
+          <span class="course-step-status" data-course-status></span>
+          <a class="mission-start" href="lessons/07-memory-variables.html" data-i18n="course.open">Open →</a>
+        </li>
+
+        <li class="mission-card mission-blue" data-course-step="conditionals">
+          <span class="mission-number">05</span>
+          <div class="mission-copy">
+            <span class="mission-concept" data-i18n="mission5.concept">CONDITIONALS</span>
+            <h2 data-i18n="mission5.title">Choose a Path</h2>
+            <p data-i18n="mission5.text">Use a yes-or-no question to choose what happens.</p>
+          </div>
+          <span class="course-step-status" data-course-status></span>
+          <a class="mission-start" href="lessons/08-conditionals.html" data-i18n="course.open">Open →</a>
+        </li>
+
+        <li class="mission-card mission-yellow mission-final" data-course-step="loops">
+          <span class="mission-number">06</span>
+          <div class="mission-copy">
+            <span class="mission-concept" data-i18n="mission6.concept">LOOPS</span>
+            <h2 data-i18n="mission6.title">Repeat a Pattern</h2>
+            <p data-i18n="mission6.text">Let a loop repeat one small job.</p>
+          </div>
+          <span class="course-step-status" data-course-status></span>
+          <a class="mission-start" href="lessons/09-loops.html" data-i18n="course.open">Open →</a>
+        </li>
+      </ol>
+
+      <section class="course-note" aria-label="A note from PyBot" data-i18n-aria-label="a11y.pybotNote">
+        <span class="course-note-face" aria-hidden="true"><i></i><i></i></span>
+        <div>
+          <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+          <p data-i18n="course.note" data-pybot-message="course.note">No rush. One mission at a time.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>PyBot</span>
+      </a>
+      <p data-i18n="footer.line">Small steps. Real Python.</p>
+      <span class="footer-status" data-i18n="footer.status">First prototype</span>
+    </footer>
+  </body>
+</html>
