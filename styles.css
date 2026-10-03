@@ -1718,10 +1718,72 @@ a {
   max-width: 790px;
 }
 
-.local-first p:last-child {
+.local-first .local-text {
   max-width: 750px;
   margin: 18px 0 0;
   color: #384d66;
+}
+
+.backup-tools {
+  max-width: 750px;
+  margin-top: 28px;
+  padding: 22px 24px;
+  border: 2px solid var(--blue-dark);
+  border-radius: 22px;
+  background: var(--white);
+}
+
+.backup-tools strong {
+  color: var(--blue-dark);
+  font-size: 1.05rem;
+}
+
+.backup-tools p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.backup-actions button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border: 2px solid var(--blue-dark);
+  border-radius: 14px;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.backup-actions button:first-child {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.backup-actions button:hover,
+.backup-actions button:focus-visible {
+  background: var(--blue-dark);
+  color: var(--white);
+}
+
+.backup-tools .backup-status:empty {
+  display: none;
+}
+
+.backup-tools .backup-status {
+  margin-top: 12px;
+  color: var(--blue-dark);
+  font-weight: 900;
 }
 
 .local-icon {
@@ -4599,6 +4661,14 @@ button:focus-visible {
   .local-first {
     padding: 43px 24px;
     box-shadow: 7px 8px 0 var(--blue-dark);
+  }
+
+  .backup-tools {
+    padding: 18px;
+  }
+
+  .backup-actions button {
+    width: 100%;
   }
 }
 
