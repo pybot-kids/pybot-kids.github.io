@@ -205,6 +205,7 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.audio.enabled` | `true` or `false` | Optional robot ambience preference; defaults to `true` | Yes |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
 | `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `conditionals`, `loops`, `comparisons`, or `functions` | Highlights the learner's current place across the complete small path | Yes |
+| `pybot.path.visited` | Comma-separated step ids from `pybot.path.current` | Remembers which pages the learner has opened, so steps added to the path later show as new and pending | Yes |
 | `pybot.activity.<activity-id>` | `complete` or `review` | Marks a completed activity or one that should be reviewed | Yes |
 
 Registered activity IDs:
@@ -256,7 +257,7 @@ The home page offers **Save a backup file** and **Load a backup file**. Saving d
 
 The thinking-page counters divide all ten plans into mutually exclusive states: completed, not tried, and review. The three numbers must always add up to ten. A wrong choice moves that plan to review; a correct choice moves it to completed.
 
-The learning-path page turns the three foundation pages and nine learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically.
+The learning-path page turns the three foundation pages and nine learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically. When a new zone is added behind a learner's saved place, the map marks it **NEW · NOT DONE** and shows a link to it under the main action. To get this for a future zone, just add it to `pathSteps`; learners who only have older progress (no `pybot.path.visited` yet) need the step flagged `addedLater: true`.
 
 ### Optional audio environment
 
