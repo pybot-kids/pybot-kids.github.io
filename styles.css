@@ -5129,7 +5129,126 @@ button:focus-visible {
   }
 }
 
+/* Fix PyBot's code */
+.step-activity-grid .fix-activity {
+  grid-column: 1 / -1;
+}
+
+.fix-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.fix-editor-wrap,
+.fix-results {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #132d4b;
+}
+
+.fix-label {
+  color: #7f9ab4;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.fix-editor {
+  width: 100%;
+  min-height: 96px;
+  padding: 10px;
+  resize: vertical;
+  border: 2px solid #38516d;
+  border-radius: 10px;
+  background: #0e243d;
+  color: #ffd86b;
+  caret-color: var(--yellow);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  tab-size: 4;
+}
+
+.fix-editor:focus-visible {
+  outline: 3px solid rgba(121, 184, 255, 0.7);
+}
+
+.fix-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 9px;
+}
+
+.fix-restart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  border: 2px solid #7890a9;
+  border-radius: 13px;
+  background: transparent;
+  color: #d9e6f4;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.fix-goal,
+.fix-output {
+  min-height: 44px;
+  margin: 0;
+  padding: 10px;
+  overflow: auto;
+  border-radius: 10px;
+  background: #0e243d;
+  color: #daecff;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.fix-goal {
+  border: 2px dashed var(--yellow);
+  color: var(--yellow);
+}
+
+.fix-activity.is-complete .fix-output {
+  box-shadow: inset 0 0 0 2px #6fd39a;
+}
+
+.new-activities-note {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border: 2px solid var(--orange);
+  border-radius: 14px;
+  background: var(--orange-soft);
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.new-activities-note::before {
+  margin-right: 8px;
+  content: "★";
+  color: var(--orange-dark);
+}
+
 @media (max-width: 760px) {
+  .fix-columns,
+  .fix-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fix-restart {
+    justify-content: center;
+    min-height: 44px;
+  }
+
   .site-header {
     min-height: 76px;
   }

@@ -206,20 +206,21 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
 | `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `conditionals`, `loops`, `comparisons`, or `functions` | Highlights the learner's current place across the complete small path | Yes |
 | `pybot.path.visited` | Comma-separated step ids from `pybot.path.current` | Remembers which pages the learner has opened, so steps added to the path later show as new and pending | Yes |
+| `pybot.path.done` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps the learner finished, so a finished step that later gains activities shows **NEW ACTIVITIES** | Yes |
 | `pybot.activity.<activity-id>` | `complete` or `review` | Marks a completed activity or one that should be reviewed | Yes |
 
 Registered activity IDs:
 
 - Everyday plans: `water`, `bag`, `hands`, `teeth`, `dressed`, `cereal`, `drawing`, `bedtime`, `reading`, and `photo`
-- Keyboard: `keyboard-backspace`, `keyboard-undo`, and `keyboard-copy`
-- Environment: `environment-editor`, `environment-engine`, and `environment-version`
-- Symbols: `symbol-text`, `symbol-assign`, and `symbol-block`
-- Memory and variables: `memory-ram`, `variable-name`, `variable-value`, and `variable-predict`
-- Boxes of all kinds: `boxes-text`, `boxes-yesno`, `boxes-list`, `boxes-grid`, and `boxes-predict`
-- Conditionals: `conditional-rain`, `conditional-battery`, `conditional-else`, `conditional-skip`, `conditional-after`, `conditional-elif`, `conditional-one`, and `conditional-predict`
-- Loops: `loop-count`, `loop-action`, `loop-stop`, `loop-zero`, `loop-list`, `loop-once`, `loop-total`, and `loop-predict`
-- True or false: `compare-less`, `compare-equal`, `compare-assign`, `compare-not-equal`, `compare-and`, `compare-or`, `compare-not`, and `compare-predict`
-- Functions: `function-input`, `function-output`, `function-inside`, and `function-predict`
+- Keyboard: `keyboard-backspace`, `keyboard-undo`, `keyboard-copy`, `keyboard-enter`, `keyboard-shift`, `keyboard-paste`, and `keyboard-fix`
+- Environment: `environment-editor`, `environment-engine`, `environment-version`, `environment-stop`, `environment-output`, `environment-browser`, and `environment-fix`
+- Symbols: `symbol-text`, `symbol-assign`, `symbol-block`, `symbol-parens`, `symbol-note`, `symbol-join`, and `symbol-fix`
+- Memory and variables: `memory-ram`, `variable-name`, `variable-value`, `variable-predict`, `variable-change`, `variable-label`, and `variable-fix`
+- Boxes of all kinds: `boxes-text`, `boxes-yesno`, `boxes-list`, `boxes-grid`, `boxes-predict`, `boxes-decimal`, and `boxes-fix`
+- Conditionals: `conditional-rain`, `conditional-battery`, `conditional-else`, `conditional-skip`, `conditional-after`, `conditional-elif`, `conditional-one`, `conditional-predict`, and `conditional-fix`
+- Loops: `loop-count`, `loop-action`, `loop-stop`, `loop-zero`, `loop-list`, `loop-once`, `loop-total`, `loop-predict`, and `loop-fix`
+- True or false: `compare-less`, `compare-equal`, `compare-assign`, `compare-not-equal`, `compare-and`, `compare-or`, `compare-not`, `compare-predict`, and `compare-fix`
+- Functions: `function-input`, `function-output`, `function-inside`, `function-predict`, `function-name`, `function-call`, and `function-fix`
 
 Storage rules:
 
@@ -258,6 +259,10 @@ The home page offers **Save a backup file** and **Load a backup file**. Saving d
 The thinking-page counters divide all ten plans into mutually exclusive states: completed, not tried, and review. The three numbers must always add up to ten. A wrong choice moves that plan to review; a correct choice moves it to completed.
 
 The learning-path page turns the three foundation pages and nine learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically. When a new zone is added behind a learner's saved place, the map marks it **NEW · NOT DONE** and shows a link to it under the main action. To get this for a future zone, just add it to `pathSteps`; learners who only have older progress (no `pybot.path.visited` yet) need the step flagged `addedLater: true`.
+
+Each step in `pathSteps` also lists its activity ids. An opened step with activities left shows **ACTIVITIES LEFT**, and a fully finished one shows **DONE**. When activities are added to a step the learner had finished, the map shows **NEW ACTIVITIES**, links to it under the main action, and the lesson page says new activities are waiting. To get this for future content, just add the new activity id to the step's list (and to the registry below); no flag is needed now that `pybot.path.done` exists. The `activitiesAddedLater` lists only exist for progress saved before that key.
+
+Besides multiple-choice questions, every zone has a **Fix PyBot's code** activity: a short broken snippet the child edits and runs with the real Python runner until the output matches the goal. Mark it up as a `.fix-activity` with `data-fix-expected-key` and a textarea with `data-fix-code-key`; the goal in either language counts as a match. Every zone keeps at least six multiple-choice questions.
 
 ### Optional audio environment
 
