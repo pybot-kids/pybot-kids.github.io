@@ -152,6 +152,17 @@ const translations = {
     "local.eyebrow": "YOUR WORK IS YOURS",
     "local.title": "No account. Your progress stays here.",
     "local.text": "This browser remembers your work. Ask an adult before clearing its data.",
+    "backup.title": "Moving to another browser?",
+    "backup.text": "Save a backup file here. Then load it in the other browser.",
+    "backup.export": "Save a backup file",
+    "backup.import": "Load a backup file",
+    "backup.exported": "Backup saved. Keep the file somewhere safe.",
+    "backup.confirm": "Replace the progress in this browser with this backup? Finished activities in the backup: {count}.",
+    "backup.imported": "Done. Your progress is back.",
+    "backup.cancelled": "Nothing changed.",
+    "backup.invalid": "This is not a PyBot backup file. Nothing changed.",
+    "backup.newer": "This backup comes from a newer PyBot. Nothing changed.",
+    "backup.failed": "This browser could not save the backup. Nothing changed.",
     "footer.line": "Small steps. Real Python.",
     "footer.status": "First prototype",
     "course.home": "Home",
@@ -744,6 +755,17 @@ const translations = {
     "local.eyebrow": "TU TRABAJO ES TUYO",
     "local.title": "Sin cuenta. Tu avance se queda aquí.",
     "local.text": "Este navegador recuerda tu trabajo. Pregunta a un adulto antes de borrar sus datos.",
+    "backup.title": "¿Cambias de navegador?",
+    "backup.text": "Guarda aquí una copia. Luego cárgala en el otro navegador.",
+    "backup.export": "Guardar una copia",
+    "backup.import": "Cargar una copia",
+    "backup.exported": "Copia guardada. Guarda el archivo en un lugar seguro.",
+    "backup.confirm": "¿Cambiar el avance de este navegador por esta copia? Actividades terminadas en la copia: {count}.",
+    "backup.imported": "Listo. Tu avance está de vuelta.",
+    "backup.cancelled": "No cambió nada.",
+    "backup.invalid": "Este archivo no es una copia de PyBot. No cambió nada.",
+    "backup.newer": "Esta copia viene de un PyBot más nuevo. No cambió nada.",
+    "backup.failed": "Este navegador no pudo guardar la copia. No cambió nada.",
     "footer.line": "Pasos pequeños. Python de verdad.",
     "footer.status": "Primer prototipo",
     "course.home": "Inicio",
@@ -1238,6 +1260,10 @@ const pythonOutput = document.querySelector("[data-python-output]");
 const pythonHint = document.querySelector("[data-python-hint]");
 const pythonRunButton = document.querySelector("[data-python-run]");
 const pythonStopButton = document.querySelector("[data-python-stop]");
+const backupExportButton = document.querySelector("[data-backup-export]");
+const backupImportButton = document.querySelector("[data-backup-import]");
+const backupImportInput = document.querySelector("[data-backup-file]");
+const backupStatus = document.querySelector("[data-backup-status]");
 let currentLanguage = "en";
 let soundToggle = null;
 let audioEnabled = false;
@@ -1251,6 +1277,18 @@ let lastPythonError = null;
 const AUDIO_PREFERENCE_KEY = "pybot.audio.enabled";
 const LEARNER_NAME_KEY = "pybot.learner.name";
 const PATH_CURRENT_KEY = "pybot.path.current";
+const BACKUP_FORMAT = "pybot-progress";
+const BACKUP_SCHEMA_VERSION = 1;
+const BACKUP_MAX_BYTES = 100_000;
+const activityIds = [
+  "water", "bag", "hands", "teeth", "dressed", "cereal", "drawing", "bedtime", "reading", "photo",
+  "keyboard-backspace", "keyboard-undo", "keyboard-copy",
+  "environment-editor", "environment-engine", "environment-version",
+  "symbol-text", "symbol-assign", "symbol-block",
+  "memory-ram", "variable-name", "variable-value",
+  "conditional-rain", "conditional-battery", "conditional-else",
+  "loop-count", "loop-action", "loop-stop",
+];
 const pathSteps = [
   { id: "world", page: "world", href: "lessons/01-real-world.html" },
   { id: "thinking", page: "thinking", href: "lessons/02-thinking-in-steps.html" },
@@ -1827,6 +1865,107 @@ function activityStorageKey(activityId) {
   return `pybot.activity.${activityId}`;
 }
 
+// The backup allowlist mirrors the storage registry in README.md.
+function backupValidators() {
+  const validators = {
+    "pybot.language": (value) => Boolean(translations[value]),
+    "pybot.audio.enabled": (value) => value === "true" || value === "false",
+    [LEARNER_NAME_KEY]: (value) => value.length > 0 && normalizeLearnerName(value) === value,
+    [PATH_CURRENT_KEY]: (value) => pathSteps.some((step) => step.id === value),
+  };
+
+  activityIds.forEach((activityId) => {
+    validators[activityStorageKey(activityId)] = (value) => value === "complete" || value === "review";
+  });
+
+  return validators;
+}
+
+function createBackup() {
+  const progress = {};
+
+  Object.entries(backupValidators()).forEach(([key, isValid]) => {
+    const value = localStorage.getItem(key);
+    if (value !== null && isValid(value)) {
+      progress[key] = value;
+    }
+  });
+
+  return {
+    format: BACKUP_FORMAT,
+    schemaVersion: BACKUP_SCHEMA_VERSION,
+    exportedAt: new Date().toISOString(),
+    progress,
+  };
+}
+
+// Returns the validated progress entries, or an error key when the file must be rejected.
+function readBackup(text) {
+  let backup;
+  try {
+    backup = JSON.parse(text);
+  } catch {
+    return { error: "backup.invalid" };
+  }
+
+  if (!backup || typeof backup !== "object" || backup.format !== BACKUP_FORMAT) {
+    return { error: "backup.invalid" };
+  }
+
+  if (Number.isInteger(backup.schemaVersion) && backup.schemaVersion > BACKUP_SCHEMA_VERSION) {
+    return { error: "backup.newer" };
+  }
+
+  const { progress } = backup;
+  if (
+    backup.schemaVersion !== BACKUP_SCHEMA_VERSION ||
+    !progress ||
+    typeof progress !== "object" ||
+    Array.isArray(progress)
+  ) {
+    return { error: "backup.invalid" };
+  }
+
+  const validators = backupValidators();
+  const entries = Object.entries(progress);
+  const allValid = entries.every(
+    ([key, value]) => Object.hasOwn(validators, key) && typeof value === "string" && validators[key](value),
+  );
+
+  return allValid ? { entries } : { error: "backup.invalid" };
+}
+
+function replaceProgress(entries) {
+  const previous = Object.keys(backupValidators()).map((key) => [key, localStorage.getItem(key)]);
+
+  try {
+    previous.forEach(([key]) => localStorage.removeItem(key));
+    entries.forEach(([key, value]) => localStorage.setItem(key, value));
+  } catch (error) {
+    previous.forEach(([key, value]) => {
+      try {
+        if (value === null) {
+          localStorage.removeItem(key);
+        } else {
+          localStorage.setItem(key, value);
+        }
+      } catch {
+        // Restoring the earlier progress is best effort.
+      }
+    });
+    throw error;
+  }
+}
+
+function setBackupStatus(key) {
+  if (!backupStatus) {
+    return;
+  }
+
+  backupStatus.dataset.i18n = key;
+  backupStatus.textContent = textFor(key);
+}
+
 function updatePlanProgressSummary() {
   if (!planProgressSummary) {
     return;
@@ -2073,6 +2212,64 @@ learnerNameForget?.addEventListener("click", () => {
   renderPersonalizedMessages();
   updateLearnerNamePanel(true);
   learnerNameInput?.focus();
+});
+
+backupExportButton?.addEventListener("click", () => {
+  let backup;
+  try {
+    backup = createBackup();
+  } catch {
+    setBackupStatus("backup.failed");
+    return;
+  }
+
+  const file = new Blob([`${JSON.stringify(backup, null, 2)}\n`], { type: "application/json" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(file);
+  link.download = `pybot-backup-${backup.exportedAt.slice(0, 10)}.json`;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+  setBackupStatus("backup.exported");
+});
+
+backupImportButton?.addEventListener("click", () => backupImportInput?.click());
+
+backupImportInput?.addEventListener("change", async () => {
+  const file = backupImportInput.files?.[0];
+  backupImportInput.value = "";
+  if (!file) {
+    return;
+  }
+
+  const result = file.size > BACKUP_MAX_BYTES ? { error: "backup.invalid" } : readBackup(await file.text());
+  if (result.error) {
+    setBackupStatus(result.error);
+    return;
+  }
+
+  const finished = result.entries.filter(([, value]) => value === "complete").length;
+  if (!window.confirm(textFor("backup.confirm").replaceAll("{count}", String(finished)))) {
+    setBackupStatus("backup.cancelled");
+    return;
+  }
+
+  try {
+    replaceProgress(result.entries);
+  } catch {
+    setBackupStatus("backup.failed");
+    return;
+  }
+
+  const nextAudio = storedAudioPreference();
+  learnerName = storedLearnerName();
+  setLanguage(storedLanguage(), false);
+  updateLearnerNamePanel(!learnerName);
+  if (nextAudio !== audioEnabled) {
+    setAudioEnabled(nextAudio);
+  }
+  setBackupStatus("backup.imported");
 });
 
 pythonEditor?.addEventListener("input", () => {

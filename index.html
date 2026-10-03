@@ -245,7 +245,17 @@
         <div>
           <p class="eyebrow" data-i18n="local.eyebrow">YOUR WORK IS YOURS</p>
           <h2 data-i18n="local.title">No account. Your progress stays here.</h2>
-          <p data-i18n="local.text">This browser remembers your work. Ask an adult before clearing its data.</p>
+          <p class="local-text" data-i18n="local.text">This browser remembers your work. Ask an adult before clearing its data.</p>
+          <div class="backup-tools">
+            <strong data-i18n="backup.title">Moving to another browser?</strong>
+            <p data-i18n="backup.text">Save a backup file here. Then load it in the other browser.</p>
+            <div class="backup-actions">
+              <button type="button" data-backup-export data-i18n="backup.export">Save a backup file</button>
+              <button type="button" data-backup-import data-i18n="backup.import">Load a backup file</button>
+              <input type="file" accept=".json,application/json" data-backup-file hidden />
+            </div>
+            <p class="backup-status" role="status" aria-live="polite" data-backup-status></p>
+          </div>
         </div>
       </section>
     </main>

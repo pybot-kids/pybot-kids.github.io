@@ -185,7 +185,7 @@ The interface must explain that clearing browser data can remove progress and th
 
 #### Local storage registry
 
-Every browser-storage key must be added to this registry before it is released. Keys stay language-neutral and are included only through an explicit allowlist in the future backup file. The optional learner name is the sole personal value in the registry and never leaves the browser unless a backup is explicitly exported.
+Every browser-storage key must be added to this registry before it is released. Keys stay language-neutral and are included only through an explicit allowlist in the backup file. The optional learner name is the sole personal value in the registry and never leaves the browser unless a backup is explicitly exported.
 
 | Key | Allowed value | Purpose | Include in backup |
 |---|---|---|---|
@@ -212,9 +212,32 @@ Storage rules:
 - A missing key means the defined default: English, sound on, no saved name, the first foundation page, or not completed.
 - Storage failure must never block a lesson; the current page should continue to work.
 - Every page that stores learner progress must provide a clearly labeled reset control. Reset requires confirmation and removes only that page's registered progress keys, never language, audio, or another lesson's work.
-- Backup export will include a schema version and only the registered keys above.
+- Backup export includes a schema version and only the registered keys above.
 - Import must validate the schema and every value before replacing local data.
 - Removed or renamed keys require a documented migration.
+
+#### Backup file
+
+The home page offers **Save a backup file** and **Load a backup file**. Saving downloads `pybot-backup-YYYY-MM-DD.json`; nothing is sent anywhere. Loading checks the whole file first, asks for confirmation, and then replaces every registered key in this browser, so keys missing from the file are cleared.
+
+```json
+{
+  "format": "pybot-progress",
+  "schemaVersion": 1,
+  "exportedAt": "2026-10-03T00:00:00.000Z",
+  "progress": {
+    "pybot.language": "es",
+    "pybot.learner.name": "María",
+    "pybot.activity.water": "complete"
+  }
+}
+```
+
+- `format` must be `pybot-progress` and `schemaVersion` must be `1`. A file from a newer schema version is refused with its own message.
+- `progress` holds only registered keys with string values allowed by the registry. One unknown key or invalid value rejects the whole file, and nothing changes.
+- Files over 100 KB are rejected.
+- `exportedAt` is informational and is not validated.
+- The allowlist lives in `backupValidators()` in `script.js` and must change together with the registry above.
 
 The thinking-page counters divide all ten plans into mutually exclusive states: completed, not tried, and review. The three numbers must always add up to ten. A wrong choice moves that plan to review; a correct choice moves it to completed.
 
@@ -426,5 +449,5 @@ Then open `http://localhost:8000/`.
 - [x] Kid-friendly hints for common Python errors, with the real error kept below
 - [x] Meet PyBot expression gallery and creator story
 - [ ] Visual review with María Ángel
-- [ ] Backup export and import
+- [x] Backup export and import
 - [ ] GitHub Pages publication
