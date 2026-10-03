@@ -1605,6 +1605,30 @@ a {
   animation: cursor-blink 1.1s steps(1) infinite;
 }
 
+.output-area .python-hint {
+  margin: 10px 0 4px;
+  padding: 10px 14px;
+  border-left: 4px solid var(--yellow);
+  border-radius: 12px;
+  background: #17304f;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.output-area .python-hint[hidden] {
+  display: none;
+}
+
+.output-area .python-hint strong {
+  display: block;
+  color: var(--yellow);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .output-area pre {
   min-height: 48px;
   margin: 8px 0 0;

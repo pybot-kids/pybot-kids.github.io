@@ -28,11 +28,24 @@ self.addEventListener("message", async (event) => {
       output: [...stdout, ...stderr].join("\n"),
     });
   } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
     self.postMessage({
       id,
       type: "error",
-      error: error instanceof Error ? error.message : String(error),
+      error: learnerTraceback(message),
+      errorType: typeof error?.type === "string" ? error.type : "",
       output: [...stdout, ...stderr].join("\n"),
     });
   }
 });
+
+// Pyodide tracebacks start with its own internal frames. Keep the real error,
+// but begin at the first frame from the learner's code ("<exec>").
+function learnerTraceback(message) {
+  const lines = message.split("\n");
+  const firstLearnerFrame = lines.findIndex((line) => line.includes('File "<exec>"'));
+  if (lines[0] !== "Traceback (most recent call last):" || firstLearnerFrame === -1) {
+    return message.trim();
+  }
+  return [lines[0], ...lines.slice(firstLearnerFrame)].join("\n").trim();
+}
