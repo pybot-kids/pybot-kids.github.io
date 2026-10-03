@@ -210,6 +210,7 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.path.known` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps were on the path when the learner started, so a step added later shows as new even when it is ahead of the learner | Yes |
 | `pybot.selfcheck` | Comma-separated `<step-id>:<rating>` pairs, rating `good`, `okay`, or `review` (may be empty) | The learner's own answer to "How did it go?" at a pit stop; zones rated `review` show **TO REVIEW** on the map | Yes |
 | `pybot.activity.<activity-id>` | `complete` or `review` | Marks a completed activity or one that should be reviewed | Yes |
+| `pybot.progress.version` | A whole number up to `PROGRESS_VERSION` | The course content version the saved progress was last upgraded to (see **Progress versions**) | No; the file carries `progressVersion` instead |
 
 Registered activity IDs:
 
@@ -247,6 +248,7 @@ The home page offers **Save a backup file** and **Load a backup file**. Saving d
 {
   "format": "pybot-progress",
   "schemaVersion": 1,
+  "progressVersion": 1,
   "exportedAt": "2026-10-03T00:00:00.000Z",
   "progress": {
     "pybot.language": "es",
@@ -257,10 +259,30 @@ The home page offers **Save a backup file** and **Load a backup file**. Saving d
 ```
 
 - `format` must be `pybot-progress` and `schemaVersion` must be `1`. A file from a newer schema version is refused with its own message.
-- `progress` holds only registered keys with string values allowed by the registry. One unknown key or invalid value rejects the whole file, and nothing changes.
+- `progressVersion` is the course content version the backup was saved with. A missing value means version 1 (backups from before versions existed). A file from a newer progress version is refused with the same "newer PyBot" message.
+- A backup from an older progress version is upgraded before it is checked: every migration after its version runs, then steps and activities the current course no longer has are dropped. The learner sees "updated to the newest PyBot".
+- `progress` holds only registered keys with string values allowed by the registry (after the upgrade). One unknown key or invalid value rejects the whole file, and nothing changes.
 - Files over 100 KB are rejected.
 - `exportedAt` is informational and is not validated.
 - The allowlist lives in `backupValidators()` in `script.js` and must change together with the registry above.
+
+#### Progress versions
+
+`PROGRESS_VERSION` in `script.js` names the version of the course content that progress belongs to. It is shown under the backup tools ("Progress version N"), written into every backup as `progressVersion`, and stored in `pybot.progress.version`. [`progress-versions.json`](progress-versions.json) lists every step and activity id of each version, so the `progressVersion` in anyone's backup tells exactly what content it was saved with and what has changed since.
+
+Rule for every pull request:
+
+- If it adds, renames, or removes a step or activity id in `pathSteps`, run `node tools/progress-version.mjs --bump "what changed"`. This raises `PROGRESS_VERSION` by one and records the new content in `progress-versions.json`.
+- If it renames or removes an id, also add an entry for the new version in `progressMigrations` in `script.js` (helpers: `renameProgressStep`, `renameProgressActivity`) so learners keep that progress. Ids that are only removed need no migration: their progress is dropped on upgrade.
+- Adding ids needs no migration. New steps and activities already show as new and pending (see `pybot.path.known` and `pybot.path.done`).
+- Changing the shape of a stored value (not just its ids) needs a migration too.
+- Two open pull requests that both bump will conflict on `PROGRESS_VERSION`; the second one to merge bumps again on top of the first.
+
+`node tools/progress-version.mjs` with no arguments checks that `PROGRESS_VERSION`, `progress-versions.json`, and `pathSteps` agree, and warns about ids removed without a migration. The **Progress version** workflow runs it on every pull request.
+
+When the site loads, progress saved in the browser by an older version is upgraded the same way as an old backup.
+
+To help someone whose backup will not load: open the file, read `progressVersion` (missing means 1), and compare that entry in `progress-versions.json` with the latest one. Any id that was renamed without a migration is the cause; add the migration and the backup loads again.
 
 #### Emergency progress reset
 
