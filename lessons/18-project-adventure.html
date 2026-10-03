@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta id="meta-description" name="description" content="Build a choose-your-path text adventure in Python with rooms, choices, a loop and an inventory list." data-i18n-content="meta.projectAdventureDescription" /><meta name="theme-color" content="#fff8ec" /><title>Adventure game — PyBot</title><link rel="icon" href="../favicon.svg" type="image/svg+xml" /><link rel="stylesheet" href="../styles.css" /><script src="../script.js" defer></script></head>
+  <body class="lesson-page topic-page" data-page="projectAdventure">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+    <header class="site-header lesson-site-header"><a class="brand" href="../index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home"><span class="brand-mark"><span></span></span><span>PyBot</span></a><div class="lesson-header-tools"><span class="lesson-progress" data-i18n="topic.progressProjectAdventure">ZONE 12 · 4 OF 6</span><div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria-label="a11y.language"><button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button><button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button></div></div></header>
+    <main class="lesson-main" id="main-content">
+      <a class="lesson-back" href="18-project-rps.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a>
+      <section class="topic-hero"><div class="topic-hero-copy"><p class="eyebrow"><span>12</span><b data-i18n="projectAdventure.eyebrow">GAME PROJECTS · ADVENTURE</b></p><h1 data-i18n="projectAdventure.title">Choose your own path.</h1><p data-i18n="projectAdventure.intro">Build a text adventure: rooms, choices, a bag of things, and a hidden treasure.</p></div>
+        <aside class="lesson-pybot-scene topic-pybot-scene scene-projects">
+          <div class="lesson-pybot-bubble">
+            <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+            <p data-pybot-message="projectAdventure.pybot" data-i18n="projectAdventure.pybot">Left or right? Every choice opens a new room!</p>
+          </div>
+
+          <div class="scene-trophy" aria-hidden="true"><b>★</b><i></i></div>
+
+          <div class="pybot-wrap lesson-pybot-figure" data-mood="curious">
+            <div class="pybot" role="img" aria-label="PyBot looks around with curiosity next to a gold trophy" data-i18n-aria-label="projectAdventure.robotLabel">
+              <div class="antenna" aria-hidden="true"><span></span></div>
+              <div class="ear ear-left" aria-hidden="true"></div>
+              <div class="ear ear-right" aria-hidden="true"></div>
+              <div class="bot-head">
+                <div class="bot-screen">
+                  <div class="brow brow-left" aria-hidden="true"></div>
+                  <div class="brow brow-right" aria-hidden="true"></div>
+                  <div class="eye eye-left" aria-hidden="true"><span></span></div>
+                  <div class="eye eye-right" aria-hidden="true"><span></span></div>
+                  <div class="cheek cheek-left" aria-hidden="true"></div>
+                  <div class="cheek cheek-right" aria-hidden="true"></div>
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="bot-neck" aria-hidden="true"></div>
+              <div class="arm arm-left" aria-hidden="true"><span class="hand"></span></div>
+              <div class="arm arm-right" aria-hidden="true"><span class="hand"></span></div>
+              <div class="bot-body">
+                <div class="chest-light" aria-hidden="true"></div>
+                <span class="chest-code" aria-hidden="true">&lt;/&gt;</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="topic-overview" aria-labelledby="projectAdventure-life-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lifeEyebrow">IN REAL LIFE</p><h2 id="projectAdventure-life-title" data-i18n="projectAdventure.lifeTitle">Stories where you choose.</h2><p class="practice-intro" data-i18n="projectAdventure.lifeIntro">You pick the path, and the story changes.</p></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">📖</span><h3 data-i18n="projectAdventure.life1Title">Choose-your-path books</h3><p data-i18n="projectAdventure.life1Text">&quot;Open the door? Go to page 12. Run away? Go to page 30.&quot;</p></article><article class="topic-info-card"><span aria-hidden="true">🎮</span><h3 data-i18n="projectAdventure.life2Title">Adventure video games</h3><p data-i18n="projectAdventure.life2Text">You walk room to room, pick up keys, and open locked doors.</p></article><article class="topic-info-card"><span aria-hidden="true">🗺️</span><h3 data-i18n="projectAdventure.life3Title">A treasure hunt</h3><p data-i18n="projectAdventure.life3Text">At a party, each clue sends you to a new place until you find the prize.</p></article>
+      </div></section>
+
+      <section class="topic-overview" aria-labelledby="projectAdventure-plan-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="projectAdventure.planEyebrow">THE PLAN</p><h2 id="projectAdventure-plan-title" data-i18n="projectAdventure.planTitle">Four small steps.</h2><p class="practice-intro" data-i18n="projectAdventure.planIntro">Each step uses something you already learned.</p></div><div class="topic-card-grid topic-card-grid-four">
+        <article class="topic-info-card"><span aria-hidden="true">1</span><h3 data-i18n="projectAdventure.plan1Title">Rooms</h3><p data-i18n="projectAdventure.plan1Text">A box keeps the room you are in. if and elif pick what happens there.</p><p><code>room = &quot;hall&quot;</code> <code>if</code> <code>elif</code></p></article><article class="topic-info-card"><span aria-hidden="true">2</span><h3 data-i18n="projectAdventure.plan2Title">Choices</h3><p data-i18n="projectAdventure.plan2Text">input() asks left, right or quit. An if inside another if makes a nested choice.</p><p><code>input()</code> <code>if</code></p></article><article class="topic-info-card"><span aria-hidden="true">3</span><h3 data-i18n="projectAdventure.plan3Title">The bag</h3><p data-i18n="projectAdventure.plan3Text">A list keeps what you find. append adds, and in checks.</p><p><code>[]</code> <code>append</code> <code>in</code></p></article><article class="topic-info-card"><span aria-hidden="true">4</span><h3 data-i18n="projectAdventure.plan4Title">Keep playing</h3><p data-i18n="projectAdventure.plan4Text">A while loop repeats until you find the treasure or quit.</p><p><code>while</code></p></article>
+      </div></section>
+
+      <section class="topic-run" aria-labelledby="projectAdventure-run-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.runEyebrow">RUN IT</p><h2 id="projectAdventure-run-title" data-i18n="projectAdventure.runTitle">Find the treasure.</h2><p class="practice-intro" data-i18n="topic.runIntro">Guess first. Then run real Python and check.</p></div>
+        <div class="topic-run-grid">
+          <article class="step-activity" data-activity-id="adventure-predict"><header class="step-activity-header"><span>1</span><h3 data-i18n="topic.predictTitle">Guess the result</h3></header><div class="quiz-scene"><p data-i18n="projectAdventure.predictScene">Read the game in the editor. Then look at PyBot&#x27;s answers.</p><p class="bug-wanted" data-i18n="projectAdventure.predictAnswer">PyBot&#x27;s answers: right, left, right</p></div><p class="activity-question" data-i18n="projectAdventure.predictQuestion">What is the last line Python shows?</p><div class="activity-options"><button type="button" data-i18n="projectAdventure.predictOpt1">Bag: []</button><button type="button" data-correct="true" data-i18n="projectAdventure.predictOpt2">Bag: [&#x27;key&#x27;]</button><button type="button" data-i18n="projectAdventure.predictOpt3">The chest is locked.</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <div class="topic-runner">
+            <div class="code-window" aria-label="Python exercise" data-i18n-aria-label="a11y.codePreview" data-python-runner>
+              <div class="window-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>adventure.py</span><span class="preview-tag" data-i18n="preview.tag">REAL PYTHON</span></div>
+              <div class="code-area"><span class="line-number" aria-hidden="true">1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29</span><label class="visually-hidden" for="python-code" data-i18n="preview.editorLabel">Python code</label><textarea id="python-code" data-python-editor data-code-key="projectAdventure.runCode" rows="30" spellcheck="false" autocapitalize="off" autocomplete="off">inventory = []
+room = &quot;hall&quot;
+
+while room != &quot;treasure&quot; and room != &quot;quit&quot;:
+    if room == &quot;hall&quot;:
+        choice = input(&quot;Hall: left, right or quit? &quot;)
+        if choice == &quot;left&quot;:
+            room = &quot;library&quot;
+        elif choice == &quot;right&quot;:
+            room = &quot;kitchen&quot;
+        elif choice == &quot;quit&quot;:
+            room = &quot;quit&quot;
+        else:
+            print(&quot;Only left, right or quit.&quot;)
+    elif room == &quot;library&quot;:
+        print(&quot;You find a key!&quot;)
+        inventory.append(&quot;key&quot;)
+        room = &quot;hall&quot;
+    elif room == &quot;kitchen&quot;:
+        if &quot;key&quot; in inventory:
+            print(&quot;The key opens the chest.&quot;)
+            room = &quot;treasure&quot;
+        else:
+            print(&quot;The chest is locked.&quot;)
+            room = &quot;hall&quot;
+
+if room == &quot;treasure&quot;:
+    print(&quot;You found the treasure!&quot;)
+print(&quot;Bag:&quot;, inventory)</textarea></div>
+              <div class="answers-area"><label class="answers-label" for="python-answers"><b data-i18n="answers.label">PyBot's answers</b><span data-i18n="answers.help">What you would type for each input(), one per line.</span></label><textarea id="python-answers" data-python-answers data-answers-key="projectAdventure.runAnswers" rows="3" spellcheck="false" autocapitalize="off" autocomplete="off">right
+left
+right</textarea></div>
+              <div class="output-area" role="status" aria-live="polite"><span class="output-label" data-i18n="preview.output">OUTPUT</span><p class="python-hint" data-python-hint hidden><strong data-i18n="preview.hintLabel">PyBot's hint</strong><span data-python-hint-text></span></p><pre data-python-output data-i18n="topic.runReady">Ready. Press Run Python.</pre></div>
+              <div class="runner-actions"><button class="run-button" type="button" data-python-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="stop-button" type="button" data-python-stop disabled><span aria-hidden="true">■</span><span data-i18n="preview.stop">Stop</span></button></div>
+              <details class="runtime-credit"><summary data-i18n="preview.creditSummary">Who makes Python run here?</summary><p data-i18n="preview.creditText">Pyodide 314.0.3 runs CPython in your browser with WebAssembly.</p><p><span data-i18n="preview.creditLicense">Open-source under the Mozilla Public License 2.0.</span> <a href="https://github.com/pyodide/pyodide/blob/314.0.3/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="preview.license">License</a></p></details>
+            </div>
+            <p class="topic-try"><b data-i18n="topic.tryLabel">Now change one thing:</b> <span data-i18n="projectAdventure.tryText">Change PyBot&#x27;s answers to: right, quit. Does the treasure line appear?</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic-practice" aria-labelledby="projectAdventure-build-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="projectAdventure.buildEyebrow">BUILD IT</p><h2 id="projectAdventure-build-title" data-i18n="projectAdventure.buildTitle">Build the game, piece by piece.</h2><p class="practice-intro" data-i18n="projectAdventure.buildIntro">Each task builds one part of an adventure. Match the goal.</p></div>
+        <div class="plan-progress-summary" aria-label="Activity progress" data-i18n-aria-label="progress.activitySummaryLabel" aria-live="polite"><div class="progress-complete"><strong data-progress-complete>0</strong><span data-i18n="progress.completed">Completed</span></div><div class="progress-remaining"><strong data-progress-remaining>11</strong><span data-i18n="progress.remaining">Not tried</span></div><div class="progress-review"><strong data-progress-review>0</strong><span data-i18n="progress.review">Review</span></div></div>
+        <div class="all-plans"><div class="step-activity-grid">
+          <article class="step-activity fix-activity" data-activity-id="adventure-tunnel" data-fix-expected-key="projectAdventure.fixTunnelExpected"><header class="step-activity-header"><span>01</span><h3 data-i18n="projectAdventure.fixTunnelTitle">Step 1: a choice inside a choice</h3></header><p class="activity-question" data-i18n="projectAdventure.fixTunnelTask">In the tunnel, PyBot asks about the torch but does nothing with it. Add the if and else.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="adventure-tunnel-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="adventure-tunnel-code" data-fix-code-key="projectAdventure.fixTunnelCode" rows="9" spellcheck="false" autocapitalize="off" autocomplete="off">choice = input(&quot;Door or tunnel? &quot;)
+if choice == &quot;door&quot;:
+    print(&quot;The door is locked.&quot;)
+elif choice == &quot;tunnel&quot;:
+    torch = input(&quot;Light the torch? yes or no? &quot;)
+    # Add an if inside: yes prints &quot;You see gold!&quot;
+    # Add an else: it prints &quot;It is too dark.&quot;
+</textarea><label class="fix-answers-label" for="adventure-tunnel-answers"><b data-i18n="answers.label">PyBot's answers</b></label><textarea class="fix-answers" id="adventure-tunnel-answers" data-fix-answers-key="projectAdventure.fixTunnelAnswers" rows="2" spellcheck="false" autocapitalize="off" autocomplete="off">tunnel
+yes</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="projectAdventure.fixTunnelExpected">Door or tunnel? tunnel
+Light the torch? yes or no? yes
+You see gold!</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="adventure-bag" data-fix-expected-key="projectAdventure.fixBagExpected"><header class="step-activity-header"><span>02</span><h3 data-i18n="projectAdventure.fixBagTitle">Step 2: the bag</h3></header><p class="activity-question" data-i18n="projectAdventure.fixBagTask">PyBot finds a torch but forgets to keep it. Put it in the bag.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="adventure-bag-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="adventure-bag-code" data-fix-code-key="projectAdventure.fixBagCode" rows="11" spellcheck="false" autocapitalize="off" autocomplete="off">bag = []
+print(&quot;You find a torch!&quot;)
+# Put &quot;torch&quot; in the bag with append.
+
+if &quot;torch&quot; in bag:
+    print(&quot;The cave lights up.&quot;)
+else:
+    print(&quot;It is too dark to walk.&quot;)
+print(&quot;Bag:&quot;, bag)
+</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="projectAdventure.fixBagExpected">You find a torch!
+The cave lights up.
+Bag: [&#x27;torch&#x27;]</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="adventure-quit" data-fix-expected-key="projectAdventure.fixQuitExpected"><header class="step-activity-header"><span>03</span><h3 data-i18n="projectAdventure.fixQuitTitle">Step 3: a way out</h3></header><p class="activity-question" data-i18n="projectAdventure.fixQuitTask">The loop never lets the player quit. Add the missing elif.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="adventure-quit-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="adventure-quit-code" data-fix-code-key="projectAdventure.fixQuitCode" rows="15" spellcheck="false" autocapitalize="off" autocomplete="off">room = &quot;cave&quot;
+while room != &quot;treasure&quot; and room != &quot;quit&quot;:
+    step = input(&quot;Dig, walk or quit? &quot;)
+    if step == &quot;dig&quot;:
+        room = &quot;treasure&quot;
+    elif step == &quot;walk&quot;:
+        print(&quot;You walk deeper into the cave.&quot;)
+    # Add an elif: if step is &quot;quit&quot;, put &quot;quit&quot; in room.
+
+if room == &quot;treasure&quot;:
+    print(&quot;You found the treasure!&quot;)
+else:
+    print(&quot;See you next time!&quot;)
+</textarea><label class="fix-answers-label" for="adventure-quit-answers"><b data-i18n="answers.label">PyBot's answers</b></label><textarea class="fix-answers" id="adventure-quit-answers" data-fix-answers-key="projectAdventure.fixQuitAnswers" rows="2" spellcheck="false" autocapitalize="off" autocomplete="off">walk
+quit</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="projectAdventure.fixQuitExpected">Dig, walk or quit? walk
+You walk deeper into the cave.
+Dig, walk or quit? quit
+See you next time!</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+        </div></div>
+      </section>
+
+      <section class="topic-practice" aria-labelledby="projectAdventure-practice-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.practiceEyebrow">YOUR TURN</p><h2 id="projectAdventure-practice-title" data-i18n="projectAdventure.practiceTitle">Questions about the game.</h2><p class="practice-intro" data-i18n="topic.practiceIntro">Try each tiny question. A wrong answer becomes something to review.</p></div>
+        <div class="all-plans"><div class="step-activity-grid">
+          <article class="step-activity" data-activity-id="adventure-room"><header class="step-activity-header"><span>04</span><h3 data-i18n="projectAdventure.quizRoomTitle">The room box</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="projectAdventure.quizRoomCode">room = &quot;hall&quot;</code></div><p class="activity-question" data-i18n="projectAdventure.quizRoomQuestion">What does the box room keep in the game?</p><div class="activity-options"><button type="button" data-i18n="projectAdventure.quizRoomOpt1">The player&#x27;s name</button><button type="button" data-correct="true" data-i18n="projectAdventure.quizRoomOpt2">The place where the player is now</button><button type="button" data-i18n="projectAdventure.quizRoomOpt3">Everything the player found</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="adventure-append"><header class="step-activity-header"><span>05</span><h3 data-i18n="projectAdventure.quizAppendTitle">Pick it up</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="projectAdventure.quizAppendCode">inventory = [&quot;map&quot;]
+inventory.append(&quot;key&quot;)
+print(inventory)</code></div><p class="activity-question" data-i18n="projectAdventure.quizAppendQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-i18n="projectAdventure.quizAppendOpt1">[&#x27;key&#x27;]</button><button type="button" data-correct="true" data-i18n="projectAdventure.quizAppendOpt2">[&#x27;map&#x27;, &#x27;key&#x27;]</button><button type="button" data-i18n="projectAdventure.quizAppendOpt3">[&#x27;key&#x27;, &#x27;map&#x27;]</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="adventure-locked"><header class="step-activity-header"><span>06</span><h3 data-i18n="projectAdventure.quizLockedTitle">Is the key in the bag?</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="projectAdventure.quizLockedCode">inventory = []
+if &quot;key&quot; in inventory:
+    print(&quot;The key opens the chest.&quot;)
+else:
+    print(&quot;The chest is locked.&quot;)</code></div><p class="activity-question" data-i18n="projectAdventure.quizLockedQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-i18n="projectAdventure.quizLockedOpt1">The key opens the chest.</button><button type="button" data-correct="true" data-i18n="projectAdventure.quizLockedOpt2">The chest is locked.</button><button type="button" data-i18n="projectAdventure.quizLockedOpt3">Both lines</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="adventure-caps"><header class="step-activity-header"><span>07</span><h3 data-i18n="projectAdventure.quizCapsTitle">Capital letters</h3></header><div class="quiz-scene"><p data-i18n="projectAdventure.quizCapsScene">In the hall, the player types: LEFT</p><code class="code-lines" data-i18n="projectAdventure.quizCapsCode">if choice == &quot;left&quot;:
+    room = &quot;library&quot;</code></div><p class="activity-question" data-i18n="projectAdventure.quizCapsQuestion">Does the player go to the library?</p><div class="activity-options"><button type="button" data-i18n="projectAdventure.quizCapsOpt1">Yes, it is the same word</button><button type="button" data-correct="true" data-i18n="projectAdventure.quizCapsOpt2">No, &quot;LEFT&quot; is not equal to &quot;left&quot;</button><button type="button" data-i18n="projectAdventure.quizCapsOpt3">Python changes it to left</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="adventure-nested"><header class="step-activity-header"><span>08</span><h3 data-i18n="projectAdventure.quizNestedTitle">A choice inside a choice</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="projectAdventure.quizNestedCode">elif room == &quot;kitchen&quot;:
+    if &quot;key&quot; in inventory:</code></div><p class="activity-question" data-i18n="projectAdventure.quizNestedQuestion">When does Python check the if about the key?</p><div class="activity-options"><button type="button" data-i18n="projectAdventure.quizNestedOpt1">Every time the loop repeats</button><button type="button" data-correct="true" data-i18n="projectAdventure.quizNestedOpt2">Only when room is &quot;kitchen&quot;</button><button type="button" data-i18n="projectAdventure.quizNestedOpt3">Never</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="adventure-stop"><header class="step-activity-header"><span>09</span><h3 data-i18n="projectAdventure.quizStopTitle">When does it end?</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="projectAdventure.quizStopCode">while room != &quot;treasure&quot; and room != &quot;quit&quot;:</code></div><p class="activity-question" data-i18n="projectAdventure.quizStopQuestion">When does this loop stop?</p><div class="activity-options"><button type="button" data-i18n="projectAdventure.quizStopOpt1">After 3 turns</button><button type="button" data-correct="true" data-i18n="projectAdventure.quizStopOpt2">When room is &quot;treasure&quot; or &quot;quit&quot;</button><button type="button" data-i18n="projectAdventure.quizStopOpt3">When the player finds the key</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="adventure-count"><header class="step-activity-header"><span>10</span><h3 data-i18n="projectAdventure.quizCountTitle">Count the questions</h3></header><div class="quiz-scene"><p data-i18n="projectAdventure.quizCountScene">Run the big game with these answers.</p><p class="bug-wanted" data-i18n="projectAdventure.quizCountTyped">PyBot&#x27;s answers: left, right</p></div><p class="activity-question" data-i18n="projectAdventure.quizCountQuestion">How many times does the game ask &quot;left, right or quit?&quot;</p><div class="activity-options"><button type="button" data-i18n="projectAdventure.quizCountOpt1">1 time</button><button type="button" data-correct="true" data-i18n="projectAdventure.quizCountOpt2">2 times</button><button type="button" data-i18n="projectAdventure.quizCountOpt3">3 times</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+        </div></div>
+        <div class="page-progress-tools"><div><strong data-i18n="progress.savedTitle">Your work is saved here.</strong><p data-i18n="progress.savedText">Want a fresh start? Clear only this page.</p></div><button type="button" data-reset-activities><span>↺</span><span data-i18n="progress.resetPage">Clear this page's progress</span></button><p class="progress-reset-status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-big-idea"><span class="big-idea-mark">!</span><div><span class="big-idea-label" data-i18n="lesson.bigIdea">BIG IDEA</span><h2 data-i18n="projectAdventure.bigTitle">A game is a loop of choices.</h2><p data-i18n="projectAdventure.bigText">A box remembers where you are, a list remembers what you carry, and while keeps the story going.</p></div></section>
+      <nav class="lesson-actions" aria-label="Lesson navigation" data-i18n-aria-label="a11y.lessonNav"><a class="button button-secondary" href="18-project-rps.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a><a class="button button-primary" href="18-project-quiz.html"><span data-i18n="projectAdventure.next">Quiz game</span><span>→</span></a></nav>
+    </main>
+  </body>
+</html>

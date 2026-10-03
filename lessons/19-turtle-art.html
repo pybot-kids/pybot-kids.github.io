@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta id="meta-description" name="description" content="Draw a scene with turtle functions: a filled square, a roof, a sun, and trees, placed with goto and painted with begin_fill and end_fill." data-i18n-content="meta.turtleArtDescription" /><meta name="theme-color" content="#fff8ec" /><title>Art with functions — PyBot</title><link rel="icon" href="../favicon.svg" type="image/svg+xml" /><link rel="stylesheet" href="../styles.css" /><script src="../script.js" defer></script></head>
+  <body class="lesson-page topic-page" data-page="turtleArt">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+    <header class="site-header lesson-site-header"><a class="brand" href="../index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home"><span class="brand-mark"><span></span></span><span>PyBot</span></a><div class="lesson-header-tools"><span class="lesson-progress" data-i18n="topic.progressTurtleArt">ZONE 13 · 3 OF 3</span><div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria-label="a11y.language"><button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button><button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button></div></div></header>
+    <main class="lesson-main" id="main-content">
+      <a class="lesson-back" href="19-turtle-shapes.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a>
+      <section class="topic-hero"><div class="topic-hero-copy"><p class="eyebrow"><span>13</span><b data-i18n="turtleArt.eyebrow">TURTLE DRAWING · ART</b></p><h1 data-i18n="turtleArt.title">Functions paint a picture.</h1><p data-i18n="turtleArt.intro">Put each drawing in a function. Then call them to build a house, a sun and trees.</p></div>
+        <aside class="lesson-pybot-scene topic-pybot-scene scene-turtle">
+          <div class="lesson-pybot-bubble">
+            <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+            <p data-i18n="turtleArt.pybot" data-pybot-message="turtleArt.pybot">I made a house function. Now I can build a whole street!</p>
+          </div>
+
+          <div class="turtle-buddy" aria-hidden="true">
+            <span class="turtle-buddy-trail"></span>
+            <span class="turtle-buddy-pen"></span>
+            <span class="turtle-buddy-leg turtle-buddy-leg-back"></span>
+            <span class="turtle-buddy-leg turtle-buddy-leg-front"></span>
+            <span class="turtle-buddy-tail"></span>
+            <span class="turtle-buddy-head"></span>
+            <span class="turtle-buddy-shell"><i></i><i></i><i></i></span>
+          </div>
+
+          <div class="pybot-wrap lesson-pybot-figure" data-mood="proud">
+            <div class="pybot" role="img" aria-label="PyBot stands proud next to a little turtle that leaves a dashed line as it walks" data-i18n-aria-label="turtleArt.robotLabel">
+              <div class="antenna" aria-hidden="true"><span></span></div>
+              <div class="ear ear-left" aria-hidden="true"></div>
+              <div class="ear ear-right" aria-hidden="true"></div>
+              <div class="bot-head">
+                <div class="bot-screen">
+                  <div class="brow brow-left" aria-hidden="true"></div>
+                  <div class="brow brow-right" aria-hidden="true"></div>
+                  <div class="eye eye-left" aria-hidden="true"><span></span></div>
+                  <div class="eye eye-right" aria-hidden="true"><span></span></div>
+                  <div class="cheek cheek-left" aria-hidden="true"></div>
+                  <div class="cheek cheek-right" aria-hidden="true"></div>
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="bot-neck" aria-hidden="true"></div>
+              <div class="arm arm-left" aria-hidden="true"><span class="hand"></span></div>
+              <div class="arm arm-right" aria-hidden="true"><span class="hand"></span></div>
+              <div class="bot-body">
+                <div class="chest-light" aria-hidden="true"></div>
+                <span class="chest-code" aria-hidden="true">&lt;/&gt;</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="topic-overview" aria-labelledby="turtleArt-life-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lifeEyebrow">IN REAL LIFE</p><h2 id="turtleArt-life-title" data-i18n="turtleArt.lifeTitle">Make it once, use it often.</h2><p class="practice-intro" data-i18n="turtleArt.lifeIntro">Artists and builders reuse pieces all the time.</p></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">🍪</span><h3 data-i18n="turtleArt.life1Title">A cookie cutter</h3><p data-i18n="turtleArt.life1Text">One cutter, many cookies. Each cookie can get a different icing.</p></article><article class="topic-info-card"><span aria-hidden="true">🧱</span><h3 data-i18n="turtleArt.life2Title">Building blocks</h3><p data-i18n="turtleArt.life2Text">Build a wall piece and a roof piece, then snap them into a house.</p></article><article class="topic-info-card"><span aria-hidden="true">🖍️</span><h3 data-i18n="turtleArt.life3Title">Coloring a page</h3><p data-i18n="turtleArt.life3Text">First draw the outline, then fill the inside with color.</p></article>
+      </div></section>
+
+      <section class="topic-overview" aria-labelledby="turtleArt-look-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lookEyebrow">LOOK FIRST</p><h2 id="turtleArt-look-title" data-i18n="turtleArt.lookTitle">Three tools for art.</h2></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">1</span><h3 data-i18n="turtleArt.look1Title">A function draws</h3><p data-i18n="turtleArt.look1Text">def square(size, fill) keeps the steps. square(50, "red") draws one.</p></article><article class="topic-info-card"><span aria-hidden="true">2</span><h3 data-i18n="turtleArt.look2Title">Fill it in</h3><p data-i18n="turtleArt.look2Text">color("black", "yellow"): black pen, yellow inside. begin_fill() and end_fill() wrap the shape.</p></article><article class="topic-info-card"><span aria-hidden="true">3</span><h3 data-i18n="turtleArt.look3Title">Jump with goto</h3><p data-i18n="turtleArt.look3Text">penup(), goto(x, y), pendown() moves the turtle to a new spot without a line.</p></article>
+      </div></section>
+
+      <section class="topic-overview" aria-labelledby="turtleArt-walk-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lookEyebrow">LOOK FIRST</p><h2 id="turtleArt-walk-title" data-i18n="turtleArt.walkTitle">Read it line by line.</h2><p class="practice-intro" data-i18n="turtleArt.walkIntro">A painted square on the left, a jump on the right.</p></div>
+        <div class="function-open-grid"><div class="function-open"><div class="function-line"><code data-i18n="turtleArt.walk1">def square(size, fill):</code><small data-i18n="turtleArt.walk1Tag">A function with two parameters: how big, and which paint.</small></div><div class="function-line"><code data-i18n="turtleArt.walk2">    t.color("black", fill)</code><small data-i18n="turtleArt.walk2Tag">Black pen. The inside gets the color in fill.</small></div><div class="function-line"><code data-i18n="turtleArt.walk3">    t.begin_fill()</code><small data-i18n="turtleArt.walk3Tag">Starts the shape that will get painted.</small></div><div class="function-line"><code data-i18n="turtleArt.walk4">    for i in range(4):</code><small data-i18n="turtleArt.walk4Tag">The square loop from the last page.</small></div><div class="function-line"><code data-i18n="turtleArt.walk5">        t.forward(size)</code><small data-i18n="turtleArt.walk5Tag">Each side is as long as size.</small></div><div class="function-line"><code data-i18n="turtleArt.walk6">        t.left(90)</code><small data-i18n="turtleArt.walk6Tag">One corner.</small></div><div class="function-line"><code data-i18n="turtleArt.walk7">    t.end_fill()</code><small data-i18n="turtleArt.walk7Tag">Pours the paint inside the square.</small></div></div><div class="function-open"><div class="function-line"><code data-i18n="turtleArt.walk8">def move(x, y):</code><small data-i18n="turtleArt.walk8Tag">A helper to jump to any spot.</small></div><div class="function-line"><code data-i18n="turtleArt.walk9">    t.penup()</code><small data-i18n="turtleArt.walk9Tag">Lift the pen: no line while jumping.</small></div><div class="function-line"><code data-i18n="turtleArt.walk10">    t.goto(x, y)</code><small data-i18n="turtleArt.walk10Tag">Go to x (sideways) and y (up or down). The middle is (0, 0).</small></div><div class="function-line"><code data-i18n="turtleArt.walk11">    t.pendown()</code><small data-i18n="turtleArt.walk11Tag">Pen down, ready to draw.</small></div><div class="function-line"><code data-i18n="turtleArt.walk12">move(-50, 20)</code><small data-i18n="turtleArt.walk12Tag">Jumps to 50 left and 20 up.</small></div><div class="function-line"><code data-i18n="turtleArt.walk13">square(60, "pink")</code><small data-i18n="turtleArt.walk13Tag">Draws a pink square there.</small></div></div></div>
+        <p class="topic-try"><b data-i18n="turtleArt.walkNoteTitle">The screen:</b> <span data-i18n="turtleArt.walkNoteText">It is 400 steps wide and 400 tall. x goes from -200 to 200, and y too.</span></p>
+      </section>
+
+      <section class="topic-run" aria-labelledby="turtleArt-run-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.runEyebrow">RUN IT</p><h2 id="turtleArt-run-title" data-i18n="turtleArt.runTitle">PyBot paints a little scene.</h2><p class="practice-intro" data-i18n="topic.runIntro">Guess first. Then run real Python and check.</p></div>
+        <div class="topic-run-grid">
+          <article class="step-activity" data-activity-id="art-predict"><header class="step-activity-header"><span>1</span><h3 data-i18n="topic.predictTitle">Guess the result</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="turtleArt.runCode">import turtle
+t = turtle.Turtle()
+turtle.bgcolor("lightblue")
+
+def move(x, y):
+    t.penup()
+    t.goto(x, y)
+    t.pendown()
+
+def square(size, fill):
+    t.color("black", fill)
+    t.begin_fill()
+    for i in range(4):
+        t.forward(size)
+        t.left(90)
+    t.end_fill()
+
+def roof(size, fill):
+    t.color("black", fill)
+    t.begin_fill()
+    for i in range(3):
+        t.forward(size)
+        t.left(120)
+    t.end_fill()
+
+move(-150, -120)
+square(120, "orange")
+move(-150, 0)
+roof(120, "red")
+move(100, 50)
+t.color("orange", "gold")
+t.begin_fill()
+t.circle(45)
+t.end_fill()</code></div><p class="activity-question" data-i18n="turtleArt.predictQuestion">What will the turtle draw?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="turtleArt.predictScene">An orange house with a red roof, and a gold sun</button><button type="button" data-i18n="turtleArt.predictSun">Only the sun: functions never draw</button><button type="button" data-i18n="turtleArt.predictSwap">A red house with an orange roof</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <div class="topic-runner">
+            <div class="code-window" aria-label="Python exercise" data-i18n-aria-label="a11y.codePreview" data-python-runner>
+              <div class="window-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>art.py</span><span class="preview-tag" data-i18n="preview.tag">REAL PYTHON</span></div>
+              <div class="code-area"><span class="line-number" aria-hidden="true">1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34</span><label class="visually-hidden" for="python-code" data-i18n="preview.editorLabel">Python code</label><textarea id="python-code" data-python-editor data-code-key="turtleArt.runCode" rows="35" spellcheck="false" autocapitalize="off" autocomplete="off">import turtle
+t = turtle.Turtle()
+turtle.bgcolor("lightblue")
+
+def move(x, y):
+    t.penup()
+    t.goto(x, y)
+    t.pendown()
+
+def square(size, fill):
+    t.color("black", fill)
+    t.begin_fill()
+    for i in range(4):
+        t.forward(size)
+        t.left(90)
+    t.end_fill()
+
+def roof(size, fill):
+    t.color("black", fill)
+    t.begin_fill()
+    for i in range(3):
+        t.forward(size)
+        t.left(120)
+    t.end_fill()
+
+move(-150, -120)
+square(120, "orange")
+move(-150, 0)
+roof(120, "red")
+move(100, 50)
+t.color("orange", "gold")
+t.begin_fill()
+t.circle(45)
+t.end_fill()</textarea></div>
+              <div class="output-area" role="status" aria-live="polite"><span class="output-label" data-i18n="preview.output">OUTPUT</span><p class="python-hint" data-python-hint hidden><strong data-i18n="preview.hintLabel">PyBot's hint</strong><span data-python-hint-text></span></p><pre data-python-output data-i18n="topic.runReady">Ready. Press Run Python.</pre><canvas class="turtle-canvas" data-turtle-canvas role="img" aria-label="The turtle's drawing" data-i18n-aria-label="turtle.canvasLabel"></canvas></div>
+              <div class="runner-actions"><button class="run-button" type="button" data-python-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="stop-button" type="button" data-python-stop disabled><span aria-hidden="true">■</span><span data-i18n="preview.stop">Stop</span></button></div>
+              <details class="runtime-credit"><summary data-i18n="preview.creditSummary">Who makes Python run here?</summary><p data-i18n="preview.creditText">Pyodide 314.0.3 runs CPython in your browser with WebAssembly.</p><p><span data-i18n="preview.creditLicense">Open-source under the Mozilla Public License 2.0.</span> <a href="https://github.com/pyodide/pyodide/blob/314.0.3/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="preview.license">License</a></p></details>
+            </div>
+            <p class="topic-try"><b data-i18n="topic.tryLabel">Now change one thing:</b> <span data-i18n="turtleArt.tryText">Add two lines at the end: move(-110, -120), then square(40, "brown") for a door.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic-practice" aria-labelledby="turtleArt-practice-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.practiceEyebrow">YOUR TURN</p><h2 id="turtleArt-practice-title" data-i18n="turtleArt.practiceTitle">Build your scene.</h2><p class="practice-intro" data-i18n="topic.practiceIntro">Try each tiny question. A wrong answer becomes something to review.</p></div>
+        <div class="plan-progress-summary" aria-label="Activity progress" data-i18n-aria-label="progress.activitySummaryLabel" aria-live="polite"><div class="progress-complete"><strong data-progress-complete>0</strong><span data-i18n="progress.completed">Completed</span></div><div class="progress-remaining"><strong data-progress-remaining>13</strong><span data-i18n="progress.remaining">Not tried</span></div><div class="progress-review"><strong data-progress-review>0</strong><span data-i18n="progress.review">Review</span></div></div>
+        <div class="all-plans"><div class="step-activity-grid">
+          <article class="step-activity" data-activity-id="art-everyday"><header class="step-activity-header"><span>01</span><h3 data-i18n="turtleArt.quizEverydayTitle">Like a function in real life</h3></header><div class="quiz-scene" data-i18n="turtleArt.quizEverydayScene">A function keeps drawing steps so you can use them again.</div><p class="activity-question" data-i18n="turtleArt.quizEverydayQuestion">Which one works like a drawing function?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="turtleArt.quizEverydayStamp">A rubber stamp you press again and again</button><button type="button" data-i18n="turtleArt.quizEverydayEraser">An eraser</button><button type="button" data-i18n="turtleArt.quizEverydayPage">A blank page</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="art-def"><header class="step-activity-header"><span>02</span><h3 data-i18n="turtleArt.quizDefTitle">Only the def</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="turtleArt.quizDefCode">def triangle():
+    for i in range(3):
+        t.forward(80)
+        t.left(120)</code></div><p class="activity-question" data-i18n="turtleArt.quizDefQuestion">What does the turtle draw?</p><div class="activity-options"><button type="button" data-i18n="turtleArt.quizDefTriangle">A triangle</button><button type="button" data-correct="true" data-i18n="turtleArt.quizDefNothing">Nothing yet: no line calls the function</button><button type="button" data-i18n="turtleArt.quizDefError">An error</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="art-size"><header class="step-activity-header"><span>03</span><h3 data-i18n="turtleArt.quizSizeTitle">Two sizes</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="turtleArt.quizSizeCode">square(30, "red")
+square(90, "blue")</code></div><p class="activity-question" data-i18n="turtleArt.quizSizeQuestion">Which square is bigger?</p><div class="activity-options"><button type="button" data-i18n="turtleArt.quizSizeFirst">The red one</button><button type="button" data-correct="true" data-i18n="turtleArt.quizSizeSecond">The blue one: its size is 90</button><button type="button" data-i18n="turtleArt.quizSizeSame">They are the same size</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="art-colors"><header class="step-activity-header"><span>04</span><h3 data-i18n="turtleArt.quizColorsTitle">Pen and fill</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="turtleArt.quizColorsCode">t.color("black", "yellow")
+t.begin_fill()
+t.circle(40)
+t.end_fill()</code></div><p class="activity-question" data-i18n="turtleArt.quizColorsQuestion">What does the circle look like?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="turtleArt.quizColorsRight">A black edge, yellow inside</button><button type="button" data-i18n="turtleArt.quizColorsSwap">A yellow edge, black inside</button><button type="button" data-i18n="turtleArt.quizColorsBlack">All black</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="art-nofill"><header class="step-activity-header"><span>05</span><h3 data-i18n="turtleArt.quizNoFillTitle">A missing line</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="turtleArt.quizNoFillCode">t.color("black", "green")
+t.begin_fill()
+for i in range(4):
+    t.forward(60)
+    t.left(90)</code></div><p class="activity-question" data-i18n="turtleArt.quizNoFillQuestion">There is no end_fill(). What do you see?</p><div class="activity-options"><button type="button" data-i18n="turtleArt.quizNoFillGreen">A green square</button><button type="button" data-correct="true" data-i18n="turtleArt.quizNoFillEmpty">A square with no paint inside</button><button type="button" data-i18n="turtleArt.quizNoFillNothing">Nothing at all</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="art-goto"><header class="step-activity-header"><span>06</span><h3 data-i18n="turtleArt.quizGotoTitle">Jump to a spot</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="turtleArt.quizGotoCode">t.penup()
+t.goto(100, 50)
+t.pendown()</code></div><p class="activity-question" data-i18n="turtleArt.quizGotoQuestion">Where does the turtle go?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="turtleArt.quizGotoRight">100 steps right and 50 up from the middle</button><button type="button" data-i18n="turtleArt.quizGotoUp">100 steps up and 50 right</button><button type="button" data-i18n="turtleArt.quizGotoWalk">Forward 150 steps</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="art-pen"><header class="step-activity-header"><span>07</span><h3 data-i18n="turtleArt.quizPenTitle">goto with the pen down</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="turtleArt.quizPenCode">t.forward(50)
+t.goto(-80, 60)</code></div><p class="activity-question" data-i18n="turtleArt.quizPenQuestion">Does goto() draw a line?</p><div class="activity-options"><button type="button" data-i18n="turtleArt.quizPenNever">No, goto() never draws</button><button type="button" data-correct="true" data-i18n="turtleArt.quizPenYes">Yes, the pen is down, so it draws a line there</button><button type="button" data-i18n="turtleArt.quizPenCircle">It draws a circle</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="art-bgcolor"><header class="step-activity-header"><span>08</span><h3 data-i18n="turtleArt.quizBgTitle">A new background</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="turtleArt.quizBgCode">turtle.bgcolor("navy")</code></div><p class="activity-question" data-i18n="turtleArt.quizBgQuestion">What changes?</p><div class="activity-options"><button type="button" data-i18n="turtleArt.quizBgPen">The pen color</button><button type="button" data-i18n="turtleArt.quizBgTurtle">The turtle's color</button><button type="button" data-correct="true" data-i18n="turtleArt.quizBgSky">The whole background turns navy blue</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="art-calls"><header class="step-activity-header"><span>09</span><h3 data-i18n="turtleArt.quizCallsTitle">How many houses?</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="turtleArt.quizCallsCode">move(-150, 0)
+house()
+move(50, 0)
+house()</code></div><p class="activity-question" data-i18n="turtleArt.quizCallsQuestion">How many houses appear?</p><div class="activity-options"><button type="button" data-i18n="turtleArt.quizCallsOne">1</button><button type="button" data-correct="true" data-i18n="turtleArt.quizCallsTwo">2, in different places</button><button type="button" data-i18n="turtleArt.quizCallsFour">4</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="art-fix-fill" data-turtle-goal='{&quot;bg&quot;:&quot;white&quot;,&quot;commands&quot;:[{&quot;t&quot;:&quot;fill&quot;,&quot;points&quot;:[[0.0,0.0],[120.0,0.0],[120.0,120.0],[0.0,120.0],[0.0,0.0]],&quot;c&quot;:&quot;yellow&quot;,&quot;step&quot;:5},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:0.0,&quot;y1&quot;:0.0,&quot;x2&quot;:120.0,&quot;y2&quot;:0.0,&quot;c&quot;:&quot;black&quot;,&quot;w&quot;:1.0,&quot;step&quot;:1},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:120.0,&quot;y1&quot;:0.0,&quot;x2&quot;:120.0,&quot;y2&quot;:120.0,&quot;c&quot;:&quot;black&quot;,&quot;w&quot;:1.0,&quot;step&quot;:2},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:120.0,&quot;y1&quot;:120.0,&quot;x2&quot;:0.0,&quot;y2&quot;:120.0,&quot;c&quot;:&quot;black&quot;,&quot;w&quot;:1.0,&quot;step&quot;:3},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:0.0,&quot;y1&quot;:120.0,&quot;x2&quot;:0.0,&quot;y2&quot;:0.0,&quot;c&quot;:&quot;black&quot;,&quot;w&quot;:1.0,&quot;step&quot;:4}]}'><header class="step-activity-header"><span>10</span><h3 data-i18n="fix.title">Fix PyBot's code</h3></header><p class="activity-question" data-i18n="turtleArt.fixFillTask">The square should be painted yellow, but the paint never pours in. Add the missing line.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="art-fix-fill-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="art-fix-fill-code" data-fix-code-key="turtleArt.fixFillCode" rows="13" spellcheck="false" autocapitalize="off" autocomplete="off">import turtle
+t = turtle.Turtle()
+
+def square(size, fill):
+    t.color("black", fill)
+    t.begin_fill()
+    for i in range(4):
+        t.forward(size)
+        t.left(90)
+
+square(120, "yellow")
+</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="turtle.goal">Goal drawing</span><canvas class="turtle-canvas" data-turtle-goal-canvas role="img" aria-label="The turtle's drawing" data-i18n-aria-label="turtle.canvasLabel"></canvas><span class="fix-label" data-i18n="turtle.yours">Your drawing</span><canvas class="turtle-canvas" data-fix-turtle role="img" aria-label="The turtle's drawing" data-i18n-aria-label="turtle.canvasLabel"></canvas><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="art-fix-sun" data-turtle-goal='{&quot;bg&quot;:&quot;lightblue&quot;,&quot;commands&quot;:[{&quot;t&quot;:&quot;fill&quot;,&quot;points&quot;:[[60.0,40.0],[75.45,42.45],[89.39,49.55],[100.45,60.61],[107.55,74.55],[110.0,90.0],[107.55,105.45],[100.45,119.39],[89.39,130.45],[75.45,137.55],[60.0,140.0],[44.55,137.55],[30.61,130.45],[19.55,119.39],[12.45,105.45],[10.0,90.0],[12.45,74.55],[19.55,60.61],[30.61,49.55],[44.55,42.45],[60.0,40.0]],&quot;c&quot;:&quot;gold&quot;,&quot;step&quot;:21},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:60.0,&quot;y1&quot;:40.0,&quot;x2&quot;:75.45,&quot;y2&quot;:42.45,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:1},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:75.45,&quot;y1&quot;:42.45,&quot;x2&quot;:89.39,&quot;y2&quot;:49.55,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:2},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:89.39,&quot;y1&quot;:49.55,&quot;x2&quot;:100.45,&quot;y2&quot;:60.61,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:3},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:100.45,&quot;y1&quot;:60.61,&quot;x2&quot;:107.55,&quot;y2&quot;:74.55,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:4},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:107.55,&quot;y1&quot;:74.55,&quot;x2&quot;:110.0,&quot;y2&quot;:90.0,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:5},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:110.0,&quot;y1&quot;:90.0,&quot;x2&quot;:107.55,&quot;y2&quot;:105.45,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:6},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:107.55,&quot;y1&quot;:105.45,&quot;x2&quot;:100.45,&quot;y2&quot;:119.39,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:7},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:100.45,&quot;y1&quot;:119.39,&quot;x2&quot;:89.39,&quot;y2&quot;:130.45,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:8},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:89.39,&quot;y1&quot;:130.45,&quot;x2&quot;:75.45,&quot;y2&quot;:137.55,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:9},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:75.45,&quot;y1&quot;:137.55,&quot;x2&quot;:60.0,&quot;y2&quot;:140.0,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:10},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:60.0,&quot;y1&quot;:140.0,&quot;x2&quot;:44.55,&quot;y2&quot;:137.55,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:11},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:44.55,&quot;y1&quot;:137.55,&quot;x2&quot;:30.61,&quot;y2&quot;:130.45,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:12},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:30.61,&quot;y1&quot;:130.45,&quot;x2&quot;:19.55,&quot;y2&quot;:119.39,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:13},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:19.55,&quot;y1&quot;:119.39,&quot;x2&quot;:12.45,&quot;y2&quot;:105.45,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:14},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:12.45,&quot;y1&quot;:105.45,&quot;x2&quot;:10.0,&quot;y2&quot;:90.0,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:15},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:10.0,&quot;y1&quot;:90.0,&quot;x2&quot;:12.45,&quot;y2&quot;:74.55,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:16},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:12.45,&quot;y1&quot;:74.55,&quot;x2&quot;:19.55,&quot;y2&quot;:60.61,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:17},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:19.55,&quot;y1&quot;:60.61,&quot;x2&quot;:30.61,&quot;y2&quot;:49.55,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:18},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:30.61,&quot;y1&quot;:49.55,&quot;x2&quot;:44.55,&quot;y2&quot;:42.45,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:19},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:44.55,&quot;y1&quot;:42.45,&quot;x2&quot;:60.0,&quot;y2&quot;:40.0,&quot;c&quot;:&quot;orange&quot;,&quot;w&quot;:1.0,&quot;step&quot;:20}]}'><header class="step-activity-header"><span>11</span><h3 data-i18n="fix.title">Fix PyBot's code</h3></header><p class="activity-question" data-i18n="turtleArt.fixSunTask">PyBot moved the turtle to the sky, but no sun appears. Make the sun show up.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="art-fix-sun-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="art-fix-sun-code" data-fix-code-key="turtleArt.fixSunCode" rows="18" spellcheck="false" autocapitalize="off" autocomplete="off">import turtle
+t = turtle.Turtle()
+turtle.bgcolor("lightblue")
+
+def move(x, y):
+    t.penup()
+    t.goto(x, y)
+    t.pendown()
+
+def sun():
+    t.color("orange", "gold")
+    t.begin_fill()
+    t.circle(50)
+    t.end_fill()
+
+move(60, 40)
+</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="turtle.goal">Goal drawing</span><canvas class="turtle-canvas" data-turtle-goal-canvas role="img" aria-label="The turtle's drawing" data-i18n-aria-label="turtle.canvasLabel"></canvas><span class="fix-label" data-i18n="turtle.yours">Your drawing</span><canvas class="turtle-canvas" data-fix-turtle role="img" aria-label="The turtle's drawing" data-i18n-aria-label="turtle.canvasLabel"></canvas><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="art-fix-trees" data-turtle-goal='{&quot;bg&quot;:&quot;white&quot;,&quot;commands&quot;:[{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:-100.0,&quot;y1&quot;:-120.0,&quot;x2&quot;:-100.0,&quot;y2&quot;:-50.0,&quot;c&quot;:&quot;brown&quot;,&quot;w&quot;:12.0,&quot;step&quot;:1},{&quot;t&quot;:&quot;dot&quot;,&quot;x&quot;:-100.0,&quot;y&quot;:-50.0,&quot;size&quot;:80.0,&quot;c&quot;:&quot;green&quot;,&quot;step&quot;:2},{&quot;t&quot;:&quot;line&quot;,&quot;x1&quot;:80.0,&quot;y1&quot;:-120.0,&quot;x2&quot;:80.0,&quot;y2&quot;:-50.0,&quot;c&quot;:&quot;brown&quot;,&quot;w&quot;:12.0,&quot;step&quot;:3},{&quot;t&quot;:&quot;dot&quot;,&quot;x&quot;:80.0,&quot;y&quot;:-50.0,&quot;size&quot;:80.0,&quot;c&quot;:&quot;green&quot;,&quot;step&quot;:4}]}'><header class="step-activity-header"><span>12</span><h3 data-i18n="fix.title">Fix PyBot's code</h3></header><p class="activity-question" data-i18n="turtleArt.fixTreesTask">Two trees should stand apart, the second one at x = 80. Both land in the same spot. Fix the second call.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="art-fix-trees-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="art-fix-trees-code" data-fix-code-key="turtleArt.fixTreesCode" rows="20" spellcheck="false" autocapitalize="off" autocomplete="off">import turtle
+t = turtle.Turtle()
+
+def move(x, y):
+    t.penup()
+    t.goto(x, y)
+    t.pendown()
+
+def tree(x):
+    move(x, -120)
+    t.setheading(90)
+    t.color("brown")
+    t.pensize(12)
+    t.forward(70)
+    t.dot(80, "green")
+
+tree(-100)
+tree(-100)
+</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="turtle.goal">Goal drawing</span><canvas class="turtle-canvas" data-turtle-goal-canvas role="img" aria-label="The turtle's drawing" data-i18n-aria-label="turtle.canvasLabel"></canvas><span class="fix-label" data-i18n="turtle.yours">Your drawing</span><canvas class="turtle-canvas" data-fix-turtle role="img" aria-label="The turtle's drawing" data-i18n-aria-label="turtle.canvasLabel"></canvas><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+        </div></div>
+        <div class="page-progress-tools"><div><strong data-i18n="progress.savedTitle">Your work is saved here.</strong><p data-i18n="progress.savedText">Want a fresh start? Clear only this page.</p></div><button type="button" data-reset-activities><span>↺</span><span data-i18n="progress.resetPage">Clear this page's progress</span></button><p class="progress-reset-status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-big-idea"><span class="big-idea-mark">!</span><div><span class="big-idea-label" data-i18n="lesson.bigIdea">BIG IDEA</span><h2 data-i18n="turtleArt.bigTitle">Functions turn drawings into building blocks.</h2><p data-i18n="turtleArt.bigText">Make each piece once, give it parameters for size and color, and place it with goto. You reached the end of the path for now. Great work!</p></div></section>
+      <nav class="lesson-actions" aria-label="Lesson navigation" data-i18n-aria-label="a11y.lessonNav"><a class="button button-secondary" href="19-turtle-shapes.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a><a class="button button-primary" href="../course.html"><span data-i18n="lesson.backPath">Back to the path</span><span>→</span></a></nav>
+    </main>
+  </body>
+</html>
