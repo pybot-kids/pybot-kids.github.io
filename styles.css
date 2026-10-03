@@ -4540,7 +4540,9 @@ a {
 .topic-page[data-page="comparisons"] .topic-hero,
 .topic-page[data-page="comparisonsAnd"] .topic-hero,
 .topic-page[data-page="comparisonsOr"] .topic-hero,
-.topic-page[data-page="comparisonsNot"] .topic-hero {
+.topic-page[data-page="comparisonsNot"] .topic-hero,
+.topic-page[data-page="comparisonsIn"] .topic-hero,
+.topic-page[data-page="comparisonsLogic"] .topic-hero {
   border-top-color: var(--blue);
 }
 
@@ -5280,6 +5282,11 @@ a {
 
 .scene-compare-not {
   grid-template-columns: repeat(2, auto);
+}
+
+/* Multi-line quiz scenes (clue lists, a rule and its code line). */
+.quiz-scene-lines {
+  white-space: pre-line;
 }
 
 .compare-table.truth-table th,
