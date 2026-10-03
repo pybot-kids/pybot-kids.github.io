@@ -205,7 +205,7 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.language` | `en` or `es` | Interface language preference | Yes |
 | `pybot.audio.enabled` | `true` or `false` | Optional robot ambience preference; defaults to `true` | Yes |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
-| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `changingBoxes`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `comparisonsAnd`, `comparisonsOr`, `comparisonsNot`, `functions`, `checkpoint1`, `bugs`, `bugsCode`, or `bugsDetective` | Highlights the learner's current place across the complete small path | Yes |
+| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `changingBoxes`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `comparisonsAnd`, `comparisonsOr`, `comparisonsNot`, `functionsDo`, `functions`, `functionsMethods`, `checkpoint1`, `bugs`, `bugsCode`, or `bugsDetective` | Highlights the learner's current place across the complete small path | Yes |
 | `pybot.path.visited` | Comma-separated step ids from `pybot.path.current` | Remembers which pages the learner has opened, so steps added to the path later show as new and pending | Yes |
 | `pybot.path.done` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps the learner finished, so a finished step that later gains activities shows **NEW ACTIVITIES** | Yes |
 | `pybot.path.known` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps were on the path when the learner started, so a step added later shows as new even when it is ahead of the learner | Yes |
@@ -232,7 +232,9 @@ Registered activity IDs:
 - True or false (and): `and-everyday`, `and-both`, `and-one-false`, `and-numbers`, `and-coins`, `and-table`, `and-word`, `and-predict`, and `and-fix`
 - True or false (or): `or-everyday`, `or-both-false`, `or-one`, `or-numbers`, `or-pet`, `or-table`, `or-choose`, `or-predict`, and `or-fix`
 - True or false (not): `not-everyday`, `not-false`, `not-box`, `not-compare`, `not-twice`, `not-mix`, `not-parens`, `not-predict`, and `not-fix`
-- Functions: `function-input`, `function-output`, `function-inside`, `function-predict`, `function-name`, `function-call`, and `function-fix`
+- Functions, def (no return): `do-everyday`, `do-def`, `do-not-yet`, `do-call`, `do-twice`, `do-param`, `do-inside`, `do-predict`, and `do-fix`
+- Functions, return: `function-input`, `function-output`, `function-inside`, `function-predict`, `function-name`, `function-call`, `function-fix`, and `function-everyday`
+- Functions, methods: `method-everyday`, `method-dot`, `method-upper`, `method-replace`, `method-append`, `method-count`, `method-belongs`, `method-predict`, and `method-fix`
 - Pit stop 1: `checkpoint-backpack`, `checkpoint-light`, `checkpoint-outside`, `checkpoint-countdown`, `checkpoint-stars`, and `checkpoint-battery`
 - Bugs in everyday steps: `bug-steps-order`, `bug-steps-missing`, `bug-steps-wrong`, `bug-steps-forever`, `bug-steps-decision`, `bug-steps-fix`, and `bug-steps-square`
 - Bugs in code: `bug-predict`, `bug-meaning`, `bug-line`, `bug-clue`, `bug-sneaky`, `bug-text`, `bug-which-fix`, `bug-list`, `bug-fix-loud`, `bug-fix-sneaky`, and `bug-fix-double`
@@ -506,7 +508,9 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |   |-- 09b-true-or-false-and.html
 |   |-- 09b-true-or-false-or.html
 |   |-- 09b-true-or-false-not.html
+|   |-- 10-functions-do.html
 |   |-- 10-functions.html
+|   |-- 10-functions-methods.html
 |   |-- 11-checkpoint.html
 |   |-- 12-bugs.html
 |   |-- 12-bugs-code.html

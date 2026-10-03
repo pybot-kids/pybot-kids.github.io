@@ -894,6 +894,266 @@
           "detective-fix"
         ]
       }
+    },
+    {
+      "version": 6,
+      "date": "2026-10-03",
+      "note": "Split the functions zone into def, return and methods pages (functionsDo, functionsMethods steps; do-*, method-* and function-everyday activities)",
+      "steps": {
+        "world": [],
+        "thinking": [
+          "water",
+          "bag",
+          "hands",
+          "teeth",
+          "dressed",
+          "cereal",
+          "drawing",
+          "bedtime",
+          "reading",
+          "photo"
+        ],
+        "language": [],
+        "keyboard": [
+          "keyboard-backspace",
+          "keyboard-undo",
+          "keyboard-copy",
+          "keyboard-enter",
+          "keyboard-shift",
+          "keyboard-paste",
+          "keyboard-fix"
+        ],
+        "environment": [
+          "environment-editor",
+          "environment-engine",
+          "environment-version",
+          "environment-stop",
+          "environment-output",
+          "environment-browser",
+          "environment-fix"
+        ],
+        "symbols": [
+          "symbol-text",
+          "symbol-assign",
+          "symbol-block",
+          "symbol-parens",
+          "symbol-note",
+          "symbol-join",
+          "symbol-fix"
+        ],
+        "variables": [
+          "memory-ram",
+          "variable-name",
+          "variable-value",
+          "variable-predict",
+          "variable-change",
+          "variable-label",
+          "variable-fix"
+        ],
+        "boxes": [
+          "boxes-text",
+          "boxes-yesno",
+          "boxes-list",
+          "boxes-grid",
+          "boxes-predict",
+          "boxes-decimal",
+          "boxes-fix"
+        ],
+        "changingBoxes": [
+          "changing-predict",
+          "changing-plus",
+          "changing-short",
+          "changing-minus",
+          "changing-times",
+          "changing-math",
+          "changing-join",
+          "changing-text-numbers",
+          "changing-fix"
+        ],
+        "conditionals": [
+          "conditional-rain",
+          "conditional-battery",
+          "conditional-else",
+          "conditional-predict",
+          "conditional-skip",
+          "conditional-after",
+          "conditional-elif",
+          "conditional-one",
+          "conditional-fix",
+          "conditional-everyday"
+        ],
+        "conditionalsElif": [
+          "elif-everyday",
+          "elif-meaning",
+          "elif-light",
+          "elif-first",
+          "elif-order",
+          "elif-none",
+          "elif-two-ifs",
+          "elif-many",
+          "elif-predict",
+          "elif-fix"
+        ],
+        "conditionalsMatch": [
+          "match-everyday",
+          "match-name",
+          "match-fruit",
+          "match-rest",
+          "match-underscore",
+          "match-or",
+          "match-one",
+          "match-same",
+          "match-predict",
+          "match-fix"
+        ],
+        "loops": [
+          "loop-count",
+          "loop-action",
+          "loop-stop",
+          "loop-predict",
+          "loop-zero",
+          "loop-list",
+          "loop-once",
+          "loop-total",
+          "loop-fix"
+        ],
+        "loopsWhile": [
+          "while-check",
+          "while-count",
+          "while-last",
+          "while-zero",
+          "while-forever",
+          "while-choose",
+          "while-predict",
+          "while-fix"
+        ],
+        "loopsUntil": [
+          "until-meaning",
+          "until-not",
+          "until-break",
+          "until-done",
+          "until-count",
+          "until-word",
+          "until-predict",
+          "until-fix"
+        ],
+        "comparisons": [
+          "compare-less",
+          "compare-equal",
+          "compare-assign",
+          "compare-not-equal",
+          "compare-and",
+          "compare-or",
+          "compare-not",
+          "compare-predict",
+          "compare-fix",
+          "compare-everyday"
+        ],
+        "comparisonsAnd": [
+          "and-everyday",
+          "and-both",
+          "and-one-false",
+          "and-numbers",
+          "and-coins",
+          "and-table",
+          "and-word",
+          "and-predict",
+          "and-fix"
+        ],
+        "comparisonsOr": [
+          "or-everyday",
+          "or-both-false",
+          "or-one",
+          "or-numbers",
+          "or-pet",
+          "or-table",
+          "or-choose",
+          "or-predict",
+          "or-fix"
+        ],
+        "comparisonsNot": [
+          "not-everyday",
+          "not-false",
+          "not-box",
+          "not-compare",
+          "not-twice",
+          "not-mix",
+          "not-parens",
+          "not-predict",
+          "not-fix"
+        ],
+        "functionsDo": [
+          "do-everyday",
+          "do-def",
+          "do-not-yet",
+          "do-call",
+          "do-twice",
+          "do-param",
+          "do-inside",
+          "do-predict",
+          "do-fix"
+        ],
+        "functions": [
+          "function-input",
+          "function-output",
+          "function-inside",
+          "function-predict",
+          "function-name",
+          "function-call",
+          "function-fix",
+          "function-everyday"
+        ],
+        "functionsMethods": [
+          "method-everyday",
+          "method-dot",
+          "method-upper",
+          "method-replace",
+          "method-append",
+          "method-count",
+          "method-belongs",
+          "method-predict",
+          "method-fix"
+        ],
+        "checkpoint1": [
+          "checkpoint-backpack",
+          "checkpoint-light",
+          "checkpoint-outside",
+          "checkpoint-countdown",
+          "checkpoint-stars",
+          "checkpoint-battery"
+        ],
+        "bugs": [
+          "bug-steps-order",
+          "bug-steps-missing",
+          "bug-steps-wrong",
+          "bug-steps-forever",
+          "bug-steps-decision",
+          "bug-steps-fix",
+          "bug-steps-square"
+        ],
+        "bugsCode": [
+          "bug-predict",
+          "bug-meaning",
+          "bug-line",
+          "bug-clue",
+          "bug-sneaky",
+          "bug-text",
+          "bug-which-fix",
+          "bug-list",
+          "bug-fix-loud",
+          "bug-fix-sneaky",
+          "bug-fix-double"
+        ],
+        "bugsDetective": [
+          "detective-trace",
+          "detective-trace-loop",
+          "detective-print",
+          "detective-duck",
+          "detective-report",
+          "detective-test",
+          "detective-fix"
+        ]
+      }
     }
   ]
 }
