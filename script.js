@@ -300,6 +300,16 @@ const translations = {
     "hint.zero": "Nothing can be divided by zero, not even by Python.",
     "hint.intText": "int() can only turn digits, like \"7\", into a number.",
     "hint.generic": "Read the last line below. It names the clue Python found.",
+    "hint.floatText": "float() can only turn a number written as text, like \"2.5\", into a number.",
+    "hint.noAnswer": "input() asked a question, but PyBot's answers ran out. Add one more line in the answers box.",
+    "hint.turtleColor": "The turtle doesn't know that color. Try a color name in quotes, like \"red\".",
+    "hint.turtleMissing": "The turtle doesn't know that command. Check the spelling.",
+    "answers.label": "PyBot's answers",
+    "answers.help": "What you would type for each input(), one per line.",
+    "turtle.canvasLabel": "The turtle's drawing",
+    "turtle.goal": "Goal drawing",
+    "turtle.yours": "Your drawing",
+    "turtle.drawn": "Python ran! Look at the drawing.",
     "preview.stopped": "Stopped. Your code is still here.",
     "preview.serveHint": "The real runner needs GitHub Pages or a local web server. Browsers block it on file:// pages.",
     "preview.run": "Run Python",
@@ -3454,6 +3464,172 @@ const translations = {
     "thinking.detective-fixHint": "Not yet. Spy inside the loop: the total grows by one extra each turn. Remember to remove the spy print at the end.",
     "bugsDetective.bigTitle": "Good detectives look, they don't guess.",
     "bugsDetective.bigText": "Trace the boxes, spy with print, explain it out loud, and report clearly. Now you are a real bug hunter!",
+    "missionInput.concept": "TALK TO PYBOT",
+    "missionInput.title": "Talk to PyBot",
+    "missionInput.text": "Ask questions with input(), turn answers into numbers, and chat with PyBot.",
+    "path.inputLabel": "Talk to PyBot pages",
+    "path.inputAsk": "Ask with input()",
+    "path.inputNumbers": "Numbers from answers",
+    "path.inputChat": "Chat with PyBot",
+    "missionRandom.concept": "RANDOM",
+    "missionRandom.title": "Dice and Surprises",
+    "missionRandom.text": "Roll dice, pick surprises, and build games of chance with random.",
+    "path.randomLabel": "Dice and surprises pages",
+    "path.randomNumbers": "Random numbers",
+    "path.randomChoice": "Random choices",
+    "path.randomGames": "Games of chance",
+    "missionThink.concept": "PROBLEM SOLVING",
+    "missionThink.title": "Think Like a Programmer",
+    "missionThink.text": "Split big problems, plan before you code, and test step by step.",
+    "path.thinkLabel": "Think like a programmer pages",
+    "path.thinkSplit": "Split the problem",
+    "path.thinkPlan": "Plan before coding",
+    "path.thinkTest": "Test step by step",
+    "missionClean.concept": "CLEAN CODE",
+    "missionClean.title": "Clean Code",
+    "missionClean.text": "Choose good names, write helpful comments, and stop repeating yourself.",
+    "path.cleanLabel": "Clean code pages",
+    "path.cleanNames": "Good names",
+    "path.cleanComments": "Helpful comments",
+    "path.cleanRepeat": "Don't repeat yourself",
+    "missionProjects.concept": "GAME PROJECTS",
+    "missionProjects.title": "Game Projects",
+    "missionProjects.text": "Build six small games that join everything you know.",
+    "path.projectsLabel": "Game projects pages",
+    "path.projectGuess": "Guess the number",
+    "path.projectCalculator": "Calculator",
+    "path.projectRps": "Rock, paper, scissors",
+    "path.projectAdventure": "Text adventure",
+    "path.projectQuiz": "Quiz game",
+    "path.projectEightBall": "Magic 8-ball",
+    "missionTurtle.concept": "TURTLE GRAPHICS",
+    "missionTurtle.title": "Turtle Drawing",
+    "missionTurtle.text": "Drive a turtle that draws: lines, shapes with loops, and art with functions.",
+    "path.turtleLabel": "Turtle drawing pages",
+    "path.turtleMoves": "Moves and turns",
+    "path.turtleShapes": "Shapes with loops",
+    "path.turtleArt": "Art with functions",
+    "missionDict.concept": "DICTIONARIES",
+    "missionDict.title": "Labeled Boxes",
+    "missionDict.text": "Dictionaries: boxes with a label for every value.",
+    "path.dictLabel": "Labeled boxes pages",
+    "path.dictMake": "Make and read",
+    "path.dictChange": "Change and add",
+    "path.dictLoop": "Loop through",
+    "missionCheckpoint2.concept": "PIT STOP · ZONES 9–12",
+    "missionCheckpoint2.title": "Licence Exam",
+    "missionCheckpoint2.text": "Theory questions and real code before the big races: the game projects.",
+    "bugsDetective.next": "Talk to PyBot",
+    "meta.inputAskTitle": "Python asks you — PyBot",
+    "meta.inputAskDescription": "Meet input(): a Python program asks a question, waits for the answer, and keeps it in a box.",
+    "topic.progressInputAsk": "ZONE 9 · 1 OF 3",
+    "inputAsk.eyebrow": "TALK TO PYBOT · INPUT",
+    "inputAsk.title": "Python can ask you questions.",
+    "inputAsk.intro": "With input(), a program asks a question, waits for your answer, and keeps it in a box.",
+    "inputAsk.pybot": "Until now I only talked. Now I can listen too!",
+    "inputAsk.pybotNamed": "{name}, until now I only talked. Now I can listen to you too!",
+    "inputAsk.robotLabel": "PyBot opens its arms next to a question bubble and an answer bubble",
+    "inputAsk.lifeTitle": "Someone asks, you answer.",
+    "inputAsk.lifeIntro": "A question, a wait, then your answer. You do this every day.",
+    "inputAsk.life1Title": "A new game",
+    "inputAsk.life1Text": "The game asks for your player name and waits until you type it.",
+    "inputAsk.life2Title": "The ice cream shop",
+    "inputAsk.life2Text": "\"Which flavor?\" The seller waits. Then they remember your answer.",
+    "inputAsk.life3Title": "A machine with buttons",
+    "inputAsk.life3Text": "A ticket machine asks \"How many tickets?\" and does nothing until you answer.",
+    "inputAsk.lookTitle": "How input() works.",
+    "inputAsk.look1Title": "Show the question",
+    "inputAsk.look1Text": "The text inside the ( ) is the question Python shows.",
+    "inputAsk.look2Title": "Wait for Enter",
+    "inputAsk.look2Text": "Python stops and waits while the person types and presses Enter.",
+    "inputAsk.look3Title": "Keep the answer",
+    "inputAsk.look3Text": "The answer comes back. Put it in a box with = so you can use it.",
+    "inputAsk.walkTitle": "Read it line by line.",
+    "inputAsk.walkIntro": "Read each line and its note.",
+    "inputAsk.walk1": "name = input(\"What is your name? \")",
+    "inputAsk.walk1Tag": "Shows the question, waits, and keeps the answer in the box name.",
+    "inputAsk.walk2": "print(\"Hi, \" + name + \"!\")",
+    "inputAsk.walk2Tag": "Uses the answer. If you typed Ana, it shows Hi, Ana!",
+    "inputAsk.answersNoteTitle": "In this browser:",
+    "inputAsk.answersNoteText": "Write your answers before you run, in the box called PyBot's answers. Python takes one line for each input().",
+    "inputAsk.runTitle": "PyBot asks your name.",
+    "inputAsk.runCode": "name = input(\"What is your name? \")\nprint(\"Hi, \" + name + \"!\")",
+    "inputAsk.runAnswers": "Ana",
+    "inputAsk.predictAnswer": "The answer typed is: Ana",
+    "inputAsk.predictName": "Hi, name!",
+    "inputAsk.predictBoth": "The question with Ana, then Hi, Ana!",
+    "inputAsk.predictOnly": "Only the question",
+    "thinking.input-predictSuccess": "Yes! Python shows the question with the answer, then uses the box name in the greeting.",
+    "thinking.input-predictHint": "Not yet. name is a box, so print shows what is inside it. What was typed?",
+    "inputAsk.tryText": "Write your own name in PyBot's answers and run again.",
+    "inputAsk.practiceTitle": "Questions and answers.",
+    "inputAsk.quizEverydayTitle": "Like input() in real life",
+    "inputAsk.quizEverydayScene": "input() asks a question and waits for an answer.",
+    "inputAsk.quizEverydayQuestion": "Which one works like input()?",
+    "inputAsk.quizEverydayPoster": "A poster on the wall",
+    "inputAsk.quizEverydayWaiter": "A waiter asking \"What would you like?\"",
+    "inputAsk.quizEverydayRadio": "A song on the radio",
+    "thinking.input-everydaySuccess": "Yes! The waiter asks, waits for you, and remembers your answer.",
+    "thinking.input-everydayHint": "Not yet. Which one asks you something and waits for your answer?",
+    "inputAsk.quizWhatTitle": "What does it do?",
+    "inputAsk.quizWhatCode": "pet = input(\"Your pet's name? \")",
+    "inputAsk.quizWhatQuestion": "What does this line do?",
+    "inputAsk.quizWhatAsk": "Asks, waits, and keeps the answer in pet",
+    "inputAsk.quizWhatPrint": "Only prints the question",
+    "inputAsk.quizWhatGuess": "Guesses the pet's name",
+    "thinking.input-whatSuccess": "Yes! input() asks and waits. The = keeps the answer in the box pet.",
+    "thinking.input-whatHint": "Not yet. Python never guesses. Who gives the answer?",
+    "inputAsk.quizBoxTitle": "What is in the box?",
+    "inputAsk.quizBoxCode": "color = input(\"Favorite color? \")",
+    "inputAsk.quizBoxTyped": "You type: blue",
+    "inputAsk.quizBoxQuestion": "What does the box color keep?",
+    "inputAsk.quizBoxQuestionText": "\"Favorite color? \"",
+    "inputAsk.quizBoxBlue": "\"blue\"",
+    "inputAsk.quizBoxNothing": "Nothing",
+    "thinking.input-boxSuccess": "Yes! The box keeps the answer, not the question.",
+    "thinking.input-boxHint": "Not yet. The question is only shown. What does the person type?",
+    "inputAsk.quizPromptTitle": "The question part",
+    "inputAsk.quizPromptCode": "food = input(\"What did you eat? \")",
+    "inputAsk.quizPromptQuestion": "Which part does Python show on the screen?",
+    "inputAsk.quizPromptBox": "food",
+    "inputAsk.quizPromptText": "\"What did you eat? \"",
+    "thinking.input-promptSuccess": "Yes! The text inside the ( ) is the question on the screen.",
+    "thinking.input-promptHint": "Not yet. food is the box's name. Which part is a question for a person?",
+    "inputAsk.quizOrderTitle": "Two questions",
+    "inputAsk.quizOrderCode": "name = input(\"Name? \")\ncolor = input(\"Color? \")",
+    "inputAsk.quizOrderTyped": "PyBot's answers: Leo, then green",
+    "inputAsk.quizOrderQuestion": "What does the box color keep?",
+    "inputAsk.quizOrderLeo": "\"Leo\"",
+    "inputAsk.quizOrderGreen": "\"green\"",
+    "inputAsk.quizOrderBoth": "\"Leo green\"",
+    "thinking.input-orderSuccess": "Yes! The first answer goes to the first input(), the second to the second.",
+    "thinking.input-orderHint": "Not yet. Python reads from top to bottom. Which answer is second?",
+    "inputAsk.quizSpaceTitle": "Squished words",
+    "inputAsk.quizSpaceCode": "city = input(\"Your city?\")",
+    "inputAsk.quizSpaceOutput": "Your city?Lima",
+    "inputAsk.quizSpaceQuestion": "How do you un-squish the answer?",
+    "inputAsk.quizSpaceAdd": "Add a space after the ? inside the quotes",
+    "inputAsk.quizSpaceName": "Change the box name",
+    "inputAsk.quizSpaceType": "Type faster",
+    "thinking.input-spaceSuccess": "Yes! The answer starts right after the question, so a space at the end helps.",
+    "thinking.input-spaceHint": "Not yet. Look at the end of the question text. What is missing before Lima?",
+    "inputAsk.quizUseTitle": "Use the answer",
+    "inputAsk.quizUseCode": "snack = input(\"Snack? \")\nprint(\"Yum, \" + snack)",
+    "inputAsk.quizUseTyped": "You type: mango",
+    "inputAsk.quizUseBox": "Yum, snack",
+    "inputAsk.quizUseMango": "Yum, mango",
+    "inputAsk.quizUseNothing": "Nothing, input() deleted it",
+    "thinking.input-useSuccess": "Yes! snack has no quotes, so Python uses what is inside the box: mango.",
+    "thinking.input-useHint": "Not yet. snack has no quotes. Is it a word or a box?",
+    "inputAsk.fixTask": "PyBot asks, but forgets to keep the answer in a box. Fix it and match the goal.",
+    "inputAsk.fixCode": "input(\"Favorite animal? \")\nprint(\"I love \" + animal + \"s!\")",
+    "inputAsk.fixAnswers": "cat",
+    "inputAsk.fixExpected": "Favorite animal? cat\nI love cats!",
+    "thinking.input-fixSuccess": "Fixed! animal = input(...) keeps the answer, so line 2 can use it.",
+    "thinking.input-fixHint": "Not yet. Line 1 asks, but where does the answer go? Start line 1 with animal =",
+    "inputAsk.bigTitle": "input() lets the person answer.",
+    "inputAsk.bigText": "It shows a question, waits for Enter, and gives back the answer. Keep it in a box with = to use it later.",
+    "inputAsk.next": "Numbers from answers",
   },
   es: {
     "keyboard.quizEnterTitle": "Empieza una línea nueva",
@@ -3756,6 +3932,16 @@ const translations = {
     "hint.zero": "Nada se puede dividir entre cero, ni siquiera en Python.",
     "hint.intText": "int() solo convierte dígitos, como \"7\", en un número.",
     "hint.generic": "Lee la última línea de abajo. Ahí está la pista que encontró Python.",
+    "hint.floatText": "float() solo convierte un número escrito como texto, como \"2.5\", en un número.",
+    "hint.noAnswer": "input() hizo una pregunta, pero se acabaron las respuestas de PyBot. Agrega una línea más en la caja de respuestas.",
+    "hint.turtleColor": "La tortuga no conoce ese color. Prueba un nombre de color en inglés y entre comillas, como \"red\".",
+    "hint.turtleMissing": "La tortuga no conoce esa orden. Revisa cómo está escrita.",
+    "answers.label": "Respuestas de PyBot",
+    "answers.help": "Lo que escribirías en cada input(), una por línea.",
+    "turtle.canvasLabel": "El dibujo de la tortuga",
+    "turtle.goal": "Dibujo meta",
+    "turtle.yours": "Tu dibujo",
+    "turtle.drawn": "¡Python funcionó! Mira el dibujo.",
     "preview.stopped": "Detenido. Tu código sigue aquí.",
     "preview.serveHint": "El ejecutor real necesita GitHub Pages o un servidor web local. Los navegadores lo bloquean en páginas file://.",
     "preview.run": "Ejecutar Python",
@@ -6910,6 +7096,172 @@ const translations = {
     "thinking.detective-fixHint": "Todavía no. Espía dentro del ciclo: el total crece uno de más en cada vuelta. Acuérdate de borrar el print espía al final.",
     "bugsDetective.bigTitle": "Los buenos detectives miran, no adivinan.",
     "bugsDetective.bigText": "Sigue las cajas, espía con print, explícalo en voz alta y reporta con claridad. ¡Ya eres un cazador de bugs de verdad!",
+    "missionInput.concept": "HABLA CON PYBOT",
+    "missionInput.title": "Habla con PyBot",
+    "missionInput.text": "Haz preguntas con input(), convierte respuestas en números y conversa con PyBot.",
+    "path.inputLabel": "Páginas de Habla con PyBot",
+    "path.inputAsk": "Pregunta con input()",
+    "path.inputNumbers": "Números desde respuestas",
+    "path.inputChat": "Conversa con PyBot",
+    "missionRandom.concept": "AZAR",
+    "missionRandom.title": "Dados y Sorpresas",
+    "missionRandom.text": "Lanza dados, elige sorpresas y crea juegos de azar con random.",
+    "path.randomLabel": "Páginas de Dados y sorpresas",
+    "path.randomNumbers": "Números al azar",
+    "path.randomChoice": "Elecciones al azar",
+    "path.randomGames": "Juegos de azar",
+    "missionThink.concept": "RESOLVER PROBLEMAS",
+    "missionThink.title": "Piensa como Programador",
+    "missionThink.text": "Divide problemas grandes, planea antes de programar y prueba paso a paso.",
+    "path.thinkLabel": "Páginas de Piensa como programador",
+    "path.thinkSplit": "Divide el problema",
+    "path.thinkPlan": "Planea antes de programar",
+    "path.thinkTest": "Prueba paso a paso",
+    "missionClean.concept": "CÓDIGO LIMPIO",
+    "missionClean.title": "Código Limpio",
+    "missionClean.text": "Elige buenos nombres, escribe comentarios útiles y deja de repetirte.",
+    "path.cleanLabel": "Páginas de Código limpio",
+    "path.cleanNames": "Buenos nombres",
+    "path.cleanComments": "Comentarios útiles",
+    "path.cleanRepeat": "No te repitas",
+    "missionProjects.concept": "PROYECTOS DE JUEGOS",
+    "missionProjects.title": "Proyectos de Juegos",
+    "missionProjects.text": "Crea seis juegos pequeños que juntan todo lo que sabes.",
+    "path.projectsLabel": "Páginas de Proyectos de juegos",
+    "path.projectGuess": "Adivina el número",
+    "path.projectCalculator": "Calculadora",
+    "path.projectRps": "Piedra, papel o tijera",
+    "path.projectAdventure": "Aventura de texto",
+    "path.projectQuiz": "Juego de preguntas",
+    "path.projectEightBall": "Bola mágica",
+    "missionTurtle.concept": "GRÁFICOS CON TORTUGA",
+    "missionTurtle.title": "Dibujo con Tortuga",
+    "missionTurtle.text": "Maneja una tortuga que dibuja: líneas, figuras con ciclos y arte con funciones.",
+    "path.turtleLabel": "Páginas de Dibujo con tortuga",
+    "path.turtleMoves": "Avanza y gira",
+    "path.turtleShapes": "Figuras con ciclos",
+    "path.turtleArt": "Arte con funciones",
+    "missionDict.concept": "DICCIONARIOS",
+    "missionDict.title": "Cajas con Etiquetas",
+    "missionDict.text": "Diccionarios: cajas con una etiqueta para cada valor.",
+    "path.dictLabel": "Páginas de Cajas con etiquetas",
+    "path.dictMake": "Crea y lee",
+    "path.dictChange": "Cambia y agrega",
+    "path.dictLoop": "Recórrelos",
+    "missionCheckpoint2.concept": "PARADA EN BOXES · ZONAS 9–12",
+    "missionCheckpoint2.title": "Examen de Licencia",
+    "missionCheckpoint2.text": "Preguntas de teoría y código real antes de las grandes carreras: los proyectos de juegos.",
+    "bugsDetective.next": "Habla con PyBot",
+    "meta.inputAskTitle": "Python te pregunta — PyBot",
+    "meta.inputAskDescription": "Conoce input(): un programa de Python hace una pregunta, espera la respuesta y la guarda en una caja.",
+    "topic.progressInputAsk": "ZONA 9 · 1 DE 3",
+    "inputAsk.eyebrow": "HABLA CON PYBOT · INPUT",
+    "inputAsk.title": "Python te puede hacer preguntas.",
+    "inputAsk.intro": "Con input(), un programa hace una pregunta, espera tu respuesta y la guarda en una caja.",
+    "inputAsk.pybot": "Hasta ahora solo hablaba. ¡Ahora también puedo escuchar!",
+    "inputAsk.pybotNamed": "{name}, hasta ahora solo hablaba. ¡Ahora también puedo escucharte!",
+    "inputAsk.robotLabel": "PyBot abre los brazos junto a una burbuja de pregunta y una de respuesta",
+    "inputAsk.lifeTitle": "Alguien pregunta, tú respondes.",
+    "inputAsk.lifeIntro": "Una pregunta, una espera y luego tu respuesta. Lo haces todos los días.",
+    "inputAsk.life1Title": "Un juego nuevo",
+    "inputAsk.life1Text": "El juego te pide tu nombre de jugador y espera hasta que lo escribas.",
+    "inputAsk.life2Title": "La heladería",
+    "inputAsk.life2Text": "\"¿Qué sabor quieres?\" El vendedor espera. Luego recuerda tu respuesta.",
+    "inputAsk.life3Title": "Una máquina con botones",
+    "inputAsk.life3Text": "Una máquina de boletos pregunta \"¿Cuántos boletos?\" y no hace nada hasta que respondes.",
+    "inputAsk.lookTitle": "Así funciona input().",
+    "inputAsk.look1Title": "Muestra la pregunta",
+    "inputAsk.look1Text": "El texto dentro de los ( ) es la pregunta que muestra Python.",
+    "inputAsk.look2Title": "Espera el Enter",
+    "inputAsk.look2Text": "Python se detiene y espera mientras la persona escribe y pulsa Enter.",
+    "inputAsk.look3Title": "Guarda la respuesta",
+    "inputAsk.look3Text": "La respuesta regresa. Guárdala en una caja con = para poder usarla.",
+    "inputAsk.walkTitle": "Léelo línea por línea.",
+    "inputAsk.walkIntro": "Lee cada línea y su nota.",
+    "inputAsk.walk1": "nombre = input(\"¿Cómo te llamas? \")",
+    "inputAsk.walk1Tag": "Muestra la pregunta, espera y guarda la respuesta en la caja nombre.",
+    "inputAsk.walk2": "print(\"¡Hola, \" + nombre + \"!\")",
+    "inputAsk.walk2Tag": "Usa la respuesta. Si escribiste Ana, muestra ¡Hola, Ana!",
+    "inputAsk.answersNoteTitle": "En este navegador:",
+    "inputAsk.answersNoteText": "Escribe tus respuestas antes de ejecutar, en la caja Respuestas de PyBot. Python toma una línea por cada input().",
+    "inputAsk.runTitle": "PyBot pregunta tu nombre.",
+    "inputAsk.runCode": "nombre = input(\"¿Cómo te llamas? \")\nprint(\"¡Hola, \" + nombre + \"!\")",
+    "inputAsk.runAnswers": "Ana",
+    "inputAsk.predictAnswer": "La respuesta escrita es: Ana",
+    "inputAsk.predictName": "¡Hola, nombre!",
+    "inputAsk.predictBoth": "La pregunta con Ana, y luego ¡Hola, Ana!",
+    "inputAsk.predictOnly": "Solo la pregunta",
+    "thinking.input-predictSuccess": "¡Sí! Python muestra la pregunta con la respuesta y luego usa la caja nombre en el saludo.",
+    "thinking.input-predictHint": "Todavía no. nombre es una caja, así que print muestra lo que hay dentro. ¿Qué se escribió?",
+    "inputAsk.tryText": "Escribe tu propio nombre en Respuestas de PyBot y ejecuta otra vez.",
+    "inputAsk.practiceTitle": "Preguntas y respuestas.",
+    "inputAsk.quizEverydayTitle": "Como input() en la vida real",
+    "inputAsk.quizEverydayScene": "input() hace una pregunta y espera una respuesta.",
+    "inputAsk.quizEverydayQuestion": "¿Cuál funciona como input()?",
+    "inputAsk.quizEverydayPoster": "Un cartel en la pared",
+    "inputAsk.quizEverydayWaiter": "Un mesero que pregunta \"¿Qué vas a pedir?\"",
+    "inputAsk.quizEverydayRadio": "Una canción en la radio",
+    "thinking.input-everydaySuccess": "¡Sí! El mesero pregunta, te espera y recuerda tu respuesta.",
+    "thinking.input-everydayHint": "Todavía no. ¿Cuál te pregunta algo y espera tu respuesta?",
+    "inputAsk.quizWhatTitle": "¿Qué hace?",
+    "inputAsk.quizWhatCode": "mascota = input(\"¿Cómo se llama tu mascota? \")",
+    "inputAsk.quizWhatQuestion": "¿Qué hace esta línea?",
+    "inputAsk.quizWhatAsk": "Pregunta, espera y guarda la respuesta en mascota",
+    "inputAsk.quizWhatPrint": "Solo muestra la pregunta",
+    "inputAsk.quizWhatGuess": "Adivina el nombre de la mascota",
+    "thinking.input-whatSuccess": "¡Sí! input() pregunta y espera. El = guarda la respuesta en la caja mascota.",
+    "thinking.input-whatHint": "Todavía no. Python nunca adivina. ¿Quién da la respuesta?",
+    "inputAsk.quizBoxTitle": "¿Qué hay en la caja?",
+    "inputAsk.quizBoxCode": "color = input(\"¿Color favorito? \")",
+    "inputAsk.quizBoxTyped": "Escribes: azul",
+    "inputAsk.quizBoxQuestion": "¿Qué guarda la caja color?",
+    "inputAsk.quizBoxQuestionText": "\"¿Color favorito? \"",
+    "inputAsk.quizBoxBlue": "\"azul\"",
+    "inputAsk.quizBoxNothing": "Nada",
+    "thinking.input-boxSuccess": "¡Sí! La caja guarda la respuesta, no la pregunta.",
+    "thinking.input-boxHint": "Todavía no. La pregunta solo se muestra. ¿Qué escribe la persona?",
+    "inputAsk.quizPromptTitle": "La parte de la pregunta",
+    "inputAsk.quizPromptCode": "comida = input(\"¿Qué comiste? \")",
+    "inputAsk.quizPromptQuestion": "¿Qué parte muestra Python en la pantalla?",
+    "inputAsk.quizPromptBox": "comida",
+    "inputAsk.quizPromptText": "\"¿Qué comiste? \"",
+    "thinking.input-promptSuccess": "¡Sí! El texto dentro de los ( ) es la pregunta en la pantalla.",
+    "thinking.input-promptHint": "Todavía no. comida es el nombre de la caja. ¿Qué parte es una pregunta para una persona?",
+    "inputAsk.quizOrderTitle": "Dos preguntas",
+    "inputAsk.quizOrderCode": "nombre = input(\"¿Nombre? \")\ncolor = input(\"¿Color? \")",
+    "inputAsk.quizOrderTyped": "Respuestas de PyBot: Leo, y luego verde",
+    "inputAsk.quizOrderQuestion": "¿Qué guarda la caja color?",
+    "inputAsk.quizOrderLeo": "\"Leo\"",
+    "inputAsk.quizOrderGreen": "\"verde\"",
+    "inputAsk.quizOrderBoth": "\"Leo verde\"",
+    "thinking.input-orderSuccess": "¡Sí! La primera respuesta va al primer input() y la segunda al segundo.",
+    "thinking.input-orderHint": "Todavía no. Python lee de arriba hacia abajo. ¿Cuál es la segunda respuesta?",
+    "inputAsk.quizSpaceTitle": "Palabras pegadas",
+    "inputAsk.quizSpaceCode": "ciudad = input(\"¿Tu ciudad?\")",
+    "inputAsk.quizSpaceOutput": "¿Tu ciudad?Lima",
+    "inputAsk.quizSpaceQuestion": "¿Cómo despegas la respuesta?",
+    "inputAsk.quizSpaceAdd": "Agrega un espacio después del ? dentro de las comillas",
+    "inputAsk.quizSpaceName": "Cambia el nombre de la caja",
+    "inputAsk.quizSpaceType": "Escribe más rápido",
+    "thinking.input-spaceSuccess": "¡Sí! La respuesta empieza justo después de la pregunta, así que un espacio al final ayuda.",
+    "thinking.input-spaceHint": "Todavía no. Mira el final del texto de la pregunta. ¿Qué falta antes de Lima?",
+    "inputAsk.quizUseTitle": "Usa la respuesta",
+    "inputAsk.quizUseCode": "merienda = input(\"¿Merienda? \")\nprint(\"Qué rico, \" + merienda)",
+    "inputAsk.quizUseTyped": "Escribes: mango",
+    "inputAsk.quizUseBox": "Qué rico, merienda",
+    "inputAsk.quizUseMango": "Qué rico, mango",
+    "inputAsk.quizUseNothing": "Nada, input() lo borró",
+    "thinking.input-useSuccess": "¡Sí! merienda no tiene comillas, así que Python usa lo que hay en la caja: mango.",
+    "thinking.input-useHint": "Todavía no. merienda no tiene comillas. ¿Es una palabra o una caja?",
+    "inputAsk.fixTask": "PyBot pregunta, pero olvida guardar la respuesta en una caja. Arréglalo y logra la meta.",
+    "inputAsk.fixCode": "input(\"¿Animal favorito? \")\nprint(\"¡Me encantan los \" + animal + \"s!\")",
+    "inputAsk.fixAnswers": "gato",
+    "inputAsk.fixExpected": "¿Animal favorito? gato\n¡Me encantan los gatos!",
+    "thinking.input-fixSuccess": "¡Arreglado! animal = input(...) guarda la respuesta, así la línea 2 puede usarla.",
+    "thinking.input-fixHint": "Todavía no. La línea 1 pregunta, pero ¿a dónde va la respuesta? Empieza la línea 1 con animal =",
+    "inputAsk.bigTitle": "input() deja que la persona responda.",
+    "inputAsk.bigText": "Muestra una pregunta, espera el Enter y devuelve la respuesta. Guárdala en una caja con = para usarla después.",
+    "inputAsk.next": "Números desde respuestas",
   },
 };
 
@@ -7042,6 +7394,8 @@ const pythonOutput = document.querySelector("[data-python-output]");
 const pythonHint = document.querySelector("[data-python-hint]");
 const pythonRunButton = document.querySelector("[data-python-run]");
 const pythonStopButton = document.querySelector("[data-python-stop]");
+const pythonAnswers = document.querySelector("[data-python-answers]");
+const pythonTurtleCanvas = document.querySelector("[data-turtle-canvas]");
 const backupExportButton = document.querySelector("[data-backup-export]");
 const backupImportButton = document.querySelector("[data-backup-import]");
 const backupImportInput = document.querySelector("[data-backup-file]");
@@ -7313,6 +7667,21 @@ const pathSteps = [
       "detective-report", "detective-test", "detective-fix",
     ],
   },
+  // Zone 9 "Talk to PyBot" has three pages: input(), numbers from answers, and conversations.
+  {
+    id: "inputAsk", page: "inputAsk", href: "lessons/13-input.html", addedLater: true,
+    activities: [
+      "input-predict", "input-everyday", "input-what", "input-box", "input-prompt",
+      "input-order", "input-space", "input-use", "input-fix",
+    ],
+  },
+  // Zone 10 "Dice and surprises" has three pages: random numbers, random choices, and games of chance.
+  // Zone 11 "Think like a programmer" has three pages: split the problem, plan first, and test step by step.
+  // Zone 12 "Clean code" has three pages: good names, comments, and don't repeat yourself.
+  // Pit stop 2, the driving licence exam: mixed challenges before the projects.
+  // Zone 13 "Game projects" has six guided projects that join everything so far.
+  // Zone 14 "Turtle drawing" has three pages: moves and turns, shapes with loops, and art with functions.
+  // Zone 15 "Labeled boxes" (dictionaries) has three pages: make and read, change and add, and loop through.
 ];
 const stepActivityIds = (step) => [...step.activities, ...(step.activitiesAddedLater ?? [])];
 const activityIds = pathSteps.flatMap(stepActivityIds);
@@ -7644,6 +8013,10 @@ const pythonHintRules = [
   { type: "TypeError", pattern: /./, key: "hint.type" },
   { type: "ZeroDivisionError", pattern: /./, key: "hint.zero" },
   { type: "ValueError", pattern: /invalid literal for int\(\)/, key: "hint.intText" },
+  { type: "ValueError", pattern: /could not convert string to float/, key: "hint.floatText" },
+  { type: "EOFError", pattern: /./, key: "hint.noAnswer" },
+  { type: "TurtleGraphicsError", pattern: /bad color/, key: "hint.turtleColor" },
+  { type: "AttributeError", pattern: /module 'turtle' has no attribute/, key: "hint.turtleMissing" },
 ];
 
 function pythonErrorHint(errorType, error) {
@@ -7711,6 +8084,9 @@ function createPythonWorker() {
     }
 
     setPythonRunning(false);
+    if (pythonTurtleCanvas) {
+      showTurtleDrawing(pythonTurtleCanvas, event.data.drawing, true);
+    }
     if (event.data.type === "complete") {
       const output = event.data.output.trim();
       if (output) {
@@ -7719,7 +8095,7 @@ function createPythonWorker() {
           pythonOutput.textContent = output;
         }
       } else {
-        setPythonOutput("preview.noOutput");
+        setPythonOutput(event.data.drawing ? "turtle.drawn" : "preview.noOutput");
       }
       playRobotChime();
       return;
@@ -8044,6 +8420,12 @@ function setLanguage(language, persist = true) {
   document.querySelectorAll("[data-fix-code-key]").forEach((editor) => {
     if (editor.dataset.edited !== "true") {
       editor.value = textFor(editor.dataset.fixCodeKey);
+    }
+  });
+
+  document.querySelectorAll("[data-answers-key], [data-fix-answers-key]").forEach((box) => {
+    if (box.dataset.edited !== "true") {
+      box.value = textFor(box.dataset.answersKey || box.dataset.fixAnswersKey);
     }
   });
 
@@ -8571,6 +8953,192 @@ stepActivities.forEach((activity) => {
   });
 });
 
+// The answers box holds what the learner would type for each input(), one per line.
+function answerLines(box) {
+  if (!box || box.value === "") {
+    return [];
+  }
+  const lines = box.value.replace(/\r\n/g, "\n").split("\n");
+  if (lines.at(-1) === "") {
+    lines.pop();
+  }
+  return lines;
+}
+
+// Turtle drawings come from pybot-turtle.py as JSON: a background color and
+// commands (lines, fills, dots, text) in the turtle's world, where (0, 0) is
+// the middle, y grows upward, and the visible area is 400 by 400 steps.
+const TURTLE_WORLD_SIZE = 400;
+const turtleAnimations = new WeakMap();
+let turtleColorContext = null;
+
+function turtleColor(color) {
+  turtleColorContext ??= document.createElement("canvas").getContext("2d");
+  turtleColorContext.fillStyle = "#000000";
+  turtleColorContext.fillStyle = String(color);
+  return turtleColorContext.fillStyle;
+}
+
+function paintTurtleDrawing(canvas, drawing, lastStep = Infinity) {
+  const size = Math.round((canvas.clientWidth || 320) * (window.devicePixelRatio || 1));
+  if (canvas.width !== size) {
+    canvas.width = size;
+    canvas.height = size;
+  }
+  const context = canvas.getContext("2d");
+  const scale = size / TURTLE_WORLD_SIZE;
+  const x = (value) => (value + TURTLE_WORLD_SIZE / 2) * scale;
+  const y = (value) => (TURTLE_WORLD_SIZE / 2 - value) * scale;
+
+  context.fillStyle = turtleColor(drawing?.bg ?? "white");
+  context.fillRect(0, 0, size, size);
+  if (!drawing) {
+    return;
+  }
+
+  context.lineCap = "round";
+  context.lineJoin = "round";
+  drawing.commands.filter((command) => command.step <= lastStep).forEach((command) => {
+    context.strokeStyle = context.fillStyle = turtleColor(command.c);
+    if (command.t === "line") {
+      context.lineWidth = Math.max(2 * (window.devicePixelRatio || 1), command.w * scale);
+      context.beginPath();
+      context.moveTo(x(command.x1), y(command.y1));
+      context.lineTo(x(command.x2), y(command.y2));
+      context.stroke();
+    } else if (command.t === "fill") {
+      context.beginPath();
+      command.points.forEach(([px, py], index) => context[index ? "lineTo" : "moveTo"](x(px), y(py)));
+      context.closePath();
+      context.fill();
+    } else if (command.t === "dot") {
+      context.beginPath();
+      context.arc(x(command.x), y(command.y), (command.size / 2) * scale, 0, Math.PI * 2);
+      context.fill();
+    } else if (command.t === "text") {
+      context.font = `${Math.max(8, command.size) * 1.4 * scale}px "Trebuchet MS", sans-serif`;
+      context.textAlign = ["left", "center", "right"].includes(command.align) ? command.align : "left";
+      context.fillText(command.text, x(command.x), y(command.y));
+    }
+  });
+
+  if (lastStep === Infinity) {
+    (drawing.turtles ?? []).forEach((turtle) => paintTurtleCursor(context, x(turtle.x), y(turtle.y), turtle.h, scale));
+  }
+}
+
+// A small arrow, like Python's classic turtle shape, pointing where the turtle faces.
+function paintTurtleCursor(context, px, py, heading, scale) {
+  context.save();
+  context.translate(px, py);
+  context.rotate((-heading * Math.PI) / 180);
+  context.beginPath();
+  context.moveTo(9 * scale, 0);
+  context.lineTo(-6 * scale, 6 * scale);
+  context.lineTo(-3 * scale, 0);
+  context.lineTo(-6 * scale, -6 * scale);
+  context.closePath();
+  context.fillStyle = "#2764d8";
+  context.strokeStyle = "#173b82";
+  context.lineWidth = 1.5 * scale;
+  context.fill();
+  context.stroke();
+  context.restore();
+}
+
+// Shows a drawing (JSON text, an object, or null for an empty page). When
+// animate is true, the lines appear in order, unless the learner prefers
+// reduced motion.
+function showTurtleDrawing(canvas, drawing, animate = false) {
+  const parsed = typeof drawing === "string" ? JSON.parse(drawing) : drawing;
+  cancelAnimationFrame(turtleAnimations.get(canvas));
+  canvas.classList.toggle("has-drawing", Boolean(parsed));
+  const lastStep = Math.max(0, ...(parsed?.commands ?? []).map((command) => command.step));
+  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  if (!parsed || !animate || reducedMotion || lastStep === 0) {
+    paintTurtleDrawing(canvas, parsed);
+    return;
+  }
+
+  const duration = Math.min(2400, lastStep * 40);
+  const start = performance.now();
+  const frame = (now) => {
+    const progress = Math.min(1, (now - start) / duration);
+    paintTurtleDrawing(canvas, parsed, progress < 1 ? Math.ceil(progress * lastStep) : Infinity);
+    if (progress < 1) {
+      turtleAnimations.set(canvas, requestAnimationFrame(frame));
+    }
+  };
+  turtleAnimations.set(canvas, requestAnimationFrame(frame));
+}
+
+// Two drawings match when they leave the same marks on the page, whatever the
+// order: a line drawn in two pieces counts the same as one long line.
+function turtleDrawingMarks(drawing) {
+  const round = (value) => Math.round(value * 2) / 2;
+  const marks = [`bg ${turtleColor(drawing.bg)}`];
+  const lines = new Map();
+
+  drawing.commands.forEach((command) => {
+    const color = turtleColor(command.c);
+    if (command.t === "line") {
+      const dx = command.x2 - command.x1;
+      const dy = command.y2 - command.y1;
+      const length = Math.hypot(dx, dy);
+      if (length < 0.5) {
+        return;
+      }
+      let angle = (Math.atan2(dy, dx) * 180) / Math.PI;
+      angle = ((angle % 180) + 180) % 180;
+      if (angle > 179.75) {
+        angle -= 180;
+      }
+      const radians = (angle * Math.PI) / 180;
+      const ux = Math.cos(radians);
+      const uy = Math.sin(radians);
+      const offset = command.x1 * -uy + command.y1 * ux;
+      const a = command.x1 * ux + command.y1 * uy;
+      const b = command.x2 * ux + command.y2 * uy;
+      const key = `line ${color} ${command.w} ${round(angle)} ${round(offset)}`;
+      lines.set(key, [...(lines.get(key) ?? []), [Math.min(a, b), Math.max(a, b)]]);
+    } else if (command.t === "fill") {
+      const points = command.points.map(([px, py]) => `${round(px)},${round(py)}`);
+      marks.push(`fill ${color} ${[...new Set(points)].sort().join(" ")}`);
+    } else if (command.t === "dot") {
+      marks.push(`dot ${color} ${round(command.x)} ${round(command.y)} ${round(command.size)}`);
+    } else if (command.t === "text") {
+      marks.push(`text ${color} ${round(command.x)} ${round(command.y)} ${command.text}`);
+    }
+  });
+
+  lines.forEach((spans, key) => {
+    spans.sort((first, second) => first[0] - second[0]);
+    const merged = [];
+    spans.forEach(([from, to]) => {
+      const last = merged.at(-1);
+      if (last && from <= last[1] + 1) {
+        last[1] = Math.max(last[1], to);
+      } else {
+        merged.push([from, to]);
+      }
+    });
+    merged.forEach(([from, to]) => marks.push(`${key} ${round(from)} ${round(to)}`));
+  });
+
+  return [...new Set(marks)].sort();
+}
+
+function sameTurtleDrawing(goal, drawing) {
+  const goalMarks = turtleDrawingMarks(goal);
+  const marks = turtleDrawingMarks(drawing);
+  return goalMarks.length === marks.length && goalMarks.every((mark, index) => mark === marks[index]);
+}
+
+document.querySelectorAll("[data-turtle-goal-canvas]").forEach((canvas) => {
+  showTurtleDrawing(canvas, canvas.closest("[data-turtle-goal]").dataset.turtleGoal);
+});
+document.querySelectorAll("[data-turtle-canvas], [data-fix-turtle]").forEach((canvas) => showTurtleDrawing(canvas, null));
+
 // "Fix PyBot's code": the learner edits a broken snippet and runs it until the
 // output matches the goal. Runs share the page's Python worker; their ids are
 // negative so they never clash with the main runner's ids.
@@ -8580,7 +9148,7 @@ function endFixRuns(result) {
   pending.forEach((finish) => finish(result));
 }
 
-function runFixCode(code) {
+function runFixCode(code, answers = []) {
   return new Promise((resolve) => {
     fixRunId -= 1;
     const id = fixRunId;
@@ -8595,7 +9163,7 @@ function runFixCode(code) {
       resolve(result);
     });
     pythonWorker ??= createPythonWorker();
-    pythonWorker.postMessage({ id, code });
+    pythonWorker.postMessage({ id, code, answers });
   });
 }
 
@@ -8617,16 +9185,41 @@ function resetFixActivity(activity) {
   }
   editor.value = textFor(editor.dataset.fixCodeKey);
   delete editor.dataset.edited;
+  const answers = activity.querySelector("[data-fix-answers-key]");
+  if (answers) {
+    answers.value = textFor(answers.dataset.fixAnswersKey);
+    delete answers.dataset.edited;
+  }
+  const drawing = activity.querySelector("[data-fix-turtle]");
+  if (drawing) {
+    showTurtleDrawing(drawing, null);
+  }
   activity.querySelector("[data-fix-output]").textContent = "";
+}
+
+// A turtle activity is solved when the drawing matches the goal drawing, and
+// the printed output matches too when the activity also has a goal output.
+function fixActivitySolved(activity, result) {
+  const turtleGoal = activity.dataset.turtleGoal;
+  if (turtleGoal && (!result.drawing || !sameTurtleDrawing(JSON.parse(turtleGoal), JSON.parse(result.drawing)))) {
+    return false;
+  }
+  return !activity.dataset.fixExpectedKey || fixGoalMatches(activity, result.output);
 }
 
 document.querySelectorAll(".fix-activity").forEach((activity) => {
   const editor = activity.querySelector("[data-fix-code-key]");
   const output = activity.querySelector("[data-fix-output]");
   const runButton = activity.querySelector("[data-fix-run]");
+  const answers = activity.querySelector("[data-fix-answers-key]");
+  const drawing = activity.querySelector("[data-fix-turtle]");
 
   editor.addEventListener("input", () => {
     editor.dataset.edited = "true";
+  });
+
+  answers?.addEventListener("input", () => {
+    answers.dataset.edited = "true";
   });
 
   activity.querySelector("[data-fix-restart]").addEventListener("click", () => resetFixActivity(activity));
@@ -8641,7 +9234,7 @@ document.querySelectorAll(".fix-activity").forEach((activity) => {
     output.textContent = textFor("preview.loading");
     let result;
     try {
-      result = await runFixCode(editor.value);
+      result = await runFixCode(editor.value, answerLines(answers));
     } catch (error) {
       result = { type: "error", error: error instanceof Error ? error.message : String(error) };
       pythonWorker = null;
@@ -8653,12 +9246,16 @@ document.querySelectorAll(".fix-activity").forEach((activity) => {
       return;
     }
 
+    if (drawing) {
+      showTurtleDrawing(drawing, result.drawing, true);
+    }
+
     if (result.type === "error") {
       const details = [result.output, result.error].filter(Boolean).join("\n").trim();
       output.textContent = `${pythonErrorHint(result.errorType, result.error ?? "")}\n\n${details}`;
     } else {
-      output.textContent = result.output.trim() || textFor("preview.noOutput");
-      if (fixGoalMatches(activity, result.output)) {
+      output.textContent = result.output.trim() || textFor(result.drawing ? "turtle.drawn" : "preview.noOutput");
+      if (fixActivitySolved(activity, result)) {
         playRobotChime();
         completeActivity(activity, null);
         return;
@@ -9003,6 +9600,10 @@ pythonEditor?.addEventListener("input", () => {
   pythonEditor.dataset.edited = "true";
 });
 
+pythonAnswers?.addEventListener("input", () => {
+  pythonAnswers.dataset.edited = "true";
+});
+
 pythonRunButton?.addEventListener("click", () => {
   if (!pythonEditor || !pythonOutput) {
     return;
@@ -9019,7 +9620,7 @@ pythonRunButton?.addEventListener("click", () => {
 
   try {
     pythonWorker ??= createPythonWorker();
-    pythonWorker.postMessage({ id: pythonRunId, code: pythonEditor.value });
+    pythonWorker.postMessage({ id: pythonRunId, code: pythonEditor.value, answers: answerLines(pythonAnswers) });
   } catch (error) {
     setPythonRunning(false);
     setPythonOutput("preview.error", error instanceof Error ? error.message : String(error));
