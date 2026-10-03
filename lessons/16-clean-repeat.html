@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta id="meta-description" name="description" content="Don&#x27;t Repeat Yourself: turn repeated lines into a loop and repeated chunks into a function, so one fix fixes everything." data-i18n-content="meta.cleanRepeatDescription" /><meta name="theme-color" content="#fff8ec" /><title>Don't repeat yourself — PyBot</title><link rel="icon" href="../favicon.svg" type="image/svg+xml" /><link rel="stylesheet" href="../styles.css" /><script src="../script.js" defer></script></head>
+  <body class="lesson-page topic-page" data-page="cleanRepeat">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+    <header class="site-header lesson-site-header"><a class="brand" href="../index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home"><span class="brand-mark"><span></span></span><span>PyBot</span></a><div class="lesson-header-tools"><span class="lesson-progress" data-i18n="topic.progressCleanRepeat">ZONE 11 · 3 OF 3</span><div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria-label="a11y.language"><button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button><button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button></div></div></header>
+    <main class="lesson-main" id="main-content">
+      <a class="lesson-back" href="16-clean-comments.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a>
+      <section class="topic-hero"><div class="topic-hero-copy"><p class="eyebrow"><span>11</span><b data-i18n="cleanRepeat.eyebrow">CLEAN CODE · DON'T REPEAT</b></p><h1 data-i18n="cleanRepeat.title">Write it once, use it often.</h1><p data-i18n="cleanRepeat.intro">When lines repeat, a loop or a function can do the work: same output, shorter and safer code.</p></div>
+        <aside class="lesson-pybot-scene topic-pybot-scene scene-clean">
+          <div class="lesson-pybot-bubble">
+            <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+            <p data-i18n="cleanRepeat.pybot" data-pybot-message="cleanRepeat.pybot">Why write it three times? I write it once and repeat it!</p>
+          </div>
+
+          <div class="scene-tidy" aria-hidden="true"><div class="scene-tidy-card"><code data-i18n="cleanRepeat.sceneCode">for x in ...</code><i></i><i></i></div><span class="scene-broom"></span><i class="scene-sparkle scene-sparkle-a">✦</i><i class="scene-sparkle scene-sparkle-b">✦</i><i class="scene-sparkle scene-sparkle-c">✦</i></div>
+
+          <div class="pybot-wrap lesson-pybot-figure" data-mood="happy">
+            <div class="pybot" role="img" aria-label="PyBot smiles next to a broom with sparkles and a short, tidy code card" data-i18n-aria-label="cleanRepeat.robotLabel">
+              <div class="antenna" aria-hidden="true"><span></span></div>
+              <div class="ear ear-left" aria-hidden="true"></div>
+              <div class="ear ear-right" aria-hidden="true"></div>
+              <div class="bot-head">
+                <div class="bot-screen">
+                  <div class="brow brow-left" aria-hidden="true"></div>
+                  <div class="brow brow-right" aria-hidden="true"></div>
+                  <div class="eye eye-left" aria-hidden="true"><span></span></div>
+                  <div class="eye eye-right" aria-hidden="true"><span></span></div>
+                  <div class="cheek cheek-left" aria-hidden="true"></div>
+                  <div class="cheek cheek-right" aria-hidden="true"></div>
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="bot-neck" aria-hidden="true"></div>
+              <div class="arm arm-left" aria-hidden="true"><span class="hand"></span></div>
+              <div class="arm arm-right" aria-hidden="true"><span class="hand"></span></div>
+              <div class="bot-body">
+                <div class="chest-light" aria-hidden="true"></div>
+                <span class="chest-code" aria-hidden="true">&lt;/&gt;</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="topic-overview" aria-labelledby="cleanRepeat-life-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lifeEyebrow">IN REAL LIFE</p><h2 id="cleanRepeat-life-title" data-i18n="cleanRepeat.lifeTitle">Do it once, use it again.</h2><p class="practice-intro" data-i18n="cleanRepeat.lifeIntro">People find smart ways to avoid doing the same work twice.</p></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">🎵</span><h3 data-i18n="cleanRepeat.life1Title">A song sheet</h3><p data-i18n="cleanRepeat.life1Text">The chorus is written once. Then the sheet just says "Chorus" again.</p></article><article class="topic-info-card"><span aria-hidden="true">⭐</span><h3 data-i18n="cleanRepeat.life2Title">A teacher's stamp</h3><p data-i18n="cleanRepeat.life2Text">She doesn't draw each star by hand. One stamp makes the same star every time.</p></article><article class="topic-info-card"><span aria-hidden="true">🥞</span><h3 data-i18n="cleanRepeat.life3Title">A pancake recipe</h3><p data-i18n="cleanRepeat.life3Text">"Repeat for each pancake" instead of writing the steps ten times.</p></article>
+      </div></section>
+
+      <section class="topic-overview" aria-labelledby="cleanRepeat-look-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lookEyebrow">LOOK FIRST</p><h2 id="cleanRepeat-look-title" data-i18n="cleanRepeat.lookTitle">Spot it, then clean it.</h2></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">1</span><h3 data-i18n="cleanRepeat.look1Title">Same lines? Loop</h3><p data-i18n="cleanRepeat.look1Text">Three print("Hooray!") lines become one for loop with range(3).</p></article><article class="topic-info-card"><span aria-hidden="true">2</span><h3 data-i18n="cleanRepeat.look2Title">Small changes? Function</h3><p data-i18n="cleanRepeat.look2Text">When only a name changes, write a function with a parameter for it.</p></article><article class="topic-info-card"><span aria-hidden="true">3</span><h3 data-i18n="cleanRepeat.look3Title">Fix one place</h3><p data-i18n="cleanRepeat.look3Text">The lines live in one spot. Change them once and every use changes.</p></article>
+      </div></section>
+
+      <section class="topic-overview" aria-labelledby="cleanRepeat-walk-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lookEyebrow">LOOK FIRST</p><h2 id="cleanRepeat-walk-title" data-i18n="cleanRepeat.walkTitle">Read the clean version.</h2><p class="practice-intro" data-i18n="cleanRepeat.walkIntro">Two welcomes, but the lines are written only once.</p></div>
+        <div class="function-open-grid function-open-single"><div class="function-open"><div class="function-line"><code data-i18n="cleanRepeat.walk1">def welcome(name):</code><small data-i18n="cleanRepeat.walk1Tag">One function. The parameter name is the part that changes.</small></div><div class="function-line"><code data-i18n="cleanRepeat.walk2">    print("Hi, " + name + "!")</code><small data-i18n="cleanRepeat.walk2Tag">Written once, used for everyone.</small></div><div class="function-line"><code data-i18n="cleanRepeat.walk3">    print("Welcome to the team.")</code><small data-i18n="cleanRepeat.walk3Tag">Change this line once, and every welcome changes.</small></div><div class="function-line"><code data-i18n="cleanRepeat.walk4">welcome("Ana")</code><small data-i18n="cleanRepeat.walk4Tag">Runs both lines with name = "Ana".</small></div><div class="function-line"><code data-i18n="cleanRepeat.walk5">welcome("Leo")</code><small data-i18n="cleanRepeat.walk5Tag">The same lines again, now for Leo.</small></div></div></div>
+      </section>
+
+      <section class="topic-run" aria-labelledby="cleanRepeat-run-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.runEyebrow">RUN IT</p><h2 id="cleanRepeat-run-title" data-i18n="cleanRepeat.runTitle">PyBot cheers for the team.</h2><p class="practice-intro" data-i18n="topic.runIntro">Guess first. Then run real Python and check.</p></div>
+        <div class="topic-run-grid">
+          <article class="step-activity" data-activity-id="dry-predict"><header class="step-activity-header"><span>1</span><h3 data-i18n="topic.predictTitle">Guess the result</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="cleanRepeat.runCode">def cheer(name):
+    print("Go, " + name + "!")
+
+for friend in ["Ana", "Leo", "Mia"]:
+    cheer(friend)</code></div><p class="activity-question" data-i18n="topic.predictQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-i18n="cleanRepeat.predictName">Go, name! three times</button><button type="button" data-i18n="cleanRepeat.predictOnce">Only Go, Ana!</button><button type="button" data-correct="true" data-i18n="cleanRepeat.predictRight">Go, Ana! then Go, Leo! then Go, Mia!</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <div class="topic-runner">
+            <div class="code-window" aria-label="Python exercise" data-i18n-aria-label="a11y.codePreview" data-python-runner>
+              <div class="window-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>cheer.py</span><span class="preview-tag" data-i18n="preview.tag">REAL PYTHON</span></div>
+              <div class="code-area"><span class="line-number" aria-hidden="true">1<br />2<br />3<br />4<br />5</span><label class="visually-hidden" for="python-code" data-i18n="preview.editorLabel">Python code</label><textarea id="python-code" data-python-editor data-code-key="cleanRepeat.runCode" rows="6" spellcheck="false" autocapitalize="off" autocomplete="off">def cheer(name):
+    print("Go, " + name + "!")
+
+for friend in ["Ana", "Leo", "Mia"]:
+    cheer(friend)</textarea></div>
+              <div class="output-area" role="status" aria-live="polite"><span class="output-label" data-i18n="preview.output">OUTPUT</span><p class="python-hint" data-python-hint hidden><strong data-i18n="preview.hintLabel">PyBot's hint</strong><span data-python-hint-text></span></p><pre data-python-output data-i18n="topic.runReady">Ready. Press Run Python.</pre></div>
+              <div class="runner-actions"><button class="run-button" type="button" data-python-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="stop-button" type="button" data-python-stop disabled><span aria-hidden="true">■</span><span data-i18n="preview.stop">Stop</span></button></div>
+              <details class="runtime-credit"><summary data-i18n="preview.creditSummary">Who makes Python run here?</summary><p data-i18n="preview.creditText">Pyodide 314.0.3 runs CPython in your browser with WebAssembly.</p><p><span data-i18n="preview.creditLicense">Open-source under the Mozilla Public License 2.0.</span> <a href="https://github.com/pyodide/pyodide/blob/314.0.3/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="preview.license">License</a></p></details>
+            </div>
+            <p class="topic-try"><b data-i18n="topic.tryLabel">Now change one thing:</b> <span data-i18n="cleanRepeat.tryText">Change "Go, " to "Yay, " in one place and run. All three lines change!</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic-practice" aria-labelledby="cleanRepeat-practice-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.practiceEyebrow">YOUR TURN</p><h2 id="cleanRepeat-practice-title" data-i18n="cleanRepeat.practiceTitle">Spot the repeat.</h2><p class="practice-intro" data-i18n="topic.practiceIntro">Try each tiny question. A wrong answer becomes something to review.</p></div>
+        <div class="plan-progress-summary" aria-label="Activity progress" data-i18n-aria-label="progress.activitySummaryLabel" aria-live="polite"><div class="progress-complete"><strong data-progress-complete>0</strong><span data-i18n="progress.completed">Completed</span></div><div class="progress-remaining"><strong data-progress-remaining>9</strong><span data-i18n="progress.remaining">Not tried</span></div><div class="progress-review"><strong data-progress-review>0</strong><span data-i18n="progress.review">Review</span></div></div>
+        <div class="all-plans"><div class="step-activity-grid">
+          <article class="step-activity" data-activity-id="dry-everyday"><header class="step-activity-header"><span>01</span><h3 data-i18n="cleanRepeat.quizEverydayTitle">Like a song</h3></header><div class="quiz-scene" data-i18n="cleanRepeat.quizEverydayScene">A song has the same chorus 3 times.</div><p class="activity-question" data-i18n="cleanRepeat.quizEverydayQuestion">What is the cleanest song sheet?</p><div class="activity-options"><button type="button" data-i18n="cleanRepeat.quizEverydayOption1">Copy the chorus by hand 3 times</button><button type="button" data-correct="true" data-i18n="cleanRepeat.quizEverydayOption2">Write it once and mark "Chorus" where it repeats</button><button type="button" data-i18n="cleanRepeat.quizEverydayOption3">Leave the chorus out</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dry-loop"><header class="step-activity-header"><span>02</span><h3 data-i18n="cleanRepeat.quizLoopTitle">Same lines</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="cleanRepeat.quizLoopCode">print("Brush teeth")
+print("Brush teeth")
+print("Brush teeth")</code></div><p class="activity-question" data-i18n="cleanRepeat.quizLoopQuestion">Which cleaner code shows the same output?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="cleanRepeat.quizLoopOption1">A for loop with range(3) and one print</button><button type="button" data-i18n="cleanRepeat.quizLoopOption2">print("Brush teeth" * 3)</button><button type="button" data-i18n="cleanRepeat.quizLoopOption3">A for loop with range(1) and one print</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dry-count"><header class="step-activity-header"><span>03</span><h3 data-i18n="cleanRepeat.quizCountTitle">Inside the loop</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="cleanRepeat.quizCountCode">for i in range(4):
+    print("Jump!")
+print("Rest")</code></div><p class="activity-question" data-i18n="cleanRepeat.quizCountQuestion">How many repeated print lines does this loop replace?</p><div class="activity-options"><button type="button" data-i18n="cleanRepeat.quizCountOption1">1</button><button type="button" data-correct="true" data-i18n="cleanRepeat.quizCountOption2">4</button><button type="button" data-i18n="cleanRepeat.quizCountOption3">5</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dry-tool"><header class="step-activity-header"><span>04</span><h3 data-i18n="cleanRepeat.quizToolTitle">Only the name changes</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="cleanRepeat.quizToolCode">print("Happy birthday, Ana!")
+print("Happy birthday, Leo!")
+print("Happy birthday, Mia!")</code></div><p class="activity-question" data-i18n="cleanRepeat.quizToolQuestion">What is the best tool to clean this up?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="cleanRepeat.quizToolOption1">A function with a parameter for the name</button><button type="button" data-i18n="cleanRepeat.quizToolOption2">Copy the line again for each friend</button><button type="button" data-i18n="cleanRepeat.quizToolOption3">A comment above each line</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dry-param"><header class="step-activity-header"><span>05</span><h3 data-i18n="cleanRepeat.quizParamTitle">Call the function</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="cleanRepeat.quizParamCode">def birthday(name):
+    print("Happy birthday, " + name + "!")
+
+birthday("Leo")</code></div><p class="activity-question" data-i18n="topic.predictQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-i18n="cleanRepeat.quizParamOption1">Happy birthday, name!</button><button type="button" data-correct="true" data-i18n="cleanRepeat.quizParamOption2">Happy birthday, Leo!</button><button type="button" data-i18n="cleanRepeat.quizParamOption3">Nothing</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dry-onefix"><header class="step-activity-header"><span>06</span><h3 data-i18n="cleanRepeat.quizOnefixTitle">One fix</h3></header><div class="quiz-scene" data-i18n="cleanRepeat.quizOnefixScene">A greeting lives inside one function. The program calls it 5 times. Now the greeting must change.</div><p class="activity-question" data-i18n="cleanRepeat.quizOnefixQuestion">How many places do you edit?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="cleanRepeat.quizOnefixOption1">1</button><button type="button" data-i18n="cleanRepeat.quizOnefixOption2">5</button><button type="button" data-i18n="cleanRepeat.quizOnefixOption3">6</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dry-why"><header class="step-activity-header"><span>07</span><h3 data-i18n="cleanRepeat.quizWhyTitle">Why clean it?</h3></header><div class="quiz-scene" data-i18n="cleanRepeat.quizWhyScene">Messy code and clean code show exactly the same output.</div><p class="activity-question" data-i18n="cleanRepeat.quizWhyQuestion">So why clean it?</p><div class="activity-options"><button type="button" data-i18n="cleanRepeat.quizWhyOption1">Python only runs clean code</button><button type="button" data-correct="true" data-i18n="cleanRepeat.quizWhyOption2">It is shorter, and a fix happens in one place</button><button type="button" data-i18n="cleanRepeat.quizWhyOption3">Clean code shows more output</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="dry-fix" data-fix-expected-key="cleanRepeat.fixExpected"><header class="step-activity-header"><span>08</span><h3 data-i18n="fix.title">Fix PyBot's code</h3></header><p class="activity-question" data-i18n="cleanRepeat.fixTask">PyBot changed the snack from cookies to apples, but missed one copy. Write a function so the snack lives in one place, and match the goal.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="dry-fix-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="dry-fix-code" data-fix-code-key="cleanRepeat.fixCode" rows="7" spellcheck="false" autocapitalize="off" autocomplete="off">print("Ana gets an apple.")
+print("Thanks, PyBot!")
+print("Leo gets an apple.")
+print("Thanks, PyBot!")
+print("Mia gets a cookie.")
+print("Thanks, PyBot!")</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="cleanRepeat.fixExpected">Ana gets an apple.
+Thanks, PyBot!
+Leo gets an apple.
+Thanks, PyBot!
+Mia gets an apple.
+Thanks, PyBot!</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+        </div></div>
+        <div class="page-progress-tools"><div><strong data-i18n="progress.savedTitle">Your work is saved here.</strong><p data-i18n="progress.savedText">Want a fresh start? Clear only this page.</p></div><button type="button" data-reset-activities><span>↺</span><span data-i18n="progress.resetPage">Clear this page's progress</span></button><p class="progress-reset-status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-big-idea"><span class="big-idea-mark">!</span><div><span class="big-idea-label" data-i18n="lesson.bigIdea">BIG IDEA</span><h2 data-i18n="cleanRepeat.bigTitle">Don't Repeat Yourself.</h2><p data-i18n="cleanRepeat.bigText">Repeated lines become a loop. Repeated chunks with small changes become a function with a parameter. Then one fix fixes everything.</p></div></section>
+      <nav class="lesson-actions" aria-label="Lesson navigation" data-i18n-aria-label="a11y.lessonNav"><a class="button button-secondary" href="16-clean-comments.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a><a class="button button-primary" href="17-licence-exam.html"><span data-i18n="cleanRepeat.next">Licence exam</span><span>→</span></a></nav>
+    </main>
+  </body>
+</html>

@@ -5637,6 +5637,47 @@ button:focus-visible {
   color: var(--yellow);
 }
 
+/* Answers for input(): Python reads them one line at a time. */
+.answers-area {
+  display: grid;
+  gap: 6px;
+  padding: 14px 28px;
+  border-top: 2px solid #38516d;
+  background: #13304f;
+}
+
+.answers-label {
+  color: #7f9ab4;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.answers-editor {
+  width: 100%;
+  min-height: 52px;
+  padding: 8px 10px;
+  resize: vertical;
+  border: 2px dashed #6fd39a;
+  border-radius: 10px;
+  background: #0e243d;
+  color: #b8f0cf;
+  caret-color: var(--yellow);
+  font: inherit;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.answers-editor:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+.fix-answers {
+  border: 2px dashed #6fd39a;
+  color: #b8f0cf;
+}
+
 .fix-activity.is-complete .fix-output {
   box-shadow: inset 0 0 0 2px #6fd39a;
 }
@@ -7266,70 +7307,851 @@ button:focus-visible {
   border: 3px dashed var(--yellow);
 }
 
-/* Talk to PyBot zone (input) */
-.scene-input::before {
-  background: var(--blue-soft);
+/* Think like a programmer zone: a light bulb idea with small puzzle pieces */
+.scene-think::before {
+  background: var(--yellow-soft);
 }
 
-.scene-chat {
+.scene-idea {
   position: absolute;
-  right: -22px;
-  bottom: 150px;
+  top: 140px;
+  right: -20px;
+  bottom: 20px;
   z-index: 8;
-  display: grid;
-  justify-items: end;
-  gap: 10px;
-  width: 104px;
+  width: 118px;
 }
 
-.scene-chat span {
-  position: relative;
-  display: grid;
-  min-width: 58px;
-  min-height: 46px;
-  place-items: center;
-  padding: 6px 14px;
-  border: 3px solid var(--blue-dark);
-  border-radius: 18px;
-  box-shadow: 5px 6px 0 rgba(23, 59, 130, 0.16);
-  font-family: Consolas, "Courier New", monospace;
-  font-weight: 900;
-}
-
-.scene-chat-ask {
-  justify-self: start;
-  background: var(--yellow);
-  color: var(--blue-dark);
-  font-size: 1.6rem;
-  animation: chat-pop 2.2s ease-in-out infinite alternate;
-}
-
-.scene-chat-answer {
-  background: var(--blue);
-  color: var(--white);
-  font-size: 1.05rem;
-}
-
-.scene-chat-answer::after {
+/* The bulb: a glowing yellow glass with a filament and a striped base. */
+.scene-bulb {
   position: absolute;
-  right: 10px;
-  bottom: 6px;
-  width: 3px;
-  height: 14px;
+  top: 0;
+  right: 14px;
+  width: 66px;
+  height: 66px;
+  border: 4px solid var(--blue-dark);
+  border-radius: 50%;
   background: var(--yellow);
-  content: "";
-  animation: cursor-blink 1.1s steps(1) infinite;
+  box-shadow:
+    0 0 0 8px rgba(255, 216, 77, 0.35),
+    5px 6px 0 rgba(23, 59, 130, 0.16);
+  animation: bulb-glow 2.2s ease-in-out infinite alternate;
 }
 
-@keyframes chat-pop {
+.scene-bulb::before {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  width: 16px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--white);
+  content: "";
+  transform: rotate(-35deg);
+}
+
+.scene-bulb::after {
+  position: absolute;
+  top: 58px;
+  left: 18px;
+  width: 22px;
+  height: 20px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 3px 3px 8px 8px;
+  background: repeating-linear-gradient(180deg, var(--white) 0 4px, var(--blue-stage) 4px 7px);
+  content: "";
+}
+
+.scene-bulb i {
+  position: absolute;
+  top: 26px;
+  left: 20px;
+  width: 18px;
+  height: 14px;
+  border: 3px solid var(--orange-dark);
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Puzzle pieces: a square with one round tab. */
+.scene-piece {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 6px;
+  box-shadow: 3px 4px 0 rgba(23, 59, 130, 0.16);
+  animation: piece-bob 2.6s ease-in-out infinite alternate;
+}
+
+.scene-piece::after {
+  position: absolute;
+  top: 6px;
+  right: -12px;
+  width: 14px;
+  height: 14px;
+  border: 3px solid var(--blue-dark);
+  border-left-color: transparent;
+  border-radius: 50%;
+  background: inherit;
+  content: "";
+}
+
+.scene-piece-a {
+  bottom: 34px;
+  left: 58px;
+  background: var(--orange);
+  transform: rotate(-12deg);
+}
+
+.scene-piece-b {
+  bottom: 0;
+  left: 62px;
+  background: var(--blue);
+  transform: rotate(8deg);
+  animation-delay: 0.6s;
+}
+
+.scene-piece-c {
+  bottom: 76px;
+  left: 82px;
+  width: 26px;
+  height: 26px;
+  background: var(--white);
+  transform: rotate(18deg);
+  animation-delay: 1.2s;
+}
+
+@keyframes bulb-glow {
   to {
-    transform: translateY(-6px) rotate(-4deg);
+    box-shadow:
+      0 0 0 14px rgba(255, 216, 77, 0.2),
+      5px 6px 0 rgba(23, 59, 130, 0.16);
+  }
+}
+
+@keyframes piece-bob {
+  to {
+    translate: 0 -6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .scene-idea {
+    right: -14px;
+    transform: scale(0.8);
+    transform-origin: bottom right;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scene-chat-ask,
-  .scene-chat-answer::after {
+  .scene-bulb,
+  .scene-piece {
+    animation: none;
+  }
+}
+
+/* Clean code zone (zone 11): a small broom with sparkles next to a tidy code card */
+.scene-clean::before {
+  background: var(--orange-soft);
+}
+
+.scene-tidy {
+  position: absolute;
+  right: -52px;
+  bottom: 14px;
+  z-index: 8;
+  width: 132px;
+  height: 200px;
+}
+
+.scene-tidy-card {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  gap: 6px;
+  width: 124px;
+  padding: 10px 10px 12px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 5px 6px 0 rgba(23, 59, 130, 0.16);
+  transform: rotate(4deg);
+}
+
+.scene-tidy-card code {
+  display: block;
+  overflow: hidden;
+  color: var(--blue-dark);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.scene-tidy-card i {
+  display: block;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--blue-soft);
+}
+
+.scene-tidy-card i:nth-of-type(2) {
+  width: 70%;
+  background: var(--orange-soft);
+}
+
+/* The broom: a wooden handle with orange bristles. */
+.scene-broom {
+  position: absolute;
+  bottom: 0;
+  left: 6px;
+  width: 54px;
+  height: 140px;
+  transform: rotate(-14deg);
+  transform-origin: bottom center;
+  animation: broom-sweep 2.4s ease-in-out infinite alternate;
+}
+
+.scene-broom::before {
+  position: absolute;
+  top: 0;
+  left: 22px;
+  width: 10px;
+  height: 100px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 6px;
+  background: #c98a4b;
+  content: "";
+}
+
+.scene-broom::after {
+  position: absolute;
+  bottom: 0;
+  left: 2px;
+  width: 50px;
+  height: 44px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 8px 8px 4px 4px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 7px, rgba(23, 59, 130, 0.35) 7px 9px),
+    var(--orange);
+  content: "";
+}
+
+.scene-sparkle {
+  position: absolute;
+  color: var(--yellow);
+  font-size: 1.4rem;
+  font-style: normal;
+  line-height: 1;
+  text-shadow: 0 0 0 var(--blue-dark), 1px 1px 0 var(--blue-dark), -1px -1px 0 var(--blue-dark);
+  animation: sparkle-twinkle 1.6s ease-in-out infinite alternate;
+}
+
+.scene-sparkle-a {
+  top: 102px;
+  right: 8px;
+}
+
+.scene-sparkle-b {
+  top: 136px;
+  right: 44px;
+  font-size: 1rem;
+  animation-delay: 0.5s;
+}
+
+.scene-sparkle-c {
+  bottom: 18px;
+  right: 6px;
+  font-size: 1.15rem;
+  animation-delay: 1s;
+}
+
+@keyframes broom-sweep {
+  to {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes sparkle-twinkle {
+  from {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.15) rotate(12deg);
+  }
+}
+
+@media (max-width: 520px) {
+  .scene-tidy {
+    right: -8px;
+    bottom: 6px;
+    transform: scale(0.66);
+    transform-origin: bottom right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-broom,
+  .scene-sparkle {
+    animation: none;
+  }
+}
+
+/* Game projects zone: a gold trophy next to PyBot */
+.scene-projects::before {
+  background: var(--yellow-soft);
+}
+
+.scene-trophy {
+  position: absolute;
+  right: -26px;
+  bottom: 26px;
+  z-index: 8;
+  display: grid;
+  justify-items: center;
+  width: 110px;
+}
+
+.scene-trophy b {
+  position: relative;
+  display: grid;
+  width: 86px;
+  height: 74px;
+  place-items: center;
+  border: 4px solid var(--blue-dark);
+  border-radius: 8px 8px 44px 44px;
+  background: linear-gradient(105deg, var(--yellow) 0 58%, #ffe98f 58% 70%, var(--yellow) 70%);
+  box-shadow: 5px 6px 0 rgba(23, 59, 130, 0.16);
+  color: var(--orange);
+  font-size: 2.1rem;
+  line-height: 1;
+  transform-origin: 50% 100%;
+  animation: trophy-shine 1.8s ease-in-out infinite alternate;
+}
+
+/* The two handles of the cup */
+.scene-trophy b::before,
+.scene-trophy b::after {
+  position: absolute;
+  top: 8px;
+  width: 22px;
+  height: 32px;
+  border: 4px solid var(--blue-dark);
+  content: "";
+}
+
+.scene-trophy b::before {
+  left: -26px;
+  border-right: 0;
+  border-radius: 16px 0 0 16px;
+}
+
+.scene-trophy b::after {
+  right: -26px;
+  border-left: 0;
+  border-radius: 0 16px 16px 0;
+}
+
+/* Stem and base */
+.scene-trophy i {
+  position: relative;
+  width: 64px;
+  height: 18px;
+  margin-top: 18px;
+  border: 4px solid var(--blue-dark);
+  border-radius: 6px;
+  background: var(--orange);
+}
+
+.scene-trophy i::before {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  width: 16px;
+  height: 22px;
+  border: 4px solid var(--blue-dark);
+  border-bottom: 0;
+  background: var(--yellow);
+  content: "";
+  transform: translateX(-50%);
+}
+
+@keyframes trophy-shine {
+  to {
+    transform: translateY(-4px) rotate(-3deg);
+  }
+}
+
+/* A step of a project plan names the skill it uses */
+.project-skill {
+  display: inline-block;
+  margin: 10px 0 0;
+  padding: 3px 12px;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--yellow-soft);
+  color: var(--blue-dark);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+@media (max-width: 520px) {
+  .scene-trophy {
+    right: 0;
+    bottom: 40px;
+    transform: scale(0.8);
+    transform-origin: 100% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-trophy b {
+    animation: none;
+  }
+}
+
+/* Turtle drawing zone: a little turtle walks next to PyBot and leaves a dashed line. */
+.scene-turtle::before {
+  background: #e7f7ea;
+}
+
+.turtle-buddy {
+  position: absolute;
+  right: -34px;
+  bottom: -26px;
+  z-index: 8;
+  width: 132px;
+  height: 84px;
+  transform: scale(1.15);
+  transform-origin: bottom right;
+}
+
+/* The drawn path: up, a corner, then right to the turtle's pen. */
+.turtle-buddy-trail {
+  position: absolute;
+  right: 118px;
+  bottom: 7px;
+  width: 210px;
+  height: 58px;
+}
+
+.turtle-buddy-trail::before,
+.turtle-buddy-trail::after {
+  position: absolute;
+  border-radius: 3px;
+  content: "";
+}
+
+.turtle-buddy-trail::before {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  background: repeating-linear-gradient(90deg, var(--orange) 0 12px, transparent 12px 20px);
+  background-size: 20px 5px;
+  animation: turtle-trail-x 1.4s linear infinite;
+}
+
+.turtle-buddy-trail::after {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  background: repeating-linear-gradient(180deg, var(--orange) 0 12px, transparent 12px 20px);
+  background-size: 5px 20px;
+}
+
+/* The pen tip where the line comes out. */
+.turtle-buddy-pen {
+  position: absolute;
+  bottom: 4px;
+  left: 6px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--blue-dark);
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.turtle-buddy-shell {
+  position: absolute;
+  bottom: 20px;
+  left: 18px;
+  z-index: 2;
+  overflow: hidden;
+  width: 82px;
+  height: 52px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 50% 50% 14px 14px / 90% 90% 22% 22%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35) 0 10px, transparent 11px),
+    #3fa35b;
+  box-shadow: inset 0 -8px 0 #2b7d43;
+}
+
+/* Shell pattern: three plates. */
+.turtle-buddy-shell i {
+  position: absolute;
+  top: 16px;
+  width: 20px;
+  height: 18px;
+  border: 2px solid #1f6635;
+  border-radius: 7px;
+  background: #7ccf72;
+}
+
+.turtle-buddy-shell i:nth-child(1) {
+  left: 6px;
+  top: 20px;
+}
+
+.turtle-buddy-shell i:nth-child(2) {
+  left: 28px;
+  top: 8px;
+}
+
+.turtle-buddy-shell i:nth-child(3) {
+  left: 50px;
+  top: 20px;
+}
+
+.turtle-buddy-head {
+  position: absolute;
+  bottom: 26px;
+  left: 92px;
+  z-index: 1;
+  width: 36px;
+  height: 32px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 50% 55% 45% 50%;
+  background: #8edc8b;
+  animation: turtle-head-bob 1.4s ease-in-out infinite;
+}
+
+.turtle-buddy-head::before {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  width: 7px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue-dark);
+  content: "";
+}
+
+.turtle-buddy-head::after {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 11px;
+  height: 6px;
+  border-bottom: 3px solid var(--blue-dark);
+  border-radius: 0 0 50% 50%;
+  content: "";
+}
+
+.turtle-buddy-tail {
+  position: absolute;
+  bottom: 24px;
+  left: 8px;
+  width: 18px;
+  height: 14px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 60% 10% 10% 60%;
+  background: #8edc8b;
+}
+
+.turtle-buddy-leg {
+  position: absolute;
+  bottom: 6px;
+  width: 18px;
+  height: 22px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 8px 8px 10px 10px;
+  background: #8edc8b;
+  transform-origin: top center;
+  animation: turtle-leg-step 0.7s ease-in-out infinite alternate;
+}
+
+.turtle-buddy-leg-back {
+  left: 30px;
+}
+
+.turtle-buddy-leg-front {
+  left: 72px;
+  animation-delay: -0.7s;
+}
+
+@keyframes turtle-trail-x {
+  to {
+    background-position: 20px 0;
+  }
+}
+
+@keyframes turtle-head-bob {
+  50% {
+    transform: translateY(-3px) rotate(4deg);
+  }
+}
+
+@keyframes turtle-leg-step {
+  from {
+    transform: rotate(14deg);
+  }
+
+  to {
+    transform: rotate(-14deg);
+  }
+}
+
+@media (max-width: 520px) {
+  .turtle-buddy {
+    right: -10px;
+    bottom: -18px;
+    transform: scale(0.86);
+  }
+
+  .turtle-buddy-trail {
+    width: 150px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .turtle-buddy-trail::before,
+  .turtle-buddy-head,
+  .turtle-buddy-leg {
+    animation: none;
+  }
+}
+
+/* Pit stop 2: licence exam */
+.scene-exam::before {
+  background:
+    radial-gradient(circle at center, var(--yellow-soft) 0 62%, transparent 62.5%),
+    repeating-conic-gradient(var(--blue-dark) 0 25%, var(--white) 0 50%) 0 0 / 28px 28px;
+}
+
+.scene-licence {
+  position: absolute;
+  right: -30px;
+  bottom: 168px;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  grid-template-rows: 16px 1fr;
+  gap: 8px 9px;
+  width: 136px;
+  height: 104px;
+  padding: 0 10px 10px;
+  overflow: visible;
+  border: 3px solid var(--blue-dark);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 6px 7px 0 rgba(23, 59, 130, 0.18);
+  transform: rotate(6deg);
+  animation: licence-float 2.6s ease-in-out infinite alternate;
+}
+
+.licence-band {
+  grid-column: 1 / -1;
+  margin: 0 -10px;
+  border-bottom: 3px solid var(--blue-dark);
+  border-radius: 10px 10px 0 0;
+  background: repeating-conic-gradient(var(--blue-dark) 0 25%, var(--white) 0 50%) 0 0 / 12px 12px;
+}
+
+/* The photo: a tiny PyBot face */
+.licence-photo {
+  position: relative;
+  width: 44px;
+  height: 52px;
+  border: 2px solid var(--blue-dark);
+  border-radius: 8px;
+  background: var(--blue-soft);
+}
+
+.licence-photo::before {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  width: 3px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--blue-dark);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.licence-photo::after {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border: 1.5px solid var(--blue-dark);
+  border-radius: 50%;
+  background: var(--yellow);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.licence-photo i {
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  width: 32px;
+  height: 25px;
+  border: 2px solid var(--blue-dark);
+  border-radius: 9px;
+  background: var(--white);
+  transform: translateX(-50%);
+}
+
+.licence-photo i::before {
+  position: absolute;
+  inset: 3px;
+  border-radius: 6px;
+  background:
+    radial-gradient(circle, #8ff3ff 0 2.4px, transparent 3px) 4px 4px / 8px 8px no-repeat,
+    radial-gradient(circle, #8ff3ff 0 2.4px, transparent 3px) 14px 4px / 8px 8px no-repeat,
+    var(--blue-dark);
+  content: "";
+}
+
+.licence-photo i::after {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  width: 9px;
+  height: 4px;
+  border: 2px solid #8ff3ff;
+  border-top: 0;
+  border-radius: 0 0 6px 6px;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.licence-lines {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  padding-top: 4px;
+}
+
+.licence-lines i {
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--line);
+}
+
+.licence-lines i:first-child {
+  width: 100%;
+  background: var(--blue);
+}
+
+.licence-lines i:nth-child(2) {
+  width: 80%;
+}
+
+.licence-lines i:nth-child(3) {
+  width: 55%;
+}
+
+.licence-stamp {
+  position: absolute;
+  right: -16px;
+  bottom: -18px;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 3px solid #b7860b;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: inset 0 0 0 3px var(--yellow), inset 0 0 0 5px #b7860b;
+  color: #8a6200;
+  font-size: 1.35rem;
+  line-height: 1;
+  transform: rotate(-14deg);
+}
+
+@keyframes licence-float {
+  to {
+    transform: translateY(-6px) rotate(3deg);
+  }
+}
+
+/* Big idea as a licence stamp */
+.exam-stamp {
+  position: relative;
+  background:
+    repeating-conic-gradient(var(--blue-dark) 0 25%, var(--white) 0 50%) 0 0 / 14px 14px repeat-y,
+    var(--yellow);
+  padding-left: 49px;
+}
+
+.exam-stamp .big-idea-mark {
+  width: 74px;
+  height: 74px;
+  border: 4px dashed #b7860b;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 0 0 4px var(--white), 0 0 0 7px #b7860b;
+  color: #b7860b;
+  font-size: 2.1rem;
+  transform: rotate(-12deg);
+  animation: exam-stamp-in 0.6s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+}
+
+@keyframes exam-stamp-in {
+  from {
+    opacity: 0;
+    transform: rotate(-30deg) scale(1.8);
+  }
+}
+
+@media (max-width: 520px) {
+  .scene-licence {
+    right: -10px;
+    bottom: 140px;
+    width: 116px;
+    height: 92px;
+    grid-template-columns: 38px 1fr;
+    gap: 6px 7px;
+  }
+
+  .licence-photo {
+    width: 38px;
+    height: 46px;
+  }
+
+  .licence-stamp {
+    width: 40px;
+    height: 40px;
+    font-size: 1.15rem;
+  }
+
+  .exam-stamp {
+    padding-left: 36px;
+  }
+
+  .exam-stamp .big-idea-mark {
+    width: 54px;
+    height: 54px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-licence,
+  .exam-stamp .big-idea-mark {
     animation: none;
   }
 }

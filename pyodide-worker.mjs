@@ -64,8 +64,14 @@ _pybot_setup(_pybot_turtle_source)
 del _pybot_setup, _pybot_turtle_source
 `;
 
-self.addEventListener("message", async (event) => {
-  const { id, code, answers = [] } = event.data;
+// Runs wait for each other, so two programs never share input() answers or a
+// turtle drawing.
+let lastRun = Promise.resolve();
+self.addEventListener("message", (event) => {
+  lastRun = lastRun.then(() => runProgram(event.data));
+});
+
+async function runProgram({ id, code, answers = [] }) {
   const stdout = [];
   const stderr = [];
   let pybot = null;
@@ -77,7 +83,14 @@ self.addEventListener("message", async (event) => {
     pybot = pyodide.pyimport("_pybot");
     pybot.start(JSON.stringify(answers));
 
-    const result = await pyodide.runPythonAsync(code);
+    // Every run starts with empty boxes, like running a fresh program.
+    const runGlobals = pyodide.toPy({ __name__: "__main__" });
+    let result;
+    try {
+      result = await pyodide.runPythonAsync(code, { globals: runGlobals });
+    } finally {
+      runGlobals.destroy();
+    }
     if (result !== undefined && result !== null) {
       stdout.push(String(result));
       if (typeof result.destroy === "function") {
@@ -102,7 +115,7 @@ self.addEventListener("message", async (event) => {
       drawing: takeDrawing(pybot),
     });
   }
-});
+}
 
 // The turtle drawing as JSON text, or null when the code did not draw.
 function takeDrawing(pybot) {

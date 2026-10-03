@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta id="meta-description" name="description" content="Build a magic 8-ball game of chance in Python with a list, random.choice, a function and a while loop." data-i18n-content="meta.projectEightBallDescription" /><meta name="theme-color" content="#fff8ec" /><title>Magic 8-ball — PyBot</title><link rel="icon" href="../favicon.svg" type="image/svg+xml" /><link rel="stylesheet" href="../styles.css" /><script src="../script.js" defer></script></head>
+  <body class="lesson-page topic-page" data-page="projectEightBall">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+    <header class="site-header lesson-site-header"><a class="brand" href="../index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home"><span class="brand-mark"><span></span></span><span>PyBot</span></a><div class="lesson-header-tools"><span class="lesson-progress" data-i18n="topic.progressProjectEightBall">ZONE 12 · 6 OF 6</span><div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria-label="a11y.language"><button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button><button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button></div></div></header>
+    <main class="lesson-main" id="main-content">
+      <a class="lesson-back" href="18-project-quiz.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a>
+      <section class="topic-hero"><div class="topic-hero-copy"><p class="eyebrow"><span>12</span><b data-i18n="projectEightBall.eyebrow">GAME PROJECTS · MAGIC 8-BALL</b></p><h1 data-i18n="projectEightBall.title">Shake the magic ball.</h1><p data-i18n="projectEightBall.intro">Ask a yes-or-no question and get a surprise answer, picked by chance.</p></div>
+        <aside class="lesson-pybot-scene topic-pybot-scene scene-projects">
+          <div class="lesson-pybot-bubble">
+            <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+            <p data-pybot-message="projectEightBall.pybot" data-i18n="projectEightBall.pybot">Ask me anything! My answers come from a list, by chance.</p>
+          </div>
+
+          <div class="scene-trophy" aria-hidden="true"><b>★</b><i></i></div>
+
+          <div class="pybot-wrap lesson-pybot-figure" data-mood="starry">
+            <div class="pybot" role="img" aria-label="PyBot looks amazed with starry eyes next to a gold trophy" data-i18n-aria-label="projectEightBall.robotLabel">
+              <div class="antenna" aria-hidden="true"><span></span></div>
+              <div class="ear ear-left" aria-hidden="true"></div>
+              <div class="ear ear-right" aria-hidden="true"></div>
+              <div class="bot-head">
+                <div class="bot-screen">
+                  <div class="brow brow-left" aria-hidden="true"></div>
+                  <div class="brow brow-right" aria-hidden="true"></div>
+                  <div class="eye eye-left" aria-hidden="true"><span></span></div>
+                  <div class="eye eye-right" aria-hidden="true"><span></span></div>
+                  <div class="cheek cheek-left" aria-hidden="true"></div>
+                  <div class="cheek cheek-right" aria-hidden="true"></div>
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="bot-neck" aria-hidden="true"></div>
+              <div class="arm arm-left" aria-hidden="true"><span class="hand"></span></div>
+              <div class="arm arm-right" aria-hidden="true"><span class="hand"></span></div>
+              <div class="bot-body">
+                <div class="chest-light" aria-hidden="true"></div>
+                <span class="chest-code" aria-hidden="true">&lt;/&gt;</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="topic-overview" aria-labelledby="projectEightBall-life-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lifeEyebrow">IN REAL LIFE</p><h2 id="projectEightBall-life-title" data-i18n="projectEightBall.lifeTitle">Answers picked by chance.</h2><p class="practice-intro" data-i18n="projectEightBall.lifeIntro">These toys feel like magic, but they only pick by chance.</p></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">🎱</span><h3 data-i18n="projectEightBall.life1Title">The Magic 8-Ball toy</h3><p data-i18n="projectEightBall.life1Text">You shake it, and one of 20 answers floats up in the window.</p></article><article class="topic-info-card"><span aria-hidden="true">🥠</span><h3 data-i18n="projectEightBall.life2Title">Fortune cookies</h3><p data-i18n="projectEightBall.life2Text">Each cookie hides a message. Which one you get is luck.</p></article><article class="topic-info-card"><span aria-hidden="true">📄</span><h3 data-i18n="projectEightBall.life3Title">Paper fortune tellers</h3><p data-i18n="projectEightBall.life3Text">You pick colors and numbers, then open a flap with a funny answer.</p></article>
+      </div>
+        <p class="topic-try"><b data-i18n="projectEightBall.noteTitle">Just a game:</b> <span data-i18n="projectEightBall.noteText">The ball cannot see the future. random.choice picks an answer by chance, like pulling a paper from a hat.</span></p></section>
+
+      <section class="topic-overview" aria-labelledby="projectEightBall-plan-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="projectEightBall.planEyebrow">THE PLAN</p><h2 id="projectEightBall-plan-title" data-i18n="projectEightBall.planTitle">Four small steps.</h2><p class="practice-intro" data-i18n="projectEightBall.planIntro">Each step uses something you already learned.</p></div><div class="topic-card-grid topic-card-grid-four">
+        <article class="topic-info-card"><span aria-hidden="true">1</span><h3 data-i18n="projectEightBall.plan1Title">The answers</h3><p data-i18n="projectEightBall.plan1Text">A list keeps every answer the ball can give.</p><p><code>[ ]</code> <code>append</code></p></article><article class="topic-info-card"><span aria-hidden="true">2</span><h3 data-i18n="projectEightBall.plan2Title">Shake the ball</h3><p data-i18n="projectEightBall.plan2Text">A function picks one answer with random.choice and returns it.</p><p><code>def</code> <code>random.choice</code> <code>return</code></p></article><article class="topic-info-card"><span aria-hidden="true">3</span><h3 data-i18n="projectEightBall.plan3Title">Ask again and again</h3><p data-i18n="projectEightBall.plan3Text">A while loop keeps asking with input() until the player types bye.</p><p><code>while</code> <code>input()</code> <code>!=</code></p></article><article class="topic-info-card"><span aria-hidden="true">4</span><h3 data-i18n="projectEightBall.plan4Title">Say goodbye</h3><p data-i18n="projectEightBall.plan4Text">After the loop, print a goodbye. It always runs last.</p><p><code>print()</code></p></article>
+      </div></section>
+
+      <section class="topic-run" aria-labelledby="projectEightBall-run-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.runEyebrow">RUN IT</p><h2 id="projectEightBall-run-title" data-i18n="projectEightBall.runTitle">Ask the ball.</h2><p class="practice-intro" data-i18n="topic.runIntro">Guess first. Then run real Python and check.</p></div>
+        <div class="topic-run-grid">
+          <article class="step-activity" data-activity-id="ball-predict"><header class="step-activity-header"><span>1</span><h3 data-i18n="topic.predictTitle">Guess the result</h3></header><div class="quiz-scene"><p data-i18n="projectEightBall.predictScene">The answers are random, but some things are sure. Look at PyBot&#x27;s answers.</p><p class="bug-wanted" data-i18n="projectEightBall.predictAnswer">PyBot&#x27;s answers: two questions, then bye</p></div><p class="activity-question" data-i18n="projectEightBall.predictQuestion">How many times does Python show &quot;The ball says:&quot;?</p><div class="activity-options"><button type="button" data-i18n="projectEightBall.predictOpt1">1 time</button><button type="button" data-correct="true" data-i18n="projectEightBall.predictOpt2">2 times</button><button type="button" data-i18n="projectEightBall.predictOpt3">3 times</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <div class="topic-runner">
+            <div class="code-window" aria-label="Python exercise" data-i18n-aria-label="a11y.codePreview" data-python-runner>
+              <div class="window-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>magic_ball.py</span><span class="preview-tag" data-i18n="preview.tag">REAL PYTHON</span></div>
+              <div class="code-area"><span class="line-number" aria-hidden="true">1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13</span><label class="visually-hidden" for="python-code" data-i18n="preview.editorLabel">Python code</label><textarea id="python-code" data-python-editor data-code-key="projectEightBall.runCode" rows="14" spellcheck="false" autocapitalize="off" autocomplete="off">import random
+
+answers = [&quot;Yes!&quot;, &quot;No way.&quot;, &quot;Maybe.&quot;, &quot;Ask again later.&quot;]
+
+def shake():
+    return random.choice(answers)
+
+print(&quot;I am the Magic 8-Ball. Type bye to stop.&quot;)
+question = input(&quot;Your question: &quot;)
+while question != &quot;bye&quot;:
+    print(&quot;The ball says:&quot;, shake())
+    question = input(&quot;Your question: &quot;)
+print(&quot;Bye! Remember, it is only a game of chance.&quot;)</textarea></div>
+              <div class="answers-area"><label class="answers-label" for="python-answers"><b data-i18n="answers.label">PyBot's answers</b><span data-i18n="answers.help">What you would type for each input(), one per line.</span></label><textarea id="python-answers" data-python-answers data-answers-key="projectEightBall.runAnswers" rows="3" spellcheck="false" autocapitalize="off" autocomplete="off">Will it rain tomorrow?
+Will I win the race?
+bye</textarea></div>
+              <div class="output-area" role="status" aria-live="polite"><span class="output-label" data-i18n="preview.output">OUTPUT</span><p class="python-hint" data-python-hint hidden><strong data-i18n="preview.hintLabel">PyBot's hint</strong><span data-python-hint-text></span></p><pre data-python-output data-i18n="topic.runReady">Ready. Press Run Python.</pre></div>
+              <div class="runner-actions"><button class="run-button" type="button" data-python-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="stop-button" type="button" data-python-stop disabled><span aria-hidden="true">■</span><span data-i18n="preview.stop">Stop</span></button></div>
+              <details class="runtime-credit"><summary data-i18n="preview.creditSummary">Who makes Python run here?</summary><p data-i18n="preview.creditText">Pyodide 314.0.3 runs CPython in your browser with WebAssembly.</p><p><span data-i18n="preview.creditLicense">Open-source under the Mozilla Public License 2.0.</span> <a href="https://github.com/pyodide/pyodide/blob/314.0.3/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="preview.license">License</a></p></details>
+            </div>
+            <p class="topic-try"><b data-i18n="topic.tryLabel">Now change one thing:</b> <span data-i18n="projectEightBall.tryText">Run it twice. The answers may change, but the number of answers stays the same.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic-practice" aria-labelledby="projectEightBall-build-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="projectEightBall.buildEyebrow">BUILD IT</p><h2 id="projectEightBall-build-title" data-i18n="projectEightBall.buildTitle">Build the ball, piece by piece.</h2><p class="practice-intro" data-i18n="projectEightBall.buildIntro">The answers are random, so these goals check things that are always the same.</p></div>
+        <div class="plan-progress-summary" aria-label="Activity progress" data-i18n-aria-label="progress.activitySummaryLabel" aria-live="polite"><div class="progress-complete"><strong data-progress-complete>0</strong><span data-i18n="progress.completed">Completed</span></div><div class="progress-remaining"><strong data-progress-remaining>11</strong><span data-i18n="progress.remaining">Not tried</span></div><div class="progress-review"><strong data-progress-review>0</strong><span data-i18n="progress.review">Review</span></div></div>
+        <div class="all-plans"><div class="step-activity-grid">
+          <article class="step-activity fix-activity" data-activity-id="ball-add" data-fix-expected-key="projectEightBall.fixAddExpected"><header class="step-activity-header"><span>01</span><h3 data-i18n="projectEightBall.fixAddTitle">Step 1: more answers</h3></header><p class="activity-question" data-i18n="projectEightBall.fixAddTask">The ball only has two answers. Add &quot;Maybe.&quot; to the list.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="ball-add-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="ball-add-code" data-fix-code-key="projectEightBall.fixAddCode" rows="9" spellcheck="false" autocapitalize="off" autocomplete="off">import random
+
+answers = [&quot;Yes!&quot;, &quot;No way.&quot;]
+# Add &quot;Maybe.&quot; to the list with append.
+
+print(answers)
+print(random.choice(answers) in answers)
+</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="projectEightBall.fixAddExpected">[&#x27;Yes!&#x27;, &#x27;No way.&#x27;, &#x27;Maybe.&#x27;]
+True</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="ball-return" data-fix-expected-key="projectEightBall.fixReturnExpected"><header class="step-activity-header"><span>02</span><h3 data-i18n="projectEightBall.fixReturnTitle">Step 2: give the answer back</h3></header><p class="activity-question" data-i18n="projectEightBall.fixReturnTask">shake() picks an answer but never gives it back, so reply is None. Fix the function.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="ball-return-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="ball-return-code" data-fix-code-key="projectEightBall.fixReturnCode" rows="11" spellcheck="false" autocapitalize="off" autocomplete="off">import random
+
+answers = [&quot;Yes!&quot;, &quot;No way.&quot;, &quot;Maybe.&quot;]
+
+def shake():
+    random.choice(answers)
+
+reply = shake()
+print(reply in answers)
+</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="projectEightBall.fixReturnExpected">True</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="ball-loop" data-fix-expected-key="projectEightBall.fixLoopExpected"><header class="step-activity-header"><span>03</span><h3 data-i18n="projectEightBall.fixLoopTitle">Step 3: keep asking</h3></header><p class="activity-question" data-i18n="projectEightBall.fixLoopTask">PyBot fixed the answer to test the loop. It should answer until bye, but it stops at once. Fix the while.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="ball-loop-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="ball-loop-code" data-fix-code-key="projectEightBall.fixLoopCode" rows="10" spellcheck="false" autocapitalize="off" autocomplete="off">def shake():
+    return &quot;Maybe.&quot;  # fixed answer, only for testing
+
+question = input(&quot;Your question: &quot;)
+while question == &quot;bye&quot;:
+    print(&quot;The ball says:&quot;, shake())
+    question = input(&quot;Your question: &quot;)
+print(&quot;Bye!&quot;)
+</textarea><label class="fix-answers-label" for="ball-loop-answers"><b data-i18n="answers.label">PyBot's answers</b></label><textarea class="fix-answers" id="ball-loop-answers" data-fix-answers-key="projectEightBall.fixLoopAnswers" rows="2" spellcheck="false" autocapitalize="off" autocomplete="off">Will I fly?
+bye</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="projectEightBall.fixLoopExpected">Your question: Will I fly?
+The ball says: Maybe.
+Your question: bye
+Bye!</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+        </div></div>
+      </section>
+
+      <section class="topic-practice" aria-labelledby="projectEightBall-practice-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.practiceEyebrow">YOUR TURN</p><h2 id="projectEightBall-practice-title" data-i18n="projectEightBall.practiceTitle">Questions about the ball.</h2><p class="practice-intro" data-i18n="topic.practiceIntro">Try each tiny question. A wrong answer becomes something to review.</p></div>
+        <div class="all-plans"><div class="step-activity-grid">
+          <article class="step-activity" data-activity-id="ball-choice"><header class="step-activity-header"><span>04</span><h3 data-i18n="projectEightBall.quizChoiceTitle">What does choice do?</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="projectEightBall.quizChoiceCode">random.choice(answers)</code></div><p class="activity-question" data-i18n="projectEightBall.quizChoiceQuestion">What does this give back?</p><div class="activity-options"><button type="button" data-i18n="projectEightBall.quizChoiceOpt1">Always the first answer</button><button type="button" data-correct="true" data-i18n="projectEightBall.quizChoiceOpt2">One answer from the list, picked by chance</button><button type="button" data-i18n="projectEightBall.quizChoiceOpt3">The answer that is true</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="ball-giveback"><header class="step-activity-header"><span>05</span><h3 data-i18n="projectEightBall.quizReturnTitle">Why return?</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="projectEightBall.quizReturnCode">def shake():
+    return random.choice(answers)
+
+print(&quot;The ball says:&quot;, shake())</code></div><p class="activity-question" data-i18n="projectEightBall.quizReturnQuestion">What does return do here?</p><div class="activity-options"><button type="button" data-i18n="projectEightBall.quizReturnOpt1">Ends the whole program</button><button type="button" data-correct="true" data-i18n="projectEightBall.quizReturnOpt2">Gives the answer back to where shake() was called</button><button type="button" data-i18n="projectEightBall.quizReturnOpt3">Prints the list</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="ball-capital"><header class="step-activity-header"><span>06</span><h3 data-i18n="projectEightBall.quizCapitalTitle">Bye or bye?</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="projectEightBall.quizCapitalCode">while question != &quot;bye&quot;:</code><p class="bug-wanted" data-i18n="projectEightBall.quizCapitalTyped">The player types: Bye</p></div><p class="activity-question" data-i18n="projectEightBall.quizCapitalQuestion">Does the loop stop?</p><div class="activity-options"><button type="button" data-i18n="projectEightBall.quizCapitalOpt1">Yes, it is the same word</button><button type="button" data-correct="true" data-i18n="projectEightBall.quizCapitalOpt2">No, &quot;Bye&quot; is not equal to &quot;bye&quot;</button><button type="button" data-i18n="projectEightBall.quizCapitalOpt3">Python shows an error</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="ball-first"><header class="step-activity-header"><span>07</span><h3 data-i18n="projectEightBall.quizFirstTitle">Ask before the loop</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="projectEightBall.quizFirstCode">question = input(&quot;Your question: &quot;)
+while question != &quot;bye&quot;:</code></div><p class="activity-question" data-i18n="projectEightBall.quizFirstQuestion">Why is there an input() before the while?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="projectEightBall.quizFirstOpt1">So question has a value to check</button><button type="button" data-i18n="projectEightBall.quizFirstOpt2">To make the loop faster</button><button type="button" data-i18n="projectEightBall.quizFirstOpt3">It is a mistake</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="ball-future"><header class="step-activity-header"><span>08</span><h3 data-i18n="projectEightBall.quizFutureTitle">Can it see the future?</h3></header><div class="quiz-scene"><p data-i18n="projectEightBall.quizFutureScene">The ball says: Yes!</p></div><p class="activity-question" data-i18n="projectEightBall.quizFutureQuestion">Will it really happen?</p><div class="activity-options"><button type="button" data-i18n="projectEightBall.quizFutureOpt1">Yes, the ball knows</button><button type="button" data-correct="true" data-i18n="projectEightBall.quizFutureOpt2">Not for sure: the answer was picked by chance</button><button type="button" data-i18n="projectEightBall.quizFutureOpt3">Yes, Python checked the internet</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="ball-same"><header class="step-activity-header"><span>09</span><h3 data-i18n="projectEightBall.quizSameTitle">Same question twice</h3></header><div class="quiz-scene"><p data-i18n="projectEightBall.quizSameScene">You ask &quot;Will I win?&quot; two times.</p></div><p class="activity-question" data-i18n="projectEightBall.quizSameQuestion">Will the ball give the same answer?</p><div class="activity-options"><button type="button" data-i18n="projectEightBall.quizSameOpt1">Always the same</button><button type="button" data-correct="true" data-i18n="projectEightBall.quizSameOpt2">Maybe, maybe not: each shake is a new pick</button><button type="button" data-i18n="projectEightBall.quizSameOpt3">Never the same</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="ball-sure"><header class="step-activity-header"><span>10</span><h3 data-i18n="projectEightBall.quizSureTitle">Something sure</h3></header><div class="quiz-scene"><p data-i18n="projectEightBall.quizSureScene">In the big game, the player types bye at the end.</p></div><p class="activity-question" data-i18n="projectEightBall.quizSureQuestion">Which line can you be sure Python shows last?</p><div class="activity-options"><button type="button" data-i18n="projectEightBall.quizSureOpt1">The ball says: Maybe.</button><button type="button" data-correct="true" data-i18n="projectEightBall.quizSureOpt2">Bye! Remember, it is only a game of chance.</button><button type="button" data-i18n="projectEightBall.quizSureOpt3">Ask again later.</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+        </div></div>
+        <div class="page-progress-tools"><div><strong data-i18n="progress.savedTitle">Your work is saved here.</strong><p data-i18n="progress.savedText">Want a fresh start? Clear only this page.</p></div><button type="button" data-reset-activities><span>↺</span><span data-i18n="progress.resetPage">Clear this page's progress</span></button><p class="progress-reset-status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-big-idea"><span class="big-idea-mark">!</span><div><span class="big-idea-label" data-i18n="lesson.bigIdea">BIG IDEA</span><h2 data-i18n="projectEightBall.bigTitle">Chance makes games surprising.</h2><p data-i18n="projectEightBall.bigText">random.choice picks from a list, a function returns the pick, and while keeps the game going. It cannot see the future.</p></div></section>
+      <nav class="lesson-actions" aria-label="Lesson navigation" data-i18n-aria-label="a11y.lessonNav"><a class="button button-secondary" href="18-project-quiz.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a><a class="button button-primary" href="19-turtle.html"><span data-i18n="projectEightBall.next">Turtle drawing</span><span>→</span></a></nav>
+    </main>
+  </body>
+</html>
