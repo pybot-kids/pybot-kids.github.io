@@ -2236,6 +2236,11 @@ a {
   font-weight: 900;
 }
 
+.backup-tools .backup-version {
+  margin-top: 12px;
+  font-size: 0.85rem;
+}
+
 .reset-tools {
   max-width: 750px;
   margin-top: 18px;

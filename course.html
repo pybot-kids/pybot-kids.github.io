@@ -6,7 +6,7 @@
     <meta
       id="meta-description"
       name="description"
-      content="A short foundation and ten small Python missions for children, guided by PyBot."
+      content="A short foundation and seven small Python missions for children, guided by PyBot."
       data-i18n-content="meta.courseDescription"
     />
     <meta name="theme-color" content="#fff8ec" />
@@ -48,7 +48,7 @@
           </p>
           <h1 id="course-title">
             <span data-i18n="course.titleStart">Start with the basics.</span>
-            <span data-i18n="course.titleEnd">Then 9 small zones.</span>
+            <span data-i18n="course.titleEnd">Then 6 small zones.</span>
           </h1>
           <p data-i18n="course.intro">Go slowly. Each zone has one idea and one small activity.</p>
         </div>
@@ -91,74 +91,92 @@
           </nav>
         </li>
 
-        <li class="mission-card mission-orange" data-course-step="keyboard">
+        <li class="mission-card mission-blue mission-routed">
           <span class="mission-number">01</span>
           <div class="mission-copy">
-            <span class="mission-concept" data-i18n="mission1.concept">KEYBOARD</span>
-            <h2 data-i18n="mission1.title">Keyboard Moves</h2>
-            <p data-i18n="mission1.text">Meet useful keys and a few safe shortcuts.</p>
+            <span class="mission-concept" data-i18n="missionBasics.concept">KEYS + TOOLS + MARKS</span>
+            <h2 data-i18n="missionBasics.title">Python Basics</h2>
+            <p data-i18n="missionBasics.text">Meet useful keys, the place where Python runs, and its special marks.</p>
           </div>
-          <span class="course-step-status" data-course-status></span>
           <a class="mission-start" href="lessons/04-keyboard.html" data-i18n="course.open">Open →</a>
+
+          <nav class="foundation-route zone-route" aria-label="Python basics pages" data-i18n-aria-label="path.basicsLabel">
+            <a href="lessons/04-keyboard.html" data-path-step="keyboard">
+              <span>1</span>
+              <b data-i18n="path.keyboard">Keyboard moves</b>
+              <small data-path-status></small>
+            </a>
+            <a href="lessons/05-environment.html" data-path-step="environment">
+              <span>2</span>
+              <b data-i18n="path.environment">Where Python runs</b>
+              <small data-path-status></small>
+            </a>
+            <a href="lessons/06-symbols.html" data-path-step="symbols">
+              <span>3</span>
+              <b data-i18n="path.symbols">Special marks</b>
+              <small data-path-status></small>
+            </a>
+          </nav>
         </li>
 
-        <li class="mission-card mission-blue" data-course-step="environment">
+        <li class="mission-card mission-orange mission-routed">
           <span class="mission-number">02</span>
           <div class="mission-copy">
-            <span class="mission-concept" data-i18n="mission2.concept">OUR SPACE</span>
-            <h2 data-i18n="mission2.title">Where Python Runs</h2>
-            <p data-i18n="mission2.text">Meet the browser, editor, Pyodide, and Python version.</p>
-          </div>
-          <span class="course-step-status" data-course-status></span>
-          <a class="mission-start" href="lessons/05-environment.html" data-i18n="course.open">Open →</a>
-        </li>
-
-        <li class="mission-card mission-yellow" data-course-step="symbols">
-          <span class="mission-number">03</span>
-          <div class="mission-copy">
-            <span class="mission-concept" data-i18n="mission3.concept">SYMBOLS</span>
-            <h2 data-i18n="mission3.title">Python's Special Marks</h2>
-            <p data-i18n="mission3.text">See the small marks that give code meaning.</p>
-          </div>
-          <span class="course-step-status" data-course-status></span>
-          <a class="mission-start" href="lessons/06-symbols.html" data-i18n="course.open">Open →</a>
-        </li>
-
-        <li class="mission-card mission-orange" data-course-step="variables">
-          <span class="mission-number">04</span>
-          <div class="mission-copy">
-            <span class="mission-concept" data-i18n="mission4.concept">MEMORY + VARIABLES</span>
+            <span class="mission-concept" data-i18n="mission4.concept">MEMORY + TYPES + CHANGE</span>
             <h2 data-i18n="mission4.title">Memory Boxes</h2>
-            <p data-i18n="mission4.text">See how a computer remembers a value by name.</p>
+            <p data-i18n="mission4.text">Keep values in named boxes, meet every kind of box, and change what they keep.</p>
           </div>
-          <span class="course-step-status" data-course-status></span>
           <a class="mission-start" href="lessons/07-memory-variables.html" data-i18n="course.open">Open →</a>
+
+          <nav class="foundation-route zone-route" aria-label="Memory boxes pages" data-i18n-aria-label="path.boxesLabel">
+            <a href="lessons/07-memory-variables.html" data-path-step="variables">
+              <span>1</span>
+              <b data-i18n="path.variables">Memory boxes</b>
+              <small data-path-status></small>
+            </a>
+            <a href="lessons/07b-boxes-of-all-kinds.html" data-path-step="boxes">
+              <span>2</span>
+              <b data-i18n="path.boxes">Boxes of all kinds</b>
+              <small data-path-status></small>
+            </a>
+            <a href="lessons/07c-changing-boxes.html" data-path-step="changingBoxes">
+              <span>3</span>
+              <b data-i18n="path.changingBoxes">Changing boxes</b>
+              <small data-path-status></small>
+            </a>
+          </nav>
         </li>
 
-        <li class="mission-card mission-yellow" data-course-step="boxes">
-          <span class="mission-number">05</span>
-          <div class="mission-copy">
-            <span class="mission-concept" data-i18n="missionBoxes.concept">TYPES + LISTS</span>
-            <h2 data-i18n="missionBoxes.title">Boxes of All Kinds</h2>
-            <p data-i18n="missionBoxes.text">Keep numbers, text, yes-or-no, lists, and grids in boxes.</p>
-          </div>
-          <span class="course-step-status" data-course-status></span>
-          <a class="mission-start" href="lessons/07b-boxes-of-all-kinds.html" data-i18n="course.open">Open →</a>
-        </li>
-
-        <li class="mission-card mission-blue" data-course-step="conditionals">
-          <span class="mission-number">06</span>
+        <li class="mission-card mission-blue mission-routed">
+          <span class="mission-number">03</span>
           <div class="mission-copy">
             <span class="mission-concept" data-i18n="mission5.concept">CONDITIONALS</span>
             <h2 data-i18n="mission5.title">Choose a Path</h2>
-            <p data-i18n="mission5.text">Use a yes-or-no question to choose what happens.</p>
+            <p data-i18n="mission5.text">Choose a path with if and else, with elif, and with match.</p>
           </div>
-          <span class="course-step-status" data-course-status></span>
           <a class="mission-start" href="lessons/08-conditionals.html" data-i18n="course.open">Open →</a>
+
+          <nav class="foundation-route zone-route" aria-label="Conditionals pages" data-i18n-aria-label="path.conditionalsLabel">
+            <a href="lessons/08-conditionals.html" data-path-step="conditionals">
+              <span>1</span>
+              <b data-i18n="path.conditionalsIf">if and else: two paths</b>
+              <small data-path-status></small>
+            </a>
+            <a href="lessons/08-conditionals-elif.html" data-path-step="conditionalsElif">
+              <span>2</span>
+              <b data-i18n="path.conditionalsElif">elif: more questions</b>
+              <small data-path-status></small>
+            </a>
+            <a href="lessons/08-conditionals-match.html" data-path-step="conditionalsMatch">
+              <span>3</span>
+              <b data-i18n="path.conditionalsMatch">match: pick a case</b>
+              <small data-path-status></small>
+            </a>
+          </nav>
         </li>
 
         <li class="mission-card mission-yellow mission-routed">
-          <span class="mission-number">07</span>
+          <span class="mission-number">04</span>
           <div class="mission-copy">
             <span class="mission-concept" data-i18n="mission6.concept">LOOPS</span>
             <h2 data-i18n="mission6.title">Repeat a Pattern</h2>
@@ -186,7 +204,7 @@
         </li>
 
         <li class="mission-card mission-blue" data-course-step="comparisons">
-          <span class="mission-number">08</span>
+          <span class="mission-number">05</span>
           <div class="mission-copy">
             <span class="mission-concept" data-i18n="missionComparisons.concept">COMPARISONS</span>
             <h2 data-i18n="missionComparisons.title">True or False?</h2>
@@ -197,7 +215,7 @@
         </li>
 
         <li class="mission-card mission-orange" data-course-step="functions">
-          <span class="mission-number">09</span>
+          <span class="mission-number">06</span>
           <div class="mission-copy">
             <span class="mission-concept" data-i18n="missionFunctions.concept">FUNCTIONS</span>
             <h2 data-i18n="missionFunctions.title">Boxes That Do a Job</h2>
@@ -210,7 +228,7 @@
         <li class="mission-card mission-checkpoint" data-course-step="checkpoint1">
           <span class="mission-number" aria-hidden="true">🏁</span>
           <div class="mission-copy">
-            <span class="mission-concept" data-i18n="missionCheckpoint1.concept">PIT STOP · ZONES 4–9</span>
+            <span class="mission-concept" data-i18n="missionCheckpoint1.concept">PIT STOP · ZONES 2–6</span>
             <h2 data-i18n="missionCheckpoint1.title">Check the Engine</h2>
             <p data-i18n="missionCheckpoint1.text">Bigger challenges with real Python. Then tell PyBot how it went.</p>
           </div>
@@ -219,7 +237,7 @@
         </li>
 
         <li class="mission-card mission-yellow mission-routed">
-          <span class="mission-number">10</span>
+          <span class="mission-number">07</span>
           <div class="mission-copy">
             <span class="mission-concept" data-i18n="missionBugs.concept">BUGS &amp; DEBUGGING</span>
             <h2 data-i18n="missionBugs.title">Bug Hunters</h2>

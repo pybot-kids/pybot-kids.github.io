@@ -131,7 +131,7 @@ const translations = {
     "meta.languageTitle": "What is a programming language? — PyBot",
     "meta.homeDescription": "PyBot helps children discover Python through tiny ideas, clear steps, and playful practice.",
     "meta.meetDescription": "Meet PyBot and try the expressions used throughout the course.",
-    "meta.courseDescription": "A short foundation and ten small learning zones for children, guided by PyBot.",
+    "meta.courseDescription": "A short foundation and seven small learning zones for children, guided by PyBot.",
     "meta.worldDescription": "See the small jobs code can do in apps children use every day.",
     "meta.thinkingDescription": "A playful lesson about the small plans children already make every day.",
     "meta.languageDescription": "A short, child-friendly explanation of programming languages.",
@@ -314,6 +314,7 @@ const translations = {
     "local.eyebrow": "YOUR WORK IS YOURS",
     "local.title": "No account. Your progress stays here.",
     "local.text": "This browser remembers your work. Ask an adult before clearing its data.",
+    "local.analytics": "For grown-ups: PyBot counts anonymous page visits with Google Analytics, with ads and ad personalization turned off. The learner's name, answers, and progress are never sent.",
     "backup.title": "Moving to another browser?",
     "backup.text": "Save a backup file here. Then load it in the other browser.",
     "backup.export": "Save a backup file",
@@ -321,6 +322,8 @@ const translations = {
     "backup.exported": "Backup saved. Keep the file somewhere safe.",
     "backup.confirm": "Replace the progress in this browser with this backup? Finished activities in the backup: {count}.",
     "backup.imported": "Done. Your progress is back.",
+    "backup.upgraded": "Done. Your progress is back, updated to the newest PyBot.",
+    "backup.versionLabel": "Progress version",
     "backup.cancelled": "Nothing changed.",
     "backup.invalid": "This is not a PyBot backup file. Nothing changed.",
     "backup.newer": "This backup comes from a newer PyBot. Nothing changed.",
@@ -338,7 +341,7 @@ const translations = {
     "course.home": "Home",
     "course.eyebrow": "YOUR FIRST PATH",
     "course.titleStart": "Start with the basics.",
-    "course.titleEnd": "Then 9 small zones and a pit stop.",
+    "course.titleEnd": "Then 6 small zones and a pit stop.",
     "course.intro": "Go slowly. Each zone has one idea and one small activity.",
     "course.rule": "One idea. One clear next step.",
     "course.note": "No rush. One small zone at a time.",
@@ -361,21 +364,19 @@ const translations = {
     "mission0.concept": "BEFORE PYTHON",
     "mission0.title": "Start Here",
     "mission0.text": "See what code can do. Think in steps. Then learn its rules.",
-    "mission1.concept": "KEYBOARD",
-    "mission1.title": "Keyboard Moves",
-    "mission1.text": "Meet useful keys and a few safe shortcuts.",
-    "mission2.concept": "OUR SPACE",
-    "mission2.title": "Where Python Runs",
-    "mission2.text": "Meet the browser, editor, Pyodide, and Python version.",
-    "mission3.concept": "SYMBOLS",
-    "mission3.title": "Python's Special Marks",
-    "mission3.text": "See the small marks that give code meaning.",
-    "mission4.concept": "MEMORY + VARIABLES",
+    "path.basicsLabel": "Python basics pages",
+    "path.keyboard": "Keyboard moves",
+    "path.environment": "Where Python runs",
+    "path.symbols": "Special marks",
+    "missionBasics.concept": "KEYS + TOOLS + MARKS",
+    "missionBasics.title": "Python Basics",
+    "missionBasics.text": "Meet useful keys, the place where Python runs, and its special marks.",
+    "mission4.concept": "MEMORY + TYPES + CHANGE",
     "mission4.title": "Memory Boxes",
-    "mission4.text": "See how a computer remembers a value by name.",
+    "mission4.text": "Keep values in named boxes, meet every kind of box, and change what they keep.",
     "mission5.concept": "CONDITIONALS",
     "mission5.title": "Choose a Path",
-    "mission5.text": "Use a yes-or-no question to choose what happens.",
+    "mission5.text": "Choose a path with if and else, with elif, and with match.",
     "mission6.concept": "LOOPS",
     "mission6.title": "Repeat a Pattern",
     "mission6.text": "Repeat with for, with while, and until something is done.",
@@ -574,12 +575,12 @@ const translations = {
     "meta.variablesDescription": "A child-friendly explanation of computer memory and Python variables.",
     "meta.conditionalsDescription": "A playful first look at Python conditionals.",
     "meta.loopsDescription": "A playful first look at Python loops.",
-    "topic.progressKeyboard": "ZONE 1 OF 10",
-    "topic.progressEnvironment": "ZONE 2 OF 10",
-    "topic.progressSymbols": "ZONE 3 OF 10",
-    "topic.progressVariables": "ZONE 4 OF 10",
-    "topic.progressConditionals": "ZONE 6 OF 10",
-    "topic.progressLoops": "ZONE 7 · 1 OF 3",
+    "topic.progressKeyboard": "ZONE 1 · 1 OF 3",
+    "topic.progressEnvironment": "ZONE 1 · 2 OF 3",
+    "topic.progressSymbols": "ZONE 1 · 3 OF 3",
+    "topic.progressVariables": "ZONE 2 · 1 OF 3",
+    "topic.progressConditionals": "ZONE 3 · 1 OF 3",
+    "topic.progressLoops": "ZONE 4 · 1 OF 3",
     "topic.lookEyebrow": "LOOK FIRST",
     "topic.practiceEyebrow": "YOUR TURN",
     "topic.practiceIntro": "Try each tiny question. A wrong answer becomes something to review.",
@@ -750,7 +751,7 @@ const translations = {
     "variables.tryText": "Put your favorite color between the quotes. Run again.",
     "meta.boxesTitle": "Boxes of all kinds — PyBot",
     "meta.boxesDescription": "A child-friendly picture of variables as labeled boxes in memory that can keep numbers, text, yes-or-no values, lists, and grids.",
-    "topic.progressBoxes": "ZONE 5 OF 10",
+    "topic.progressBoxes": "ZONE 2 · 2 OF 3",
     "missionBoxes.concept": "TYPES + LISTS",
     "missionBoxes.title": "Boxes of All Kinds",
     "missionBoxes.text": "Keep numbers, text, yes-or-no, lists, and grids in boxes.",
@@ -820,6 +821,88 @@ const translations = {
     "boxes.bigTitle": "A variable is a labeled box in memory.",
     "boxes.bigText": "It can keep a number, some text, a yes or no, or even a whole list.",
     "boxes.next": "Choose a path",
+    "boxes.nextChanging": "Changing boxes",
+    "meta.changingBoxesTitle": "Changing boxes — PyBot",
+    "meta.changingBoxesDescription": "Change what a Python box keeps: add to it, do math with boxes, and join text.",
+    "topic.progressChangingBoxes": "ZONE 2 · 3 OF 3",
+    "path.boxesLabel": "Memory boxes pages",
+    "path.variables": "Memory boxes",
+    "path.boxes": "Boxes of all kinds",
+    "path.changingBoxes": "Changing boxes",
+    "changing.eyebrow": "CHANGE + MATH",
+    "changing.title": "A box can change.",
+    "changing.intro": "A box can take its own value, change it, and keep the new one. That is how games count points.",
+    "changing.pybot": "Every time I find a star, my score box grows by one.",
+    "changing.pybotNamed": "{name}, every time I find a star, my score box grows by one.",
+    "changing.robotLabel": "PyBot winks next to a score box that grows",
+    "changing.growEyebrow": "USE THE OLD VALUE",
+    "changing.growTitle": "Read the right side first.",
+    "changing.growText": "score = score + 1 looks strange. Python first works out the right side: the old score plus 1. Then it puts the answer back in the same box.",
+    "changing.growLabel": "A score box that grows from 3 to 4",
+    "changing.growNote": "3 + 1 is 4. Now the box keeps 4.",
+    "changing.shortEyebrow": "THE SHORT WAY",
+    "changing.shortTitle": "+= adds to the box.",
+    "changing.plusTitle": "Add to it",
+    "changing.plusText": "score += 1 means the same as score = score + 1.",
+    "changing.minusTitle": "Take away",
+    "changing.minusText": "lives -= 1 takes one life away from the box.",
+    "changing.replaceTitle": "Start again",
+    "changing.replaceText": "score = 0 throws the old value away and puts in 0.",
+    "changing.mathEyebrow": "MATH WITH BOXES",
+    "changing.mathTitle": "Boxes can do math together.",
+    "changing.mathText": "apples = 4 and pears = 3. Python opens both boxes and uses the numbers inside.",
+    "changing.addTitle": "Add",
+    "changing.addText": "apples + pears is 7.",
+    "changing.subtractTitle": "Subtract",
+    "changing.subtractText": "apples - pears is 1.",
+    "changing.multiplyTitle": "Multiply",
+    "changing.multiplyText": "apples * 2 is 8. The star means times.",
+    "changing.divideTitle": "Divide",
+    "changing.divideText": "apples / 2 is 2.0. Dividing always gives a decimal.",
+    "changing.joinEyebrow": "JOIN TEXT",
+    "changing.joinTitle": "+ glues text together.",
+    "changing.joinText": "name = \"Ana\". Then \"Hi \" + name makes \"Hi Ana\". Put a space inside the quotes, or the words stick together.",
+    "changing.joinWatchLabel": "Watch out:",
+    "changing.joinWatchText": "\"2\" + \"3\" is \"23\", not 5. With quotes, Python glues text. Without quotes, 2 + 3 is 5.",
+    "changing.runTitle": "Count PyBot's stars.",
+    "changing.runCode": "score = 3\nscore = score + 1\nprint(score)",
+    "thinking.changing-predictSuccess": "Yes! Python takes the old 3, adds 1, and keeps 4.",
+    "thinking.changing-predictHint": "Not yet. Work out the right side first: 3 + 1.",
+    "changing.tryText": "Change + 1 to + 10. Then try the short way: score += 10.",
+    "changing.practiceTitle": "Change the boxes.",
+    "changing.quizPlusTitle": "Add to the box",
+    "changing.quizPlusQuestion": "What will Python show?",
+    "thinking.changing-plusSuccess": "Yes! 5 + 2 is 7, and the box keeps 7.",
+    "thinking.changing-plusHint": "These are numbers, not text. Add them: 5 + 2.",
+    "changing.quizShortTitle": "The short way",
+    "changing.quizShortQuestion": "Which line does the same job?",
+    "thinking.changing-shortSuccess": "Yes! += adds to what is already in the box.",
+    "thinking.changing-shortHint": "Look for += . It means: add to the box.",
+    "changing.quizMinusTitle": "Lose a life",
+    "changing.quizMinusQuestion": "What will Python show?",
+    "thinking.changing-minusSuccess": "Yes! -= takes one away: 3 - 1 is 2.",
+    "thinking.changing-minusHint": "-= takes away. Start at 3 and take away 1.",
+    "changing.quizTimesTitle": "Triple the steps",
+    "changing.quizTimesQuestion": "What will Python show?",
+    "thinking.changing-timesSuccess": "Yes! The star means times: 2 * 3 is 6.",
+    "thinking.changing-timesHint": "In Python, * means times. What is 2 times 3?",
+    "changing.quizMathTitle": "Two boxes, one answer",
+    "changing.quizMathQuestion": "What will Python show?",
+    "thinking.changing-mathSuccess": "Yes! Python opens both boxes: 4 + 3 is 7.",
+    "thinking.changing-mathHint": "Python does not show the names. It uses the numbers inside the boxes.",
+    "changing.quizJoinTitle": "Say hello",
+    "changing.quizJoinQuestion": "What will Python show?",
+    "thinking.changing-joinSuccess": "Yes! + glues the two pieces of text together.",
+    "thinking.changing-joinHint": "name has no quotes, so Python opens the box and finds \"Ana\".",
+    "changing.quizTextNumbersTitle": "Numbers in quotes",
+    "changing.quizTextNumbersQuestion": "What will Python show?",
+    "thinking.changing-text-numbersSuccess": "Yes! With quotes they are text, so + glues them: 23.",
+    "thinking.changing-text-numbersHint": "Look at the quotes. Quotes mean text, and + glues text.",
+    "changing.fixTask": "PyBot found a star, but its score is still 0. Fix the middle line so the box keeps the new score.",
+    "changing.fixCode": "score = 0\nscore + 1\nprint(score)",
+    "changing.fixExpected": "1",
+    "changing.bigTitle": "A box can use its old value to make a new one.",
+    "changing.bigText": "score = score + 1 adds one. Next, PyBot uses boxes to make choices.",
     "conditionals.eyebrow": "CONDITIONALS",
     "conditionals.title": "Ask. Then choose.",
     "conditionals.intro": "A conditional lets code choose a path after a yes-or-no question.",
@@ -851,7 +934,7 @@ const translations = {
     "conditionals.cap": "Wear a cap",
     "conditionals.bigTitle": "A conditional is a question with paths.",
     "conditionals.bigText": "Python checks first. Then it follows the matching path.",
-    "conditionals.next": "Repeat a pattern",
+    "conditionals.next": "One more question: elif",
     "conditionals.runTitle": "Help PyBot check its battery.",
     "conditionals.runCode": "battery = 20\nif battery < 30:\n    print(\"charge\")\nelse:\n    print(\"play\")",
     "conditionals.predictCharge": "charge",
@@ -904,7 +987,7 @@ const translations = {
     "loops.bigText": "Next: a loop that asks a question before every turn.",
     "meta.functionsTitle": "Boxes that do a job — PyBot",
     "meta.functionsDescription": "A child-friendly first look at Python functions as boxes that take something in and give something back.",
-    "topic.progressFunctions": "ZONE 9 OF 10",
+    "topic.progressFunctions": "ZONE 6 OF 7",
     "missionFunctions.concept": "FUNCTIONS",
     "missionFunctions.title": "Boxes That Do a Job",
     "missionFunctions.text": "Send something in, get something out.",
@@ -1051,6 +1134,274 @@ const translations = {
     "thinking.conditional-elifHint": "Not yet. Start at the top. Is 30 greater than 25?",
     "thinking.conditional-oneSuccess": "Yes! Python always picks just one path.",
     "thinking.conditional-oneHint": "Not yet. Can Python take two paths at the same time?",
+    // Conditionals zone, pages 2 (elif) and 3 (match).
+    "conditionals.lifeTitle": "You decide like this every day.",
+    "conditionals.lifeIntro": "A decision is a question with paths. Python does the same thing you do.",
+    "conditionals.life1Title": "Rain or sun?",
+    "conditionals.life1Text": "If it is raining, I play a board game inside. Else, I play soccer outside.",
+    "conditionals.life2Title": "Hungry?",
+    "conditionals.life2Text": "If I am hungry, I eat an apple. If not, I just keep playing.",
+    "conditionals.life3Title": "Homework first",
+    "conditionals.life3Text": "If my homework is done, I can play video games. Else, homework first.",
+    "conditionals.quizLifeTitle": "Park or movie?",
+    "conditionals.quizLifeScene": "Family rule: if it is sunny, we go to the park. Else, we watch a movie. Today it is raining.",
+    "conditionals.quizLifeQuestion": "What does the family do?",
+    "conditionals.lifeA": "Go to the park",
+    "conditionals.lifeB": "Watch a movie",
+    "conditionals.lifeC": "Both",
+    "thinking.conditional-everydaySuccess": "Yes! It is not sunny, so the else path wins: movie time.",
+    "thinking.conditional-everydayHint": "Not yet. Is it sunny today? If not, which path is left?",
+    "conditionalsElif.lifeTitle": "More than two choices, every day.",
+    "conditionalsElif.lifeIntro": "You ask your favorite first. If it is not there, you ask for the next one.",
+    "conditionalsElif.life1Title": "What is for lunch?",
+    "conditionalsElif.life1Text": "If there is pizza, I pick pizza. Else if there is pasta, I pick pasta. Else, a sandwich.",
+    "conditionalsElif.life2Title": "Which game?",
+    "conditionalsElif.life2Text": "If 6 friends come, we play soccer. Else if 2 come, we play tag. Else, I build with blocks.",
+    "conditionalsElif.life3Title": "Ice cream flavor",
+    "conditionalsElif.life3Text": "If they have chocolate, I take it. Else if they have strawberry, I take that. Else, vanilla.",
+    "conditionalsElif.quizLifeTitle": "Lunch menu",
+    "conditionalsElif.quizLifeScene": "PyBot's rule: if there is pizza, pizza. Else if there is pasta, pasta. Else, a sandwich. Today there is pasta and sandwiches, but no pizza.",
+    "conditionalsElif.quizLifeQuestion": "What does PyBot eat?",
+    "conditionalsElif.lifeA": "Pizza",
+    "conditionalsElif.lifeB": "Pasta",
+    "conditionalsElif.lifeC": "A sandwich",
+    "thinking.elif-everydaySuccess": "Yes! No pizza, so the next question wins: pasta. Python stops there.",
+    "thinking.elif-everydayHint": "Not yet. Ask in order: pizza? pasta? The first yes wins.",
+    "conditionalsMatch.lifeTitle": "One box, many options.",
+    "conditionalsMatch.lifeIntro": "Look at one thing, like the day or the button, and pick the option that fits.",
+    "conditionalsMatch.life1Title": "What day is it?",
+    "conditionalsMatch.life1Text": "Monday: swimming. Wednesday: art class. Saturday: the park. Any other day: play at home.",
+    "conditionalsMatch.life2Title": "Roll the die",
+    "conditionalsMatch.life2Text": "1: hide and seek. 2: jump rope. 3: draw a monster. Any other number: you choose!",
+    "conditionalsMatch.life3Title": "The juice machine",
+    "conditionalsMatch.life3Text": "Press A: orange juice. Press B: mango juice. Any other button: water.",
+    "conditionalsMatch.quizLifeTitle": "Today's activity",
+    "conditionalsMatch.quizLifeScene": "Monday: swimming. Wednesday: art class. Saturday: the park. Any other day: play at home. Today is Friday.",
+    "conditionalsMatch.quizLifeQuestion": "What does PyBot do today?",
+    "conditionalsMatch.lifeA": "Swimming",
+    "conditionalsMatch.lifeB": "Go to the park",
+    "conditionalsMatch.lifeC": "Play at home",
+    "thinking.match-everydaySuccess": "Yes! Friday has no case of its own, so “any other day” fits, like case _.",
+    "thinking.match-everydayHint": "Not yet. Is there an option for Friday? Then which one catches the rest?",
+    "topic.lifeEyebrow": "IN REAL LIFE",
+    "path.conditionalsLabel": "Conditionals pages",
+    "path.conditionalsIf": "if and else: two paths",
+    "path.conditionalsElif": "elif: more questions",
+    "path.conditionalsMatch": "match: pick a case",
+    "topic.progressConditionalsElif": "ZONE 3 · 2 OF 3",
+    "topic.progressConditionalsMatch": "ZONE 3 · 3 OF 3",
+    "meta.conditionalsElifDescription": "Learn Python elif: ask more than one question and choose among many paths.",
+    "conditionalsElif.eyebrow": "CONDITIONALS · ELIF",
+    "conditionalsElif.title": "One more question: elif.",
+    "conditionalsElif.intro": "elif is short for “else, if”. It asks a new question only when every question above it was False.",
+    "conditionalsElif.pybot": "I ask from top to bottom and stop at the first yes.",
+    "conditionalsElif.pybotNamed": "{name}, I ask from top to bottom and stop at the first yes.",
+    "conditionalsElif.robotLabel": "PyBot stands at a sign with many paths",
+    "conditionalsElif.overviewTitle": "A ladder of questions.",
+    "conditionalsElif.ifTitle": "if asks first",
+    "conditionalsElif.ifText": "The first question always goes with if.",
+    "conditionalsElif.elifTitle": "elif asks next",
+    "conditionalsElif.elifText": "If the answer above was False, elif asks another question. You can add as many as you need.",
+    "conditionalsElif.elseTitle": "else catches the rest",
+    "conditionalsElif.elseText": "If every answer was False, the else path runs. It is optional.",
+    "conditionalsElif.stepsTitle": "Follow the traffic light.",
+    "conditionalsElif.stepsIntro": "PyBot reads one question at a time, from the top.",
+    "conditionalsElif.walk1": "light = \"yellow\"",
+    "conditionalsElif.walk1Tag": "A box keeps the word yellow.",
+    "conditionalsElif.walk2": "if light == \"green\":",
+    "conditionalsElif.walk2Tag": "Is it green? No. Go down to the next question.",
+    "conditionalsElif.walk3": "    print(\"go\")",
+    "conditionalsElif.walk3Tag": "Skipped.",
+    "conditionalsElif.walk4": "elif light == \"yellow\":",
+    "conditionalsElif.walk4Tag": "Is it yellow? Yes!",
+    "conditionalsElif.walk5": "    print(\"slow down\")",
+    "conditionalsElif.walk5Tag": "This path runs.",
+    "conditionalsElif.walk6": "elif light == \"red\":",
+    "conditionalsElif.walk6Tag": "Not even asked. A path already ran.",
+    "conditionalsElif.walk7": "    print(\"stop\")",
+    "conditionalsElif.walk7Tag": "Skipped.",
+    "conditionalsElif.walk8": "else:",
+    "conditionalsElif.walk8Tag": "Skipped. else only runs when every answer was False.",
+    "conditionalsElif.rulesTitle": "Three rules for elif.",
+    "conditionalsElif.ruleFirstTitle": "The first yes wins",
+    "conditionalsElif.ruleFirstText": "Python stops at the first True. The questions below it are not asked.",
+    "conditionalsElif.ruleOrderTitle": "Order matters",
+    "conditionalsElif.ruleOrderText": "Put the hardest question first. score >= 9 goes before score >= 5.",
+    "conditionalsElif.ruleIfTitle": "Two ifs are two questions",
+    "conditionalsElif.ruleIfText": "With two separate ifs, both can run. With elif, only one path runs.",
+    "conditionalsElif.runTitle": "Give PyBot a medal.",
+    "conditionalsElif.runCode": "score = 7\nif score >= 9:\n    print(\"gold\")\nelif score >= 5:\n    print(\"silver\")\nelse:\n    print(\"bronze\")",
+    "conditionalsElif.predictGold": "gold",
+    "conditionalsElif.predictSilver": "silver",
+    "conditionalsElif.predictBoth": "gold and silver",
+    "conditionalsElif.tryText": "Change 7 to 10, then to 2. Which medal does PyBot get each time?",
+    "conditionalsElif.practiceTitle": "Climb the ladder of questions.",
+    "conditionalsElif.quizMeaningTitle": "A short word",
+    "conditionalsElif.quizMeaningQuestion": "What does elif mean?",
+    "conditionalsElif.meaningElseIf": "else, if",
+    "conditionalsElif.meaningEnd": "end if",
+    "conditionalsElif.meaningEvery": "every line",
+    "conditionalsElif.quizLightTitle": "Red light",
+    "conditionalsElif.quizLightCode": "light = \"red\"\nif light == \"green\":\n    print(\"go\")\nelif light == \"yellow\":\n    print(\"slow down\")\nelif light == \"red\":\n    print(\"stop\")",
+    "conditionalsElif.quizShowQuestion": "What does Python show?",
+    "conditionalsElif.go": "go",
+    "conditionalsElif.slow": "slow down",
+    "conditionalsElif.stop": "stop",
+    "conditionalsElif.quizFirstTitle": "Two answers are True",
+    "conditionalsElif.quizFirstCode": "n = 15\nif n > 5:\n    print(\"big\")\nelif n > 10:\n    print(\"huge\")",
+    "conditionalsElif.big": "big",
+    "conditionalsElif.huge": "huge",
+    "conditionalsElif.bigHuge": "big, then huge",
+    "conditionalsElif.quizOrderTitle": "Fix the order",
+    "conditionalsElif.quizOrderScene": "In the code above, PyBot wants 15 to show huge.",
+    "conditionalsElif.quizOrderQuestion": "What should PyBot change?",
+    "conditionalsElif.orderSwap": "Ask n > 10 first",
+    "conditionalsElif.orderElse": "Add an else",
+    "conditionalsElif.orderPrint": "Print huge twice",
+    "conditionalsElif.quizNoneTitle": "Every answer is False",
+    "conditionalsElif.quizNoneCode": "pet = \"fish\"\nif pet == \"dog\":\n    print(\"woof\")\nelif pet == \"cat\":\n    print(\"meow\")",
+    "conditionalsElif.woof": "woof",
+    "conditionalsElif.nothing": "Nothing",
+    "conditionalsElif.error": "An error",
+    "conditionalsElif.quizTwoIfTitle": "Two separate ifs",
+    "conditionalsElif.quizTwoIfCode": "battery = 90\nif battery > 50:\n    print(\"play\")\nif battery > 80:\n    print(\"dance\")",
+    "conditionalsElif.quizWordsQuestion": "Which words show?",
+    "conditionalsElif.onlyPlay": "Only play",
+    "conditionalsElif.onlyDance": "Only dance",
+    "conditionalsElif.playDance": "play, then dance",
+    "conditionalsElif.quizManyTitle": "How many elifs?",
+    "conditionalsElif.quizManyQuestion": "How many elif lines can one if have?",
+    "conditionalsElif.manyOne": "Only one",
+    "conditionalsElif.manyAny": "As many as you need",
+    "conditionalsElif.manyNone": "None",
+    "conditionalsElif.fixTask": "Python does not know else if on one line. Use its short word.",
+    "conditionalsElif.fixCode": "light = \"red\"\nif light == \"green\":\n    print(\"go\")\nelse if light == \"red\":\n    print(\"stop\")",
+    "conditionalsElif.fixExpected": "stop",
+    "conditionalsElif.bigTitle": "elif adds more questions. The first True wins.",
+    "conditionalsElif.bigText": "Next: when you compare one box with many values, Python has match.",
+    "conditionalsElif.next": "Pick a case with match",
+    "thinking.elif-predictSuccess": "Yes! 7 >= 9 is False, 7 >= 5 is True, so silver shows and Python stops.",
+    "thinking.elif-predictHint": "Not yet. Ask from the top: is 7 >= 9? Is 7 >= 5?",
+    "thinking.elif-meaningSuccess": "Yes! elif = else + if: if not the one above, then ask this.",
+    "thinking.elif-meaningHint": "Not yet. Split the word: el... if.",
+    "thinking.elif-lightSuccess": "Yes! green? No. yellow? No. red? Yes, so stop.",
+    "thinking.elif-lightHint": "Not yet. Check each question from the top. The light is red.",
+    "thinking.elif-firstSuccess": "Yes! 15 > 5 is True first, so Python never asks the elif.",
+    "thinking.elif-firstHint": "Not yet. Both answers are True, but Python stops at the first one.",
+    "thinking.elif-orderSuccess": "Yes! Put the harder question on top, so it gets a chance.",
+    "thinking.elif-orderHint": "Not yet. Which question must be asked before the other?",
+    "thinking.elif-noneSuccess": "Yes! No question is True and there is no else, so nothing shows.",
+    "thinking.elif-noneHint": "Not yet. Is the pet a dog? A cat? Is there an else?",
+    "thinking.elif-two-ifsSuccess": "Yes! Two ifs are two separate questions, and both are True.",
+    "thinking.elif-two-ifsHint": "Not yet. There is no elif here. Each if asks on its own.",
+    "thinking.elif-manySuccess": "Yes! Add an elif for every extra question.",
+    "thinking.elif-manyHint": "Not yet. A traffic light needs 3 questions. Can it have them?",
+    "meta.conditionalsMatchDescription": "Learn Python match and case, Python's version of switch.",
+    "conditionalsMatch.eyebrow": "CONDITIONALS · MATCH",
+    "conditionalsMatch.title": "Pick a case with match.",
+    "conditionalsMatch.intro": "Many languages have a switch to pick one option from a list. Python calls it match, and each option is a case.",
+    "conditionalsMatch.pybot": "I look at one box and jump to the case that fits.",
+    "conditionalsMatch.pybotNamed": "{name}, I look at one box and jump to the case that fits.",
+    "conditionalsMatch.robotLabel": "PyBot stands next to a match sign and a case sign",
+    "conditionalsMatch.overviewTitle": "switch in other languages, match in Python.",
+    "conditionalsMatch.matchTitle": "match looks at a box",
+    "conditionalsMatch.matchText": "match command: means: let us look at what is inside command.",
+    "conditionalsMatch.caseTitle": "case is one option",
+    "conditionalsMatch.caseText": "case \"jump\": runs its path when the box holds \"jump\".",
+    "conditionalsMatch.restTitle": "case _ catches the rest",
+    "conditionalsMatch.restText": "The _ means “anything else”. It works like else.",
+    "conditionalsMatch.switchNote": "Heads up: Python has no switch word. Since Python 3.10, it uses match and case.",
+    "conditionalsMatch.stepsTitle": "Find the case that fits.",
+    "conditionalsMatch.stepsIntro": "PyBot compares the box with each case, from the top.",
+    "conditionalsMatch.walk1": "day = \"saturday\"",
+    "conditionalsMatch.walk1Tag": "A box keeps the word saturday.",
+    "conditionalsMatch.walk2": "match day:",
+    "conditionalsMatch.walk2Tag": "Look inside the day box.",
+    "conditionalsMatch.walk3": "    case \"friday\":",
+    "conditionalsMatch.walk3Tag": "Is it friday? No. Try the next case.",
+    "conditionalsMatch.walk4": "        print(\"school\")",
+    "conditionalsMatch.walk4Tag": "Skipped.",
+    "conditionalsMatch.walk5": "    case \"saturday\":",
+    "conditionalsMatch.walk5Tag": "Is it saturday? Yes!",
+    "conditionalsMatch.walk6": "        print(\"play\")",
+    "conditionalsMatch.walk6Tag": "This path runs.",
+    "conditionalsMatch.walk7": "    case _:",
+    "conditionalsMatch.walk7Tag": "Skipped. A case already fit.",
+    "conditionalsMatch.walk8": "        print(\"rest\")",
+    "conditionalsMatch.walk8Tag": "case _ runs only when no other case fits.",
+    "conditionalsMatch.rulesTitle": "Three rules for match.",
+    "conditionalsMatch.ruleOneTitle": "Only one case runs",
+    "conditionalsMatch.ruleOneText": "Python picks the first case that fits, then leaves the match.",
+    "conditionalsMatch.ruleRestTitle": "case _ goes last",
+    "conditionalsMatch.ruleRestText": "_ fits anything, so the cases below it would never get a turn.",
+    "conditionalsMatch.ruleOrTitle": "| means or",
+    "conditionalsMatch.ruleOrText": "case \"saturday\" | \"sunday\": fits both days with one path.",
+    "conditionalsMatch.runTitle": "Send PyBot a command.",
+    "conditionalsMatch.runCode": "command = \"jump\"\nmatch command:\n    case \"walk\":\n        print(\"PyBot walks\")\n    case \"jump\":\n        print(\"PyBot jumps\")\n    case _:\n        print(\"PyBot waits\")",
+    "conditionalsMatch.predictWalks": "PyBot walks",
+    "conditionalsMatch.predictJumps": "PyBot jumps",
+    "conditionalsMatch.predictWaits": "PyBot waits",
+    "conditionalsMatch.tryText": "Change \"jump\" to \"walk\", then to \"dance\". Which case fits each time?",
+    "conditionalsMatch.practiceTitle": "Find the case.",
+    "conditionalsMatch.quizNameTitle": "Python's switch",
+    "conditionalsMatch.quizNameQuestion": "Other languages say switch. Which word does Python use?",
+    "conditionalsMatch.nameSwitch": "switch",
+    "conditionalsMatch.nameMatch": "match",
+    "conditionalsMatch.nameChoose": "choose",
+    "conditionalsMatch.quizFruitTitle": "Pick the fruit",
+    "conditionalsMatch.quizFruitCode": "fruit = \"apple\"\nmatch fruit:\n    case \"banana\":\n        print(\"yellow\")\n    case \"apple\":\n        print(\"red\")\n    case _:\n        print(\"unknown\")",
+    "conditionalsMatch.quizShowQuestion": "What does Python show?",
+    "conditionalsMatch.yellow": "yellow",
+    "conditionalsMatch.red": "red",
+    "conditionalsMatch.unknown": "unknown",
+    "conditionalsMatch.quizRestTitle": "No case fits",
+    "conditionalsMatch.quizRestCode": "animal = \"cow\"\nmatch animal:\n    case \"dog\":\n        print(\"woof\")\n    case \"cat\":\n        print(\"meow\")\n    case _:\n        print(\"hmm\")",
+    "conditionalsMatch.woof": "woof",
+    "conditionalsMatch.meow": "meow",
+    "conditionalsMatch.hmm": "hmm",
+    "conditionalsMatch.quizUnderscoreTitle": "The underscore",
+    "conditionalsMatch.quizUnderscoreQuestion": "What does case _ mean?",
+    "conditionalsMatch.underscoreEmpty": "An empty box",
+    "conditionalsMatch.underscoreElse": "Anything else",
+    "conditionalsMatch.underscoreStop": "Stop the program",
+    "conditionalsMatch.quizOrTitle": "Two days, one path",
+    "conditionalsMatch.quizOrCode": "day = \"sunday\"\nmatch day:\n    case \"saturday\" | \"sunday\":\n        print(\"weekend\")\n    case _:\n        print(\"school day\")",
+    "conditionalsMatch.weekend": "weekend",
+    "conditionalsMatch.schoolDay": "school day",
+    "conditionalsMatch.both": "weekend, then school day",
+    "conditionalsMatch.quizOneTitle": "How many cases?",
+    "conditionalsMatch.quizOneCode": "color = \"red\"\nmatch color:\n    case \"red\":\n        print(\"stop\")\n    case _:\n        print(\"other\")",
+    "conditionalsMatch.quizOneQuestion": "_ fits anything, even red. What shows?",
+    "conditionalsMatch.stopWord": "stop",
+    "conditionalsMatch.otherWord": "other",
+    "conditionalsMatch.stopOther": "stop, then other",
+    "conditionalsMatch.quizSameTitle": "Same job",
+    "conditionalsMatch.quizSameQuestion": "match can do the same job as…",
+    "conditionalsMatch.sameElif": "if, elif, and else",
+    "conditionalsMatch.sameFor": "a for loop",
+    "conditionalsMatch.sameBox": "a list",
+    "conditionalsMatch.fixTask": "PyBot used the word from other languages. Change it to Python's word.",
+    "conditionalsMatch.fixCode": "pet = \"cat\"\nswitch pet:\n    case \"dog\":\n        print(\"woof\")\n    case \"cat\":\n        print(\"meow\")",
+    "conditionalsMatch.fixExpected": "meow",
+    "conditionalsMatch.bigTitle": "match picks one case for the value in a box.",
+    "conditionalsMatch.bigText": "Other languages call it switch. In Python it is match, with case _ for anything else.",
+    "conditionalsMatch.next": "Repeat a pattern",
+    "thinking.match-predictSuccess": "Yes! command holds jump, so the jump case runs.",
+    "thinking.match-predictHint": "Not yet. What is inside command? Find the case with the same word.",
+    "thinking.match-nameSuccess": "Yes! Python says match, and each option is a case.",
+    "thinking.match-nameHint": "Not yet. switch is from other languages. Python has its own word.",
+    "thinking.match-fruitSuccess": "Yes! The box holds apple, so the apple case runs.",
+    "thinking.match-fruitHint": "Not yet. Which case has the same word as the box?",
+    "thinking.match-restSuccess": "Yes! No case fits cow, so case _ runs.",
+    "thinking.match-restHint": "Not yet. Is there a case for cow? Then which one catches the rest?",
+    "thinking.match-underscoreSuccess": "Yes! _ fits anything, like else.",
+    "thinking.match-underscoreHint": "Not yet. _ is the last case. When does it run?",
+    "thinking.match-orSuccess": "Yes! | means or, so sunday fits the first case.",
+    "thinking.match-orHint": "Not yet. Read | as or. Is sunday in the first case?",
+    "thinking.match-oneSuccess": "Yes! The first case that fits wins. Only one case runs.",
+    "thinking.match-oneHint": "Not yet. Two cases fit, but how many can run?",
+    "thinking.match-sameSuccess": "Yes! Each case is like an elif that asks: is the box equal to this?",
+    "thinking.match-sameHint": "Not yet. match chooses one path. Which other code chooses a path?",
     "loops.stepsEyebrow": "STEP BY STEP",
     "loops.stepsTitle": "Watch the loop work.",
     "loops.stepsIntro": "A loop has a box that changes on every turn.",
@@ -1102,8 +1453,8 @@ const translations = {
     "path.loopsUntil": "Repeat until",
     "meta.loopsWhileDescription": "Learn Python while loops: repeat while a question is True.",
     "meta.loopsUntilDescription": "Repeat until something is done in Python, with while not and break.",
-    "topic.progressLoopsWhile": "ZONE 7 · 2 OF 3",
-    "topic.progressLoopsUntil": "ZONE 7 · 3 OF 3",
+    "topic.progressLoopsWhile": "ZONE 3 · 2 OF 3",
+    "topic.progressLoopsUntil": "ZONE 3 · 3 OF 3",
     "loopsWhile.eyebrow": "LOOPS · WHILE",
     "loopsWhile.title": "Repeat while it is true.",
     "loopsWhile.intro": "A while loop asks a True-or-False question before every turn. True: one more turn. False: stop.",
@@ -1401,13 +1752,13 @@ const translations = {
     "comparisons.bigTitle": "A comparison is a question with a True or False answer.",
     "comparisons.bigText": "if uses that answer to choose a path. Next, you will pack it all inside a box with a name.",
     "comparisons.next": "Boxes that do a job",
-    "topic.progressComparisons": "ZONE 8 OF 10",
+    "topic.progressComparisons": "ZONE 5 OF 7",
     "language.bigTitle": "A language gives code its rules.",
     "language.bigText": "Next, we will learn the keys used to write those rules.",
     "meta.checkpoint1Title": "Pit stop 1 — PyBot",
     "meta.checkpoint1Description": "A pit stop on the PyBot path: bigger real Python challenges about the zones so far, then a quick check of how it went.",
     "topic.progressCheckpoint1": "PIT STOP 1",
-    "missionCheckpoint1.concept": "PIT STOP · ZONES 4–9",
+    "missionCheckpoint1.concept": "PIT STOP · ZONES 2–6",
     "missionCheckpoint1.title": "Check the Engine",
     "missionCheckpoint1.text": "Bigger challenges with real Python. Then tell PyBot how it went.",
     "functions.next": "Pit stop",
@@ -1485,7 +1836,7 @@ const translations = {
     "review.done": "I reviewed it ✓",
     "meta.bugsTitle": "Bug hunters — PyBot",
     "meta.bugsDescription": "A playful first look at bugs: what a defect is, the true story of the first bug, and finding bugs in everyday step-by-step plans.",
-    "topic.progressBugs": "ZONE 10 · 1 OF 3",
+    "topic.progressBugs": "ZONE 7 · 1 OF 3",
     "missionBugs.concept": "BUGS & DEBUGGING",
     "missionBugs.title": "Bug Hunters",
     "missionBugs.text": "Find bugs in everyday plans and in real Python, then learn the detective's tools.",
@@ -1621,8 +1972,8 @@ const translations = {
     "meta.bugsCodeDescription": "Find and fix bugs in real Python code: loud bugs that stop Python and sneaky bugs that give the wrong result.",
     "meta.bugsDetectiveTitle": "Bug detective tools — PyBot",
     "meta.bugsDetectiveDescription": "Bug detective tools for kids: be the computer, spy with print, explain each line out loud, and write a clear bug report.",
-    "topic.progressBugsCode": "ZONE 10 · 2 OF 3",
-    "topic.progressBugsDetective": "ZONE 10 · 3 OF 3",
+    "topic.progressBugsCode": "ZONE 7 · 2 OF 3",
+    "topic.progressBugsDetective": "ZONE 7 · 3 OF 3",
     "bugs.next": "Bugs in code",
     "bugsCode.eyebrow": "BUGS · CODE",
     "bugsCode.title": "Bugs in Python code.",
@@ -1936,7 +2287,7 @@ const translations = {
     "meta.languageTitle": "¿Qué es un lenguaje de programación? — PyBot",
     "meta.homeDescription": "PyBot ayuda a los niños a descubrir Python con ideas pequeñas, pasos claros y práctica divertida.",
     "meta.meetDescription": "Conoce a PyBot y prueba los gestos que usa durante el curso.",
-    "meta.courseDescription": "Una base corta y diez pequeñas zonas de aprendizaje para niños, guiadas por PyBot.",
+    "meta.courseDescription": "Una base corta y siete pequeñas zonas de aprendizaje para niños, guiadas por PyBot.",
     "meta.worldDescription": "Mira los pequeños trabajos que hace el código en aplicaciones que los niños usan cada día.",
     "meta.thinkingDescription": "Una lección divertida sobre los pequeños planes que los niños ya hacen cada día.",
     "meta.languageDescription": "Una explicación corta y sencilla de los lenguajes de programación.",
@@ -2119,6 +2470,7 @@ const translations = {
     "local.eyebrow": "TU TRABAJO ES TUYO",
     "local.title": "Sin cuenta. Tu avance se queda aquí.",
     "local.text": "Este navegador recuerda tu trabajo. Pregunta a un adulto antes de borrar sus datos.",
+    "local.analytics": "Para adultos: PyBot cuenta visitas anónimas a las páginas con Google Analytics, sin anuncios ni personalización de anuncios. El nombre, las respuestas y el avance de quien aprende nunca se envían.",
     "backup.title": "¿Cambias de navegador?",
     "backup.text": "Guarda aquí una copia. Luego cárgala en el otro navegador.",
     "backup.export": "Guardar una copia",
@@ -2126,6 +2478,8 @@ const translations = {
     "backup.exported": "Copia guardada. Guarda el archivo en un lugar seguro.",
     "backup.confirm": "¿Cambiar el avance de este navegador por esta copia? Actividades terminadas en la copia: {count}.",
     "backup.imported": "Listo. Tu avance está de vuelta.",
+    "backup.upgraded": "Listo. Tu avance está de vuelta, actualizado al PyBot más nuevo.",
+    "backup.versionLabel": "Versión del avance",
     "backup.cancelled": "No cambió nada.",
     "backup.invalid": "Este archivo no es una copia de PyBot. No cambió nada.",
     "backup.newer": "Esta copia viene de un PyBot más nuevo. No cambió nada.",
@@ -2143,7 +2497,7 @@ const translations = {
     "course.home": "Inicio",
     "course.eyebrow": "TU PRIMERA RUTA",
     "course.titleStart": "Empieza por lo básico.",
-    "course.titleEnd": "Luego 9 zonas pequeñas y una parada en boxes.",
+    "course.titleEnd": "Luego 6 zonas pequeñas y una parada en boxes.",
     "course.intro": "Ve con calma. Cada zona tiene una idea y una actividad pequeña.",
     "course.rule": "Una idea. Un siguiente paso claro.",
     "course.note": "Sin afán. Una zona pequeña a la vez.",
@@ -2166,21 +2520,19 @@ const translations = {
     "mission0.concept": "ANTES DE PYTHON",
     "mission0.title": "Empieza aquí",
     "mission0.text": "Mira qué hace el código. Piensa en pasos. Luego aprende sus reglas.",
-    "mission1.concept": "TECLADO",
-    "mission1.title": "Movimientos del teclado",
-    "mission1.text": "Conoce teclas útiles y algunos atajos seguros.",
-    "mission2.concept": "NUESTRO ESPACIO",
-    "mission2.title": "Dónde funciona Python",
-    "mission2.text": "Conoce el navegador, el editor, Pyodide y la versión de Python.",
-    "mission3.concept": "SÍMBOLOS",
-    "mission3.title": "Las marcas especiales de Python",
-    "mission3.text": "Mira las pequeñas marcas que le dan significado al código.",
-    "mission4.concept": "MEMORIA + VARIABLES",
+    "path.basicsLabel": "Páginas de bases de Python",
+    "path.keyboard": "Movimientos del teclado",
+    "path.environment": "Dónde funciona Python",
+    "path.symbols": "Marcas especiales",
+    "missionBasics.concept": "TECLAS + HERRAMIENTAS + MARCAS",
+    "missionBasics.title": "Bases de Python",
+    "missionBasics.text": "Conoce teclas útiles, el lugar donde funciona Python y sus marcas especiales.",
+    "mission4.concept": "MEMORIA + TIPOS + CAMBIOS",
     "mission4.title": "Cajas de memoria",
-    "mission4.text": "Mira cómo una computadora recuerda un valor por su nombre.",
+    "mission4.text": "Guarda valores en cajas con nombre, conoce cajas de todo tipo y cambia lo que guardan.",
     "mission5.concept": "CONDICIONALES",
     "mission5.title": "Elige un camino",
-    "mission5.text": "Usa una pregunta de sí o no para elegir qué ocurre.",
+    "mission5.text": "Elige un camino con if y else, con elif y con match.",
     "mission6.concept": "BUCLES",
     "mission6.title": "Repite un patrón",
     "mission6.text": "Repite con for, con while y hasta que algo esté listo.",
@@ -2379,12 +2731,12 @@ const translations = {
     "meta.variablesDescription": "Una explicación para niños sobre la memoria del computador y las variables de Python.",
     "meta.conditionalsDescription": "Un primer vistazo divertido a los condicionales de Python.",
     "meta.loopsDescription": "Un primer vistazo divertido a los bucles de Python.",
-    "topic.progressKeyboard": "ZONA 1 DE 10",
-    "topic.progressEnvironment": "ZONA 2 DE 10",
-    "topic.progressSymbols": "ZONA 3 DE 10",
-    "topic.progressVariables": "ZONA 4 DE 10",
-    "topic.progressConditionals": "ZONA 6 DE 10",
-    "topic.progressLoops": "ZONA 7 · 1 DE 3",
+    "topic.progressKeyboard": "ZONA 1 · 1 DE 3",
+    "topic.progressEnvironment": "ZONA 1 · 2 DE 3",
+    "topic.progressSymbols": "ZONA 1 · 3 DE 3",
+    "topic.progressVariables": "ZONA 2 · 1 DE 3",
+    "topic.progressConditionals": "ZONA 3 · 1 DE 3",
+    "topic.progressLoops": "ZONA 4 · 1 DE 3",
     "topic.lookEyebrow": "MIRA PRIMERO",
     "topic.practiceEyebrow": "TU TURNO",
     "topic.practiceIntro": "Prueba cada pregunta pequeña. Una respuesta incorrecta se convierte en algo para revisar.",
@@ -2555,7 +2907,7 @@ const translations = {
     "variables.tryText": "Pon tu color favorito entre las comillas. Ejecútalo otra vez.",
     "meta.boxesTitle": "Cajas de todo tipo — PyBot",
     "meta.boxesDescription": "Una explicación para niños de las variables como cajitas con etiqueta en la memoria que guardan números, texto, sí o no, listas y cuadrículas.",
-    "topic.progressBoxes": "ZONA 5 DE 10",
+    "topic.progressBoxes": "ZONA 2 · 2 DE 3",
     "missionBoxes.concept": "TIPOS + LISTAS",
     "missionBoxes.title": "Cajas de todo tipo",
     "missionBoxes.text": "Guarda números, texto, sí o no, listas y cuadrículas en cajitas.",
@@ -2625,6 +2977,88 @@ const translations = {
     "boxes.bigTitle": "Una variable es una cajita con etiqueta en la memoria.",
     "boxes.bigText": "Puede guardar un número, un texto, un sí o no, o hasta una lista completa.",
     "boxes.next": "Elige un camino",
+    "boxes.nextChanging": "Cajas que cambian",
+    "meta.changingBoxesTitle": "Cajas que cambian — PyBot",
+    "meta.changingBoxesDescription": "Cambia lo que guarda una caja de Python: súmale, haz cuentas con cajas y une texto.",
+    "topic.progressChangingBoxes": "ZONA 2 · 3 DE 3",
+    "path.boxesLabel": "Páginas de cajas de memoria",
+    "path.variables": "Cajas de memoria",
+    "path.boxes": "Cajas de todo tipo",
+    "path.changingBoxes": "Cajas que cambian",
+    "changing.eyebrow": "CAMBIOS + CUENTAS",
+    "changing.title": "Una caja puede cambiar.",
+    "changing.intro": "Una caja puede tomar su propio valor, cambiarlo y guardar el nuevo. Así cuentan puntos los juegos.",
+    "changing.pybot": "Cada vez que encuentro una estrella, mi caja de puntos crece en uno.",
+    "changing.pybotNamed": "{name}, cada vez que encuentro una estrella, mi caja de puntos crece en uno.",
+    "changing.robotLabel": "PyBot guiña el ojo junto a una caja de puntos que crece",
+    "changing.growEyebrow": "USA EL VALOR VIEJO",
+    "changing.growTitle": "Lee primero el lado derecho.",
+    "changing.growText": "score = score + 1 se ve raro. Python primero resuelve el lado derecho: los puntos viejos más 1. Luego guarda la respuesta en la misma caja.",
+    "changing.growLabel": "Una caja de puntos que crece de 3 a 4",
+    "changing.growNote": "3 + 1 es 4. Ahora la caja guarda 4.",
+    "changing.shortEyebrow": "EL CAMINO CORTO",
+    "changing.shortTitle": "+= le suma a la caja.",
+    "changing.plusTitle": "Súmale",
+    "changing.plusText": "score += 1 es lo mismo que score = score + 1.",
+    "changing.minusTitle": "Quítale",
+    "changing.minusText": "lives -= 1 le quita una vida a la caja.",
+    "changing.replaceTitle": "Empieza de nuevo",
+    "changing.replaceText": "score = 0 bota el valor viejo y guarda 0.",
+    "changing.mathEyebrow": "CUENTAS CON CAJAS",
+    "changing.mathTitle": "Las cajas pueden hacer cuentas juntas.",
+    "changing.mathText": "apples = 4 y pears = 3. Python abre las dos cajas y usa los números de adentro.",
+    "changing.addTitle": "Sumar",
+    "changing.addText": "apples + pears es 7.",
+    "changing.subtractTitle": "Restar",
+    "changing.subtractText": "apples - pears es 1.",
+    "changing.multiplyTitle": "Multiplicar",
+    "changing.multiplyText": "apples * 2 es 8. La estrellita quiere decir por.",
+    "changing.divideTitle": "Dividir",
+    "changing.divideText": "apples / 2 es 2.0. Dividir siempre da un decimal.",
+    "changing.joinEyebrow": "UNE TEXTO",
+    "changing.joinTitle": "+ pega texto.",
+    "changing.joinText": "name = \"Ana\". Entonces \"Hola \" + name da \"Hola Ana\". Pon un espacio dentro de las comillas, o las palabras quedan pegadas.",
+    "changing.joinWatchLabel": "Cuidado:",
+    "changing.joinWatchText": "\"2\" + \"3\" es \"23\", no 5. Con comillas, Python pega texto. Sin comillas, 2 + 3 es 5.",
+    "changing.runTitle": "Cuenta las estrellas de PyBot.",
+    "changing.runCode": "score = 3\nscore = score + 1\nprint(score)",
+    "thinking.changing-predictSuccess": "¡Sí! Python toma el 3 viejo, le suma 1 y guarda 4.",
+    "thinking.changing-predictHint": "Todavía no. Resuelve primero el lado derecho: 3 + 1.",
+    "changing.tryText": "Cambia + 1 por + 10. Luego prueba el camino corto: score += 10.",
+    "changing.practiceTitle": "Cambia las cajas.",
+    "changing.quizPlusTitle": "Súmale a la caja",
+    "changing.quizPlusQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-plusSuccess": "¡Sí! 5 + 2 es 7, y la caja guarda 7.",
+    "thinking.changing-plusHint": "Son números, no texto. Súmalos: 5 + 2.",
+    "changing.quizShortTitle": "El camino corto",
+    "changing.quizShortQuestion": "¿Qué línea hace lo mismo?",
+    "thinking.changing-shortSuccess": "¡Sí! += le suma a lo que ya está en la caja.",
+    "thinking.changing-shortHint": "Busca += . Quiere decir: súmale a la caja.",
+    "changing.quizMinusTitle": "Pierde una vida",
+    "changing.quizMinusQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-minusSuccess": "¡Sí! -= quita uno: 3 - 1 es 2.",
+    "thinking.changing-minusHint": "-= quita. Empieza en 3 y quítale 1.",
+    "changing.quizTimesTitle": "El triple de pasos",
+    "changing.quizTimesQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-timesSuccess": "¡Sí! La estrellita quiere decir por: 2 * 3 es 6.",
+    "thinking.changing-timesHint": "En Python, * quiere decir por. ¿Cuánto es 2 por 3?",
+    "changing.quizMathTitle": "Dos cajas, una respuesta",
+    "changing.quizMathQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-mathSuccess": "¡Sí! Python abre las dos cajas: 4 + 3 es 7.",
+    "thinking.changing-mathHint": "Python no muestra los nombres. Usa los números que hay dentro de las cajas.",
+    "changing.quizJoinTitle": "Saluda",
+    "changing.quizJoinQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-joinSuccess": "¡Sí! + pega los dos pedazos de texto.",
+    "thinking.changing-joinHint": "name no tiene comillas, así que Python abre la caja y encuentra \"Ana\".",
+    "changing.quizTextNumbersTitle": "Números con comillas",
+    "changing.quizTextNumbersQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-text-numbersSuccess": "¡Sí! Con comillas son texto, así que + los pega: 23.",
+    "thinking.changing-text-numbersHint": "Mira las comillas. Comillas quiere decir texto, y + pega texto.",
+    "changing.fixTask": "PyBot encontró una estrella, pero sus puntos siguen en 0. Arregla la línea del medio para que la caja guarde los puntos nuevos.",
+    "changing.fixCode": "score = 0\nscore + 1\nprint(score)",
+    "changing.fixExpected": "1",
+    "changing.bigTitle": "Una caja puede usar su valor viejo para hacer uno nuevo.",
+    "changing.bigText": "score = score + 1 suma uno. Ahora, PyBot usa cajas para tomar decisiones.",
     "conditionals.eyebrow": "CONDICIONALES",
     "conditionals.title": "Pregunta. Luego elige.",
     "conditionals.intro": "Un condicional permite que el código elija un camino después de una pregunta de sí o no.",
@@ -2656,7 +3090,7 @@ const translations = {
     "conditionals.cap": "Usar una gorra",
     "conditionals.bigTitle": "Un condicional es una pregunta con caminos.",
     "conditionals.bigText": "Python revisa primero. Luego sigue el camino que corresponde.",
-    "conditionals.next": "Repite un patrón",
+    "conditionals.next": "Una pregunta más: elif",
     "conditionals.runTitle": "Ayuda a PyBot a revisar su batería.",
     "conditionals.runCode": "bateria = 20\nif bateria < 30:\n    print(\"cargar\")\nelse:\n    print(\"jugar\")",
     "conditionals.predictCharge": "cargar",
@@ -2709,7 +3143,7 @@ const translations = {
     "loops.bigText": "Ahora: un bucle que hace una pregunta antes de cada vuelta.",
     "meta.functionsTitle": "Cajas que hacen un trabajo — PyBot",
     "meta.functionsDescription": "Un primer vistazo para niños a las funciones de Python como cajas que reciben algo y devuelven algo.",
-    "topic.progressFunctions": "ZONA 9 DE 10",
+    "topic.progressFunctions": "ZONA 6 DE 7",
     "missionFunctions.concept": "FUNCIONES",
     "missionFunctions.title": "Cajas que Hacen un Trabajo",
     "missionFunctions.text": "Envía algo adentro y recibe algo afuera.",
@@ -2856,6 +3290,274 @@ const translations = {
     "thinking.conditional-elifHint": "Todavía no. Empieza arriba. ¿30 es mayor que 25?",
     "thinking.conditional-oneSuccess": "¡Sí! Python siempre elige un solo camino.",
     "thinking.conditional-oneHint": "Todavía no. ¿Puede Python tomar dos caminos a la vez?",
+    // Zona de condicionales, páginas 2 (elif) y 3 (match).
+    "conditionals.lifeTitle": "Tú decides así todos los días.",
+    "conditionals.lifeIntro": "Una decisión es una pregunta con caminos. Python hace lo mismo que tú.",
+    "conditionals.life1Title": "¿Lluvia o sol?",
+    "conditionals.life1Text": "Si está lloviendo, juego un juego de mesa adentro. Si no, juego fútbol afuera.",
+    "conditionals.life2Title": "¿Tienes hambre?",
+    "conditionals.life2Text": "Si tengo hambre, me como una manzana. Si no, sigo jugando.",
+    "conditionals.life3Title": "Primero la tarea",
+    "conditionals.life3Text": "Si terminé la tarea, puedo jugar videojuegos. Si no, primero la tarea.",
+    "conditionals.quizLifeTitle": "¿Parque o película?",
+    "conditionals.quizLifeScene": "Regla de la familia: si hay sol, vamos al parque. Si no, vemos una película. Hoy está lloviendo.",
+    "conditionals.quizLifeQuestion": "¿Qué hace la familia?",
+    "conditionals.lifeA": "Ir al parque",
+    "conditionals.lifeB": "Ver una película",
+    "conditionals.lifeC": "Las dos cosas",
+    "thinking.conditional-everydaySuccess": "¡Sí! No hay sol, así que gana el camino del si no: hora de película.",
+    "thinking.conditional-everydayHint": "Todavía no. ¿Hay sol hoy? Si no, ¿qué camino queda?",
+    "conditionalsElif.lifeTitle": "Más de dos opciones, todos los días.",
+    "conditionalsElif.lifeIntro": "Preguntas primero por tu favorito. Si no está, preguntas por el siguiente.",
+    "conditionalsElif.life1Title": "¿Qué hay de almuerzo?",
+    "conditionalsElif.life1Text": "Si hay pizza, elijo pizza. Si no, si hay pasta, elijo pasta. Si no, un sándwich.",
+    "conditionalsElif.life2Title": "¿Qué juego?",
+    "conditionalsElif.life2Text": "Si vienen 6 amigos, jugamos fútbol. Si no, si vienen 2, jugamos a la lleva. Si no, armo con bloques.",
+    "conditionalsElif.life3Title": "Sabor de helado",
+    "conditionalsElif.life3Text": "Si tienen chocolate, lo pido. Si no, si tienen fresa, pido fresa. Si no, vainilla.",
+    "conditionalsElif.quizLifeTitle": "Menú del almuerzo",
+    "conditionalsElif.quizLifeScene": "Regla de PyBot: si hay pizza, pizza. Si no, si hay pasta, pasta. Si no, un sándwich. Hoy hay pasta y sándwiches, pero no pizza.",
+    "conditionalsElif.quizLifeQuestion": "¿Qué come PyBot?",
+    "conditionalsElif.lifeA": "Pizza",
+    "conditionalsElif.lifeB": "Pasta",
+    "conditionalsElif.lifeC": "Un sándwich",
+    "thinking.elif-everydaySuccess": "¡Sí! No hay pizza, así que gana la siguiente pregunta: pasta. Ahí se detiene.",
+    "thinking.elif-everydayHint": "Todavía no. Pregunta en orden: ¿pizza? ¿pasta? Gana el primer sí.",
+    "conditionalsMatch.lifeTitle": "Una caja, muchas opciones.",
+    "conditionalsMatch.lifeIntro": "Mira una sola cosa, como el día o el botón, y elige la opción que encaja.",
+    "conditionalsMatch.life1Title": "¿Qué día es?",
+    "conditionalsMatch.life1Text": "Lunes: natación. Miércoles: clase de arte. Sábado: el parque. Cualquier otro día: jugar en casa.",
+    "conditionalsMatch.life2Title": "Lanza el dado",
+    "conditionalsMatch.life2Text": "1: escondidas. 2: saltar la cuerda. 3: dibujar un monstruo. Otro número: ¡tú eliges!",
+    "conditionalsMatch.life3Title": "La máquina de jugos",
+    "conditionalsMatch.life3Text": "Botón A: jugo de naranja. Botón B: jugo de mango. Cualquier otro botón: agua.",
+    "conditionalsMatch.quizLifeTitle": "La actividad de hoy",
+    "conditionalsMatch.quizLifeScene": "Lunes: natación. Miércoles: clase de arte. Sábado: el parque. Cualquier otro día: jugar en casa. Hoy es viernes.",
+    "conditionalsMatch.quizLifeQuestion": "¿Qué hace PyBot hoy?",
+    "conditionalsMatch.lifeA": "Natación",
+    "conditionalsMatch.lifeB": "Ir al parque",
+    "conditionalsMatch.lifeC": "Jugar en casa",
+    "thinking.match-everydaySuccess": "¡Sí! Viernes no tiene su propio caso, así que encaja “cualquier otro día”, como case _.",
+    "thinking.match-everydayHint": "Todavía no. ¿Hay una opción para viernes? Entonces, ¿cuál atrapa lo demás?",
+    "topic.lifeEyebrow": "EN LA VIDA REAL",
+    "path.conditionalsLabel": "Páginas de condicionales",
+    "path.conditionalsIf": "if y else: dos caminos",
+    "path.conditionalsElif": "elif: más preguntas",
+    "path.conditionalsMatch": "match: elige un caso",
+    "topic.progressConditionalsElif": "ZONA 3 · 2 DE 3",
+    "topic.progressConditionalsMatch": "ZONA 3 · 3 DE 3",
+    "meta.conditionalsElifDescription": "Aprende elif en Python: haz más de una pregunta y elige entre muchos caminos.",
+    "conditionalsElif.eyebrow": "CONDICIONALES · ELIF",
+    "conditionalsElif.title": "Una pregunta más: elif.",
+    "conditionalsElif.intro": "elif es la forma corta de “else, if” (si no, si). Hace una nueva pregunta solo cuando todas las preguntas de arriba fueron False.",
+    "conditionalsElif.pybot": "Pregunto de arriba hacia abajo y me detengo en el primer sí.",
+    "conditionalsElif.pybotNamed": "{name}, pregunto de arriba hacia abajo y me detengo en el primer sí.",
+    "conditionalsElif.robotLabel": "PyBot está junto a un letrero con muchos caminos",
+    "conditionalsElif.overviewTitle": "Una escalera de preguntas.",
+    "conditionalsElif.ifTitle": "if pregunta primero",
+    "conditionalsElif.ifText": "La primera pregunta siempre va con if.",
+    "conditionalsElif.elifTitle": "elif pregunta después",
+    "conditionalsElif.elifText": "Si la respuesta de arriba fue False, elif hace otra pregunta. Puedes poner todos los que necesites.",
+    "conditionalsElif.elseTitle": "else atrapa lo demás",
+    "conditionalsElif.elseText": "Si todas las respuestas fueron False, corre el camino del else. Es opcional.",
+    "conditionalsElif.stepsTitle": "Sigue el semáforo.",
+    "conditionalsElif.stepsIntro": "PyBot lee una pregunta a la vez, desde arriba.",
+    "conditionalsElif.walk1": "luz = \"amarillo\"",
+    "conditionalsElif.walk1Tag": "Una caja guarda la palabra amarillo.",
+    "conditionalsElif.walk2": "if luz == \"verde\":",
+    "conditionalsElif.walk2Tag": "¿Es verde? No. Baja a la siguiente pregunta.",
+    "conditionalsElif.walk3": "    print(\"avanza\")",
+    "conditionalsElif.walk3Tag": "Se salta.",
+    "conditionalsElif.walk4": "elif luz == \"amarillo\":",
+    "conditionalsElif.walk4Tag": "¿Es amarillo? ¡Sí!",
+    "conditionalsElif.walk5": "    print(\"despacio\")",
+    "conditionalsElif.walk5Tag": "Este camino corre.",
+    "conditionalsElif.walk6": "elif luz == \"rojo\":",
+    "conditionalsElif.walk6Tag": "Ni siquiera se pregunta. Ya corrió un camino.",
+    "conditionalsElif.walk7": "    print(\"para\")",
+    "conditionalsElif.walk7Tag": "Se salta.",
+    "conditionalsElif.walk8": "else:",
+    "conditionalsElif.walk8Tag": "Se salta. else solo corre cuando todas las respuestas fueron False.",
+    "conditionalsElif.rulesTitle": "Tres reglas de elif.",
+    "conditionalsElif.ruleFirstTitle": "Gana el primer sí",
+    "conditionalsElif.ruleFirstText": "Python se detiene en el primer True. Las preguntas de abajo ya no se hacen.",
+    "conditionalsElif.ruleOrderTitle": "El orden importa",
+    "conditionalsElif.ruleOrderText": "Pon primero la pregunta más difícil. puntos >= 9 va antes que puntos >= 5.",
+    "conditionalsElif.ruleIfTitle": "Dos if son dos preguntas",
+    "conditionalsElif.ruleIfText": "Con dos if separados, pueden correr los dos. Con elif, solo corre un camino.",
+    "conditionalsElif.runTitle": "Dale una medalla a PyBot.",
+    "conditionalsElif.runCode": "puntos = 7\nif puntos >= 9:\n    print(\"oro\")\nelif puntos >= 5:\n    print(\"plata\")\nelse:\n    print(\"bronce\")",
+    "conditionalsElif.predictGold": "oro",
+    "conditionalsElif.predictSilver": "plata",
+    "conditionalsElif.predictBoth": "oro y plata",
+    "conditionalsElif.tryText": "Cambia 7 por 10, y luego por 2. ¿Qué medalla gana PyBot cada vez?",
+    "conditionalsElif.practiceTitle": "Sube la escalera de preguntas.",
+    "conditionalsElif.quizMeaningTitle": "Una palabra corta",
+    "conditionalsElif.quizMeaningQuestion": "¿Qué significa elif?",
+    "conditionalsElif.meaningElseIf": "else, if (si no, si)",
+    "conditionalsElif.meaningEnd": "end if (fin del if)",
+    "conditionalsElif.meaningEvery": "every line (cada línea)",
+    "conditionalsElif.quizLightTitle": "Luz roja",
+    "conditionalsElif.quizLightCode": "luz = \"rojo\"\nif luz == \"verde\":\n    print(\"avanza\")\nelif luz == \"amarillo\":\n    print(\"despacio\")\nelif luz == \"rojo\":\n    print(\"para\")",
+    "conditionalsElif.quizShowQuestion": "¿Qué muestra Python?",
+    "conditionalsElif.go": "avanza",
+    "conditionalsElif.slow": "despacio",
+    "conditionalsElif.stop": "para",
+    "conditionalsElif.quizFirstTitle": "Dos respuestas son True",
+    "conditionalsElif.quizFirstCode": "n = 15\nif n > 5:\n    print(\"grande\")\nelif n > 10:\n    print(\"enorme\")",
+    "conditionalsElif.big": "grande",
+    "conditionalsElif.huge": "enorme",
+    "conditionalsElif.bigHuge": "grande, luego enorme",
+    "conditionalsElif.quizOrderTitle": "Arregla el orden",
+    "conditionalsElif.quizOrderScene": "En el código de arriba, PyBot quiere que 15 muestre enorme.",
+    "conditionalsElif.quizOrderQuestion": "¿Qué debe cambiar PyBot?",
+    "conditionalsElif.orderSwap": "Preguntar n > 10 primero",
+    "conditionalsElif.orderElse": "Agregar un else",
+    "conditionalsElif.orderPrint": "Mostrar enorme dos veces",
+    "conditionalsElif.quizNoneTitle": "Todas las respuestas son False",
+    "conditionalsElif.quizNoneCode": "mascota = \"pez\"\nif mascota == \"perro\":\n    print(\"guau\")\nelif mascota == \"gato\":\n    print(\"miau\")",
+    "conditionalsElif.woof": "guau",
+    "conditionalsElif.nothing": "Nada",
+    "conditionalsElif.error": "Un error",
+    "conditionalsElif.quizTwoIfTitle": "Dos if separados",
+    "conditionalsElif.quizTwoIfCode": "bateria = 90\nif bateria > 50:\n    print(\"jugar\")\nif bateria > 80:\n    print(\"bailar\")",
+    "conditionalsElif.quizWordsQuestion": "¿Qué palabras aparecen?",
+    "conditionalsElif.onlyPlay": "Solo jugar",
+    "conditionalsElif.onlyDance": "Solo bailar",
+    "conditionalsElif.playDance": "jugar, luego bailar",
+    "conditionalsElif.quizManyTitle": "¿Cuántos elif?",
+    "conditionalsElif.quizManyQuestion": "¿Cuántas líneas elif puede tener un if?",
+    "conditionalsElif.manyOne": "Solo uno",
+    "conditionalsElif.manyAny": "Todos los que necesites",
+    "conditionalsElif.manyNone": "Ninguno",
+    "conditionalsElif.fixTask": "Python no entiende else if en una línea. Usa su palabra corta.",
+    "conditionalsElif.fixCode": "luz = \"rojo\"\nif luz == \"verde\":\n    print(\"avanza\")\nelse if luz == \"rojo\":\n    print(\"para\")",
+    "conditionalsElif.fixExpected": "para",
+    "conditionalsElif.bigTitle": "elif agrega más preguntas. Gana el primer True.",
+    "conditionalsElif.bigText": "Ahora: cuando comparas una caja con muchos valores, Python tiene match.",
+    "conditionalsElif.next": "Elige un caso con match",
+    "thinking.elif-predictSuccess": "¡Sí! 7 >= 9 es False, 7 >= 5 es True, así que aparece plata y Python se detiene.",
+    "thinking.elif-predictHint": "Todavía no. Pregunta desde arriba: ¿7 >= 9? ¿7 >= 5?",
+    "thinking.elif-meaningSuccess": "¡Sí! elif = else + if: si no fue el de arriba, pregunta esto.",
+    "thinking.elif-meaningHint": "Todavía no. Separa la palabra: el... if.",
+    "thinking.elif-lightSuccess": "¡Sí! ¿verde? No. ¿amarillo? No. ¿rojo? Sí, así que para.",
+    "thinking.elif-lightHint": "Todavía no. Revisa cada pregunta desde arriba. La luz es rojo.",
+    "thinking.elif-firstSuccess": "¡Sí! 15 > 5 es True primero, así que Python nunca pregunta el elif.",
+    "thinking.elif-firstHint": "Todavía no. Las dos respuestas son True, pero Python se detiene en la primera.",
+    "thinking.elif-orderSuccess": "¡Sí! Pon arriba la pregunta más difícil, para que tenga su oportunidad.",
+    "thinking.elif-orderHint": "Todavía no. ¿Qué pregunta debe hacerse antes que la otra?",
+    "thinking.elif-noneSuccess": "¡Sí! Ninguna pregunta es True y no hay else, así que no aparece nada.",
+    "thinking.elif-noneHint": "Todavía no. ¿La mascota es perro? ¿Gato? ¿Hay un else?",
+    "thinking.elif-two-ifsSuccess": "¡Sí! Dos if son dos preguntas separadas, y las dos son True.",
+    "thinking.elif-two-ifsHint": "Todavía no. Aquí no hay elif. Cada if pregunta por su cuenta.",
+    "thinking.elif-manySuccess": "¡Sí! Agrega un elif por cada pregunta extra.",
+    "thinking.elif-manyHint": "Todavía no. Un semáforo necesita 3 preguntas. ¿Puede tenerlas?",
+    "meta.conditionalsMatchDescription": "Aprende match y case de Python, la versión de Python del switch.",
+    "conditionalsMatch.eyebrow": "CONDICIONALES · MATCH",
+    "conditionalsMatch.title": "Elige un caso con match.",
+    "conditionalsMatch.intro": "Muchos lenguajes tienen un switch para elegir una opción de una lista. Python lo llama match, y cada opción es un case (caso).",
+    "conditionalsMatch.pybot": "Miro una caja y salto al caso que encaja.",
+    "conditionalsMatch.pybotNamed": "{name}, miro una caja y salto al caso que encaja.",
+    "conditionalsMatch.robotLabel": "PyBot está junto a un letrero de match y otro de case",
+    "conditionalsMatch.overviewTitle": "switch en otros lenguajes, match en Python.",
+    "conditionalsMatch.matchTitle": "match mira una caja",
+    "conditionalsMatch.matchText": "match comando: significa: miremos qué hay dentro de comando.",
+    "conditionalsMatch.caseTitle": "case es una opción",
+    "conditionalsMatch.caseText": "case \"saltar\": corre su camino cuando la caja guarda \"saltar\".",
+    "conditionalsMatch.restTitle": "case _ atrapa lo demás",
+    "conditionalsMatch.restText": "El _ significa “cualquier otra cosa”. Funciona como else.",
+    "conditionalsMatch.switchNote": "Ojo: Python no tiene la palabra switch. Desde Python 3.10 usa match y case.",
+    "conditionalsMatch.stepsTitle": "Encuentra el caso que encaja.",
+    "conditionalsMatch.stepsIntro": "PyBot compara la caja con cada caso, desde arriba.",
+    "conditionalsMatch.walk1": "dia = \"sabado\"",
+    "conditionalsMatch.walk1Tag": "Una caja guarda la palabra sabado.",
+    "conditionalsMatch.walk2": "match dia:",
+    "conditionalsMatch.walk2Tag": "Mira dentro de la caja dia.",
+    "conditionalsMatch.walk3": "    case \"viernes\":",
+    "conditionalsMatch.walk3Tag": "¿Es viernes? No. Prueba el siguiente caso.",
+    "conditionalsMatch.walk4": "        print(\"colegio\")",
+    "conditionalsMatch.walk4Tag": "Se salta.",
+    "conditionalsMatch.walk5": "    case \"sabado\":",
+    "conditionalsMatch.walk5Tag": "¿Es sabado? ¡Sí!",
+    "conditionalsMatch.walk6": "        print(\"jugar\")",
+    "conditionalsMatch.walk6Tag": "Este camino corre.",
+    "conditionalsMatch.walk7": "    case _:",
+    "conditionalsMatch.walk7Tag": "Se salta. Ya encajó un caso.",
+    "conditionalsMatch.walk8": "        print(\"descansar\")",
+    "conditionalsMatch.walk8Tag": "case _ corre solo cuando ningún otro caso encaja.",
+    "conditionalsMatch.rulesTitle": "Tres reglas de match.",
+    "conditionalsMatch.ruleOneTitle": "Solo corre un caso",
+    "conditionalsMatch.ruleOneText": "Python elige el primer caso que encaja y luego sale del match.",
+    "conditionalsMatch.ruleRestTitle": "case _ va al final",
+    "conditionalsMatch.ruleRestText": "_ encaja con todo, así que los casos de abajo nunca tendrían turno.",
+    "conditionalsMatch.ruleOrTitle": "| significa o",
+    "conditionalsMatch.ruleOrText": "case \"sabado\" | \"domingo\": encaja con los dos días en un solo camino.",
+    "conditionalsMatch.runTitle": "Envíale una orden a PyBot.",
+    "conditionalsMatch.runCode": "orden = \"saltar\"\nmatch orden:\n    case \"caminar\":\n        print(\"PyBot camina\")\n    case \"saltar\":\n        print(\"PyBot salta\")\n    case _:\n        print(\"PyBot espera\")",
+    "conditionalsMatch.predictWalks": "PyBot camina",
+    "conditionalsMatch.predictJumps": "PyBot salta",
+    "conditionalsMatch.predictWaits": "PyBot espera",
+    "conditionalsMatch.tryText": "Cambia \"saltar\" por \"caminar\", y luego por \"bailar\". ¿Qué caso encaja cada vez?",
+    "conditionalsMatch.practiceTitle": "Encuentra el caso.",
+    "conditionalsMatch.quizNameTitle": "El switch de Python",
+    "conditionalsMatch.quizNameQuestion": "Otros lenguajes dicen switch. ¿Qué palabra usa Python?",
+    "conditionalsMatch.nameSwitch": "switch",
+    "conditionalsMatch.nameMatch": "match",
+    "conditionalsMatch.nameChoose": "choose",
+    "conditionalsMatch.quizFruitTitle": "Elige la fruta",
+    "conditionalsMatch.quizFruitCode": "fruta = \"manzana\"\nmatch fruta:\n    case \"banano\":\n        print(\"amarillo\")\n    case \"manzana\":\n        print(\"rojo\")\n    case _:\n        print(\"no sé\")",
+    "conditionalsMatch.quizShowQuestion": "¿Qué muestra Python?",
+    "conditionalsMatch.yellow": "amarillo",
+    "conditionalsMatch.red": "rojo",
+    "conditionalsMatch.unknown": "no sé",
+    "conditionalsMatch.quizRestTitle": "Ningún caso encaja",
+    "conditionalsMatch.quizRestCode": "animal = \"vaca\"\nmatch animal:\n    case \"perro\":\n        print(\"guau\")\n    case \"gato\":\n        print(\"miau\")\n    case _:\n        print(\"mmm\")",
+    "conditionalsMatch.woof": "guau",
+    "conditionalsMatch.meow": "miau",
+    "conditionalsMatch.hmm": "mmm",
+    "conditionalsMatch.quizUnderscoreTitle": "El guion bajo",
+    "conditionalsMatch.quizUnderscoreQuestion": "¿Qué significa case _?",
+    "conditionalsMatch.underscoreEmpty": "Una caja vacía",
+    "conditionalsMatch.underscoreElse": "Cualquier otra cosa",
+    "conditionalsMatch.underscoreStop": "Detener el programa",
+    "conditionalsMatch.quizOrTitle": "Dos días, un camino",
+    "conditionalsMatch.quizOrCode": "dia = \"domingo\"\nmatch dia:\n    case \"sabado\" | \"domingo\":\n        print(\"fin de semana\")\n    case _:\n        print(\"día de colegio\")",
+    "conditionalsMatch.weekend": "fin de semana",
+    "conditionalsMatch.schoolDay": "día de colegio",
+    "conditionalsMatch.both": "fin de semana, luego día de colegio",
+    "conditionalsMatch.quizOneTitle": "¿Cuántos casos?",
+    "conditionalsMatch.quizOneCode": "color = \"rojo\"\nmatch color:\n    case \"rojo\":\n        print(\"para\")\n    case _:\n        print(\"otro\")",
+    "conditionalsMatch.quizOneQuestion": "_ encaja con todo, hasta con rojo. ¿Qué aparece?",
+    "conditionalsMatch.stopWord": "para",
+    "conditionalsMatch.otherWord": "otro",
+    "conditionalsMatch.stopOther": "para, luego otro",
+    "conditionalsMatch.quizSameTitle": "El mismo trabajo",
+    "conditionalsMatch.quizSameQuestion": "match puede hacer el mismo trabajo que…",
+    "conditionalsMatch.sameElif": "if, elif y else",
+    "conditionalsMatch.sameFor": "un bucle for",
+    "conditionalsMatch.sameBox": "una lista",
+    "conditionalsMatch.fixTask": "PyBot usó la palabra de otros lenguajes. Cámbiala por la palabra de Python.",
+    "conditionalsMatch.fixCode": "mascota = \"gato\"\nswitch mascota:\n    case \"perro\":\n        print(\"guau\")\n    case \"gato\":\n        print(\"miau\")",
+    "conditionalsMatch.fixExpected": "miau",
+    "conditionalsMatch.bigTitle": "match elige un caso según el valor de una caja.",
+    "conditionalsMatch.bigText": "Otros lenguajes lo llaman switch. En Python es match, con case _ para cualquier otra cosa.",
+    "conditionalsMatch.next": "Repite un patrón",
+    "thinking.match-predictSuccess": "¡Sí! orden guarda saltar, así que corre el caso saltar.",
+    "thinking.match-predictHint": "Todavía no. ¿Qué hay dentro de orden? Busca el caso con la misma palabra.",
+    "thinking.match-nameSuccess": "¡Sí! Python dice match, y cada opción es un case.",
+    "thinking.match-nameHint": "Todavía no. switch es de otros lenguajes. Python tiene su propia palabra.",
+    "thinking.match-fruitSuccess": "¡Sí! La caja guarda manzana, así que corre el caso manzana.",
+    "thinking.match-fruitHint": "Todavía no. ¿Qué caso tiene la misma palabra que la caja?",
+    "thinking.match-restSuccess": "¡Sí! Ningún caso encaja con vaca, así que corre case _.",
+    "thinking.match-restHint": "Todavía no. ¿Hay un caso para vaca? Entonces, ¿cuál atrapa lo demás?",
+    "thinking.match-underscoreSuccess": "¡Sí! _ encaja con todo, como else.",
+    "thinking.match-underscoreHint": "Todavía no. _ es el último caso. ¿Cuándo corre?",
+    "thinking.match-orSuccess": "¡Sí! | significa o, así que domingo encaja en el primer caso.",
+    "thinking.match-orHint": "Todavía no. Lee | como o. ¿Está domingo en el primer caso?",
+    "thinking.match-oneSuccess": "¡Sí! Gana el primer caso que encaja. Solo corre un caso.",
+    "thinking.match-oneHint": "Todavía no. Encajan dos casos, pero ¿cuántos pueden correr?",
+    "thinking.match-sameSuccess": "¡Sí! Cada case es como un elif que pregunta: ¿la caja es igual a esto?",
+    "thinking.match-sameHint": "Todavía no. match elige un camino. ¿Qué otro código elige un camino?",
     "loops.stepsEyebrow": "PASO A PASO",
     "loops.stepsTitle": "Mira cómo trabaja el bucle.",
     "loops.stepsIntro": "Un bucle tiene una caja que cambia en cada vuelta.",
@@ -2907,8 +3609,8 @@ const translations = {
     "path.loopsUntil": "Repetir hasta que",
     "meta.loopsWhileDescription": "Aprende los bucles while de Python: repite mientras una pregunta sea True.",
     "meta.loopsUntilDescription": "Repite hasta que algo termine en Python, con while not y break.",
-    "topic.progressLoopsWhile": "ZONA 7 · 2 DE 3",
-    "topic.progressLoopsUntil": "ZONA 7 · 3 DE 3",
+    "topic.progressLoopsWhile": "ZONA 3 · 2 DE 3",
+    "topic.progressLoopsUntil": "ZONA 3 · 3 DE 3",
     "loopsWhile.eyebrow": "BUCLES · WHILE",
     "loopsWhile.title": "Repite mientras sea verdad.",
     "loopsWhile.intro": "Un bucle while hace una pregunta de True o False antes de cada vuelta. True: una vuelta más. False: se detiene.",
@@ -3206,13 +3908,13 @@ const translations = {
     "comparisons.bigTitle": "Una comparación es una pregunta con respuesta True o False.",
     "comparisons.bigText": "if usa esa respuesta para elegir un camino. Ahora vas a guardar todo dentro de una caja con nombre.",
     "comparisons.next": "Cajas que hacen un trabajo",
-    "topic.progressComparisons": "ZONA 8 DE 10",
+    "topic.progressComparisons": "ZONA 5 DE 7",
     "language.bigTitle": "Un lenguaje le da reglas al código.",
     "language.bigText": "Ahora aprenderemos las teclas usadas para escribir esas reglas.",
     "meta.checkpoint1Title": "Parada en boxes 1 — PyBot",
     "meta.checkpoint1Description": "Una parada en boxes en la ruta de PyBot: retos más grandes con Python real sobre las zonas vistas y luego una pregunta sobre cómo te fue.",
     "topic.progressCheckpoint1": "PARADA EN BOXES 1",
-    "missionCheckpoint1.concept": "PARADA EN BOXES · ZONAS 4–9",
+    "missionCheckpoint1.concept": "PARADA EN BOXES · ZONAS 2–6",
     "missionCheckpoint1.title": "Revisa el Motor",
     "missionCheckpoint1.text": "Retos más grandes con Python real. Luego cuéntale a PyBot cómo te fue.",
     "functions.next": "Parada en boxes",
@@ -3290,7 +3992,7 @@ const translations = {
     "review.done": "Ya la repasé ✓",
     "meta.bugsTitle": "Cazadores de bugs — PyBot",
     "meta.bugsDescription": "Una primera mirada divertida a los bugs: qué es un defecto, la historia real del primer bug y cómo encontrar bugs en planes paso a paso.",
-    "topic.progressBugs": "ZONA 10 · 1 DE 3",
+    "topic.progressBugs": "ZONA 7 · 1 DE 3",
     "missionBugs.concept": "BUGS Y DEPURACIÓN",
     "missionBugs.title": "Cazadores de Bugs",
     "missionBugs.text": "Encuentra bugs en planes de todos los días y en Python real, y aprende las herramientas del detective.",
@@ -3426,8 +4128,8 @@ const translations = {
     "meta.bugsCodeDescription": "Encuentra y arregla bugs en código Python real: bugs ruidosos que detienen a Python y bugs escondidos que dan un resultado equivocado.",
     "meta.bugsDetectiveTitle": "Herramientas de detective de bugs — PyBot",
     "meta.bugsDetectiveDescription": "Herramientas de detective para niños: sé el computador, espía con print, explica cada línea en voz alta y escribe un buen reporte de bug.",
-    "topic.progressBugsCode": "ZONA 10 · 2 DE 3",
-    "topic.progressBugsDetective": "ZONA 10 · 3 DE 3",
+    "topic.progressBugsCode": "ZONA 7 · 2 DE 3",
+    "topic.progressBugsDetective": "ZONA 7 · 3 DE 3",
     "bugs.next": "Bugs en el código",
     "bugsCode.eyebrow": "BUGS · CÓDIGO",
     "bugsCode.title": "Bugs en código Python.",
@@ -3698,6 +4400,40 @@ const learnerNameInput = document.querySelector("#learner-name");
 const learnerNameSaved = document.querySelector("[data-name-saved]");
 const learnerNameEdit = document.querySelector("[data-name-edit]");
 const learnerNameForget = document.querySelector("[data-name-forget]");
+// Google Analytics 4 measurement ID (looks like "G-XXXXXXXXXX"). Every page loads
+// this script, so this is the only place to set it. Leave it empty to turn analytics off.
+const GA_MEASUREMENT_ID = "G-H0PLZHW8CE";
+
+// Counts anonymous page visits only. Ads, Google signals, and ad personalization stay off,
+// and nothing the learner types or saves (name, answers, progress) is sent.
+function startAnalytics() {
+  if (!GA_MEASUREMENT_ID || !/^G-[A-Z0-9]+$/.test(GA_MEASUREMENT_ID)) return;
+  if (!/^https?:$/.test(window.location.protocol)) return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "granted",
+  });
+  window.gtag("set", { allow_google_signals: false, allow_ad_personalization_signals: false });
+  window.gtag("js", new Date());
+  window.gtag("config", GA_MEASUREMENT_ID, {
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+  });
+  document.querySelectorAll("[data-analytics-note]").forEach((note) => {
+    note.hidden = false;
+  });
+  const tag = document.createElement("script");
+  tag.async = true;
+  tag.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_MEASUREMENT_ID)}`;
+  document.head.append(tag);
+}
+
 // Lesson pages live one folder deeper, so resolve the worker next to this script.
 const scriptBaseUrl = document.currentScript?.src || window.location.href;
 const pythonRunner = document.querySelector("[data-python-runner]");
@@ -3710,6 +4446,7 @@ const backupExportButton = document.querySelector("[data-backup-export]");
 const backupImportButton = document.querySelector("[data-backup-import]");
 const backupImportInput = document.querySelector("[data-backup-file]");
 const backupStatus = document.querySelector("[data-backup-status]");
+const progressVersionLabel = document.querySelector("[data-progress-version]");
 const progressResetButton = document.querySelector("[data-progress-reset]");
 const resetStatus = document.querySelector("[data-reset-status]");
 let currentLanguage = "en";
@@ -3733,9 +4470,17 @@ const PATH_VISITED_KEY = "pybot.path.visited";
 const PATH_DONE_KEY = "pybot.path.done";
 const PATH_KNOWN_KEY = "pybot.path.known";
 const SELF_CHECK_KEY = "pybot.selfcheck";
+const PATH_LIST_KEYS = [PATH_VISITED_KEY, PATH_DONE_KEY, PATH_KNOWN_KEY];
 const SELF_CHECK_RATINGS = ["good", "okay", "review"];
 const BACKUP_FORMAT = "pybot-progress";
 const BACKUP_SCHEMA_VERSION = 1;
+// The version of the course content that saved progress belongs to. Bump it in
+// every PR that adds, renames, or removes a step or activity id
+// (`node tools/progress-version.mjs --bump`), and add a migration below when an
+// id is renamed or removed. Backups carry it, so support can tell where an old
+// backup stopped and upgrade it to the current course.
+const PROGRESS_VERSION = 4;
+const PROGRESS_VERSION_KEY = "pybot.progress.version";
 const BACKUP_MAX_BYTES = 100_000;
 // Preferences and the name survive an emergency progress reset.
 const RESET_KEPT_KEYS = ["pybot.language", "pybot.audio.enabled", LEARNER_NAME_KEY];
@@ -3774,13 +4519,36 @@ const pathSteps = [
     activities: ["boxes-text", "boxes-yesno", "boxes-list", "boxes-grid", "boxes-predict"],
     activitiesAddedLater: ["boxes-decimal", "boxes-fix"],
   },
+  // Memory boxes, Boxes of all kinds and Changing boxes form one zone on the map.
+  {
+    id: "changingBoxes", page: "changingBoxes", href: "lessons/07c-changing-boxes.html", addedLater: true,
+    activities: [
+      "changing-predict", "changing-plus", "changing-short", "changing-minus",
+      "changing-times", "changing-math", "changing-join", "changing-text-numbers", "changing-fix",
+    ],
+  },
   {
     id: "conditionals", page: "conditionals", href: "lessons/08-conditionals.html",
     activities: [
       "conditional-rain", "conditional-battery", "conditional-else", "conditional-predict",
       "conditional-skip", "conditional-after", "conditional-elif", "conditional-one",
     ],
-    activitiesAddedLater: ["conditional-fix"],
+    activitiesAddedLater: ["conditional-fix", "conditional-everyday"],
+  },
+  // Conditionals is split into three pages (if/else, elif, match), like the loops route.
+  {
+    id: "conditionalsElif", page: "conditionalsElif", href: "lessons/08-conditionals-elif.html", addedLater: true,
+    activities: [
+      "elif-everyday", "elif-meaning", "elif-light", "elif-first", "elif-order",
+      "elif-none", "elif-two-ifs", "elif-many", "elif-predict", "elif-fix",
+    ],
+  },
+  {
+    id: "conditionalsMatch", page: "conditionalsMatch", href: "lessons/08-conditionals-match.html", addedLater: true,
+    activities: [
+      "match-everyday", "match-name", "match-fruit", "match-rest", "match-underscore",
+      "match-or", "match-one", "match-same", "match-predict", "match-fix",
+    ],
   },
   {
     id: "loops", page: "loops", href: "lessons/09-loops.html",
@@ -3823,7 +4591,7 @@ const pathSteps = [
       "checkpoint-countdown", "checkpoint-stars", "checkpoint-battery",
     ],
   },
-  // Zone 10 has three pages: bugs in everyday steps, in Python code, and detective tools.
+  // Zone 7 has three pages: bugs in everyday steps, in Python code, and detective tools.
   {
     id: "bugs", page: "bugs", href: "lessons/12-bugs.html", addedLater: true,
     activities: [
@@ -3848,6 +4616,13 @@ const pathSteps = [
 ];
 const stepActivityIds = (step) => [...step.activities, ...(step.activitiesAddedLater ?? [])];
 const activityIds = pathSteps.flatMap(stepActivityIds);
+
+// Upgrades saved progress, as { storageKey: value }, from the version before to
+// the given PROGRESS_VERSION. Adding ids needs no migration: the map already
+// shows new steps and activities as pending. Renaming or removing one does, e.g.
+//   2: (progress) => renameProgressActivity(progress, "loop-count", "loop-times"),
+const progressMigrations = {};
+upgradeStoredProgress();
 
 function textFor(key) {
   return translations[currentLanguage][key] ?? translations.en[key] ?? key;
@@ -4646,6 +5421,94 @@ function backupValidators() {
   return validators;
 }
 
+function renameProgressStep(progress, from, to) {
+  const rename = (id) => (id === from ? to : id);
+  if (progress[PATH_CURRENT_KEY] === from) {
+    progress[PATH_CURRENT_KEY] = to;
+  }
+  PATH_LIST_KEYS.filter((key) => typeof progress[key] === "string").forEach((key) => {
+    progress[key] = progress[key].split(",").map(rename).join(",");
+  });
+  if (typeof progress[SELF_CHECK_KEY] === "string") {
+    progress[SELF_CHECK_KEY] = progress[SELF_CHECK_KEY]
+      .split(",")
+      .map((pair) => pair.split(":"))
+      .map(([id, rating]) => `${rename(id)}:${rating}`)
+      .join(",");
+  }
+}
+
+function renameProgressActivity(progress, from, to) {
+  const fromKey = activityStorageKey(from);
+  if (Object.hasOwn(progress, fromKey)) {
+    progress[activityStorageKey(to)] ??= progress[fromKey];
+    delete progress[fromKey];
+  }
+}
+
+// Runs every migration after `fromVersion`, then drops steps and activities the
+// current course no longer has, so progress from any older version still loads.
+function upgradeProgress(progress, fromVersion) {
+  const upgraded = { ...progress };
+  if (fromVersion >= PROGRESS_VERSION) {
+    return upgraded;
+  }
+
+  for (let version = fromVersion + 1; version <= PROGRESS_VERSION; version += 1) {
+    progressMigrations[version]?.(upgraded);
+  }
+
+  const isStep = (id) => pathSteps.some((step) => step.id === id);
+  const keepIds = (key, isKept) => {
+    if (typeof upgraded[key] === "string") {
+      upgraded[key] = upgraded[key].split(",").filter(isKept).join(",");
+    }
+  };
+  PATH_LIST_KEYS.forEach((key) => keepIds(key, isStep));
+  keepIds(SELF_CHECK_KEY, (pair) => isStep(pair.split(":")[0]));
+  if (upgraded[PATH_VISITED_KEY] === "") {
+    delete upgraded[PATH_VISITED_KEY];
+  }
+  if (Object.hasOwn(upgraded, PATH_CURRENT_KEY) && !isStep(upgraded[PATH_CURRENT_KEY])) {
+    delete upgraded[PATH_CURRENT_KEY];
+  }
+  Object.keys(upgraded)
+    .filter((key) => key.startsWith(activityStorageKey("")) && !activityIds.includes(key.slice(activityStorageKey("").length)))
+    .forEach((key) => delete upgraded[key]);
+
+  return upgraded;
+}
+
+// Brings the progress in this browser up to PROGRESS_VERSION after the course changes.
+// Progress saved before versions existed counts as version 1.
+function upgradeStoredProgress() {
+  try {
+    const stored = Number.parseInt(localStorage.getItem(PROGRESS_VERSION_KEY) ?? "1", 10);
+    const fromVersion = Number.isInteger(stored) && stored > 0 ? stored : 1;
+    if (fromVersion > PROGRESS_VERSION) {
+      return;
+    }
+
+    if (fromVersion < PROGRESS_VERSION) {
+      const progress = {};
+      for (let index = 0; index < localStorage.length; index += 1) {
+        const key = localStorage.key(index);
+        if (key?.startsWith("pybot.") && key !== PROGRESS_VERSION_KEY) {
+          progress[key] = localStorage.getItem(key);
+        }
+      }
+
+      const upgraded = upgradeProgress(progress, fromVersion);
+      Object.keys(progress).filter((key) => !Object.hasOwn(upgraded, key)).forEach((key) => localStorage.removeItem(key));
+      Object.entries(upgraded).forEach(([key, value]) => localStorage.setItem(key, value));
+    }
+
+    localStorage.setItem(PROGRESS_VERSION_KEY, String(PROGRESS_VERSION));
+  } catch {
+    // Storage failure must never block a lesson.
+  }
+}
+
 function createBackup() {
   const progress = {};
 
@@ -4659,6 +5522,7 @@ function createBackup() {
   return {
     format: BACKUP_FORMAT,
     schemaVersion: BACKUP_SCHEMA_VERSION,
+    progressVersion: PROGRESS_VERSION,
     exportedAt: new Date().toISOString(),
     progress,
   };
@@ -4677,27 +5541,33 @@ function readBackup(text) {
     return { error: "backup.invalid" };
   }
 
-  if (Number.isInteger(backup.schemaVersion) && backup.schemaVersion > BACKUP_SCHEMA_VERSION) {
+  // Backups saved before progress versions existed belong to version 1.
+  const progressVersion = backup.progressVersion ?? 1;
+  if (
+    (Number.isInteger(backup.schemaVersion) && backup.schemaVersion > BACKUP_SCHEMA_VERSION) ||
+    (Number.isInteger(progressVersion) && progressVersion > PROGRESS_VERSION)
+  ) {
     return { error: "backup.newer" };
   }
 
   const { progress } = backup;
   if (
     backup.schemaVersion !== BACKUP_SCHEMA_VERSION ||
+    !Number.isInteger(progressVersion) ||
+    progressVersion < 1 ||
     !progress ||
     typeof progress !== "object" ||
-    Array.isArray(progress)
+    Array.isArray(progress) ||
+    !Object.values(progress).every((value) => typeof value === "string")
   ) {
     return { error: "backup.invalid" };
   }
 
   const validators = backupValidators();
-  const entries = Object.entries(progress);
-  const allValid = entries.every(
-    ([key, value]) => Object.hasOwn(validators, key) && typeof value === "string" && validators[key](value),
-  );
+  const entries = Object.entries(upgradeProgress(progress, progressVersion));
+  const allValid = entries.every(([key, value]) => Object.hasOwn(validators, key) && validators[key](value));
 
-  return allValid ? { entries } : { error: "backup.invalid" };
+  return allValid ? { entries, upgraded: progressVersion < PROGRESS_VERSION } : { error: "backup.invalid" };
 }
 
 function replaceProgress(entries) {
@@ -5259,6 +6129,10 @@ progressResetButton?.addEventListener("click", () => {
   setBackupStatus("reset.done", resetStatus);
 });
 
+if (progressVersionLabel) {
+  progressVersionLabel.textContent = String(PROGRESS_VERSION);
+}
+
 backupImportButton?.addEventListener("click", () => backupImportInput?.click());
 
 backupImportInput?.addEventListener("change", async () => {
@@ -5294,7 +6168,7 @@ backupImportInput?.addEventListener("change", async () => {
   if (nextAudio !== audioEnabled) {
     setAudioEnabled(nextAudio);
   }
-  setBackupStatus("backup.imported");
+  setBackupStatus(result.upgraded ? "backup.upgraded" : "backup.imported");
 });
 
 pythonEditor?.addEventListener("input", () => {
@@ -5327,6 +6201,7 @@ pythonRunButton?.addEventListener("click", () => {
 
 pythonStopButton?.addEventListener("click", () => stopPythonWorker());
 
+startAnalytics();
 audioEnabled = storedAudioPreference();
 learnerName = storedLearnerName();
 saveKnownPathSteps();
