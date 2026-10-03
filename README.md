@@ -204,7 +204,7 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.language` | `en` or `es` | Interface language preference | Yes |
 | `pybot.audio.enabled` | `true` or `false` | Optional robot ambience preference; defaults to `true` | Yes |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
-| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `changingBoxes`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `functions`, or `checkpoint1` | Highlights the learner's current place across the complete small path | Yes |
+| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `changingBoxes`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `functionsDo`, `functions`, `functionsMethods`, or `checkpoint1` | Highlights the learner's current place across the complete small path | Yes |
 | `pybot.path.visited` | Comma-separated step ids from `pybot.path.current` | Remembers which pages the learner has opened, so steps added to the path later show as new and pending | Yes |
 | `pybot.path.done` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps the learner finished, so a finished step that later gains activities shows **NEW ACTIVITIES** | Yes |
 | `pybot.path.known` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps were on the path when the learner started, so a step added later shows as new even when it is ahead of the learner | Yes |
@@ -228,7 +228,9 @@ Registered activity IDs:
 - Loops (while): `while-check`, `while-count`, `while-last`, `while-zero`, `while-forever`, `while-choose`, `while-predict`, and `while-fix`
 - Loops (repeat until): `until-meaning`, `until-not`, `until-break`, `until-done`, `until-count`, `until-word`, `until-predict`, and `until-fix`
 - True or false: `compare-less`, `compare-equal`, `compare-assign`, `compare-not-equal`, `compare-and`, `compare-or`, `compare-not`, `compare-predict`, and `compare-fix`
-- Functions: `function-input`, `function-output`, `function-inside`, `function-predict`, `function-name`, `function-call`, and `function-fix`
+- Functions, def (no return): `do-everyday`, `do-def`, `do-not-yet`, `do-call`, `do-twice`, `do-param`, `do-inside`, `do-predict`, and `do-fix`
+- Functions, return: `function-input`, `function-output`, `function-inside`, `function-predict`, `function-name`, `function-call`, `function-fix`, and `function-everyday`
+- Functions, methods: `method-everyday`, `method-dot`, `method-upper`, `method-replace`, `method-append`, `method-count`, `method-belongs`, `method-predict`, and `method-fix`
 - Pit stop 1: `checkpoint-backpack`, `checkpoint-light`, `checkpoint-outside`, `checkpoint-countdown`, `checkpoint-stars`, and `checkpoint-battery`
 
 Storage rules:
@@ -494,7 +496,9 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |   |-- 09-loops-while.html
 |   |-- 09-loops-until.html
 |   |-- 09b-true-or-false.html
+|   |-- 10-functions-do.html
 |   |-- 10-functions.html
+|   |-- 10-functions-methods.html
 |   `-- 11-checkpoint.html
 |-- pyodide-worker.mjs # Isolated browser worker for the live Python runner
 |-- THIRD_PARTY_NOTICES.md # Runtime credits, license, and pinned version
