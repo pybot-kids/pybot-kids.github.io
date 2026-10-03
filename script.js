@@ -1,5 +1,128 @@
 const translations = {
   en: {
+    "keyboard.quizEnterTitle": "Start a new line",
+    "keyboard.quizEnterScene": "You finished one line of code.",
+    "keyboard.quizEnterQuestion": "Which key moves to a new line?",
+    "keyboard.quizEnterOption1": "Enter",
+    "keyboard.quizEnterOption2": "Backspace",
+    "keyboard.quizEnterOption3": "Shift",
+    "keyboard.quizShiftTitle": "Make a capital letter",
+    "keyboard.quizShiftScene": "You want to type a big P for PyBot.",
+    "keyboard.quizShiftQuestion": "Which key do you hold down?",
+    "keyboard.quizShiftOption1": "Backspace",
+    "keyboard.quizShiftOption2": "Shift",
+    "keyboard.quizShiftOption3": "Enter",
+    "keyboard.quizPasteTitle": "Paste what you copied",
+    "keyboard.quizPasteScene": "You copied a word with Ctrl + C.",
+    "keyboard.quizPasteQuestion": "Which key finishes Ctrl + ? to paste it?",
+    "keyboard.quizPasteOption1": "Z",
+    "keyboard.quizPasteOption2": "C",
+    "keyboard.quizPasteOption3": "V",
+    "keyboard.fixTask": "PyBot typed too many !!! Use Backspace so Python shows the goal.",
+    "keyboard.fixCode": "print(\"Hi, PyBot!!!\")",
+    "keyboard.fixExpected": "Hi, PyBot!",
+    "environment.quizStopTitle": "Stop a long run",
+    "environment.quizStopScene": "Your code keeps running and running.",
+    "environment.quizStopQuestion": "Which button helps?",
+    "environment.quizStopOption1": "Stop",
+    "environment.quizStopOption2": "Run Python",
+    "environment.quizStopOption3": "Copy",
+    "environment.quizOutputTitle": "Read the result",
+    "environment.quizOutputScene": "You pressed Run Python.",
+    "environment.quizOutputQuestion": "Where do you see what Python shows?",
+    "environment.quizOutputOption1": "The keyboard",
+    "environment.quizOutputOption2": "The output area",
+    "environment.quizOutputOption3": "The page title",
+    "environment.quizBrowserTitle": "Where it all lives",
+    "environment.quizBrowserScene": "The editor and Pyodide live inside this web page.",
+    "environment.quizBrowserQuestion": "Which program opens web pages?",
+    "environment.quizBrowserOption1": "The printer",
+    "environment.quizBrowserOption2": "The speaker",
+    "environment.quizBrowserOption3": "The browser",
+    "environment.fixTask": "PyBot misspelled a command. Fix it in the editor, then run it.",
+    "environment.fixCode": "prnt(\"I can run Python!\")",
+    "environment.fixExpected": "I can run Python!",
+    "symbols.quizParensTitle": "Give print what it needs",
+    "symbols.quizParensScene": "print ? \"hello\" ?",
+    "symbols.quizParensQuestion": "Which marks hold what print needs?",
+    "symbols.quizParensOption1": "Parentheses ( )",
+    "symbols.quizParensOption2": "Hash #",
+    "symbols.quizParensOption3": "Colon :",
+    "symbols.quizNoteTitle": "Write a note",
+    "symbols.quizNoteScene": "? this line is for people",
+    "symbols.quizNoteQuestion": "Which mark starts a note Python skips?",
+    "symbols.quizNoteOption1": "Equals =",
+    "symbols.quizNoteOption2": "Hash #",
+    "symbols.quizNoteOption3": "Quotes \" \"",
+    "symbols.quizJoinTitle": "Join two words",
+    "symbols.quizJoinScene": "robot?color = \"orange\"",
+    "symbols.quizJoinQuestion": "Which mark joins the two words?",
+    "symbols.quizJoinOption1": "Slash /",
+    "symbols.quizJoinOption2": "Colon :",
+    "symbols.quizJoinOption3": "Underscore _",
+    "symbols.fixTask": "A mark is missing. Text needs quotes on both sides.",
+    "symbols.fixCode": "print(\"Hello, I am PyBot)",
+    "symbols.fixExpected": "Hello, I am PyBot",
+    "variables.quizChangeTitle": "Put in something new",
+    "variables.quizChangeScene": "stars = 5\nstars = 8\nprint(stars)",
+    "variables.quizChangeQuestion": "What will Python show?",
+    "variables.quizChangeOption1": "5",
+    "variables.quizChangeOption2": "8",
+    "variables.quizChangeOption3": "13",
+    "variables.quizLabelTitle": "Pick a helpful name",
+    "variables.quizLabelScene": "PyBot wants to remember your age.",
+    "variables.quizLabelQuestion": "Which name helps the most?",
+    "variables.quizLabelOption1": "age",
+    "variables.quizLabelOption2": "x",
+    "variables.quizLabelOption3": "thing",
+    "variables.fixTask": "PyBot misspelled its box's name. Fix it so Python finds the box.",
+    "variables.fixCode": "pet = \"cat\"\nprint(pett)",
+    "variables.fixExpected": "cat",
+    "boxes.quizDecimalTitle": "Find the decimal",
+    "boxes.quizDecimalScene": "PyBot measured nine and a half centimeters.",
+    "boxes.quizDecimalQuestion": "Which box keeps a decimal number?",
+    "boxes.quizDecimalOption1": "size = 9",
+    "boxes.quizDecimalOption2": "size = 9.5",
+    "boxes.quizDecimalOption3": "size = \"9.5\"",
+    "boxes.fixTask": "PyBot wants the grape. Remember: the first space is number 0.",
+    "boxes.fixCode": "snacks = [\"apple\", \"cookie\", \"grape\"]\nprint(snacks[3])",
+    "boxes.fixExpected": "grape",
+    "conditionals.fixTask": "Something is missing at the end of the if line.",
+    "conditionals.fixCode": "battery = 20\nif battery < 50\n    print(\"Time to charge!\")",
+    "conditionals.fixExpected": "Time to charge!",
+    "loops.fixTask": "The step to repeat must be inside the loop. Move it in with spaces.",
+    "loops.fixCode": "for step in range(3):\nprint(\"Beep\")",
+    "loops.fixExpected": "Beep\nBeep\nBeep",
+    "comparisons.fixTask": "PyBot wants to ask a question, not store a value.",
+    "comparisons.fixCode": "stars = 3\nif stars = 3:\n    print(\"Three stars!\")",
+    "comparisons.fixExpected": "Three stars!",
+    "functions.quizNameTitle": "Name the box",
+    "functions.quizNameScene": "def triple(n):\n    return n * 3",
+    "functions.quizNameQuestion": "What is this box called?",
+    "functions.quizNameOption1": "n",
+    "functions.quizNameOption2": "triple",
+    "functions.quizNameOption3": "return",
+    "functions.quizCallTitle": "Send in something new",
+    "functions.quizCallScene": "def double(number):\n    return number + number\n\nprint(double(10))",
+    "functions.quizCallQuestion": "What will Python show?",
+    "functions.quizCallOption1": "10",
+    "functions.quizCallOption2": "1010",
+    "functions.quizCallOption3": "20",
+    "functions.fixTask": "The box forgot its exit door. Make 10 come out.",
+    "functions.fixCode": "def double(number):\n    answer = number + number\n\nprint(double(5))",
+    "functions.fixExpected": "10",
+    "fix.title": "Fix PyBot's code",
+    "fix.codeLabel": "PyBot's code",
+    "fix.goal": "Goal output",
+    "fix.restart": "Start over",
+    "fix.success": "You fixed it! The output matches the goal.",
+    "fix.hint": "Not yet. Compare your output with the goal, change one thing, and run again.",
+    "fix.timeout": "Python took too long, so PyBot stopped it. Check for a loop that never ends.",
+    "path.done": "DONE",
+    "path.unfinished": "ACTIVITIES LEFT",
+    "path.newActivities": "NEW ACTIVITIES",
+    "course.newActivities": "New activities in: {name} →",
+    "progress.newActivities": "PyBot added new activities here. Find the ones you have not tried yet!",
     "meta.homeTitle": "PyBot — Python, one step at a time",
     "meta.meetTitle": "Meet PyBot — PyBot",
     "meta.courseTitle": "Learning path — PyBot",
@@ -1053,6 +1176,129 @@ const translations = {
     "language.bigText": "Next, we will learn the keys used to write those rules.",
   },
   es: {
+    "keyboard.quizEnterTitle": "Empieza una línea nueva",
+    "keyboard.quizEnterScene": "Terminaste una línea de código.",
+    "keyboard.quizEnterQuestion": "¿Qué tecla pasa a una línea nueva?",
+    "keyboard.quizEnterOption1": "Enter",
+    "keyboard.quizEnterOption2": "Backspace",
+    "keyboard.quizEnterOption3": "Shift",
+    "keyboard.quizShiftTitle": "Escribe una mayúscula",
+    "keyboard.quizShiftScene": "Quieres escribir una P grande para PyBot.",
+    "keyboard.quizShiftQuestion": "¿Qué tecla mantienes presionada?",
+    "keyboard.quizShiftOption1": "Backspace",
+    "keyboard.quizShiftOption2": "Shift",
+    "keyboard.quizShiftOption3": "Enter",
+    "keyboard.quizPasteTitle": "Pega lo que copiaste",
+    "keyboard.quizPasteScene": "Copiaste una palabra con Ctrl + C.",
+    "keyboard.quizPasteQuestion": "¿Qué tecla completa Ctrl + ? para pegarla?",
+    "keyboard.quizPasteOption1": "Z",
+    "keyboard.quizPasteOption2": "C",
+    "keyboard.quizPasteOption3": "V",
+    "keyboard.fixTask": "PyBot escribió demasiados !!! Usa Backspace para que Python muestre lo esperado.",
+    "keyboard.fixCode": "print(\"¡Hola, PyBot!!!\")",
+    "keyboard.fixExpected": "¡Hola, PyBot!",
+    "environment.quizStopTitle": "Detén algo que no termina",
+    "environment.quizStopScene": "Tu código sigue y sigue funcionando.",
+    "environment.quizStopQuestion": "¿Qué botón ayuda?",
+    "environment.quizStopOption1": "Detener",
+    "environment.quizStopOption2": "Ejecutar Python",
+    "environment.quizStopOption3": "Copiar",
+    "environment.quizOutputTitle": "Lee el resultado",
+    "environment.quizOutputScene": "Presionaste Ejecutar Python.",
+    "environment.quizOutputQuestion": "¿Dónde ves lo que muestra Python?",
+    "environment.quizOutputOption1": "El teclado",
+    "environment.quizOutputOption2": "La zona de resultado",
+    "environment.quizOutputOption3": "El título de la página",
+    "environment.quizBrowserTitle": "Dónde vive todo",
+    "environment.quizBrowserScene": "El editor y Pyodide viven dentro de esta página web.",
+    "environment.quizBrowserQuestion": "¿Qué programa abre páginas web?",
+    "environment.quizBrowserOption1": "La impresora",
+    "environment.quizBrowserOption2": "El parlante",
+    "environment.quizBrowserOption3": "El navegador",
+    "environment.fixTask": "PyBot escribió mal una orden. Arréglala en el editor y ejecútala.",
+    "environment.fixCode": "prnt(\"¡Puedo ejecutar Python!\")",
+    "environment.fixExpected": "¡Puedo ejecutar Python!",
+    "symbols.quizParensTitle": "Dale a print lo que necesita",
+    "symbols.quizParensScene": "print ? \"hola\" ?",
+    "symbols.quizParensQuestion": "¿Qué marcas guardan lo que necesita print?",
+    "symbols.quizParensOption1": "Paréntesis ( )",
+    "symbols.quizParensOption2": "Numeral #",
+    "symbols.quizParensOption3": "Dos puntos :",
+    "symbols.quizNoteTitle": "Escribe una nota",
+    "symbols.quizNoteScene": "? esta línea es para personas",
+    "symbols.quizNoteQuestion": "¿Qué marca comienza una nota que Python salta?",
+    "symbols.quizNoteOption1": "Igual =",
+    "symbols.quizNoteOption2": "Numeral #",
+    "symbols.quizNoteOption3": "Comillas \" \"",
+    "symbols.quizJoinTitle": "Une dos palabras",
+    "symbols.quizJoinScene": "color?robot = \"naranja\"",
+    "symbols.quizJoinQuestion": "¿Qué marca une las dos palabras?",
+    "symbols.quizJoinOption1": "Barra /",
+    "symbols.quizJoinOption2": "Dos puntos :",
+    "symbols.quizJoinOption3": "Guion bajo _",
+    "symbols.fixTask": "Falta una marca. El texto necesita comillas a los dos lados.",
+    "symbols.fixCode": "print(\"Hola, soy PyBot)",
+    "symbols.fixExpected": "Hola, soy PyBot",
+    "variables.quizChangeTitle": "Guarda algo nuevo",
+    "variables.quizChangeScene": "estrellas = 5\nestrellas = 8\nprint(estrellas)",
+    "variables.quizChangeQuestion": "¿Qué mostrará Python?",
+    "variables.quizChangeOption1": "5",
+    "variables.quizChangeOption2": "8",
+    "variables.quizChangeOption3": "13",
+    "variables.quizLabelTitle": "Elige un nombre útil",
+    "variables.quizLabelScene": "PyBot quiere recordar tu edad.",
+    "variables.quizLabelQuestion": "¿Qué nombre ayuda más?",
+    "variables.quizLabelOption1": "edad",
+    "variables.quizLabelOption2": "x",
+    "variables.quizLabelOption3": "cosa",
+    "variables.fixTask": "PyBot escribió mal el nombre de su cajita. Arréglalo para que Python la encuentre.",
+    "variables.fixCode": "mascota = \"gato\"\nprint(mascotaa)",
+    "variables.fixExpected": "gato",
+    "boxes.quizDecimalTitle": "Encuentra el decimal",
+    "boxes.quizDecimalScene": "PyBot midió nueve centímetros y medio.",
+    "boxes.quizDecimalQuestion": "¿Qué cajita guarda un número con decimales?",
+    "boxes.quizDecimalOption1": "medida = 9",
+    "boxes.quizDecimalOption2": "medida = 9.5",
+    "boxes.quizDecimalOption3": "medida = \"9.5\"",
+    "boxes.fixTask": "PyBot quiere la uva. Recuerda: el primer espacio es el número 0.",
+    "boxes.fixCode": "meriendas = [\"manzana\", \"galleta\", \"uva\"]\nprint(meriendas[3])",
+    "boxes.fixExpected": "uva",
+    "conditionals.fixTask": "Algo falta al final de la línea del if.",
+    "conditionals.fixCode": "bateria = 20\nif bateria < 50\n    print(\"¡Hora de cargar!\")",
+    "conditionals.fixExpected": "¡Hora de cargar!",
+    "loops.fixTask": "El paso que se repite debe estar dentro del ciclo. Muévelo con espacios.",
+    "loops.fixCode": "for paso in range(3):\nprint(\"Bip\")",
+    "loops.fixExpected": "Bip\nBip\nBip",
+    "comparisons.fixTask": "PyBot quiere hacer una pregunta, no guardar un valor.",
+    "comparisons.fixCode": "estrellas = 3\nif estrellas = 3:\n    print(\"¡Tres estrellas!\")",
+    "comparisons.fixExpected": "¡Tres estrellas!",
+    "functions.quizNameTitle": "Nombra la caja",
+    "functions.quizNameScene": "def triple(n):\n    return n * 3",
+    "functions.quizNameQuestion": "¿Cómo se llama esta caja?",
+    "functions.quizNameOption1": "n",
+    "functions.quizNameOption2": "triple",
+    "functions.quizNameOption3": "return",
+    "functions.quizCallTitle": "Envía algo nuevo",
+    "functions.quizCallScene": "def doble(numero):\n    return numero + numero\n\nprint(doble(10))",
+    "functions.quizCallQuestion": "¿Qué mostrará Python?",
+    "functions.quizCallOption1": "10",
+    "functions.quizCallOption2": "1010",
+    "functions.quizCallOption3": "20",
+    "functions.fixTask": "La caja olvidó su puerta de salida. Haz que salga 10.",
+    "functions.fixCode": "def doble(numero):\n    respuesta = numero + numero\n\nprint(doble(5))",
+    "functions.fixExpected": "10",
+    "fix.title": "Arregla el código de PyBot",
+    "fix.codeLabel": "Código de PyBot",
+    "fix.goal": "Resultado esperado",
+    "fix.restart": "Empezar de nuevo",
+    "fix.success": "¡Lo arreglaste! El resultado es igual al esperado.",
+    "fix.hint": "Todavía no. Compara tu resultado con el esperado, cambia una cosa y ejecuta otra vez.",
+    "fix.timeout": "Python tardó demasiado y PyBot lo detuvo. Revisa si hay un ciclo que nunca termina.",
+    "path.done": "COMPLETADA",
+    "path.unfinished": "FALTAN ACTIVIDADES",
+    "path.newActivities": "ACTIVIDADES NUEVAS",
+    "course.newActivities": "Actividades nuevas en: {name} →",
+    "progress.newActivities": "PyBot agregó actividades nuevas aquí. ¡Busca las que todavía no has intentado!",
     "meta.homeTitle": "PyBot — Python, un paso a la vez",
     "meta.meetTitle": "Conoce a PyBot — PyBot",
     "meta.courseTitle": "Ruta de aprendizaje — PyBot",
@@ -2215,43 +2461,83 @@ let ambientSoundTimer = null;
 let pythonWorker = null;
 let pythonRunId = 0;
 let lastPythonError = null;
+let fixRunId = 0;
+const fixRuns = new Map();
+// Generous, because the first run also downloads Python.
+const FIX_RUN_TIMEOUT_MS = 60_000;
 
 const AUDIO_PREFERENCE_KEY = "pybot.audio.enabled";
 const LEARNER_NAME_KEY = "pybot.learner.name";
 const PATH_CURRENT_KEY = "pybot.path.current";
 const PATH_VISITED_KEY = "pybot.path.visited";
+const PATH_DONE_KEY = "pybot.path.done";
 const BACKUP_FORMAT = "pybot-progress";
 const BACKUP_SCHEMA_VERSION = 1;
 const BACKUP_MAX_BYTES = 100_000;
-const activityIds = [
-  "water", "bag", "hands", "teeth", "dressed", "cereal", "drawing", "bedtime", "reading", "photo",
-  "keyboard-backspace", "keyboard-undo", "keyboard-copy",
-  "environment-editor", "environment-engine", "environment-version",
-  "symbol-text", "symbol-assign", "symbol-block",
-  "memory-ram", "variable-name", "variable-value", "variable-predict",
-  "boxes-text", "boxes-yesno", "boxes-list", "boxes-grid", "boxes-predict",
-  "conditional-rain", "conditional-battery", "conditional-else", "conditional-predict",
-  "conditional-skip", "conditional-after", "conditional-elif", "conditional-one",
-  "loop-count", "loop-action", "loop-stop", "loop-predict",
-  "loop-zero", "loop-list", "loop-once", "loop-total",
-  "compare-less", "compare-equal", "compare-assign", "compare-not-equal",
-  "compare-and", "compare-or", "compare-not", "compare-predict",
-  "function-input", "function-output", "function-inside", "function-predict",
-];
+// Each step lists its activities. To add content later, add the activity id
+// here: learners who had finished the step see it as unfinished again.
+// `activitiesAddedLater` only matters for progress saved before PATH_DONE_KEY existed.
 const pathSteps = [
-  { id: "world", page: "world", href: "lessons/01-real-world.html" },
-  { id: "thinking", page: "thinking", href: "lessons/02-thinking-in-steps.html" },
-  { id: "language", page: "language", href: "lessons/03-programming-language.html" },
-  { id: "keyboard", page: "keyboard", href: "lessons/04-keyboard.html" },
-  { id: "environment", page: "environment", href: "lessons/05-environment.html" },
-  { id: "symbols", page: "symbols", href: "lessons/06-symbols.html" },
-  { id: "variables", page: "variables", href: "lessons/07-memory-variables.html" },
-  { id: "boxes", page: "boxes", href: "lessons/07b-boxes-of-all-kinds.html" },
-  { id: "conditionals", page: "conditionals", href: "lessons/08-conditionals.html" },
-  { id: "loops", page: "loops", href: "lessons/09-loops.html" },
-  { id: "comparisons", page: "comparisons", href: "lessons/09b-true-or-false.html", addedLater: true },
-  { id: "functions", page: "functions", href: "lessons/10-functions.html" },
+  { id: "world", page: "world", href: "lessons/01-real-world.html", activities: [] },
+  {
+    id: "thinking", page: "thinking", href: "lessons/02-thinking-in-steps.html",
+    activities: ["water", "bag", "hands", "teeth", "dressed", "cereal", "drawing", "bedtime", "reading", "photo"],
+  },
+  { id: "language", page: "language", href: "lessons/03-programming-language.html", activities: [] },
+  {
+    id: "keyboard", page: "keyboard", href: "lessons/04-keyboard.html",
+    activities: ["keyboard-backspace", "keyboard-undo", "keyboard-copy"],
+    activitiesAddedLater: ["keyboard-enter", "keyboard-shift", "keyboard-paste", "keyboard-fix"],
+  },
+  {
+    id: "environment", page: "environment", href: "lessons/05-environment.html",
+    activities: ["environment-editor", "environment-engine", "environment-version"],
+    activitiesAddedLater: ["environment-stop", "environment-output", "environment-browser", "environment-fix"],
+  },
+  {
+    id: "symbols", page: "symbols", href: "lessons/06-symbols.html",
+    activities: ["symbol-text", "symbol-assign", "symbol-block"],
+    activitiesAddedLater: ["symbol-parens", "symbol-note", "symbol-join", "symbol-fix"],
+  },
+  {
+    id: "variables", page: "variables", href: "lessons/07-memory-variables.html",
+    activities: ["memory-ram", "variable-name", "variable-value", "variable-predict"],
+    activitiesAddedLater: ["variable-change", "variable-label", "variable-fix"],
+  },
+  {
+    id: "boxes", page: "boxes", href: "lessons/07b-boxes-of-all-kinds.html",
+    activities: ["boxes-text", "boxes-yesno", "boxes-list", "boxes-grid", "boxes-predict"],
+    activitiesAddedLater: ["boxes-decimal", "boxes-fix"],
+  },
+  {
+    id: "conditionals", page: "conditionals", href: "lessons/08-conditionals.html",
+    activities: [
+      "conditional-rain", "conditional-battery", "conditional-else", "conditional-predict",
+      "conditional-skip", "conditional-after", "conditional-elif", "conditional-one",
+    ],
+    activitiesAddedLater: ["conditional-fix"],
+  },
+  {
+    id: "loops", page: "loops", href: "lessons/09-loops.html",
+    activities: ["loop-count", "loop-action", "loop-stop", "loop-predict", "loop-zero", "loop-list", "loop-once", "loop-total"],
+    activitiesAddedLater: ["loop-fix"],
+  },
+  {
+    id: "comparisons", page: "comparisons", href: "lessons/09b-true-or-false.html", addedLater: true,
+    activities: [
+      "compare-less", "compare-equal", "compare-assign", "compare-not-equal",
+      "compare-and", "compare-or", "compare-not", "compare-predict",
+    ],
+    activitiesAddedLater: ["compare-fix"],
+  },
+  {
+    id: "functions", page: "functions", href: "lessons/10-functions.html",
+    activities: ["function-input", "function-output", "function-inside", "function-predict"],
+    activitiesAddedLater: ["function-name", "function-call", "function-fix"],
+  },
 ];
+const stepActivityIds = (step) => [...step.activities, ...(step.activitiesAddedLater ?? [])];
+const activityIds = pathSteps.flatMap(stepActivityIds);
 
 function textFor(key) {
   return translations[currentLanguage][key] ?? translations.en[key] ?? key;
@@ -2288,6 +2574,60 @@ function visitedPathSteps() {
     return pathSteps.slice(0, Math.max(currentIndex, 0)).filter((step) => !step.addedLater).map((step) => step.id);
   } catch {
     return [];
+  }
+}
+
+function storedActivityState(activityId) {
+  try {
+    return localStorage.getItem(activityStorageKey(activityId));
+  } catch {
+    return null;
+  }
+}
+
+function isStepFinished(step) {
+  const ids = stepActivityIds(step);
+  return ids.length > 0 && ids.every((id) => storedActivityState(id) === "complete");
+}
+
+// Steps the learner has finished at some point. A finished step that now has
+// activities left gained new content, so the map and the page can say so.
+function doneSteps() {
+  try {
+    const stored = localStorage.getItem(PATH_DONE_KEY);
+    if (stored !== null) {
+      return stored.split(",").filter((id) => pathSteps.some((step) => step.id === id));
+    }
+  } catch {
+    return [];
+  }
+
+  // Progress saved before this list existed: a step counts as done when every
+  // activity it had back then is complete.
+  return pathSteps
+    .filter((step) => step.activities.length > 0 && step.activities.every((id) => storedActivityState(id) === "complete"))
+    .map((step) => step.id);
+}
+
+function saveDoneSteps() {
+  const done = new Set(doneSteps());
+  pathSteps.filter(isStepFinished).forEach((step) => done.add(step.id));
+  try {
+    localStorage.setItem(PATH_DONE_KEY, pathSteps.filter((step) => done.has(step.id)).map((step) => step.id).join(","));
+  } catch {
+    // The map still shows finished steps; only the "new activities" marker will not persist.
+  }
+}
+
+function forgetDoneStep(page) {
+  const step = pathSteps.find((candidate) => candidate.page === page);
+  if (!step) {
+    return;
+  }
+  try {
+    localStorage.setItem(PATH_DONE_KEY, doneSteps().filter((id) => id !== step.id).join(","));
+  } catch {
+    // Nothing else to clear when browser storage is unavailable.
   }
 }
 
@@ -2338,14 +2678,26 @@ function updateCoursePath() {
   const currentIndex = pathSteps.findIndex((step) => step.id === currentId);
   const currentStep = pathSteps[currentIndex] ?? pathSteps[0];
   const visited = visitedPathSteps();
+  const done = doneSteps();
   // A step behind the learner's place that was never opened is new to them.
+  // An opened step with activities left is unfinished; if it was finished
+  // before, it gained new activities.
   const stepState = (id) => {
     const index = pathSteps.findIndex((step) => step.id === id);
+    const step = pathSteps[index];
     const isCurrent = id === currentStep.id;
-    const isVisited = !isCurrent && visited.includes(id);
-    const isNew = !isCurrent && !isVisited && index < currentIndex;
-    const statusKey = isCurrent ? "path.current" : isVisited ? "path.visited" : isNew ? "path.new" : index === currentIndex + 1 ? "path.next" : "path.later";
-    return { isCurrent, isVisited, isNew, statusKey };
+    const wasOpened = !isCurrent && visited.includes(id);
+    const isUnfinished = wasOpened && stepActivityIds(step).length > 0 && !isStepFinished(step);
+    const hasNewActivities = isUnfinished && done.includes(id);
+    const isVisited = wasOpened && !isUnfinished;
+    const isNew = !isCurrent && !wasOpened && index < currentIndex;
+    const statusKey = isCurrent ? "path.current"
+      : hasNewActivities ? "path.newActivities"
+      : isUnfinished ? "path.unfinished"
+      : isVisited ? (stepActivityIds(step).length > 0 ? "path.done" : "path.visited")
+      : isNew ? "path.new"
+      : index === currentIndex + 1 ? "path.next" : "path.later";
+    return { isCurrent, isVisited, isNew: isNew || isUnfinished, hasNewActivities, statusKey };
   };
 
   route.querySelectorAll("[data-path-step]").forEach((link) => {
@@ -2366,15 +2718,17 @@ function updateCoursePath() {
   });
 
   let firstNewCard = null;
+  let firstNewKey = "course.newZone";
   document.querySelectorAll("[data-course-step]").forEach((card) => {
-    const { isCurrent, isVisited, isNew, statusKey } = stepState(card.dataset.courseStep);
+    const { isCurrent, isVisited, isNew, hasNewActivities, statusKey } = stepState(card.dataset.courseStep);
     const status = card.querySelector("[data-course-status]");
 
     card.classList.toggle("is-current", isCurrent);
     card.classList.toggle("is-visited", isVisited);
     card.classList.toggle("is-new", isNew);
-    if (isNew && !firstNewCard) {
+    if ((statusKey === "path.new" || hasNewActivities) && !firstNewCard) {
       firstNewCard = card;
+      firstNewKey = hasNewActivities ? "course.newActivities" : "course.newZone";
     }
     if (status) {
       status.textContent = textFor(statusKey);
@@ -2386,7 +2740,7 @@ function updateCoursePath() {
     newLink.hidden = !firstNewCard;
     if (firstNewCard) {
       newLink.href = firstNewCard.querySelector(".mission-start").getAttribute("href");
-      newLink.textContent = textFor("course.newZone").replace("{name}", firstNewCard.querySelector("h2").textContent);
+      newLink.textContent = textFor(firstNewKey).replace("{name}", firstNewCard.querySelector("h2").textContent);
     }
   }
 
@@ -2483,6 +2837,7 @@ function stopPythonWorker(messageKey = "preview.stopped") {
   pythonRunId += 1;
   pythonWorker?.terminate();
   pythonWorker = null;
+  endFixRuns({ type: "stopped" });
   setPythonRunning(false);
   setPythonOutput(messageKey);
 }
@@ -2491,6 +2846,13 @@ function createPythonWorker() {
   const worker = new Worker(new URL("pyodide-worker.mjs", scriptBaseUrl), { type: "module" });
 
   worker.addEventListener("message", (event) => {
+    const fixRun = fixRuns.get(event.data.id);
+    if (fixRun) {
+      fixRuns.delete(event.data.id);
+      fixRun(event.data);
+      return;
+    }
+
     if (event.data.id !== pythonRunId) {
       return;
     }
@@ -2514,6 +2876,7 @@ function createPythonWorker() {
   });
 
   worker.addEventListener("error", (event) => {
+    endFixRuns({ type: "error", error: event.message || textFor("preview.serveHint") });
     setPythonRunning(false);
     setPythonOutput("preview.error", event.message || textFor("preview.serveHint"));
     worker.terminate();
@@ -2823,6 +3186,12 @@ function setLanguage(language, persist = true) {
     }
   });
 
+  document.querySelectorAll("[data-fix-code-key]").forEach((editor) => {
+    if (editor.dataset.edited !== "true") {
+      editor.value = textFor(editor.dataset.fixCodeKey);
+    }
+  });
+
   if (pythonEditor && pythonEditor.dataset.edited !== "true") {
     pythonEditor.value = textFor(pythonEditor.dataset.codeKey || "preview.defaultCode");
   }
@@ -2882,6 +3251,7 @@ function backupValidators() {
     [LEARNER_NAME_KEY]: (value) => value.length > 0 && normalizeLearnerName(value) === value,
     [PATH_CURRENT_KEY]: (value) => pathSteps.some((step) => step.id === value),
     [PATH_VISITED_KEY]: (value) => value.split(",").every((id) => pathSteps.some((step) => step.id === id)),
+    [PATH_DONE_KEY]: (value) => value === "" || value.split(",").every((id) => pathSteps.some((step) => step.id === id)),
   };
 
   activityIds.forEach((activityId) => {
@@ -2990,13 +3360,38 @@ function updatePlanProgressSummary() {
   planProgressSummary.querySelector("[data-progress-complete]").textContent = String(completed);
   planProgressSummary.querySelector("[data-progress-remaining]").textContent = String(remaining);
   planProgressSummary.querySelector("[data-progress-review]").textContent = String(review);
+  updateNewActivitiesNote();
+}
+
+// On a page the learner had finished, say that new activities are waiting.
+function updateNewActivitiesNote() {
+  const step = pathSteps.find((candidate) => candidate.page === document.body.dataset.page);
+  const showNote = Boolean(step) && doneSteps().includes(step.id) && !isStepFinished(step);
+  let note = document.querySelector("[data-new-activities-note]");
+
+  if (!showNote) {
+    note?.remove();
+    return;
+  }
+
+  if (!note) {
+    note = document.createElement("p");
+    note.className = "new-activities-note";
+    note.dataset.newActivitiesNote = "";
+    note.dataset.i18n = "progress.newActivities";
+    note.setAttribute("role", "status");
+    planProgressSummary.before(note);
+  }
+  note.textContent = textFor("progress.newActivities");
 }
 
 function showActivityFeedback(activity, result) {
   const activityId = activity.dataset.activityId;
   const feedback = activity.querySelector(".activity-feedback");
   const specificKey = `thinking.${activityId}${result === "success" ? "Success" : "Hint"}`;
-  const genericPrefix = document.body.dataset.page === "thinking" ? "thinking" : "activity";
+  const genericPrefix = activity.classList.contains("fix-activity")
+    ? "fix"
+    : document.body.dataset.page === "thinking" ? "thinking" : "activity";
   const genericKey = `${genericPrefix}.${result === "success" ? "success" : "hint"}`;
   const key = translations[currentLanguage][specificKey] ? specificKey : genericKey;
 
@@ -3054,7 +3449,7 @@ function completeActivity(activity, correctButton, persist = true) {
     button.disabled = true;
   });
 
-  if (missingStep && correctButton.dataset.i18n) {
+  if (missingStep && correctButton?.dataset.i18n) {
     missingStep.dataset.i18n = correctButton.dataset.i18n;
     missingStep.textContent = textFor(correctButton.dataset.i18n);
   }
@@ -3068,6 +3463,7 @@ function completeActivity(activity, correctButton, persist = true) {
     } catch {
       // The activity still works when browser storage is unavailable.
     }
+    saveDoneSteps();
   }
 
   updatePlanProgressSummary();
@@ -3099,6 +3495,113 @@ stepActivities.forEach((activity) => {
   });
 });
 
+// "Fix PyBot's code": the learner edits a broken snippet and runs it until the
+// output matches the goal. Runs share the page's Python worker; their ids are
+// negative so they never clash with the main runner's ids.
+function endFixRuns(result) {
+  const pending = [...fixRuns.values()];
+  fixRuns.clear();
+  pending.forEach((finish) => finish(result));
+}
+
+function runFixCode(code) {
+  return new Promise((resolve) => {
+    fixRunId -= 1;
+    const id = fixRunId;
+    const timer = window.setTimeout(() => {
+      // A loop that never ends: restart the worker so Python is usable again.
+      fixRuns.delete(id);
+      stopPythonWorker();
+      resolve({ type: "timeout" });
+    }, FIX_RUN_TIMEOUT_MS);
+    fixRuns.set(id, (result) => {
+      window.clearTimeout(timer);
+      resolve(result);
+    });
+    pythonWorker ??= createPythonWorker();
+    pythonWorker.postMessage({ id, code });
+  });
+}
+
+// Compare outputs line by line, ignoring spaces at the ends of lines.
+function normalizedOutput(text) {
+  return text.replace(/\r\n/g, "\n").split("\n").map((line) => line.trimEnd()).join("\n").trim();
+}
+
+function fixGoalMatches(activity, output) {
+  const key = activity.dataset.fixExpectedKey;
+  // Accept either language's goal, so switching language after editing still works.
+  return Object.values(translations).some((texts) => texts[key] && normalizedOutput(texts[key]) === normalizedOutput(output));
+}
+
+function resetFixActivity(activity) {
+  const editor = activity.querySelector("[data-fix-code-key]");
+  if (!editor) {
+    return;
+  }
+  editor.value = textFor(editor.dataset.fixCodeKey);
+  delete editor.dataset.edited;
+  activity.querySelector("[data-fix-output]").textContent = "";
+}
+
+document.querySelectorAll(".fix-activity").forEach((activity) => {
+  const editor = activity.querySelector("[data-fix-code-key]");
+  const output = activity.querySelector("[data-fix-output]");
+  const runButton = activity.querySelector("[data-fix-run]");
+
+  editor.addEventListener("input", () => {
+    editor.dataset.edited = "true";
+  });
+
+  activity.querySelector("[data-fix-restart]").addEventListener("click", () => resetFixActivity(activity));
+
+  runButton.addEventListener("click", async () => {
+    if (window.location.protocol === "file:") {
+      output.textContent = textFor("preview.serveHint");
+      return;
+    }
+
+    runButton.disabled = true;
+    output.textContent = textFor("preview.loading");
+    let result;
+    try {
+      result = await runFixCode(editor.value);
+    } catch (error) {
+      result = { type: "error", error: error instanceof Error ? error.message : String(error) };
+      pythonWorker = null;
+    }
+    runButton.disabled = false;
+
+    if (result.type === "stopped" || result.type === "timeout") {
+      output.textContent = textFor(result.type === "timeout" ? "fix.timeout" : "preview.stopped");
+      return;
+    }
+
+    if (result.type === "error") {
+      const details = [result.output, result.error].filter(Boolean).join("\n").trim();
+      output.textContent = `${pythonErrorHint(result.errorType, result.error ?? "")}\n\n${details}`;
+    } else {
+      output.textContent = result.output.trim() || textFor("preview.noOutput");
+      if (fixGoalMatches(activity, result.output)) {
+        playRobotChime();
+        completeActivity(activity, null);
+        return;
+      }
+    }
+
+    if (!activity.classList.contains("is-complete")) {
+      activity.classList.add("needs-review");
+      showActivityFeedback(activity, "hint");
+      try {
+        localStorage.setItem(activityStorageKey(activity.dataset.activityId), "review");
+      } catch {
+        // The review counter still works for the current page.
+      }
+      updatePlanProgressSummary();
+    }
+  });
+});
+
 function restoreStepActivities() {
   stepActivities.forEach((activity) => {
     let storedState;
@@ -3110,7 +3613,7 @@ function restoreStepActivities() {
 
     if (storedState === "complete") {
       const correctButton = activity.querySelector('[data-correct="true"]');
-      if (correctButton) {
+      if (correctButton || activity.classList.contains("fix-activity")) {
         completeActivity(activity, correctButton, false);
       }
     } else if (storedState === "review") {
@@ -3129,6 +3632,7 @@ function resetStepActivity(activity) {
 
   activity.classList.remove("is-complete", "needs-review");
   activity.querySelector(".answer-confetti")?.remove();
+  resetFixActivity(activity);
   buttons.forEach((button) => {
     button.disabled = false;
     button.classList.remove("is-correct", "is-wrong");
@@ -3159,6 +3663,7 @@ activityResetButtons.forEach((button) => {
     }
 
     stepActivities.forEach(resetStepActivity);
+    forgetDoneStep(document.body.dataset.page);
     updatePlanProgressSummary();
     const status = button.closest(".page-progress-tools")?.querySelector(".progress-reset-status");
     if (status) {
@@ -3315,6 +3820,7 @@ pythonStopButton?.addEventListener("click", () => stopPythonWorker());
 audioEnabled = storedAudioPreference();
 learnerName = storedLearnerName();
 saveCurrentPathStep();
+saveDoneSteps();
 soundToggle = createSoundToggle();
 createSupportLink();
 setLanguage(storedLanguage(), false);
