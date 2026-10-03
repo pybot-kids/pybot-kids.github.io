@@ -1063,6 +1063,257 @@ a {
   transform: rotate(-76deg) translate(-2px, -9px);
 }
 
+.pybot-wrap[data-mood="focused"] .bot-head {
+  transform: translateY(4px);
+}
+
+.pybot-wrap[data-mood="focused"] .brow {
+  opacity: 1;
+  transform: translateY(9px);
+}
+
+.pybot-wrap[data-mood="focused"] .eye {
+  height: 19px;
+  border-radius: 6px 6px 50% 50%;
+  transform: translateY(10px);
+}
+
+.pybot-wrap[data-mood="focused"] .mouth {
+  top: 92px;
+  left: calc(50% - 14px);
+  width: 28px;
+  height: 12px;
+  border-bottom-width: 6px;
+}
+
+.pybot-wrap[data-mood="focused"] .arm-left {
+  transform: rotate(-24deg);
+}
+
+.pybot-wrap[data-mood="focused"] .arm-right {
+  transform: rotate(24deg);
+}
+
+.pybot-wrap[data-mood="welcoming"] .antenna {
+  animation: antenna-wave 2.4s ease-in-out infinite;
+}
+
+.pybot-wrap[data-mood="welcoming"] .mouth {
+  top: 84px;
+  left: calc(50% - 26px);
+  width: 52px;
+  height: 27px;
+  border: 0;
+  border-radius: 6px 6px 40px 40px;
+  background: var(--orange-dark);
+}
+
+.pybot-wrap[data-mood="welcoming"] .arm-left {
+  transform: rotate(72deg);
+}
+
+.pybot-wrap[data-mood="welcoming"] .arm-right {
+  transform: rotate(-72deg);
+}
+
+.pybot-wrap[data-mood="starry"] .bot-head {
+  transform: translateY(-4px);
+}
+
+.pybot-wrap[data-mood="starry"] .eye {
+  width: 38px;
+  height: 38px;
+  border-radius: 0;
+  background: var(--orange);
+  clip-path: polygon(50% 0, 62% 35%, 100% 38%, 70% 60%, 80% 100%, 50% 76%, 20% 100%, 30% 60%, 0 38%, 38% 35%);
+  transform: translate(-4px, -4px);
+}
+
+.pybot-wrap[data-mood="starry"] .eye span {
+  opacity: 0;
+}
+
+.pybot-wrap[data-mood="starry"] .mouth {
+  top: 86px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 24px;
+  border: 6px solid var(--orange-dark);
+  border-radius: 45% 45% 50% 50%;
+  background: var(--white);
+}
+
+.pybot-wrap[data-mood="starry"] .arm-left {
+  transform: rotate(112deg);
+}
+
+.pybot-wrap[data-mood="starry"] .arm-right {
+  transform: rotate(-112deg);
+}
+
+.pybot-wrap[data-mood="wink"] .bot-head {
+  transform: rotate(-4deg);
+}
+
+.pybot-wrap[data-mood="wink"] .brow {
+  opacity: 1;
+}
+
+.pybot-wrap[data-mood="wink"] .brow-left {
+  transform: rotate(-6deg) translateY(9px);
+}
+
+.pybot-wrap[data-mood="wink"] .brow-right {
+  transform: rotate(8deg) translateY(-4px);
+}
+
+.pybot-wrap[data-mood="wink"] .eye-left {
+  height: 8px;
+  border-radius: 999px;
+  transform: translateY(16px);
+}
+
+.pybot-wrap[data-mood="wink"] .eye-left span {
+  opacity: 0;
+}
+
+.pybot-wrap[data-mood="wink"] .mouth {
+  width: 44px;
+  height: 20px;
+  transform: translateX(8px) rotate(-8deg);
+}
+
+.pybot-wrap[data-mood="wink"] .arm-right {
+  transform: rotate(-150deg) translateY(-4px);
+}
+
+.pybot-wrap[data-mood="proud"] .bot-head {
+  transform: translateY(-3px);
+}
+
+.pybot-wrap[data-mood="proud"] .eye {
+  height: 17px;
+  border-top: 7px solid var(--blue-dark);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background: transparent;
+  transform: translateY(12px);
+}
+
+.pybot-wrap[data-mood="proud"] .eye span {
+  opacity: 0;
+}
+
+.pybot-wrap[data-mood="proud"] .cheek {
+  background: rgba(255, 122, 69, 0.58);
+}
+
+.pybot-wrap[data-mood="proud"] .mouth {
+  top: 80px;
+  left: calc(50% - 31px);
+  width: 62px;
+  height: 30px;
+  border-bottom-width: 8px;
+}
+
+.pybot-wrap[data-mood="proud"] .arm-left {
+  transform: rotate(-38deg) translate(4px, -8px);
+}
+
+.pybot-wrap[data-mood="proud"] .arm-right {
+  transform: rotate(38deg) translate(-4px, -8px);
+}
+
+.pybot-wrap[data-mood="deciding"] .bot-head {
+  transform: rotate(4deg);
+}
+
+.pybot-wrap[data-mood="deciding"] .brow {
+  opacity: 1;
+}
+
+.pybot-wrap[data-mood="deciding"] .brow-left {
+  transform: translate(10px, 3px);
+}
+
+.pybot-wrap[data-mood="deciding"] .brow-right {
+  transform: rotate(12deg) translate(10px, -6px);
+}
+
+.pybot-wrap[data-mood="deciding"] .eye {
+  transform: translateX(10px);
+}
+
+.pybot-wrap[data-mood="deciding"] .mouth {
+  top: 94px;
+  left: calc(50% - 12px);
+  width: 30px;
+  height: 7px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--orange-dark);
+  transform: rotate(-8deg);
+}
+
+.pybot-wrap[data-mood="deciding"] .arm-right {
+  transform: rotate(-96deg) translateY(-6px);
+}
+
+.pybot-wrap[data-mood="counting"] .bot-head {
+  transform: rotate(-3deg);
+}
+
+.pybot-wrap[data-mood="counting"] .eye {
+  transform: translateY(-8px);
+}
+
+.pybot-wrap[data-mood="counting"] .mouth {
+  top: 86px;
+  left: calc(50% - 17px);
+  width: 34px;
+  height: 18px;
+  border-bottom-width: 6px;
+}
+
+.pybot-wrap[data-mood="counting"] .arm-right {
+  animation: arm-count 1.8s ease-in-out infinite;
+  transform: rotate(-165deg);
+}
+
+.pybot-wrap[data-mood="determined"] .brow {
+  opacity: 1;
+}
+
+.pybot-wrap[data-mood="determined"] .brow-left {
+  transform: rotate(14deg) translateY(6px);
+}
+
+.pybot-wrap[data-mood="determined"] .brow-right {
+  transform: rotate(-14deg) translateY(6px);
+}
+
+.pybot-wrap[data-mood="determined"] .eye {
+  height: 26px;
+  transform: translateY(5px);
+}
+
+.pybot-wrap[data-mood="determined"] .mouth {
+  top: 86px;
+  left: calc(50% - 29px);
+  width: 58px;
+  height: 18px;
+  border: 0;
+  border-radius: 5px 5px 30px 30px;
+  background: var(--orange-dark);
+}
+
+.pybot-wrap[data-mood="determined"] .arm-left {
+  transform: rotate(28deg);
+}
+
+.pybot-wrap[data-mood="determined"] .arm-right {
+  transform: rotate(-125deg) translateY(-4px);
+}
+
 .mood-panel {
   position: absolute;
   right: 26px;
@@ -1170,8 +1421,10 @@ a {
 
 .meet-stage {
   width: min(100%, 900px);
-  min-height: 720px;
+  min-height: 800px;
+  align-items: flex-start;
   margin-inline: auto;
+  padding-top: 110px;
 }
 
 .meet-stage .speech-bubble {
@@ -1180,7 +1433,7 @@ a {
 }
 
 .meet-stage .pybot-wrap {
-  margin-top: -22px;
+  margin-top: 0;
   transform: scale(1.08);
 }
 
@@ -1192,7 +1445,7 @@ a {
 }
 
 .meet-mood-panel .mood-controls {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .about-us {
@@ -3852,109 +4105,326 @@ a {
   font-size: 1.05rem;
 }
 
-.topic-pybot-box {
-  position: relative;
-  min-height: 300px;
-  padding: 28px;
-  overflow: hidden;
-  border: 3px solid var(--blue-dark);
-  border-radius: 28px;
+/* Zone header scenes: the full PyBot with a prop for each topic. */
+.topic-pybot-scene {
+  height: 470px;
+}
+
+.scene-keyboard::before,
+.scene-boxes::before,
+.scene-functions::before {
   background: var(--blue-soft);
 }
 
-.topic-pybot-head {
-  position: relative;
-  width: 150px;
-  height: 116px;
-  margin: 38px auto 0;
-  padding: 20px;
-  border: 6px solid var(--blue-dark);
-  border-radius: 45px 45px 52px 52px;
+.scene-environment::before,
+.scene-loops::before {
+  background: var(--orange-soft);
+}
+
+.scene-token-a {
+  top: 112px;
+  right: -6px;
+  background: var(--yellow);
+  transform: rotate(7deg);
+}
+
+.scene-token-b {
+  top: 206px;
+  right: -14px;
+  background: var(--orange);
+  color: var(--white);
+  transform: rotate(-6deg);
+}
+
+.scene-token-c {
+  top: 300px;
+  right: -4px;
+  background: var(--blue);
+  color: var(--white);
+  transform: rotate(5deg);
+}
+
+.scene-variables .scene-token-a {
+  top: 214px;
+  right: -10px;
+}
+
+.scene-keys {
+  position: absolute;
+  bottom: 26px;
+  left: 62px;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  width: 230px;
+  padding: 12px;
+  border: 4px solid var(--blue-dark);
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: 5px 6px 0 rgba(23, 59, 130, 0.16);
+  transform: perspective(300px) rotateX(18deg);
+}
+
+.scene-keys span {
+  height: 18px;
+  border: 2px solid var(--blue-dark);
+  border-radius: 6px;
+  background: var(--yellow-soft);
+}
+
+.scene-keys .scene-key-space {
+  grid-column: 2 / 5;
   background: var(--orange);
 }
 
-.topic-pybot-head::before {
+.scene-window {
   position: absolute;
-  top: -35px;
-  left: calc(50% - 3px);
-  width: 6px;
-  height: 32px;
+  top: 118px;
+  right: -16px;
+  z-index: 8;
+  display: grid;
+  gap: 8px;
+  width: 128px;
+  padding: 0 0 10px;
+  overflow: hidden;
+  border: 3px solid var(--blue-dark);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 4px 5px 0 rgba(23, 59, 130, 0.16);
+  color: var(--blue-dark);
+  font-weight: 900;
+  text-align: center;
+  transform: rotate(5deg);
+}
+
+.scene-window-bar {
+  display: flex;
+  gap: 5px;
+  padding: 6px 8px;
+  border-bottom: 3px solid var(--blue-dark);
+  background: var(--blue);
+}
+
+.scene-window-bar i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--yellow);
+}
+
+.scene-window code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+.scene-window b {
+  justify-self: center;
+  padding: 3px 12px;
   border: 2px solid var(--blue-dark);
   border-radius: 999px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 0.75rem;
+}
+
+.scene-symbols .code-symbol {
+  background: var(--white);
+  color: var(--blue-dark);
+}
+
+.scene-symbols .symbol-brackets,
+.scene-symbols .symbol-parentheses {
   background: var(--yellow);
+}
+
+.scene-box {
+  display: grid;
+  place-items: center;
+  border: 4px solid var(--blue-dark);
+  border-radius: 10px;
+  background: #e7b77a;
+  box-shadow: inset 0 9px 0 rgba(23, 59, 130, 0.12);
+  color: var(--blue-dark);
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 900;
+}
+
+.scene-box-held {
+  position: absolute;
+  bottom: 52px;
+  left: 108px;
+  z-index: 8;
+  width: 128px;
+  height: 92px;
+  gap: 2px;
+  align-content: center;
+  box-shadow: 5px 6px 0 rgba(23, 59, 130, 0.16), inset 0 12px 0 rgba(23, 59, 130, 0.12);
+}
+
+.scene-box-held b {
+  padding: 1px 10px;
+  border: 2px solid var(--blue-dark);
+  border-radius: 6px;
+  background: var(--white);
+  font-size: 0.8rem;
+}
+
+.scene-box-held code {
+  font-size: 1.5rem;
+}
+
+.scene-box-stack {
+  position: absolute;
+  right: -10px;
+  bottom: 20px;
+  z-index: 8;
+  display: grid;
+  justify-items: center;
+}
+
+.scene-box-stack .scene-box {
+  width: 74px;
+  height: 52px;
+  margin-top: -4px;
+  font-size: 0.95rem;
+}
+
+.scene-box-stack .scene-box:nth-child(1) {
+  width: 60px;
+  background: var(--yellow);
+  transform: rotate(-6deg);
+}
+
+.scene-box-stack .scene-box:nth-child(2) {
+  background: var(--orange);
+  color: var(--white);
+  transform: rotate(3deg);
+}
+
+.scene-box-stack .scene-box:nth-child(3) {
+  width: 88px;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.scene-signpost {
+  position: absolute;
+  right: -12px;
+  bottom: 18px;
+  z-index: 8;
+  width: 112px;
+  height: 250px;
+}
+
+.scene-signpost::before {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 7px);
+  width: 14px;
+  height: 230px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 6px;
+  background: #e7b77a;
   content: "";
 }
 
-.topic-pybot-head span {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 4px solid var(--blue-dark);
-  border-radius: 28px 28px 34px 34px;
-  background: #f7fbff;
-}
-
-.topic-pybot-head i {
+.scene-sign {
   position: absolute;
-  top: 51px;
-  z-index: 2;
-  width: 14px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--blue-dark);
-}
-
-.topic-pybot-head i:first-of-type {
-  left: 52px;
-}
-
-.topic-pybot-head i:last-of-type {
-  right: 52px;
-}
-
-.topic-pybot-box > p {
-  position: relative;
-  z-index: 2;
-  max-width: 260px;
-  margin: 30px auto 0;
-  padding: 11px 14px;
-  border: 2px solid var(--blue-dark);
-  border-radius: 14px;
-  background: var(--white);
-  color: var(--blue-dark);
-  font-size: 0.82rem;
-  font-weight: 900;
-  text-align: center;
-}
-
-.topic-token {
-  position: absolute;
+  left: 4px;
   display: grid;
-  min-width: 42px;
+  width: 104px;
+  height: 40px;
+  place-items: center;
+  border: 3px solid var(--blue-dark);
+  color: var(--white);
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 900;
+  box-shadow: 3px 4px 0 rgba(23, 59, 130, 0.16);
+}
+
+.scene-sign-if {
+  top: 18px;
+  border-radius: 8px 22px 22px 8px;
+  background: var(--blue);
+  transform: rotate(-4deg);
+}
+
+.scene-sign-else {
+  top: 74px;
+  border-radius: 22px 8px 8px 22px;
+  background: var(--orange);
+  transform: rotate(4deg);
+}
+
+.scene-loop-ring {
+  position: absolute;
+  bottom: 70px;
+  left: 22px;
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+  border: 5px dashed var(--blue-dark);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: concept-loop-spin 14s linear infinite;
+}
+
+.scene-loop-ring span {
+  position: absolute;
+  top: -22px;
+  left: calc(50% - 20px);
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--blue-dark);
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.scene-machine {
+  position: absolute;
+  right: -14px;
+  bottom: 26px;
+  z-index: 8;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.scene-machine b {
+  display: grid;
+  width: 96px;
+  height: 70px;
+  place-items: center;
+  border: 4px solid var(--blue-dark);
+  border-radius: 16px;
+  background: var(--orange);
+  box-shadow: 5px 6px 0 rgba(23, 59, 130, 0.16), inset 0 -10px 0 rgba(23, 59, 130, 0.14);
+  color: var(--white);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 1.15rem;
+}
+
+.scene-machine span {
+  display: grid;
+  width: 42px;
   height: 42px;
   place-items: center;
-  padding: 0 9px;
   border: 3px solid var(--blue-dark);
-  border-radius: 13px;
+  border-radius: 10px;
   background: var(--yellow);
   color: var(--blue-dark);
   font-family: Consolas, "Courier New", monospace;
-  font-size: 0.72rem;
   font-weight: 900;
-  transform: rotate(-7deg);
 }
 
-.topic-token.token-a {
-  top: 20px;
-  left: 18px;
-}
-
-.topic-token.token-b {
-  top: 25px;
-  right: 18px;
-  background: var(--orange);
+.scene-machine-out {
+  background: var(--blue);
   color: var(--white);
-  transform: rotate(7deg);
 }
 
 .topic-overview,
@@ -4360,6 +4830,17 @@ button:focus-visible {
   }
 }
 
+@keyframes arm-count {
+  0%,
+  100% {
+    transform: rotate(-165deg);
+  }
+
+  50% {
+    transform: rotate(-145deg);
+  }
+}
+
 @keyframes antenna-wave {
   0%,
   100% {
@@ -4707,6 +5188,18 @@ button:focus-visible {
     transform: scale(0.76);
   }
 
+  .scene-loop-ring {
+    bottom: 50px;
+    left: 18px;
+    width: 250px;
+    height: 250px;
+  }
+
+  .scene-keys {
+    left: 34px;
+    width: 200px;
+  }
+
   .lesson-pybot-bubble {
     left: 0;
     width: 218px;
@@ -4871,11 +5364,12 @@ button:focus-visible {
   }
 
   .meet-stage {
-    min-height: 780px;
+    min-height: 960px;
+    padding-top: 130px;
   }
 
   .meet-stage .pybot-wrap {
-    margin-top: -35px;
+    margin-top: 0;
     transform: scale(0.82);
   }
 
