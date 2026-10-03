@@ -3303,7 +3303,7 @@ const BACKUP_SCHEMA_VERSION = 1;
 // (`node tools/progress-version.mjs --bump`), and add a migration below when an
 // id is renamed or removed. Backups carry it, so support can tell where an old
 // backup stopped and upgrade it to the current course.
-const PROGRESS_VERSION = 1;
+const PROGRESS_VERSION = 2;
 const PROGRESS_VERSION_KEY = "pybot.progress.version";
 const BACKUP_MAX_BYTES = 100_000;
 // Preferences and the name survive an emergency progress reset.
