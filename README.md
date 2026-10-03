@@ -204,7 +204,7 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.language` | `en` or `es` | Interface language preference | Yes |
 | `pybot.audio.enabled` | `true` or `false` | Optional robot ambience preference; defaults to `true` | Yes |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
-| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `changingBoxes`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `functions`, or `checkpoint1` | Highlights the learner's current place across the complete small path | Yes |
+| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `changingBoxes`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `comparisonsAnd`, `comparisonsOr`, `comparisonsNot`, `functions`, or `checkpoint1` | Highlights the learner's current place across the complete small path | Yes |
 | `pybot.path.visited` | Comma-separated step ids from `pybot.path.current` | Remembers which pages the learner has opened, so steps added to the path later show as new and pending | Yes |
 | `pybot.path.done` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps the learner finished, so a finished step that later gains activities shows **NEW ACTIVITIES** | Yes |
 | `pybot.path.known` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps were on the path when the learner started, so a step added later shows as new even when it is ahead of the learner | Yes |
@@ -227,7 +227,10 @@ Registered activity IDs:
 - Loops (for): `loop-count`, `loop-action`, `loop-stop`, `loop-zero`, `loop-list`, `loop-once`, `loop-total`, `loop-predict`, and `loop-fix`
 - Loops (while): `while-check`, `while-count`, `while-last`, `while-zero`, `while-forever`, `while-choose`, `while-predict`, and `while-fix`
 - Loops (repeat until): `until-meaning`, `until-not`, `until-break`, `until-done`, `until-count`, `until-word`, `until-predict`, and `until-fix`
-- True or false: `compare-less`, `compare-equal`, `compare-assign`, `compare-not-equal`, `compare-and`, `compare-or`, `compare-not`, `compare-predict`, and `compare-fix`
+- True or false: `compare-less`, `compare-equal`, `compare-assign`, `compare-not-equal`, `compare-and`, `compare-or`, `compare-not`, `compare-predict`, `compare-fix`, and `compare-everyday`
+- True or false (and): `and-everyday`, `and-both`, `and-one-false`, `and-numbers`, `and-coins`, `and-table`, `and-word`, `and-predict`, and `and-fix`
+- True or false (or): `or-everyday`, `or-both-false`, `or-one`, `or-numbers`, `or-pet`, `or-table`, `or-choose`, `or-predict`, and `or-fix`
+- True or false (not): `not-everyday`, `not-false`, `not-box`, `not-compare`, `not-twice`, `not-mix`, `not-parens`, `not-predict`, and `not-fix`
 - Functions: `function-input`, `function-output`, `function-inside`, `function-predict`, `function-name`, `function-call`, and `function-fix`
 - Pit stop 1: `checkpoint-backpack`, `checkpoint-light`, `checkpoint-outside`, `checkpoint-countdown`, `checkpoint-stars`, and `checkpoint-battery`
 
@@ -407,7 +410,7 @@ The Python zones (2–6) also get a **Run it** block that follows the standard z
 | 2 · **Changing boxes** | Change what a box keeps: `score = score + 1` (Python works out the right side first), the short forms `+=` and `-=`, math with boxes (`+`, `-`, `*`, `/`), and joining text with `+` (`"2" + "3"` is `"23"`). | Predict a box after it grows, pick the line that does the same as `coins = coins + 1`, add two boxes, join a greeting, and fix a line that forgets to save the new score. |
 | 3 **Choose a path** (three pages: if/else, elif, match) | Each page opens with everyday decisions (games, food, the weather, the day of the week) before the code. **if/else:** a conditional is a yes-or-no question followed by matching paths: how Python checks the question, why only one path runs, how indentation marks the path, and `if` without `else`. **elif:** ask more questions from top to bottom; the first True wins, so order matters, and two separate `if`s are two questions. **match:** what other languages call `switch` is `match` and `case` in Python (3.10+); `case _` catches anything else and `|` joins cases. | Follow small `if`, `else`, `elif` and `match` examples about rain, a battery, a traffic light, medals and robot commands; spot the line that always runs, fix the question order, and turn `else if` and `switch` into Python. |
 | 4 **Repeat a pattern** (three pages: for, while, repeat until) | **for:** one small job repeated a clear number of times: the loop variable changes each turn, `range` starts at 0, a loop can walk through a list, and a loop can keep a count. **while:** repeat while a question is True; something inside must change or the loop never ends. **Repeat until:** Python has no `until` keyword, so write `while not ...` or `while True` with `break`. | Count outputs, find the stopping point, read the first and last values, spot a loop that never ends, choose for or while, read `while not` aloud, and see what `break` does. |
-| 5 **True or false?** | Understand the questions inside an `if`: comparisons (`==`, `!=`, `<`, `>`, `<=`, `>=`) answer `True` or `False`, `=` is not `==`, and `and`, `or`, and `not` join or flip answers. | Answer small comparisons, tell a box from a question, and work out `and`, `or`, and `not`. |
+| 5 **True or false?** (four pages: compare, and, or, not) | Each page opens with everyday examples before the code. **Compare:** comparisons (`==`, `!=`, `<`, `>`, `<=`, `>=`) answer `True` or `False`, and `=` is not `==`. **and:** both answers must be `True`. **or:** one `True` is enough, and each side needs its own full question. **not:** flips an answer; mixing `and`, `or`, and `not` with parentheses. The `and`, `or`, and `not` pages each show a truth table. | Answer small comparisons, tell a box from a question, read truth tables, predict real `and`/`or`/`not` runs, and fix PyBot's code (`&&`, `x == a or b`, a missing `not`). |
 | 6 **Boxes that do a job** | See a function first as a named box: parameters go in and `return` sends a result out. Then open the box and see that inside there are only variables, `if`/`else`, and `for`, which the learner already knows. | Name the parameter, predict what a small function returns, and recognize the familiar pieces inside a function. |
 
 The path stops here. `input()`, classes, files, packages, databases, large projects, and open-ended assignments are outside the current course. They must not be added merely to make the curriculum look more complete.
@@ -494,6 +497,9 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |   |-- 09-loops-while.html
 |   |-- 09-loops-until.html
 |   |-- 09b-true-or-false.html
+|   |-- 09b-true-or-false-and.html
+|   |-- 09b-true-or-false-or.html
+|   |-- 09b-true-or-false-not.html
 |   |-- 10-functions.html
 |   `-- 11-checkpoint.html
 |-- pyodide-worker.mjs # Isolated browser worker for the live Python runner
