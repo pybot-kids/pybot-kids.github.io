@@ -71,6 +71,18 @@ Initial emotional states:
 - **Surprised:** reacts when a result differs from the learner's prediction without treating it as failure.
 - **Curious:** invites the learner to change one thing and observe what happens.
 
+Zone states, each acting out one zone's idea on its lesson cover:
+
+- **Focused** (keyboard): half-closed eyes and both hands on the keys.
+- **Welcome** (where Python runs): both arms open next to a Python window.
+- **Amazed** (symbols): star eyes for the tiny marks that do big jobs.
+- **Proud** (variables): closed smiling eyes while holding a labeled box.
+- **Wink** (types and lists): one eye closed beside a stack of different boxes.
+- **Deciding** (conditionals): looks to one side and points at an if/else sign.
+- **Counting** (loops): one hand up, counting inside a turning ring.
+- **Thinking** (True or false?): thoughtful look beside `3 < 5` and its answer, `True`.
+- **Ready** (functions): determined brows beside a machine that turns an input into an output.
+
 Additional states should only be introduced when they serve a clear teaching purpose. PyBot's proportions, colors, voice, and motion language must remain consistent across lessons.
 
 Lesson covers should show the full mascot acting out the page's central idea whenever space allows. Concept-specific props—such as a magnifying glass for inspecting syntax—are welcome, but they must support the lesson rather than turn PyBot into a different character.
