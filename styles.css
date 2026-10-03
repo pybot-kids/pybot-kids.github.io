@@ -6380,3 +6380,408 @@ button:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Bug hunters zone */
+.scene-bugs::before {
+  background: #e7f7ea;
+}
+
+.scene-bug-hunt {
+  position: absolute;
+  right: -8px;
+  bottom: 26px;
+  z-index: 8;
+  width: 130px;
+  height: 190px;
+}
+
+.scene-magnifier {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  width: 92px;
+  height: 92px;
+  border: 8px solid var(--blue-dark);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 5px 6px 0 rgba(23, 59, 130, 0.16);
+  transform: rotate(-18deg);
+}
+
+.scene-magnifier::after {
+  position: absolute;
+  top: 82px;
+  left: 31px;
+  width: 16px;
+  height: 66px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 8px;
+  background: var(--orange);
+  content: "";
+}
+
+.scene-magnifier i {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  width: 22px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--white);
+  transform: rotate(-35deg);
+}
+
+/* A small ladybug: shell with spots, a head, and two antennae. */
+.bug-critter {
+  position: absolute;
+  right: 54px;
+  bottom: 0;
+  width: 40px;
+  height: 32px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 50% 50% 46% 46%;
+  background:
+    radial-gradient(circle at 30% 40%, var(--blue-dark) 0 4px, transparent 5px),
+    radial-gradient(circle at 70% 35%, var(--blue-dark) 0 4px, transparent 5px),
+    radial-gradient(circle at 55% 75%, var(--blue-dark) 0 3px, transparent 4px),
+    linear-gradient(90deg, transparent 47%, var(--blue-dark) 47% 53%, transparent 53%),
+    var(--orange);
+  animation: bug-crawl 2.4s ease-in-out infinite alternate;
+}
+
+.bug-critter i {
+  position: absolute;
+  top: 6px;
+  left: -13px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--blue-dark);
+}
+
+.bug-critter i::before,
+.bug-critter i::after {
+  position: absolute;
+  top: -8px;
+  left: 2px;
+  width: 2px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--blue-dark);
+  content: "";
+  transform: rotate(-30deg);
+}
+
+.bug-critter i::after {
+  left: 9px;
+  transform: rotate(-60deg);
+}
+
+@keyframes bug-crawl {
+  to {
+    transform: translateX(-18px) rotate(-4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bug-critter {
+    animation: none;
+  }
+}
+
+.bug-story {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+  margin-top: 34px;
+}
+
+.bug-story-copy p {
+  margin: 0 0 12px;
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+/* A notebook page with the 1947 moth taped on it. */
+.bug-notebook {
+  position: relative;
+  min-height: 210px;
+  margin: 0;
+  padding: 22px 22px 18px 46px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 10px;
+  background:
+    linear-gradient(90deg, transparent 32px, rgba(219, 78, 30, 0.45) 32px 34px, transparent 34px),
+    repeating-linear-gradient(var(--white) 0 27px, #c9d9ef 27px 29px);
+  box-shadow: 8px 10px 0 rgba(23, 59, 130, 0.15);
+  color: var(--blue-dark);
+  font-family: "Comic Sans MS", "Segoe Print", cursive;
+  transform: rotate(-2deg);
+}
+
+.bug-notebook-date {
+  display: block;
+  font-weight: 700;
+}
+
+.bug-notebook-tape {
+  position: relative;
+  display: block;
+  width: 96px;
+  height: 60px;
+  margin: 12px auto;
+  background: rgba(255, 216, 77, 0.55);
+  transform: rotate(4deg);
+}
+
+.bug-critter-moth {
+  top: 13px;
+  right: 26px;
+  bottom: auto;
+  border-radius: 50% 50% 40% 40%;
+  background: #b59c7a;
+  animation: none;
+}
+
+.bug-critter-moth::before,
+.bug-critter-moth::after {
+  position: absolute;
+  top: -12px;
+  width: 26px;
+  height: 22px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 50% 50% 20% 50%;
+  background: #d8c4a3;
+  content: "";
+}
+
+.bug-critter-moth::before {
+  left: -22px;
+  transform: rotate(-20deg);
+}
+
+.bug-critter-moth::after {
+  right: -22px;
+  transform: scaleX(-1) rotate(-20deg);
+}
+
+.bug-notebook figcaption {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.bug-kind-code {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+.bug-plan {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: bug-plan;
+}
+
+.bug-plan li {
+  display: grid;
+  gap: 6px;
+  padding: 18px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  counter-increment: bug-plan;
+}
+
+.bug-plan li::before {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--white);
+  content: counter(bug-plan);
+  font-weight: 900;
+}
+
+.bug-plan b {
+  font-size: 1.1rem;
+}
+
+.bug-plan span {
+  color: var(--muted);
+}
+
+/* Bug kinds and detective tools: the same card row as the hunting plan. */
+.bug-kinds article {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 18px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+}
+
+.bug-kinds article > span {
+  font-size: 1.6rem;
+}
+
+.bug-kinds b {
+  font-size: 1.1rem;
+}
+
+.bug-kinds small {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.bug-example {
+  max-width: 560px;
+  margin-top: 26px;
+  padding: 20px;
+  border: 2px dashed var(--orange);
+  border-radius: var(--radius-md);
+  background: var(--white);
+}
+
+.bug-example-title {
+  margin: 0 0 12px;
+  font-weight: 900;
+}
+
+.daily-plan li.is-bug {
+  border-color: var(--orange-dark);
+  background: var(--orange-soft);
+}
+
+.daily-plan li.is-bug > span {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.bug-example-note {
+  margin: 12px 0 0;
+  color: var(--orange-dark);
+  font-weight: 800;
+}
+
+.trace-table {
+  width: 100%;
+  max-width: 620px;
+  margin-top: 30px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.trace-table th,
+.trace-table td {
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--line);
+  text-align: left;
+}
+
+.trace-table th {
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+.trace-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.trace-table td:last-child {
+  color: var(--orange-dark);
+  font-weight: 900;
+}
+
+.trace-table code {
+  padding: 3px 6px;
+  border-radius: 7px;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 800;
+}
+
+/* Tap-the-line cards: each option is a numbered code line. */
+.bug-line-options {
+  gap: 6px;
+  counter-reset: bug-line;
+}
+
+.bug-line-options button,
+.bug-code-options button {
+  font-family: Consolas, "Courier New", monospace;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.bug-line-options button {
+  min-height: 42px;
+  white-space: pre-wrap;
+  counter-increment: bug-line;
+}
+
+.bug-step-options button {
+  font-family: inherit;
+}
+
+.bug-line-options button::before {
+  display: inline-block;
+  width: 1.6em;
+  color: var(--muted);
+  content: counter(bug-line);
+}
+
+.bug-wanted {
+  margin: 0 0 10px;
+}
+
+.bug-error {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-left: 4px solid var(--orange-dark);
+  border-radius: 8px;
+  background: var(--white);
+  color: #b3261e;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 760px) {
+  .bug-story {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bug-notebook {
+    max-width: 300px;
+  }
+
+  .bug-plan {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .bug-plan {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scene-bug-hunt {
+    right: -14px;
+    transform: scale(0.85);
+    transform-origin: bottom right;
+  }
+}
