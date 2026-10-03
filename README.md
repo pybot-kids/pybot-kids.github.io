@@ -259,6 +259,10 @@ The home page offers **Save a backup file** and **Load a backup file**. Saving d
 - `exportedAt` is informational and is not validated.
 - The allowlist lives in `backupValidators()` in `script.js` and must change together with the registry above.
 
+#### Emergency progress reset
+
+Below the backup tools, a collapsed **For adults: erase all progress** section offers an emergency reset. It first asks whether to save a backup file (the same download as **Save a backup file**; if that download fails, nothing is erased), then asks for a final confirmation. The reset clears every registered key except `pybot.language`, `pybot.audio.enabled`, and `pybot.learner.name`.
+
 The thinking-page counters divide all ten plans into mutually exclusive states: completed, not tried, and review. The three numbers must always add up to ten. A wrong choice moves that plan to review; a correct choice moves it to completed.
 
 The learning-path page turns the three foundation pages and nine learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically. When a new zone is added behind a learner's saved place, the map marks it **NEW · NOT DONE** and shows a link to it under the main action. To get this for a future zone, just add it to `pathSteps`; learners who only have older progress (no `pybot.path.visited` yet) need the step flagged `addedLater: true`. A step added after the learner started is also marked new when it is ahead of them, using `pybot.path.known`; the same works for future steps with no flag.
