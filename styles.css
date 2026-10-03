@@ -3977,6 +3977,8 @@ a {
 
 .quiz-scene .code-lines {
   display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
   white-space: pre;
 }
 
@@ -4168,6 +4170,70 @@ a {
   text-align: center;
 }
 
+.topic-card-grid-four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.box-cell {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.box-cell .memory-label {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+}
+
+.box-step {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--blue-dark);
+  font-weight: 800;
+}
+
+.box-compartments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 8px;
+  border: 3px dashed var(--blue-dark);
+  border-radius: 16px;
+  list-style: none;
+}
+
+.box-compartments li {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+
+.box-compartments small,
+.box-grid small {
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.box-grid {
+  display: grid;
+  grid-template-columns: auto repeat(3, minmax(44px, auto));
+  gap: 8px;
+  align-items: center;
+  justify-items: center;
+}
+
+.box-grid .memory-value {
+  min-width: 44px;
+  text-align: center;
+}
+
+.box-grid .is-picked {
+  background: var(--orange);
+  color: var(--white);
+}
+
 .choice-demo > div {
   display: grid;
   gap: 8px;
@@ -4298,6 +4364,10 @@ button:focus-visible {
 }
 
 @media (max-width: 980px) {
+  .topic-card-grid-four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .hero {
     grid-template-columns: 1fr;
     padding-top: 70px;

@@ -202,6 +202,7 @@ Registered activity IDs:
 - Environment: `environment-editor`, `environment-engine`, and `environment-version`
 - Symbols: `symbol-text`, `symbol-assign`, and `symbol-block`
 - Memory and variables: `memory-ram`, `variable-name`, `variable-value`, and `variable-predict`
+- Boxes of all kinds: `boxes-text`, `boxes-yesno`, `boxes-list`, `boxes-grid`, and `boxes-predict`
 - Conditionals: `conditional-rain`, `conditional-battery`, `conditional-else`, and `conditional-predict`
 - Loops: `loop-count`, `loop-action`, `loop-stop`, and `loop-predict`
 
@@ -241,7 +242,7 @@ The home page offers **Save a backup file** and **Load a backup file**. Saving d
 
 The thinking-page counters divide all ten plans into mutually exclusive states: completed, not tried, and review. The three numbers must always add up to ten. A wrong choice moves that plan to review; a correct choice moves it to completed.
 
-The learning-path page turns the three foundation pages and six learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically.
+The learning-path page turns the three foundation pages and seven learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically.
 
 ### Optional audio environment
 
@@ -324,11 +325,11 @@ This foundation is split into tiny pages before the learner writes Python:
 
 The Keyboard Lab must respond to the value produced by the browser's keyboard event rather than assume a physical key position. This supports different keyboard layouts. Browser-reserved combinations should not be included unless they can be practiced safely inside the code editor.
 
-### Six small learning zones
+### Seven small learning zones
 
 Each zone has short explanation cards, three multiple-choice activities, a completed/not-tried/review summary, and a page-only reset control.
 
-The Python zones (4–6) also get a **Run it** block that follows the standard zone shape: the learner predicts the output of a two-line example (a tracked activity), runs the same code in a real Python runner on the page, and then changes one value. All three zones have it. The runner loads `pyodide-worker.mjs` relative to `script.js`, so it works from `lessons/` too.
+The Python zones (4–7) also get a **Run it** block that follows the standard zone shape: the learner predicts the output of a two-line example (a tracked activity), runs the same code in a real Python runner on the page, and then changes one value. All four zones have it. The runner loads `pyodide-worker.mjs` relative to `script.js`, so it works from `lessons/` too.
 
 | Zone | Goal | Child interaction |
 |---|---|---|
@@ -336,8 +337,9 @@ The Python zones (4–6) also get a **Run it** block that follows the standard z
 | 2 **Where Python runs** | Know the role of the browser, editor, Pyodide runtime, result box, and the Python 3.14 course family. | Point to the part used to type, run, or read code. Version details are stated once and are not treated as something to memorize. |
 | 3 **Python's special marks** | Recognize quotes, parentheses, equals, colon, hash, underscore, brackets, braces, slash, and backslash. | Match frequent marks to their jobs. The remaining marks are explained briefly but explicitly labeled “not needed yet.” |
 | 4 **Memory boxes** | Distinguish temporary working memory from saved storage and understand a variable as a name for a remembered value. | Identify RAM, the variable name, and the stored value in one-line examples. |
-| 5 **Choose a path** | Understand a conditional as a yes-or-no question followed by matching paths. | Follow small `if` and `else` examples about rain and a robot battery. |
-| 6 **Repeat a pattern** | Understand a loop as one small job repeated a clear number of times. | Count outputs, identify the repeated action, and find the loop's stopping point. |
+| 5 **Boxes of all kinds** | See a variable as a labeled box in memory that can keep a whole number, a decimal, text, or yes-or-no, and see lists (vectors) and lists of lists (matrices) as boxes with numbered spaces. | Spot the text box, name the kind of value, count a list's spaces, count a matrix's rows, and read `snacks[0]`. |
+| 6 **Choose a path** | Understand a conditional as a yes-or-no question followed by matching paths. | Follow small `if` and `else` examples about rain and a robot battery. |
+| 7 **Repeat a pattern** | Understand a loop as one small job repeated a clear number of times. | Count outputs, identify the repeated action, and find the loop's stopping point. |
 
 The path stops here. `input()`, functions, classes, files, packages, databases, large projects, and open-ended assignments are outside the current course. They must not be added merely to make the curriculum look more complete.
 
@@ -381,7 +383,7 @@ Examples may name familiar apps in plain text when that helps a child connect an
 - Validate the integrated browser-based Python runtime
 - Refine the code editor, output panel, Run, and Stop interactions
 - Add child-readable help for common Python errors (first version shipped in the home-page runner)
-- Keep the first runnable examples inside the six-zone curriculum boundary
+- Keep the first runnable examples inside the seven-zone curriculum boundary
 
 ### Phase 3 — First learning path
 
@@ -406,7 +408,7 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |-- index.html   # Landing page content and accessible structure
 |-- meet-pybot.html # Dedicated gallery of PyBot's teaching expressions
 |-- course.html  # Short bilingual index of the learning path
-|-- lessons/     # Three foundation pages and six focused learning zones
+|-- lessons/     # Three foundation pages and seven focused learning zones
 |   |-- 01-real-world.html
 |   |-- 02-thinking-in-steps.html
 |   |-- 03-programming-language.html
@@ -414,6 +416,7 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |   |-- 05-environment.html
 |   |-- 06-symbols.html
 |   |-- 07-memory-variables.html
+|   |-- 07b-boxes-of-all-kinds.html
 |   |-- 08-conditionals.html
 |   `-- 09-loops.html
 |-- pyodide-worker.mjs # Isolated browser worker for the live Python runner
@@ -440,11 +443,11 @@ Then open `http://localhost:8000/`.
 - [x] First PyBot mascot prototype
 - [x] Responsive landing page prototype
 - [x] English/Spanish interface foundation with English as the default
-- [x] Focused six-zone curriculum that stops after loops
+- [x] Focused seven-zone curriculum that stops after loops
 - [x] Pre-Python foundation covering everyday logic and basic programming context
 - [x] Plain-language, short-page content rules
 - [x] Three bilingual foundation lessons
-- [x] Six bilingual topic pages with interactive activities
+- [x] Seven bilingual topic pages with interactive activities
 - [x] Page counters, review states, confetti, and page-only reset controls
 - [x] Learning-path position saved locally
 - [x] Real Python runtime prototype with third-party credits
