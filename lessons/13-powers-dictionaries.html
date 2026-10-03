@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta id="meta-description" name="description" content="Learn Python dictionaries for kids: keep values with labels, find them by key, change them, and add new pairs." data-i18n-content="meta.powersDictDescription" /><meta name="theme-color" content="#fff8ec" /><title>Dictionaries: labeled boxes — PyBot</title><link rel="icon" href="../favicon.svg" type="image/svg+xml" /><link rel="stylesheet" href="../styles.css" /><script src="../script.js" defer></script></head>
+  <body class="lesson-page topic-page" data-page="powersDict">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+    <header class="site-header lesson-site-header"><a class="brand" href="../index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home"><span class="brand-mark"><span></span></span><span>PyBot</span></a><div class="lesson-header-tools"><span class="lesson-progress" data-i18n="topic.progressPowersDict">ZONE 9 · 3 OF 3</span><div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria-label="a11y.language"><button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button><button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button></div></div></header>
+    <main class="lesson-main" id="main-content">
+      <a class="lesson-back" href="13-powers-random.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a>
+      <section class="topic-hero"><div class="topic-hero-copy"><p class="eyebrow"><span>09</span><b data-i18n="powersDict.eyebrow">SUPERPOWERS · DICTIONARIES</b></p><h1 data-i18n="powersDict.title">Boxes with labels.</h1><p data-i18n="powersDict.intro">A list keeps things in order: first, second, third. A dictionary keeps each thing with a label, so you find it by name, like backpack[&quot;pencils&quot;].</p></div>
+        <aside class="lesson-pybot-scene topic-pybot-scene scene-functions">
+          <div class="lesson-pybot-bubble">
+            <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+            <p data-i18n="powersDict.pybot" data-pybot-message="powersDict.pybot">Every pocket in my backpack has a label. I never get lost!</p>
+          </div>
+
+          <div class="scene-machine" aria-hidden="true"><span class="scene-machine-in">🏷️</span><b>[key]</b><span class="scene-machine-out">3</span></div>
+
+          <div class="pybot-wrap lesson-pybot-figure" data-mood="proud">
+            <div class="pybot" role="img" aria-label="PyBot next to a machine that reads a label and finds the number 3" data-i18n-aria-label="powersDict.robotLabel">
+              <div class="antenna" aria-hidden="true"><span></span></div>
+              <div class="ear ear-left" aria-hidden="true"></div>
+              <div class="ear ear-right" aria-hidden="true"></div>
+              <div class="bot-head">
+                <div class="bot-screen">
+                  <div class="brow brow-left" aria-hidden="true"></div>
+                  <div class="brow brow-right" aria-hidden="true"></div>
+                  <div class="eye eye-left" aria-hidden="true"><span></span></div>
+                  <div class="eye eye-right" aria-hidden="true"><span></span></div>
+                  <div class="cheek cheek-left" aria-hidden="true"></div>
+                  <div class="cheek cheek-right" aria-hidden="true"></div>
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="bot-neck" aria-hidden="true"></div>
+              <div class="arm arm-left" aria-hidden="true"><span class="hand"></span></div>
+              <div class="arm arm-right" aria-hidden="true"><span class="hand"></span></div>
+              <div class="bot-body">
+                <div class="chest-light" aria-hidden="true"></div>
+                <span class="chest-code" aria-hidden="true">&lt;/&gt;</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="topic-overview" aria-labelledby="powersDict-life-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lifeEyebrow">IN REAL LIFE</p><h2 id="powersDict-life-title" data-i18n="powersDict.lifeTitle">Labels in real life.</h2><p class="practice-intro" data-i18n="powersDict.lifeIntro">You look for the label, and next to it is the value.</p></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">📖</span><h3 data-i18n="powersDict.life1Title">A real dictionary</h3><p data-i18n="powersDict.life1Text">You look up a word and find what it means. Word, then meaning.</p></article><article class="topic-info-card"><span aria-hidden="true">📇</span><h3 data-i18n="powersDict.life2Title">The class phone list</h3><p data-i18n="powersDict.life2Text">Next to each name is a phone number. Name, then number.</p></article><article class="topic-info-card"><span aria-hidden="true">🍔</span><h3 data-i18n="powersDict.life3Title">A menu</h3><p data-i18n="powersDict.life3Text">Next to each food is its price. Food, then price.</p></article>
+      </div></section>
+
+      <section class="topic-overview" aria-labelledby="powersDict-look-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lookEyebrow">LOOK FIRST</p><h2 id="powersDict-look-title" data-i18n="powersDict.lookTitle">Key, colon, value.</h2></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">{ }</span><h3 data-i18n="powersDict.look1Title">Curly brackets</h3><p data-i18n="powersDict.look1Text">A dictionary goes inside { }. Each pair is key: value. The label is called a key.</p></article><article class="topic-info-card"><span aria-hidden="true">🏷️</span><h3 data-i18n="powersDict.look2Title">Find by key</h3><p data-i18n="powersDict.look2Text">backpack[&quot;pencils&quot;] gives back the value with that key.</p></article><article class="topic-info-card"><span aria-hidden="true">✏️</span><h3 data-i18n="powersDict.look3Title">Change or add</h3><p data-i18n="powersDict.look3Text">backpack[&quot;pencils&quot;] = 5 changes the value. A new key adds a new pair.</p></article>
+      </div></section>
+
+      <section class="topic-overview" aria-labelledby="powersDict-steps-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="conditionals.stepsEyebrow">STEP BY STEP</p><h2 id="powersDict-steps-title" data-i18n="powersDict.stepsTitle">PyBot packs a backpack.</h2><p class="practice-intro" data-i18n="powersDict.stepsIntro">Keys in quotes, values after the colon.</p></div>
+        <div class="function-open-grid function-open-single"><div class="function-open"><div class="function-line"><code data-i18n="powersDict.walk1">backpack = {&quot;pencils&quot;: 3, &quot;books&quot;: 2}</code><small data-i18n="powersDict.walk1Tag">A dictionary with two keys: pencils keeps 3, books keeps 2.</small></div><div class="function-line"><code data-i18n="powersDict.walk2">print(backpack[&quot;pencils&quot;])</code><small data-i18n="powersDict.walk2Tag">Find by key: shows 3</small></div><div class="function-line"><code data-i18n="powersDict.walk3">backpack[&quot;pencils&quot;] = 5</code><small data-i18n="powersDict.walk3Tag">Change the value: now pencils keeps 5.</small></div><div class="function-line"><code data-i18n="powersDict.walk4">backpack[&quot;apples&quot;] = 1</code><small data-i18n="powersDict.walk4Tag">A new key: apples is added with 1.</small></div><div class="function-line"><code data-i18n="powersDict.walk5">print(backpack)</code><small data-i18n="powersDict.walk5Tag">Shows {&#x27;pencils&#x27;: 5, &#x27;books&#x27;: 2, &#x27;apples&#x27;: 1}</small></div></div></div>
+      </section>
+
+      <section class="topic-run" aria-labelledby="powersDict-run-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.runEyebrow">RUN IT</p><h2 id="powersDict-run-title" data-i18n="powersDict.runTitle">Read PyBot&#x27;s menu.</h2><p class="practice-intro" data-i18n="topic.runIntro">Guess first. Then run real Python and check.</p></div>
+        <div class="topic-run-grid">
+          <article class="step-activity" data-activity-id="dict-predict"><header class="step-activity-header"><span>1</span><h3 data-i18n="topic.predictTitle">Guess the result</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="powersDict.runCode">prices = {&quot;juice&quot;: 2, &quot;cake&quot;: 3}
+print(prices[&quot;cake&quot;])
+prices[&quot;juice&quot;] = 4
+print(prices)</code></div><p class="activity-question" data-i18n="powersDict.predictQuestion">What does the first print show?</p><div class="activity-options"><button type="button" data-i18n="powersDict.predictOption1">2</button><button type="button" data-correct="true" data-i18n="powersDict.predictOption2">3</button><button type="button" data-i18n="powersDict.predictOption3">cake</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <div class="topic-runner">
+            <div class="code-window" aria-label="Python exercise" data-i18n-aria-label="a11y.codePreview" data-python-runner>
+              <div class="window-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>menu.py</span><span class="preview-tag" data-i18n="preview.tag">REAL PYTHON</span></div>
+              <div class="code-area"><span class="line-number" aria-hidden="true">1<br />2<br />3<br />4</span><label class="visually-hidden" for="python-code" data-i18n="preview.editorLabel">Python code</label><textarea id="python-code" data-python-editor data-code-key="powersDict.runCode" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off">prices = {&quot;juice&quot;: 2, &quot;cake&quot;: 3}
+print(prices[&quot;cake&quot;])
+prices[&quot;juice&quot;] = 4
+print(prices)</textarea></div>
+              <div class="output-area" role="status" aria-live="polite"><span class="output-label" data-i18n="preview.output">OUTPUT</span><p class="python-hint" data-python-hint hidden><strong data-i18n="preview.hintLabel">PyBot's hint</strong><span data-python-hint-text></span></p><pre data-python-output data-i18n="topic.runReady">Ready. Press Run Python.</pre></div>
+              <div class="runner-actions"><button class="run-button" type="button" data-python-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="stop-button" type="button" data-python-stop disabled><span aria-hidden="true">■</span><span data-i18n="preview.stop">Stop</span></button></div>
+              <details class="runtime-credit"><summary data-i18n="preview.creditSummary">Who makes Python run here?</summary><p data-i18n="preview.creditText">Pyodide 314.0.3 runs CPython in your browser with WebAssembly.</p><p><span data-i18n="preview.creditLicense">Open-source under the Mozilla Public License 2.0.</span> <a href="https://github.com/pyodide/pyodide/blob/314.0.3/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="preview.license">License</a></p></details>
+            </div>
+            <p class="topic-try"><b data-i18n="topic.tryLabel">Now change one thing:</b> <span data-i18n="powersDict.tryText">Add a new food with its price, like prices[&quot;soup&quot;] = 5, and print the menu again.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic-practice" aria-labelledby="powersDict-practice-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.practiceEyebrow">YOUR TURN</p><h2 id="powersDict-practice-title" data-i18n="powersDict.practiceTitle">Find it by key.</h2><p class="practice-intro" data-i18n="topic.practiceIntro">Try each tiny question. A wrong answer becomes something to review.</p></div>
+        <div class="plan-progress-summary" aria-label="Activity progress" data-i18n-aria-label="progress.activitySummaryLabel" aria-live="polite"><div class="progress-complete"><strong data-progress-complete>0</strong><span data-i18n="progress.completed">Completed</span></div><div class="progress-remaining"><strong data-progress-remaining>9</strong><span data-i18n="progress.remaining">Not tried</span></div><div class="progress-review"><strong data-progress-review>0</strong><span data-i18n="progress.review">Review</span></div></div>
+        <div class="all-plans"><div class="step-activity-grid">
+          <article class="step-activity" data-activity-id="dict-everyday"><header class="step-activity-header"><span>01</span><h3 data-i18n="powersDict.quiz1Title">Look it up</h3></header><div class="quiz-scene" data-i18n="powersDict.quiz1Scene">In a real dictionary you look up the word cat and find its meaning.</div><p class="activity-question" data-i18n="powersDict.quiz1Question">In a Python dictionary, the word you look up is called...</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="powersDict.quiz1Option1">the key</button><button type="button" data-i18n="powersDict.quiz1Option2">the list</button><button type="button" data-i18n="powersDict.quiz1Option3">the loop</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dict-read"><header class="step-activity-header"><span>02</span><h3 data-i18n="powersDict.quiz2Title">Whose age?</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="powersDict.quiz2Code">ages = {&quot;Ana&quot;: 9, &quot;Leo&quot;: 8}
+print(ages[&quot;Leo&quot;])</code></div><p class="activity-question" data-i18n="powersDict.quiz2Question">What does print show?</p><div class="activity-options"><button type="button" data-i18n="powersDict.quiz2Option1">9</button><button type="button" data-correct="true" data-i18n="powersDict.quiz2Option2">8</button><button type="button" data-i18n="powersDict.quiz2Option3">Leo</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dict-make"><header class="step-activity-header"><span>03</span><h3 data-i18n="powersDict.quiz3Title">Spot the dictionary</h3></header><p class="activity-question" data-i18n="powersDict.quiz3Question">Which one is a dictionary?</p><div class="activity-options bug-code-options"><button type="button" data-correct="true" data-i18n="powersDict.quiz3Option1">{&quot;red&quot;: 2, &quot;blue&quot;: 5}</button><button type="button" data-i18n="powersDict.quiz3Option2">[&quot;red&quot;, 2, &quot;blue&quot;, 5]</button><button type="button" data-i18n="powersDict.quiz3Option3">&quot;red: 2, blue: 5&quot;</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dict-change"><header class="step-activity-header"><span>04</span><h3 data-i18n="powersDict.quiz4Title">A new cat</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="powersDict.quiz4Code">pets = {&quot;cats&quot;: 1}
+pets[&quot;cats&quot;] = 2
+print(pets[&quot;cats&quot;])</code></div><p class="activity-question" data-i18n="powersDict.quiz4Question">What does print show?</p><div class="activity-options"><button type="button" data-i18n="powersDict.quiz4Option1">1</button><button type="button" data-correct="true" data-i18n="powersDict.quiz4Option2">2</button><button type="button" data-i18n="powersDict.quiz4Option3">3</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dict-add"><header class="step-activity-header"><span>05</span><h3 data-i18n="powersDict.quiz5Title">Add a color</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="powersDict.quiz5Code">colors = {&quot;sky&quot;: &quot;blue&quot;}
+colors[&quot;grass&quot;] = &quot;green&quot;
+print(colors)</code></div><p class="activity-question" data-i18n="powersDict.quiz5Question">What does print show?</p><div class="activity-options bug-code-options"><button type="button" data-i18n="powersDict.quiz5Option1">{&#x27;sky&#x27;: &#x27;blue&#x27;}</button><button type="button" data-correct="true" data-i18n="powersDict.quiz5Option2">{&#x27;sky&#x27;: &#x27;blue&#x27;, &#x27;grass&#x27;: &#x27;green&#x27;}</button><button type="button" data-i18n="powersDict.quiz5Option3">An error</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dict-missing"><header class="step-activity-header"><span>06</span><h3 data-i18n="powersDict.quiz6Title">No pizza here</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="powersDict.quiz6Code">menu = {&quot;juice&quot;: 2}
+print(menu[&quot;pizza&quot;])</code></div><p class="activity-question" data-i18n="powersDict.quiz6Question">What happens?</p><div class="activity-options"><button type="button" data-i18n="powersDict.quiz6Option1">It shows 0</button><button type="button" data-correct="true" data-i18n="powersDict.quiz6Option2">An error: there is no key pizza</button><button type="button" data-i18n="powersDict.quiz6Option3">It shows pizza</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="dict-in"><header class="step-activity-header"><span>07</span><h3 data-i18n="powersDict.quiz7Title">Is it on the menu?</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="powersDict.quiz7Code">menu = {&quot;juice&quot;: 2}
+print(&quot;cake&quot; in menu)</code></div><p class="activity-question" data-i18n="powersDict.quiz7Question">What does print show?</p><div class="activity-options"><button type="button" data-i18n="powersDict.quiz7Option1">True</button><button type="button" data-correct="true" data-i18n="powersDict.quiz7Option2">False</button><button type="button" data-i18n="powersDict.quiz7Option3">2</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="dict-fix" data-fix-expected-key="powersDict.fixExpected"><header class="step-activity-header"><span>08</span><h3 data-i18n="fix.title">Fix PyBot's code</h3></header><p class="activity-question" data-i18n="powersDict.fixTask">PyBot wants to know how many books are in the backpack, but Python stops. Make it show: 2</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="dict-fix-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="dict-fix-code" data-fix-code-key="powersDict.fixCode" rows="4" spellcheck="false" autocapitalize="off" autocomplete="off">backpack = {&quot;pencils&quot;: 3, &quot;books&quot;: 2}
+print(backpack[&quot;Books&quot;])</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="powersDict.fixExpected">2</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+        </div></div>
+        <div class="page-progress-tools"><div><strong data-i18n="progress.savedTitle">Your work is saved here.</strong><p data-i18n="progress.savedText">Want a fresh start? Clear only this page.</p></div><button type="button" data-reset-activities><span>↺</span><span data-i18n="progress.resetPage">Clear this page's progress</span></button><p class="progress-reset-status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-big-idea"><span class="big-idea-mark">!</span><div><span class="big-idea-label" data-i18n="lesson.bigIdea">BIG IDEA</span><h2 data-i18n="powersDict.bigTitle">A dictionary finds things by key.</h2><p data-i18n="powersDict.bigText">Each pair is key: value. Use the key in [ ] to read a value, change it, or add a new one.</p></div></section>
+      <nav class="lesson-actions" aria-label="Lesson navigation" data-i18n-aria-label="a11y.lessonNav"><a class="button button-secondary" href="13-powers-random.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a><a class="button button-primary" href="../course.html"><span data-i18n="lesson.backPath">Back to the path</span><span>→</span></a></nav>
+    </main>
+  </body>
+</html>
