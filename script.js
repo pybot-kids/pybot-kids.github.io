@@ -314,6 +314,7 @@ const translations = {
     "local.eyebrow": "YOUR WORK IS YOURS",
     "local.title": "No account. Your progress stays here.",
     "local.text": "This browser remembers your work. Ask an adult before clearing its data.",
+    "local.analytics": "For grown-ups: PyBot counts anonymous page visits with Google Analytics, with ads and ad personalization turned off. The learner's name, answers, and progress are never sent.",
     "backup.title": "Moving to another browser?",
     "backup.text": "Save a backup file here. Then load it in the other browser.",
     "backup.export": "Save a backup file",
@@ -1797,6 +1798,7 @@ const translations = {
     "local.eyebrow": "TU TRABAJO ES TUYO",
     "local.title": "Sin cuenta. Tu avance se queda aquí.",
     "local.text": "Este navegador recuerda tu trabajo. Pregunta a un adulto antes de borrar sus datos.",
+    "local.analytics": "Para adultos: PyBot cuenta visitas anónimas a las páginas con Google Analytics, sin anuncios ni personalización de anuncios. El nombre, las respuestas y el avance de quien aprende nunca se envían.",
     "backup.title": "¿Cambias de navegador?",
     "backup.text": "Guarda aquí una copia. Luego cárgala en el otro navegador.",
     "backup.export": "Guardar una copia",
@@ -3054,6 +3056,40 @@ const learnerNameInput = document.querySelector("#learner-name");
 const learnerNameSaved = document.querySelector("[data-name-saved]");
 const learnerNameEdit = document.querySelector("[data-name-edit]");
 const learnerNameForget = document.querySelector("[data-name-forget]");
+// Google Analytics 4 measurement ID (looks like "G-XXXXXXXXXX"). Every page loads
+// this script, so this is the only place to set it. Leave it empty to turn analytics off.
+const GA_MEASUREMENT_ID = "G-H0PLZHW8CE";
+
+// Counts anonymous page visits only. Ads, Google signals, and ad personalization stay off,
+// and nothing the learner types or saves (name, answers, progress) is sent.
+function startAnalytics() {
+  if (!GA_MEASUREMENT_ID || !/^G-[A-Z0-9]+$/.test(GA_MEASUREMENT_ID)) return;
+  if (!/^https?:$/.test(window.location.protocol)) return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "granted",
+  });
+  window.gtag("set", { allow_google_signals: false, allow_ad_personalization_signals: false });
+  window.gtag("js", new Date());
+  window.gtag("config", GA_MEASUREMENT_ID, {
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+  });
+  document.querySelectorAll("[data-analytics-note]").forEach((note) => {
+    note.hidden = false;
+  });
+  const tag = document.createElement("script");
+  tag.async = true;
+  tag.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_MEASUREMENT_ID)}`;
+  document.head.append(tag);
+}
+
 // Lesson pages live one folder deeper, so resolve the worker next to this script.
 const scriptBaseUrl = document.currentScript?.src || window.location.href;
 const pythonRunner = document.querySelector("[data-python-runner]");
@@ -4661,6 +4697,7 @@ pythonRunButton?.addEventListener("click", () => {
 
 pythonStopButton?.addEventListener("click", () => stopPythonWorker());
 
+startAnalytics();
 audioEnabled = storedAudioPreference();
 learnerName = storedLearnerName();
 saveKnownPathSteps();
