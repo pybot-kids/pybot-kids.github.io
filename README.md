@@ -236,10 +236,10 @@ Current prototype execution model:
 - The runtime downloads only after the learner presses Run. The first run therefore needs a network connection and may take longer while the browser caches it.
 - The runner works on GitHub Pages and local HTTP servers. Modern browsers block module workers on `file://` pages, so local runtime testing should use `python -m http.server` or an equivalent static server.
 - No additional Python packages are installed automatically in this prototype.
+- Common Python errors (missing quotes, brackets, or colons; indentation; unknown names; mixing text and numbers; dividing by zero; `int()` on words) show a short bilingual “PyBot's hint” with the line number. The real Python error stays visible below it, trimmed to the learner's own code. Any other error gets a gentle pointer to the last line of the real error.
 
 Still planned:
 
-- Translate common Python errors into shorter child-facing hints while preserving the real error below them.
 - Keep exercise checks separate from learner-facing instructions.
 
 ## Legal, privacy, and safety boundaries
@@ -355,7 +355,7 @@ Examples may name familiar apps in plain text when that helps a child connect an
 
 - Validate the integrated browser-based Python runtime
 - Refine the code editor, output panel, Run, and Stop interactions
-- Add child-readable help for common Python errors
+- Add child-readable help for common Python errors (first version shipped in the home-page runner)
 - Keep the first runnable examples inside the six-zone curriculum boundary
 
 ### Phase 3 — First learning path
@@ -423,6 +423,7 @@ Then open `http://localhost:8000/`.
 - [x] Page counters, review states, confetti, and page-only reset controls
 - [x] Learning-path position saved locally
 - [x] Real Python runtime prototype with third-party credits
+- [x] Kid-friendly hints for common Python errors, with the real error kept below
 - [x] Meet PyBot expression gallery and creator story
 - [ ] Visual review with María Ángel
 - [ ] Backup export and import

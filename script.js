@@ -118,6 +118,26 @@ const translations = {
     "preview.loading": "Starting Python… The first run can take a little longer.",
     "preview.noOutput": "Python ran! Nothing was printed yet.",
     "preview.error": "Python found a clue:",
+    "preview.hintLabel": "PyBot's hint",
+    "preview.hintLine": "Line {line}:",
+    "hint.quote": "A text is missing its closing quote mark.",
+    "hint.neverClosed": "A ( or [ was opened but never closed.",
+    "hint.extraClose": "There is a closing ) or ] with no opening partner.",
+    "hint.colon": "Lines that start with if, else, or for end with a colon :",
+    "hint.equals": "To compare, use ==. One = puts a value in a box.",
+    "hint.comma": "Something is missing between two values. Maybe a comma?",
+    "hint.indentNeeded": "After a line ending in :, the next line needs spaces at the start.",
+    "hint.indentExtra": "This line has extra spaces at the start. Try removing them.",
+    "hint.indentMismatch": "The spaces at the start of this line don't line up.",
+    "hint.syntax": "Python couldn't read this line. Check quotes, brackets, and colons.",
+    "hint.nameSuggest": "Python doesn't know “{name}”. Did you mean “{suggestion}”?",
+    "hint.name": "Python doesn't know “{name}” yet. Give it a value first, or add quotes for text.",
+    "hint.mixTypes": "Text and numbers can't be added together. Try str() around the number.",
+    "hint.rangeText": "range() needs a number, not text in quotes.",
+    "hint.type": "A value is the wrong kind for this job. Text or number?",
+    "hint.zero": "Nothing can be divided by zero, not even by Python.",
+    "hint.intText": "int() can only turn digits, like \"7\", into a number.",
+    "hint.generic": "Read the last line below. It names the clue Python found.",
     "preview.stopped": "Stopped. Your code is still here.",
     "preview.serveHint": "The real runner needs GitHub Pages or a local web server. Browsers block it on file:// pages.",
     "preview.run": "Run Python",
@@ -690,6 +710,26 @@ const translations = {
     "preview.loading": "Iniciando Python… La primera vez puede tardar un poco más.",
     "preview.noOutput": "¡Python terminó! Todavía no imprimiste nada.",
     "preview.error": "Python encontró una pista:",
+    "preview.hintLabel": "Pista de PyBot",
+    "preview.hintLine": "Línea {line}:",
+    "hint.quote": "A un texto le falta la comilla de cierre.",
+    "hint.neverClosed": "Se abrió un ( o un [ que nunca se cerró.",
+    "hint.extraClose": "Hay un ) o un ] de cierre sin pareja de apertura.",
+    "hint.colon": "Las líneas que empiezan con if, else o for terminan con dos puntos :",
+    "hint.equals": "Para comparar, usa ==. Un solo = guarda un valor en una caja.",
+    "hint.comma": "Falta algo entre dos valores. ¿Quizás una coma?",
+    "hint.indentNeeded": "Después de una línea que termina en :, la siguiente necesita espacios al inicio.",
+    "hint.indentExtra": "Esta línea tiene espacios de más al inicio. Prueba quitarlos.",
+    "hint.indentMismatch": "Los espacios al inicio de esta línea no están alineados.",
+    "hint.syntax": "Python no pudo leer esta línea. Revisa comillas, paréntesis y dos puntos.",
+    "hint.nameSuggest": "Python no conoce «{name}». ¿Querías decir «{suggestion}»?",
+    "hint.name": "Python todavía no conoce «{name}». Dale un valor primero o ponle comillas si es texto.",
+    "hint.mixTypes": "No se pueden sumar texto y números. Prueba poner str() alrededor del número.",
+    "hint.rangeText": "range() necesita un número, no un texto entre comillas.",
+    "hint.type": "Un valor no es del tipo correcto aquí. ¿Es texto o número?",
+    "hint.zero": "Nada se puede dividir entre cero, ni siquiera en Python.",
+    "hint.intText": "int() solo convierte dígitos, como \"7\", en un número.",
+    "hint.generic": "Lee la última línea de abajo. Ahí está la pista que encontró Python.",
     "preview.stopped": "Detenido. Tu código sigue aquí.",
     "preview.serveHint": "El ejecutor real necesita GitHub Pages o un servidor web local. Los navegadores lo bloquean en páginas file://.",
     "preview.run": "Ejecutar Python",
@@ -1195,6 +1235,7 @@ const learnerNameForget = document.querySelector("[data-name-forget]");
 const pythonRunner = document.querySelector("[data-python-runner]");
 const pythonEditor = document.querySelector("[data-python-editor]");
 const pythonOutput = document.querySelector("[data-python-output]");
+const pythonHint = document.querySelector("[data-python-hint]");
 const pythonRunButton = document.querySelector("[data-python-run]");
 const pythonStopButton = document.querySelector("[data-python-stop]");
 let currentLanguage = "en";
@@ -1205,6 +1246,7 @@ let robotAudioContext = null;
 let ambientSoundTimer = null;
 let pythonWorker = null;
 let pythonRunId = 0;
+let lastPythonError = null;
 
 const AUDIO_PREFERENCE_KEY = "pybot.audio.enabled";
 const LEARNER_NAME_KEY = "pybot.learner.name";
@@ -1326,6 +1368,10 @@ function updateCoursePath() {
 }
 
 function setPythonOutput(key, detail = "") {
+  lastPythonError = null;
+  if (pythonHint) {
+    pythonHint.hidden = true;
+  }
   if (!pythonOutput) {
     return;
   }
@@ -1338,6 +1384,59 @@ function setPythonOutput(key, detail = "") {
 
   pythonOutput.dataset.i18n = key;
   pythonOutput.textContent = textFor(key);
+}
+
+// Each rule turns one common Python error into a short child-facing hint.
+// The real error is always shown below the hint.
+const pythonHintRules = [
+  { type: "SyntaxError", pattern: /unterminated (triple-quoted )?string/, key: "hint.quote" },
+  { type: "SyntaxError", pattern: /was never closed/, key: "hint.neverClosed" },
+  { type: "SyntaxError", pattern: /unmatched '[)\]}]'|closing parenthesis/, key: "hint.extraClose" },
+  { type: "SyntaxError", pattern: /expected ':'/, key: "hint.colon" },
+  { type: "SyntaxError", pattern: /Maybe you meant '=='|cannot assign to/, key: "hint.equals" },
+  { type: "SyntaxError", pattern: /forgot a comma/, key: "hint.comma" },
+  { type: "IndentationError", pattern: /expected an indented block/, key: "hint.indentNeeded" },
+  { type: "IndentationError", pattern: /unexpected indent/, key: "hint.indentExtra" },
+  { type: "IndentationError", pattern: /./, key: "hint.indentMismatch" },
+  { type: "TabError", pattern: /./, key: "hint.indentMismatch" },
+  { type: "SyntaxError", pattern: /./, key: "hint.syntax" },
+  { type: "NameError", pattern: /Did you mean: '[^']+'/, key: "hint.nameSuggest" },
+  { type: "NameError", pattern: /./, key: "hint.name" },
+  { type: "TypeError", pattern: /concatenate str|for \+: '(int|float)' and 'str'/, key: "hint.mixTypes" },
+  { type: "TypeError", pattern: /'str' object cannot be interpreted as an integer/, key: "hint.rangeText" },
+  { type: "TypeError", pattern: /./, key: "hint.type" },
+  { type: "ZeroDivisionError", pattern: /./, key: "hint.zero" },
+  { type: "ValueError", pattern: /invalid literal for int\(\)/, key: "hint.intText" },
+];
+
+function pythonErrorHint(errorType, error) {
+  const lastLine = error.trim().split("\n").at(-1) ?? "";
+  const type = errorType || lastLine.match(/^(\w+(?:Error|Exception)):/)?.[1] || "";
+  const rule = pythonHintRules.find((candidate) => candidate.type === type && candidate.pattern.test(lastLine));
+  const lineNumbers = [...error.matchAll(/File "<exec>", line (\d+)/g)];
+  const values = {
+    name: lastLine.match(/name '([^']+)' is not defined/)?.[1] ?? "",
+    suggestion: lastLine.match(/Did you mean: '([^']+)'/)?.[1] ?? "",
+  };
+  let text = textFor(rule?.key ?? "hint.generic").replace(/\{(name|suggestion)\}/g, (_, key) => values[key]);
+
+  if (lineNumbers.length > 0) {
+    const line = lineNumbers.at(-1)[1];
+    text = `${textFor("preview.hintLine").replace("{line}", line)} ${text}`;
+  }
+
+  return text;
+}
+
+function showPythonError(errorType, error, output) {
+  const details = [output, error].filter(Boolean).join("\n").trim();
+  setPythonOutput("preview.error", details);
+  lastPythonError = { errorType, error, output };
+
+  if (pythonHint && error) {
+    pythonHint.querySelector("[data-python-hint-text]").textContent = pythonErrorHint(errorType, error);
+    pythonHint.hidden = false;
+  }
 }
 
 function setPythonRunning(isRunning) {
@@ -1381,8 +1480,7 @@ function createPythonWorker() {
       return;
     }
 
-    const details = [event.data.output, event.data.error].filter(Boolean).join("\n").trim();
-    setPythonOutput("preview.error", details);
+    showPythonError(event.data.errorType, event.data.error, event.data.output);
   });
 
   worker.addEventListener("error", (event) => {
@@ -1692,6 +1790,11 @@ function setLanguage(language, persist = true) {
   });
 
   updateAudioButton();
+
+  if (lastPythonError) {
+    const { errorType, error, output } = lastPythonError;
+    showPythonError(errorType, error, output);
+  }
 
   setMood(currentMood());
   renderPersonalizedMessages();
