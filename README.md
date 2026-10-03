@@ -204,7 +204,7 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.language` | `en` or `es` | Interface language preference | Yes |
 | `pybot.audio.enabled` | `true` or `false` | Optional robot ambience preference; defaults to `true` | Yes |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
-| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `conditionals`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `functions`, or `checkpoint1` | Highlights the learner's current place across the complete small path | Yes |
+| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `functions`, or `checkpoint1` | Highlights the learner's current place across the complete small path | Yes |
 | `pybot.path.visited` | Comma-separated step ids from `pybot.path.current` | Remembers which pages the learner has opened, so steps added to the path later show as new and pending | Yes |
 | `pybot.path.done` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps the learner finished, so a finished step that later gains activities shows **NEW ACTIVITIES** | Yes |
 | `pybot.path.known` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps were on the path when the learner started, so a step added later shows as new even when it is ahead of the learner | Yes |
@@ -220,6 +220,8 @@ Registered activity IDs:
 - Memory and variables: `memory-ram`, `variable-name`, `variable-value`, `variable-predict`, `variable-change`, `variable-label`, and `variable-fix`
 - Boxes of all kinds: `boxes-text`, `boxes-yesno`, `boxes-list`, `boxes-grid`, `boxes-predict`, `boxes-decimal`, and `boxes-fix`
 - Conditionals: `conditional-rain`, `conditional-battery`, `conditional-else`, `conditional-skip`, `conditional-after`, `conditional-elif`, `conditional-one`, `conditional-predict`, and `conditional-fix`
+- Conditionals (elif): `elif-meaning`, `elif-light`, `elif-first`, `elif-order`, `elif-none`, `elif-two-ifs`, `elif-many`, `elif-predict`, and `elif-fix`
+- Conditionals (match): `match-name`, `match-fruit`, `match-rest`, `match-underscore`, `match-or`, `match-one`, `match-same`, `match-predict`, and `match-fix`
 - Loops (for): `loop-count`, `loop-action`, `loop-stop`, `loop-zero`, `loop-list`, `loop-once`, `loop-total`, `loop-predict`, and `loop-fix`
 - Loops (while): `while-check`, `while-count`, `while-last`, `while-zero`, `while-forever`, `while-choose`, `while-predict`, and `while-fix`
 - Loops (repeat until): `until-meaning`, `until-not`, `until-break`, `until-done`, `until-count`, `until-word`, `until-predict`, and `until-fix`
@@ -379,7 +381,7 @@ The Python zones (2–7) also get a **Run it** block that follows the standard z
 | 1 · **Python's special marks** | Recognize quotes, parentheses, equals, colon, hash, underscore, brackets, braces, slash, and backslash. | Match frequent marks to their jobs. The remaining marks are explained briefly but explicitly labeled “not needed yet.” |
 | 2 **Memory boxes** | Distinguish temporary working memory from saved storage and understand a variable as a name for a remembered value. | Identify RAM, the variable name, and the stored value in one-line examples. |
 | 3 **Boxes of all kinds** | See a variable as a labeled box in memory that can keep a whole number, a decimal, text, or yes-or-no, and see lists (vectors) and lists of lists (matrices) as boxes with numbered spaces. | Spot the text box, name the kind of value, count a list's spaces, count a matrix's rows, and read `snacks[0]`. |
-| 4 **Choose a path** | Understand a conditional as a yes-or-no question followed by matching paths: how Python checks the question, why only one path runs, how indentation marks the path, `if` without `else`, and `elif` for more than two paths. | Follow small `if`, `else`, and `elif` examples about rain, a robot battery, and the temperature; spot the line that always runs. |
+| 4 **Choose a path** (three pages: if/else, elif, match) | **if/else:** a conditional is a yes-or-no question followed by matching paths: how Python checks the question, why only one path runs, how indentation marks the path, and `if` without `else`. **elif:** ask more questions from top to bottom; the first True wins, so order matters, and two separate `if`s are two questions. **match:** what other languages call `switch` is `match` and `case` in Python (3.10+); `case _` catches anything else and `|` joins cases. | Follow small `if`, `else`, `elif` and `match` examples about rain, a battery, a traffic light, medals and robot commands; spot the line that always runs, fix the question order, and turn `else if` and `switch` into Python. |
 | 5 **Repeat a pattern** (three pages: for, while, repeat until) | **for:** one small job repeated a clear number of times: the loop variable changes each turn, `range` starts at 0, a loop can walk through a list, and a loop can keep a count. **while:** repeat while a question is True; something inside must change or the loop never ends. **Repeat until:** Python has no `until` keyword, so write `while not ...` or `while True` with `break`. | Count outputs, find the stopping point, read the first and last values, spot a loop that never ends, choose for or while, read `while not` aloud, and see what `break` does. |
 | 6 **True or false?** | Understand the questions inside an `if`: comparisons (`==`, `!=`, `<`, `>`, `<=`, `>=`) answer `True` or `False`, `=` is not `==`, and `and`, `or`, and `not` join or flip answers. | Answer small comparisons, tell a box from a question, and work out `and`, `or`, and `not`. |
 | 7 **Boxes that do a job** | See a function first as a named box: parameters go in and `return` sends a result out. Then open the box and see that inside there are only variables, `if`/`else`, and `for`, which the learner already knows. | Name the parameter, predict what a small function returns, and recognize the familiar pieces inside a function. |
@@ -461,6 +463,8 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |   |-- 07-memory-variables.html
 |   |-- 07b-boxes-of-all-kinds.html
 |   |-- 08-conditionals.html
+|   |-- 08-conditionals-elif.html
+|   |-- 08-conditionals-match.html
 |   |-- 09-loops.html
 |   |-- 09-loops-while.html
 |   |-- 09-loops-until.html
