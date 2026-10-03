@@ -2265,6 +2265,13 @@ a {
   background: var(--blue-dark);
 }
 
+.construction-note {
+  margin: 28px auto 0;
+  color: var(--blue-dark);
+  font-weight: 800;
+  text-align: center;
+}
+
 .course-note p {
   margin: 2px 0 0;
   font-weight: 900;
