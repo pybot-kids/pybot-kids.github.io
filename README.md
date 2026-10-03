@@ -204,12 +204,13 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.language` | `en` or `es` | Interface language preference | Yes |
 | `pybot.audio.enabled` | `true` or `false` | Optional robot ambience preference; defaults to `true` | Yes |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
-| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `functions`, or `checkpoint1` | Highlights the learner's current place across the complete small path | Yes |
+| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `changingBoxes`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `functions`, or `checkpoint1` | Highlights the learner's current place across the complete small path | Yes |
 | `pybot.path.visited` | Comma-separated step ids from `pybot.path.current` | Remembers which pages the learner has opened, so steps added to the path later show as new and pending | Yes |
 | `pybot.path.done` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps the learner finished, so a finished step that later gains activities shows **NEW ACTIVITIES** | Yes |
 | `pybot.path.known` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps were on the path when the learner started, so a step added later shows as new even when it is ahead of the learner | Yes |
 | `pybot.selfcheck` | Comma-separated `<step-id>:<rating>` pairs, rating `good`, `okay`, or `review` (may be empty) | The learner's own answer to "How did it go?" at a pit stop; zones rated `review` show **TO REVIEW** on the map | Yes |
 | `pybot.activity.<activity-id>` | `complete` or `review` | Marks a completed activity or one that should be reviewed | Yes |
+| `pybot.progress.version` | A whole number up to `PROGRESS_VERSION` | The course content version the saved progress was last upgraded to (see **Progress versions**) | No; the file carries `progressVersion` instead |
 
 Registered activity IDs:
 
@@ -219,6 +220,7 @@ Registered activity IDs:
 - Symbols: `symbol-text`, `symbol-assign`, `symbol-block`, `symbol-parens`, `symbol-note`, `symbol-join`, and `symbol-fix`
 - Memory and variables: `memory-ram`, `variable-name`, `variable-value`, `variable-predict`, `variable-change`, `variable-label`, and `variable-fix`
 - Boxes of all kinds: `boxes-text`, `boxes-yesno`, `boxes-list`, `boxes-grid`, `boxes-predict`, `boxes-decimal`, and `boxes-fix`
+- Changing boxes: `changing-predict`, `changing-plus`, `changing-short`, `changing-minus`, `changing-times`, `changing-math`, `changing-join`, `changing-text-numbers`, and `changing-fix`
 - Conditionals: `conditional-rain`, `conditional-battery`, `conditional-else`, `conditional-skip`, `conditional-after`, `conditional-elif`, `conditional-one`, `conditional-predict`, `conditional-fix`, and `conditional-everyday`
 - Conditionals (elif): `elif-everyday`, `elif-meaning`, `elif-light`, `elif-first`, `elif-order`, `elif-none`, `elif-two-ifs`, `elif-many`, `elif-predict`, and `elif-fix`
 - Conditionals (match): `match-everyday`, `match-name`, `match-fruit`, `match-rest`, `match-underscore`, `match-or`, `match-one`, `match-same`, `match-predict`, and `match-fix`
@@ -248,6 +250,7 @@ The home page offers **Save a backup file** and **Load a backup file**. Saving d
 {
   "format": "pybot-progress",
   "schemaVersion": 1,
+  "progressVersion": 1,
   "exportedAt": "2026-10-03T00:00:00.000Z",
   "progress": {
     "pybot.language": "es",
@@ -258,10 +261,30 @@ The home page offers **Save a backup file** and **Load a backup file**. Saving d
 ```
 
 - `format` must be `pybot-progress` and `schemaVersion` must be `1`. A file from a newer schema version is refused with its own message.
-- `progress` holds only registered keys with string values allowed by the registry. One unknown key or invalid value rejects the whole file, and nothing changes.
+- `progressVersion` is the course content version the backup was saved with. A missing value means version 1 (backups from before versions existed). A file from a newer progress version is refused with the same "newer PyBot" message.
+- A backup from an older progress version is upgraded before it is checked: every migration after its version runs, then steps and activities the current course no longer has are dropped. The learner sees "updated to the newest PyBot".
+- `progress` holds only registered keys with string values allowed by the registry (after the upgrade). One unknown key or invalid value rejects the whole file, and nothing changes.
 - Files over 100 KB are rejected.
 - `exportedAt` is informational and is not validated.
 - The allowlist lives in `backupValidators()` in `script.js` and must change together with the registry above.
+
+#### Progress versions
+
+`PROGRESS_VERSION` in `script.js` names the version of the course content that progress belongs to. It is shown under the backup tools ("Progress version N"), written into every backup as `progressVersion`, and stored in `pybot.progress.version`. [`progress-versions.json`](progress-versions.json) lists every step and activity id of each version, so the `progressVersion` in anyone's backup tells exactly what content it was saved with and what has changed since.
+
+Rule for every pull request:
+
+- If it adds, renames, or removes a step or activity id in `pathSteps`, run `node tools/progress-version.mjs --bump "what changed"`. This raises `PROGRESS_VERSION` by one and records the new content in `progress-versions.json`.
+- If it renames or removes an id, also add an entry for the new version in `progressMigrations` in `script.js` (helpers: `renameProgressStep`, `renameProgressActivity`) so learners keep that progress. Ids that are only removed need no migration: their progress is dropped on upgrade.
+- Adding ids needs no migration. New steps and activities already show as new and pending (see `pybot.path.known` and `pybot.path.done`).
+- Changing the shape of a stored value (not just its ids) needs a migration too.
+- Two open pull requests that both bump will conflict on `PROGRESS_VERSION`; the second one to merge bumps again on top of the first.
+
+`node tools/progress-version.mjs` with no arguments checks that `PROGRESS_VERSION`, `progress-versions.json`, and `pathSteps` agree, and warns about ids removed without a migration. The **Progress version** workflow runs it on every pull request.
+
+When the site loads, progress saved in the browser by an older version is upgraded the same way as an old backup.
+
+To help someone whose backup will not load: open the file, read `progressVersion` (missing means 1), and compare that entry in `progress-versions.json` with the latest one. Any id that was renamed without a migration is the cause; add the migration and the backup loads again.
 
 #### Emergency progress reset
 
@@ -269,7 +292,7 @@ Below the backup tools, a collapsed **For adults: erase all progress** section o
 
 The thinking-page counters divide all ten plans into mutually exclusive states: completed, not tried, and review. The three numbers must always add up to ten. A wrong choice moves that plan to review; a correct choice moves it to completed.
 
-The learning-path page turns the three foundation pages and seven learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically. When a new zone is added behind a learner's saved place, the map marks it **NEW · NOT DONE** and shows a link to it under the main action. To get this for a future zone, just add it to `pathSteps`; learners who only have older progress (no `pybot.path.visited` yet) need the step flagged `addedLater: true`. A step added after the learner started is also marked new when it is ahead of them, using `pybot.path.known`; the same works for future steps with no flag.
+The learning-path page turns the three foundation pages and six learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically. When a new zone is added behind a learner's saved place, the map marks it **NEW · NOT DONE** and shows a link to it under the main action. To get this for a future zone, just add it to `pathSteps`; learners who only have older progress (no `pybot.path.visited` yet) need the step flagged `addedLater: true`. A step added after the learner started is also marked new when it is ahead of them, using `pybot.path.known`; the same works for future steps with no flag.
 
 The path is a race track with pit stops. A pit stop (`lessons/11-checkpoint.html`, step `checkpoint1`, after zone 7) has bigger "write real code" challenges that mix the zones before it, checked by output like "Fix PyBot's code" (`.fix-activity`, plus `data-checkpoint-zones`). Then the learner rates each zone with a face (no grades). Zones rated "I want to review" are linked from the page, marked **TO REVIEW** on the map, and the zone page shows a note with an "I reviewed it" button. Zones of challenges still in review get a gentle hint, but the learner decides. To add another pit stop, copy the page, add a step to `pathSteps`, and list its zones in the self-check rows.
 
@@ -368,23 +391,24 @@ This foundation is split into tiny pages before the learner writes Python:
 
 The Keyboard Lab must respond to the value produced by the browser's keyboard event rather than assume a physical key position. This supports different keyboard layouts. Browser-reserved combinations should not be included unless they can be practiced safely inside the code editor.
 
-### Seven small learning zones
+### Six small learning zones
 
 Each zone has short explanation cards, at least three multiple-choice activities, a completed/not-tried/review summary, and a page-only reset control.
 
-The Python zones (2–7) also get a **Run it** block that follows the standard zone shape: the learner predicts the output of a two-line example (a tracked activity), runs the same code in a real Python runner on the page, and then changes one value. All six zones have it. Zones 4–6 also walk through example code line by line, with a note under each line, and have seven practice questions each. The runner loads `pyodide-worker.mjs` relative to `script.js`, so it works from `lessons/` too.
+The Python zones (2–6) also get a **Run it** block that follows the standard zone shape: the learner predicts the output of a two-line example (a tracked activity), runs the same code in a real Python runner on the page, and then changes one value. Every Python page has it. Zones 3–5 also walk through example code line by line, with a note under each line, and have seven practice questions each. The runner loads `pyodide-worker.mjs` relative to `script.js`, so it works from `lessons/` too.
 
 | Zone | Goal | Child interaction |
 |---|---|---|
 | 1 **Python basics** (three pages: keyboard, where Python runs, special marks) · **Keyboard moves** | Recognize Enter, Backspace, Shift, and the safe Undo, Copy, and Paste shortcuts. | Choose which key or shortcut helps in three familiar editing situations. The interface names Ctrl and explains that Mac uses Command. |
 | 1 · **Where Python runs** | Know the role of the browser, editor, Pyodide runtime, result box, and the Python 3.14 course family. | Point to the part used to type, run, or read code. Version details are stated once and are not treated as something to memorize. |
 | 1 · **Python's special marks** | Recognize quotes, parentheses, equals, colon, hash, underscore, brackets, braces, slash, and backslash. | Match frequent marks to their jobs. The remaining marks are explained briefly but explicitly labeled “not needed yet.” |
-| 2 **Memory boxes** | Distinguish temporary working memory from saved storage and understand a variable as a name for a remembered value. | Identify RAM, the variable name, and the stored value in one-line examples. |
-| 3 **Boxes of all kinds** | See a variable as a labeled box in memory that can keep a whole number, a decimal, text, or yes-or-no, and see lists (vectors) and lists of lists (matrices) as boxes with numbered spaces. | Spot the text box, name the kind of value, count a list's spaces, count a matrix's rows, and read `snacks[0]`. |
-| 4 **Choose a path** (three pages: if/else, elif, match) | Each page opens with everyday decisions (games, food, the weather, the day of the week) before the code. **if/else:** a conditional is a yes-or-no question followed by matching paths: how Python checks the question, why only one path runs, how indentation marks the path, and `if` without `else`. **elif:** ask more questions from top to bottom; the first True wins, so order matters, and two separate `if`s are two questions. **match:** what other languages call `switch` is `match` and `case` in Python (3.10+); `case _` catches anything else and `|` joins cases. | Follow small `if`, `else`, `elif` and `match` examples about rain, a battery, a traffic light, medals and robot commands; spot the line that always runs, fix the question order, and turn `else if` and `switch` into Python. |
-| 5 **Repeat a pattern** (three pages: for, while, repeat until) | **for:** one small job repeated a clear number of times: the loop variable changes each turn, `range` starts at 0, a loop can walk through a list, and a loop can keep a count. **while:** repeat while a question is True; something inside must change or the loop never ends. **Repeat until:** Python has no `until` keyword, so write `while not ...` or `while True` with `break`. | Count outputs, find the stopping point, read the first and last values, spot a loop that never ends, choose for or while, read `while not` aloud, and see what `break` does. |
-| 6 **True or false?** | Understand the questions inside an `if`: comparisons (`==`, `!=`, `<`, `>`, `<=`, `>=`) answer `True` or `False`, `=` is not `==`, and `and`, `or`, and `not` join or flip answers. | Answer small comparisons, tell a box from a question, and work out `and`, `or`, and `not`. |
-| 7 **Boxes that do a job** | See a function first as a named box: parameters go in and `return` sends a result out. Then open the box and see that inside there are only variables, `if`/`else`, and `for`, which the learner already knows. | Name the parameter, predict what a small function returns, and recognize the familiar pieces inside a function. |
+| 2 **Memory boxes** (three pages: memory boxes, boxes of all kinds, changing boxes) · **Memory boxes** | Distinguish temporary working memory from saved storage and understand a variable as a name for a remembered value. | Identify RAM, the variable name, and the stored value in one-line examples. |
+| 2 · **Boxes of all kinds** | See a variable as a labeled box in memory that can keep a whole number, a decimal, text, or yes-or-no, and see lists (vectors) and lists of lists (matrices) as boxes with numbered spaces. | Spot the text box, name the kind of value, count a list's spaces, count a matrix's rows, and read `snacks[0]`. |
+| 2 · **Changing boxes** | Change what a box keeps: `score = score + 1` (Python works out the right side first), the short forms `+=` and `-=`, math with boxes (`+`, `-`, `*`, `/`), and joining text with `+` (`"2" + "3"` is `"23"`). | Predict a box after it grows, pick the line that does the same as `coins = coins + 1`, add two boxes, join a greeting, and fix a line that forgets to save the new score. |
+| 3 **Choose a path** (three pages: if/else, elif, match) | Each page opens with everyday decisions (games, food, the weather, the day of the week) before the code. **if/else:** a conditional is a yes-or-no question followed by matching paths: how Python checks the question, why only one path runs, how indentation marks the path, and `if` without `else`. **elif:** ask more questions from top to bottom; the first True wins, so order matters, and two separate `if`s are two questions. **match:** what other languages call `switch` is `match` and `case` in Python (3.10+); `case _` catches anything else and `|` joins cases. | Follow small `if`, `else`, `elif` and `match` examples about rain, a battery, a traffic light, medals and robot commands; spot the line that always runs, fix the question order, and turn `else if` and `switch` into Python. |
+| 4 **Repeat a pattern** (three pages: for, while, repeat until) | **for:** one small job repeated a clear number of times: the loop variable changes each turn, `range` starts at 0, a loop can walk through a list, and a loop can keep a count. **while:** repeat while a question is True; something inside must change or the loop never ends. **Repeat until:** Python has no `until` keyword, so write `while not ...` or `while True` with `break`. | Count outputs, find the stopping point, read the first and last values, spot a loop that never ends, choose for or while, read `while not` aloud, and see what `break` does. |
+| 5 **True or false?** | Understand the questions inside an `if`: comparisons (`==`, `!=`, `<`, `>`, `<=`, `>=`) answer `True` or `False`, `=` is not `==`, and `and`, `or`, and `not` join or flip answers. | Answer small comparisons, tell a box from a question, and work out `and`, `or`, and `not`. |
+| 6 **Boxes that do a job** | See a function first as a named box: parameters go in and `return` sends a result out. Then open the box and see that inside there are only variables, `if`/`else`, and `for`, which the learner already knows. | Name the parameter, predict what a small function returns, and recognize the familiar pieces inside a function. |
 
 The path stops here. `input()`, classes, files, packages, databases, large projects, and open-ended assignments are outside the current course. They must not be added merely to make the curriculum look more complete.
 
@@ -428,7 +452,7 @@ Examples may name familiar apps in plain text when that helps a child connect an
 - Validate the integrated browser-based Python runtime
 - Refine the code editor, output panel, Run, and Stop interactions
 - Add child-readable help for common Python errors (first version shipped in the home-page runner)
-- Keep the first runnable examples inside the seven-zone curriculum boundary
+- Keep the first runnable examples inside the six-zone curriculum boundary
 
 ### Phase 3 — First learning path
 
@@ -453,7 +477,7 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |-- index.html   # Landing page content and accessible structure
 |-- meet-pybot.html # Dedicated gallery of PyBot's teaching expressions
 |-- course.html  # Short bilingual index of the learning path
-|-- lessons/     # Three foundation pages and seven focused learning zones
+|-- lessons/     # Three foundation pages and six focused learning zones
 |   |-- 01-real-world.html
 |   |-- 02-thinking-in-steps.html
 |   |-- 03-programming-language.html
@@ -462,6 +486,7 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |   |-- 06-symbols.html
 |   |-- 07-memory-variables.html
 |   |-- 07b-boxes-of-all-kinds.html
+|   |-- 07c-changing-boxes.html
 |   |-- 08-conditionals.html
 |   |-- 08-conditionals-elif.html
 |   |-- 08-conditionals-match.html
@@ -495,7 +520,7 @@ Then open `http://localhost:8000/`.
 - [x] First PyBot mascot prototype
 - [x] Responsive landing page prototype
 - [x] English/Spanish interface foundation with English as the default
-- [x] Focused seven-zone curriculum that stops after functions
+- [x] Focused six-zone curriculum that stops after functions
 - [x] Pre-Python foundation covering everyday logic and basic programming context
 - [x] Plain-language, short-page content rules
 - [x] Three bilingual foundation lessons

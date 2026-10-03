@@ -48,7 +48,7 @@
           </p>
           <h1 id="course-title">
             <span data-i18n="course.titleStart">Start with the basics.</span>
-            <span data-i18n="course.titleEnd">Then 9 small zones.</span>
+            <span data-i18n="course.titleEnd">Then 6 small zones.</span>
           </h1>
           <p data-i18n="course.intro">Go slowly. Each zone has one idea and one small activity.</p>
         </div>
@@ -119,30 +119,36 @@
           </nav>
         </li>
 
-        <li class="mission-card mission-orange" data-course-step="variables">
+        <li class="mission-card mission-orange mission-routed">
           <span class="mission-number">02</span>
           <div class="mission-copy">
-            <span class="mission-concept" data-i18n="mission4.concept">MEMORY + VARIABLES</span>
+            <span class="mission-concept" data-i18n="mission4.concept">MEMORY + TYPES + CHANGE</span>
             <h2 data-i18n="mission4.title">Memory Boxes</h2>
-            <p data-i18n="mission4.text">See how a computer remembers a value by name.</p>
+            <p data-i18n="mission4.text">Keep values in named boxes, meet every kind of box, and change what they keep.</p>
           </div>
-          <span class="course-step-status" data-course-status></span>
           <a class="mission-start" href="lessons/07-memory-variables.html" data-i18n="course.open">Open →</a>
-        </li>
 
-        <li class="mission-card mission-yellow" data-course-step="boxes">
-          <span class="mission-number">03</span>
-          <div class="mission-copy">
-            <span class="mission-concept" data-i18n="missionBoxes.concept">TYPES + LISTS</span>
-            <h2 data-i18n="missionBoxes.title">Boxes of All Kinds</h2>
-            <p data-i18n="missionBoxes.text">Keep numbers, text, yes-or-no, lists, and grids in boxes.</p>
-          </div>
-          <span class="course-step-status" data-course-status></span>
-          <a class="mission-start" href="lessons/07b-boxes-of-all-kinds.html" data-i18n="course.open">Open →</a>
+          <nav class="foundation-route zone-route" aria-label="Memory boxes pages" data-i18n-aria-label="path.boxesLabel">
+            <a href="lessons/07-memory-variables.html" data-path-step="variables">
+              <span>1</span>
+              <b data-i18n="path.variables">Memory boxes</b>
+              <small data-path-status></small>
+            </a>
+            <a href="lessons/07b-boxes-of-all-kinds.html" data-path-step="boxes">
+              <span>2</span>
+              <b data-i18n="path.boxes">Boxes of all kinds</b>
+              <small data-path-status></small>
+            </a>
+            <a href="lessons/07c-changing-boxes.html" data-path-step="changingBoxes">
+              <span>3</span>
+              <b data-i18n="path.changingBoxes">Changing boxes</b>
+              <small data-path-status></small>
+            </a>
+          </nav>
         </li>
 
         <li class="mission-card mission-blue mission-routed">
-          <span class="mission-number">04</span>
+          <span class="mission-number">03</span>
           <div class="mission-copy">
             <span class="mission-concept" data-i18n="mission5.concept">CONDITIONALS</span>
             <h2 data-i18n="mission5.title">Choose a Path</h2>
@@ -170,7 +176,7 @@
         </li>
 
         <li class="mission-card mission-yellow mission-routed">
-          <span class="mission-number">05</span>
+          <span class="mission-number">04</span>
           <div class="mission-copy">
             <span class="mission-concept" data-i18n="mission6.concept">LOOPS</span>
             <h2 data-i18n="mission6.title">Repeat a Pattern</h2>
@@ -198,7 +204,7 @@
         </li>
 
         <li class="mission-card mission-blue" data-course-step="comparisons">
-          <span class="mission-number">06</span>
+          <span class="mission-number">05</span>
           <div class="mission-copy">
             <span class="mission-concept" data-i18n="missionComparisons.concept">COMPARISONS</span>
             <h2 data-i18n="missionComparisons.title">True or False?</h2>
@@ -209,7 +215,7 @@
         </li>
 
         <li class="mission-card mission-orange" data-course-step="functions">
-          <span class="mission-number">07</span>
+          <span class="mission-number">06</span>
           <div class="mission-copy">
             <span class="mission-concept" data-i18n="missionFunctions.concept">FUNCTIONS</span>
             <h2 data-i18n="missionFunctions.title">Boxes That Do a Job</h2>
@@ -222,7 +228,7 @@
         <li class="mission-card mission-checkpoint" data-course-step="checkpoint1">
           <span class="mission-number" aria-hidden="true">🏁</span>
           <div class="mission-copy">
-            <span class="mission-concept" data-i18n="missionCheckpoint1.concept">PIT STOP · ZONES 2–7</span>
+            <span class="mission-concept" data-i18n="missionCheckpoint1.concept">PIT STOP · ZONES 2–6</span>
             <h2 data-i18n="missionCheckpoint1.title">Check the Engine</h2>
             <p data-i18n="missionCheckpoint1.text">Bigger challenges with real Python. Then tell PyBot how it went.</p>
           </div>

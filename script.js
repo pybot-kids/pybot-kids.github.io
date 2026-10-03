@@ -322,6 +322,8 @@ const translations = {
     "backup.exported": "Backup saved. Keep the file somewhere safe.",
     "backup.confirm": "Replace the progress in this browser with this backup? Finished activities in the backup: {count}.",
     "backup.imported": "Done. Your progress is back.",
+    "backup.upgraded": "Done. Your progress is back, updated to the newest PyBot.",
+    "backup.versionLabel": "Progress version",
     "backup.cancelled": "Nothing changed.",
     "backup.invalid": "This is not a PyBot backup file. Nothing changed.",
     "backup.newer": "This backup comes from a newer PyBot. Nothing changed.",
@@ -339,7 +341,7 @@ const translations = {
     "course.home": "Home",
     "course.eyebrow": "YOUR FIRST PATH",
     "course.titleStart": "Start with the basics.",
-    "course.titleEnd": "Then 9 small zones and a pit stop.",
+    "course.titleEnd": "Then 6 small zones and a pit stop.",
     "course.intro": "Go slowly. Each zone has one idea and one small activity.",
     "course.rule": "One idea. One clear next step.",
     "course.note": "No rush. One small zone at a time.",
@@ -369,9 +371,9 @@ const translations = {
     "missionBasics.concept": "KEYS + TOOLS + MARKS",
     "missionBasics.title": "Python Basics",
     "missionBasics.text": "Meet useful keys, the place where Python runs, and its special marks.",
-    "mission4.concept": "MEMORY + VARIABLES",
+    "mission4.concept": "MEMORY + TYPES + CHANGE",
     "mission4.title": "Memory Boxes",
-    "mission4.text": "See how a computer remembers a value by name.",
+    "mission4.text": "Keep values in named boxes, meet every kind of box, and change what they keep.",
     "mission5.concept": "CONDITIONALS",
     "mission5.title": "Choose a Path",
     "mission5.text": "Choose a path with if and else, with elif, and with match.",
@@ -576,9 +578,9 @@ const translations = {
     "topic.progressKeyboard": "ZONE 1 · 1 OF 3",
     "topic.progressEnvironment": "ZONE 1 · 2 OF 3",
     "topic.progressSymbols": "ZONE 1 · 3 OF 3",
-    "topic.progressVariables": "ZONE 2 OF 7",
-    "topic.progressConditionals": "ZONE 4 · 1 OF 3",
-    "topic.progressLoops": "ZONE 5 · 1 OF 3",
+    "topic.progressVariables": "ZONE 2 · 1 OF 3",
+    "topic.progressConditionals": "ZONE 3 · 1 OF 3",
+    "topic.progressLoops": "ZONE 4 · 1 OF 3",
     "topic.lookEyebrow": "LOOK FIRST",
     "topic.practiceEyebrow": "YOUR TURN",
     "topic.practiceIntro": "Try each tiny question. A wrong answer becomes something to review.",
@@ -749,7 +751,7 @@ const translations = {
     "variables.tryText": "Put your favorite color between the quotes. Run again.",
     "meta.boxesTitle": "Boxes of all kinds — PyBot",
     "meta.boxesDescription": "A child-friendly picture of variables as labeled boxes in memory that can keep numbers, text, yes-or-no values, lists, and grids.",
-    "topic.progressBoxes": "ZONE 3 OF 7",
+    "topic.progressBoxes": "ZONE 2 · 2 OF 3",
     "missionBoxes.concept": "TYPES + LISTS",
     "missionBoxes.title": "Boxes of All Kinds",
     "missionBoxes.text": "Keep numbers, text, yes-or-no, lists, and grids in boxes.",
@@ -819,6 +821,88 @@ const translations = {
     "boxes.bigTitle": "A variable is a labeled box in memory.",
     "boxes.bigText": "It can keep a number, some text, a yes or no, or even a whole list.",
     "boxes.next": "Choose a path",
+    "boxes.nextChanging": "Changing boxes",
+    "meta.changingBoxesTitle": "Changing boxes — PyBot",
+    "meta.changingBoxesDescription": "Change what a Python box keeps: add to it, do math with boxes, and join text.",
+    "topic.progressChangingBoxes": "ZONE 2 · 3 OF 3",
+    "path.boxesLabel": "Memory boxes pages",
+    "path.variables": "Memory boxes",
+    "path.boxes": "Boxes of all kinds",
+    "path.changingBoxes": "Changing boxes",
+    "changing.eyebrow": "CHANGE + MATH",
+    "changing.title": "A box can change.",
+    "changing.intro": "A box can take its own value, change it, and keep the new one. That is how games count points.",
+    "changing.pybot": "Every time I find a star, my score box grows by one.",
+    "changing.pybotNamed": "{name}, every time I find a star, my score box grows by one.",
+    "changing.robotLabel": "PyBot winks next to a score box that grows",
+    "changing.growEyebrow": "USE THE OLD VALUE",
+    "changing.growTitle": "Read the right side first.",
+    "changing.growText": "score = score + 1 looks strange. Python first works out the right side: the old score plus 1. Then it puts the answer back in the same box.",
+    "changing.growLabel": "A score box that grows from 3 to 4",
+    "changing.growNote": "3 + 1 is 4. Now the box keeps 4.",
+    "changing.shortEyebrow": "THE SHORT WAY",
+    "changing.shortTitle": "+= adds to the box.",
+    "changing.plusTitle": "Add to it",
+    "changing.plusText": "score += 1 means the same as score = score + 1.",
+    "changing.minusTitle": "Take away",
+    "changing.minusText": "lives -= 1 takes one life away from the box.",
+    "changing.replaceTitle": "Start again",
+    "changing.replaceText": "score = 0 throws the old value away and puts in 0.",
+    "changing.mathEyebrow": "MATH WITH BOXES",
+    "changing.mathTitle": "Boxes can do math together.",
+    "changing.mathText": "apples = 4 and pears = 3. Python opens both boxes and uses the numbers inside.",
+    "changing.addTitle": "Add",
+    "changing.addText": "apples + pears is 7.",
+    "changing.subtractTitle": "Subtract",
+    "changing.subtractText": "apples - pears is 1.",
+    "changing.multiplyTitle": "Multiply",
+    "changing.multiplyText": "apples * 2 is 8. The star means times.",
+    "changing.divideTitle": "Divide",
+    "changing.divideText": "apples / 2 is 2.0. Dividing always gives a decimal.",
+    "changing.joinEyebrow": "JOIN TEXT",
+    "changing.joinTitle": "+ glues text together.",
+    "changing.joinText": "name = \"Ana\". Then \"Hi \" + name makes \"Hi Ana\". Put a space inside the quotes, or the words stick together.",
+    "changing.joinWatchLabel": "Watch out:",
+    "changing.joinWatchText": "\"2\" + \"3\" is \"23\", not 5. With quotes, Python glues text. Without quotes, 2 + 3 is 5.",
+    "changing.runTitle": "Count PyBot's stars.",
+    "changing.runCode": "score = 3\nscore = score + 1\nprint(score)",
+    "thinking.changing-predictSuccess": "Yes! Python takes the old 3, adds 1, and keeps 4.",
+    "thinking.changing-predictHint": "Not yet. Work out the right side first: 3 + 1.",
+    "changing.tryText": "Change + 1 to + 10. Then try the short way: score += 10.",
+    "changing.practiceTitle": "Change the boxes.",
+    "changing.quizPlusTitle": "Add to the box",
+    "changing.quizPlusQuestion": "What will Python show?",
+    "thinking.changing-plusSuccess": "Yes! 5 + 2 is 7, and the box keeps 7.",
+    "thinking.changing-plusHint": "These are numbers, not text. Add them: 5 + 2.",
+    "changing.quizShortTitle": "The short way",
+    "changing.quizShortQuestion": "Which line does the same job?",
+    "thinking.changing-shortSuccess": "Yes! += adds to what is already in the box.",
+    "thinking.changing-shortHint": "Look for += . It means: add to the box.",
+    "changing.quizMinusTitle": "Lose a life",
+    "changing.quizMinusQuestion": "What will Python show?",
+    "thinking.changing-minusSuccess": "Yes! -= takes one away: 3 - 1 is 2.",
+    "thinking.changing-minusHint": "-= takes away. Start at 3 and take away 1.",
+    "changing.quizTimesTitle": "Triple the steps",
+    "changing.quizTimesQuestion": "What will Python show?",
+    "thinking.changing-timesSuccess": "Yes! The star means times: 2 * 3 is 6.",
+    "thinking.changing-timesHint": "In Python, * means times. What is 2 times 3?",
+    "changing.quizMathTitle": "Two boxes, one answer",
+    "changing.quizMathQuestion": "What will Python show?",
+    "thinking.changing-mathSuccess": "Yes! Python opens both boxes: 4 + 3 is 7.",
+    "thinking.changing-mathHint": "Python does not show the names. It uses the numbers inside the boxes.",
+    "changing.quizJoinTitle": "Say hello",
+    "changing.quizJoinQuestion": "What will Python show?",
+    "thinking.changing-joinSuccess": "Yes! + glues the two pieces of text together.",
+    "thinking.changing-joinHint": "name has no quotes, so Python opens the box and finds \"Ana\".",
+    "changing.quizTextNumbersTitle": "Numbers in quotes",
+    "changing.quizTextNumbersQuestion": "What will Python show?",
+    "thinking.changing-text-numbersSuccess": "Yes! With quotes they are text, so + glues them: 23.",
+    "thinking.changing-text-numbersHint": "Look at the quotes. Quotes mean text, and + glues text.",
+    "changing.fixTask": "PyBot found a star, but its score is still 0. Fix the middle line so the box keeps the new score.",
+    "changing.fixCode": "score = 0\nscore + 1\nprint(score)",
+    "changing.fixExpected": "1",
+    "changing.bigTitle": "A box can use its old value to make a new one.",
+    "changing.bigText": "score = score + 1 adds one. Next, PyBot uses boxes to make choices.",
     "conditionals.eyebrow": "CONDITIONALS",
     "conditionals.title": "Ask. Then choose.",
     "conditionals.intro": "A conditional lets code choose a path after a yes-or-no question.",
@@ -903,7 +987,7 @@ const translations = {
     "loops.bigText": "Next: a loop that asks a question before every turn.",
     "meta.functionsTitle": "Boxes that do a job — PyBot",
     "meta.functionsDescription": "A child-friendly first look at Python functions as boxes that take something in and give something back.",
-    "topic.progressFunctions": "ZONE 7 OF 7",
+    "topic.progressFunctions": "ZONE 6 OF 6",
     "missionFunctions.concept": "FUNCTIONS",
     "missionFunctions.title": "Boxes That Do a Job",
     "missionFunctions.text": "Send something in, get something out.",
@@ -1104,8 +1188,8 @@ const translations = {
     "path.conditionalsIf": "if and else: two paths",
     "path.conditionalsElif": "elif: more questions",
     "path.conditionalsMatch": "match: pick a case",
-    "topic.progressConditionalsElif": "ZONE 4 · 2 OF 3",
-    "topic.progressConditionalsMatch": "ZONE 4 · 3 OF 3",
+    "topic.progressConditionalsElif": "ZONE 3 · 2 OF 3",
+    "topic.progressConditionalsMatch": "ZONE 3 · 3 OF 3",
     "meta.conditionalsElifDescription": "Learn Python elif: ask more than one question and choose among many paths.",
     "conditionalsElif.eyebrow": "CONDITIONALS · ELIF",
     "conditionalsElif.title": "One more question: elif.",
@@ -1369,8 +1453,8 @@ const translations = {
     "path.loopsUntil": "Repeat until",
     "meta.loopsWhileDescription": "Learn Python while loops: repeat while a question is True.",
     "meta.loopsUntilDescription": "Repeat until something is done in Python, with while not and break.",
-    "topic.progressLoopsWhile": "ZONE 5 · 2 OF 3",
-    "topic.progressLoopsUntil": "ZONE 5 · 3 OF 3",
+    "topic.progressLoopsWhile": "ZONE 3 · 2 OF 3",
+    "topic.progressLoopsUntil": "ZONE 3 · 3 OF 3",
     "loopsWhile.eyebrow": "LOOPS · WHILE",
     "loopsWhile.title": "Repeat while it is true.",
     "loopsWhile.intro": "A while loop asks a True-or-False question before every turn. True: one more turn. False: stop.",
@@ -1668,13 +1752,13 @@ const translations = {
     "comparisons.bigTitle": "A comparison is a question with a True or False answer.",
     "comparisons.bigText": "if uses that answer to choose a path. Next, you will pack it all inside a box with a name.",
     "comparisons.next": "Boxes that do a job",
-    "topic.progressComparisons": "ZONE 6 OF 7",
+    "topic.progressComparisons": "ZONE 5 OF 6",
     "language.bigTitle": "A language gives code its rules.",
     "language.bigText": "Next, we will learn the keys used to write those rules.",
     "meta.checkpoint1Title": "Pit stop 1 — PyBot",
     "meta.checkpoint1Description": "A pit stop on the PyBot path: bigger real Python challenges about the zones so far, then a quick check of how it went.",
     "topic.progressCheckpoint1": "PIT STOP 1",
-    "missionCheckpoint1.concept": "PIT STOP · ZONES 2–7",
+    "missionCheckpoint1.concept": "PIT STOP · ZONES 2–6",
     "missionCheckpoint1.title": "Check the Engine",
     "missionCheckpoint1.text": "Bigger challenges with real Python. Then tell PyBot how it went.",
     "functions.next": "Pit stop",
@@ -2074,6 +2158,8 @@ const translations = {
     "backup.exported": "Copia guardada. Guarda el archivo en un lugar seguro.",
     "backup.confirm": "¿Cambiar el avance de este navegador por esta copia? Actividades terminadas en la copia: {count}.",
     "backup.imported": "Listo. Tu avance está de vuelta.",
+    "backup.upgraded": "Listo. Tu avance está de vuelta, actualizado al PyBot más nuevo.",
+    "backup.versionLabel": "Versión del avance",
     "backup.cancelled": "No cambió nada.",
     "backup.invalid": "Este archivo no es una copia de PyBot. No cambió nada.",
     "backup.newer": "Esta copia viene de un PyBot más nuevo. No cambió nada.",
@@ -2091,7 +2177,7 @@ const translations = {
     "course.home": "Inicio",
     "course.eyebrow": "TU PRIMERA RUTA",
     "course.titleStart": "Empieza por lo básico.",
-    "course.titleEnd": "Luego 9 zonas pequeñas y una parada en boxes.",
+    "course.titleEnd": "Luego 6 zonas pequeñas y una parada en boxes.",
     "course.intro": "Ve con calma. Cada zona tiene una idea y una actividad pequeña.",
     "course.rule": "Una idea. Un siguiente paso claro.",
     "course.note": "Sin afán. Una zona pequeña a la vez.",
@@ -2121,9 +2207,9 @@ const translations = {
     "missionBasics.concept": "TECLAS + HERRAMIENTAS + MARCAS",
     "missionBasics.title": "Bases de Python",
     "missionBasics.text": "Conoce teclas útiles, el lugar donde funciona Python y sus marcas especiales.",
-    "mission4.concept": "MEMORIA + VARIABLES",
+    "mission4.concept": "MEMORIA + TIPOS + CAMBIOS",
     "mission4.title": "Cajas de memoria",
-    "mission4.text": "Mira cómo una computadora recuerda un valor por su nombre.",
+    "mission4.text": "Guarda valores en cajas con nombre, conoce cajas de todo tipo y cambia lo que guardan.",
     "mission5.concept": "CONDICIONALES",
     "mission5.title": "Elige un camino",
     "mission5.text": "Elige un camino con if y else, con elif y con match.",
@@ -2328,9 +2414,9 @@ const translations = {
     "topic.progressKeyboard": "ZONA 1 · 1 DE 3",
     "topic.progressEnvironment": "ZONA 1 · 2 DE 3",
     "topic.progressSymbols": "ZONA 1 · 3 DE 3",
-    "topic.progressVariables": "ZONA 2 DE 7",
-    "topic.progressConditionals": "ZONA 4 · 1 DE 3",
-    "topic.progressLoops": "ZONA 5 · 1 DE 3",
+    "topic.progressVariables": "ZONA 2 · 1 DE 3",
+    "topic.progressConditionals": "ZONA 3 · 1 DE 3",
+    "topic.progressLoops": "ZONA 4 · 1 DE 3",
     "topic.lookEyebrow": "MIRA PRIMERO",
     "topic.practiceEyebrow": "TU TURNO",
     "topic.practiceIntro": "Prueba cada pregunta pequeña. Una respuesta incorrecta se convierte en algo para revisar.",
@@ -2501,7 +2587,7 @@ const translations = {
     "variables.tryText": "Pon tu color favorito entre las comillas. Ejecútalo otra vez.",
     "meta.boxesTitle": "Cajas de todo tipo — PyBot",
     "meta.boxesDescription": "Una explicación para niños de las variables como cajitas con etiqueta en la memoria que guardan números, texto, sí o no, listas y cuadrículas.",
-    "topic.progressBoxes": "ZONA 3 DE 7",
+    "topic.progressBoxes": "ZONA 2 · 2 DE 3",
     "missionBoxes.concept": "TIPOS + LISTAS",
     "missionBoxes.title": "Cajas de todo tipo",
     "missionBoxes.text": "Guarda números, texto, sí o no, listas y cuadrículas en cajitas.",
@@ -2571,6 +2657,88 @@ const translations = {
     "boxes.bigTitle": "Una variable es una cajita con etiqueta en la memoria.",
     "boxes.bigText": "Puede guardar un número, un texto, un sí o no, o hasta una lista completa.",
     "boxes.next": "Elige un camino",
+    "boxes.nextChanging": "Cajas que cambian",
+    "meta.changingBoxesTitle": "Cajas que cambian — PyBot",
+    "meta.changingBoxesDescription": "Cambia lo que guarda una caja de Python: súmale, haz cuentas con cajas y une texto.",
+    "topic.progressChangingBoxes": "ZONA 2 · 3 DE 3",
+    "path.boxesLabel": "Páginas de cajas de memoria",
+    "path.variables": "Cajas de memoria",
+    "path.boxes": "Cajas de todo tipo",
+    "path.changingBoxes": "Cajas que cambian",
+    "changing.eyebrow": "CAMBIOS + CUENTAS",
+    "changing.title": "Una caja puede cambiar.",
+    "changing.intro": "Una caja puede tomar su propio valor, cambiarlo y guardar el nuevo. Así cuentan puntos los juegos.",
+    "changing.pybot": "Cada vez que encuentro una estrella, mi caja de puntos crece en uno.",
+    "changing.pybotNamed": "{name}, cada vez que encuentro una estrella, mi caja de puntos crece en uno.",
+    "changing.robotLabel": "PyBot guiña el ojo junto a una caja de puntos que crece",
+    "changing.growEyebrow": "USA EL VALOR VIEJO",
+    "changing.growTitle": "Lee primero el lado derecho.",
+    "changing.growText": "score = score + 1 se ve raro. Python primero resuelve el lado derecho: los puntos viejos más 1. Luego guarda la respuesta en la misma caja.",
+    "changing.growLabel": "Una caja de puntos que crece de 3 a 4",
+    "changing.growNote": "3 + 1 es 4. Ahora la caja guarda 4.",
+    "changing.shortEyebrow": "EL CAMINO CORTO",
+    "changing.shortTitle": "+= le suma a la caja.",
+    "changing.plusTitle": "Súmale",
+    "changing.plusText": "score += 1 es lo mismo que score = score + 1.",
+    "changing.minusTitle": "Quítale",
+    "changing.minusText": "lives -= 1 le quita una vida a la caja.",
+    "changing.replaceTitle": "Empieza de nuevo",
+    "changing.replaceText": "score = 0 bota el valor viejo y guarda 0.",
+    "changing.mathEyebrow": "CUENTAS CON CAJAS",
+    "changing.mathTitle": "Las cajas pueden hacer cuentas juntas.",
+    "changing.mathText": "apples = 4 y pears = 3. Python abre las dos cajas y usa los números de adentro.",
+    "changing.addTitle": "Sumar",
+    "changing.addText": "apples + pears es 7.",
+    "changing.subtractTitle": "Restar",
+    "changing.subtractText": "apples - pears es 1.",
+    "changing.multiplyTitle": "Multiplicar",
+    "changing.multiplyText": "apples * 2 es 8. La estrellita quiere decir por.",
+    "changing.divideTitle": "Dividir",
+    "changing.divideText": "apples / 2 es 2.0. Dividir siempre da un decimal.",
+    "changing.joinEyebrow": "UNE TEXTO",
+    "changing.joinTitle": "+ pega texto.",
+    "changing.joinText": "name = \"Ana\". Entonces \"Hola \" + name da \"Hola Ana\". Pon un espacio dentro de las comillas, o las palabras quedan pegadas.",
+    "changing.joinWatchLabel": "Cuidado:",
+    "changing.joinWatchText": "\"2\" + \"3\" es \"23\", no 5. Con comillas, Python pega texto. Sin comillas, 2 + 3 es 5.",
+    "changing.runTitle": "Cuenta las estrellas de PyBot.",
+    "changing.runCode": "score = 3\nscore = score + 1\nprint(score)",
+    "thinking.changing-predictSuccess": "¡Sí! Python toma el 3 viejo, le suma 1 y guarda 4.",
+    "thinking.changing-predictHint": "Todavía no. Resuelve primero el lado derecho: 3 + 1.",
+    "changing.tryText": "Cambia + 1 por + 10. Luego prueba el camino corto: score += 10.",
+    "changing.practiceTitle": "Cambia las cajas.",
+    "changing.quizPlusTitle": "Súmale a la caja",
+    "changing.quizPlusQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-plusSuccess": "¡Sí! 5 + 2 es 7, y la caja guarda 7.",
+    "thinking.changing-plusHint": "Son números, no texto. Súmalos: 5 + 2.",
+    "changing.quizShortTitle": "El camino corto",
+    "changing.quizShortQuestion": "¿Qué línea hace lo mismo?",
+    "thinking.changing-shortSuccess": "¡Sí! += le suma a lo que ya está en la caja.",
+    "thinking.changing-shortHint": "Busca += . Quiere decir: súmale a la caja.",
+    "changing.quizMinusTitle": "Pierde una vida",
+    "changing.quizMinusQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-minusSuccess": "¡Sí! -= quita uno: 3 - 1 es 2.",
+    "thinking.changing-minusHint": "-= quita. Empieza en 3 y quítale 1.",
+    "changing.quizTimesTitle": "El triple de pasos",
+    "changing.quizTimesQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-timesSuccess": "¡Sí! La estrellita quiere decir por: 2 * 3 es 6.",
+    "thinking.changing-timesHint": "En Python, * quiere decir por. ¿Cuánto es 2 por 3?",
+    "changing.quizMathTitle": "Dos cajas, una respuesta",
+    "changing.quizMathQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-mathSuccess": "¡Sí! Python abre las dos cajas: 4 + 3 es 7.",
+    "thinking.changing-mathHint": "Python no muestra los nombres. Usa los números que hay dentro de las cajas.",
+    "changing.quizJoinTitle": "Saluda",
+    "changing.quizJoinQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-joinSuccess": "¡Sí! + pega los dos pedazos de texto.",
+    "thinking.changing-joinHint": "name no tiene comillas, así que Python abre la caja y encuentra \"Ana\".",
+    "changing.quizTextNumbersTitle": "Números con comillas",
+    "changing.quizTextNumbersQuestion": "¿Qué mostrará Python?",
+    "thinking.changing-text-numbersSuccess": "¡Sí! Con comillas son texto, así que + los pega: 23.",
+    "thinking.changing-text-numbersHint": "Mira las comillas. Comillas quiere decir texto, y + pega texto.",
+    "changing.fixTask": "PyBot encontró una estrella, pero sus puntos siguen en 0. Arregla la línea del medio para que la caja guarde los puntos nuevos.",
+    "changing.fixCode": "score = 0\nscore + 1\nprint(score)",
+    "changing.fixExpected": "1",
+    "changing.bigTitle": "Una caja puede usar su valor viejo para hacer uno nuevo.",
+    "changing.bigText": "score = score + 1 suma uno. Ahora, PyBot usa cajas para tomar decisiones.",
     "conditionals.eyebrow": "CONDICIONALES",
     "conditionals.title": "Pregunta. Luego elige.",
     "conditionals.intro": "Un condicional permite que el código elija un camino después de una pregunta de sí o no.",
@@ -2655,7 +2823,7 @@ const translations = {
     "loops.bigText": "Ahora: un bucle que hace una pregunta antes de cada vuelta.",
     "meta.functionsTitle": "Cajas que hacen un trabajo — PyBot",
     "meta.functionsDescription": "Un primer vistazo para niños a las funciones de Python como cajas que reciben algo y devuelven algo.",
-    "topic.progressFunctions": "ZONA 7 DE 7",
+    "topic.progressFunctions": "ZONA 6 DE 6",
     "missionFunctions.concept": "FUNCIONES",
     "missionFunctions.title": "Cajas que Hacen un Trabajo",
     "missionFunctions.text": "Envía algo adentro y recibe algo afuera.",
@@ -2856,8 +3024,8 @@ const translations = {
     "path.conditionalsIf": "if y else: dos caminos",
     "path.conditionalsElif": "elif: más preguntas",
     "path.conditionalsMatch": "match: elige un caso",
-    "topic.progressConditionalsElif": "ZONA 4 · 2 DE 3",
-    "topic.progressConditionalsMatch": "ZONA 4 · 3 DE 3",
+    "topic.progressConditionalsElif": "ZONA 3 · 2 DE 3",
+    "topic.progressConditionalsMatch": "ZONA 3 · 3 DE 3",
     "meta.conditionalsElifDescription": "Aprende elif en Python: haz más de una pregunta y elige entre muchos caminos.",
     "conditionalsElif.eyebrow": "CONDICIONALES · ELIF",
     "conditionalsElif.title": "Una pregunta más: elif.",
@@ -3121,8 +3289,8 @@ const translations = {
     "path.loopsUntil": "Repetir hasta que",
     "meta.loopsWhileDescription": "Aprende los bucles while de Python: repite mientras una pregunta sea True.",
     "meta.loopsUntilDescription": "Repite hasta que algo termine en Python, con while not y break.",
-    "topic.progressLoopsWhile": "ZONA 5 · 2 DE 3",
-    "topic.progressLoopsUntil": "ZONA 5 · 3 DE 3",
+    "topic.progressLoopsWhile": "ZONA 3 · 2 DE 3",
+    "topic.progressLoopsUntil": "ZONA 3 · 3 DE 3",
     "loopsWhile.eyebrow": "BUCLES · WHILE",
     "loopsWhile.title": "Repite mientras sea verdad.",
     "loopsWhile.intro": "Un bucle while hace una pregunta de True o False antes de cada vuelta. True: una vuelta más. False: se detiene.",
@@ -3420,13 +3588,13 @@ const translations = {
     "comparisons.bigTitle": "Una comparación es una pregunta con respuesta True o False.",
     "comparisons.bigText": "if usa esa respuesta para elegir un camino. Ahora vas a guardar todo dentro de una caja con nombre.",
     "comparisons.next": "Cajas que hacen un trabajo",
-    "topic.progressComparisons": "ZONA 6 DE 7",
+    "topic.progressComparisons": "ZONA 5 DE 6",
     "language.bigTitle": "Un lenguaje le da reglas al código.",
     "language.bigText": "Ahora aprenderemos las teclas usadas para escribir esas reglas.",
     "meta.checkpoint1Title": "Parada en boxes 1 — PyBot",
     "meta.checkpoint1Description": "Una parada en boxes en la ruta de PyBot: retos más grandes con Python real sobre las zonas vistas y luego una pregunta sobre cómo te fue.",
     "topic.progressCheckpoint1": "PARADA EN BOXES 1",
-    "missionCheckpoint1.concept": "PARADA EN BOXES · ZONAS 2–7",
+    "missionCheckpoint1.concept": "PARADA EN BOXES · ZONAS 2–6",
     "missionCheckpoint1.title": "Revisa el Motor",
     "missionCheckpoint1.text": "Retos más grandes con Python real. Luego cuéntale a PyBot cómo te fue.",
     "functions.next": "Parada en boxes",
@@ -3638,6 +3806,7 @@ const backupExportButton = document.querySelector("[data-backup-export]");
 const backupImportButton = document.querySelector("[data-backup-import]");
 const backupImportInput = document.querySelector("[data-backup-file]");
 const backupStatus = document.querySelector("[data-backup-status]");
+const progressVersionLabel = document.querySelector("[data-progress-version]");
 const progressResetButton = document.querySelector("[data-progress-reset]");
 const resetStatus = document.querySelector("[data-reset-status]");
 let currentLanguage = "en";
@@ -3661,9 +3830,17 @@ const PATH_VISITED_KEY = "pybot.path.visited";
 const PATH_DONE_KEY = "pybot.path.done";
 const PATH_KNOWN_KEY = "pybot.path.known";
 const SELF_CHECK_KEY = "pybot.selfcheck";
+const PATH_LIST_KEYS = [PATH_VISITED_KEY, PATH_DONE_KEY, PATH_KNOWN_KEY];
 const SELF_CHECK_RATINGS = ["good", "okay", "review"];
 const BACKUP_FORMAT = "pybot-progress";
 const BACKUP_SCHEMA_VERSION = 1;
+// The version of the course content that saved progress belongs to. Bump it in
+// every PR that adds, renames, or removes a step or activity id
+// (`node tools/progress-version.mjs --bump`), and add a migration below when an
+// id is renamed or removed. Backups carry it, so support can tell where an old
+// backup stopped and upgrade it to the current course.
+const PROGRESS_VERSION = 3;
+const PROGRESS_VERSION_KEY = "pybot.progress.version";
 const BACKUP_MAX_BYTES = 100_000;
 // Preferences and the name survive an emergency progress reset.
 const RESET_KEPT_KEYS = ["pybot.language", "pybot.audio.enabled", LEARNER_NAME_KEY];
@@ -3701,6 +3878,14 @@ const pathSteps = [
     id: "boxes", page: "boxes", href: "lessons/07b-boxes-of-all-kinds.html",
     activities: ["boxes-text", "boxes-yesno", "boxes-list", "boxes-grid", "boxes-predict"],
     activitiesAddedLater: ["boxes-decimal", "boxes-fix"],
+  },
+  // Memory boxes, Boxes of all kinds and Changing boxes form one zone on the map.
+  {
+    id: "changingBoxes", page: "changingBoxes", href: "lessons/07c-changing-boxes.html", addedLater: true,
+    activities: [
+      "changing-predict", "changing-plus", "changing-short", "changing-minus",
+      "changing-times", "changing-math", "changing-join", "changing-text-numbers", "changing-fix",
+    ],
   },
   {
     id: "conditionals", page: "conditionals", href: "lessons/08-conditionals.html",
@@ -3769,6 +3954,13 @@ const pathSteps = [
 ];
 const stepActivityIds = (step) => [...step.activities, ...(step.activitiesAddedLater ?? [])];
 const activityIds = pathSteps.flatMap(stepActivityIds);
+
+// Upgrades saved progress, as { storageKey: value }, from the version before to
+// the given PROGRESS_VERSION. Adding ids needs no migration: the map already
+// shows new steps and activities as pending. Renaming or removing one does, e.g.
+//   2: (progress) => renameProgressActivity(progress, "loop-count", "loop-times"),
+const progressMigrations = {};
+upgradeStoredProgress();
 
 function textFor(key) {
   return translations[currentLanguage][key] ?? translations.en[key] ?? key;
@@ -4567,6 +4759,94 @@ function backupValidators() {
   return validators;
 }
 
+function renameProgressStep(progress, from, to) {
+  const rename = (id) => (id === from ? to : id);
+  if (progress[PATH_CURRENT_KEY] === from) {
+    progress[PATH_CURRENT_KEY] = to;
+  }
+  PATH_LIST_KEYS.filter((key) => typeof progress[key] === "string").forEach((key) => {
+    progress[key] = progress[key].split(",").map(rename).join(",");
+  });
+  if (typeof progress[SELF_CHECK_KEY] === "string") {
+    progress[SELF_CHECK_KEY] = progress[SELF_CHECK_KEY]
+      .split(",")
+      .map((pair) => pair.split(":"))
+      .map(([id, rating]) => `${rename(id)}:${rating}`)
+      .join(",");
+  }
+}
+
+function renameProgressActivity(progress, from, to) {
+  const fromKey = activityStorageKey(from);
+  if (Object.hasOwn(progress, fromKey)) {
+    progress[activityStorageKey(to)] ??= progress[fromKey];
+    delete progress[fromKey];
+  }
+}
+
+// Runs every migration after `fromVersion`, then drops steps and activities the
+// current course no longer has, so progress from any older version still loads.
+function upgradeProgress(progress, fromVersion) {
+  const upgraded = { ...progress };
+  if (fromVersion >= PROGRESS_VERSION) {
+    return upgraded;
+  }
+
+  for (let version = fromVersion + 1; version <= PROGRESS_VERSION; version += 1) {
+    progressMigrations[version]?.(upgraded);
+  }
+
+  const isStep = (id) => pathSteps.some((step) => step.id === id);
+  const keepIds = (key, isKept) => {
+    if (typeof upgraded[key] === "string") {
+      upgraded[key] = upgraded[key].split(",").filter(isKept).join(",");
+    }
+  };
+  PATH_LIST_KEYS.forEach((key) => keepIds(key, isStep));
+  keepIds(SELF_CHECK_KEY, (pair) => isStep(pair.split(":")[0]));
+  if (upgraded[PATH_VISITED_KEY] === "") {
+    delete upgraded[PATH_VISITED_KEY];
+  }
+  if (Object.hasOwn(upgraded, PATH_CURRENT_KEY) && !isStep(upgraded[PATH_CURRENT_KEY])) {
+    delete upgraded[PATH_CURRENT_KEY];
+  }
+  Object.keys(upgraded)
+    .filter((key) => key.startsWith(activityStorageKey("")) && !activityIds.includes(key.slice(activityStorageKey("").length)))
+    .forEach((key) => delete upgraded[key]);
+
+  return upgraded;
+}
+
+// Brings the progress in this browser up to PROGRESS_VERSION after the course changes.
+// Progress saved before versions existed counts as version 1.
+function upgradeStoredProgress() {
+  try {
+    const stored = Number.parseInt(localStorage.getItem(PROGRESS_VERSION_KEY) ?? "1", 10);
+    const fromVersion = Number.isInteger(stored) && stored > 0 ? stored : 1;
+    if (fromVersion > PROGRESS_VERSION) {
+      return;
+    }
+
+    if (fromVersion < PROGRESS_VERSION) {
+      const progress = {};
+      for (let index = 0; index < localStorage.length; index += 1) {
+        const key = localStorage.key(index);
+        if (key?.startsWith("pybot.") && key !== PROGRESS_VERSION_KEY) {
+          progress[key] = localStorage.getItem(key);
+        }
+      }
+
+      const upgraded = upgradeProgress(progress, fromVersion);
+      Object.keys(progress).filter((key) => !Object.hasOwn(upgraded, key)).forEach((key) => localStorage.removeItem(key));
+      Object.entries(upgraded).forEach(([key, value]) => localStorage.setItem(key, value));
+    }
+
+    localStorage.setItem(PROGRESS_VERSION_KEY, String(PROGRESS_VERSION));
+  } catch {
+    // Storage failure must never block a lesson.
+  }
+}
+
 function createBackup() {
   const progress = {};
 
@@ -4580,6 +4860,7 @@ function createBackup() {
   return {
     format: BACKUP_FORMAT,
     schemaVersion: BACKUP_SCHEMA_VERSION,
+    progressVersion: PROGRESS_VERSION,
     exportedAt: new Date().toISOString(),
     progress,
   };
@@ -4598,27 +4879,33 @@ function readBackup(text) {
     return { error: "backup.invalid" };
   }
 
-  if (Number.isInteger(backup.schemaVersion) && backup.schemaVersion > BACKUP_SCHEMA_VERSION) {
+  // Backups saved before progress versions existed belong to version 1.
+  const progressVersion = backup.progressVersion ?? 1;
+  if (
+    (Number.isInteger(backup.schemaVersion) && backup.schemaVersion > BACKUP_SCHEMA_VERSION) ||
+    (Number.isInteger(progressVersion) && progressVersion > PROGRESS_VERSION)
+  ) {
     return { error: "backup.newer" };
   }
 
   const { progress } = backup;
   if (
     backup.schemaVersion !== BACKUP_SCHEMA_VERSION ||
+    !Number.isInteger(progressVersion) ||
+    progressVersion < 1 ||
     !progress ||
     typeof progress !== "object" ||
-    Array.isArray(progress)
+    Array.isArray(progress) ||
+    !Object.values(progress).every((value) => typeof value === "string")
   ) {
     return { error: "backup.invalid" };
   }
 
   const validators = backupValidators();
-  const entries = Object.entries(progress);
-  const allValid = entries.every(
-    ([key, value]) => Object.hasOwn(validators, key) && typeof value === "string" && validators[key](value),
-  );
+  const entries = Object.entries(upgradeProgress(progress, progressVersion));
+  const allValid = entries.every(([key, value]) => Object.hasOwn(validators, key) && validators[key](value));
 
-  return allValid ? { entries } : { error: "backup.invalid" };
+  return allValid ? { entries, upgraded: progressVersion < PROGRESS_VERSION } : { error: "backup.invalid" };
 }
 
 function replaceProgress(entries) {
@@ -5180,6 +5467,10 @@ progressResetButton?.addEventListener("click", () => {
   setBackupStatus("reset.done", resetStatus);
 });
 
+if (progressVersionLabel) {
+  progressVersionLabel.textContent = String(PROGRESS_VERSION);
+}
+
 backupImportButton?.addEventListener("click", () => backupImportInput?.click());
 
 backupImportInput?.addEventListener("change", async () => {
@@ -5215,7 +5506,7 @@ backupImportInput?.addEventListener("change", async () => {
   if (nextAudio !== audioEnabled) {
     setAudioEnabled(nextAudio);
   }
-  setBackupStatus("backup.imported");
+  setBackupStatus(result.upgraded ? "backup.upgraded" : "backup.imported");
 });
 
 pythonEditor?.addEventListener("input", () => {
