@@ -126,13 +126,13 @@ const translations = {
     "meta.homeTitle": "PyBot — Python, one step at a time",
     "meta.meetTitle": "Meet PyBot — PyBot",
     "meta.courseTitle": "Learning path — PyBot",
-    "meta.worldTitle": "What can code do? — PyBot",
+    "meta.worldTitle": "Code is everywhere! — PyBot",
     "meta.thinkingTitle": "Your brain makes tiny plans — PyBot",
     "meta.languageTitle": "What is a programming language? — PyBot",
     "meta.homeDescription": "PyBot helps children discover Python through tiny ideas, clear steps, and playful practice.",
     "meta.meetDescription": "Meet PyBot and try the expressions used throughout the course.",
     "meta.courseDescription": "A short foundation and seven small learning zones for children, guided by PyBot.",
-    "meta.worldDescription": "See the small jobs code can do in apps children use every day.",
+    "meta.worldDescription": "Find the code hiding in games, robots, rockets, cartoons, music and medicine.",
     "meta.thinkingDescription": "A playful lesson about the small plans children already make every day.",
     "meta.languageDescription": "A short, child-friendly explanation of programming languages.",
     "a11y.skip": "Skip to content",
@@ -388,13 +388,13 @@ const translations = {
     "lesson.backPath": "Back to the path",
     "lesson.bigIdea": "BIG IDEA",
     "world.eyebrow": "BEFORE PYTHON",
-    "world.title": "What can code do?",
-    "world.intro": "Code helps apps do small jobs, very fast.",
-    "world.pybot": "You already use code every day.",
-    "world.pybotNamed": "{name}, you already use code every day.",
-    "world.robotLabel": "PyBot looks curious and asks a question",
-    "world.appsEyebrow": "APPS YOU MAY KNOW",
-    "world.appsTitle": "Look what code does inside them.",
+    "world.title": "Code is everywhere!",
+    "world.intro": "Games, robots, rockets, cartoons and music all run on code. Let's go find it!",
+    "world.pybot": "You already use code every day. Today we hunt for it!",
+    "world.pybotNamed": "{name}, you already use code every day. Today we hunt for it!",
+    "world.robotLabel": "PyBot smiles with starry eyes, surrounded by a game pad, a rocket, music, a stethoscope and a movie clapper",
+    "world.appsEyebrow": "AMAZING PLACES",
+    "world.appsTitle": "Look what code does out there.",
     "world.examplesLabel": "YOU MAY KNOW",
     "world.examplesNote": "App names are examples only. PyBot is not connected to them.",
     "world.gameExamples": "Roblox · Minecraft",
@@ -407,8 +407,139 @@ const translations = {
     "world.learnTitle": "Learning",
     "world.learnText": "Checks answers. Counts streaks. Opens the next level.",
     "world.bigTitle": "Big apps are many small jobs.",
-    "world.bigText": "We will learn one small job at a time.",
+    "world.bigText": "People write those jobs in code. You will learn one small job at a time.",
     "world.next": "Your brain makes tiny plans",
+    "world.dayEyebrow": "ONE DAY, LOTS OF CODE",
+    "world.dayTitle": "Code helps you all day long.",
+    "world.dayIntro": "You can't see it, but it is there. Follow one day and spot it.",
+    "world.huntEyebrow": "CODE HUNT",
+    "world.huntTitle": "Where is the code hiding?",
+    "world.huntIntro": "Tap every thing that has code inside. There are 6.",
+    "world.huntCardTitle": "Find the 6 things with code",
+    "world.huntFound": "Found:",
+    "world.peekIntro": "Each card shows a tiny peek of what the code could look like. Soon you will read it!",
+    "world.pythonEyebrow": "PYTHON IS A SUPERSTAR",
+    "world.pythonTitle": "The language you will learn does big things.",
+    "world.pythonIntro": "PyBot speaks Python. So do many scientists and app makers.",
+    "world.runEyebrow": "YOUR FIRST CODE",
+    "world.runTitle": "Say hello like a real programmer.",
+    "world.runIntro": "Press Run Python. The computer does exactly what the code says.",
+    "world.runCode": "print(\"Hello, world!\")\nprint(\"I am learning Python\")\nprint(\"Code is my superpower\")",
+    "world.tryText": "Change the words inside the quotes. Write your name! Then run it again.",
+    "world.practiceTitle": "Code detective quiz",
+    "thinking.world-huntSuccess": "You found all 6! Code hides in anything that lights up, moves by itself or counts.",
+    "thinking.world-huntHint": "Not that one. It has no chip and no code inside. Look for things that light up, move or count.",
+    "thinking.world-coinSuccess": "Yes! The game's code adds 10 points every time you grab a coin.",
+    "thinking.world-coinHint": "Not yet. Someone wrote an instruction: grab a coin, add 10 points.",
+    "thinking.world-roverSuccess": "Yes! People on Earth write the code, and the rover follows it step by step.",
+    "thinking.world-roverHint": "Not yet. Nobody is inside. The rover follows instructions people wrote.",
+    "thinking.world-vacuumSuccess": "Yes! Its code says: if there is a wall, turn and try another way.",
+    "thinking.world-vacuumHint": "Not yet. Robots don't feel sad. Its code tells it what to do next.",
+    "thinking.world-songSuccess": "Yes! One small job: when a song ends, play the next one.",
+    "thinking.world-songHint": "Not yet. Think of one small, simple job the app does when a song ends.",
+    "thinking.world-nocodeSuccess": "Yes! A banana grows on a tree. It has no chip and no code.",
+    "thinking.world-nocodeHint": "Not yet. Which one has no screen, no battery and no chip?",
+    "thinking.world-whoSuccess": "Yes! People write code. Kids too. You are starting today!",
+    "thinking.world-whoHint": "Not yet. Code is written by people, and anyone can learn. Even you!",
+    "thinking.world-bigSuccess": "Yes! A big app is many small jobs working together.",
+    "thinking.world-bigHint": "Not yet. Count the jobs the game does: move, save, check. Many small ones!",
+    "world.dayAlarmTitle": "The alarm rings",
+    "world.dayAlarmText": "Code counts the minutes and wakes you up on time.",
+    "world.dayTrafficTitle": "Traffic lights change",
+    "world.dayTrafficText": "Code waits, then switches red, yellow, green.",
+    "world.daySchoolTitle": "A school app checks your answer",
+    "world.daySchoolText": "Code compares your answer with the right one.",
+    "world.dayPlayTitle": "A game saves your points",
+    "world.dayPlayText": "Code adds +10 every time you grab a coin.",
+    "world.dayMicrowaveTitle": "The microwave pops popcorn",
+    "world.dayMicrowaveText": "Code counts down 2 minutes and beeps.",
+    "world.dayCartoonTitle": "A cartoon on TV",
+    "world.dayCartoonText": "Code helped animators move every hair and drop of water.",
+    "world.dayMusicTitle": "Music for bedtime",
+    "world.dayMusicText": "Code picks the next song when one ends.",
+    "world.huntTablet": "Tablet",
+    "world.huntTeddy": "Teddy bear",
+    "world.huntConsole": "Game console",
+    "world.huntVacuum": "Robot vacuum",
+    "world.huntBanana": "Banana",
+    "world.huntTraffic": "Traffic light",
+    "world.huntPencil": "Pencil",
+    "world.huntWatch": "Smart watch",
+    "world.huntSatellite": "Satellite",
+    "world.gamePeek": "if coins == 100:\n    lives = lives + 1",
+    "world.spacePeek": "if rock_ahead:\n    turn_left()",
+    "world.spaceExamples": "Mars rovers · satellites",
+    "world.spaceTitle": "Space",
+    "world.spaceText": "Drives rovers on Mars. Points telescopes at faraway stars.",
+    "world.moviePeek": "for frame in range(24):\n    draw(frame)",
+    "world.movieExamples": "Animated movies",
+    "world.movieTitle": "Movies",
+    "world.movieText": "Moves hair, water and snow in cartoons, frame by frame.",
+    "world.musicPeek": "volume = volume + 1",
+    "world.musicExamples": "Music apps",
+    "world.musicTitle": "Music",
+    "world.musicText": "Plays the next song. Mixes beats. Makes sounds louder or softer.",
+    "world.medicinePeek": "if heartbeat > 120:\n    alert()",
+    "world.medicineExamples": "Hospitals",
+    "world.medicineTitle": "Medicine",
+    "world.medicineText": "Helps doctors read X-rays. Counts heartbeats. Guides tiny robot arms.",
+    "world.robotPeek": "if wall_ahead:\n    turn()",
+    "world.robotExamples": "Robot vacuums · robot toys",
+    "world.robotTitle": "Robots",
+    "world.robotText": "Tells robots when to move, stop and turn.",
+    "world.mapPeek": "if traffic:\n    find_new_route()",
+    "world.videoPeek": "print(\"Keep watching?\")",
+    "world.learnPeek": "streak = streak + 1",
+    "world.factBlackholeTitle": "A photo of a black hole",
+    "world.factBlackholeText": "In 2019, scientists showed the first photo of a black hole. Python helped them put the picture together.",
+    "world.factAppsTitle": "Apps millions of people use",
+    "world.factAppsText": "Big apps, like Instagram, use lots of Python to keep running.",
+    "world.factScienceTitle": "Scientists and space agencies",
+    "world.factScienceText": "Scientists at places like NASA use Python to study planets, weather and animals.",
+    "world.factMakersTitle": "Robots and Minecraft",
+    "world.factMakersText": "Kids code small robots, tiny computers and Minecraft worlds with Python.",
+    "world.coinTitle": "Coin collector",
+    "world.coinScene": "In a game you grab a coin, and your points go from 20 to 30.",
+    "world.coinQuestion": "Who added the 10 points?",
+    "world.coinOption1": "Magic",
+    "world.coinOption2": "Code in the game",
+    "world.coinOption3": "The screen, by itself",
+    "world.roverTitle": "Driving on Mars",
+    "world.roverScene": "A rover is on Mars. No person is sitting inside it.",
+    "world.roverQuestion": "How does it know what to do?",
+    "world.roverOption1": "It guesses",
+    "world.roverOption2": "An astronaut drives it",
+    "world.roverOption3": "It follows code people wrote",
+    "world.vacuumTitle": "Bump!",
+    "world.vacuumScene": "A robot vacuum bumps into the sofa.",
+    "world.vacuumQuestion": "What does its code tell it to do?",
+    "world.vacuumOption1": "Turn and try another way",
+    "world.vacuumOption2": "Cry",
+    "world.vacuumOption3": "Stop forever",
+    "world.songTitle": "Next song",
+    "world.songScene": "A song ends in your music app.",
+    "world.songQuestion": "What small job does the code do now?",
+    "world.songOption1": "Breaks the phone",
+    "world.songOption2": "Plays the next song",
+    "world.songOption3": "Writes a new song by itself",
+    "world.nocodeTitle": "No code here",
+    "world.nocodeScene": "A banana, a game console and a smart watch are on the table.",
+    "world.nocodeQuestion": "Which one has NO code inside?",
+    "world.nocodeOption1": "A game console",
+    "world.nocodeOption2": "A smart watch",
+    "world.nocodeOption3": "A banana",
+    "world.whoTitle": "Who writes code?",
+    "world.whoScene": "Every app, game and robot has code inside.",
+    "world.whoQuestion": "Who writes it?",
+    "world.whoOption1": "People, and soon you too!",
+    "world.whoOption2": "Only robots",
+    "world.whoOption3": "Only grown-up geniuses",
+    "world.bigTitle": "Big app, small jobs",
+    "world.bigScene": "A game moves characters, saves points and checks who wins.",
+    "world.bigQuestion": "What is a big app made of?",
+    "world.bigOption1": "One giant job",
+    "world.bigOption2": "Many small jobs",
+    "world.bigOption3": "Batteries only",
     "thinking.eyebrow": "BEFORE PYTHON",
     "thinking.title": "Your brain makes tiny plans.",
     "thinking.intro": "A plan is a few steps in an order that works.",
@@ -3014,13 +3145,13 @@ const translations = {
     "meta.homeTitle": "PyBot — Python, un paso a la vez",
     "meta.meetTitle": "Conoce a PyBot — PyBot",
     "meta.courseTitle": "Ruta de aprendizaje — PyBot",
-    "meta.worldTitle": "¿Qué puede hacer el código? — PyBot",
+    "meta.worldTitle": "¡El código está en todas partes! — PyBot",
     "meta.thinkingTitle": "Tu cerebro hace pequeños planes — PyBot",
     "meta.languageTitle": "¿Qué es un lenguaje de programación? — PyBot",
     "meta.homeDescription": "PyBot ayuda a los niños a descubrir Python con ideas pequeñas, pasos claros y práctica divertida.",
     "meta.meetDescription": "Conoce a PyBot y prueba los gestos que usa durante el curso.",
     "meta.courseDescription": "Una base corta y siete pequeñas zonas de aprendizaje para niños, guiadas por PyBot.",
-    "meta.worldDescription": "Mira los pequeños trabajos que hace el código en aplicaciones que los niños usan cada día.",
+    "meta.worldDescription": "Encuentra el código escondido en juegos, robots, cohetes, dibujos animados, música y medicina.",
     "meta.thinkingDescription": "Una lección divertida sobre los pequeños planes que los niños ya hacen cada día.",
     "meta.languageDescription": "Una explicación corta y sencilla de los lenguajes de programación.",
     "a11y.skip": "Saltar al contenido",
@@ -3276,13 +3407,13 @@ const translations = {
     "lesson.backPath": "Volver a la ruta",
     "lesson.bigIdea": "IDEA CLAVE",
     "world.eyebrow": "ANTES DE PYTHON",
-    "world.title": "¿Qué puede hacer el código?",
-    "world.intro": "El código ayuda a las apps con tareas pequeñas y rápidas.",
-    "world.pybot": "Ya usas código todos los días.",
-    "world.pybotNamed": "{name}, ya usas código todos los días.",
-    "world.robotLabel": "PyBot mira con curiosidad y hace una pregunta",
-    "world.appsEyebrow": "APPS QUE TAL VEZ CONOCES",
-    "world.appsTitle": "Mira lo que hace el código dentro de ellas.",
+    "world.title": "¡El código está en todas partes!",
+    "world.intro": "Juegos, robots, cohetes, dibujos animados y música funcionan con código. ¡Vamos a encontrarlo!",
+    "world.pybot": "Ya usas código todos los días. ¡Hoy vamos a cazarlo!",
+    "world.pybotNamed": "{name}, ya usas código todos los días. ¡Hoy vamos a cazarlo!",
+    "world.robotLabel": "PyBot sonríe con ojos de estrella, rodeado de un control de juego, un cohete, música, un estetoscopio y una claqueta de cine",
+    "world.appsEyebrow": "LUGARES INCREÍBLES",
+    "world.appsTitle": "Mira lo que hace el código allá afuera.",
     "world.examplesLabel": "TAL VEZ CONOCES",
     "world.examplesNote": "Los nombres son solo ejemplos. PyBot no está conectado con estas apps.",
     "world.gameExamples": "Roblox · Minecraft",
@@ -3295,8 +3426,139 @@ const translations = {
     "world.learnTitle": "Aprender",
     "world.learnText": "Revisa respuestas. Cuenta rachas. Abre el siguiente nivel.",
     "world.bigTitle": "Las apps grandes juntan tareas pequeñas.",
-    "world.bigText": "Aprenderemos una tarea pequeña a la vez.",
+    "world.bigText": "Las personas escriben esas tareas en código. Aprenderás una tarea pequeña a la vez.",
     "world.next": "Tu cerebro hace pequeños planes",
+    "world.dayEyebrow": "UN DÍA, MUCHO CÓDIGO",
+    "world.dayTitle": "El código te ayuda todo el día.",
+    "world.dayIntro": "No lo ves, pero está ahí. Sigue un día y encuéntralo.",
+    "world.huntEyebrow": "CAZA DE CÓDIGO",
+    "world.huntTitle": "¿Dónde se esconde el código?",
+    "world.huntIntro": "Toca cada cosa que tiene código adentro. Son 6.",
+    "world.huntCardTitle": "Encuentra las 6 cosas con código",
+    "world.huntFound": "Encontradas:",
+    "world.peekIntro": "Cada tarjeta muestra un pedacito de cómo podría verse el código. ¡Pronto lo vas a leer!",
+    "world.pythonEyebrow": "PYTHON ES UNA ESTRELLA",
+    "world.pythonTitle": "El lenguaje que vas a aprender hace cosas enormes.",
+    "world.pythonIntro": "PyBot habla Python. También muchos científicos y creadores de apps.",
+    "world.runEyebrow": "TU PRIMER CÓDIGO",
+    "world.runTitle": "Saluda como una persona programadora de verdad.",
+    "world.runIntro": "Presiona Ejecutar Python. La computadora hace exactamente lo que dice el código.",
+    "world.runCode": "print(\"¡Hola, mundo!\")\nprint(\"Estoy aprendiendo Python\")\nprint(\"El código es mi superpoder\")",
+    "world.tryText": "Cambia las palabras dentro de las comillas. ¡Escribe tu nombre! Luego ejecútalo otra vez.",
+    "world.practiceTitle": "Quiz de detectives del código",
+    "thinking.world-huntSuccess": "¡Encontraste las 6! El código se esconde en lo que se ilumina, se mueve solo o cuenta.",
+    "thinking.world-huntHint": "Esa no. No tiene chip ni código adentro. Busca cosas que se iluminan, se mueven o cuentan.",
+    "thinking.world-coinSuccess": "¡Sí! El código del juego suma 10 puntos cada vez que agarras una moneda.",
+    "thinking.world-coinHint": "Todavía no. Alguien escribió una instrucción: agarra una moneda, suma 10 puntos.",
+    "thinking.world-roverSuccess": "¡Sí! Personas en la Tierra escriben el código y el róver lo sigue paso a paso.",
+    "thinking.world-roverHint": "Todavía no. No hay nadie adentro. El róver sigue instrucciones que escribieron personas.",
+    "thinking.world-vacuumSuccess": "¡Sí! Su código dice: si hay una pared, gira y prueba otro camino.",
+    "thinking.world-vacuumHint": "Todavía no. Los robots no se ponen tristes. Su código le dice qué hacer después.",
+    "thinking.world-songSuccess": "¡Sí! Una tarea pequeña: cuando termina una canción, poner la siguiente.",
+    "thinking.world-songHint": "Todavía no. Piensa en una tarea pequeña y simple que hace la app cuando termina una canción.",
+    "thinking.world-nocodeSuccess": "¡Sí! El banano crece en un árbol. No tiene chip ni código.",
+    "thinking.world-nocodeHint": "Todavía no. ¿Cuál no tiene pantalla, ni batería, ni chip?",
+    "thinking.world-whoSuccess": "¡Sí! Las personas escriben código. Los niños también. ¡Tú empiezas hoy!",
+    "thinking.world-whoHint": "Todavía no. El código lo escriben personas, y cualquiera puede aprender. ¡Hasta tú!",
+    "thinking.world-bigSuccess": "¡Sí! Una app grande son muchas tareas pequeñas trabajando juntas.",
+    "thinking.world-bigHint": "Todavía no. Cuenta las tareas del juego: mover, guardar, revisar. ¡Muchas pequeñas!",
+    "world.dayAlarmTitle": "Suena la alarma",
+    "world.dayAlarmText": "El código cuenta los minutos y te despierta a tiempo.",
+    "world.dayTrafficTitle": "Cambia el semáforo",
+    "world.dayTrafficText": "El código espera y cambia a rojo, amarillo y verde.",
+    "world.daySchoolTitle": "Una app del colegio revisa tu respuesta",
+    "world.daySchoolText": "El código compara tu respuesta con la correcta.",
+    "world.dayPlayTitle": "Un juego guarda tus puntos",
+    "world.dayPlayText": "El código suma +10 cada vez que agarras una moneda.",
+    "world.dayMicrowaveTitle": "El microondas hace palomitas",
+    "world.dayMicrowaveText": "El código cuenta 2 minutos hacia atrás y pita.",
+    "world.dayCartoonTitle": "Dibujos animados en la tele",
+    "world.dayCartoonText": "El código ayudó a los animadores a mover cada pelo y cada gota de agua.",
+    "world.dayMusicTitle": "Música para dormir",
+    "world.dayMusicText": "El código escoge la siguiente canción cuando una termina.",
+    "world.huntTablet": "Tableta",
+    "world.huntTeddy": "Osito de peluche",
+    "world.huntConsole": "Consola de juegos",
+    "world.huntVacuum": "Robot aspiradora",
+    "world.huntBanana": "Banano",
+    "world.huntTraffic": "Semáforo",
+    "world.huntPencil": "Lápiz",
+    "world.huntWatch": "Reloj inteligente",
+    "world.huntSatellite": "Satélite",
+    "world.gamePeek": "if monedas == 100:\n    vidas = vidas + 1",
+    "world.spaceExamples": "Róveres en Marte · satélites",
+    "world.spaceTitle": "Espacio",
+    "world.spaceText": "Maneja róveres en Marte. Apunta telescopios a estrellas lejanas.",
+    "world.spacePeek": "if roca_adelante:\n    girar_izquierda()",
+    "world.movieExamples": "Películas animadas",
+    "world.movieTitle": "Películas",
+    "world.movieText": "Mueve pelo, agua y nieve en los dibujos animados, cuadro por cuadro.",
+    "world.moviePeek": "for cuadro in range(24):\n    dibujar(cuadro)",
+    "world.musicExamples": "Apps de música",
+    "world.musicTitle": "Música",
+    "world.musicText": "Pone la siguiente canción. Mezcla ritmos. Sube o baja el volumen.",
+    "world.musicPeek": "volumen = volumen + 1",
+    "world.medicineExamples": "Hospitales",
+    "world.medicineTitle": "Medicina",
+    "world.medicineText": "Ayuda a los médicos a leer radiografías. Cuenta latidos. Guía pequeños brazos robot.",
+    "world.medicinePeek": "if latidos > 120:\n    alerta()",
+    "world.robotExamples": "Robots aspiradora · robots de juguete",
+    "world.robotTitle": "Robots",
+    "world.robotText": "Les dice a los robots cuándo moverse, parar y girar.",
+    "world.robotPeek": "if pared_adelante:\n    girar()",
+    "world.mapPeek": "if trafico:\n    buscar_otra_ruta()",
+    "world.videoPeek": "print(\"¿Seguir viendo?\")",
+    "world.learnPeek": "racha = racha + 1",
+    "world.factBlackholeTitle": "Una foto de un agujero negro",
+    "world.factBlackholeText": "En 2019, unos científicos mostraron la primera foto de un agujero negro. Python les ayudó a armar la imagen.",
+    "world.factAppsTitle": "Apps que usan millones de personas",
+    "world.factAppsText": "Apps grandes, como Instagram, usan mucho Python para funcionar.",
+    "world.factScienceTitle": "Científicos y agencias espaciales",
+    "world.factScienceText": "Científicos en lugares como la NASA usan Python para estudiar planetas, el clima y los animales.",
+    "world.factMakersTitle": "Robots y Minecraft",
+    "world.factMakersText": "Niños y niñas programan robots pequeños, computadoras diminutas y mundos de Minecraft con Python.",
+    "world.coinTitle": "Coleccionista de monedas",
+    "world.coinScene": "En un juego agarras una moneda y tus puntos pasan de 20 a 30.",
+    "world.coinQuestion": "¿Quién sumó los 10 puntos?",
+    "world.coinOption1": "Magia",
+    "world.coinOption2": "El código del juego",
+    "world.coinOption3": "La pantalla, sola",
+    "world.roverTitle": "Manejando en Marte",
+    "world.roverScene": "Un róver está en Marte. No hay ninguna persona adentro.",
+    "world.roverQuestion": "¿Cómo sabe qué hacer?",
+    "world.roverOption1": "Adivina",
+    "world.roverOption2": "Lo maneja un astronauta",
+    "world.roverOption3": "Sigue el código que escribieron personas",
+    "world.vacuumTitle": "¡Pum!",
+    "world.vacuumScene": "Un robot aspiradora choca con el sofá.",
+    "world.vacuumQuestion": "¿Qué le dice su código que haga?",
+    "world.vacuumOption1": "Girar y probar otro camino",
+    "world.vacuumOption2": "Llorar",
+    "world.vacuumOption3": "Parar para siempre",
+    "world.songTitle": "Siguiente canción",
+    "world.songScene": "Termina una canción en tu app de música.",
+    "world.songQuestion": "¿Qué tarea pequeña hace el código ahora?",
+    "world.songOption1": "Daña el teléfono",
+    "world.songOption2": "Pone la siguiente canción",
+    "world.songOption3": "Escribe una canción nueva solo",
+    "world.nocodeTitle": "Aquí no hay código",
+    "world.nocodeScene": "Un banano, una consola de juegos y un reloj inteligente están en la mesa.",
+    "world.nocodeQuestion": "¿Cuál NO tiene código adentro?",
+    "world.nocodeOption1": "La consola de juegos",
+    "world.nocodeOption2": "El reloj inteligente",
+    "world.nocodeOption3": "El banano",
+    "world.whoTitle": "¿Quién escribe el código?",
+    "world.whoScene": "Cada app, juego y robot tiene código adentro.",
+    "world.whoQuestion": "¿Quién lo escribe?",
+    "world.whoOption1": "¡Personas, y pronto tú también!",
+    "world.whoOption2": "Solo robots",
+    "world.whoOption3": "Solo genios adultos",
+    "world.bigTitle": "App grande, tareas pequeñas",
+    "world.bigScene": "Un juego mueve personajes, guarda puntos y revisa quién gana.",
+    "world.bigQuestion": "¿De qué está hecha una app grande?",
+    "world.bigOption1": "Una tarea gigante",
+    "world.bigOption2": "Muchas tareas pequeñas",
+    "world.bigOption3": "Solo de baterías",
     "thinking.eyebrow": "ANTES DE PYTHON",
     "thinking.title": "Tu cerebro hace pequeños planes.",
     "thinking.intro": "Un plan son varios pasos en un orden que funciona.",
@@ -5943,7 +6205,7 @@ const BACKUP_SCHEMA_VERSION = 1;
 // (`node tools/progress-version.mjs --bump`), and add a migration below when an
 // id is renamed or removed. Backups carry it, so support can tell where an old
 // backup stopped and upgrade it to the current course.
-const PROGRESS_VERSION = 8;
+const PROGRESS_VERSION = 9;
 const PROGRESS_VERSION_KEY = "pybot.progress.version";
 const BACKUP_MAX_BYTES = 100_000;
 // Preferences and the name survive an emergency progress reset.
@@ -5952,7 +6214,13 @@ const RESET_KEPT_KEYS = ["pybot.language", "pybot.audio.enabled", LEARNER_NAME_K
 // here: learners who had finished the step see it as unfinished again.
 // `activitiesAddedLater` only matters for progress saved before PATH_DONE_KEY existed.
 const pathSteps = [
-  { id: "world", page: "world", href: "lessons/01-real-world.html", activities: [] },
+  {
+    id: "world", page: "world", href: "lessons/01-real-world.html",
+    activities: [
+      "world-hunt", "world-coin", "world-rover", "world-vacuum",
+      "world-song", "world-nocode", "world-who", "world-big",
+    ],
+  },
   {
     id: "thinking", page: "thinking", href: "lessons/02-thinking-in-steps.html",
     activities: ["water", "bag", "hands", "teeth", "dressed", "cereal", "drawing", "bedtime", "reading", "photo"],
@@ -7551,6 +7819,73 @@ function resetPatternActivity(activity) {
 
 document.querySelectorAll(".pattern-fix").forEach(resetPatternActivity);
 
+// "Code hunt": tap every object that has code inside. A wrong tap asks for a
+// review; finding them all completes the activity.
+function huntItems(activity) {
+  return activity.querySelectorAll(".hunt-item");
+}
+
+function updateHuntCount(activity) {
+  const found = activity.querySelectorAll('.hunt-item[data-hunt="code"].is-found').length;
+  const counter = activity.querySelector("[data-hunt-found]");
+  if (counter) {
+    counter.textContent = String(found);
+  }
+  return found;
+}
+
+function finishCodeHunt(activity) {
+  huntItems(activity).forEach((item) => {
+    item.classList.toggle("is-found", item.dataset.hunt === "code");
+    item.classList.remove("is-wrong");
+    item.setAttribute("aria-pressed", String(item.dataset.hunt === "code"));
+    item.disabled = true;
+  });
+  updateHuntCount(activity);
+}
+
+function resetCodeHunt(activity) {
+  if (!activity.classList.contains("code-hunt")) {
+    return;
+  }
+  huntItems(activity).forEach((item) => {
+    item.classList.remove("is-found", "is-wrong");
+    item.setAttribute("aria-pressed", "false");
+    item.disabled = false;
+  });
+  updateHuntCount(activity);
+}
+
+document.querySelectorAll(".code-hunt").forEach((activity) => {
+  const total = activity.querySelectorAll('.hunt-item[data-hunt="code"]').length;
+  huntItems(activity).forEach((item) => {
+    item.addEventListener("click", () => {
+      if (item.dataset.hunt === "code") {
+        item.classList.add("is-found");
+        item.setAttribute("aria-pressed", "true");
+        item.disabled = true;
+        if (updateHuntCount(activity) === total) {
+          finishCodeHunt(activity);
+          completeActivity(activity, null);
+        }
+        return;
+      }
+
+      item.classList.remove("is-wrong");
+      void item.offsetWidth;
+      item.classList.add("is-wrong");
+      activity.classList.add("needs-review");
+      showActivityFeedback(activity, "hint");
+      try {
+        localStorage.setItem(activityStorageKey(activity.dataset.activityId), "review");
+      } catch {
+        // The review counter still works for the current page.
+      }
+      updatePlanProgressSummary();
+    });
+  });
+});
+
 function restoreStepActivities() {
   stepActivities.forEach((activity) => {
     let storedState;
@@ -7567,6 +7902,9 @@ function restoreStepActivities() {
       } else if (activity.classList.contains("pattern-fix")) {
         completeActivity(activity, null, false);
         renderPatternRow(activity, activity.dataset.patternGoal.split(","));
+      } else if (activity.classList.contains("code-hunt")) {
+        completeActivity(activity, null, false);
+        finishCodeHunt(activity);
       }
     } else if (storedState === "review") {
       activity.classList.add("needs-review");
@@ -7586,6 +7924,7 @@ function resetStepActivity(activity) {
   activity.querySelector(".answer-confetti")?.remove();
   resetFixActivity(activity);
   resetPatternActivity(activity);
+  resetCodeHunt(activity);
   buttons.forEach((button) => {
     button.disabled = false;
     button.classList.remove("is-correct", "is-wrong");

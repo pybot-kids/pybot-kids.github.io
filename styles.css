@@ -6920,3 +6920,275 @@ button:focus-visible {
   border-radius: 7px;
   background: var(--white);
 }
+
+/* Lesson 01: Code in the real world */
+.scene-world-orbit span {
+  position: absolute;
+  z-index: 8;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 3px solid var(--blue-dark);
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 4px 5px 0 rgba(23, 59, 130, 0.16);
+  font-size: 1.7rem;
+  animation: world-orbit-bob 3.2s ease-in-out infinite;
+}
+
+.orbit-game { top: 150px; left: -8px; background: var(--yellow); }
+.orbit-space { top: 118px; right: -10px; animation-delay: -0.6s; }
+.orbit-music { top: 270px; right: -26px; background: var(--blue-soft); animation-delay: -1.2s; }
+.orbit-medicine { bottom: 40px; left: -18px; background: var(--orange-soft); animation-delay: -1.8s; }
+.orbit-movie { bottom: 22px; right: 18px; background: var(--yellow-soft); animation-delay: -2.4s; }
+
+@keyframes world-orbit-bob {
+  0%,
+  100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-10px) rotate(4deg); }
+}
+
+.world-day,
+.world-hunt {
+  padding: 95px 0 0;
+}
+
+.day-strip {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 12px;
+  margin: 38px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.day-card {
+  position: relative;
+  padding: 18px 14px 16px;
+  border: 2px solid var(--line);
+  border-radius: 20px;
+  background: var(--white);
+  box-shadow: 0 8px 20px rgba(35, 68, 114, 0.07);
+}
+
+.day-card:nth-child(odd) { border-bottom: 6px solid var(--orange); }
+.day-card:nth-child(even) { border-bottom: 6px solid var(--blue); }
+
+.day-time {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--blue-dark);
+  color: var(--white);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.day-icon {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: 2.1rem;
+  line-height: 1.2;
+}
+
+.day-card h3 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.day-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.code-hunt {
+  margin-top: 38px;
+}
+
+.hunt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.hunt-item {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+  padding: 16px 10px;
+  border: 3px dashed #b9c7d8;
+  border-radius: 20px;
+  background: var(--cream);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.hunt-item span {
+  font-size: 2.6rem;
+  line-height: 1.1;
+}
+
+.hunt-item b {
+  font-size: 0.92rem;
+}
+
+.hunt-item:hover:not(:disabled) {
+  border-color: var(--blue);
+  transform: translateY(-3px);
+}
+
+.hunt-item:focus-visible {
+  outline: 4px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.hunt-item.is-found {
+  border: 3px solid var(--blue);
+  background: var(--blue-soft);
+  box-shadow: 0 0 0 4px rgba(39, 100, 216, 0.15);
+  cursor: default;
+}
+
+.hunt-item.is-found b::after {
+  content: " </>";
+  color: var(--blue);
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.hunt-item.is-wrong {
+  border-color: var(--orange);
+  background: var(--orange-soft);
+  animation: answer-shake 380ms ease;
+}
+
+.hunt-item:disabled:not(.is-found) {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.hunt-count {
+  margin: 16px 0 0;
+  font-weight: 800;
+}
+
+.hunt-count b {
+  color: var(--blue);
+  font-size: 1.3rem;
+}
+
+.app-jobs .app-job-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.app-space { --card-accent: var(--blue-dark); }
+.app-movie { --card-accent: var(--orange); }
+.app-music { --card-accent: #e0b400; }
+.app-medicine { --card-accent: var(--orange-dark); }
+.app-robot { --card-accent: var(--blue); }
+
+.app-space .app-job-icon,
+.app-robot .app-job-icon {
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+.app-movie .app-job-icon,
+.app-medicine .app-job-icon {
+  background: var(--orange-soft);
+  color: var(--orange-dark);
+}
+
+.app-music .app-job-icon {
+  background: var(--yellow-soft);
+  color: #745900;
+}
+
+.app-peek {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--blue-dark);
+  color: #fff4c9;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.world-fact > span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 2.2rem;
+}
+
+.world-runner {
+  max-width: 760px;
+  margin-top: 38px;
+}
+
+@media (max-width: 980px) {
+  .day-strip {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .app-jobs .app-job-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .day-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .app-jobs .app-job-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scene-world-orbit span {
+    width: 46px;
+    height: 46px;
+    font-size: 1.3rem;
+  }
+
+  .world-day,
+  .world-hunt {
+    padding-top: 64px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hunt-grid {
+    gap: 8px;
+  }
+
+  .hunt-item {
+    padding: 12px 4px;
+  }
+
+  .hunt-item span {
+    font-size: 2rem;
+  }
+
+  .hunt-item b {
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-world-orbit span {
+    animation: none;
+  }
+}
