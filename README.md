@@ -201,7 +201,7 @@ Registered activity IDs:
 - Keyboard: `keyboard-backspace`, `keyboard-undo`, and `keyboard-copy`
 - Environment: `environment-editor`, `environment-engine`, and `environment-version`
 - Symbols: `symbol-text`, `symbol-assign`, and `symbol-block`
-- Memory and variables: `memory-ram`, `variable-name`, and `variable-value`
+- Memory and variables: `memory-ram`, `variable-name`, `variable-value`, and `variable-predict`
 - Conditionals: `conditional-rain`, `conditional-battery`, and `conditional-else`
 - Loops: `loop-count`, `loop-action`, and `loop-stop`
 
@@ -327,6 +327,8 @@ The Keyboard Lab must respond to the value produced by the browser's keyboard ev
 ### Six small learning zones
 
 Each zone has short explanation cards, three multiple-choice activities, a completed/not-tried/review summary, and a page-only reset control.
+
+The Python zones (4–6) also get a **Run it** block that follows the standard zone shape: the learner predicts the output of a two-line example (a tracked activity), runs the same code in a real Python runner on the page, and then changes one value. Zone 4 has it so far. The runner loads `pyodide-worker.mjs` relative to `script.js`, so it works from `lessons/` too.
 
 | Zone | Goal | Child interaction |
 |---|---|---|

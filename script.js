@@ -536,6 +536,20 @@ const translations = {
     "variables.bigTitle": "A variable is a name for a remembered value.",
     "variables.bigText": "The name helps people and Python find the value again.",
     "variables.next": "Choose a path",
+    "topic.runEyebrow": "RUN IT",
+    "topic.runIntro": "Guess first. Then run real Python and check.",
+    "topic.runReady": "Ready. Press Run Python.",
+    "topic.predictTitle": "Guess the result",
+    "topic.predictQuestion": "What will Python show?",
+    "topic.tryLabel": "Now change one thing:",
+    "variables.runTitle": "Help PyBot remember its color.",
+    "variables.runCode": "robot_color = \"orange\"\nprint(robot_color)",
+    "variables.predictName": "robot_color",
+    "variables.predictValue": "orange",
+    "variables.predictNothing": "Nothing",
+    "thinking.variable-predictSuccess": "Yes! print shows the value the name remembers.",
+    "thinking.variable-predictHint": "Not yet. print looks inside the name and shows its value.",
+    "variables.tryText": "Put your favorite color between the quotes. Run again.",
     "conditionals.eyebrow": "CONDITIONALS",
     "conditionals.title": "Ask. Then choose.",
     "conditionals.intro": "A conditional lets code choose a path after a yes-or-no question.",
@@ -1139,6 +1153,20 @@ const translations = {
     "variables.bigTitle": "Una variable es un nombre para un valor recordado.",
     "variables.bigText": "El nombre ayuda a las personas y a Python a encontrar el valor otra vez.",
     "variables.next": "Elige un camino",
+    "topic.runEyebrow": "EJECÚTALO",
+    "topic.runIntro": "Primero adivina. Luego ejecuta Python real y comprueba.",
+    "topic.runReady": "Listo. Pulsa Ejecutar Python.",
+    "topic.predictTitle": "Adivina el resultado",
+    "topic.predictQuestion": "¿Qué mostrará Python?",
+    "topic.tryLabel": "Ahora cambia una cosa:",
+    "variables.runTitle": "Ayuda a PyBot a recordar su color.",
+    "variables.runCode": "robot_color = \"naranja\"\nprint(robot_color)",
+    "variables.predictName": "robot_color",
+    "variables.predictValue": "naranja",
+    "variables.predictNothing": "Nada",
+    "thinking.variable-predictSuccess": "¡Sí! print muestra el valor que recuerda el nombre.",
+    "thinking.variable-predictHint": "Todavía no. print mira dentro del nombre y muestra su valor.",
+    "variables.tryText": "Pon tu color favorito entre las comillas. Ejecútalo otra vez.",
     "conditionals.eyebrow": "CONDICIONALES",
     "conditionals.title": "Pregunta. Luego elige.",
     "conditionals.intro": "Un condicional permite que el código elija un camino después de una pregunta de sí o no.",
@@ -1254,6 +1282,8 @@ const learnerNameInput = document.querySelector("#learner-name");
 const learnerNameSaved = document.querySelector("[data-name-saved]");
 const learnerNameEdit = document.querySelector("[data-name-edit]");
 const learnerNameForget = document.querySelector("[data-name-forget]");
+// Lesson pages live one folder deeper, so resolve the worker next to this script.
+const scriptBaseUrl = document.currentScript?.src || window.location.href;
 const pythonRunner = document.querySelector("[data-python-runner]");
 const pythonEditor = document.querySelector("[data-python-editor]");
 const pythonOutput = document.querySelector("[data-python-output]");
@@ -1285,7 +1315,7 @@ const activityIds = [
   "keyboard-backspace", "keyboard-undo", "keyboard-copy",
   "environment-editor", "environment-engine", "environment-version",
   "symbol-text", "symbol-assign", "symbol-block",
-  "memory-ram", "variable-name", "variable-value",
+  "memory-ram", "variable-name", "variable-value", "variable-predict",
   "conditional-rain", "conditional-battery", "conditional-else",
   "loop-count", "loop-action", "loop-stop",
 ];
@@ -1496,7 +1526,7 @@ function stopPythonWorker(messageKey = "preview.stopped") {
 }
 
 function createPythonWorker() {
-  const worker = new Worker(new URL("pyodide-worker.mjs", window.location.href), { type: "module" });
+  const worker = new Worker(new URL("pyodide-worker.mjs", scriptBaseUrl), { type: "module" });
 
   worker.addEventListener("message", (event) => {
     if (event.data.id !== pythonRunId) {
@@ -1815,7 +1845,7 @@ function setLanguage(language, persist = true) {
   });
 
   if (pythonEditor && pythonEditor.dataset.edited !== "true") {
-    pythonEditor.value = textFor("preview.defaultCode");
+    pythonEditor.value = textFor(pythonEditor.dataset.codeKey || "preview.defaultCode");
   }
 
   const page = document.body.dataset.page || "home";

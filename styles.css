@@ -3951,8 +3951,31 @@ a {
 }
 
 .topic-overview,
-.topic-practice {
+.topic-practice,
+.topic-run {
   padding-top: 95px;
+}
+
+.topic-run-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 18px;
+  align-items: start;
+  margin-top: 38px;
+}
+
+.topic-run .line-number {
+  line-height: 1.55;
+}
+
+.quiz-scene .code-lines {
+  display: inline-block;
+  white-space: pre;
+}
+
+.topic-try {
+  margin: 18px 4px 0;
+  font-size: 1.05rem;
 }
 
 .topic-card-grid {
@@ -4061,11 +4084,13 @@ a {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.topic-practice .step-activity {
+.topic-practice .step-activity,
+.topic-run .step-activity {
   padding: 23px;
 }
 
-.topic-practice .activity-options {
+.topic-practice .activity-options,
+.topic-run .activity-options {
   grid-template-columns: 1fr;
 }
 
@@ -4360,6 +4385,7 @@ button:focus-visible {
   }
 
   .topic-card-grid,
+  .topic-run-grid,
   .topic-practice .step-activity-grid {
     grid-template-columns: 1fr;
   }
