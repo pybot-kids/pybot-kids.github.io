@@ -205,6 +205,8 @@ Every browser-storage key must be added to this registry before it is released. 
 |---|---|---|---|
 | `pybot.language` | `en` or `es` | Interface language preference | Yes |
 | `pybot.audio.enabled` | `true` or `false` | Optional robot ambience preference; defaults to `true` | Yes |
+| `pybot.buddy.enabled` | `true` or `false` | Optional preference for the small PyBot companion in the corner; defaults to `true` | Yes |
+| `pybot.buddy.greeted` | `true` (session storage, cleared when the tab closes) | Lets the companion say hello once per visit instead of on every page | No |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
 | `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `changingBoxes`, `operatorsMath`, `operatorsCompare`, `operatorsOrder`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loopsPatterns`, `loops`, `loopsWhile`, `loopsUntil`, `loopsText`, `loopsNested`, `comparisons`, `comparisonsAnd`, `comparisonsOr`, `comparisonsNot`, `comparisonsIn`, `comparisonsLogic`, `functionsDo`, `functions`, `functionsMethods`, `checkpoint1`, `bugs`, `bugsCode`, `bugsDetective`, `powersInput`, `powersRandom`, `powersDict`, `thinkSplit`, `thinkPlan`, `thinkTest`, `cleanNames`, `cleanComments`, `cleanRepeat`, `checkpoint2`, `projectGuess`, `projectCalculator`, `projectRps`, `projectAdventure`, `projectQuiz`, `projectEightBall`, `turtleMoves`, `turtleShapes`, or `turtleArt` | Highlights the learner's current place across the complete small path | Yes |
 | `pybot.path.visited` | Comma-separated step ids from `pybot.path.current` | Remembers which pages the learner has opened, so steps added to the path later show as new and pending | Yes |
@@ -326,7 +328,7 @@ To help someone whose backup will not load: open the file, read `progressVersion
 
 #### Emergency progress reset
 
-Below the backup tools, a collapsed **For adults: erase all progress** section offers an emergency reset. It first asks whether to save a backup file (the same download as **Save a backup file**; if that download fails, nothing is erased), then asks for a final confirmation. The reset clears every registered key except `pybot.language`, `pybot.audio.enabled`, and `pybot.learner.name`.
+Below the backup tools, a collapsed **For adults: erase all progress** section offers an emergency reset. It first asks whether to save a backup file (the same download as **Save a backup file**; if that download fails, nothing is erased), then asks for a final confirmation. The reset clears every registered key except `pybot.language`, `pybot.audio.enabled`, `pybot.buddy.enabled`, and `pybot.learner.name`.
 
 The thinking-page counters divide all ten plans into mutually exclusive states: completed, not tried, and review. The three numbers must always add up to ten. A wrong choice moves that plan to review; a correct choice moves it to completed.
 

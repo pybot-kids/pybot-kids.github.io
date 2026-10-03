@@ -151,6 +151,38 @@ const translations = {
     "audio.off": "Sound off",
     "audio.turnOn": "Turn robot sounds on",
     "audio.turnOff": "Turn robot sounds off",
+    "buddy.on": "PyBot on",
+    "buddy.off": "PyBot off",
+    "buddy.turnOn": "Show the little PyBot in the corner",
+    "buddy.turnOff": "Hide the little PyBot in the corner",
+    "buddy.hide": "Hide the little PyBot",
+    "buddy.hello": "Hi! I'll cheer for you while you learn.",
+    "buddy.helloNamed": "Hi, {name}! I'll cheer for you while you learn.",
+    "buddy.correct1": "You got it!",
+    "buddy.correct2": "Yes! Great thinking!",
+    "buddy.correct3": "Beep boop! Correct!",
+    "buddy.correct4": "My circuits are dancing!",
+    "buddy.correctNamed": "Well done, {name}!",
+    "buddy.wrong1": "Almost! Try another one.",
+    "buddy.wrong2": "Mistakes help us learn.",
+    "buddy.wrong3": "Read it again. You can do it!",
+    "buddy.wrong4": "Hmm, let's think together.",
+    "buddy.pageDone": "You finished every activity here! Hooray!",
+    "buddy.pageDoneNamed": "{name}, you finished every activity here! Hooray!",
+    "buddy.running": "Running your code...",
+    "buddy.runOk": "Your code ran!",
+    "buddy.runError": "An error is a clue. Let's look!",
+    "buddy.nameSaved": "Nice to meet you, {name}!",
+    "buddy.tip1": "Small steps make big programs.",
+    "buddy.tip2": "Python is named after a comedy show, not the snake!",
+    "buddy.tip3": "Take a deep breath. You are doing great.",
+    "buddy.tip4": "Reading code out loud helps.",
+    "buddy.tip5": "Every coder makes mistakes. That's how we learn.",
+    "buddy.tip6": "I love learning with you!",
+    "buddy.tip7": "Robots need oil. Kids need water. Drink some!",
+    "buddy.tip8": "Try explaining your code to someone at home.",
+    "buddy.tip9": "1, 2, 3... I like counting!",
+    "buddy.tip10": "Curious minds make great coders.",
     "support.label": "Support PyBot",
     "support.aria": "Support PyBot on Patreon (opens in a new tab)",
     "meta.faqTitle": "Questions and answers — PyBot",
@@ -178,6 +210,8 @@ const translations = {
     "faq.languageA": "Yes. Press EN or ES at the top of any page. Your progress stays the same. Python words like print and if stay in English, because that is how Python is written.",
     "faq.soundQ": "Can I turn the sound off?",
     "faq.soundA": "Yes. Press the ♪ button at the top of the page. PyBot remembers your choice.",
+    "faq.buddyQ": "Can I hide the little PyBot in the corner?",
+    "faq.buddyA": "Yes. Press the PyBot button at the top of the page, or the × next to PyBot. Press the button again to bring PyBot back. On phones PyBot stays hidden so it does not cover the lesson.",
     "faq.newQ": "What does “NEW · NOT DONE” mean on the map?",
     "faq.newA": "PyBot keeps growing. When a new page is added behind your place, the map marks it so you don't miss it. Visit it whenever you like.",
     "faq.whereQ": "Where is the progress saved?",
@@ -6051,6 +6085,38 @@ const translations = {
     "audio.off": "Sonido apagado",
     "audio.turnOn": "Activar sonidos robóticos",
     "audio.turnOff": "Apagar sonidos robóticos",
+    "buddy.on": "PyBot visible",
+    "buddy.off": "PyBot oculto",
+    "buddy.turnOn": "Mostrar al pequeño PyBot en la esquina",
+    "buddy.turnOff": "Ocultar al pequeño PyBot de la esquina",
+    "buddy.hide": "Ocultar al pequeño PyBot",
+    "buddy.hello": "¡Hola! Te voy a animar mientras aprendes.",
+    "buddy.helloNamed": "¡Hola, {name}! Te voy a animar mientras aprendes.",
+    "buddy.correct1": "¡Lo lograste!",
+    "buddy.correct2": "¡Sí! ¡Muy bien pensado!",
+    "buddy.correct3": "¡Bip bup! ¡Correcto!",
+    "buddy.correct4": "¡Mis circuitos están bailando!",
+    "buddy.correctNamed": "¡Muy bien, {name}!",
+    "buddy.wrong1": "¡Casi! Prueba otra.",
+    "buddy.wrong2": "Los errores nos ayudan a aprender.",
+    "buddy.wrong3": "Léelo otra vez. ¡Tú puedes!",
+    "buddy.wrong4": "Mmm, pensemos juntos.",
+    "buddy.pageDone": "¡Terminaste todas las actividades de aquí! ¡Bravo!",
+    "buddy.pageDoneNamed": "¡{name}, terminaste todas las actividades de aquí! ¡Bravo!",
+    "buddy.running": "Ejecutando tu código...",
+    "buddy.runOk": "¡Tu código funcionó!",
+    "buddy.runError": "Un error es una pista. ¡Miremos!",
+    "buddy.nameSaved": "¡Mucho gusto, {name}!",
+    "buddy.tip1": "Pasos pequeños hacen programas grandes.",
+    "buddy.tip2": "¡Python se llama así por un programa de comedia, no por la serpiente!",
+    "buddy.tip3": "Respira profundo. Lo estás haciendo muy bien.",
+    "buddy.tip4": "Leer el código en voz alta ayuda.",
+    "buddy.tip5": "Todos los que programan se equivocan. Así aprendemos.",
+    "buddy.tip6": "¡Me encanta aprender contigo!",
+    "buddy.tip7": "Los robots necesitan aceite. Los niños, agua. ¡Toma un poco!",
+    "buddy.tip8": "Explícale tu código a alguien en casa.",
+    "buddy.tip9": "1, 2, 3... ¡me encanta contar!",
+    "buddy.tip10": "Las mentes curiosas programan muy bien.",
     "support.label": "Apoya a PyBot",
     "support.aria": "Apoya a PyBot en Patreon (se abre en una pestaña nueva)",
     "meta.faqTitle": "Preguntas y respuestas — PyBot",
@@ -6078,6 +6144,8 @@ const translations = {
     "faq.languageA": "Sí. Presiona EN o ES arriba en cualquier página. Tu avance sigue igual. Las palabras de Python, como print e if, quedan en inglés, porque así se escribe Python.",
     "faq.soundQ": "¿Puedo apagar el sonido?",
     "faq.soundA": "Sí. Presiona el botón ♪ arriba en la página. PyBot recuerda lo que elijas.",
+    "faq.buddyQ": "¿Puedo ocultar al pequeño PyBot de la esquina?",
+    "faq.buddyA": "Sí. Presiona el botón de PyBot arriba en la página, o la × al lado de PyBot. Presiona el botón otra vez para que vuelva. En los celulares PyBot no aparece, para no tapar la lección.",
     "faq.newQ": "¿Qué significa “NUEVA · PENDIENTE” en el mapa?",
     "faq.newA": "PyBot sigue creciendo. Cuando se agrega una página nueva antes de tu lugar, el mapa la marca para que no te la pierdas. Visítala cuando quieras.",
     "faq.whereQ": "¿Dónde se guarda el avance?",
@@ -11973,7 +12041,7 @@ const PROGRESS_VERSION = 13;
 const PROGRESS_VERSION_KEY = "pybot.progress.version";
 const BACKUP_MAX_BYTES = 100_000;
 // Preferences and the name survive an emergency progress reset.
-const RESET_KEPT_KEYS = ["pybot.language", "pybot.audio.enabled", LEARNER_NAME_KEY];
+const RESET_KEPT_KEYS = ["pybot.language", "pybot.audio.enabled", "pybot.buddy.enabled", LEARNER_NAME_KEY];
 // Each step lists its activities. To add content later, add the activity id
 // here: learners who had finished the step see it as unfinished again.
 // `activitiesAddedLater` only matters for progress saved before PATH_DONE_KEY existed.
@@ -12773,10 +12841,12 @@ function createPythonWorker() {
         setPythonOutput(event.data.drawing ? "turtle.drawn" : "preview.noOutput");
       }
       playRobotChime();
+      buddyReact("runOk");
       return;
     }
 
     showPythonError(event.data.errorType, event.data.error, event.data.output);
+    buddyReact("runError");
   });
 
   worker.addEventListener("error", (event) => {
@@ -13055,6 +13125,260 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
+// The little PyBot companion: a small animated PyBot in the corner of every
+// page. It reacts to answers, runs and finished pages, and does small friendly
+// things while the learner reads. Hidden on phones, where it would cover the lesson.
+const BUDDY_PREFERENCE_KEY = "pybot.buddy.enabled";
+const buddyScreenQuery = window.matchMedia("(min-width: 761px) and (min-height: 481px)");
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const BUDDY_TIP_COUNT = 10;
+// Idle antics: a mood, an optional body move, and whether PyBot may share a tip.
+const BUDDY_IDLE_ANTICS = [
+  { mood: "happy", move: "wave" },
+  { mood: "wink", move: "hop" },
+  { mood: "curious", move: "look" },
+  { mood: "counting", move: "", tip: true },
+  { mood: "starry", move: "spin" },
+  { mood: "thinking", move: "", tip: true },
+  { mood: "deciding", move: "look" },
+  { mood: "welcoming", move: "wave", tip: true },
+  { mood: "proud", move: "dance" },
+  { mood: "happy", move: "blink", tip: true },
+];
+let buddyToggle = null;
+let buddy = null;
+let buddyEnabled = true;
+let buddyIdleTimer = null;
+let buddyRestTimer = null;
+let buddyBubbleTimer = null;
+let buddyBusyUntil = 0;
+
+function storedBuddyPreference() {
+  try {
+    return localStorage.getItem(BUDDY_PREFERENCE_KEY) !== "false";
+  } catch {
+    return true;
+  }
+}
+
+function createBuddyToggle() {
+  const tools = document.querySelector(".lesson-header-tools, .site-nav");
+  if (!tools) {
+    return null;
+  }
+
+  const button = document.createElement("button");
+  button.className = "buddy-toggle";
+  button.type = "button";
+  button.innerHTML = '<span class="buddy-toggle-icon" aria-hidden="true"></span><span class="buddy-toggle-label"></span>';
+  tools.insertBefore(button, tools.querySelector(".language-switch"));
+  button.addEventListener("click", () => setBuddyEnabled(!buddyEnabled));
+  return button;
+}
+
+function updateBuddyButton() {
+  if (!buddyToggle) {
+    return;
+  }
+
+  buddyToggle.classList.toggle("is-on", buddyEnabled);
+  buddyToggle.setAttribute("aria-pressed", String(buddyEnabled));
+  buddyToggle.setAttribute("aria-label", textFor(buddyEnabled ? "buddy.turnOff" : "buddy.turnOn"));
+  buddyToggle.querySelector(".buddy-toggle-label").textContent = textFor(buddyEnabled ? "buddy.on" : "buddy.off");
+  buddy?.querySelector(".buddy-hide")?.setAttribute("aria-label", textFor("buddy.hide"));
+}
+
+function createBuddy() {
+  const element = document.createElement("div");
+  element.className = "pybot-buddy";
+  element.hidden = true;
+  element.innerHTML = `
+    <p class="buddy-bubble" aria-hidden="true"></p>
+    <button class="buddy-hide" type="button">×</button>
+    <div class="buddy-body" aria-hidden="true">
+      <div class="pybot-wrap" data-mood="welcoming">
+        <div class="pybot">
+          <div class="antenna"><span></span></div>
+          <div class="ear ear-left"></div>
+          <div class="ear ear-right"></div>
+          <div class="bot-head">
+            <div class="bot-screen">
+              <div class="brow brow-left"></div>
+              <div class="brow brow-right"></div>
+              <div class="eye eye-left"><span></span></div>
+              <div class="eye eye-right"><span></span></div>
+              <div class="cheek cheek-left"></div>
+              <div class="cheek cheek-right"></div>
+              <div class="mouth"></div>
+            </div>
+          </div>
+          <div class="bot-neck"></div>
+          <div class="arm arm-left"><span class="hand"></span></div>
+          <div class="arm arm-right"><span class="hand"></span></div>
+          <div class="bot-body">
+            <div class="chest-light"></div>
+            <span class="chest-code">&lt;/&gt;</span>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  element.querySelector(".buddy-hide").addEventListener("click", () => {
+    setBuddyEnabled(false);
+    buddyToggle?.focus();
+  });
+  // Poking PyBot makes it do something fun.
+  element.querySelector(".buddy-body").addEventListener("click", () => buddyIdleAntic(true));
+  document.body.append(element);
+  return element;
+}
+
+function buddyActive() {
+  return Boolean(buddy) && buddyEnabled && buddyScreenQuery.matches && !document.hidden;
+}
+
+function buddyShowBubble(text, duration = 4200) {
+  const bubble = buddy?.querySelector(".buddy-bubble");
+  if (!bubble) {
+    return;
+  }
+
+  window.clearTimeout(buddyBubbleTimer);
+  bubble.textContent = text;
+  bubble.classList.remove("is-visible");
+  void bubble.offsetWidth;
+  bubble.classList.add("is-visible");
+  buddyBubbleTimer = window.setTimeout(() => bubble.classList.remove("is-visible"), duration);
+}
+
+// Sets a mood and a move for a while, then PyBot goes back to resting.
+function buddyAct(mood, move = "", text = "", duration = 2600) {
+  if (!buddyActive()) {
+    return;
+  }
+
+  const wrap = buddy.querySelector(".pybot-wrap");
+  wrap.dataset.mood = mood;
+  buddy.dataset.move = "";
+  void buddy.offsetWidth;
+  buddy.dataset.move = move;
+  if (text) {
+    buddyShowBubble(text, Math.max(duration, 3600));
+  }
+
+  buddyBusyUntil = Date.now() + duration;
+  window.clearTimeout(buddyRestTimer);
+  buddyRestTimer = window.setTimeout(() => {
+    wrap.dataset.mood = "happy";
+    buddy.dataset.move = "";
+  }, duration);
+  scheduleBuddyIdle();
+}
+
+function buddyPick(prefix, count) {
+  return textFor(`${prefix}${1 + Math.floor(Math.random() * count)}`);
+}
+
+function buddyIdleAntic(poked = false) {
+  if (!buddyActive() || (!poked && Date.now() < buddyBusyUntil)) {
+    scheduleBuddyIdle();
+    return;
+  }
+
+  const antic = BUDDY_IDLE_ANTICS[Math.floor(Math.random() * BUDDY_IDLE_ANTICS.length)];
+  const tip = antic.tip && (poked || Math.random() < 0.6) ? buddyPick("buddy.tip", BUDDY_TIP_COUNT) : "";
+  buddyAct(antic.mood, antic.move, tip, 2400);
+}
+
+function scheduleBuddyIdle() {
+  window.clearTimeout(buddyIdleTimer);
+  if (!buddyActive()) {
+    return;
+  }
+
+  // Calmer when the learner prefers less motion.
+  const delay = (reducedMotionQuery.matches ? 22000 : 11000) + Math.random() * 9000;
+  buddyIdleTimer = window.setTimeout(buddyIdleAntic, delay);
+}
+
+// Called from the places that already tell the learner how they did.
+function buddyReact(event, activity = null) {
+  if (!buddyActive()) {
+    return;
+  }
+
+  if (event === "correct") {
+    const pageDone = stepActivities.length > 0 && [...stepActivities].every((item) => item.classList.contains("is-complete"));
+    if (pageDone) {
+      buddyAct("celebrating", "dance", learnerName ? textWithName("buddy.pageDoneNamed") : textFor("buddy.pageDone"), 4200);
+      return;
+    }
+    const text = learnerName && Math.random() < 0.3 ? textWithName("buddy.correctNamed") : buddyPick("buddy.correct", 4);
+    const mood = ["celebrating", "starry", "proud"][Math.floor(Math.random() * 3)];
+    buddyAct(mood, activity?.classList.contains("fix-activity") ? "spin" : "hop", text, 3000);
+  } else if (event === "wrong") {
+    buddyAct("encouraging", "nod", buddyPick("buddy.wrong", 4), 3000);
+  } else if (event === "running") {
+    buddyAct("focused", "", textFor("buddy.running"), 2200);
+  } else if (event === "runOk") {
+    buddyAct("proud", "hop", textFor("buddy.runOk"), 2800);
+  } else if (event === "runError") {
+    buddyAct("curious", "look", textFor("buddy.runError"), 3200);
+  } else if (event === "nameSaved") {
+    buddyAct("welcoming", "wave", textWithName("buddy.nameSaved"), 3200);
+  }
+}
+
+function syncBuddy() {
+  if (!buddy) {
+    return;
+  }
+
+  const visible = buddyEnabled && buddyScreenQuery.matches;
+  buddy.hidden = !visible;
+  if (!visible) {
+    window.clearTimeout(buddyIdleTimer);
+    window.clearTimeout(buddyRestTimer);
+    return;
+  }
+  scheduleBuddyIdle();
+}
+
+function setBuddyEnabled(enabled) {
+  buddyEnabled = enabled;
+  try {
+    localStorage.setItem(BUDDY_PREFERENCE_KEY, String(enabled));
+  } catch {
+    // The companion control still works for the current page.
+  }
+
+  updateBuddyButton();
+  syncBuddy();
+  if (enabled) {
+    buddyAct("welcoming", "wave", learnerName ? textWithName("buddy.helloNamed") : textFor("buddy.hello"), 2800);
+  }
+}
+
+function startBuddy() {
+  buddyEnabled = storedBuddyPreference();
+  buddyToggle = createBuddyToggle();
+  buddy = createBuddy();
+  updateBuddyButton();
+  syncBuddy();
+  buddyScreenQuery.addEventListener("change", syncBuddy);
+  document.addEventListener("visibilitychange", syncBuddy);
+  // Say hello once per visit, not on every page.
+  let greeted = false;
+  try {
+    greeted = sessionStorage.getItem("pybot.buddy.greeted") === "true";
+    sessionStorage.setItem("pybot.buddy.greeted", "true");
+  } catch {
+    // Without storage PyBot greets on every page.
+  }
+  if (!greeted) {
+    window.setTimeout(() => buddyAct("welcoming", "wave", learnerName ? textWithName("buddy.helloNamed") : textFor("buddy.hello"), 3000), 900);
+  }
+}
+
 function currentMood() {
   return pybotWrap?.dataset.mood ?? "happy";
 }
@@ -13137,6 +13461,7 @@ function setLanguage(language, persist = true) {
   });
 
   updateAudioButton();
+  updateBuddyButton();
 
   if (lastPythonError) {
     const { errorType, error, output } = lastPythonError;
@@ -13181,6 +13506,7 @@ function backupValidators() {
   const validators = {
     "pybot.language": (value) => Boolean(translations[value]),
     "pybot.audio.enabled": (value) => value === "true" || value === "false",
+    "pybot.buddy.enabled": (value) => value === "true" || value === "false",
     [LEARNER_NAME_KEY]: (value) => value.length > 0 && normalizeLearnerName(value) === value,
     [PATH_CURRENT_KEY]: (value) => pathSteps.some((step) => step.id === value),
     [PATH_VISITED_KEY]: (value) => value.split(",").every((id) => pathSteps.some((step) => step.id === id)),
@@ -13616,6 +13942,7 @@ function completeActivity(activity, correctButton, persist = true) {
 
   if (persist) {
     launchAnswerConfetti(activity);
+    buddyReact("correct", activity);
     try {
       localStorage.setItem(activityStorageKey(activity.dataset.activityId), "complete");
     } catch {
@@ -13643,6 +13970,7 @@ stepActivities.forEach((activity) => {
       button.classList.add("is-wrong");
       activity.classList.add("needs-review");
       showActivityFeedback(activity, "hint");
+      buddyReact("wrong");
       try {
         localStorage.setItem(activityStorageKey(activity.dataset.activityId), "review");
       } catch {
@@ -13959,6 +14287,7 @@ document.querySelectorAll(".fix-activity").forEach((activity) => {
     if (!activity.classList.contains("is-complete")) {
       activity.classList.add("needs-review");
       showActivityFeedback(activity, "hint");
+      buddyReact("wrong");
       try {
         localStorage.setItem(activityStorageKey(activity.dataset.activityId), "review");
       } catch {
@@ -14077,6 +14406,7 @@ document.querySelectorAll(".code-hunt").forEach((activity) => {
       item.classList.add("is-wrong");
       activity.classList.add("needs-review");
       showActivityFeedback(activity, "hint");
+      buddyReact("wrong");
       try {
         localStorage.setItem(activityStorageKey(activity.dataset.activityId), "review");
       } catch {
@@ -14281,6 +14611,7 @@ learnerNameForm?.addEventListener("submit", (event) => {
   updateLearnerNamePanel(false);
   learnerNameEdit?.focus();
   playRobotChime();
+  buddyReact("nameSaved");
 });
 
 learnerNameEdit?.addEventListener("click", () => {
@@ -14403,6 +14734,9 @@ backupImportInput?.addEventListener("change", async () => {
   if (nextAudio !== audioEnabled) {
     setAudioEnabled(nextAudio);
   }
+  if (storedBuddyPreference() !== buddyEnabled) {
+    setBuddyEnabled(!buddyEnabled);
+  }
   setBackupStatus(result.upgraded ? "backup.upgraded" : "backup.imported");
 });
 
@@ -14427,6 +14761,7 @@ pythonRunButton?.addEventListener("click", () => {
   pythonRunId += 1;
   setPythonRunning(true);
   setPythonOutput("preview.loading");
+  buddyReact("running");
 
   try {
     pythonWorker ??= createPythonWorker();
@@ -14447,6 +14782,7 @@ saveKnownPathSteps();
 saveCurrentPathStep();
 saveDoneSteps();
 soundToggle = createSoundToggle();
+startBuddy();
 createSupportLink();
 createFaqLink();
 setLanguage(storedLanguage(), false);
