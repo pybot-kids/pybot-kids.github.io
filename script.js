@@ -378,7 +378,7 @@ const translations = {
     "mission5.text": "Use a yes-or-no question to choose what happens.",
     "mission6.concept": "LOOPS",
     "mission6.title": "Repeat a Pattern",
-    "mission6.text": "Repeat with for, with while, and until something is done.",
+    "mission6.text": "Spot picture patterns, then repeat with for, with while, and until something is done.",
     "lesson.progressOne": "START · 1 OF 3",
     "lesson.progressTwo": "START · 2 OF 3",
     "lesson.progressThree": "START · 3 OF 3",
@@ -568,6 +568,9 @@ const translations = {
     "meta.variablesTitle": "Memory boxes — PyBot",
     "meta.conditionalsTitle": "Choose a path — PyBot",
     "meta.loopsTitle": "Repeat a pattern — PyBot",
+    "meta.loopsPatternsTitle": "Picture patterns — PyBot",
+    "meta.loopsWhileTitle": "Repeat while it is true — PyBot",
+    "meta.loopsUntilTitle": "Repeat until it is done — PyBot",
     "meta.keyboardDescription": "A child-friendly introduction to useful keyboard keys and shortcuts.",
     "meta.environmentDescription": "A simple tour of the browser, editor, Pyodide, and Python version used by PyBot.",
     "meta.symbolsDescription": "A gentle introduction to the special marks children will see in Python.",
@@ -579,7 +582,7 @@ const translations = {
     "topic.progressSymbols": "ZONE 3 OF 9",
     "topic.progressVariables": "ZONE 4 OF 9",
     "topic.progressConditionals": "ZONE 6 OF 9",
-    "topic.progressLoops": "ZONE 7 · 1 OF 3",
+    "topic.progressLoops": "ZONE 7 · 2 OF 4",
     "topic.lookEyebrow": "LOOK FIRST",
     "topic.practiceEyebrow": "YOUR TURN",
     "topic.practiceIntro": "Try each tiny question. A wrong answer becomes something to review.",
@@ -1097,13 +1100,85 @@ const translations = {
     "loops.quizTotalCode": "stars = 0\nfor turn in range(3):\n    stars = stars + 2\nprint(stars)",
     "loops.quizShowQuestion": "What does Python show?",
     "path.loopsLabel": "Loops pages",
+    "path.loopsPatterns": "Picture patterns",
+    "meta.loopsPatternsDescription": "Find, complete, and fix picture patterns before learning loops.",
+    "topic.progressLoopsPatterns": "ZONE 7 · 1 OF 4",
+    "shape.circle": "circle",
+    "shape.square": "square",
+    "shape.triangle": "triangle",
+    "shape.star": "star",
+    "shape.blank": "empty space",
+    "shape.position": "Shape {n}: {shape}. Tap to change it.",
+    "loopsPatterns.eyebrow": "LOOPS · PATTERNS",
+    "loopsPatterns.title": "Spot the pattern.",
+    "loopsPatterns.intro": "Before PyBot writes loops, it looks for patterns: shapes that come back in the same order.",
+    "loopsPatterns.pybot": "Circle, square, circle, square... I see a pattern!",
+    "loopsPatterns.pybotNamed": "Circle, square, circle, square... {name}, I see a pattern!",
+    "loopsPatterns.robotLabel": "PyBot looks curiously at a row of shapes",
+    "loopsPatterns.overviewTitle": "A pattern is a part that repeats.",
+    "loopsPatterns.repeatTitle": "Things come back",
+    "loopsPatterns.repeatText": "Shapes, colors, sounds, or dance steps that come back in the same order make a pattern.",
+    "loopsPatterns.coreTitle": "Find the core",
+    "loopsPatterns.coreText": "The core is the smallest part that repeats. In circle, square, circle, square, the core is circle, square.",
+    "loopsPatterns.loopTitle": "A loop repeats the core",
+    "loopsPatterns.loopText": "Draw the core 3 times and you have the whole pattern. That is what a loop does!",
+    "loopsPatterns.demoLabel": "The core circle, square, repeated 3 times",
+    "loopsPatterns.demoTimes": "3 times",
+    "loopsPatterns.practiceTitle": "Read the shapes.",
+    "loopsPatterns.quizNextTitle": "What comes next?",
+    "loopsPatterns.quizNextScene": "circle, square, circle, square, circle, and an empty space",
+    "loopsPatterns.quizNextQuestion": "Which shape goes in the empty space?",
+    "loopsPatterns.quizCoreTitle": "Find the core",
+    "loopsPatterns.quizCoreScene": "triangle, triangle, circle, triangle, triangle, circle",
+    "loopsPatterns.quizCoreQuestion": "Which part repeats?",
+    "loopsPatterns.coreA": "triangle, circle",
+    "loopsPatterns.coreB": "triangle, triangle, circle",
+    "loopsPatterns.coreC": "circle",
+    "loopsPatterns.quizTimesTitle": "How many times?",
+    "loopsPatterns.quizTimesScene": "star, square, star, square, star, square",
+    "loopsPatterns.quizTimesQuestion": "How many times does the core star, square appear?",
+    "loopsPatterns.quizWrongTitle": "Find the mistake",
+    "loopsPatterns.quizWrongScene": "1 circle, 2 square, 3 triangle, 4 circle, 5 square, 6 circle, 7 circle, 8 square, 9 triangle",
+    "loopsPatterns.quizWrongQuestion": "Which number breaks the pattern?",
+    "loopsPatterns.quizMissingTitle": "The missing piece",
+    "loopsPatterns.quizMissingScene": "square, triangle, star, square, an empty space, star",
+    "loopsPatterns.quizMissingQuestion": "Which shape is missing?",
+    "loopsPatterns.quizLoopTitle": "Say it as a loop",
+    "loopsPatterns.quizLoopScene": "circle, square, circle, square, circle, square",
+    "loopsPatterns.quizLoopQuestion": "Which instruction draws this pattern?",
+    "loopsPatterns.loopA": "Repeat circle, square 3 times",
+    "loopsPatterns.loopB": "Repeat circle 6 times",
+    "loopsPatterns.loopC": "Repeat circle, square 6 times",
+    "loopsPatterns.fixTitle": "Fix the pattern",
+    "loopsPatterns.fixTask": "One shape breaks the pattern. Tap it to change it until the pattern is right.",
+    "loopsPatterns.fixBigTitle": "Fix the long pattern",
+    "loopsPatterns.fixBigTask": "Two shapes break this pattern. Find the core first, then tap the wrong shapes to fix them.",
+    "loopsPatterns.bigTitle": "A loop is a pattern: one core, repeated.",
+    "loopsPatterns.bigText": "Next, you will write that pattern in Python with for.",
+    "loopsPatterns.next": "for loops",
+    "thinking.pattern-nextSuccess": "Yes! Circle, square keeps coming back, so a square comes next.",
+    "thinking.pattern-nextHint": "Not yet. Say the shapes out loud: circle, square, circle, square, circle...",
+    "thinking.pattern-coreSuccess": "Yes! Triangle, triangle, circle comes back twice.",
+    "thinking.pattern-coreHint": "Not yet. Find where the row starts again from the beginning.",
+    "thinking.pattern-timesSuccess": "Yes! Star, square shows up 3 times.",
+    "thinking.pattern-timesHint": "Not yet. Cover each star, square pair with your finger and count.",
+    "thinking.pattern-wrongSuccess": "Yes! The core is circle, square, triangle, so shape 6 should be a triangle.",
+    "thinking.pattern-wrongHint": "Not yet. The core is circle, square, triangle. Check each group of 3.",
+    "thinking.pattern-missingSuccess": "Yes! The core is square, triangle, star.",
+    "thinking.pattern-missingHint": "Not yet. Look at the first three shapes. They are the core.",
+    "thinking.pattern-loopSuccess": "Yes! The core circle, square repeats 3 times. That is a loop!",
+    "thinking.pattern-loopHint": "Not yet. Find the core first, then count how many times it shows.",
+    "thinking.pattern-fixSuccess": "You fixed it! Circle, square, 3 times.",
+    "thinking.pattern-fixHint": "Not yet. The core is circle, square. Which shape does not fit?",
+    "thinking.pattern-fix-bigSuccess": "You fixed it! Triangle, triangle, star, 3 times.",
+    "thinking.pattern-fix-bigHint": "Not yet. The core is triangle, triangle, star. Check each group of 3.",
     "path.loopsFor": "for: count the turns",
     "path.loopsWhile": "while: ask first",
     "path.loopsUntil": "Repeat until",
     "meta.loopsWhileDescription": "Learn Python while loops: repeat while a question is True.",
     "meta.loopsUntilDescription": "Repeat until something is done in Python, with while not and break.",
-    "topic.progressLoopsWhile": "ZONE 7 · 2 OF 3",
-    "topic.progressLoopsUntil": "ZONE 7 · 3 OF 3",
+    "topic.progressLoopsWhile": "ZONE 7 · 3 OF 4",
+    "topic.progressLoopsUntil": "ZONE 7 · 4 OF 4",
     "loopsWhile.eyebrow": "LOOPS · WHILE",
     "loopsWhile.title": "Repeat while it is true.",
     "loopsWhile.intro": "A while loop asks a True-or-False question before every turn. True: one more turn. False: stop.",
@@ -1863,7 +1938,7 @@ const translations = {
     "mission5.text": "Usa una pregunta de sí o no para elegir qué ocurre.",
     "mission6.concept": "BUCLES",
     "mission6.title": "Repite un patrón",
-    "mission6.text": "Repite con for, con while y hasta que algo esté listo.",
+    "mission6.text": "Encuentra patrones con figuras y luego repite con for, con while y hasta que algo esté listo.",
     "lesson.progressOne": "INICIO · 1 DE 3",
     "lesson.progressTwo": "INICIO · 2 DE 3",
     "lesson.progressThree": "INICIO · 3 DE 3",
@@ -2053,6 +2128,9 @@ const translations = {
     "meta.variablesTitle": "Cajas de memoria — PyBot",
     "meta.conditionalsTitle": "Elige un camino — PyBot",
     "meta.loopsTitle": "Repite un patrón — PyBot",
+    "meta.loopsPatternsTitle": "Patrones con figuras — PyBot",
+    "meta.loopsWhileTitle": "Repite mientras sea verdad — PyBot",
+    "meta.loopsUntilTitle": "Repite hasta que esté listo — PyBot",
     "meta.keyboardDescription": "Una introducción sencilla para niños a teclas y atajos útiles.",
     "meta.environmentDescription": "Un recorrido simple por el navegador, editor, Pyodide y la versión de Python que usa PyBot.",
     "meta.symbolsDescription": "Una introducción tranquila a las marcas especiales que los niños verán en Python.",
@@ -2064,7 +2142,7 @@ const translations = {
     "topic.progressSymbols": "ZONA 3 DE 9",
     "topic.progressVariables": "ZONA 4 DE 9",
     "topic.progressConditionals": "ZONA 6 DE 9",
-    "topic.progressLoops": "ZONA 7 · 1 DE 3",
+    "topic.progressLoops": "ZONA 7 · 2 DE 4",
     "topic.lookEyebrow": "MIRA PRIMERO",
     "topic.practiceEyebrow": "TU TURNO",
     "topic.practiceIntro": "Prueba cada pregunta pequeña. Una respuesta incorrecta se convierte en algo para revisar.",
@@ -2582,13 +2660,85 @@ const translations = {
     "loops.quizTotalCode": "estrellas = 0\nfor vuelta in range(3):\n    estrellas = estrellas + 2\nprint(estrellas)",
     "loops.quizShowQuestion": "¿Qué muestra Python?",
     "path.loopsLabel": "Páginas de bucles",
+    "path.loopsPatterns": "Patrones con figuras",
+    "meta.loopsPatternsDescription": "Encuentra, completa y arregla patrones con figuras antes de aprender bucles.",
+    "topic.progressLoopsPatterns": "ZONA 7 · 1 DE 4",
+    "shape.circle": "círculo",
+    "shape.square": "cuadrado",
+    "shape.triangle": "triángulo",
+    "shape.star": "estrella",
+    "shape.blank": "espacio vacío",
+    "shape.position": "Figura {n}: {shape}. Tócala para cambiarla.",
+    "loopsPatterns.eyebrow": "BUCLES · PATRONES",
+    "loopsPatterns.title": "Encuentra el patrón.",
+    "loopsPatterns.intro": "Antes de escribir bucles, PyBot busca patrones: figuras que vuelven en el mismo orden.",
+    "loopsPatterns.pybot": "Círculo, cuadrado, círculo, cuadrado... ¡Veo un patrón!",
+    "loopsPatterns.pybotNamed": "Círculo, cuadrado, círculo, cuadrado... ¡{name}, veo un patrón!",
+    "loopsPatterns.robotLabel": "PyBot mira con curiosidad una fila de figuras",
+    "loopsPatterns.overviewTitle": "Un patrón es una parte que se repite.",
+    "loopsPatterns.repeatTitle": "Las cosas vuelven",
+    "loopsPatterns.repeatText": "Figuras, colores, sonidos o pasos de baile que vuelven en el mismo orden forman un patrón.",
+    "loopsPatterns.coreTitle": "Encuentra el núcleo",
+    "loopsPatterns.coreText": "El núcleo es la parte más pequeña que se repite. En círculo, cuadrado, círculo, cuadrado, el núcleo es círculo, cuadrado.",
+    "loopsPatterns.loopTitle": "Un bucle repite el núcleo",
+    "loopsPatterns.loopText": "Dibuja el núcleo 3 veces y tienes el patrón completo. ¡Eso hace un bucle!",
+    "loopsPatterns.demoLabel": "El núcleo círculo, cuadrado, repetido 3 veces",
+    "loopsPatterns.demoTimes": "3 veces",
+    "loopsPatterns.practiceTitle": "Lee las figuras.",
+    "loopsPatterns.quizNextTitle": "¿Qué sigue?",
+    "loopsPatterns.quizNextScene": "círculo, cuadrado, círculo, cuadrado, círculo y un espacio vacío",
+    "loopsPatterns.quizNextQuestion": "¿Qué figura va en el espacio vacío?",
+    "loopsPatterns.quizCoreTitle": "Encuentra el núcleo",
+    "loopsPatterns.quizCoreScene": "triángulo, triángulo, círculo, triángulo, triángulo, círculo",
+    "loopsPatterns.quizCoreQuestion": "¿Qué parte se repite?",
+    "loopsPatterns.coreA": "triángulo, círculo",
+    "loopsPatterns.coreB": "triángulo, triángulo, círculo",
+    "loopsPatterns.coreC": "círculo",
+    "loopsPatterns.quizTimesTitle": "¿Cuántas veces?",
+    "loopsPatterns.quizTimesScene": "estrella, cuadrado, estrella, cuadrado, estrella, cuadrado",
+    "loopsPatterns.quizTimesQuestion": "¿Cuántas veces aparece el núcleo estrella, cuadrado?",
+    "loopsPatterns.quizWrongTitle": "Encuentra el error",
+    "loopsPatterns.quizWrongScene": "1 círculo, 2 cuadrado, 3 triángulo, 4 círculo, 5 cuadrado, 6 círculo, 7 círculo, 8 cuadrado, 9 triángulo",
+    "loopsPatterns.quizWrongQuestion": "¿Qué número rompe el patrón?",
+    "loopsPatterns.quizMissingTitle": "La pieza que falta",
+    "loopsPatterns.quizMissingScene": "cuadrado, triángulo, estrella, cuadrado, un espacio vacío, estrella",
+    "loopsPatterns.quizMissingQuestion": "¿Qué figura falta?",
+    "loopsPatterns.quizLoopTitle": "Dilo como un bucle",
+    "loopsPatterns.quizLoopScene": "círculo, cuadrado, círculo, cuadrado, círculo, cuadrado",
+    "loopsPatterns.quizLoopQuestion": "¿Qué instrucción dibuja este patrón?",
+    "loopsPatterns.loopA": "Repite círculo, cuadrado 3 veces",
+    "loopsPatterns.loopB": "Repite círculo 6 veces",
+    "loopsPatterns.loopC": "Repite círculo, cuadrado 6 veces",
+    "loopsPatterns.fixTitle": "Arregla el patrón",
+    "loopsPatterns.fixTask": "Una figura rompe el patrón. Tócala para cambiarla hasta que el patrón quede bien.",
+    "loopsPatterns.fixBigTitle": "Arregla el patrón largo",
+    "loopsPatterns.fixBigTask": "Dos figuras rompen este patrón. Primero encuentra el núcleo y luego toca las figuras equivocadas para arreglarlas.",
+    "loopsPatterns.bigTitle": "Un bucle es un patrón: un núcleo que se repite.",
+    "loopsPatterns.bigText": "Ahora vas a escribir ese patrón en Python con for.",
+    "loopsPatterns.next": "Bucles for",
+    "thinking.pattern-nextSuccess": "¡Sí! Círculo, cuadrado vuelve una y otra vez, así que sigue un cuadrado.",
+    "thinking.pattern-nextHint": "Todavía no. Di las figuras en voz alta: círculo, cuadrado, círculo, cuadrado, círculo...",
+    "thinking.pattern-coreSuccess": "¡Sí! Triángulo, triángulo, círculo vuelve dos veces.",
+    "thinking.pattern-coreHint": "Todavía no. Busca dónde la fila empieza otra vez desde el principio.",
+    "thinking.pattern-timesSuccess": "¡Sí! Estrella, cuadrado aparece 3 veces.",
+    "thinking.pattern-timesHint": "Todavía no. Tapa cada pareja estrella, cuadrado con el dedo y cuenta.",
+    "thinking.pattern-wrongSuccess": "¡Sí! El núcleo es círculo, cuadrado, triángulo, así que la figura 6 debería ser un triángulo.",
+    "thinking.pattern-wrongHint": "Todavía no. El núcleo es círculo, cuadrado, triángulo. Revisa cada grupo de 3.",
+    "thinking.pattern-missingSuccess": "¡Sí! El núcleo es cuadrado, triángulo, estrella.",
+    "thinking.pattern-missingHint": "Todavía no. Mira las tres primeras figuras. Son el núcleo.",
+    "thinking.pattern-loopSuccess": "¡Sí! El núcleo círculo, cuadrado se repite 3 veces. ¡Eso es un bucle!",
+    "thinking.pattern-loopHint": "Todavía no. Primero encuentra el núcleo y luego cuenta cuántas veces aparece.",
+    "thinking.pattern-fixSuccess": "¡Lo arreglaste! Círculo, cuadrado, 3 veces.",
+    "thinking.pattern-fixHint": "Todavía no. El núcleo es círculo, cuadrado. ¿Qué figura no encaja?",
+    "thinking.pattern-fix-bigSuccess": "¡Lo arreglaste! Triángulo, triángulo, estrella, 3 veces.",
+    "thinking.pattern-fix-bigHint": "Todavía no. El núcleo es triángulo, triángulo, estrella. Revisa cada grupo de 3.",
     "path.loopsFor": "for: cuenta las vueltas",
     "path.loopsWhile": "while: pregunta primero",
     "path.loopsUntil": "Repetir hasta que",
     "meta.loopsWhileDescription": "Aprende los bucles while de Python: repite mientras una pregunta sea True.",
     "meta.loopsUntilDescription": "Repite hasta que algo termine en Python, con while not y break.",
-    "topic.progressLoopsWhile": "ZONA 7 · 2 DE 3",
-    "topic.progressLoopsUntil": "ZONA 7 · 3 DE 3",
+    "topic.progressLoopsWhile": "ZONA 7 · 3 DE 4",
+    "topic.progressLoopsUntil": "ZONA 7 · 4 DE 4",
     "loopsWhile.eyebrow": "BUCLES · WHILE",
     "loopsWhile.title": "Repite mientras sea verdad.",
     "loopsWhile.intro": "Un bucle while hace una pregunta de True o False antes de cada vuelta. True: una vuelta más. False: se detiene.",
@@ -3142,12 +3292,19 @@ const pathSteps = [
     ],
     activitiesAddedLater: ["conditional-fix"],
   },
+  // Loops is split into four pages (picture patterns, for, while, repeat until), like the Start Here route.
+  {
+    id: "loopsPatterns", page: "loopsPatterns", href: "lessons/09-loops-patterns.html", addedLater: true,
+    activities: [
+      "pattern-next", "pattern-core", "pattern-times", "pattern-wrong",
+      "pattern-missing", "pattern-loop", "pattern-fix", "pattern-fix-big",
+    ],
+  },
   {
     id: "loops", page: "loops", href: "lessons/09-loops.html",
     activities: ["loop-count", "loop-action", "loop-stop", "loop-predict", "loop-zero", "loop-list", "loop-once", "loop-total"],
     activitiesAddedLater: ["loop-fix"],
   },
-  // Loops is split into three pages (for, while, repeat until), like the Start Here route.
   {
     id: "loopsWhile", page: "loopsWhile", href: "lessons/09-loops-while.html", addedLater: true,
     activities: [
@@ -3902,6 +4059,8 @@ function setLanguage(language, persist = true) {
     }
   });
 
+  labelPatternRows();
+
   document.querySelectorAll("[data-fix-code-key]").forEach((editor) => {
     if (editor.dataset.edited !== "true") {
       editor.value = textFor(editor.dataset.fixCodeKey);
@@ -4444,6 +4603,57 @@ document.querySelectorAll(".fix-activity").forEach((activity) => {
   });
 });
 
+// "Fix the pattern": tapping a shape turns it into the next shape. The activity
+// is complete when the row matches the goal pattern.
+const PATTERN_SHAPES = ["circle", "square", "triangle", "star"];
+
+function labelPatternRows() {
+  document.querySelectorAll("[data-pattern-row]").forEach((row) => {
+    [...row.children].forEach((button, index) => {
+      button.setAttribute("aria-label", textFor("shape.position")
+        .replace("{n}", index + 1)
+        .replace("{shape}", textFor(`shape.${button.dataset.shape}`)));
+    });
+  });
+}
+
+function renderPatternRow(activity, shapes) {
+  const row = activity.querySelector("[data-pattern-row]");
+  const goal = activity.dataset.patternGoal.split(",");
+
+  row.replaceChildren(...shapes.map((shape, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "pattern-shape";
+    button.dataset.shape = shape;
+    button.innerHTML = `<span class="shape shape-${shape}" aria-hidden="true"></span>`;
+    button.disabled = activity.classList.contains("is-complete");
+    button.addEventListener("click", () => {
+      const next = [...shapes];
+      next[index] = PATTERN_SHAPES[(PATTERN_SHAPES.indexOf(shape) + 1) % PATTERN_SHAPES.length];
+      if (next.join(",") === goal.join(",")) {
+        playRobotChime();
+        completeActivity(activity, null);
+      } else if (shape === goal[index]) {
+        // The learner changed a shape that already fit.
+        showActivityFeedback(activity, "hint");
+      }
+      renderPatternRow(activity, next);
+      row.children[index].focus();
+    });
+    return button;
+  }));
+  labelPatternRows();
+}
+
+function resetPatternActivity(activity) {
+  if (activity.dataset.patternStart) {
+    renderPatternRow(activity, activity.dataset.patternStart.split(","));
+  }
+}
+
+document.querySelectorAll(".pattern-fix").forEach(resetPatternActivity);
+
 function restoreStepActivities() {
   stepActivities.forEach((activity) => {
     let storedState;
@@ -4457,6 +4667,9 @@ function restoreStepActivities() {
       const correctButton = activity.querySelector('[data-correct="true"]');
       if (correctButton || activity.classList.contains("fix-activity")) {
         completeActivity(activity, correctButton, false);
+      } else if (activity.classList.contains("pattern-fix")) {
+        completeActivity(activity, null, false);
+        renderPatternRow(activity, activity.dataset.patternGoal.split(","));
       }
     } else if (storedState === "review") {
       activity.classList.add("needs-review");
@@ -4475,6 +4688,7 @@ function resetStepActivity(activity) {
   activity.classList.remove("is-complete", "needs-review");
   activity.querySelector(".answer-confetti")?.remove();
   resetFixActivity(activity);
+  resetPatternActivity(activity);
   buttons.forEach((button) => {
     button.disabled = false;
     button.classList.remove("is-correct", "is-wrong");
