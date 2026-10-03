@@ -82,7 +82,7 @@ Zone states, each acting out one zone's idea on its lesson cover:
 - **Counting** (loops): one hand up, counting inside a turning ring.
 - **Thinking** (True or false?): thoughtful look beside `3 < 5` and its answer, `True`.
 - **Ready** (functions): determined brows beside a machine that turns an input into an output.
-- **Curious** (bugs): head tilted beside a magnifying glass and a little bug crawling by.
+- **Curious** (bugs): head tilted beside a magnifying glass and a little bug crawling by. The code page uses **focused** and the detective page **wink**, with the same props.
 
 Additional states should only be introduced when they serve a clear teaching purpose. PyBot's proportions, colors, voice, and motion language must remain consistent across lessons.
 
@@ -205,7 +205,7 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.language` | `en` or `es` | Interface language preference | Yes |
 | `pybot.audio.enabled` | `true` or `false` | Optional robot ambience preference; defaults to `true` | Yes |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
-| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `conditionals`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `functions`, `checkpoint1`, or `bugs` | Highlights the learner's current place across the complete small path | Yes |
+| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `conditionals`, `loops`, `loopsWhile`, `loopsUntil`, `comparisons`, `functions`, `checkpoint1`, `bugs`, `bugsCode`, or `bugsDetective` | Highlights the learner's current place across the complete small path | Yes |
 | `pybot.path.visited` | Comma-separated step ids from `pybot.path.current` | Remembers which pages the learner has opened, so steps added to the path later show as new and pending | Yes |
 | `pybot.path.done` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps the learner finished, so a finished step that later gains activities shows **NEW ACTIVITIES** | Yes |
 | `pybot.path.known` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps were on the path when the learner started, so a step added later shows as new even when it is ahead of the learner | Yes |
@@ -227,7 +227,9 @@ Registered activity IDs:
 - True or false: `compare-less`, `compare-equal`, `compare-assign`, `compare-not-equal`, `compare-and`, `compare-or`, `compare-not`, `compare-predict`, and `compare-fix`
 - Functions: `function-input`, `function-output`, `function-inside`, `function-predict`, `function-name`, `function-call`, and `function-fix`
 - Pit stop 1: `checkpoint-backpack`, `checkpoint-light`, `checkpoint-outside`, `checkpoint-countdown`, `checkpoint-stars`, and `checkpoint-battery`
-- Bug hunters: `bug-predict`, `bug-meaning`, `bug-line`, `bug-clue`, `bug-sneaky`, `bug-text`, `bug-which-fix`, `bug-list`, `bug-fix-loud`, `bug-fix-sneaky`, and `bug-fix-double`
+- Bugs in everyday steps: `bug-steps-order`, `bug-steps-missing`, `bug-steps-wrong`, `bug-steps-forever`, `bug-steps-decision`, `bug-steps-fix`, and `bug-steps-square`
+- Bugs in code: `bug-predict`, `bug-meaning`, `bug-line`, `bug-clue`, `bug-sneaky`, `bug-text`, `bug-which-fix`, `bug-list`, `bug-fix-loud`, `bug-fix-sneaky`, and `bug-fix-double`
+- Detective tools: `detective-trace`, `detective-trace-loop`, `detective-print`, `detective-duck`, `detective-report`, `detective-test`, and `detective-fix`
 
 Storage rules:
 
@@ -273,7 +275,7 @@ The learning-path page turns the three foundation pages and ten learning zones i
 
 The path is a race track with pit stops. A pit stop (`lessons/11-checkpoint.html`, step `checkpoint1`, after zone 9) has bigger "write real code" challenges that mix the zones before it, checked by output like "Fix PyBot's code" (`.fix-activity`, plus `data-checkpoint-zones`). Then the learner rates each zone with a face (no grades). Zones rated "I want to review" are linked from the page, marked **TO REVIEW** on the map, and the zone page shows a note with an "I reviewed it" button. Zones of challenges still in review get a gentle hint, but the learner decides. To add another pit stop, copy the page, add a step to `pathSteps`, and list its zones in the self-check rows.
 
-After the pit stop, zone 10 "Bug hunters" (`lessons/12-bugs.html`, step `bugs`) explains what a defect or bug is (with the 1947 Mark II moth story), loud bugs (Python stops with an error) versus sneaky bugs (wrong result, no error), and a four-step hunting plan. Its "find the bug" activities mix tap-the-buggy-line cards (`.bug-line-options`, plain multiple choice styled as numbered code lines), reading an error clue, picking the right fix, and three real-code fixes, the last one with two bugs so the learner fixes one, runs, and follows the next clue.
+After the pit stop, zone 10 "Bug hunters" has three pages shown as a route inside its map card, like the loops zone. Page 1 (`lessons/12-bugs.html`, step `bugs`) explains what a defect or bug is (with the 1947 Mark II moth story) and finds bugs in everyday step-by-step plans, like the Thinking in steps page: wrong order, missing step, wrong step or question, and plans that never end. The learner taps the buggy step (`.bug-step-options`), names the kind of bug, or picks the fix. Page 2 (`lessons/12-bugs-code.html`, step `bugsCode`) covers loud bugs (Python stops with an error) and sneaky bugs (wrong result) in real Python: tap-the-buggy-line cards (`.bug-line-options`), reading an error clue, picking the right fix, and three real-code fixes, the last with two bugs. Page 3 (`lessons/12-bugs-detective.html`, step `bugsDetective`) teaches detective tools: trace tables ("be the computer"), spying with print, explaining code out loud, bug reports, and checks that catch a bug.
 
 Each step in `pathSteps` also lists its activity ids. An opened step with activities left shows **ACTIVITIES LEFT**, and a fully finished one shows **DONE**. When activities are added to a step the learner had finished, the map shows **NEW ACTIVITIES**, links to it under the main action, and the lesson page says new activities are waiting. To get this for future content, just add the new activity id to the step's list (and to the registry below); no flag is needed now that `pybot.path.done` exists. The `activitiesAddedLater` lists only exist for progress saved before that key.
 
@@ -461,7 +463,9 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |   |-- 09b-true-or-false.html
 |   |-- 10-functions.html
 |   |-- 11-checkpoint.html
-|   `-- 12-bugs.html
+|   |-- 12-bugs.html
+|   |-- 12-bugs-code.html
+|   `-- 12-bugs-detective.html
 |-- pyodide-worker.mjs # Isolated browser worker for the live Python runner
 |-- THIRD_PARTY_NOTICES.md # Runtime credits, license, and pinned version
 |-- styles.css   # Brand system, layout, mascot, and responsive styles
