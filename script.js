@@ -28,6 +28,8 @@ const translations = {
     "audio.off": "Sound off",
     "audio.turnOn": "Turn robot sounds on",
     "audio.turnOff": "Turn robot sounds off",
+    "support.label": "Support PyBot",
+    "support.aria": "Support PyBot on Patreon (opens in a new tab)",
     "progress.savedTitle": "Your work is saved here.",
     "progress.savedText": "Want a fresh start? Clear only this page.",
     "progress.resetPage": "Clear this page's progress",
@@ -1079,6 +1081,8 @@ const translations = {
     "audio.off": "Sonido apagado",
     "audio.turnOn": "Activar sonidos robóticos",
     "audio.turnOff": "Apagar sonidos robóticos",
+    "support.label": "Apoya a PyBot",
+    "support.aria": "Apoya a PyBot en Patreon (se abre en una pestaña nueva)",
     "progress.savedTitle": "Tu trabajo está guardado aquí.",
     "progress.savedText": "¿Quieres empezar de nuevo? Borra solo el avance de esta página.",
     "progress.resetPage": "Borrar avance de esta página",
@@ -2584,6 +2588,23 @@ function createSoundToggle() {
   return button;
 }
 
+// Adds the Patreon link to the shared header, so every page shows it.
+function createSupportLink() {
+  const tools = document.querySelector(".lesson-header-tools, .site-nav");
+  if (!tools) {
+    return;
+  }
+
+  const link = document.createElement("a");
+  link.className = "support-link";
+  link.href = "https://www.patreon.com/pybot";
+  link.target = "_blank";
+  link.rel = "noopener";
+  link.dataset.i18nAriaLabel = "support.aria";
+  link.innerHTML = '<span class="support-link-icon" aria-hidden="true">♥</span><span class="support-link-label" data-i18n="support.label"></span>';
+  tools.insertBefore(link, tools.querySelector(".sound-toggle, .language-switch"));
+}
+
 function updateAudioButton() {
   if (!soundToggle) {
     return;
@@ -3295,6 +3316,7 @@ audioEnabled = storedAudioPreference();
 learnerName = storedLearnerName();
 saveCurrentPathStep();
 soundToggle = createSoundToggle();
+createSupportLink();
 setLanguage(storedLanguage(), false);
 updateLearnerNamePanel(!learnerName);
 restoreStepActivities();
