@@ -3058,7 +3058,7 @@ const learnerNameEdit = document.querySelector("[data-name-edit]");
 const learnerNameForget = document.querySelector("[data-name-forget]");
 // Google Analytics 4 measurement ID (looks like "G-XXXXXXXXXX"). Every page loads
 // this script, so this is the only place to set it. Leave it empty to turn analytics off.
-const GA_MEASUREMENT_ID = "";
+const GA_MEASUREMENT_ID = "G-H0PLZHW8CE";
 
 // Counts anonymous page visits only. Ads, Google signals, and ad personalization stay off,
 // and nothing the learner types or saves (name, answers, progress) is sent.
