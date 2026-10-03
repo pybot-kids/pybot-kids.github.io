@@ -4537,7 +4537,10 @@ a {
 
 .topic-page[data-page="environment"] .topic-hero,
 .topic-page[data-page="conditionals"] .topic-hero,
-.topic-page[data-page="comparisons"] .topic-hero {
+.topic-page[data-page="comparisons"] .topic-hero,
+.topic-page[data-page="comparisonsAnd"] .topic-hero,
+.topic-page[data-page="comparisonsOr"] .topic-hero,
+.topic-page[data-page="comparisonsNot"] .topic-hero {
   border-top-color: var(--blue);
 }
 
@@ -5266,6 +5269,27 @@ a {
 .function-open-single {
   grid-template-columns: minmax(0, 1fr);
   max-width: 720px;
+}
+
+/* and, or and not pages: the scene word is wider than one sign. */
+.scene-compare-logic b,
+.scene-compare-not b {
+  width: auto;
+  padding: 0 8px;
+}
+
+.scene-compare-not {
+  grid-template-columns: repeat(2, auto);
+}
+
+.compare-table.truth-table th,
+.compare-table.truth-table td {
+  text-align: center;
+}
+
+.compare-table.truth-table thead th {
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .compare-table-wrap {
