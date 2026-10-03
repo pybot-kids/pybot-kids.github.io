@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta id="meta-description" name="description" content="Learn the order Python uses with many operators, how parentheses change it, and shortcuts like *=." data-i18n-content="meta.operatorsOrderDescription" /><meta name="theme-color" content="#fff8ec" /><title>Which sign goes first? — PyBot</title><link rel="icon" href="../favicon.svg" type="image/svg+xml" /><link rel="stylesheet" href="../styles.css" /><script src="../script.js" defer></script></head>
+  <body class="lesson-page topic-page" data-page="operatorsOrder">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+    <header class="site-header lesson-site-header"><a class="brand" href="../index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home"><span class="brand-mark"><span></span></span><span>PyBot</span></a><div class="lesson-header-tools"><span class="lesson-progress" data-i18n="topic.progressOperatorsOrder">ZONE 3 · 3 OF 3</span><div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria-label="a11y.language"><button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button><button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button></div></div></header>
+    <main class="lesson-main" id="main-content">
+      <a class="lesson-back" href="07e-operators-compare.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a>
+      <section class="topic-hero"><div class="topic-hero-copy"><p class="eyebrow"><span>03</span><b data-i18n="operatorsOrder.eyebrow">OPERATORS · ORDER</b></p><h1 data-i18n="operatorsOrder.title">Which sign goes first?</h1><p data-i18n="operatorsOrder.intro">A line can have many signs. Python follows an order, like a line at the bakery. Parentheses jump to the front.</p></div>
+        <aside class="lesson-pybot-scene topic-pybot-scene scene-comparisons">
+          <div class="lesson-pybot-bubble">
+            <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+            <p data-i18n="operatorsOrder.pybot" data-pybot-message="operatorsOrder.pybot">2 + 3 * 4 is 14, not 20. I multiply first!</p>
+          </div>
+
+          <div class="scene-compare scene-compare-logic scene-operators" aria-hidden="true"><span>(2+3)</span><b>*</b><span>4</span><i>20</i></div>
+
+          <div class="pybot-wrap lesson-pybot-figure" data-mood="focused">
+            <div class="pybot" role="img" aria-label="PyBot focuses next to (2 + 3) * 4 and its answer, 20" data-i18n-aria-label="operatorsOrder.robotLabel">
+              <div class="antenna" aria-hidden="true"><span></span></div>
+              <div class="ear ear-left" aria-hidden="true"></div>
+              <div class="ear ear-right" aria-hidden="true"></div>
+              <div class="bot-head">
+                <div class="bot-screen">
+                  <div class="brow brow-left" aria-hidden="true"></div>
+                  <div class="brow brow-right" aria-hidden="true"></div>
+                  <div class="eye eye-left" aria-hidden="true"><span></span></div>
+                  <div class="eye eye-right" aria-hidden="true"><span></span></div>
+                  <div class="cheek cheek-left" aria-hidden="true"></div>
+                  <div class="cheek cheek-right" aria-hidden="true"></div>
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="bot-neck" aria-hidden="true"></div>
+              <div class="arm arm-left" aria-hidden="true"><span class="hand"></span></div>
+              <div class="arm arm-right" aria-hidden="true"><span class="hand"></span></div>
+              <div class="bot-body">
+                <div class="chest-light" aria-hidden="true"></div>
+                <span class="chest-code" aria-hidden="true">&lt;/&gt;</span>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+      </section>
+
+      <section class="topic-overview" aria-labelledby="operatorsOrder-life-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lifeEyebrow">IN REAL LIFE</p><h2 id="operatorsOrder-life-title" data-i18n="operatorsOrder.lifeTitle">Order matters in real life.</h2><p class="practice-intro" data-i18n="operatorsOrder.lifeIntro">Some jobs must happen before others.</p></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">🧦</span><h3 data-i18n="operatorsOrder.life1Title">Socks, then shoes</h3><p data-i18n="operatorsOrder.life1Text">Shoes first, then socks? That does not work.</p></article><article class="topic-info-card"><span aria-hidden="true">🎂</span><h3 data-i18n="operatorsOrder.life2Title">Bake, then decorate</h3><p data-i18n="operatorsOrder.life2Text">The frosting goes on after the cake is baked.</p></article><article class="topic-info-card"><span aria-hidden="true">🧮</span><h3 data-i18n="operatorsOrder.life3Title">Math class</h3><p data-i18n="operatorsOrder.life3Text">In math, you multiply before you add. Python does the same.</p></article>
+      </div></section>
+
+      <section class="topic-overview" aria-labelledby="operatorsOrder-table-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="operatorsOrder.tableEyebrow">PYTHON'S ORDER</p><h2 id="operatorsOrder-table-title" data-i18n="operatorsOrder.tableTitle">Who goes first?</h2></div><div class="compare-table-wrap"><table class="compare-table"><thead><tr><th scope="col" data-i18n="operatorsOrder.col1">Turn</th><th scope="col" data-i18n="operatorsOrder.col2">Signs</th><th scope="col" data-i18n="operatorsOrder.col3">Example</th><th scope="col" data-i18n="operatorsOrder.col4">Answer</th></tr></thead><tbody><tr><th scope="row">1</th><td><code>( )</code></td><td><code>(2 + 3) * 4</code></td><td><b>20</b></td></tr><tr><th scope="row">2</th><td><code>**</code></td><td><code>2 * 3 ** 2</code></td><td><b>18</b></td></tr><tr><th scope="row">3</th><td><code>* / // %</code></td><td><code>2 + 3 * 4</code></td><td><b>14</b></td></tr><tr><th scope="row">4</th><td><code>+ -</code></td><td><code>10 - 2 + 1</code></td><td><b>9</b></td></tr><tr><th scope="row">5</th><td><code>== != &lt; &gt; &lt;= &gt;=</code></td><td><code>2 + 3 &gt; 4</code></td><td><b class="compare-true">True</b></td></tr></tbody></table></div>
+        <p class="topic-try"><b data-i18n="operatorsOrder.trickLabel">A tip:</b> <span data-i18n="operatorsOrder.trick">Two signs on the same turn go left to right. Not sure? Add parentheses. They make the order clear for Python and for people.</span></p>
+      </section>
+
+      <section class="topic-overview" aria-labelledby="operatorsOrder-steps-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="conditionals.stepsEyebrow">STEP BY STEP</p><h2 id="operatorsOrder-steps-title" data-i18n="operatorsOrder.stepsTitle">Work it out step by step.</h2><p class="practice-intro" data-i18n="operatorsOrder.stepsIntro">Python solves one sign at a time, in its order.</p></div>
+        <div class="function-open-grid function-open-single"><div class="function-open"><div class="function-line"><code>2 + 3 * 4 &gt; 10</code><small data-i18n="operatorsOrder.walk1Tag">Four values, three signs. * has the first turn.</small></div><div class="function-line"><code>2 + 12 &gt; 10</code><small data-i18n="operatorsOrder.walk2Tag">3 * 4 is 12. Now + has its turn.</small></div><div class="function-line"><code>14 &gt; 10</code><small data-i18n="operatorsOrder.walk3Tag">2 + 12 is 14. The comparison goes last.</small></div><div class="function-line"><code>True</code><small data-i18n="operatorsOrder.walk4Tag">14 is more than 10.</small></div></div></div>
+      </section>
+
+      <section class="topic-overview" aria-labelledby="operatorsOrder-look-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lookEyebrow">LOOK FIRST</p><h2 id="operatorsOrder-look-title" data-i18n="operatorsOrder.lookTitle">Every math sign has a shortcut.</h2></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">+=</span><h3 data-i18n="operatorsOrder.look1Title">You know these</h3><p data-i18n="operatorsOrder.look1Text">score += 1 and lives -= 1 from Changing boxes.</p></article><article class="topic-info-card"><span aria-hidden="true">*=</span><h3 data-i18n="operatorsOrder.look2Title">Double it</h3><p data-i18n="operatorsOrder.look2Text">stars *= 2 means stars = stars * 2.</p></article><article class="topic-info-card"><span aria-hidden="true">//=</span><h3 data-i18n="operatorsOrder.look3Title">Split it</h3><p data-i18n="operatorsOrder.look3Text">cake //= 2 keeps the whole half of cake.</p></article>
+      </div></section>
+
+      <section class="topic-run" aria-labelledby="operatorsOrder-run-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.runEyebrow">RUN IT</p><h2 id="operatorsOrder-run-title" data-i18n="operatorsOrder.runTitle">Price of the snacks.</h2><p class="practice-intro" data-i18n="topic.runIntro">Guess first. Then run real Python and check.</p></div>
+        <div class="topic-run-grid">
+          <article class="step-activity" data-activity-id="order-predict"><header class="step-activity-header"><span>1</span><h3 data-i18n="topic.predictTitle">Guess the result</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="operatorsOrder.runCode">apples = 2
+price = 3
+print(apples * price + 1)
+print(apples * (price + 1))</code></div><p class="activity-question" data-i18n="topic.predictQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="operatorsOrder.predictOption1">7, then 8</button><button type="button" data-i18n="operatorsOrder.predictOption2">8, then 7</button><button type="button" data-i18n="operatorsOrder.predictOption3">9, then 8</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <div class="topic-runner">
+            <div class="code-window" aria-label="Python exercise" data-i18n-aria-label="a11y.codePreview" data-python-runner>
+              <div class="window-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>snacks.py</span><span class="preview-tag" data-i18n="preview.tag">REAL PYTHON</span></div>
+              <div class="code-area"><span class="line-number" aria-hidden="true">1<br />2<br />3<br />4</span><label class="visually-hidden" for="python-code" data-i18n="preview.editorLabel">Python code</label><textarea id="python-code" data-python-editor data-code-key="operatorsOrder.runCode" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off">apples = 2
+price = 3
+print(apples * price + 1)
+print(apples * (price + 1))</textarea></div>
+              <div class="output-area" role="status" aria-live="polite"><span class="output-label" data-i18n="preview.output">OUTPUT</span><p class="python-hint" data-python-hint hidden><strong data-i18n="preview.hintLabel">PyBot's hint</strong><span data-python-hint-text></span></p><pre data-python-output data-i18n="topic.runReady">Ready. Press Run Python.</pre></div>
+              <div class="runner-actions"><button class="run-button" type="button" data-python-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="stop-button" type="button" data-python-stop disabled><span aria-hidden="true">■</span><span data-i18n="preview.stop">Stop</span></button></div>
+              <details class="runtime-credit"><summary data-i18n="preview.creditSummary">Who makes Python run here?</summary><p data-i18n="preview.creditText">Pyodide 314.0.3 runs CPython in your browser with WebAssembly.</p><p><span data-i18n="preview.creditLicense">Open-source under the Mozilla Public License 2.0.</span> <a href="https://github.com/pyodide/pyodide/blob/314.0.3/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="preview.license">License</a></p></details>
+            </div>
+            <p class="topic-try"><b data-i18n="topic.tryLabel">Now change one thing:</b> <span data-i18n="operatorsOrder.tryText">Remove the parentheses on line 4. Does the answer change?</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic-practice" aria-labelledby="operatorsOrder-practice-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.practiceEyebrow">YOUR TURN</p><h2 id="operatorsOrder-practice-title" data-i18n="operatorsOrder.practiceTitle">Put the signs in order.</h2><p class="practice-intro" data-i18n="topic.practiceIntro">Try each tiny question. A wrong answer becomes something to review.</p></div>
+        <div class="plan-progress-summary" aria-label="Activity progress" data-i18n-aria-label="progress.activitySummaryLabel" aria-live="polite"><div class="progress-complete"><strong data-progress-complete>0</strong><span data-i18n="progress.completed">Completed</span></div><div class="progress-remaining"><strong data-progress-remaining>10</strong><span data-i18n="progress.remaining">Not tried</span></div><div class="progress-review"><strong data-progress-review>0</strong><span data-i18n="progress.review">Review</span></div></div>
+        <div class="all-plans"><div class="step-activity-grid">
+          <article class="step-activity" data-activity-id="order-everyday"><header class="step-activity-header"><span>01</span><h3 data-i18n="operatorsOrder.quizEverydayTitle">Count the stickers</h3></header><div class="quiz-scene" data-i18n="operatorsOrder.quizEverydayScene">Ana buys 2 packs of 5 stickers and gets 3 free stickers.</div><p class="activity-question" data-i18n="operatorsOrder.quizEverydayQuestion">Which line counts them right?</p><div class="activity-options"><button type="button" data-correct="true"><code>2 * 5 + 3</code></button><button type="button"><code>2 * (5 + 3)</code></button><button type="button"><code>2 + 5 * 3</code></button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="order-times"><header class="step-activity-header"><span>02</span><h3 data-i18n="operatorsOrder.quizTimesTitle">Multiply first</h3></header><div class="quiz-scene"><code class="code-lines">print(2 + 3 * 4)</code></div><p class="activity-question" data-i18n="topic.predictQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-correct="true">14</button><button type="button">20</button><button type="button">24</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="order-parens"><header class="step-activity-header"><span>03</span><h3 data-i18n="operatorsOrder.quizParensTitle">Parentheses first</h3></header><div class="quiz-scene"><code class="code-lines">print((2 + 3) * 4)</code></div><p class="activity-question" data-i18n="topic.predictQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-correct="true">20</button><button type="button">14</button><button type="button">9</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="order-power"><header class="step-activity-header"><span>04</span><h3 data-i18n="operatorsOrder.quizPowerTitle">Power first</h3></header><div class="quiz-scene"><code class="code-lines">print(2 * 3 ** 2)</code></div><p class="activity-question" data-i18n="topic.predictQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-correct="true">18</button><button type="button">36</button><button type="button">12</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="order-left"><header class="step-activity-header"><span>05</span><h3 data-i18n="operatorsOrder.quizLeftTitle">Left to right</h3></header><div class="quiz-scene"><code class="code-lines">print(10 - 4 - 2)</code></div><p class="activity-question" data-i18n="topic.predictQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-correct="true">4</button><button type="button">8</button><button type="button">6</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="order-compare"><header class="step-activity-header"><span>06</span><h3 data-i18n="operatorsOrder.quizCompareTitle">Compare last</h3></header><div class="quiz-scene"><code class="code-lines">2 + 3 &gt; 4</code></div><p class="activity-question" data-i18n="comparisons.answerQuestion">What does Python answer?</p><div class="activity-options"><button type="button" data-correct="true">True</button><button type="button">False</button><button type="button">5</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="order-shortcut"><header class="step-activity-header"><span>07</span><h3 data-i18n="operatorsOrder.quizShortcutTitle">Triple the stars</h3></header><div class="quiz-scene"><code class="code-lines">stars = 4
+stars *= 3
+print(stars)</code></div><p class="activity-question" data-i18n="topic.predictQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-correct="true">12</button><button type="button">7</button><button type="button">43</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="order-pick"><header class="step-activity-header"><span>08</span><h3 data-i18n="operatorsOrder.quizPickTitle">Where do the ( ) go?</h3></header><div class="quiz-scene" data-i18n="operatorsOrder.quizPickScene">PyBot wants half of 6 + 4.</div><p class="activity-question" data-i18n="operatorsOrder.quizPickQuestion">Which line gives 5.0?</p><div class="activity-options"><button type="button"><code>6 + 4 / 2</code></button><button type="button" data-correct="true"><code>(6 + 4) / 2</code></button><button type="button"><code>6 + (4 / 2)</code></button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="order-fix" data-fix-expected-key="operatorsOrder.fixExpected"><header class="step-activity-header"><span>09</span><h3 data-i18n="fix.title">Fix PyBot's code</h3></header><p class="activity-question" data-i18n="operatorsOrder.fixTask">PyBot shares 10 + 2 candies with 3 friends, so each gets 4. The code shows 10. Add parentheses so it shows 4.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="order-fix-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="order-fix-code" data-fix-code-key="operatorsOrder.fixCode" rows="3" spellcheck="false" autocapitalize="off" autocomplete="off">each = 10 + 2 // 3
+print(each)</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="operatorsOrder.fixExpected">4</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+        </div></div>
+        <div class="page-progress-tools"><div><strong data-i18n="progress.savedTitle">Your work is saved here.</strong><p data-i18n="progress.savedText">Want a fresh start? Clear only this page.</p></div><button type="button" data-reset-activities><span>↺</span><span data-i18n="progress.resetPage">Clear this page's progress</span></button><p class="progress-reset-status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-big-idea"><span class="big-idea-mark">!</span><div><span class="big-idea-label" data-i18n="lesson.bigIdea">BIG IDEA</span><h2 data-i18n="operatorsOrder.bigTitle">( ) first, then **, then * / // %, then + -, and comparisons last.</h2><p data-i18n="operatorsOrder.bigText">Next: PyBot uses True and False to choose a path.</p></div></section>
+      <nav class="lesson-actions" aria-label="Lesson navigation" data-i18n-aria-label="a11y.lessonNav"><a class="button button-secondary" href="07e-operators-compare.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a><a class="button button-primary" href="08-conditionals.html"><span data-i18n="boxes.next">Choose a path</span><span>→</span></a></nav>
+    </main>
+  </body>
+</html>

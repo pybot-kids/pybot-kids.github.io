@@ -5282,6 +5282,13 @@ a {
   grid-template-columns: repeat(2, auto);
 }
 
+/* Operators pages: values like (2+3) are wider than one digit. */
+.scene-operators span {
+  width: auto;
+  min-width: 40px;
+  padding: 0 8px;
+}
+
 .compare-table.truth-table th,
 .compare-table.truth-table td {
   text-align: center;
