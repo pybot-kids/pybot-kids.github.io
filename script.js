@@ -325,7 +325,7 @@ const translations = {
     "course.home": "Home",
     "course.eyebrow": "YOUR FIRST PATH",
     "course.titleStart": "Start with the basics.",
-    "course.titleEnd": "Then 9 small zones.",
+    "course.titleEnd": "Then 9 small zones and a pit stop.",
     "course.intro": "Go slowly. Each zone has one idea and one small activity.",
     "course.rule": "One idea. One clear next step.",
     "course.note": "No rush. One small zone at a time.",
@@ -938,7 +938,7 @@ const translations = {
     "functions.quizInsideKnown": "Variables, if, and for",
     "functions.quizInsideEmpty": "Nothing at all",
     "functions.bigTitle": "A function is a named box: in, inside, out.",
-    "functions.bigText": "That is our stopping point. Everything inside the box is something you already know.",
+    "functions.bigText": "Everything inside the box is something you already know. Next: a pit stop to check your engine!",
     "conditionals.stepsEyebrow": "STEP BY STEP",
     "conditionals.stepsTitle": "How Python decides.",
     "conditionals.stepsIntro": "Follow the code one line at a time, like PyBot does.",
@@ -1174,6 +1174,85 @@ const translations = {
     "topic.progressComparisons": "ZONE 8 OF 9",
     "language.bigTitle": "A language gives code its rules.",
     "language.bigText": "Next, we will learn the keys used to write those rules.",
+    "meta.checkpoint1Title": "Pit stop 1 — PyBot",
+    "meta.checkpoint1Description": "A pit stop on the PyBot path: bigger real Python challenges about the zones so far, then a quick check of how it went.",
+    "topic.progressCheckpoint1": "PIT STOP 1",
+    "missionCheckpoint1.concept": "PIT STOP · ZONES 4–9",
+    "missionCheckpoint1.title": "Check the Engine",
+    "missionCheckpoint1.text": "Bigger challenges with real Python. Then tell PyBot how it went.",
+    "functions.next": "Pit stop",
+    "path.review": "TO REVIEW",
+    "checkpoint.eyebrow": "PIT STOP",
+    "checkpoint.title": "Pit stop! Let's check the engine.",
+    "checkpoint.intro": "You have come a long way on the track. These challenges are bigger and mix the zones you visited. Then you tell PyBot how it went.",
+    "checkpoint.pybot": "Race cars stop to check their engines. Now it is our turn!",
+    "checkpoint.pybotNamed": "Race cars stop to check their engines. Now it is our turn, {name}!",
+    "checkpoint.robotLabel": "PyBot stands proudly next to a checkered race flag",
+    "checkpoint.howEyebrow": "HOW IT WORKS",
+    "checkpoint.howTitle": "Three laps.",
+    "checkpoint.lap1Title": "Read the mission",
+    "checkpoint.lap1Text": "Lines that start with # are PyBot's notes. They say what to build.",
+    "checkpoint.lap2Title": "Write real code",
+    "checkpoint.lap2Text": "Finish the code, run it, and compare your output with the goal.",
+    "checkpoint.lap3Title": "Tell PyBot how it went",
+    "checkpoint.lap3Text": "There are no grades. If something felt hard, PyBot shows you where to review.",
+    "checkpoint.challengesEyebrow": "CHALLENGES",
+    "checkpoint.challengesTitle": "Bigger code, same ideas.",
+    "checkpoint.challengesIntro": "Take them in any order. Stuck? Open the zone under the challenge and come back.",
+    "checkpoint.zonesLabel": "Stuck? Review:",
+    "checkpoint.codeLabel": "Your code",
+    "checkpoint.backpackTitle": "Pack PyBot's backpack",
+    "checkpoint.backpackTask": "Follow the two comments. Then run it.",
+    "checkpoint.backpackCode": "name = \"PyBot\"\nsnacks = [\"apple\", \"cookie\", \"grape\"]\n\n# 1. Make a box called energy that keeps 7.\n# 2. Print name, then energy, then the last snack.\nprint(name)",
+    "checkpoint.backpackExpected": "PyBot\n7\ngrape",
+    "thinking.checkpoint-backpackSuccess": "Great packing! Boxes and lists work together.",
+    "thinking.checkpoint-backpackHint": "Not yet. Is energy a box with 7? The last snack is in space 2, because counting starts at 0.",
+    "checkpoint.lightTitle": "Build a traffic light",
+    "checkpoint.lightTask": "Use if, elif, and else. When it works, try light = \"red\".",
+    "checkpoint.lightCode": "light = \"yellow\"\n\n# Print \"go\" if light is \"green\".\n# Print \"wait\" if light is \"yellow\".\n# Otherwise, print \"stop\".",
+    "checkpoint.lightExpected": "wait",
+    "thinking.checkpoint-lightSuccess": "Your traffic light works! Change the color and run it again.",
+    "thinking.checkpoint-lightHint": "Not yet. Ask with == (two equals signs) and end the if, elif, and else lines with a colon.",
+    "checkpoint.outsideTitle": "Outside or inside?",
+    "checkpoint.outsideTask": "Join two questions in one if.",
+    "checkpoint.outsideCode": "sunny = True\nbattery = 60\n\n# PyBot goes outside only if it is sunny\n# and battery is greater than 50.\n# Print \"outside\" or \"inside\".",
+    "checkpoint.outsideExpected": "outside",
+    "thinking.checkpoint-outsideSuccess": "Yes! and needs both answers to be True.",
+    "thinking.checkpoint-outsideHint": "Not yet. Put both questions in one if and join them with and.",
+    "checkpoint.countdownTitle": "Countdown to launch",
+    "checkpoint.countdownTask": "A loop for the numbers. One more line after it.",
+    "checkpoint.countdownCode": "countdown = [3, 2, 1]\n\n# Print each number in countdown with a for loop.\n# After the loop, print \"Go!\"",
+    "checkpoint.countdownExpected": "3\n2\n1\nGo!",
+    "thinking.checkpoint-countdownSuccess": "Launch! The loop ran once for each number.",
+    "thinking.checkpoint-countdownHint": "Not yet. Print the number inside the loop, with spaces. Print \"Go!\" after it, with no spaces.",
+    "checkpoint.starsTitle": "Count the big scores",
+    "checkpoint.starsTask": "A loop with an if inside. This one is bigger!",
+    "checkpoint.starsCode": "scores = [4, 9, 2, 7, 10]\nbig = 0\n\n# Look at each score with a for loop.\n# If the score is greater than 5, add 1 to big.\n\nprint(big)",
+    "checkpoint.starsExpected": "3",
+    "thinking.checkpoint-starsSuccess": "You counted 3 big scores: 9, 7, and 10.",
+    "thinking.checkpoint-starsHint": "Not yet. Put an if inside the loop. To add 1, write big = big + 1.",
+    "checkpoint.batteryTitle": "A box that decides",
+    "checkpoint.batteryTask": "Fill the box with if and else. Every path needs a return.",
+    "checkpoint.batteryCode": "def check_battery(battery):\n    # Return \"charge\" if battery is less than 30.\n    # Otherwise, return \"play\".\n    return \"?\"\n\nprint(check_battery(20))\nprint(check_battery(80))",
+    "checkpoint.batteryExpected": "charge\nplay",
+    "thinking.checkpoint-batterySuccess": "Your box decides by itself! Variables, if, and return, all together.",
+    "thinking.checkpoint-batteryHint": "Not yet. Inside the box, use if and else, and return a word on each path.",
+    "checkpoint.feelEyebrow": "HOW DID IT GO?",
+    "checkpoint.feelTitle": "Tell PyBot the truth.",
+    "checkpoint.feelIntro": "No grades here. For each zone, pick the face that fits you best.",
+    "checkpoint.rateLabel": "How did {name} go?",
+    "checkpoint.rateGood": "I've got it",
+    "checkpoint.rateOkay": "Almost",
+    "checkpoint.rateReview": "I want to review",
+    "checkpoint.noticed": "PyBot saw a challenge here that is still tricky.",
+    "checkpoint.resultReview": "Good choice! Reviewing is how racers get faster. These zones are marked TO REVIEW on your path:",
+    "checkpoint.resultGood": "Great race! Your engine is ready. The next part of the track is being built.",
+    "checkpoint.resultPending": "Pick a face for every zone.",
+    "checkpoint.goTo": "Go to {name} →",
+    "checkpoint.bigTitle": "Going back is part of the race.",
+    "checkpoint.bigText": "Good programmers review often. Every time you come back to a zone, it gets easier.",
+    "review.note": "At the pit stop you chose to review this zone. Take your time.",
+    "review.done": "I reviewed it ✓",
   },
   es: {
     "keyboard.quizEnterTitle": "Empieza una línea nueva",
@@ -1501,7 +1580,7 @@ const translations = {
     "course.home": "Inicio",
     "course.eyebrow": "TU PRIMERA RUTA",
     "course.titleStart": "Empieza por lo básico.",
-    "course.titleEnd": "Luego 9 zonas pequeñas.",
+    "course.titleEnd": "Luego 9 zonas pequeñas y una parada en boxes.",
     "course.intro": "Ve con calma. Cada zona tiene una idea y una actividad pequeña.",
     "course.rule": "Una idea. Un siguiente paso claro.",
     "course.note": "Sin afán. Una zona pequeña a la vez.",
@@ -2114,7 +2193,7 @@ const translations = {
     "functions.quizInsideKnown": "Variables, if y for",
     "functions.quizInsideEmpty": "Nada de nada",
     "functions.bigTitle": "Una función es una caja con nombre: entra, trabaja, sale.",
-    "functions.bigText": "Este es nuestro punto de llegada. Todo lo que hay dentro de la caja ya lo conoces.",
+    "functions.bigText": "Todo lo que hay dentro de la caja ya lo conoces. Sigue: ¡una parada en boxes para revisar tu motor!",
     "conditionals.stepsEyebrow": "PASO A PASO",
     "conditionals.stepsTitle": "Cómo decide Python.",
     "conditionals.stepsIntro": "Sigue el código una línea a la vez, como lo hace PyBot.",
@@ -2350,6 +2429,85 @@ const translations = {
     "topic.progressComparisons": "ZONA 8 DE 9",
     "language.bigTitle": "Un lenguaje le da reglas al código.",
     "language.bigText": "Ahora aprenderemos las teclas usadas para escribir esas reglas.",
+    "meta.checkpoint1Title": "Parada en boxes 1 — PyBot",
+    "meta.checkpoint1Description": "Una parada en boxes en la ruta de PyBot: retos más grandes con Python real sobre las zonas vistas y luego una pregunta sobre cómo te fue.",
+    "topic.progressCheckpoint1": "PARADA EN BOXES 1",
+    "missionCheckpoint1.concept": "PARADA EN BOXES · ZONAS 4–9",
+    "missionCheckpoint1.title": "Revisa el Motor",
+    "missionCheckpoint1.text": "Retos más grandes con Python real. Luego cuéntale a PyBot cómo te fue.",
+    "functions.next": "Parada en boxes",
+    "path.review": "PARA REPASAR",
+    "checkpoint.eyebrow": "PARADA EN BOXES",
+    "checkpoint.title": "¡Parada en boxes! Revisemos el motor.",
+    "checkpoint.intro": "Has avanzado mucho en la pista. Estos retos son más grandes y mezclan las zonas que visitaste. Luego le cuentas a PyBot cómo te fue.",
+    "checkpoint.pybot": "Los carros de carreras paran para revisar el motor. ¡Ahora nos toca a nosotros!",
+    "checkpoint.pybotNamed": "Los carros de carreras paran para revisar el motor. ¡Ahora nos toca a nosotros, {name}!",
+    "checkpoint.robotLabel": "PyBot está orgulloso junto a una bandera de cuadros de carreras",
+    "checkpoint.howEyebrow": "CÓMO FUNCIONA",
+    "checkpoint.howTitle": "Tres vueltas.",
+    "checkpoint.lap1Title": "Lee la misión",
+    "checkpoint.lap1Text": "Las líneas que empiezan con # son notas de PyBot. Dicen qué construir.",
+    "checkpoint.lap2Title": "Escribe código real",
+    "checkpoint.lap2Text": "Termina el código, ejecútalo y compara tu resultado con el esperado.",
+    "checkpoint.lap3Title": "Cuéntale a PyBot cómo te fue",
+    "checkpoint.lap3Text": "No hay notas. Si algo te pareció difícil, PyBot te muestra dónde repasar.",
+    "checkpoint.challengesEyebrow": "RETOS",
+    "checkpoint.challengesTitle": "Código más grande, las mismas ideas.",
+    "checkpoint.challengesIntro": "Hazlos en el orden que quieras. ¿Te trabaste? Abre la zona que aparece bajo el reto y vuelve.",
+    "checkpoint.zonesLabel": "¿Te trabaste? Repasa:",
+    "checkpoint.codeLabel": "Tu código",
+    "checkpoint.backpackTitle": "Empaca la mochila de PyBot",
+    "checkpoint.backpackTask": "Sigue los dos comentarios. Luego ejecútalo.",
+    "checkpoint.backpackCode": "nombre = \"PyBot\"\nmeriendas = [\"manzana\", \"galleta\", \"uva\"]\n\n# 1. Crea una caja llamada energia que guarde 7.\n# 2. Muestra nombre, luego energia, luego la última merienda.\nprint(nombre)",
+    "checkpoint.backpackExpected": "PyBot\n7\nuva",
+    "thinking.checkpoint-backpackSuccess": "¡Muy bien empacado! Las cajas y las listas trabajan juntas.",
+    "thinking.checkpoint-backpackHint": "Todavía no. ¿energia es una caja con 7? La última merienda está en el espacio 2, porque se cuenta desde 0.",
+    "checkpoint.lightTitle": "Construye un semáforo",
+    "checkpoint.lightTask": "Usa if, elif y else. Cuando funcione, prueba semaforo = \"rojo\".",
+    "checkpoint.lightCode": "semaforo = \"amarillo\"\n\n# Muestra \"sigue\" si semaforo es \"verde\".\n# Muestra \"espera\" si semaforo es \"amarillo\".\n# Si no, muestra \"para\".",
+    "checkpoint.lightExpected": "espera",
+    "thinking.checkpoint-lightSuccess": "¡Tu semáforo funciona! Cambia el color y ejecútalo otra vez.",
+    "thinking.checkpoint-lightHint": "Todavía no. Pregunta con == (dos signos igual) y termina las líneas if, elif y else con dos puntos.",
+    "checkpoint.outsideTitle": "¿Afuera o adentro?",
+    "checkpoint.outsideTask": "Une dos preguntas en un solo if.",
+    "checkpoint.outsideCode": "soleado = True\nbateria = 60\n\n# PyBot sale solo si está soleado\n# y bateria es mayor que 50.\n# Muestra \"afuera\" o \"adentro\".",
+    "checkpoint.outsideExpected": "afuera",
+    "thinking.checkpoint-outsideSuccess": "¡Sí! and necesita que las dos respuestas sean True.",
+    "thinking.checkpoint-outsideHint": "Todavía no. Pon las dos preguntas en un solo if y únelas con and.",
+    "checkpoint.countdownTitle": "Cuenta regresiva",
+    "checkpoint.countdownTask": "Un ciclo para los números. Una línea más después.",
+    "checkpoint.countdownCode": "cuenta = [3, 2, 1]\n\n# Muestra cada número de cuenta con un ciclo for.\n# Después del ciclo, muestra \"¡Ya!\"",
+    "checkpoint.countdownExpected": "3\n2\n1\n¡Ya!",
+    "thinking.checkpoint-countdownSuccess": "¡Despegue! El ciclo corrió una vez por cada número.",
+    "thinking.checkpoint-countdownHint": "Todavía no. Muestra el número dentro del ciclo, con espacios. Muestra \"¡Ya!\" después, sin espacios.",
+    "checkpoint.starsTitle": "Cuenta los puntajes grandes",
+    "checkpoint.starsTask": "Un ciclo con un if adentro. ¡Este es más grande!",
+    "checkpoint.starsCode": "puntos = [4, 9, 2, 7, 10]\ngrandes = 0\n\n# Mira cada puntaje con un ciclo for.\n# Si el puntaje es mayor que 5, suma 1 a grandes.\n\nprint(grandes)",
+    "checkpoint.starsExpected": "3",
+    "thinking.checkpoint-starsSuccess": "Contaste 3 puntajes grandes: 9, 7 y 10.",
+    "thinking.checkpoint-starsHint": "Todavía no. Pon un if dentro del ciclo. Para sumar 1, escribe grandes = grandes + 1.",
+    "checkpoint.batteryTitle": "Una caja que decide",
+    "checkpoint.batteryTask": "Llena la caja con if y else. Cada camino necesita un return.",
+    "checkpoint.batteryCode": "def revisar_bateria(bateria):\n    # Devuelve \"cargar\" si bateria es menor que 30.\n    # Si no, devuelve \"jugar\".\n    return \"?\"\n\nprint(revisar_bateria(20))\nprint(revisar_bateria(80))",
+    "checkpoint.batteryExpected": "cargar\njugar",
+    "thinking.checkpoint-batterySuccess": "¡Tu caja decide sola! Variables, if y return, todo junto.",
+    "thinking.checkpoint-batteryHint": "Todavía no. Dentro de la caja usa if y else, y devuelve una palabra en cada camino.",
+    "checkpoint.feelEyebrow": "¿CÓMO TE FUE?",
+    "checkpoint.feelTitle": "Cuéntale la verdad a PyBot.",
+    "checkpoint.feelIntro": "Aquí no hay notas. Para cada zona, elige la cara que mejor te queda.",
+    "checkpoint.rateLabel": "¿Cómo te fue en {name}?",
+    "checkpoint.rateGood": "Lo tengo",
+    "checkpoint.rateOkay": "Casi",
+    "checkpoint.rateReview": "Quiero repasar",
+    "checkpoint.noticed": "PyBot vio un reto de aquí que todavía está difícil.",
+    "checkpoint.resultReview": "¡Buena decisión! Repasando es como los pilotos se vuelven más rápidos. Estas zonas quedan marcadas PARA REPASAR en tu ruta:",
+    "checkpoint.resultGood": "¡Gran carrera! Tu motor está listo. La siguiente parte de la pista está en construcción.",
+    "checkpoint.resultPending": "Elige una cara para cada zona.",
+    "checkpoint.goTo": "Ir a {name} →",
+    "checkpoint.bigTitle": "Volver atrás también es parte de la carrera.",
+    "checkpoint.bigText": "Los buenos programadores repasan seguido. Cada vez que vuelves a una zona, se vuelve más fácil.",
+    "review.note": "En la parada en boxes elegiste repasar esta zona. Tómate tu tiempo.",
+    "review.done": "Ya la repasé ✓",
   },
 };
 
@@ -2471,6 +2629,9 @@ const LEARNER_NAME_KEY = "pybot.learner.name";
 const PATH_CURRENT_KEY = "pybot.path.current";
 const PATH_VISITED_KEY = "pybot.path.visited";
 const PATH_DONE_KEY = "pybot.path.done";
+const PATH_KNOWN_KEY = "pybot.path.known";
+const SELF_CHECK_KEY = "pybot.selfcheck";
+const SELF_CHECK_RATINGS = ["good", "okay", "review"];
 const BACKUP_FORMAT = "pybot-progress";
 const BACKUP_SCHEMA_VERSION = 1;
 const BACKUP_MAX_BYTES = 100_000;
@@ -2535,6 +2696,14 @@ const pathSteps = [
     activities: ["function-input", "function-output", "function-inside", "function-predict"],
     activitiesAddedLater: ["function-name", "function-call", "function-fix"],
   },
+  // A pit stop: bigger challenges that mix the zones before it, then a self-check.
+  {
+    id: "checkpoint1", page: "checkpoint1", href: "lessons/11-checkpoint.html", addedLater: true,
+    activities: [
+      "checkpoint-backpack", "checkpoint-light", "checkpoint-outside",
+      "checkpoint-countdown", "checkpoint-stars", "checkpoint-battery",
+    ],
+  },
 ];
 const stepActivityIds = (step) => [...step.activities, ...(step.activitiesAddedLater ?? [])];
 const activityIds = pathSteps.flatMap(stepActivityIds);
@@ -2574,6 +2743,62 @@ function visitedPathSteps() {
     return pathSteps.slice(0, Math.max(currentIndex, 0)).filter((step) => !step.addedLater).map((step) => step.id);
   } catch {
     return [];
+  }
+}
+
+// Steps that were on the path when this learner started. A step added later is
+// missing here, so the map marks it as new even when it is ahead of the learner.
+function knownPathSteps() {
+  try {
+    const stored = localStorage.getItem(PATH_KNOWN_KEY);
+    if (stored !== null) {
+      return stored.split(",").filter((id) => pathSteps.some((step) => step.id === id));
+    }
+  } catch {
+    return pathSteps.map((step) => step.id);
+  }
+
+  // No list yet: a new learner knows the whole path. A learner with older
+  // progress has not seen the steps that were added after it.
+  return hasStoredCurrentPathStep()
+    ? pathSteps.filter((step) => !step.addedLater).map((step) => step.id)
+    : pathSteps.map((step) => step.id);
+}
+
+function saveKnownPathSteps() {
+  try {
+    if (localStorage.getItem(PATH_KNOWN_KEY) === null) {
+      localStorage.setItem(PATH_KNOWN_KEY, knownPathSteps().join(","));
+    }
+  } catch {
+    // Without storage every step simply counts as known.
+  }
+}
+
+// What the learner said about each zone at a pit stop, as { stepId: rating }.
+function storedSelfCheck() {
+  const ratings = {};
+  try {
+    (localStorage.getItem(SELF_CHECK_KEY) ?? "").split(",").forEach((pair) => {
+      const [id, rating] = pair.split(":");
+      if (pathSteps.some((step) => step.id === id) && SELF_CHECK_RATINGS.includes(rating)) {
+        ratings[id] = rating;
+      }
+    });
+  } catch {
+    // No saved answers.
+  }
+  return ratings;
+}
+
+function saveSelfCheck(ratings) {
+  try {
+    localStorage.setItem(
+      SELF_CHECK_KEY,
+      pathSteps.filter((step) => ratings[step.id]).map((step) => `${step.id}:${ratings[step.id]}`).join(","),
+    );
+  } catch {
+    // The answers still work for the current page.
   }
 }
 
@@ -2678,7 +2903,9 @@ function updateCoursePath() {
   const currentIndex = pathSteps.findIndex((step) => step.id === currentId);
   const currentStep = pathSteps[currentIndex] ?? pathSteps[0];
   const visited = visitedPathSteps();
+  const known = knownPathSteps();
   const done = doneSteps();
+  const selfCheck = storedSelfCheck();
   // A step behind the learner's place that was never opened is new to them.
   // An opened step with activities left is unfinished; if it was finished
   // before, it gained new activities.
@@ -2690,14 +2917,16 @@ function updateCoursePath() {
     const isUnfinished = wasOpened && stepActivityIds(step).length > 0 && !isStepFinished(step);
     const hasNewActivities = isUnfinished && done.includes(id);
     const isVisited = wasOpened && !isUnfinished;
-    const isNew = !isCurrent && !wasOpened && index < currentIndex;
+    const isNew = !isCurrent && !wasOpened && (index < currentIndex || !known.includes(id));
+    const toReview = selfCheck[id] === "review";
     const statusKey = isCurrent ? "path.current"
+      : toReview ? "path.review"
       : hasNewActivities ? "path.newActivities"
       : isUnfinished ? "path.unfinished"
       : isVisited ? (stepActivityIds(step).length > 0 ? "path.done" : "path.visited")
       : isNew ? "path.new"
       : index === currentIndex + 1 ? "path.next" : "path.later";
-    return { isCurrent, isVisited, isNew: isNew || isUnfinished, hasNewActivities, statusKey };
+    return { isCurrent, isVisited, isNew: isNew || isUnfinished, toReview, hasNewActivities, statusKey };
   };
 
   route.querySelectorAll("[data-path-step]").forEach((link) => {
@@ -2720,10 +2949,11 @@ function updateCoursePath() {
   let firstNewCard = null;
   let firstNewKey = "course.newZone";
   document.querySelectorAll("[data-course-step]").forEach((card) => {
-    const { isCurrent, isVisited, isNew, hasNewActivities, statusKey } = stepState(card.dataset.courseStep);
+    const { isCurrent, isVisited, isNew, toReview, hasNewActivities, statusKey } = stepState(card.dataset.courseStep);
     const status = card.querySelector("[data-course-status]");
 
     card.classList.toggle("is-current", isCurrent);
+    card.classList.toggle("is-review", toReview);
     card.classList.toggle("is-visited", isVisited);
     card.classList.toggle("is-new", isNew);
     if ((statusKey === "path.new" || hasNewActivities) && !firstNewCard) {
@@ -3220,6 +3450,8 @@ function setLanguage(language, persist = true) {
       : false,
   );
   updateCoursePath();
+  renderSelfCheck();
+  renderReviewNote();
 
   if (persist) {
     try {
@@ -3252,6 +3484,11 @@ function backupValidators() {
     [PATH_CURRENT_KEY]: (value) => pathSteps.some((step) => step.id === value),
     [PATH_VISITED_KEY]: (value) => value.split(",").every((id) => pathSteps.some((step) => step.id === id)),
     [PATH_DONE_KEY]: (value) => value === "" || value.split(",").every((id) => pathSteps.some((step) => step.id === id)),
+    [PATH_KNOWN_KEY]: (value) => value === "" || value.split(",").every((id) => pathSteps.some((step) => step.id === id)),
+    [SELF_CHECK_KEY]: (value) => value === "" || value.split(",").every((pair) => {
+      const [id, rating] = pair.split(":");
+      return pathSteps.some((step) => step.id === id) && SELF_CHECK_RATINGS.includes(rating);
+    }),
   };
 
   activityIds.forEach((activityId) => {
@@ -3361,6 +3598,7 @@ function updatePlanProgressSummary() {
   planProgressSummary.querySelector("[data-progress-remaining]").textContent = String(remaining);
   planProgressSummary.querySelector("[data-progress-review]").textContent = String(review);
   updateNewActivitiesNote();
+  renderSelfCheck();
 }
 
 // On a page the learner had finished, say that new activities are waiting.
@@ -3383,6 +3621,99 @@ function updateNewActivitiesNote() {
     planProgressSummary.before(note);
   }
   note.textContent = textFor("progress.newActivities");
+}
+
+// Pit stop self-check: the learner rates each zone. Zones rated "review" are
+// linked here and marked TO REVIEW on the path map. Zones of challenges that
+// are still in review get a gentle note, but the learner decides.
+function renderSelfCheck() {
+  const section = document.querySelector("[data-selfcheck]");
+  if (!section) {
+    return;
+  }
+
+  const ratings = storedSelfCheck();
+  const tricky = new Set();
+  document.querySelectorAll("[data-checkpoint-zones]").forEach((challenge) => {
+    if (challenge.classList.contains("needs-review") && !challenge.classList.contains("is-complete")) {
+      challenge.dataset.checkpointZones.split(",").forEach((id) => tricky.add(id));
+    }
+  });
+
+  const rows = [...section.querySelectorAll("[data-selfcheck-zone]")];
+  rows.forEach((row) => {
+    const id = row.dataset.selfcheckZone;
+    const group = row.querySelector(".selfcheck-options");
+    row.querySelector("[data-selfcheck-noticed]").hidden = !tricky.has(id);
+    group.setAttribute("aria-label", textFor("checkpoint.rateLabel").replace("{name}", textFor(group.dataset.selfcheckLabel)));
+    row.querySelectorAll("[data-rating]").forEach((button) => {
+      button.setAttribute("aria-pressed", String(ratings[id] === button.dataset.rating));
+    });
+  });
+
+  const answered = rows.filter((row) => ratings[row.dataset.selfcheckZone]);
+  const toReview = answered.filter((row) => ratings[row.dataset.selfcheckZone] === "review");
+  const result = section.querySelector("[data-selfcheck-result]");
+  const links = result.querySelector("[data-selfcheck-links]");
+  result.hidden = answered.length === 0;
+  result.classList.toggle("is-review", toReview.length > 0);
+  result.querySelector("[data-selfcheck-message]").textContent = textFor(
+    toReview.length > 0 ? "checkpoint.resultReview"
+      : answered.length === rows.length ? "checkpoint.resultGood"
+      : "checkpoint.resultPending",
+  );
+  links.replaceChildren(...toReview.map((row) => {
+    const zoneLink = row.querySelector(".selfcheck-zone a");
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = zoneLink.getAttribute("href");
+    link.textContent = textFor("checkpoint.goTo").replace("{name}", zoneLink.textContent);
+    item.append(link);
+    return item;
+  }));
+}
+
+document.querySelector("[data-selfcheck]")?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-rating]");
+  if (!button) {
+    return;
+  }
+  const ratings = storedSelfCheck();
+  ratings[button.closest("[data-selfcheck-zone]").dataset.selfcheckZone] = button.dataset.rating;
+  saveSelfCheck(ratings);
+  renderSelfCheck();
+});
+
+// On a zone the learner chose to review at a pit stop, say so and let them
+// mark it as reviewed.
+function renderReviewNote() {
+  const step = pathSteps.find((candidate) => candidate.page === document.body.dataset.page);
+  const showNote = Boolean(step) && storedSelfCheck()[step.id] === "review";
+  let note = document.querySelector("[data-review-note]");
+
+  if (!showNote) {
+    note?.remove();
+    return;
+  }
+
+  if (!note) {
+    note = document.createElement("div");
+    note.className = "review-note";
+    note.dataset.reviewNote = "";
+    note.setAttribute("role", "status");
+    note.append(document.createElement("p"), document.createElement("button"));
+    note.querySelector("button").type = "button";
+    note.querySelector("button").addEventListener("click", () => {
+      const ratings = storedSelfCheck();
+      ratings[step.id] = "okay";
+      saveSelfCheck(ratings);
+      playRobotChime();
+      renderReviewNote();
+    });
+    document.querySelector(".lesson-main .lesson-back")?.after(note);
+  }
+  note.querySelector("p").textContent = textFor("review.note");
+  note.querySelector("button").textContent = textFor("review.done");
 }
 
 function showActivityFeedback(activity, result) {
@@ -3819,6 +4150,7 @@ pythonStopButton?.addEventListener("click", () => stopPythonWorker());
 
 audioEnabled = storedAudioPreference();
 learnerName = storedLearnerName();
+saveKnownPathSteps();
 saveCurrentPathStep();
 saveDoneSteps();
 soundToggle = createSoundToggle();

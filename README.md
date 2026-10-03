@@ -204,9 +204,11 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.language` | `en` or `es` | Interface language preference | Yes |
 | `pybot.audio.enabled` | `true` or `false` | Optional robot ambience preference; defaults to `true` | Yes |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
-| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `conditionals`, `loops`, `comparisons`, or `functions` | Highlights the learner's current place across the complete small path | Yes |
+| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `conditionals`, `loops`, `comparisons`, `functions`, or `checkpoint1` | Highlights the learner's current place across the complete small path | Yes |
 | `pybot.path.visited` | Comma-separated step ids from `pybot.path.current` | Remembers which pages the learner has opened, so steps added to the path later show as new and pending | Yes |
 | `pybot.path.done` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps the learner finished, so a finished step that later gains activities shows **NEW ACTIVITIES** | Yes |
+| `pybot.path.known` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps were on the path when the learner started, so a step added later shows as new even when it is ahead of the learner | Yes |
+| `pybot.selfcheck` | Comma-separated `<step-id>:<rating>` pairs, rating `good`, `okay`, or `review` (may be empty) | The learner's own answer to "How did it go?" at a pit stop; zones rated `review` show **TO REVIEW** on the map | Yes |
 | `pybot.activity.<activity-id>` | `complete` or `review` | Marks a completed activity or one that should be reviewed | Yes |
 
 Registered activity IDs:
@@ -221,6 +223,7 @@ Registered activity IDs:
 - Loops: `loop-count`, `loop-action`, `loop-stop`, `loop-zero`, `loop-list`, `loop-once`, `loop-total`, `loop-predict`, and `loop-fix`
 - True or false: `compare-less`, `compare-equal`, `compare-assign`, `compare-not-equal`, `compare-and`, `compare-or`, `compare-not`, `compare-predict`, and `compare-fix`
 - Functions: `function-input`, `function-output`, `function-inside`, `function-predict`, `function-name`, `function-call`, and `function-fix`
+- Pit stop 1: `checkpoint-backpack`, `checkpoint-light`, `checkpoint-outside`, `checkpoint-countdown`, `checkpoint-stars`, and `checkpoint-battery`
 
 Storage rules:
 
@@ -258,7 +261,9 @@ The home page offers **Save a backup file** and **Load a backup file**. Saving d
 
 The thinking-page counters divide all ten plans into mutually exclusive states: completed, not tried, and review. The three numbers must always add up to ten. A wrong choice moves that plan to review; a correct choice moves it to completed.
 
-The learning-path page turns the three foundation pages and nine learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically. When a new zone is added behind a learner's saved place, the map marks it **NEW · NOT DONE** and shows a link to it under the main action. To get this for a future zone, just add it to `pathSteps`; learners who only have older progress (no `pybot.path.visited` yet) need the step flagged `addedLater: true`.
+The learning-path page turns the three foundation pages and nine learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically. When a new zone is added behind a learner's saved place, the map marks it **NEW · NOT DONE** and shows a link to it under the main action. To get this for a future zone, just add it to `pathSteps`; learners who only have older progress (no `pybot.path.visited` yet) need the step flagged `addedLater: true`. A step added after the learner started is also marked new when it is ahead of them, using `pybot.path.known`; the same works for future steps with no flag.
+
+The path is a race track with pit stops. A pit stop (`lessons/11-checkpoint.html`, step `checkpoint1`, after zone 9) has bigger "write real code" challenges that mix the zones before it, checked by output like "Fix PyBot's code" (`.fix-activity`, plus `data-checkpoint-zones`). Then the learner rates each zone with a face (no grades). Zones rated "I want to review" are linked from the page, marked **TO REVIEW** on the map, and the zone page shows a note with an "I reviewed it" button. Zones of challenges still in review get a gentle hint, but the learner decides. To add another pit stop, copy the page, add a step to `pathSteps`, and list its zones in the self-check rows.
 
 Each step in `pathSteps` also lists its activity ids. An opened step with activities left shows **ACTIVITIES LEFT**, and a fully finished one shows **DONE**. When activities are added to a step the learner had finished, the map shows **NEW ACTIVITIES**, links to it under the main action, and the lesson page says new activities are waiting. To get this for future content, just add the new activity id to the step's list (and to the registry below); no flag is needed now that `pybot.path.done` exists. The `activitiesAddedLater` lists only exist for progress saved before that key.
 
@@ -442,7 +447,8 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |   |-- 08-conditionals.html
 |   |-- 09-loops.html
 |   |-- 09b-true-or-false.html
-|   `-- 10-functions.html
+|   |-- 10-functions.html
+|   `-- 11-checkpoint.html
 |-- pyodide-worker.mjs # Isolated browser worker for the live Python runner
 |-- THIRD_PARTY_NOTICES.md # Runtime credits, license, and pinned version
 |-- styles.css   # Brand system, layout, mascot, and responsive styles
