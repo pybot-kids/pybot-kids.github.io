@@ -179,7 +179,7 @@ PyBot is intentionally a static web application:
 - No database
 - No accounts or authentication
 - No multi-user features
-- No remote collection of learner data
+- No remote collection of learner data (anonymous page-visit counts only; see Analytics below)
 
 ### Local-first progress
 
@@ -304,8 +304,18 @@ Still planned:
 - Required copyright and license notices are preserved in `THIRD_PARTY_NOTICES.md` and summarized beside the live runner.
 - External course material will not be copied or lightly rewritten.
 - Embedded commercial learning platforms are not part of the current plan.
-- The application should avoid analytics, advertising, behavioral tracking, and unnecessary third-party requests.
+- The application avoids advertising, behavioral tracking, and unnecessary third-party requests. The one exception is anonymous page-visit analytics, described below.
 - Links that leave the learning environment should be deliberate and clearly identified.
+
+### Analytics
+
+The site uses Google Analytics 4 (web stream "Pybot For Kids") to count anonymous page visits. It is set up in one place, `GA_MEASUREMENT_ID` near the top of the page setup in `script.js`; every page loads that script, and an empty ID turns analytics off.
+
+- Ad storage, ad user data, ad personalization, and Google signals are turned off. GA4 does not log or store IP addresses.
+- Only standard page-view data is sent (page address, title, language, device type). The learner name, typed answers, and progress in `localStorage` are never sent.
+- Analytics does not run when a page is opened from a local file.
+- The home page shows a short note for adults whenever analytics is on.
+- Google Analytics sets its own `_ga` cookies. They are not part of the local storage registry and are not included in backups.
 
 This is a product policy and engineering plan, not legal advice. Third-party licenses and terms should be checked again before the first public release.
 
