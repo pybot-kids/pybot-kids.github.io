@@ -192,7 +192,7 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.language` | `en` or `es` | Interface language preference | Yes |
 | `pybot.audio.enabled` | `true` or `false` | Optional robot ambience preference; defaults to `true` | Yes |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
-| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `conditionals`, or `loops` | Highlights the learner's current place across the complete small path | Yes |
+| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `conditionals`, `loops`, or `functions` | Highlights the learner's current place across the complete small path | Yes |
 | `pybot.activity.<activity-id>` | `complete` or `review` | Marks a completed activity or one that should be reviewed | Yes |
 
 Registered activity IDs:
@@ -205,6 +205,7 @@ Registered activity IDs:
 - Boxes of all kinds: `boxes-text`, `boxes-yesno`, `boxes-list`, `boxes-grid`, and `boxes-predict`
 - Conditionals: `conditional-rain`, `conditional-battery`, `conditional-else`, and `conditional-predict`
 - Loops: `loop-count`, `loop-action`, `loop-stop`, and `loop-predict`
+- Functions: `function-input`, `function-output`, `function-inside`, and `function-predict`
 
 Storage rules:
 
@@ -242,7 +243,7 @@ The home page offers **Save a backup file** and **Load a backup file**. Saving d
 
 The thinking-page counters divide all ten plans into mutually exclusive states: completed, not tried, and review. The three numbers must always add up to ten. A wrong choice moves that plan to review; a correct choice moves it to completed.
 
-The learning-path page turns the three foundation pages and seven learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically.
+The learning-path page turns the three foundation pages and eight learning zones into a small map. It highlights the saved current page as “Continue here,” labels earlier pages as visited, marks the immediate next page as “Up next,” and keeps the main action linked to the current page. Visiting a lesson updates this marker automatically.
 
 ### Optional audio environment
 
@@ -325,11 +326,11 @@ This foundation is split into tiny pages before the learner writes Python:
 
 The Keyboard Lab must respond to the value produced by the browser's keyboard event rather than assume a physical key position. This supports different keyboard layouts. Browser-reserved combinations should not be included unless they can be practiced safely inside the code editor.
 
-### Seven small learning zones
+### Eight small learning zones
 
 Each zone has short explanation cards, three multiple-choice activities, a completed/not-tried/review summary, and a page-only reset control.
 
-The Python zones (4–7) also get a **Run it** block that follows the standard zone shape: the learner predicts the output of a two-line example (a tracked activity), runs the same code in a real Python runner on the page, and then changes one value. All four zones have it. The runner loads `pyodide-worker.mjs` relative to `script.js`, so it works from `lessons/` too.
+The Python zones (4–8) also get a **Run it** block that follows the standard zone shape: the learner predicts the output of a two-line example (a tracked activity), runs the same code in a real Python runner on the page, and then changes one value. All five zones have it. The runner loads `pyodide-worker.mjs` relative to `script.js`, so it works from `lessons/` too.
 
 | Zone | Goal | Child interaction |
 |---|---|---|
@@ -340,8 +341,9 @@ The Python zones (4–7) also get a **Run it** block that follows the standard z
 | 5 **Boxes of all kinds** | See a variable as a labeled box in memory that can keep a whole number, a decimal, text, or yes-or-no, and see lists (vectors) and lists of lists (matrices) as boxes with numbered spaces. | Spot the text box, name the kind of value, count a list's spaces, count a matrix's rows, and read `snacks[0]`. |
 | 6 **Choose a path** | Understand a conditional as a yes-or-no question followed by matching paths. | Follow small `if` and `else` examples about rain and a robot battery. |
 | 7 **Repeat a pattern** | Understand a loop as one small job repeated a clear number of times. | Count outputs, identify the repeated action, and find the loop's stopping point. |
+| 8 **Boxes that do a job** | See a function first as a named box: parameters go in and `return` sends a result out. Then open the box and see that inside there are only variables, `if`/`else`, and `for`, which the learner already knows. | Name the parameter, predict what a small function returns, and recognize the familiar pieces inside a function. |
 
-The path stops here. `input()`, functions, classes, files, packages, databases, large projects, and open-ended assignments are outside the current course. They must not be added merely to make the curriculum look more complete.
+The path stops here. `input()`, classes, files, packages, databases, large projects, and open-ended assignments are outside the current course. They must not be added merely to make the curriculum look more complete.
 
 Keyboard examples must not teach browser-reserved combinations such as Save unless they can be practiced safely without triggering browser behavior. A future keypress lab must respond to the browser event value instead of assuming a physical key position, so different keyboard layouts remain usable.
 
@@ -383,7 +385,7 @@ Examples may name familiar apps in plain text when that helps a child connect an
 - Validate the integrated browser-based Python runtime
 - Refine the code editor, output panel, Run, and Stop interactions
 - Add child-readable help for common Python errors (first version shipped in the home-page runner)
-- Keep the first runnable examples inside the seven-zone curriculum boundary
+- Keep the first runnable examples inside the eight-zone curriculum boundary
 
 ### Phase 3 — First learning path
 
@@ -408,7 +410,7 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |-- index.html   # Landing page content and accessible structure
 |-- meet-pybot.html # Dedicated gallery of PyBot's teaching expressions
 |-- course.html  # Short bilingual index of the learning path
-|-- lessons/     # Three foundation pages and seven focused learning zones
+|-- lessons/     # Three foundation pages and eight focused learning zones
 |   |-- 01-real-world.html
 |   |-- 02-thinking-in-steps.html
 |   |-- 03-programming-language.html
@@ -418,7 +420,8 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |   |-- 07-memory-variables.html
 |   |-- 07b-boxes-of-all-kinds.html
 |   |-- 08-conditionals.html
-|   `-- 09-loops.html
+|   |-- 09-loops.html
+|   `-- 10-functions.html
 |-- pyodide-worker.mjs # Isolated browser worker for the live Python runner
 |-- THIRD_PARTY_NOTICES.md # Runtime credits, license, and pinned version
 |-- styles.css   # Brand system, layout, mascot, and responsive styles
@@ -443,11 +446,11 @@ Then open `http://localhost:8000/`.
 - [x] First PyBot mascot prototype
 - [x] Responsive landing page prototype
 - [x] English/Spanish interface foundation with English as the default
-- [x] Focused seven-zone curriculum that stops after loops
+- [x] Focused eight-zone curriculum that stops after functions
 - [x] Pre-Python foundation covering everyday logic and basic programming context
 - [x] Plain-language, short-page content rules
 - [x] Three bilingual foundation lessons
-- [x] Seven bilingual topic pages with interactive activities
+- [x] Eight bilingual topic pages with interactive activities
 - [x] Page counters, review states, confetti, and page-only reset controls
 - [x] Learning-path position saved locally
 - [x] Real Python runtime prototype with third-party credits
