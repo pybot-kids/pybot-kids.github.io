@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta id="meta-description" name="description" content="Find and fix bugs in real Python code: loud bugs that stop Python and sneaky bugs that give the wrong result." data-i18n-content="meta.bugsCodeDescription" /><meta name="theme-color" content="#fff8ec" /><title>Bugs in code — PyBot</title><link rel="icon" href="../favicon.svg" type="image/svg+xml" /><link rel="stylesheet" href="../styles.css" /><script src="../script.js" defer></script></head>
+  <body class="lesson-page topic-page" data-page="bugsCode">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+    <header class="site-header lesson-site-header"><a class="brand" href="../index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home"><span class="brand-mark"><span></span></span><span>PyBot</span></a><div class="lesson-header-tools"><span class="lesson-progress" data-i18n="topic.progressBugsCode">ZONE 7 · 2 OF 3</span><div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria-label="a11y.language"><button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button><button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button></div></div></header>
+    <main class="lesson-main" id="main-content">
+      <a class="lesson-back" href="12-bugs.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a>
+      <section class="topic-hero"><div class="topic-hero-copy"><p class="eyebrow"><span>07</span><b data-i18n="bugsCode.eyebrow">BUGS · CODE</b></p><h1 data-i18n="bugsCode.title">Bugs in Python code.</h1><p data-i18n="bugsCode.intro">Now the bugs hide in real Python. Some make Python stop. Others hide and give the wrong result.</p></div>
+        <aside class="lesson-pybot-scene topic-pybot-scene scene-bugs">
+          <div class="lesson-pybot-bubble">
+            <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+            <p data-i18n="bugsCode.pybot" data-pybot-message="bugsCode.pybot">Python always leaves me a clue. I just have to read it.</p>
+          </div>
+
+          <div class="scene-bug-hunt" aria-hidden="true"><span class="scene-magnifier"><i></i></span><span class="bug-critter"><i></i></span></div>
+
+          <div class="pybot-wrap lesson-pybot-figure" data-mood="focused">
+            <div class="pybot" role="img" aria-label="PyBot looks through a magnifying glass at a little bug" data-i18n-aria-label="bugs.robotLabel">
+              <div class="antenna" aria-hidden="true"><span></span></div>
+              <div class="ear ear-left" aria-hidden="true"></div>
+              <div class="ear ear-right" aria-hidden="true"></div>
+              <div class="bot-head">
+                <div class="bot-screen">
+                  <div class="brow brow-left" aria-hidden="true"></div>
+                  <div class="brow brow-right" aria-hidden="true"></div>
+                  <div class="eye eye-left" aria-hidden="true"><span></span></div>
+                  <div class="eye eye-right" aria-hidden="true"><span></span></div>
+                  <div class="cheek cheek-left" aria-hidden="true"></div>
+                  <div class="cheek cheek-right" aria-hidden="true"></div>
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="bot-neck" aria-hidden="true"></div>
+              <div class="arm arm-left" aria-hidden="true"><span class="hand"></span></div>
+              <div class="arm arm-right" aria-hidden="true"><span class="hand"></span></div>
+              <div class="bot-body">
+                <div class="chest-light" aria-hidden="true"></div>
+                <span class="chest-code" aria-hidden="true">&lt;/&gt;</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+
+      <section class="topic-overview" aria-labelledby="bugs-kinds-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="bugs.kindsEyebrow">TWO KINDS OF BUGS</p><h2 id="bugs-kinds-title" data-i18n="bugs.kindsTitle">Loud bugs and sneaky bugs.</h2></div>
+        <div class="topic-card-grid">
+          <article class="topic-info-card bug-kind"><span aria-hidden="true">📢</span><h3 data-i18n="bugs.loudTitle">Loud bugs</h3><p data-i18n="bugs.loudText">Python stops and shows an error. Good news: it tells you the line!</p><code class="bug-kind-code" data-i18n="bugs.loudCode">print("hi)</code></article>
+          <article class="topic-info-card bug-kind"><span aria-hidden="true">🕵️</span><h3 data-i18n="bugs.sneakyTitle">Sneaky bugs</h3><p data-i18n="bugs.sneakyText">The code runs, but the result is wrong. Python can't tell. You compare the result with what you wanted.</p><code class="bug-kind-code" data-i18n="bugs.sneakyCode">print(2 + 3)  # wanted 2 * 3</code></article>
+          <article class="topic-info-card bug-kind"><span aria-hidden="true">💪</span><h3 data-i18n="bugs.everyoneTitle">Everyone makes bugs</h3><p data-i18n="bugs.everyoneText">Even the best programmers write bugs every day. A bug is not a failure. It is a clue.</p></article>
+        </div>
+        <ol class="bug-plan" aria-label="The bug hunter's plan" data-i18n-aria-label="bugs.planLabel">
+          <li><b data-i18n="bugs.plan1Title">Look</b><span data-i18n="bugs.plan1Text">What did you want? What happened instead?</span></li>
+          <li><b data-i18n="bugs.plan2Title">Read the clue</b><span data-i18n="bugs.plan2Text">If Python shows an error, read the last line and the line number.</span></li>
+          <li><b data-i18n="bugs.plan3Title">Fix one thing</b><span data-i18n="bugs.plan3Text">Change one small thing at a time.</span></li>
+          <li><b data-i18n="bugs.plan4Title">Run again</b><span data-i18n="bugs.plan4Text">Is the bug gone? If not, back to step 1.</span></li>
+        </ol>
+      </section>
+
+      <section class="topic-run" aria-labelledby="bugs-run-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.runEyebrow">RUN IT</p><h2 id="bugs-run-title" data-i18n="bugs.runTitle">Meet a loud bug.</h2><p class="practice-intro" data-i18n="topic.runIntro">Guess first. Then run real Python and check.</p></div>
+        <div class="topic-run-grid">
+          <article class="step-activity" data-activity-id="bug-predict"><header class="step-activity-header"><span>1</span><h3 data-i18n="topic.predictTitle">Guess the result</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="bugs.runCode">name = "PyBot"
+print("Hello!")
+print(nme)</code></div><p class="activity-question" data-i18n="topic.predictQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-i18n="bugs.predictBoth">Hello! and PyBot</button><button type="button" data-correct="true" data-i18n="bugs.predictStops">Hello!, then an error on line 3</button><button type="button" data-i18n="bugs.predictNothing">Only an error</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <div class="topic-runner">
+            <div class="code-window" aria-label="Python exercise" data-i18n-aria-label="a11y.codePreview" data-python-runner>
+              <div class="window-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>bug.py</span><span class="preview-tag" data-i18n="preview.tag">REAL PYTHON</span></div>
+              <div class="code-area"><span class="line-number" aria-hidden="true">1<br />2<br />3</span><label class="visually-hidden" for="python-code" data-i18n="preview.editorLabel">Python code</label><textarea id="python-code" data-python-editor data-code-key="bugs.runCode" rows="4" spellcheck="false" autocapitalize="off" autocomplete="off">name = "PyBot"
+print("Hello!")
+print(nme)</textarea></div>
+              <div class="output-area" role="status" aria-live="polite"><span class="output-label" data-i18n="preview.output">OUTPUT</span><p class="python-hint" data-python-hint hidden><strong data-i18n="preview.hintLabel">PyBot's hint</strong><span data-python-hint-text></span></p><pre data-python-output data-i18n="topic.runReady">Ready. Press Run Python.</pre></div>
+              <div class="runner-actions"><button class="run-button" type="button" data-python-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="stop-button" type="button" data-python-stop disabled><span aria-hidden="true">■</span><span data-i18n="preview.stop">Stop</span></button></div>
+              <details class="runtime-credit"><summary data-i18n="preview.creditSummary">Who makes Python run here?</summary><p data-i18n="preview.creditText">Pyodide 314.0.3 runs CPython in your browser with WebAssembly.</p><p><span data-i18n="preview.creditLicense">Open-source under the Mozilla Public License 2.0.</span> <a href="https://github.com/pyodide/pyodide/blob/314.0.3/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="preview.license">License</a></p></details>
+            </div>
+            <p class="topic-try"><b data-i18n="topic.tryLabel">Now change one thing:</b> <span data-i18n="bugs.tryText">Run it and read PyBot's hint. Then fix line 3 and run again.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic-practice" aria-labelledby="bugs-practice-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.practiceEyebrow">YOUR TURN</p><h2 id="bugs-practice-title" data-i18n="bugs.practiceTitle">Find the bug!</h2><p class="practice-intro" data-i18n="bugs.practiceIntro">Every card hides a bug. Some are loud, some are sneaky. A wrong answer becomes something to review.</p></div>
+        <div class="plan-progress-summary" aria-label="Activity progress" data-i18n-aria-label="progress.activitySummaryLabel" aria-live="polite"><div class="progress-complete"><strong data-progress-complete>0</strong><span data-i18n="progress.completed">Completed</span></div><div class="progress-remaining"><strong data-progress-remaining>11</strong><span data-i18n="progress.remaining">Not tried</span></div><div class="progress-review"><strong data-progress-review>0</strong><span data-i18n="progress.review">Review</span></div></div>
+        <div class="all-plans"><div class="step-activity-grid">
+          <article class="step-activity" data-activity-id="bug-meaning"><header class="step-activity-header"><span>01</span><h3 data-i18n="bugs.quizMeaningTitle">What is a bug?</h3></header><div class="quiz-scene" data-i18n="bugs.quizMeaningScene">PyBot's code says "hi" when it should say "bye".</div><p class="activity-question" data-i18n="bugs.quizMeaningQuestion">What is the bug here?</p><div class="activity-options"><button type="button" data-i18n="bugs.quizMeaningInsect">A real insect in the computer</button><button type="button" data-correct="true" data-i18n="bugs.quizMeaningMistake">A mistake in the code</button><button type="button" data-i18n="bugs.quizMeaningKeyboard">A broken keyboard</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="bug-line"><header class="step-activity-header"><span>02</span><h3 data-i18n="bugs.quizLineTitle">Tap the buggy line</h3></header><div class="quiz-scene" data-i18n="bugs.quizLineScene">Python says: SyntaxError on line 2.</div><p class="activity-question" data-i18n="bugs.quizLineQuestion">Which line has the bug?</p><div class="activity-options bug-line-options"><button type="button" data-i18n="bugs.quizLine1">battery = 80</button><button type="button" data-correct="true" data-i18n="bugs.quizLine2">if battery > 50</button><button type="button" data-i18n="bugs.quizLine3">    print("play")</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="bug-clue"><header class="step-activity-header"><span>03</span><h3 data-i18n="bugs.quizClueTitle">Read the clue</h3></header><div class="quiz-scene bug-clue-scene"><code class="code-lines" data-i18n="bugs.quizClueCode">score = 10
+print(scroe)</code><pre class="bug-error" data-i18n="bugs.quizClueError">line 2
+NameError: name 'scroe' is not defined</pre></div><p class="activity-question" data-i18n="bugs.quizClueQuestion">What is the clue telling you?</p><div class="activity-options"><button type="button" data-i18n="bugs.quizClueBroken">The computer is broken</button><button type="button" data-i18n="bugs.quizClueDelete">Delete line 1</button><button type="button" data-correct="true" data-i18n="bugs.quizClueName">Line 2 uses a name Python does not know</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="bug-sneaky"><header class="step-activity-header"><span>04</span><h3 data-i18n="bugs.quizSneakyTitle">A sneaky bug</h3></header><div class="quiz-scene"><p class="bug-wanted" data-i18n="bugs.quizSneakyWanted">PyBot wanted to jump 3 times. It jumped only 2.</p><code class="code-lines" data-i18n="bugs.quizSneakyCode">for turn in range(2):
+    print("jump")</code></div><p class="activity-question" data-i18n="bugs.quizSneakyQuestion">Where is the sneaky bug?</p><div class="activity-options bug-code-options"><button type="button" data-i18n="bugs.quizSneakyFor">for turn in</button><button type="button" data-correct="true">range(2)</button><button type="button" data-i18n="bugs.quizSneakyPrint">print("jump")</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="bug-text"><header class="step-activity-header"><span>05</span><h3 data-i18n="bugs.quizTextTitle">Text or math?</h3></header><div class="quiz-scene"><p class="bug-wanted" data-i18n="bugs.quizTextWanted">PyBot wanted to see 4. Python showed 2 + 2.</p><code class="code-lines">print("2 + 2")</code></div><p class="activity-question" data-i18n="bugs.quizTextQuestion">Why didn't PyBot see 4?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="bugs.quizTextQuotes">The quotes make it text</button><button type="button" data-i18n="bugs.quizTextAdd">Python can't add</button><button type="button" data-i18n="bugs.quizTextPrint">print is broken</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="bug-which-fix"><header class="step-activity-header"><span>06</span><h3 data-i18n="bugs.quizFixTitle">Pick the right fix</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="bugs.quizFixCode">if light = "green":
+    print("go")</code></div><p class="activity-question" data-i18n="bugs.quizFixQuestion">Which first line squashes the bug?</p><div class="activity-options bug-code-options"><button type="button" data-i18n="bugs.quizFixNoQuotes">if light = green:</button><button type="button" data-i18n="bugs.quizFixNoEquals">if light "green":</button><button type="button" data-correct="true" data-i18n="bugs.quizFixRight">if light == "green":</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="bug-list"><header class="step-activity-header"><span>07</span><h3 data-i18n="bugs.quizListTitle">The wrong snack</h3></header><div class="quiz-scene" data-i18n="bugs.quizListScene">PyBot wanted the first snack, apple. It got cookie.</div><p class="activity-question" data-i18n="bugs.quizListQuestion">Tap the line with the sneaky bug.</p><div class="activity-options bug-line-options"><button type="button" data-i18n="bugs.quizList1">snacks = ["apple", "cookie"]</button><button type="button" data-correct="true" data-i18n="bugs.quizList2">first = snacks[1]</button><button type="button" data-i18n="bugs.quizList3">print(first)</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="bug-fix-loud" data-fix-expected-key="bugs.fixLoudExpected"><header class="step-activity-header"><span>08</span><h3 data-i18n="bugs.fixLoudTitle">Squash a loud bug</h3></header><p class="activity-question" data-i18n="bugs.fixLoudTask">Run it. Read the clue. Fix the bug and match the goal.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="bug-fix-loud-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="bug-fix-loud-code" data-fix-code-key="bugs.fixLoudCode" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off">snacks = ["apple", "cookie", "grape"]
+for snack in snacks:
+    print(snack)
+print("Yum!)</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="bugs.fixLoudExpected">apple
+cookie
+grape
+Yum!</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="bug-fix-sneaky" data-fix-expected-key="bugs.fixSneakyExpected"><header class="step-activity-header"><span>09</span><h3 data-i18n="bugs.fixSneakyTitle">Catch a sneaky bug</h3></header><p class="activity-question" data-i18n="bugs.fixSneakyTask">No error, but the total is wrong. PyBot wanted 4 + 9 + 2.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="bug-fix-sneaky-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="bug-fix-sneaky-code" data-fix-code-key="bugs.fixSneakyCode" rows="6" spellcheck="false" autocapitalize="off" autocomplete="off">scores = [4, 9, 2]
+total = 0
+for score in scores:
+    total = score
+print(total)</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="bugs.fixSneakyExpected">15</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="bug-fix-double" data-fix-expected-key="bugs.fixDoubleExpected"><header class="step-activity-header"><span>10</span><h3 data-i18n="bugs.fixDoubleTitle">Boss level: two bugs!</h3></header><p class="activity-question" data-i18n="bugs.fixDoubleTask">This box hides two bugs. Fix one, run again, then hunt the next one.</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="bug-fix-double-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="bug-fix-double-code" data-fix-code-key="bugs.fixDoubleCode" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off">def greet(name)
+    return "Hi, " + nme
+
+print(greet("Ana"))</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="bugs.fixDoubleExpected">Hi, Ana</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+        </div></div>
+        <div class="page-progress-tools"><div><strong data-i18n="progress.savedTitle">Your work is saved here.</strong><p data-i18n="progress.savedText">Want a fresh start? Clear only this page.</p></div><button type="button" data-reset-activities><span>↺</span><span data-i18n="progress.resetPage">Clear this page's progress</span></button><p class="progress-reset-status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-big-idea"><span class="big-idea-mark">!</span><div><span class="big-idea-label" data-i18n="lesson.bigIdea">BIG IDEA</span><h2 data-i18n="bugs.bigTitle">A bug is a clue, not a failure.</h2><p data-i18n="bugs.bigText">Look, read the clue, fix one thing, run again. That is how every programmer in the world works.</p></div></section>
+      <nav class="lesson-actions" aria-label="Lesson navigation" data-i18n-aria-label="a11y.lessonNav"><a class="button button-secondary" href="12-bugs.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a><a class="button button-primary" href="12-bugs-detective.html"><span data-i18n="bugsCode.next">Detective tools</span><span>→</span></a></nav>
+    </main>
+  </body>
+</html>
