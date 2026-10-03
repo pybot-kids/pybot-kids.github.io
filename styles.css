@@ -2276,6 +2276,48 @@ a {
   color: var(--blue);
 }
 
+.mission-card[data-course-step].is-new {
+  border-color: var(--orange);
+  background: #fff1e8;
+}
+
+.mission-card[data-course-step].is-new .mission-number::after {
+  position: absolute;
+  top: -10px;
+  right: -14px;
+  padding: 2px 6px;
+  border: 2px solid var(--blue-dark);
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--blue-dark);
+  font-size: 0.6rem;
+  content: "★";
+}
+
+.mission-card.is-new .course-step-status {
+  color: var(--orange-dark);
+}
+
+.foundation-route a.is-new {
+  border-color: var(--orange);
+}
+
+.path-new-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 2px solid var(--blue-dark);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--orange-dark);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.path-new-link[hidden] {
+  display: none;
+}
+
 .mission-card::before {
   position: absolute;
   top: 0;

@@ -217,6 +217,8 @@ const translations = {
     "path.visited": "VISITED",
     "path.next": "UP NEXT",
     "path.later": "LATER",
+    "path.new": "NEW · NOT DONE",
+    "course.newZone": "New zone to visit: {name} →",
     "mission0.concept": "BEFORE PYTHON",
     "mission0.title": "Start Here",
     "mission0.text": "See what code can do. Think in steps. Then learn its rules.",
@@ -1266,6 +1268,8 @@ const translations = {
     "path.visited": "VISITADA",
     "path.next": "SIGUE",
     "path.later": "MÁS ADELANTE",
+    "path.new": "NUEVA · PENDIENTE",
+    "course.newZone": "Zona nueva por visitar: {name} →",
     "mission0.concept": "ANTES DE PYTHON",
     "mission0.title": "Empieza aquí",
     "mission0.text": "Mira qué hace el código. Piensa en pasos. Luego aprende sus reglas.",
@@ -2211,6 +2215,7 @@ let lastPythonError = null;
 const AUDIO_PREFERENCE_KEY = "pybot.audio.enabled";
 const LEARNER_NAME_KEY = "pybot.learner.name";
 const PATH_CURRENT_KEY = "pybot.path.current";
+const PATH_VISITED_KEY = "pybot.path.visited";
 const BACKUP_FORMAT = "pybot-progress";
 const BACKUP_SCHEMA_VERSION = 1;
 const BACKUP_MAX_BYTES = 100_000;
@@ -2240,7 +2245,7 @@ const pathSteps = [
   { id: "boxes", page: "boxes", href: "lessons/07b-boxes-of-all-kinds.html" },
   { id: "conditionals", page: "conditionals", href: "lessons/08-conditionals.html" },
   { id: "loops", page: "loops", href: "lessons/09-loops.html" },
-  { id: "comparisons", page: "comparisons", href: "lessons/09b-true-or-false.html" },
+  { id: "comparisons", page: "comparisons", href: "lessons/09b-true-or-false.html", addedLater: true },
   { id: "functions", page: "functions", href: "lessons/10-functions.html" },
 ];
 
@@ -2264,6 +2269,24 @@ function storedLearnerName() {
   }
 }
 
+// Steps the learner has opened. A step added to the path after the learner
+// moved past its place is missing from this list, so the map can mark it as new.
+function visitedPathSteps() {
+  try {
+    const stored = localStorage.getItem(PATH_VISITED_KEY);
+    if (stored !== null) {
+      return stored.split(",").filter((id) => pathSteps.some((step) => step.id === id));
+    }
+
+    // Older progress only saved the current step. Treat the steps before it as
+    // visited, except steps that were added to the path after that progress existed.
+    const currentIndex = pathSteps.findIndex((step) => step.id === localStorage.getItem(PATH_CURRENT_KEY));
+    return pathSteps.slice(0, Math.max(currentIndex, 0)).filter((step) => !step.addedLater).map((step) => step.id);
+  } catch {
+    return [];
+  }
+}
+
 function saveCurrentPathStep() {
   const page = document.body.dataset.page;
   const currentStep = pathSteps.find((step) => step.page === page);
@@ -2273,6 +2296,9 @@ function saveCurrentPathStep() {
   }
 
   try {
+    const visited = new Set(visitedPathSteps());
+    visited.add(currentStep.id);
+    localStorage.setItem(PATH_VISITED_KEY, pathSteps.filter((step) => visited.has(step.id)).map((step) => step.id).join(","));
     localStorage.setItem(PATH_CURRENT_KEY, currentStep.id);
   } catch {
     // Returning to the path still works; only the marker will not persist.
@@ -2307,39 +2333,58 @@ function updateCoursePath() {
   const currentId = storedCurrentPathStep();
   const currentIndex = pathSteps.findIndex((step) => step.id === currentId);
   const currentStep = pathSteps[currentIndex] ?? pathSteps[0];
+  const visited = visitedPathSteps();
+  // A step behind the learner's place that was never opened is new to them.
+  const stepState = (id) => {
+    const index = pathSteps.findIndex((step) => step.id === id);
+    const isCurrent = id === currentStep.id;
+    const isVisited = !isCurrent && visited.includes(id);
+    const isNew = !isCurrent && !isVisited && index < currentIndex;
+    const statusKey = isCurrent ? "path.current" : isVisited ? "path.visited" : isNew ? "path.new" : index === currentIndex + 1 ? "path.next" : "path.later";
+    return { isCurrent, isVisited, isNew, statusKey };
+  };
 
   route.querySelectorAll("[data-path-step]").forEach((link) => {
-    const index = pathSteps.findIndex((step) => step.id === link.dataset.pathStep);
-    const isCurrent = link.dataset.pathStep === currentStep.id;
-    const isVisited = index < currentIndex;
+    const { isCurrent, isVisited, isNew, statusKey } = stepState(link.dataset.pathStep);
     const status = link.querySelector("[data-path-status]");
 
     link.classList.toggle("is-current", isCurrent);
     link.classList.toggle("is-visited", isVisited);
+    link.classList.toggle("is-new", isNew);
     if (isCurrent) {
       link.setAttribute("aria-current", "step");
     } else {
       link.removeAttribute("aria-current");
     }
     if (status) {
-      const statusKey = isCurrent ? "path.current" : isVisited ? "path.visited" : index === currentIndex + 1 ? "path.next" : "path.later";
       status.textContent = textFor(statusKey);
     }
   });
 
+  let firstNewCard = null;
   document.querySelectorAll("[data-course-step]").forEach((card) => {
-    const index = pathSteps.findIndex((step) => step.id === card.dataset.courseStep);
-    const isCurrent = card.dataset.courseStep === currentStep.id;
-    const isVisited = index < currentIndex;
+    const { isCurrent, isVisited, isNew, statusKey } = stepState(card.dataset.courseStep);
     const status = card.querySelector("[data-course-status]");
 
     card.classList.toggle("is-current", isCurrent);
     card.classList.toggle("is-visited", isVisited);
+    card.classList.toggle("is-new", isNew);
+    if (isNew && !firstNewCard) {
+      firstNewCard = card;
+    }
     if (status) {
-      const statusKey = isCurrent ? "path.current" : isVisited ? "path.visited" : index === currentIndex + 1 ? "path.next" : "path.later";
       status.textContent = textFor(statusKey);
     }
   });
+
+  const newLink = document.querySelector("[data-path-new]");
+  if (newLink) {
+    newLink.hidden = !firstNewCard;
+    if (firstNewCard) {
+      newLink.href = firstNewCard.querySelector(".mission-start").getAttribute("href");
+      newLink.textContent = textFor("course.newZone").replace("{name}", firstNewCard.querySelector("h2").textContent);
+    }
+  }
 
   continueLink.href = currentStep.href;
   continueLink.dataset.i18n = currentIndex === 0 && !hasStoredCurrentPathStep()
@@ -2815,6 +2860,7 @@ function backupValidators() {
     "pybot.audio.enabled": (value) => value === "true" || value === "false",
     [LEARNER_NAME_KEY]: (value) => value.length > 0 && normalizeLearnerName(value) === value,
     [PATH_CURRENT_KEY]: (value) => pathSteps.some((step) => step.id === value),
+    [PATH_VISITED_KEY]: (value) => value.split(",").every((id) => pathSteps.some((step) => step.id === id)),
   };
 
   activityIds.forEach((activityId) => {
