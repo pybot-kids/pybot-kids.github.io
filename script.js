@@ -153,6 +153,52 @@ const translations = {
     "audio.turnOff": "Turn robot sounds off",
     "support.label": "Support PyBot",
     "support.aria": "Support PyBot on Patreon (opens in a new tab)",
+    "meta.faqTitle": "Questions and answers — PyBot",
+    "meta.faqDescription": "Short answers about PyBot: no accounts, progress saved in your browser, backups, languages, and privacy.",
+    "faq.nav": "FAQ",
+    "faq.navAria": "Questions and answers",
+    "faq.eyebrow": "QUESTIONS AND ANSWERS",
+    "faq.title": "Got a question?",
+    "faq.intro": "Tap a question to see the answer.",
+    "faq.jumpAria": "Jump to a group of questions",
+    "faq.kidsTitle": "For learners",
+    "faq.adultsTitle": "For grown-ups",
+    "faq.whatQ": "What is PyBot?",
+    "faq.whatA": "A free website where you learn Python, a real programming language, one small step at a time. It is made for kids from 8 to 10 years old, and it is fine up to about 12.",
+    "faq.accountQ": "Do I need an account or a password?",
+    "faq.accountA": "No. There is no sign-up, no email, and no password. Just open PyBot and start.",
+    "faq.startQ": "Where do I start?",
+    "faq.startA": "Open the learning path. It shows every zone like a race track. “CONTINUE HERE” marks your place, so you always know what comes next.",
+    "faq.startLink": "Open the learning path",
+    "faq.installQ": "Do I need to install Python?",
+    "faq.installA": "No. Python runs right here in the browser. The first time you press Run Python, it needs internet and can take a little while. After that it is faster.",
+    "faq.errorQ": "My code shows an error. Did I break something?",
+    "faq.errorA": "No! Errors are clues, not punishments. PyBot shows a short hint and the line to look at. Fix it and run again. If your code never stops, press Stop.",
+    "faq.languageQ": "Can I learn in Spanish or English?",
+    "faq.languageA": "Yes. Press EN or ES at the top of any page. Your progress stays the same. Python words like print and if stay in English, because that is how Python is written.",
+    "faq.soundQ": "Can I turn the sound off?",
+    "faq.soundA": "Yes. Press the ♪ button at the top of the page. PyBot remembers your choice.",
+    "faq.newQ": "What does “NEW · NOT DONE” mean on the map?",
+    "faq.newA": "PyBot keeps growing. When a new page is added behind your place, the map marks it so you don't miss it. Visit it whenever you like.",
+    "faq.whereQ": "Where is the progress saved?",
+    "faq.whereA": "Only in this browser, on this device. PyBot has no server or database, so nothing about the learner's progress is stored online.",
+    "faq.loseQ": "Can the progress get lost?",
+    "faq.loseA": "Yes, if the browser's data is cleared, if a private window is used, or if the learner switches to another browser or device. Save a backup file from time to time to be safe.",
+    "faq.moveQ": "How do we move to another browser or device?",
+    "faq.moveA": "On the home page, press “Save a backup file”. Then open PyBot in the other browser and press “Load a backup file”. The file stays on your device; nothing is uploaded.",
+    "faq.backupLink": "Go to the backup tools",
+    "faq.updateQ": "Will an old backup still work after PyBot gets new lessons?",
+    "faq.updateA": "Yes. Older backups are updated to the newest PyBot when you load them, and the new lessons show up as pending. A backup from a newer PyBot can't be loaded into an older one.",
+    "faq.dataQ": "What data does PyBot collect?",
+    "faq.dataA": "Only anonymous page-visit counts, with Google Analytics. Ads, ad personalization and Google signals are turned off. The learner's name, answers and progress are never sent. Google Analytics does set its own cookies.",
+    "faq.nameQ": "Why does PyBot ask for a name?",
+    "faq.nameA": "So PyBot can greet the learner. It is optional, it stays in this browser, and it can be changed or forgotten at any time on the home page. A nickname works too.",
+    "faq.resetQ": "How do we start over from zero?",
+    "faq.resetA": "At the bottom of the home page, an adults' section can erase all progress in this browser. It offers to save a backup first, because erasing can't be undone without one.",
+    "faq.devicesQ": "Which devices work?",
+    "faq.devicesA": "Any up-to-date browser on a computer, tablet or phone. A computer with a keyboard makes writing code much easier.",
+    "faq.freeQ": "Is PyBot free? Who makes it?",
+    "faq.freeA": "Yes, PyBot is free and has no ads. It is made with love in Colombia. If you want to help it grow, you can support it on Patreon, but it is never required.",
     "progress.savedTitle": "Your work is saved here.",
     "progress.savedText": "Want a fresh start? Clear only this page.",
     "progress.resetPage": "Clear this page's progress",
@@ -6000,6 +6046,52 @@ const translations = {
     "audio.turnOff": "Apagar sonidos robóticos",
     "support.label": "Apoya a PyBot",
     "support.aria": "Apoya a PyBot en Patreon (se abre en una pestaña nueva)",
+    "meta.faqTitle": "Preguntas y respuestas — PyBot",
+    "meta.faqDescription": "Respuestas cortas sobre PyBot: sin cuentas, el avance se guarda en tu navegador, copias, idiomas y privacidad.",
+    "faq.nav": "Preguntas",
+    "faq.navAria": "Preguntas y respuestas",
+    "faq.eyebrow": "PREGUNTAS Y RESPUESTAS",
+    "faq.title": "¿Tienes una pregunta?",
+    "faq.intro": "Toca una pregunta para ver la respuesta.",
+    "faq.jumpAria": "Ir a un grupo de preguntas",
+    "faq.kidsTitle": "Para quien aprende",
+    "faq.adultsTitle": "Para adultos",
+    "faq.whatQ": "¿Qué es PyBot?",
+    "faq.whatA": "Una página gratis donde aprendes Python, un lenguaje de programación de verdad, un pasito a la vez. Está hecha para niñas y niños de 8 a 10 años, y sirve hasta más o menos los 12.",
+    "faq.accountQ": "¿Necesito una cuenta o una contraseña?",
+    "faq.accountA": "No. No hay registro, ni correo, ni contraseña. Solo abre PyBot y empieza.",
+    "faq.startQ": "¿Por dónde empiezo?",
+    "faq.startA": "Abre la ruta de aprendizaje. Muestra todas las zonas como una pista de carreras. “CONTINÚA AQUÍ” marca tu lugar, así siempre sabes qué sigue.",
+    "faq.startLink": "Abrir la ruta de aprendizaje",
+    "faq.installQ": "¿Tengo que instalar Python?",
+    "faq.installA": "No. Python funciona aquí mismo, en el navegador. la primera vez que presionas Ejecutar Python necesita internet y puede tardar un poquito. Después es más rápido.",
+    "faq.errorQ": "Mi código muestra un error. ¿Dañé algo?",
+    "faq.errorA": "¡No! Los errores son pistas, no castigos. PyBot te da una pista corta y la línea que debes mirar. Corrígela y vuelve a ejecutar. Si tu código nunca se detiene, presiona Detener.",
+    "faq.languageQ": "¿Puedo aprender en español o en inglés?",
+    "faq.languageA": "Sí. Presiona EN o ES arriba en cualquier página. Tu avance sigue igual. Las palabras de Python, como print e if, quedan en inglés, porque así se escribe Python.",
+    "faq.soundQ": "¿Puedo apagar el sonido?",
+    "faq.soundA": "Sí. Presiona el botón ♪ arriba en la página. PyBot recuerda lo que elijas.",
+    "faq.newQ": "¿Qué significa “NUEVA · PENDIENTE” en el mapa?",
+    "faq.newA": "PyBot sigue creciendo. Cuando se agrega una página nueva antes de tu lugar, el mapa la marca para que no te la pierdas. Visítala cuando quieras.",
+    "faq.whereQ": "¿Dónde se guarda el avance?",
+    "faq.whereA": "Solo en este navegador, en este dispositivo. PyBot no tiene servidor ni base de datos, así que el avance no se guarda en internet.",
+    "faq.loseQ": "¿Se puede perder el avance?",
+    "faq.loseA": "Sí, si se borran los datos del navegador, si se usa una ventana privada o si se cambia de navegador o de dispositivo. Guarden una copia de vez en cuando para estar tranquilos.",
+    "faq.moveQ": "¿Cómo pasamos a otro navegador o dispositivo?",
+    "faq.moveA": "En la página de inicio, presionen “Guardar una copia”. Luego abran PyBot en el otro navegador y presionen “Cargar una copia”. El archivo se queda en su dispositivo; no se sube a ninguna parte.",
+    "faq.backupLink": "Ir a las copias",
+    "faq.updateQ": "¿Una copia vieja sirve cuando PyBot tiene lecciones nuevas?",
+    "faq.updateA": "Sí. Las copias antiguas se actualizan al PyBot más nuevo cuando se cargan, y las lecciones nuevas aparecen como pendientes. Una copia de un PyBot más nuevo no se puede cargar en uno más viejo.",
+    "faq.dataQ": "¿Qué datos recoge PyBot?",
+    "faq.dataA": "Solo conteos anónimos de visitas a las páginas, con Google Analytics. Los anuncios, la personalización de anuncios y las señales de Google están apagados. El nombre, las respuestas y el avance de quien aprende nunca se envían. Google Analytics sí guarda sus propias cookies.",
+    "faq.nameQ": "¿Por qué PyBot pide un nombre?",
+    "faq.nameA": "Para que PyBot pueda saludar a quien aprende. Es opcional, se queda en este navegador y se puede cambiar u olvidar cuando quieran en la página de inicio. Un apodo también sirve.",
+    "faq.resetQ": "¿Cómo empezamos de cero?",
+    "faq.resetA": "Al final de la página de inicio, una sección para adultos puede borrar todo el avance de este navegador. Primero ofrece guardar una copia, porque sin ella no se puede deshacer.",
+    "faq.devicesQ": "¿En qué dispositivos funciona?",
+    "faq.devicesA": "En cualquier navegador actualizado de computador, tableta o celular. Un computador con teclado hace mucho más fácil escribir código.",
+    "faq.freeQ": "¿PyBot es gratis? ¿Quién lo hace?",
+    "faq.freeA": "Sí, PyBot es gratis y no tiene anuncios. Está hecho con amor en Colombia. Si quieren ayudar a que crezca, pueden apoyarlo en Patreon, pero nunca es obligatorio.",
     "progress.savedTitle": "Tu trabajo está guardado aquí.",
     "progress.savedText": "¿Quieres empezar de nuevo? Borra solo el avance de esta página.",
     "progress.resetPage": "Borrar avance de esta página",
@@ -12766,6 +12858,24 @@ function createSupportLink() {
   tools.insertBefore(link, tools.querySelector(".sound-toggle, .language-switch"));
 }
 
+// Adds the FAQ link to the shared header, so every page shows it.
+function createFaqLink() {
+  const tools = document.querySelector(".lesson-header-tools, .site-nav");
+  if (!tools) {
+    return;
+  }
+
+  const link = document.createElement("a");
+  link.className = "faq-nav-link";
+  link.href = new URL("faq.html", scriptBaseUrl).href;
+  link.dataset.i18nAriaLabel = "faq.navAria";
+  if (document.body.dataset.page === "faq") {
+    link.setAttribute("aria-current", "page");
+  }
+  link.innerHTML = '<span class="faq-nav-icon" aria-hidden="true">?</span><span class="faq-nav-label" data-i18n="faq.nav"></span>';
+  tools.insertBefore(link, tools.querySelector(".support-link, .sound-toggle, .language-switch"));
+}
+
 function updateAudioButton() {
   if (!soundToggle) {
     return;
@@ -14201,6 +14311,7 @@ saveCurrentPathStep();
 saveDoneSteps();
 soundToggle = createSoundToggle();
 createSupportLink();
+createFaqLink();
 setLanguage(storedLanguage(), false);
 updateLearnerNamePanel(!learnerName);
 restoreStepActivities();
