@@ -1592,6 +1592,147 @@ a {
   text-decoration: none;
 }
 
+.colombia-love {
+  --colombia-yellow: #fcd116;
+  --colombia-blue: #003893;
+  --colombia-red: #ce1126;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(30px, 6vw, 64px);
+  align-items: center;
+  width: min(100%, 900px);
+  margin: 40px auto 0;
+  padding: clamp(30px, 5vw, 50px);
+  border: 2px solid var(--line);
+  border-top: 7px solid var(--colombia-yellow);
+  border-radius: 30px;
+  background: var(--white);
+  box-shadow: var(--small-shadow);
+}
+
+.scene-colombia::before {
+  background: var(--yellow-soft);
+}
+
+.scene-colombia .pybot-wrap .arm-right {
+  animation: none;
+  transform: rotate(-150deg) translateY(-4px);
+}
+
+.scene-colombia .lesson-pybot-figure {
+  left: -20px;
+}
+
+/* Sits behind PyBot so the raised hand grips the pole. */
+.colombia-flag {
+  position: absolute;
+  top: 172px;
+  left: 268px;
+  z-index: 3;
+  width: 92px;
+  height: 150px;
+  transform: rotate(5deg);
+  transform-origin: bottom left;
+}
+
+.colombia-flag i {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  height: 150px;
+  border-radius: 4px;
+  background: var(--blue-dark);
+}
+
+.colombia-flag i::before {
+  position: absolute;
+  top: -10px;
+  left: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 0 3px var(--blue-dark);
+  content: "";
+}
+
+.colombia-flag b {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  width: 84px;
+  height: 58px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 0 10px 10px 0;
+  background: linear-gradient(
+    var(--colombia-yellow) 0 50%,
+    var(--colombia-blue) 50% 75%,
+    var(--colombia-red) 75% 100%
+  );
+  transform-origin: left center;
+  animation: flag-wave 1.6s ease-in-out infinite alternate;
+}
+
+.colombia-heart {
+  position: absolute;
+  z-index: 8;
+  color: var(--colombia-red);
+  font-size: 1.7rem;
+  line-height: 1;
+  animation: colombia-heart-float 2.8s ease-in-out infinite;
+}
+
+.heart-a {
+  top: 108px;
+  left: 18px;
+}
+
+.heart-b {
+  top: 150px;
+  left: 64px;
+  font-size: 1.1rem;
+  animation-delay: 0.9s;
+}
+
+.heart-c {
+  top: 92px;
+  right: 120px;
+  font-size: 1.3rem;
+  animation-delay: 1.7s;
+}
+
+@keyframes colombia-heart-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .colombia-flag b,
+  .colombia-heart {
+    animation: none;
+  }
+}
+
+.colombia-love-copy h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4.4vw, 3.3rem);
+  letter-spacing: -0.05em;
+  line-height: 1.04;
+}
+
+.colombia-love-copy > p:not(.eyebrow) {
+  margin: 17px 0 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
 .learning-loop {
   padding: 120px 0;
 }
@@ -5590,7 +5731,8 @@ button:focus-visible {
   }
 
   .topic-hero,
-  .about-us {
+  .about-us,
+  .colombia-love {
     grid-template-columns: 1fr;
   }
 
@@ -5782,6 +5924,35 @@ button:focus-visible {
   .lesson-pybot-figure {
     left: -20px;
     transform: scale(0.76);
+  }
+
+  .scene-colombia .lesson-pybot-figure {
+    left: -44px;
+  }
+
+  .colombia-flag {
+    top: 158px;
+    left: 233px;
+    width: 72px;
+    height: 120px;
+  }
+
+  .colombia-flag i {
+    height: 120px;
+  }
+
+  .colombia-flag b {
+    width: 62px;
+    height: 44px;
+  }
+
+  .heart-b {
+    display: none;
+  }
+
+  .heart-c {
+    top: 320px;
+    right: 6px;
   }
 
   .scene-loop-ring {
