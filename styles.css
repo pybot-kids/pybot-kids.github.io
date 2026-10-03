@@ -4081,7 +4081,8 @@ a {
 }
 
 .topic-page[data-page="environment"] .topic-hero,
-.topic-page[data-page="conditionals"] .topic-hero {
+.topic-page[data-page="conditionals"] .topic-hero,
+.topic-page[data-page="comparisons"] .topic-hero {
   border-top-color: var(--blue);
 }
 
@@ -4355,6 +4356,47 @@ a {
   border-radius: 22px 8px 8px 22px;
   background: var(--orange);
   transform: rotate(4deg);
+}
+
+.scene-compare {
+  position: absolute;
+  right: -6px;
+  bottom: 40px;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 6px;
+  justify-items: center;
+}
+
+.scene-compare span,
+.scene-compare b {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 3px solid var(--blue-dark);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--blue-dark);
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 900;
+}
+
+.scene-compare b {
+  background: var(--yellow);
+}
+
+.scene-compare i {
+  grid-column: 1 / -1;
+  padding: 6px 14px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 999px;
+  background: var(--blue);
+  color: var(--white);
+  font-family: Consolas, "Courier New", monospace;
+  font-style: normal;
+  font-weight: 900;
 }
 
 .scene-loop-ring {
@@ -4737,6 +4779,7 @@ a {
 .function-open {
   display: grid;
   gap: 8px;
+  align-content: start;
   padding: 18px;
   border: 3px dashed var(--blue-dark);
   border-radius: 22px;
@@ -4763,6 +4806,67 @@ a {
   color: var(--muted);
   font-size: 0.85rem;
   font-weight: 800;
+}
+
+.function-open-single {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 720px;
+}
+
+.compare-table-wrap {
+  margin-top: 28px;
+  overflow-x: auto;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  font-weight: 800;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 12px 14px;
+  background: var(--blue-soft);
+  text-align: left;
+}
+
+.compare-table thead th {
+  background: none;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.compare-table tbody th {
+  border-radius: 14px 0 0 14px;
+}
+
+.compare-table tbody td:last-child {
+  border-radius: 0 14px 14px 0;
+}
+
+.compare-table code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 1.05rem;
+}
+
+.compare-true,
+.compare-false {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  color: var(--white);
+}
+
+.compare-true {
+  background: var(--blue);
+}
+
+.compare-false {
+  background: var(--orange-dark);
 }
 
 .choice-demo > div {
