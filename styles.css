@@ -2779,6 +2779,48 @@ a {
   color: var(--yellow);
 }
 
+/* The same route inside a light zone card, for zones split into subtopics. */
+.zone-route a {
+  border-color: var(--line);
+  background: #fffaf0;
+  color: var(--blue-dark);
+}
+
+.zone-route a:hover,
+.zone-route a:focus-visible {
+  background: #fff3cc;
+}
+
+.zone-route small {
+  color: #9aaac0;
+}
+
+.zone-route a.is-current {
+  border-color: var(--blue-dark);
+}
+
+.zone-route a.is-visited {
+  border-color: var(--blue);
+  background: #eef4ff;
+}
+
+.zone-route a.is-visited > span::after {
+  color: var(--blue);
+}
+
+.zone-route a.is-visited small {
+  color: var(--blue);
+}
+
+.zone-route a.is-new {
+  background: #fff1e8;
+}
+
+.zone-route a.is-new small,
+.zone-route a.is-review small {
+  color: var(--orange-dark);
+}
+
 .course-note {
   display: flex;
   gap: 18px;
