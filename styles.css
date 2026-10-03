@@ -2095,6 +2095,52 @@ a {
   font-weight: 900;
 }
 
+.reset-tools {
+  max-width: 750px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.reset-tools summary {
+  width: fit-content;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.reset-tools p {
+  margin: 8px 0 0;
+}
+
+.reset-tools button {
+  min-height: 44px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  border: 2px solid #9b2c2c;
+  border-radius: 14px;
+  background: var(--white);
+  color: #9b2c2c;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.reset-tools button:hover,
+.reset-tools button:focus-visible {
+  background: #9b2c2c;
+  color: var(--white);
+}
+
+.reset-tools .backup-status:empty {
+  display: none;
+}
+
+.reset-tools .backup-status {
+  margin-top: 10px;
+  color: var(--blue-dark);
+  font-weight: 900;
+}
+
 .local-icon {
   position: relative;
   width: 150px;

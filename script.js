@@ -320,6 +320,14 @@ const translations = {
     "backup.invalid": "This is not a PyBot backup file. Nothing changed.",
     "backup.newer": "This backup comes from a newer PyBot. Nothing changed.",
     "backup.failed": "This browser could not save the backup. Nothing changed.",
+    "reset.title": "For adults: erase all progress",
+    "reset.text": "Use this only in an emergency. It erases finished activities and the place on the map in this browser. Language, sound and the name stay.",
+    "reset.button": "Erase all progress",
+    "reset.askBackup": "Before erasing, do you want to save a backup file of the progress so far?",
+    "reset.confirm": "Erase all progress in this browser? This cannot be undone without a backup file.",
+    "reset.done": "Progress erased. PyBot starts again from the beginning.",
+    "reset.cancelled": "Nothing changed.",
+    "reset.failed": "This browser could not erase the progress. Nothing changed.",
     "footer.line": "Small steps. Real Python.",
     "footer.status": "First prototype",
     "course.home": "Home",
@@ -1575,6 +1583,14 @@ const translations = {
     "backup.invalid": "Este archivo no es una copia de PyBot. No cambió nada.",
     "backup.newer": "Esta copia viene de un PyBot más nuevo. No cambió nada.",
     "backup.failed": "Este navegador no pudo guardar la copia. No cambió nada.",
+    "reset.title": "Para adultos: borrar todo el avance",
+    "reset.text": "Úsalo solo en una emergencia. Borra las actividades terminadas y el lugar en el mapa de este navegador. El idioma, el sonido y el nombre se quedan.",
+    "reset.button": "Borrar todo el avance",
+    "reset.askBackup": "Antes de borrar, ¿quieres guardar una copia del avance que llevas?",
+    "reset.confirm": "¿Borrar todo el avance de este navegador? No se puede deshacer sin una copia.",
+    "reset.done": "Avance borrado. PyBot empieza otra vez desde el principio.",
+    "reset.cancelled": "No cambió nada.",
+    "reset.failed": "Este navegador no pudo borrar el avance. No cambió nada.",
     "footer.line": "Pasos pequeños. Python de verdad.",
     "footer.status": "Primer prototipo",
     "course.home": "Inicio",
@@ -2610,6 +2626,8 @@ const backupExportButton = document.querySelector("[data-backup-export]");
 const backupImportButton = document.querySelector("[data-backup-import]");
 const backupImportInput = document.querySelector("[data-backup-file]");
 const backupStatus = document.querySelector("[data-backup-status]");
+const progressResetButton = document.querySelector("[data-progress-reset]");
+const resetStatus = document.querySelector("[data-reset-status]");
 let currentLanguage = "en";
 let soundToggle = null;
 let audioEnabled = false;
@@ -2635,6 +2653,8 @@ const SELF_CHECK_RATINGS = ["good", "okay", "review"];
 const BACKUP_FORMAT = "pybot-progress";
 const BACKUP_SCHEMA_VERSION = 1;
 const BACKUP_MAX_BYTES = 100_000;
+// Preferences and the name survive an emergency progress reset.
+const RESET_KEPT_KEYS = ["pybot.language", "pybot.audio.enabled", LEARNER_NAME_KEY];
 // Each step lists its activities. To add content later, add the activity id
 // here: learners who had finished the step see it as unfinished again.
 // `activitiesAddedLater` only matters for progress saved before PATH_DONE_KEY existed.
@@ -3574,13 +3594,38 @@ function replaceProgress(entries) {
   }
 }
 
-function setBackupStatus(key) {
-  if (!backupStatus) {
+function setBackupStatus(key, element = backupStatus) {
+  if (!element) {
     return;
   }
 
-  backupStatus.dataset.i18n = key;
-  backupStatus.textContent = textFor(key);
+  element.dataset.i18n = key;
+  element.textContent = textFor(key);
+}
+
+// Returns false when the browser could not build the backup file.
+function downloadBackup() {
+  let backup;
+  try {
+    backup = createBackup();
+  } catch {
+    return false;
+  }
+
+  const file = new Blob([`${JSON.stringify(backup, null, 2)}\n`], { type: "application/json" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(file);
+  link.download = `pybot-backup-${backup.exportedAt.slice(0, 10)}.json`;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+  return true;
+}
+
+// Keeps the preferences and the name, and drops every other registered key.
+function progressAfterReset() {
+  return RESET_KEPT_KEYS.map((key) => [key, localStorage.getItem(key)]).filter(([, value]) => value !== null);
 }
 
 function updatePlanProgressSummary() {
@@ -4061,23 +4106,29 @@ learnerNameForget?.addEventListener("click", () => {
 });
 
 backupExportButton?.addEventListener("click", () => {
-  let backup;
-  try {
-    backup = createBackup();
-  } catch {
-    setBackupStatus("backup.failed");
+  setBackupStatus(downloadBackup() ? "backup.exported" : "backup.failed");
+});
+
+progressResetButton?.addEventListener("click", () => {
+  if (window.confirm(textFor("reset.askBackup")) && !downloadBackup()) {
+    setBackupStatus("backup.failed", resetStatus);
     return;
   }
 
-  const file = new Blob([`${JSON.stringify(backup, null, 2)}\n`], { type: "application/json" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(file);
-  link.download = `pybot-backup-${backup.exportedAt.slice(0, 10)}.json`;
-  document.body.append(link);
-  link.click();
-  link.remove();
-  window.setTimeout(() => URL.revokeObjectURL(link.href), 1000);
-  setBackupStatus("backup.exported");
+  if (!window.confirm(textFor("reset.confirm"))) {
+    setBackupStatus("reset.cancelled", resetStatus);
+    return;
+  }
+
+  try {
+    replaceProgress(progressAfterReset());
+  } catch {
+    setBackupStatus("reset.failed", resetStatus);
+    return;
+  }
+
+  setLanguage(storedLanguage(), false);
+  setBackupStatus("reset.done", resetStatus);
 });
 
 backupImportButton?.addEventListener("click", () => backupImportInput?.click());
