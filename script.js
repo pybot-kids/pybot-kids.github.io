@@ -322,6 +322,8 @@ const translations = {
     "backup.exported": "Backup saved. Keep the file somewhere safe.",
     "backup.confirm": "Replace the progress in this browser with this backup? Finished activities in the backup: {count}.",
     "backup.imported": "Done. Your progress is back.",
+    "backup.upgraded": "Done. Your progress is back, updated to the newest PyBot.",
+    "backup.versionLabel": "Progress version",
     "backup.cancelled": "Nothing changed.",
     "backup.invalid": "This is not a PyBot backup file. Nothing changed.",
     "backup.newer": "This backup comes from a newer PyBot. Nothing changed.",
@@ -1806,6 +1808,8 @@ const translations = {
     "backup.exported": "Copia guardada. Guarda el archivo en un lugar seguro.",
     "backup.confirm": "¿Cambiar el avance de este navegador por esta copia? Actividades terminadas en la copia: {count}.",
     "backup.imported": "Listo. Tu avance está de vuelta.",
+    "backup.upgraded": "Listo. Tu avance está de vuelta, actualizado al PyBot más nuevo.",
+    "backup.versionLabel": "Versión del avance",
     "backup.cancelled": "No cambió nada.",
     "backup.invalid": "Este archivo no es una copia de PyBot. No cambió nada.",
     "backup.newer": "Esta copia viene de un PyBot más nuevo. No cambió nada.",
@@ -3102,6 +3106,7 @@ const backupExportButton = document.querySelector("[data-backup-export]");
 const backupImportButton = document.querySelector("[data-backup-import]");
 const backupImportInput = document.querySelector("[data-backup-file]");
 const backupStatus = document.querySelector("[data-backup-status]");
+const progressVersionLabel = document.querySelector("[data-progress-version]");
 const progressResetButton = document.querySelector("[data-progress-reset]");
 const resetStatus = document.querySelector("[data-reset-status]");
 let currentLanguage = "en";
@@ -3125,9 +3130,17 @@ const PATH_VISITED_KEY = "pybot.path.visited";
 const PATH_DONE_KEY = "pybot.path.done";
 const PATH_KNOWN_KEY = "pybot.path.known";
 const SELF_CHECK_KEY = "pybot.selfcheck";
+const PATH_LIST_KEYS = [PATH_VISITED_KEY, PATH_DONE_KEY, PATH_KNOWN_KEY];
 const SELF_CHECK_RATINGS = ["good", "okay", "review"];
 const BACKUP_FORMAT = "pybot-progress";
 const BACKUP_SCHEMA_VERSION = 1;
+// The version of the course content that saved progress belongs to. Bump it in
+// every PR that adds, renames, or removes a step or activity id
+// (`node tools/progress-version.mjs --bump`), and add a migration below when an
+// id is renamed or removed. Backups carry it, so support can tell where an old
+// backup stopped and upgrade it to the current course.
+const PROGRESS_VERSION = 1;
+const PROGRESS_VERSION_KEY = "pybot.progress.version";
 const BACKUP_MAX_BYTES = 100_000;
 // Preferences and the name survive an emergency progress reset.
 const RESET_KEPT_KEYS = ["pybot.language", "pybot.audio.enabled", LEARNER_NAME_KEY];
@@ -3218,6 +3231,13 @@ const pathSteps = [
 ];
 const stepActivityIds = (step) => [...step.activities, ...(step.activitiesAddedLater ?? [])];
 const activityIds = pathSteps.flatMap(stepActivityIds);
+
+// Upgrades saved progress, as { storageKey: value }, from the version before to
+// the given PROGRESS_VERSION. Adding ids needs no migration: the map already
+// shows new steps and activities as pending. Renaming or removing one does, e.g.
+//   2: (progress) => renameProgressActivity(progress, "loop-count", "loop-times"),
+const progressMigrations = {};
+upgradeStoredProgress();
 
 function textFor(key) {
   return translations[currentLanguage][key] ?? translations.en[key] ?? key;
@@ -4016,6 +4036,94 @@ function backupValidators() {
   return validators;
 }
 
+function renameProgressStep(progress, from, to) {
+  const rename = (id) => (id === from ? to : id);
+  if (progress[PATH_CURRENT_KEY] === from) {
+    progress[PATH_CURRENT_KEY] = to;
+  }
+  PATH_LIST_KEYS.filter((key) => typeof progress[key] === "string").forEach((key) => {
+    progress[key] = progress[key].split(",").map(rename).join(",");
+  });
+  if (typeof progress[SELF_CHECK_KEY] === "string") {
+    progress[SELF_CHECK_KEY] = progress[SELF_CHECK_KEY]
+      .split(",")
+      .map((pair) => pair.split(":"))
+      .map(([id, rating]) => `${rename(id)}:${rating}`)
+      .join(",");
+  }
+}
+
+function renameProgressActivity(progress, from, to) {
+  const fromKey = activityStorageKey(from);
+  if (Object.hasOwn(progress, fromKey)) {
+    progress[activityStorageKey(to)] ??= progress[fromKey];
+    delete progress[fromKey];
+  }
+}
+
+// Runs every migration after `fromVersion`, then drops steps and activities the
+// current course no longer has, so progress from any older version still loads.
+function upgradeProgress(progress, fromVersion) {
+  const upgraded = { ...progress };
+  if (fromVersion >= PROGRESS_VERSION) {
+    return upgraded;
+  }
+
+  for (let version = fromVersion + 1; version <= PROGRESS_VERSION; version += 1) {
+    progressMigrations[version]?.(upgraded);
+  }
+
+  const isStep = (id) => pathSteps.some((step) => step.id === id);
+  const keepIds = (key, isKept) => {
+    if (typeof upgraded[key] === "string") {
+      upgraded[key] = upgraded[key].split(",").filter(isKept).join(",");
+    }
+  };
+  PATH_LIST_KEYS.forEach((key) => keepIds(key, isStep));
+  keepIds(SELF_CHECK_KEY, (pair) => isStep(pair.split(":")[0]));
+  if (upgraded[PATH_VISITED_KEY] === "") {
+    delete upgraded[PATH_VISITED_KEY];
+  }
+  if (Object.hasOwn(upgraded, PATH_CURRENT_KEY) && !isStep(upgraded[PATH_CURRENT_KEY])) {
+    delete upgraded[PATH_CURRENT_KEY];
+  }
+  Object.keys(upgraded)
+    .filter((key) => key.startsWith(activityStorageKey("")) && !activityIds.includes(key.slice(activityStorageKey("").length)))
+    .forEach((key) => delete upgraded[key]);
+
+  return upgraded;
+}
+
+// Brings the progress in this browser up to PROGRESS_VERSION after the course changes.
+// Progress saved before versions existed counts as version 1.
+function upgradeStoredProgress() {
+  try {
+    const stored = Number.parseInt(localStorage.getItem(PROGRESS_VERSION_KEY) ?? "1", 10);
+    const fromVersion = Number.isInteger(stored) && stored > 0 ? stored : 1;
+    if (fromVersion > PROGRESS_VERSION) {
+      return;
+    }
+
+    if (fromVersion < PROGRESS_VERSION) {
+      const progress = {};
+      for (let index = 0; index < localStorage.length; index += 1) {
+        const key = localStorage.key(index);
+        if (key?.startsWith("pybot.") && key !== PROGRESS_VERSION_KEY) {
+          progress[key] = localStorage.getItem(key);
+        }
+      }
+
+      const upgraded = upgradeProgress(progress, fromVersion);
+      Object.keys(progress).filter((key) => !Object.hasOwn(upgraded, key)).forEach((key) => localStorage.removeItem(key));
+      Object.entries(upgraded).forEach(([key, value]) => localStorage.setItem(key, value));
+    }
+
+    localStorage.setItem(PROGRESS_VERSION_KEY, String(PROGRESS_VERSION));
+  } catch {
+    // Storage failure must never block a lesson.
+  }
+}
+
 function createBackup() {
   const progress = {};
 
@@ -4029,6 +4137,7 @@ function createBackup() {
   return {
     format: BACKUP_FORMAT,
     schemaVersion: BACKUP_SCHEMA_VERSION,
+    progressVersion: PROGRESS_VERSION,
     exportedAt: new Date().toISOString(),
     progress,
   };
@@ -4047,27 +4156,33 @@ function readBackup(text) {
     return { error: "backup.invalid" };
   }
 
-  if (Number.isInteger(backup.schemaVersion) && backup.schemaVersion > BACKUP_SCHEMA_VERSION) {
+  // Backups saved before progress versions existed belong to version 1.
+  const progressVersion = backup.progressVersion ?? 1;
+  if (
+    (Number.isInteger(backup.schemaVersion) && backup.schemaVersion > BACKUP_SCHEMA_VERSION) ||
+    (Number.isInteger(progressVersion) && progressVersion > PROGRESS_VERSION)
+  ) {
     return { error: "backup.newer" };
   }
 
   const { progress } = backup;
   if (
     backup.schemaVersion !== BACKUP_SCHEMA_VERSION ||
+    !Number.isInteger(progressVersion) ||
+    progressVersion < 1 ||
     !progress ||
     typeof progress !== "object" ||
-    Array.isArray(progress)
+    Array.isArray(progress) ||
+    !Object.values(progress).every((value) => typeof value === "string")
   ) {
     return { error: "backup.invalid" };
   }
 
   const validators = backupValidators();
-  const entries = Object.entries(progress);
-  const allValid = entries.every(
-    ([key, value]) => Object.hasOwn(validators, key) && typeof value === "string" && validators[key](value),
-  );
+  const entries = Object.entries(upgradeProgress(progress, progressVersion));
+  const allValid = entries.every(([key, value]) => Object.hasOwn(validators, key) && validators[key](value));
 
-  return allValid ? { entries } : { error: "backup.invalid" };
+  return allValid ? { entries, upgraded: progressVersion < PROGRESS_VERSION } : { error: "backup.invalid" };
 }
 
 function replaceProgress(entries) {
@@ -4629,6 +4744,10 @@ progressResetButton?.addEventListener("click", () => {
   setBackupStatus("reset.done", resetStatus);
 });
 
+if (progressVersionLabel) {
+  progressVersionLabel.textContent = String(PROGRESS_VERSION);
+}
+
 backupImportButton?.addEventListener("click", () => backupImportInput?.click());
 
 backupImportInput?.addEventListener("change", async () => {
@@ -4664,7 +4783,7 @@ backupImportInput?.addEventListener("change", async () => {
   if (nextAudio !== audioEnabled) {
     setAudioEnabled(nextAudio);
   }
-  setBackupStatus("backup.imported");
+  setBackupStatus(result.upgraded ? "backup.upgraded" : "backup.imported");
 });
 
 pythonEditor?.addEventListener("input", () => {
