@@ -345,6 +345,13 @@ const translations = {
     "reset.done": "Progress erased. PyBot starts again from the beginning.",
     "reset.cancelled": "Nothing changed.",
     "reset.failed": "This browser could not erase the progress. Nothing changed.",
+    "reset.saveFirst": "Save a backup, then continue",
+    "reset.skipBackup": "Continue without a backup",
+    "reset.eraseYes": "Yes, erase everything",
+    "progress.resetYes": "Yes, clear this page",
+    "backup.loadYes": "Yes, load this backup",
+    "ask.keep": "No, keep it as it is",
+    "ask.cancel": "Cancel",
     "footer.line": "Small steps. Real Python.",
     "footer.status": "First prototype",
     "course.home": "Home",
@@ -6192,6 +6199,13 @@ const translations = {
     "reset.done": "Avance borrado. PyBot empieza otra vez desde el principio.",
     "reset.cancelled": "No cambió nada.",
     "reset.failed": "Este navegador no pudo borrar el avance. No cambió nada.",
+    "reset.saveFirst": "Guardar una copia y seguir",
+    "reset.skipBackup": "Seguir sin copia",
+    "reset.eraseYes": "Sí, borrar todo",
+    "progress.resetYes": "Sí, borrar esta página",
+    "backup.loadYes": "Sí, cargar esta copia",
+    "ask.keep": "No, dejarlo como está",
+    "ask.cancel": "Cancelar",
     "footer.line": "Pasos pequeños. Python de verdad.",
     "footer.status": "Primer prototipo",
     "course.home": "Inicio",
@@ -12962,7 +12976,8 @@ function setLanguage(language, persist = true) {
   document.documentElement.lang = language;
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
-    element.textContent = textFor(element.dataset.i18n);
+    const text = textFor(element.dataset.i18n);
+    element.textContent = element.dataset.i18nCount ? text.replaceAll("{count}", element.dataset.i18nCount) : text;
   });
 
   document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
@@ -13247,6 +13262,12 @@ function replaceProgress(entries) {
 
 function setBackupStatus(key, element = backupStatus) {
   if (!element) {
+    return;
+  }
+
+  if (!key) {
+    delete element.dataset.i18n;
+    element.textContent = "";
     return;
   }
 
@@ -14018,9 +14039,90 @@ function resetStepActivity(activity) {
   }
 }
 
+// Shows an in-page question card right after `anchor` and resolves with the
+// chosen value, or null when the card is dismissed with Escape.
+function askInPage(anchor, { tone = "info", textKey, count, noteKey, choices }) {
+  document.querySelectorAll(".inline-ask").forEach((card) => card.cancel?.());
+
+  return new Promise((resolve) => {
+    const card = document.createElement("div");
+    card.className = `inline-ask inline-ask-tone-${tone}`;
+    card.setAttribute("role", "group");
+
+    const icon = document.createElement("span");
+    icon.className = "inline-ask-icon";
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = tone === "danger" ? "!" : "?";
+
+    const body = document.createElement("div");
+    body.className = "inline-ask-body";
+
+    if (noteKey) {
+      const note = document.createElement("p");
+      note.className = "inline-ask-note";
+      note.dataset.i18n = noteKey;
+      note.textContent = textFor(noteKey);
+      body.append(note);
+    }
+
+    const text = document.createElement("p");
+    text.className = "inline-ask-text";
+    text.id = `inline-ask-${Date.now()}`;
+    text.dataset.i18n = textKey;
+    if (count !== undefined) {
+      text.dataset.i18nCount = String(count);
+    }
+    text.textContent = textFor(textKey).replaceAll("{count}", String(count ?? ""));
+    card.setAttribute("aria-labelledby", text.id);
+    body.append(text);
+
+    const actions = document.createElement("div");
+    actions.className = "inline-ask-actions";
+    body.append(actions);
+
+    const finish = (value) => {
+      card.remove();
+      anchor.hidden = false;
+      anchor.focus();
+      resolve(value);
+    };
+    card.cancel = () => finish(null);
+
+    choices.forEach(({ value, key, style = "secondary" }) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `inline-ask-button inline-ask-${style}`;
+      button.dataset.i18n = key;
+      button.textContent = textFor(key);
+      button.addEventListener("click", () => finish(value));
+      actions.append(button);
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        finish(null);
+      }
+    });
+
+    card.append(icon, body);
+    anchor.after(card);
+    anchor.hidden = true;
+    actions.querySelector("button")?.focus();
+  });
+}
+
 activityResetButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    if (!window.confirm(textFor("progress.resetConfirm"))) {
+  button.addEventListener("click", async () => {
+    const answer = await askInPage(button, {
+      tone: "warn",
+      textKey: "progress.resetConfirm",
+      choices: [
+        { value: "clear", key: "progress.resetYes", style: "primary" },
+        { value: null, key: "ask.keep" },
+      ],
+    });
+    if (answer !== "clear") {
       return;
     }
 
@@ -14095,13 +14197,38 @@ backupExportButton?.addEventListener("click", () => {
   setBackupStatus(downloadBackup() ? "backup.exported" : "backup.failed");
 });
 
-progressResetButton?.addEventListener("click", () => {
-  if (window.confirm(textFor("reset.askBackup")) && !downloadBackup()) {
+progressResetButton?.addEventListener("click", async () => {
+  setBackupStatus("", resetStatus);
+  const backupChoice = await askInPage(progressResetButton, {
+    tone: "info",
+    textKey: "reset.askBackup",
+    choices: [
+      { value: "backup", key: "reset.saveFirst", style: "primary" },
+      { value: "skip", key: "reset.skipBackup" },
+      { value: null, key: "ask.cancel", style: "quiet" },
+    ],
+  });
+  if (!backupChoice) {
+    setBackupStatus("reset.cancelled", resetStatus);
+    return;
+  }
+
+  const savedBackup = backupChoice === "backup";
+  if (savedBackup && !downloadBackup()) {
     setBackupStatus("backup.failed", resetStatus);
     return;
   }
 
-  if (!window.confirm(textFor("reset.confirm"))) {
+  const eraseChoice = await askInPage(progressResetButton, {
+    tone: "danger",
+    noteKey: savedBackup ? "backup.exported" : undefined,
+    textKey: "reset.confirm",
+    choices: [
+      { value: "erase", key: "reset.eraseYes", style: "danger" },
+      { value: null, key: "ask.keep" },
+    ],
+  });
+  if (eraseChoice !== "erase") {
     setBackupStatus("reset.cancelled", resetStatus);
     return;
   }
@@ -14137,7 +14264,17 @@ backupImportInput?.addEventListener("change", async () => {
   }
 
   const finished = result.entries.filter(([, value]) => value === "complete").length;
-  if (!window.confirm(textFor("backup.confirm").replaceAll("{count}", String(finished)))) {
+  setBackupStatus("");
+  const answer = await askInPage(backupImportButton, {
+    tone: "warn",
+    textKey: "backup.confirm",
+    count: finished,
+    choices: [
+      { value: "load", key: "backup.loadYes", style: "primary" },
+      { value: null, key: "ask.keep" },
+    ],
+  });
+  if (answer !== "load") {
     setBackupStatus("backup.cancelled");
     return;
   }
