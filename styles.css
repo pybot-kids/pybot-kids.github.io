@@ -8155,3 +8155,150 @@ button:focus-visible {
     animation: none;
   }
 }
+
+/* In-page question card used instead of browser confirm dialogs. */
+.inline-ask {
+  --ask-accent: var(--blue);
+  --ask-soft: var(--blue-soft);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  max-width: 640px;
+  margin-top: 14px;
+  padding: 16px 18px;
+  border: 2px solid var(--ask-accent);
+  border-radius: 18px;
+  background: var(--ask-soft);
+  box-shadow: var(--small-shadow);
+  color: var(--ink);
+  animation: inline-ask-in 0.18s ease-out;
+}
+
+button[hidden] {
+  display: none !important;
+}
+
+.backup-actions .inline-ask {
+  flex-basis: 100%;
+  margin-top: 0;
+}
+
+.page-progress-tools .inline-ask {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.inline-ask-tone-warn {
+  --ask-accent: var(--orange-dark);
+  --ask-soft: var(--orange-soft);
+}
+
+.inline-ask-tone-danger {
+  --ask-accent: #9b2c2c;
+  --ask-soft: #fff1f0;
+}
+
+.inline-ask-icon {
+  display: inline-flex;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--ask-accent);
+  color: var(--white);
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.inline-ask-body {
+  min-width: 0;
+}
+
+.inline-ask .inline-ask-note {
+  margin: 0 0 6px;
+  color: var(--blue-dark);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.inline-ask .inline-ask-text {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.inline-ask-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.inline-ask .inline-ask-actions .inline-ask-button {
+  display: inline-flex;
+  min-height: 44px;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 2px solid var(--ask-accent);
+  border-radius: 14px;
+  background: var(--white);
+  color: var(--ask-accent);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.inline-ask .inline-ask-actions .inline-ask-primary,
+.inline-ask .inline-ask-actions .inline-ask-danger {
+  background: var(--ask-accent);
+  color: var(--white);
+}
+
+.inline-ask .inline-ask-actions .inline-ask-quiet {
+  border-color: transparent;
+  background: transparent;
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+.inline-ask .inline-ask-actions .inline-ask-button:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.inline-ask .inline-ask-actions .inline-ask-button:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+@keyframes inline-ask-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 560px) {
+  .inline-ask-actions {
+    flex-direction: column;
+  }
+
+  .inline-ask .inline-ask-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inline-ask {
+    animation: none;
+  }
+}
