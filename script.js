@@ -322,6 +322,8 @@ const translations = {
     "name.pybotQuestion": "Hi! What should I call you?",
     "name.pybotSaved": "Nice to meet you, {name}! Ready for one tiny idea?",
     "nav.path": "Learning path",
+    "nav.pathShort": "Path",
+    "nav.pathAria": "Learning path: see your course map",
     "nav.meet": "Meet PyBot",
     "hero.eyebrow": "A Python adventure",
     "hero.titleStart": "Python, one small",
@@ -366,6 +368,7 @@ const translations = {
     "mood.deciding": "Deciding",
     "mood.counting": "Counting",
     "mood.determined": "Ready",
+    "mood.dizzy": "Dizzy",
     "mood.focusedMessage": "One key at a time. I am paying close attention.",
     "mood.focusedMessageNamed": "{name}, one key at a time. I am paying close attention.",
     "mood.focusedLabel": "PyBot looks closely and types with care",
@@ -390,6 +393,9 @@ const translations = {
     "mood.determinedMessage": "I am ready. Give me a job!",
     "mood.determinedMessageNamed": "I am ready, {name}. Give me a job!",
     "mood.determinedLabel": "PyBot looks determined and ready to work",
+    "mood.dizzyMessage": "Whoa... everything is spinning! Too many loops!",
+    "mood.dizzyMessageNamed": "Whoa, {name}... everything is spinning! Too many loops!",
+    "mood.dizzyLabel": "PyBot is dizzy, with swirly eyes, wobbling side to side",
     "meet.eyebrow": "YOUR ROBOT GUIDE",
     "meet.title": "Meet PyBot.",
     "meet.intro": "Choose a face. PyBot uses each one to help you learn.",
@@ -6510,6 +6516,8 @@ const translations = {
     "name.pybotQuestion": "¡Hola! ¿Cómo te gustaría que te llamara?",
     "name.pybotSaved": "¡Mucho gusto, {name}! ¿Probamos una idea pequeña?",
     "nav.path": "Ruta de aprendizaje",
+    "nav.pathShort": "Ruta",
+    "nav.pathAria": "Ruta de aprendizaje: mira tu mapa del curso",
     "nav.meet": "Conoce a PyBot",
     "hero.eyebrow": "Una aventura con Python",
     "hero.titleStart": "Python, un paso",
@@ -6554,6 +6562,7 @@ const translations = {
     "mood.deciding": "Decidiendo",
     "mood.counting": "Contando",
     "mood.determined": "Listo",
+    "mood.dizzy": "Mareado",
     "mood.focusedMessage": "Una tecla a la vez. Estoy muy atento.",
     "mood.focusedMessageNamed": "{name}, una tecla a la vez. Estoy muy atento.",
     "mood.focusedLabel": "PyBot mira con atención y escribe con cuidado",
@@ -6578,6 +6587,9 @@ const translations = {
     "mood.determinedMessage": "Estoy listo. ¡Dame un trabajo!",
     "mood.determinedMessageNamed": "Estoy listo, {name}. ¡Dame un trabajo!",
     "mood.determinedLabel": "PyBot se ve decidido y listo para trabajar",
+    "mood.dizzyMessage": "Uy... ¡todo me da vueltas! ¡Demasiados bucles!",
+    "mood.dizzyMessageNamed": "Uy, {name}... ¡todo me da vueltas! ¡Demasiados bucles!",
+    "mood.dizzyLabel": "PyBot está mareado, con ojos de remolino, tambaleándose de lado a lado",
     "meet.eyebrow": "TU GUÍA ROBOT",
     "meet.title": "Conoce a PyBot.",
     "meet.intro": "Elige un gesto. PyBot usa cada uno para ayudarte a aprender.",
@@ -12448,6 +12460,11 @@ const moodKeys = {
     namedMessage: "mood.determinedMessageNamed",
     label: "mood.determinedLabel",
   },
+  dizzy: {
+    message: "mood.dizzyMessage",
+    namedMessage: "mood.dizzyMessageNamed",
+    label: "mood.dizzyLabel",
+  },
 };
 
 const languageButtons = document.querySelectorAll(".language-button");
@@ -13800,6 +13817,24 @@ function createSupportLink() {
   link.dataset.i18nAriaLabel = "support.aria";
   link.innerHTML = '<span class="support-link-icon" aria-hidden="true">♥</span><span class="support-link-label" data-i18n="support.label"></span>';
   tools.insertBefore(link, tools.querySelector(".sound-toggle, .language-switch"));
+}
+
+// Adds the learning path link to the shared header, so every page has a way back to the course map.
+function createPathLink() {
+  const tools = document.querySelector(".lesson-header-tools, .site-nav");
+  if (!tools) {
+    return;
+  }
+
+  const link = document.createElement("a");
+  link.className = "path-nav-link";
+  link.href = new URL("course.html", scriptBaseUrl).href;
+  link.dataset.i18nAriaLabel = "nav.pathAria";
+  if (document.body.dataset.page === "course") {
+    link.setAttribute("aria-current", "page");
+  }
+  link.innerHTML = '<span class="path-nav-icon" aria-hidden="true">🗺️</span><span class="path-nav-label" data-i18n="nav.path"></span><span class="path-nav-short" data-i18n="nav.pathShort"></span>';
+  tools.insertBefore(link, tools.querySelector(".faq-nav-link, .support-link, .sound-toggle, .language-switch"));
 }
 
 // Adds the FAQ link to the shared header, so every page shows it.
@@ -16066,6 +16101,7 @@ soundToggle = createSoundToggle();
 startBuddy();
 createSupportLink();
 createFaqLink();
+createPathLink();
 createAlbumLink();
 setLanguage(storedLanguage(), false);
 updateLearnerNamePanel(!learnerName);
