@@ -12794,7 +12794,8 @@ const activityIds = pathSteps.flatMap(stepActivityIds);
 
 // Zones on the course map, in order, by their map card title. A zone opens once
 // the zone before it is done, so learners build on the basics first. A zone the
-// learner already started stays open. A new zone goes here too.
+// learner already started stays open. A new zone goes here too. Pit stops
+// (`noSkip`) must be done; they have no "I already know this" link.
 const pathZones = [
   { title: "mission0.title", steps: ["world", "thinking", "language"] },
   { title: "missionBasics.title", steps: ["keyboard", "environment", "symbols"] },
@@ -12804,12 +12805,12 @@ const pathZones = [
   { title: "mission6.title", steps: ["loopsPatterns", "loops", "loopsWhile", "loopsUntil", "loopsText", "loopsNested"] },
   { title: "missionComparisons.title", steps: ["comparisons", "comparisonsAnd", "comparisonsOr", "comparisonsNot", "comparisonsIn", "comparisonsLogic"] },
   { title: "missionFunctions.title", steps: ["functionsDo", "functions", "functionsMethods"] },
-  { title: "missionCheckpoint1.title", steps: ["checkpoint1"] },
+  { title: "missionCheckpoint1.title", steps: ["checkpoint1"], noSkip: true },
   { title: "missionBugs.title", steps: ["bugs", "bugsCode", "bugsDetective"] },
   { title: "missionPowers.title", steps: ["powersInput", "powersRandom", "powersDict"] },
   { title: "missionThink.title", steps: ["thinkSplit", "thinkPlan", "thinkTest"] },
   { title: "missionClean.title", steps: ["cleanNames", "cleanComments", "cleanRepeat"] },
-  { title: "missionCheckpoint2.title", steps: ["checkpoint2"] },
+  { title: "missionCheckpoint2.title", steps: ["checkpoint2"], noSkip: true },
   { title: "missionProjects.title", steps: ["projectGuess", "projectCalculator", "projectRps", "projectAdventure", "projectQuiz", "projectEightBall"] },
   { title: "missionTurtle.title", steps: ["turtleMoves", "turtleShapes", "turtleArt"] },
 ];
@@ -13214,7 +13215,7 @@ function updateCoursePath() {
 
     card.classList.toggle("is-locked", Boolean(lock));
     updateZoneSkip(card, zone, {
-      canSkip: Boolean(zone) && !lock && !doneZones.has(zone) && !skippedZones.has(zone) && zone !== pathZones.at(-1),
+      canSkip: Boolean(zone) && !lock && !doneZones.has(zone) && !skippedZones.has(zone) && zone !== pathZones.at(-1) && !zone.noSkip,
       isSkipped: skippedZones.has(zone),
     });
     if (!lock?.isNextUp) {
