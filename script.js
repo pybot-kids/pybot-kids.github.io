@@ -480,6 +480,12 @@ const translations = {
     "path.visited": "VISITED",
     "path.next": "UP NEXT",
     "path.later": "LATER",
+    "path.locked": "🔒 LOCKED",
+    "lock.title": "This zone is still locked",
+    "lock.text": "PyBot builds one step at a time. Finish {name} first, then this zone opens.",
+    "lock.go": "Go to {name} →",
+    "lock.card": "🔒 Opens after {name}.",
+    "lock.goShort": "Go there →",
     "path.new": "NEW · NOT DONE",
     "course.newZone": "New zone to visit: {name} →",
     "course.newPage": "New page to visit: {name} →",
@@ -6550,6 +6556,12 @@ const translations = {
     "path.visited": "VISITADA",
     "path.next": "SIGUE",
     "path.later": "MÁS ADELANTE",
+    "path.locked": "🔒 CON CANDADO",
+    "lock.title": "Esta zona todavía tiene candado",
+    "lock.text": "PyBot aprende paso a paso. Primero termina {name} y esta zona se abre.",
+    "lock.go": "Ir a {name} →",
+    "lock.card": "🔒 Se abre después de {name}.",
+    "lock.goShort": "Ir allá →",
     "path.new": "NUEVA · PENDIENTE",
     "course.newZone": "Zona nueva por visitar: {name} →",
     "course.newPage": "Página nueva por visitar: {name} →",
@@ -12708,6 +12720,28 @@ const pathSteps = [
 const stepActivityIds = (step) => [...step.activities, ...(step.activitiesAddedLater ?? [])];
 const activityIds = pathSteps.flatMap(stepActivityIds);
 
+// Zones on the course map, in order, by their map card title. A zone opens once
+// the zone before it is done, so learners build on the basics first. A zone the
+// learner already started stays open. A new zone goes here too.
+const pathZones = [
+  { title: "mission0.title", steps: ["world", "thinking", "language"] },
+  { title: "missionBasics.title", steps: ["keyboard", "environment", "symbols"] },
+  { title: "mission4.title", steps: ["variables", "boxes", "changingBoxes"] },
+  { title: "missionOperators.title", steps: ["operatorsMath", "operatorsCompare", "operatorsOrder"] },
+  { title: "mission5.title", steps: ["conditionals", "conditionalsElif", "conditionalsMatch"] },
+  { title: "mission6.title", steps: ["loopsPatterns", "loops", "loopsWhile", "loopsUntil", "loopsText", "loopsNested"] },
+  { title: "missionComparisons.title", steps: ["comparisons", "comparisonsAnd", "comparisonsOr", "comparisonsNot", "comparisonsIn", "comparisonsLogic"] },
+  { title: "missionFunctions.title", steps: ["functionsDo", "functions", "functionsMethods"] },
+  { title: "missionCheckpoint1.title", steps: ["checkpoint1"] },
+  { title: "missionBugs.title", steps: ["bugs", "bugsCode", "bugsDetective"] },
+  { title: "missionPowers.title", steps: ["powersInput", "powersRandom", "powersDict"] },
+  { title: "missionThink.title", steps: ["thinkSplit", "thinkPlan", "thinkTest"] },
+  { title: "missionClean.title", steps: ["cleanNames", "cleanComments", "cleanRepeat"] },
+  { title: "missionCheckpoint2.title", steps: ["checkpoint2"] },
+  { title: "missionProjects.title", steps: ["projectGuess", "projectCalculator", "projectRps", "projectAdventure", "projectQuiz", "projectEightBall"] },
+  { title: "missionTurtle.title", steps: ["turtleMoves", "turtleShapes", "turtleArt"] },
+];
+
 // Upgrades saved progress, as { storageKey: value }, from the version before to
 // the given PROGRESS_VERSION. Adding ids needs no migration: the map already
 // shows new steps and activities as pending. Renaming or removing one does, e.g.
@@ -12898,6 +12932,68 @@ function hasStoredCurrentPathStep() {
   }
 }
 
+// Maps each locked zone to the zone to finish first and the page to open
+// there. Open zones are not in the map.
+function zoneLocks() {
+  const visited = visitedPathSteps();
+  const done = doneSteps();
+  const current = hasStoredCurrentPathStep() ? storedCurrentPathStep() : null;
+  const stepOf = (id) => pathSteps.find((step) => step.id === id);
+  const isStepDone = (id) => (stepActivityIds(stepOf(id)).length > 0
+    ? done.includes(id) || isStepFinished(stepOf(id))
+    : visited.includes(id));
+  const isStarted = (zone) => zone.steps.some((id) => id === current || visited.includes(id) || done.includes(id));
+  const isDone = (zone) => zone.steps.every(isStepDone);
+  const locks = new Map();
+
+  pathZones.forEach((zone, index) => {
+    const before = pathZones[index - 1];
+    if (!before || isStarted(zone) || isDone(before)) {
+      return;
+    }
+    // The zone just before is the one to finish, unless it is locked too:
+    // then the first unfinished zone, which is always open.
+    const blocker = locks.has(before) ? pathZones.find((candidate) => !isDone(candidate)) : before;
+    const nextId = blocker.steps.find((id) => !isStepDone(id)) ?? blocker.steps[0];
+    locks.set(zone, { blocker, href: stepOf(nextId).href, isNextUp: blocker === before });
+  });
+  return locks;
+}
+
+const zoneOfStep = (id) => pathZones.find((zone) => zone.steps.includes(id));
+
+// A lesson page in a locked zone shows a friendly note instead of the lesson.
+function renderLessonLock() {
+  const step = pathSteps.find((candidate) => candidate.page === document.body.dataset.page);
+  const lock = step ? zoneLocks().get(zoneOfStep(step.id)) : null;
+  const main = document.querySelector(".lesson-main");
+  let note = document.querySelector("[data-zone-lock]");
+
+  document.body.classList.toggle("zone-locked", Boolean(lock && main));
+  if (!lock || !main) {
+    note?.remove();
+    return false;
+  }
+  if (!note) {
+    note = document.createElement("section");
+    note.className = "zone-lock";
+    note.dataset.zoneLock = "";
+    note.setAttribute("role", "status");
+    note.append(document.createElement("span"), document.createElement("h1"), document.createElement("p"), document.createElement("a"));
+    note.querySelector("span").textContent = "🔒";
+    note.querySelector("span").setAttribute("aria-hidden", "true");
+    note.querySelector("a").className = "button button-primary";
+    (main.querySelector(".lesson-back") ?? main.firstElementChild)?.after(note);
+  }
+  const name = textFor(lock.blocker.title);
+  // Lesson pages sit one folder below the course map.
+  note.querySelector("h1").textContent = textFor("lock.title");
+  note.querySelector("p").textContent = textFor("lock.text").replace("{name}", name);
+  note.querySelector("a").href = `../${lock.href}`;
+  note.querySelector("a").textContent = textFor("lock.go").replace("{name}", name);
+  return true;
+}
+
 function updateCoursePath() {
   const continueLink = document.querySelector("[data-path-continue]");
 
@@ -12912,6 +13008,7 @@ function updateCoursePath() {
   const known = knownPathSteps();
   const done = doneSteps();
   const selfCheck = storedSelfCheck();
+  const locks = zoneLocks();
   // A step behind the learner's place that was never opened is new to them.
   // An opened step with activities left is unfinished; if it was finished
   // before, it gained new activities.
@@ -12925,14 +13022,16 @@ function updateCoursePath() {
     const isVisited = wasOpened && !isUnfinished;
     const isNew = !isCurrent && !wasOpened && (index < currentIndex || !known.includes(id));
     const toReview = selfCheck[id] === "review";
+    const lock = locks.get(zoneOfStep(id));
     const statusKey = isCurrent ? "path.current"
       : toReview ? "path.review"
       : hasNewActivities ? "path.newActivities"
       : isUnfinished ? "path.unfinished"
       : isVisited ? (stepActivityIds(step).length > 0 ? "path.done" : "path.visited")
       : isNew ? "path.new"
+      : lock ? "path.locked"
       : index === currentIndex + 1 ? "path.next" : "path.later";
-    return { isCurrent, isVisited, isNew: isNew || isUnfinished, toReview, hasNewActivities, statusKey };
+    return { isCurrent, isVisited, isNew: isNew || isUnfinished, toReview, hasNewActivities, statusKey, lock };
   };
 
   // The first new page or zone on the map, for the "something new" link.
@@ -12941,9 +13040,10 @@ function updateCoursePath() {
 
   // Route links: the Start Here pages and the pages inside a zone with subtopics.
   document.querySelectorAll("[data-path-step]").forEach((link) => {
-    const { isCurrent, isVisited, isNew, toReview, hasNewActivities, statusKey } = stepState(link.dataset.pathStep);
+    const { isCurrent, isVisited, isNew, toReview, hasNewActivities, statusKey, lock } = stepState(link.dataset.pathStep);
     const status = link.querySelector("[data-path-status]");
 
+    link.classList.toggle("is-locked", Boolean(lock));
     link.classList.toggle("is-current", isCurrent);
     link.classList.toggle("is-visited", isVisited);
     link.classList.toggle("is-new", isNew);
@@ -12953,7 +13053,7 @@ function updateCoursePath() {
     } else {
       link.removeAttribute("aria-current");
     }
-    if ((statusKey === "path.new" || hasNewActivities) && !firstNew) {
+    if ((statusKey === "path.new" || hasNewActivities) && !lock && !firstNew) {
       firstNew = { href: link.getAttribute("href"), name: link.querySelector("b").textContent };
       firstNewKey = hasNewActivities ? "course.newActivities" : "course.newPage";
     }
@@ -12963,20 +13063,45 @@ function updateCoursePath() {
   });
 
   document.querySelectorAll("[data-course-step]").forEach((card) => {
-    const { isCurrent, isVisited, isNew, toReview, hasNewActivities, statusKey } = stepState(card.dataset.courseStep);
+    const { isCurrent, isVisited, isNew, toReview, hasNewActivities, statusKey, lock } = stepState(card.dataset.courseStep);
     const status = card.querySelector("[data-course-status]");
 
     card.classList.toggle("is-current", isCurrent);
     card.classList.toggle("is-review", toReview);
     card.classList.toggle("is-visited", isVisited);
     card.classList.toggle("is-new", isNew);
-    if ((statusKey === "path.new" || hasNewActivities) && !firstNew) {
+    if ((statusKey === "path.new" || hasNewActivities) && !lock && !firstNew) {
       firstNew = { href: card.querySelector(".mission-start").getAttribute("href"), name: card.querySelector("h2").textContent };
       firstNewKey = hasNewActivities ? "course.newActivities" : "course.newZone";
     }
     if (status) {
       status.textContent = textFor(statusKey);
     }
+  });
+
+  // Locked zone cards are dimmed. The one that opens next says which zone to
+  // finish first.
+  document.querySelectorAll(".mission-card").forEach((card) => {
+    const stepId = card.dataset.courseStep ?? card.querySelector("[data-path-step]")?.dataset.pathStep;
+    const lock = stepId ? locks.get(zoneOfStep(stepId)) : null;
+    let note = card.querySelector("[data-zone-lock-note]");
+
+    card.classList.toggle("is-locked", Boolean(lock));
+    if (!lock?.isNextUp) {
+      note?.remove();
+      return;
+    }
+    if (!note) {
+      note = document.createElement("p");
+      note.className = "zone-lock-note";
+      note.dataset.zoneLockNote = "";
+      note.append(document.createElement("span"), document.createElement("a"));
+      card.querySelector(".mission-copy").append(note);
+    }
+    const name = textFor(lock.blocker.title);
+    note.querySelector("span").textContent = textFor("lock.card").replace("{name}", name);
+    note.querySelector("a").href = lock.href;
+    note.querySelector("a").textContent = textFor("lock.goShort");
   });
 
   const newLink = document.querySelector("[data-path-new]");
@@ -14000,6 +14125,7 @@ function setLanguage(language, persist = true) {
       : false,
   );
   updateCoursePath();
+  renderLessonLock();
   renderSelfCheck();
   renderReviewNote();
 
@@ -15433,7 +15559,10 @@ startAnalytics();
 audioEnabled = storedAudioPreference();
 learnerName = storedLearnerName();
 saveKnownPathSteps();
-saveCurrentPathStep();
+// A locked page does not count as visited, so it cannot open its own zone.
+if (!renderLessonLock()) {
+  saveCurrentPathStep();
+}
 saveDoneSteps();
 soundToggle = createSoundToggle();
 startBuddy();
