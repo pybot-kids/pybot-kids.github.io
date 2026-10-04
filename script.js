@@ -490,6 +490,9 @@ const translations = {
     "lock.go": "Go to {name} →",
     "lock.card": "🔒 Opens after {name}.",
     "lock.goShort": "Go there →",
+    "skip.button": "I already know this",
+    "skip.confirm": "Do you already know {name}? The next zone opens now. You can come back to these pages anytime.",
+    "skip.done": "⏭ Skipped. You can do it anytime.",
     "path.new": "NEW · NOT DONE",
     "course.newZone": "New zone to visit: {name} →",
     "course.newPage": "New page to visit: {name} →",
@@ -6598,6 +6601,9 @@ const translations = {
     "lock.go": "Ir a {name} →",
     "lock.card": "🔒 Se abre después de {name}.",
     "lock.goShort": "Ir allá →",
+    "skip.button": "Ya conozco esto",
+    "skip.confirm": "¿Ya conoces {name}? La siguiente zona se abre ahora. Puedes volver a estas páginas cuando quieras.",
+    "skip.done": "⏭ Saltada. Puedes hacerla cuando quieras.",
     "path.new": "NUEVA · PENDIENTE",
     "course.newZone": "Zona nueva por visitar: {name} →",
     "course.newPage": "Página nueva por visitar: {name} →",
@@ -12375,8 +12381,10 @@ const PATH_CURRENT_KEY = "pybot.path.current";
 const PATH_VISITED_KEY = "pybot.path.visited";
 const PATH_DONE_KEY = "pybot.path.done";
 const PATH_KNOWN_KEY = "pybot.path.known";
+// Steps of zones the learner said they already know, so the next zone opens.
+const PATH_SKIPPED_KEY = "pybot.path.skipped";
 const SELF_CHECK_KEY = "pybot.selfcheck";
-const PATH_LIST_KEYS = [PATH_VISITED_KEY, PATH_DONE_KEY, PATH_KNOWN_KEY];
+const PATH_LIST_KEYS = [PATH_VISITED_KEY, PATH_DONE_KEY, PATH_KNOWN_KEY, PATH_SKIPPED_KEY];
 const SELF_CHECK_RATINGS = ["good", "okay", "review"];
 const BACKUP_FORMAT = "pybot-progress";
 const BACKUP_SCHEMA_VERSION = 1;
@@ -12786,7 +12794,8 @@ const activityIds = pathSteps.flatMap(stepActivityIds);
 
 // Zones on the course map, in order, by their map card title. A zone opens once
 // the zone before it is done, so learners build on the basics first. A zone the
-// learner already started stays open. A new zone goes here too.
+// learner already started stays open. A new zone goes here too. Pit stops
+// (`noSkip`) must be done; they have no "I already know this" link.
 const pathZones = [
   { title: "mission0.title", steps: ["world", "thinking", "language"] },
   { title: "missionBasics.title", steps: ["keyboard", "environment", "symbols"] },
@@ -12796,12 +12805,12 @@ const pathZones = [
   { title: "mission6.title", steps: ["loopsPatterns", "loops", "loopsWhile", "loopsUntil", "loopsText", "loopsNested"] },
   { title: "missionComparisons.title", steps: ["comparisons", "comparisonsAnd", "comparisonsOr", "comparisonsNot", "comparisonsIn", "comparisonsLogic"] },
   { title: "missionFunctions.title", steps: ["functionsDo", "functions", "functionsMethods"] },
-  { title: "missionCheckpoint1.title", steps: ["checkpoint1"] },
+  { title: "missionCheckpoint1.title", steps: ["checkpoint1"], noSkip: true },
   { title: "missionBugs.title", steps: ["bugs", "bugsCode", "bugsDetective"] },
   { title: "missionPowers.title", steps: ["powersInput", "powersRandom", "powersDict"] },
   { title: "missionThink.title", steps: ["thinkSplit", "thinkPlan", "thinkTest"] },
   { title: "missionClean.title", steps: ["cleanNames", "cleanComments", "cleanRepeat"] },
-  { title: "missionCheckpoint2.title", steps: ["checkpoint2"] },
+  { title: "missionCheckpoint2.title", steps: ["checkpoint2"], noSkip: true },
   { title: "missionProjects.title", steps: ["projectGuess", "projectCalculator", "projectRps", "projectAdventure", "projectQuiz", "projectEightBall"] },
   { title: "missionTurtle.title", steps: ["turtleMoves", "turtleShapes", "turtleArt"] },
 ];
@@ -12996,9 +13005,32 @@ function hasStoredCurrentPathStep() {
   }
 }
 
-// Maps each locked zone to the zone to finish first and the page to open
-// there. Open zones are not in the map.
-function zoneLocks() {
+function skippedPathSteps() {
+  try {
+    return (localStorage.getItem(PATH_SKIPPED_KEY) ?? "").split(",").filter((id) => pathSteps.some((step) => step.id === id));
+  } catch {
+    return [];
+  }
+}
+
+// "I already know this": the zone counts as passed, so the next zone opens and
+// the path continues there. Its pages stay unfinished and can be done anytime.
+function skipZone(zone) {
+  const next = pathZones[pathZones.indexOf(zone) + 1];
+  try {
+    const skipped = new Set([...skippedPathSteps(), ...zone.steps]);
+    localStorage.setItem(PATH_SKIPPED_KEY, pathSteps.filter((step) => skipped.has(step.id)).map((step) => step.id).join(","));
+    if (next) {
+      localStorage.setItem(PATH_CURRENT_KEY, next.steps[0]);
+    }
+  } catch {
+    // Without storage the zones stay as they are.
+  }
+}
+
+// Zone progress: `locks` maps each locked zone to the zone to finish first and
+// the page to open there; `done` and `skipped` hold the finished and skipped zones.
+function zoneProgress() {
   const visited = visitedPathSteps();
   const done = doneSteps();
   const current = hasStoredCurrentPathStep() ? storedCurrentPathStep() : null;
@@ -13007,7 +13039,10 @@ function zoneLocks() {
     ? done.includes(id) || isStepFinished(stepOf(id))
     : visited.includes(id));
   const isStarted = (zone) => zone.steps.some((id) => id === current || visited.includes(id) || done.includes(id));
-  const isDone = (zone) => zone.steps.every(isStepDone);
+  const skippedSteps = skippedPathSteps();
+  const doneZones = new Set(pathZones.filter((zone) => zone.steps.every(isStepDone)));
+  const skipped = new Set(pathZones.filter((zone) => !doneZones.has(zone) && zone.steps.some((id) => skippedSteps.includes(id))));
+  const isDone = (zone) => doneZones.has(zone) || skipped.has(zone);
   const locks = new Map();
 
   pathZones.forEach((zone, index) => {
@@ -13021,7 +13056,7 @@ function zoneLocks() {
     const nextId = blocker.steps.find((id) => !isStepDone(id)) ?? blocker.steps[0];
     locks.set(zone, { blocker, href: stepOf(nextId).href, isNextUp: blocker === before });
   });
-  return locks;
+  return { locks, done: doneZones, skipped };
 }
 
 const zoneOfStep = (id) => pathZones.find((zone) => zone.steps.includes(id));
@@ -13029,7 +13064,7 @@ const zoneOfStep = (id) => pathZones.find((zone) => zone.steps.includes(id));
 // A lesson page in a locked zone shows a friendly note instead of the lesson.
 function renderLessonLock() {
   const step = pathSteps.find((candidate) => candidate.page === document.body.dataset.page);
-  const lock = step ? zoneLocks().get(zoneOfStep(step.id)) : null;
+  const lock = step ? zoneProgress().locks.get(zoneOfStep(step.id)) : null;
   const main = document.querySelector(".lesson-main");
   let note = document.querySelector("[data-zone-lock]");
 
@@ -13058,6 +13093,33 @@ function renderLessonLock() {
   return true;
 }
 
+// A quiet "I already know this" button on open zones, and a note on skipped ones.
+function updateZoneSkip(card, zone, { canSkip, isSkipped }) {
+  let skip = card.querySelector("[data-zone-skip]");
+  if (!canSkip && !isSkipped) {
+    skip?.remove();
+    return;
+  }
+  if (!skip) {
+    skip = document.createElement("p");
+    skip.className = "zone-skip";
+    skip.dataset.zoneSkip = "";
+    skip.append(document.createElement("button"), document.createElement("span"));
+    skip.querySelector("button").type = "button";
+    skip.querySelector("button").addEventListener("click", () => {
+      if (window.confirm(textFor("skip.confirm").replace("{name}", textFor(zone.title)))) {
+        skipZone(zone);
+        updateCoursePath();
+      }
+    });
+    card.querySelector(".mission-copy").append(skip);
+  }
+  skip.querySelector("button").hidden = !canSkip;
+  skip.querySelector("button").textContent = textFor("skip.button");
+  skip.querySelector("span").hidden = !isSkipped;
+  skip.querySelector("span").textContent = textFor("skip.done");
+}
+
 function updateCoursePath() {
   const continueLink = document.querySelector("[data-path-continue]");
 
@@ -13072,7 +13134,7 @@ function updateCoursePath() {
   const known = knownPathSteps();
   const done = doneSteps();
   const selfCheck = storedSelfCheck();
-  const locks = zoneLocks();
+  const { locks, done: doneZones, skipped: skippedZones } = zoneProgress();
   // A step behind the learner's place that was never opened is new to them.
   // An opened step with activities left is unfinished; if it was finished
   // before, it gained new activities.
@@ -13147,10 +13209,15 @@ function updateCoursePath() {
   // finish first.
   document.querySelectorAll(".mission-card").forEach((card) => {
     const stepId = card.dataset.courseStep ?? card.querySelector("[data-path-step]")?.dataset.pathStep;
-    const lock = stepId ? locks.get(zoneOfStep(stepId)) : null;
+    const zone = stepId ? zoneOfStep(stepId) : null;
+    const lock = zone ? locks.get(zone) : null;
     let note = card.querySelector("[data-zone-lock-note]");
 
     card.classList.toggle("is-locked", Boolean(lock));
+    updateZoneSkip(card, zone, {
+      canSkip: Boolean(zone) && !lock && !doneZones.has(zone) && !skippedZones.has(zone) && zone !== pathZones.at(-1) && !zone.noSkip,
+      isSkipped: skippedZones.has(zone),
+    });
     if (!lock?.isNextUp) {
       note?.remove();
       return;
