@@ -577,10 +577,15 @@ a {
   margin: 40px auto 0;
   padding: clamp(26px, 5vw, 40px);
   border: 2px solid var(--line);
+  border-top: 7px solid var(--orange);
   border-radius: 30px;
   background: var(--white);
   box-shadow: var(--small-shadow);
   text-align: center;
+}
+
+.picks-teaser.runtime-thanks {
+  border-top-color: var(--blue);
 }
 
 .picks-teaser .eyebrow {
