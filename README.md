@@ -206,6 +206,7 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.language` | `en` or `es` | Interface language preference | Yes |
 | `pybot.audio.enabled` | `true` or `false` | Optional robot ambience preference; defaults to `true` | Yes |
 | `pybot.buddy.enabled` | `true` or `false` | Optional preference for the small PyBot companion in the corner; defaults to `true` | Yes |
+| `pybot.buddy.position` | Two numbers from 0 to 1, comma-separated (for example `1.000,1.000`) | Where the learner dragged the companion, as fractions of the free screen space; this device only | No |
 | `pybot.buddy.greeted` | `true` (session storage, cleared when the tab closes) | Lets the companion say hello once per visit instead of on every page | No |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
 | `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `changingBoxes`, `operatorsMath`, `operatorsCompare`, `operatorsOrder`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loopsPatterns`, `loops`, `loopsWhile`, `loopsUntil`, `loopsText`, `loopsNested`, `comparisons`, `comparisonsAnd`, `comparisonsOr`, `comparisonsNot`, `comparisonsIn`, `comparisonsLogic`, `functionsDo`, `functions`, `functionsMethods`, `checkpoint1`, `bugs`, `bugsCode`, `bugsDetective`, `powersInput`, `powersRandom`, `powersDict`, `thinkSplit`, `thinkPlan`, `thinkTest`, `cleanNames`, `cleanComments`, `cleanRepeat`, `checkpoint2`, `projectGuess`, `projectCalculator`, `projectRps`, `projectAdventure`, `projectQuiz`, `projectEightBall`, `turtleMoves`, `turtleShapes`, or `turtleArt` | Highlights the learner's current place across the complete small path | Yes |
@@ -219,7 +220,7 @@ Every browser-storage key must be added to this registry before it is released. 
 Registered activity IDs:
 
 - Code in the real world: `world-hunt`, `world-coin`, `world-rover`, `world-vacuum`, `world-song`, `world-nocode`, `world-who`, and `world-big`
-- Everyday plans: `water`, `bag`, `hands`, `teeth`, `dressed`, `cereal`, `drawing`, `bedtime`, `reading`, and `photo`
+- Everyday plans: `water`, `bag`, `hands`, `teeth`, `dressed`, `cereal`, `drawing`, `bedtime`, `reading`, and `photo`; drag-to-order plans: `order-plant`, `order-sandwich`, and `order-gift`
 - Programming languages: `language-what`, `language-word`, `language-order`, `language-symbol`, `language-same`, `language-bug`, and `language-error`
 - Keyboard: `keyboard-backspace`, `keyboard-undo`, `keyboard-copy`, `keyboard-enter`, `keyboard-shift`, `keyboard-paste`, and `keyboard-fix`
 - Environment: `environment-editor`, `environment-engine`, `environment-version`, `environment-stop`, `environment-output`, `environment-browser`, and `environment-fix`
@@ -382,6 +383,14 @@ Still planned:
 - Embedded commercial learning platforms are not part of the current plan.
 - The application avoids advertising, behavioral tracking, and unnecessary third-party requests. The one exception is anonymous page-visit analytics, described below.
 - Links that leave the learning environment should be deliberate and clearly identified.
+
+### License
+
+PyBot is copyright (c) 2026 Sorey Garcia. Anyone who reuses it must give credit.
+
+- **Code** (HTML, CSS, JavaScript, Python, and tooling): [MIT License](LICENSE). Copies must keep the copyright and permission notice.
+- **Course content** (lesson text, exercises, quiz questions, PyBot dialogue, the PyBot character, illustrations, and images): [CC BY 4.0](LICENSE-CONTENT.md). Reuse must credit Sorey Garcia, link to the license, and say what changed.
+- Third-party components keep their own licenses, listed in `THIRD_PARTY_NOTICES.md`.
 
 ### Analytics
 
@@ -589,6 +598,8 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |-- pyodide-worker.mjs # Isolated browser worker for the live Python runner
 |-- pybot-turtle.py # Recording turtle module the worker installs as turtle
 |-- THIRD_PARTY_NOTICES.md # Runtime credits, license, and pinned version
+|-- LICENSE      # MIT License for the code
+|-- LICENSE-CONTENT.md # CC BY 4.0 for the course content, with a credit line
 |-- styles.css   # Brand system, layout, mascot, and responsive styles
 |-- script.js    # Shared bilingual UI, progress, audio, activities, and runner controls
 `-- README.md    # Product, design, technical, and roadmap plan
