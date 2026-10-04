@@ -9114,5 +9114,125 @@ button[hidden] {
 @media (prefers-reduced-motion: reduce) {
   .order-check.is-wrong {
     animation: none;
+
+/* Join text: small steps with text tiles */
+.join-steps {
+  display: grid;
+  gap: 16px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.join-step {
+  position: relative;
+  padding: 20px 20px 20px 72px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--small-shadow);
+}
+
+.join-step h3 {
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.join-step > p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.join-step-number {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.join-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--blue-soft);
+}
+
+.join-demo + .join-demo {
+  margin-top: 10px;
+}
+
+.join-demo small {
+  flex-basis: 100%;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.join-demo-bad {
+  background: var(--orange-soft);
+}
+
+.join-demo-bad small {
+  color: var(--orange-dark);
+}
+
+.text-tile,
+.number-tile {
+  padding: 8px 12px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--blue-dark);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 1.1rem;
+  font-weight: 800;
+  white-space: pre;
+}
+
+.number-tile {
+  border-style: dashed;
+}
+
+.text-tile-result {
+  background: var(--yellow);
+}
+
+.join-op,
+.join-arrow {
+  color: var(--blue-dark);
+  font-size: 1.4rem;
+}
+
+.space-mark {
+  margin: 0 1px;
+  padding: 0 3px;
+  border-radius: 4px;
+  background: var(--yellow);
+  color: var(--orange-dark);
+}
+
+.join-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.join-compare .join-demo + .join-demo {
+  margin-top: 0;
+}
+
+@media (max-width: 560px) {
+  .join-step {
+    padding: 64px 14px 16px;
   }
 }
