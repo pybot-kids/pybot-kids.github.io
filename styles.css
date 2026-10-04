@@ -2806,6 +2806,32 @@ a {
   color: var(--orange-dark);
 }
 
+/* Kept quiet on purpose, so it is not a tempting button for small kids. */
+.zone-skip {
+  margin: 6px 0 0;
+  font-size: 0.75rem;
+}
+
+.zone-skip button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #9aaac0;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.zone-skip span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.mission-foundation .zone-skip button,
+.mission-foundation .zone-skip span {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .zone-locked .lesson-main > :not(.lesson-back):not(.zone-lock) {
   display: none;
 }
