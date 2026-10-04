@@ -8769,6 +8769,57 @@ button[hidden] {
   }
 }
 
+/* Dizzy: swirly spinning eyes, an "o" mouth and a wobble. */
+.pybot-wrap[data-mood="dizzy"] .eye {
+  top: 38px;
+  width: 42px;
+  height: 42px;
+  margin-left: -6px;
+  border: 8px solid var(--blue-dark);
+  border-right-color: transparent;
+  border-radius: 50%;
+  background: transparent;
+  animation: buddy-dizzy-eyes 0.8s linear infinite;
+}
+
+.pybot-wrap[data-mood="dizzy"] .eye span {
+  display: none;
+}
+
+.pybot-wrap[data-mood="dizzy"] .mouth {
+  top: 88px;
+  left: calc(50% - 14px);
+  width: 28px;
+  height: 24px;
+  border: 6px solid var(--orange-dark);
+  border-radius: 50%;
+}
+
+.pybot-wrap[data-mood="dizzy"] .pybot {
+  transform-origin: 50% 100%;
+  animation: buddy-wobble 1.4s ease-in-out infinite;
+}
+
+.pybot-wrap[data-mood="dizzy"] .antenna {
+  animation: antenna-wave 0.5s ease-in-out infinite;
+}
+
+.pybot-wrap[data-mood="dizzy"] .arm-left {
+  transform: rotate(40deg);
+}
+
+.pybot-wrap[data-mood="dizzy"] .arm-right {
+  transform: rotate(-40deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pybot-wrap[data-mood="dizzy"] .eye,
+  .pybot-wrap[data-mood="dizzy"] .pybot,
+  .pybot-wrap[data-mood="dizzy"] .antenna {
+    animation: none;
+  }
+}
+
 /* The little PyBot companion in the corner of every page. */
 .buddy-toggle {
   display: inline-flex;
