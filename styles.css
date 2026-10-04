@@ -566,6 +566,23 @@ a {
   color: var(--muted);
 }
 
+.picks-teaser .runtime-thanks-note {
+  font-size: 0.85rem;
+}
+
+.runtime-thanks-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 22px;
+}
+
+.runtime-thanks-people {
+  color: var(--blue-dark);
+  font-weight: 900;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 0.94fr) minmax(460px, 1.06fr);
@@ -2416,6 +2433,7 @@ a {
 
 .runtime-credit summary {
   color: var(--blue-dark);
+  font-size: 0.82rem;
   font-weight: 900;
   cursor: pointer;
 }
