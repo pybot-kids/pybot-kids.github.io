@@ -282,6 +282,8 @@ const translations = {
     "name.pybotQuestion": "Hi! What should I call you?",
     "name.pybotSaved": "Nice to meet you, {name}! Ready for one tiny idea?",
     "nav.path": "Learning path",
+    "nav.pathShort": "Path",
+    "nav.pathAria": "Learning path: see your course map",
     "nav.meet": "Meet PyBot",
     "hero.eyebrow": "A Python adventure",
     "hero.titleStart": "Python, one small",
@@ -6424,6 +6426,8 @@ const translations = {
     "name.pybotQuestion": "¡Hola! ¿Cómo te gustaría que te llamara?",
     "name.pybotSaved": "¡Mucho gusto, {name}! ¿Probamos una idea pequeña?",
     "nav.path": "Ruta de aprendizaje",
+    "nav.pathShort": "Ruta",
+    "nav.pathAria": "Ruta de aprendizaje: mira tu mapa del curso",
     "nav.meet": "Conoce a PyBot",
     "hero.eyebrow": "Una aventura con Python",
     "hero.titleStart": "Python, un paso",
@@ -13541,6 +13545,24 @@ function createSupportLink() {
   tools.insertBefore(link, tools.querySelector(".sound-toggle, .language-switch"));
 }
 
+// Adds the learning path link to the shared header, so every page has a way back to the course map.
+function createPathLink() {
+  const tools = document.querySelector(".lesson-header-tools, .site-nav");
+  if (!tools) {
+    return;
+  }
+
+  const link = document.createElement("a");
+  link.className = "path-nav-link";
+  link.href = new URL("course.html", scriptBaseUrl).href;
+  link.dataset.i18nAriaLabel = "nav.pathAria";
+  if (document.body.dataset.page === "course") {
+    link.setAttribute("aria-current", "page");
+  }
+  link.innerHTML = '<span class="path-nav-icon" aria-hidden="true">🗺️</span><span class="path-nav-label" data-i18n="nav.path"></span><span class="path-nav-short" data-i18n="nav.pathShort"></span>';
+  tools.insertBefore(link, tools.querySelector(".faq-nav-link, .support-link, .sound-toggle, .language-switch"));
+}
+
 // Adds the FAQ link to the shared header, so every page shows it.
 function createFaqLink() {
   const tools = document.querySelector(".lesson-header-tools, .site-nav");
@@ -15795,6 +15817,7 @@ soundToggle = createSoundToggle();
 startBuddy();
 createSupportLink();
 createFaqLink();
+createPathLink();
 setLanguage(storedLanguage(), false);
 updateLearnerNamePanel(!learnerName);
 restoreStepActivities();
