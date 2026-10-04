@@ -396,6 +396,7 @@ const translations = {
     "nav.pathShort": "Path",
     "nav.pathAria": "Learning path: see your course map",
     "nav.meet": "Meet PyBot",
+    "nav.menu": "Menu",
     "hero.eyebrow": "A Python adventure",
     "hero.titleStart": "Python, one small",
     "hero.titleEnd": "step at a time.",
@@ -6661,6 +6662,7 @@ const translations = {
     "nav.pathShort": "Ruta",
     "nav.pathAria": "Ruta de aprendizaje: mira tu mapa del curso",
     "nav.meet": "Conoce a PyBot",
+    "nav.menu": "Menú",
     "hero.eyebrow": "Una aventura con Python",
     "hero.titleStart": "Python, un paso",
     "hero.titleEnd": "pequeño a la vez.",
@@ -13507,24 +13509,6 @@ function renderStreak() {
   });
 }
 
-// Adds the album link to the shared header, so every page shows it.
-function createAlbumLink() {
-  const tools = document.querySelector(".lesson-header-tools, .site-nav");
-  if (!tools) {
-    return;
-  }
-
-  const link = document.createElement("a");
-  link.className = "faq-nav-link album-nav-link";
-  link.href = new URL("album.html", scriptBaseUrl).href;
-  link.dataset.i18nAriaLabel = "album.navAria";
-  if (document.body.dataset.page === "album") {
-    link.setAttribute("aria-current", "page");
-  }
-  link.innerHTML = '<span class="faq-nav-icon" aria-hidden="true">★</span><span class="faq-nav-label" data-i18n="album.nav"></span>';
-  tools.insertBefore(link, tools.querySelector(".faq-nav-link, .support-link, .sound-toggle, .language-switch"));
-}
-
 // A lesson page in a locked zone shows a friendly note instead of the lesson.
 function renderLessonLock() {
   const step = pathSteps.find((candidate) => candidate.page === document.body.dataset.page);
@@ -13944,57 +13928,88 @@ function createSoundToggle() {
   return button;
 }
 
-// Adds the Patreon link to the shared header, so every page shows it.
-function createSupportLink() {
-  const tools = document.querySelector(".lesson-header-tools, .site-nav");
-  if (!tools) {
-    return;
-  }
-
+// The shared header: page links on the left, compact controls on the right,
+// and a menu button that holds the links on small screens.
+function headerLink(page, href, icon, labelKey, ariaKey) {
   const link = document.createElement("a");
-  link.className = "support-link";
-  link.href = "https://www.patreon.com/pybot";
-  link.target = "_blank";
-  link.rel = "noopener";
-  link.dataset.i18nAriaLabel = "support.aria";
-  link.innerHTML = '<span class="support-link-icon" aria-hidden="true">♥</span><span class="support-link-label" data-i18n="support.label"></span>';
-  tools.insertBefore(link, tools.querySelector(".sound-toggle, .language-switch"));
-}
-
-// Adds the learning path link to the shared header, so every page has a way back to the course map.
-function createPathLink() {
-  const tools = document.querySelector(".lesson-header-tools, .site-nav");
-  if (!tools) {
-    return;
+  link.className = `header-link header-link-${page}`;
+  link.href = new URL(href, scriptBaseUrl).href;
+  if (ariaKey) {
+    link.dataset.i18nAriaLabel = ariaKey;
   }
-
-  const link = document.createElement("a");
-  link.className = "path-nav-link";
-  link.href = new URL("course.html", scriptBaseUrl).href;
-  link.dataset.i18nAriaLabel = "nav.pathAria";
-  if (document.body.dataset.page === "course") {
+  if (document.body.dataset.page === page) {
     link.setAttribute("aria-current", "page");
   }
-  link.innerHTML = '<span class="path-nav-icon" aria-hidden="true">🗺️</span><span class="path-nav-label" data-i18n="nav.path"></span><span class="path-nav-short" data-i18n="nav.pathShort"></span>';
-  tools.insertBefore(link, tools.querySelector(".faq-nav-link, .support-link, .sound-toggle, .language-switch"));
+  link.innerHTML = `<span class="header-link-icon" aria-hidden="true">${icon}</span><span class="header-link-label" data-i18n="${labelKey}"></span>`;
+  return link;
 }
 
-// Adds the FAQ link to the shared header, so every page shows it.
-function createFaqLink() {
-  const tools = document.querySelector(".lesson-header-tools, .site-nav");
+function arrangeHeader() {
+  const header = document.querySelector(".site-header");
+  const tools = header?.querySelector(".lesson-header-tools, .site-nav");
   if (!tools) {
     return;
   }
 
-  const link = document.createElement("a");
-  link.className = "faq-nav-link";
-  link.href = new URL("faq.html", scriptBaseUrl).href;
-  link.dataset.i18nAriaLabel = "faq.navAria";
-  if (document.body.dataset.page === "faq") {
-    link.setAttribute("aria-current", "page");
-  }
-  link.innerHTML = '<span class="faq-nav-icon" aria-hidden="true">?</span><span class="faq-nav-label" data-i18n="faq.nav"></span>';
-  tools.insertBefore(link, tools.querySelector(".support-link, .sound-toggle, .language-switch"));
+  const links = document.createElement("nav");
+  links.className = "header-links";
+  links.id = "header-links";
+  links.dataset.i18nAriaLabel = "a11y.mainNav";
+  links.append(
+    headerLink("course", "course.html", "🗺️", "nav.pathShort", "nav.pathAria"),
+    headerLink("meet", "meet-pybot.html", "👋", "nav.meet"),
+    headerLink("album", "album.html", "★", "album.nav", "album.navAria"),
+    headerLink("faq", "faq.html", "?", "faq.nav", "faq.navAria"),
+  );
+
+  const support = document.createElement("a");
+  support.className = "header-icon-button support-link";
+  support.href = "https://www.patreon.com/pybot";
+  support.target = "_blank";
+  support.rel = "noopener";
+  support.dataset.i18nAriaLabel = "support.aria";
+  support.innerHTML = '<span class="support-link-icon" aria-hidden="true">♥</span>';
+
+  const menuButton = document.createElement("button");
+  menuButton.className = "header-icon-button header-menu-button";
+  menuButton.type = "button";
+  menuButton.dataset.i18nAriaLabel = "nav.menu";
+  menuButton.setAttribute("aria-controls", links.id);
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.innerHTML = '<span class="header-menu-icon" aria-hidden="true"></span>';
+
+  [soundToggle, buddyToggle].forEach((button) => button?.classList.add("header-icon-button"));
+
+  const actions = document.createElement("div");
+  actions.className = "header-actions";
+  actions.append(
+    ...[tools.querySelector(".lesson-progress"), support, soundToggle, buddyToggle, tools.querySelector(".language-switch"), menuButton].filter(Boolean),
+  );
+  tools.replaceWith(links, actions);
+
+  const setMenuOpen = (open) => {
+    header.classList.toggle("is-menu-open", open);
+    menuButton.setAttribute("aria-expanded", String(open));
+  };
+  menuButton.addEventListener("click", () => setMenuOpen(!header.classList.contains("is-menu-open")));
+  document.addEventListener("click", (event) => {
+    if (event.target instanceof Node && !header.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && header.classList.contains("is-menu-open")) {
+      setMenuOpen(false);
+      menuButton.focus();
+    }
+  });
+}
+
+// Icon-only header buttons show their name as a tooltip.
+function syncHeaderTooltips() {
+  document.querySelectorAll(".header-icon-button[aria-label]").forEach((button) => {
+    button.title = button.getAttribute("aria-label");
+  });
 }
 
 function updateAudioButton() {
@@ -14009,6 +14024,7 @@ function updateAudioButton() {
   if (label) {
     label.textContent = textFor(audioEnabled ? "audio.on" : "audio.off");
   }
+  syncHeaderTooltips();
 }
 
 function ensureAudioContext() {
@@ -14146,7 +14162,7 @@ document.addEventListener("click", (event) => {
   if (!(event.target instanceof Element)) {
     return;
   }
-  const control = event.target.closest("button, a.button, a.nav-pill");
+  const control = event.target.closest("button, a.button, a.header-link");
   if (control && !control.classList.contains("sound-toggle")) {
     playRobotButtonClick();
   }
@@ -14305,6 +14321,7 @@ function updateBuddyButton() {
   buddyToggle.setAttribute("aria-label", textFor(buddyEnabled ? "buddy.turnOff" : "buddy.turnOn"));
   buddyToggle.querySelector(".buddy-toggle-label").textContent = textFor(buddyEnabled ? "buddy.on" : "buddy.off");
   buddy?.querySelector(".buddy-hide")?.setAttribute("aria-label", textFor("buddy.hide"));
+  syncHeaderTooltips();
 }
 
 function createBuddy() {
@@ -16341,10 +16358,7 @@ if (!renderLessonLock()) {
 saveDoneSteps();
 soundToggle = createSoundToggle();
 startBuddy();
-createSupportLink();
-createFaqLink();
-createPathLink();
-createAlbumLink();
+arrangeHeader();
 setLanguage(storedLanguage(), false);
 updateLearnerNamePanel(!learnerName);
 restoreStepActivities();
