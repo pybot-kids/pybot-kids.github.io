@@ -9729,7 +9729,7 @@ button[hidden] {
 .extras-strip {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 0 0 100px;
+  padding: 110px 0 100px;
 }
 
 .extras-grid {
@@ -9800,8 +9800,14 @@ button[hidden] {
   font-weight: 800;
 }
 
+.streak-note[hidden] {
+  display: none;
+}
+
 .section-heading > p.streak-note:last-child {
+  grid-column: 1 / -1;
   justify-self: start;
+  margin: 18px 0 0;
   max-width: none;
   color: var(--ink);
   font-size: 0.9rem;
@@ -10332,5 +10338,11 @@ button[hidden] {
 @media (max-width: 900px) {
   .site-nav .album-nav-link {
     display: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .extras-strip {
+    padding: 64px 0 72px;
   }
 }
