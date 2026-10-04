@@ -193,6 +193,10 @@ const translations = {
     "buddy.stretch": "Stretch time! Up, up, up!",
     "buddy.scan": "Scanning... I see a great learner!",
     "buddy.dragging": "Wheee! Where are we going?",
+    "buddy.shaking": "Aaah! Shaaaking!",
+    "buddy.dizzy1": "Whoa... the room is spinning!",
+    "buddy.dizzy2": "I'm dizzy! Everything goes round and round!",
+    "buddy.dizzy3": "Too much shaking! My circuits are dizzy!",
     "buddy.dropped1": "I like it here!",
     "buddy.dropped2": "Nice view from here!",
     "buddy.dropped3": "Good spot. Thanks!",
@@ -6269,6 +6273,10 @@ const translations = {
     "buddy.stretch": "¡Hora de estirarse! ¡Arriba, arriba!",
     "buddy.scan": "Escaneando... ¡veo a alguien que aprende muy bien!",
     "buddy.dragging": "¡Wiii! ¿A dónde vamos?",
+    "buddy.shaking": "¡Aaay! ¡Me sacudeees!",
+    "buddy.dizzy1": "Uy... ¡todo me da vueltas!",
+    "buddy.dizzy2": "¡Estoy mareado! ¡Todo gira y gira!",
+    "buddy.dizzy3": "¡Mucho sacudón! Mis circuitos están mareados.",
     "buddy.dropped1": "¡Me gusta aquí!",
     "buddy.dropped2": "¡Qué buena vista desde aquí!",
     "buddy.dropped3": "Buen lugar. ¡Gracias!",
@@ -13721,7 +13729,10 @@ function armBuddyDrag(handle) {
       return;
     }
     const box = buddy.getBoundingClientRect();
-    drag = { id: event.pointerId, startX: event.clientX, startY: event.clientY, dx: event.clientX - box.left, dy: event.clientY - box.top, moved: false };
+    drag = {
+      id: event.pointerId, startX: event.clientX, startY: event.clientY, dx: event.clientX - box.left, dy: event.clientY - box.top,
+      moved: false, lastX: event.clientX, lastY: event.clientY, dirX: 0, dirY: 0, turns: [], shook: false,
+    };
     handle.setPointerCapture(event.pointerId);
   });
 
@@ -13739,17 +13750,23 @@ function armBuddyDrag(handle) {
       buddyAct("surprised", "", textFor("buddy.dragging"), 60_000);
     }
     placeBuddy(event.clientX - drag.dx, event.clientY - drag.dy);
+    noteBuddyShake(drag, event.clientX, event.clientY);
   });
 
   const end = (event) => {
     if (!drag || event.pointerId !== drag.id) {
       return;
     }
-    const { moved } = drag;
+    const { moved, shook } = drag;
     drag = null;
-    buddy.classList.remove("is-dragging");
+    buddy.classList.remove("is-dragging", "is-shaking");
     if (moved) {
       saveBuddyPosition();
+      if (shook) {
+        buddyAct("happy", "dizzy", buddyPick("buddy.dizzy", 3), 3800);
+        buddyParticles("★", 5);
+        return;
+      }
       buddyAct("happy", "hop", buddyPick("buddy.dropped", 3), 2400);
     } else if (event.type === "pointerup") {
       buddyPoke();
@@ -13757,6 +13774,31 @@ function armBuddyDrag(handle) {
   };
   handle.addEventListener("pointerup", end);
   handle.addEventListener("pointercancel", end);
+}
+
+// Quick back-and-forth while dragging counts as shaking, and makes PyBot dizzy.
+function noteBuddyShake(drag, x, y) {
+  const now = Date.now();
+  [["X", x - drag.lastX], ["Y", y - drag.lastY]].forEach(([axis, delta]) => {
+    if (Math.abs(delta) < 4) {
+      return;
+    }
+    const direction = Math.sign(delta);
+    if (drag[`dir${axis}`] && direction !== drag[`dir${axis}`]) {
+      drag.turns.push(now);
+    }
+    drag[`dir${axis}`] = direction;
+  });
+  drag.lastX = x;
+  drag.lastY = y;
+  drag.turns = drag.turns.filter((time) => now - time < 1200);
+
+  const shaking = drag.turns.length >= 5;
+  buddy.classList.toggle("is-shaking", shaking);
+  if (shaking && !drag.shook) {
+    drag.shook = true;
+    buddyShowBubble(textFor("buddy.shaking"));
+  }
 }
 
 function buddyActive() {

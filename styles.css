@@ -8807,6 +8807,73 @@ button[hidden] {
   transform-origin: 50% 100%;
 }
 
+.pybot-buddy.is-shaking .buddy-body {
+  animation: buddy-shake 0.12s linear infinite;
+}
+
+.pybot-buddy.is-shaking .eye,
+.pybot-buddy[data-move="dizzy"] .eye {
+  top: 38px;
+  width: 44px;
+  height: 44px;
+  margin-left: -7px;
+  border: 9px solid var(--blue-dark);
+  border-right-color: transparent;
+  border-radius: 50%;
+  background: transparent;
+  animation: buddy-dizzy-eyes 0.7s linear infinite;
+}
+
+.pybot-buddy.is-shaking .eye span,
+.pybot-buddy[data-move="dizzy"] .eye span {
+  display: none;
+}
+
+.pybot-buddy[data-move="dizzy"] .mouth {
+  left: calc(50% - 14px);
+  width: 28px;
+  height: 22px;
+  border: 6px solid var(--orange-dark);
+  border-radius: 50%;
+}
+
+.pybot-buddy[data-move="dizzy"] .pybot {
+  animation: buddy-wobble 0.9s ease-in-out 4;
+  transform-origin: 50% 100%;
+}
+
+@keyframes buddy-shake {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+  25% {
+    transform: translate(-3px, 2px) rotate(-6deg);
+  }
+  75% {
+    transform: translate(3px, -2px) rotate(6deg);
+  }
+}
+
+@keyframes buddy-dizzy-eyes {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes buddy-wobble {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-12deg) translateX(-10px);
+  }
+  75% {
+    transform: rotate(12deg) translateX(10px);
+  }
+}
+
 .buddy-particle {
   position: absolute;
   top: 10px;
