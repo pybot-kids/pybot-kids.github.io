@@ -183,6 +183,23 @@ const translations = {
     "buddy.tip8": "Try explaining your code to someone at home.",
     "buddy.tip9": "1, 2, 3... I like counting!",
     "buddy.tip10": "Curious minds make great coders.",
+    "buddy.tip11": "What did one bit say to the other? See you on the bus!",
+    "buddy.tip12": "My favorite snack? Computer chips!",
+    "buddy.tip13": "Guess what the code will do before you run it.",
+    "buddy.tip14": "Errors are puzzles waiting for you.",
+    "buddy.tip15": "You can move me! Drag me wherever you like.",
+    "buddy.tip16": "Wiggle your fingers! Coders need warm-ups too.",
+    "buddy.sing": "La la la, I love Python!",
+    "buddy.stretch": "Stretch time! Up, up, up!",
+    "buddy.scan": "Scanning... I see a great learner!",
+    "buddy.dragging": "Wheee! Where are we going?",
+    "buddy.dropped1": "I like it here!",
+    "buddy.dropped2": "Nice view from here!",
+    "buddy.dropped3": "Good spot. Thanks!",
+    "buddy.poke1": "Hee hee, that tickles!",
+    "buddy.poke2": "Beep! You found me!",
+    "buddy.poke3": "Hi again, friend!",
+    "buddy.wake": "Oh! I took a little nap. I'm back!",
     "support.label": "Support PyBot",
     "support.aria": "Support PyBot on Patreon (opens in a new tab)",
     "meta.faqTitle": "Questions and answers — PyBot",
@@ -211,7 +228,7 @@ const translations = {
     "faq.soundQ": "Can I turn the sound off?",
     "faq.soundA": "Yes. Press the ♪ button at the top of the page. PyBot remembers your choice.",
     "faq.buddyQ": "Can I hide the little PyBot in the corner?",
-    "faq.buddyA": "Yes. Press the PyBot button at the top of the page, or the × next to PyBot. Press the button again to bring PyBot back. On phones PyBot stays hidden so it does not cover the lesson.",
+    "faq.buddyA": "Yes. You can also drag PyBot to another spot, and it remembers where you left it. To hide it, press the PyBot button at the top of the page, or the × next to PyBot. Press the button again to bring PyBot back. On phones PyBot stays hidden so it does not cover the lesson.",
     "faq.newQ": "What does “NEW · NOT DONE” mean on the map?",
     "faq.newA": "PyBot keeps growing. When a new page is added behind your place, the map marks it so you don't miss it. Visit it whenever you like.",
     "faq.whereQ": "Where is the progress saved?",
@@ -6117,6 +6134,23 @@ const translations = {
     "buddy.tip8": "Explícale tu código a alguien en casa.",
     "buddy.tip9": "1, 2, 3... ¡me encanta contar!",
     "buddy.tip10": "Las mentes curiosas programan muy bien.",
+    "buddy.tip11": "¿Qué le dijo un bit al otro? ¡Nos vemos en el bus!",
+    "buddy.tip12": "¿Mi comida favorita? ¡Los chips de computador!",
+    "buddy.tip13": "Adivina qué hará el código antes de ejecutarlo.",
+    "buddy.tip14": "Los errores son acertijos que te esperan.",
+    "buddy.tip15": "¡Puedes moverme! Arrástrame a donde quieras.",
+    "buddy.tip16": "¡Mueve los dedos! Para programar también hay que calentar.",
+    "buddy.sing": "¡La la la, me encanta Python!",
+    "buddy.stretch": "¡Hora de estirarse! ¡Arriba, arriba!",
+    "buddy.scan": "Escaneando... ¡veo a alguien que aprende muy bien!",
+    "buddy.dragging": "¡Wiii! ¿A dónde vamos?",
+    "buddy.dropped1": "¡Me gusta aquí!",
+    "buddy.dropped2": "¡Qué buena vista desde aquí!",
+    "buddy.dropped3": "Buen lugar. ¡Gracias!",
+    "buddy.poke1": "¡Ji ji, me haces cosquillas!",
+    "buddy.poke2": "¡Bip! ¡Me encontraste!",
+    "buddy.poke3": "¡Hola otra vez!",
+    "buddy.wake": "¡Oh! Me eché una siestica. ¡Ya volví!",
     "support.label": "Apoya a PyBot",
     "support.aria": "Apoya a PyBot en Patreon (se abre en una pestaña nueva)",
     "meta.faqTitle": "Preguntas y respuestas — PyBot",
@@ -6145,7 +6179,7 @@ const translations = {
     "faq.soundQ": "¿Puedo apagar el sonido?",
     "faq.soundA": "Sí. Presiona el botón ♪ arriba en la página. PyBot recuerda lo que elijas.",
     "faq.buddyQ": "¿Puedo ocultar al pequeño PyBot de la esquina?",
-    "faq.buddyA": "Sí. Presiona el botón de PyBot arriba en la página, o la × al lado de PyBot. Presiona el botón otra vez para que vuelva. En los celulares PyBot no aparece, para no tapar la lección.",
+    "faq.buddyA": "Sí. También puedes arrastrar a PyBot a otro lugar y recordará dónde lo dejaste. Para ocultarlo, presiona el botón de PyBot arriba en la página, o la × al lado de PyBot. Presiona el botón otra vez para que vuelva. En los celulares PyBot no aparece, para no tapar la lección.",
     "faq.newQ": "¿Qué significa “NUEVA · PENDIENTE” en el mapa?",
     "faq.newA": "PyBot sigue creciendo. Cuando se agrega una página nueva antes de tu lugar, el mapa la marca para que no te la pierdas. Visítala cuando quieras.",
     "faq.whereQ": "¿Dónde se guarda el avance?",
@@ -13127,23 +13161,35 @@ document.addEventListener("visibilitychange", () => {
 
 // The little PyBot companion: a small animated PyBot in the corner of every
 // page. It reacts to answers, runs and finished pages, and does small friendly
-// things while the learner reads. Hidden on phones, where it would cover the lesson.
+// things while the learner reads. Learners can drag it anywhere; it remembers
+// the spot. Hidden on phones, where it would cover the lesson.
 const BUDDY_PREFERENCE_KEY = "pybot.buddy.enabled";
+const BUDDY_POSITION_KEY = "pybot.buddy.position";
 const buddyScreenQuery = window.matchMedia("(min-width: 761px) and (min-height: 481px)");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const BUDDY_TIP_COUNT = 10;
-// Idle antics: a mood, an optional body move, and whether PyBot may share a tip.
+const BUDDY_TIP_COUNT = 16;
+const BUDDY_MARGIN = 14;
+// After this long without the learner moving or typing, PyBot takes a nap.
+const BUDDY_NAP_AFTER_MS = 75_000;
+// Idle antics: a mood, a body move, optional floating particles, and whether
+// PyBot may say something (a tip, or its own line).
 const BUDDY_IDLE_ANTICS = [
   { mood: "happy", move: "wave" },
   { mood: "wink", move: "hop" },
-  { mood: "curious", move: "look" },
+  { mood: "curious", move: "look", tip: true },
   { mood: "counting", move: "", tip: true },
-  { mood: "starry", move: "spin" },
+  { mood: "starry", move: "spin", particles: "✦" },
   { mood: "thinking", move: "", tip: true },
   { mood: "deciding", move: "look" },
   { mood: "welcoming", move: "wave", tip: true },
-  { mood: "proud", move: "dance" },
+  { mood: "proud", move: "dance", particles: "♪", say: "buddy.sing" },
   { mood: "happy", move: "blink", tip: true },
+  { mood: "surprised", move: "peek" },
+  { mood: "happy", move: "stretch", say: "buddy.stretch" },
+  { mood: "welcoming", move: "hop", particles: "♥" },
+  { mood: "focused", move: "scan", say: "buddy.scan" },
+  { mood: "celebrating", move: "flip" },
+  { mood: "wink", move: "wiggle", tip: true },
 ];
 let buddyToggle = null;
 let buddy = null;
@@ -13152,12 +13198,67 @@ let buddyIdleTimer = null;
 let buddyRestTimer = null;
 let buddyBubbleTimer = null;
 let buddyBusyUntil = 0;
+let buddyBubbleUntil = 0;
+let buddyHovered = false;
+let buddyAsleep = false;
+let buddyLastInput = Date.now();
+let buddyPosition = null;
+let buddyLookFrame = 0;
 
 function storedBuddyPreference() {
   try {
     return localStorage.getItem(BUDDY_PREFERENCE_KEY) !== "false";
   } catch {
     return true;
+  }
+}
+
+// The spot is kept as fractions of the free space, so it survives resizing.
+function storedBuddyPosition() {
+  try {
+    const [x, y] = (localStorage.getItem(BUDDY_POSITION_KEY) ?? "").split(",").map(Number);
+    if (x >= 0 && x <= 1 && y >= 0 && y <= 1) {
+      return { x, y };
+    }
+  } catch {
+    // PyBot starts in the corner when storage is unavailable.
+  }
+  return { x: 1, y: 1 };
+}
+
+function buddyFreeSpace() {
+  return {
+    width: Math.max(0, window.innerWidth - buddy.offsetWidth - BUDDY_MARGIN * 2),
+    height: Math.max(0, window.innerHeight - buddy.offsetHeight - BUDDY_MARGIN * 2),
+  };
+}
+
+function placeBuddy(left, top) {
+  const space = buddyFreeSpace();
+  const x = Math.min(Math.max(left - BUDDY_MARGIN, 0), space.width);
+  const y = Math.min(Math.max(top - BUDDY_MARGIN, 0), space.height);
+  buddy.style.left = `${x + BUDDY_MARGIN}px`;
+  buddy.style.top = `${y + BUDDY_MARGIN}px`;
+  buddyPosition = { x: space.width ? x / space.width : 1, y: space.height ? y / space.height : 1 };
+  // Keep the speech bubble on the screen.
+  buddy.classList.toggle("bubble-right", x + BUDDY_MARGIN + buddy.offsetWidth / 2 < window.innerWidth / 2);
+  buddy.classList.toggle("bubble-below", y + BUDDY_MARGIN < 150);
+}
+
+function restoreBuddyPosition() {
+  if (!buddy || buddy.hidden) {
+    return;
+  }
+  const space = buddyFreeSpace();
+  const position = buddyPosition ?? storedBuddyPosition();
+  placeBuddy(BUDDY_MARGIN + position.x * space.width, BUDDY_MARGIN + position.y * space.height);
+}
+
+function saveBuddyPosition() {
+  try {
+    localStorage.setItem(BUDDY_POSITION_KEY, `${buddyPosition.x.toFixed(3)},${buddyPosition.y.toFixed(3)}`);
+  } catch {
+    // The new spot still works for the current page.
   }
 }
 
@@ -13226,28 +13327,111 @@ function createBuddy() {
     setBuddyEnabled(false);
     buddyToggle?.focus();
   });
-  // Poking PyBot makes it do something fun.
-  element.querySelector(".buddy-body").addEventListener("click", () => buddyIdleAntic(true));
+  element.addEventListener("pointerenter", () => {
+    buddyHovered = true;
+    window.clearTimeout(buddyBubbleTimer);
+  });
+  element.addEventListener("pointerleave", () => {
+    buddyHovered = false;
+    buddyHideBubbleLater(Math.max(1800, buddyBubbleUntil - Date.now()));
+  });
+  armBuddyDrag(element.querySelector(".buddy-body"));
   document.body.append(element);
   return element;
+}
+
+// Dragging moves PyBot; a tap without moving pokes it.
+function armBuddyDrag(handle) {
+  let drag = null;
+
+  handle.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0) {
+      return;
+    }
+    const box = buddy.getBoundingClientRect();
+    drag = { id: event.pointerId, startX: event.clientX, startY: event.clientY, dx: event.clientX - box.left, dy: event.clientY - box.top, moved: false };
+    handle.setPointerCapture(event.pointerId);
+  });
+
+  handle.addEventListener("pointermove", (event) => {
+    if (!drag || event.pointerId !== drag.id) {
+      return;
+    }
+    if (!drag.moved && Math.hypot(event.clientX - drag.startX, event.clientY - drag.startY) < 6) {
+      return;
+    }
+    if (!drag.moved) {
+      drag.moved = true;
+      buddyWake(false);
+      buddy.classList.add("is-dragging");
+      buddyAct("surprised", "", textFor("buddy.dragging"), 60_000);
+    }
+    placeBuddy(event.clientX - drag.dx, event.clientY - drag.dy);
+  });
+
+  const end = (event) => {
+    if (!drag || event.pointerId !== drag.id) {
+      return;
+    }
+    const { moved } = drag;
+    drag = null;
+    buddy.classList.remove("is-dragging");
+    if (moved) {
+      saveBuddyPosition();
+      buddyAct("happy", "hop", buddyPick("buddy.dropped", 3), 2400);
+    } else if (event.type === "pointerup") {
+      buddyPoke();
+    }
+  };
+  handle.addEventListener("pointerup", end);
+  handle.addEventListener("pointercancel", end);
 }
 
 function buddyActive() {
   return Boolean(buddy) && buddyEnabled && buddyScreenQuery.matches && !document.hidden;
 }
 
-function buddyShowBubble(text, duration = 4200) {
+// Long messages stay longer, so there is time to read them.
+function buddyReadingTime(text) {
+  return Math.min(13_000, Math.max(4000, 1800 + text.length * 80));
+}
+
+function buddyHideBubbleLater(delay) {
+  window.clearTimeout(buddyBubbleTimer);
+  if (buddyHovered) {
+    return;
+  }
+  buddyBubbleTimer = window.setTimeout(() => buddy?.querySelector(".buddy-bubble")?.classList.remove("is-visible"), delay);
+}
+
+function buddyShowBubble(text) {
   const bubble = buddy?.querySelector(".buddy-bubble");
   if (!bubble) {
     return;
   }
 
-  window.clearTimeout(buddyBubbleTimer);
+  const duration = buddyReadingTime(text);
   bubble.textContent = text;
   bubble.classList.remove("is-visible");
   void bubble.offsetWidth;
   bubble.classList.add("is-visible");
-  buddyBubbleTimer = window.setTimeout(() => bubble.classList.remove("is-visible"), duration);
+  buddyBubbleUntil = Date.now() + duration;
+  buddyHideBubbleLater(duration);
+}
+
+function buddyParticles(symbol, count = 5) {
+  if (!buddy || reducedMotionQuery.matches) {
+    return;
+  }
+  for (let index = 0; index < count; index += 1) {
+    const particle = document.createElement("span");
+    particle.className = "buddy-particle";
+    particle.textContent = symbol;
+    particle.style.setProperty("--particle-x", `${Math.round((Math.random() - 0.5) * 90)}px`);
+    particle.style.setProperty("--particle-delay", `${index * 140}ms`);
+    buddy.append(particle);
+    window.setTimeout(() => particle.remove(), 1800 + index * 140);
+  }
 }
 
 // Sets a mood and a move for a while, then PyBot goes back to resting.
@@ -13262,10 +13446,11 @@ function buddyAct(mood, move = "", text = "", duration = 2600) {
   void buddy.offsetWidth;
   buddy.dataset.move = move;
   if (text) {
-    buddyShowBubble(text, Math.max(duration, 3600));
+    buddyShowBubble(text);
   }
 
-  buddyBusyUntil = Date.now() + duration;
+  // Wait until the learner had time to read before the next antic.
+  buddyBusyUntil = Date.now() + Math.max(duration, text ? buddyReadingTime(text) : 0);
   window.clearTimeout(buddyRestTimer);
   buddyRestTimer = window.setTimeout(() => {
     wrap.dataset.mood = "happy";
@@ -13278,26 +13463,105 @@ function buddyPick(prefix, count) {
   return textFor(`${prefix}${1 + Math.floor(Math.random() * count)}`);
 }
 
+function buddyPoke() {
+  if (buddyAsleep) {
+    buddyWake();
+    return;
+  }
+  if (Math.random() < 0.5) {
+    buddyAct("wink", "wiggle", buddyPick("buddy.poke", 3), 2200);
+    buddyParticles("♥", 3);
+    return;
+  }
+  buddyIdleAntic(true);
+}
+
 function buddyIdleAntic(poked = false) {
-  if (!buddyActive() || (!poked && Date.now() < buddyBusyUntil)) {
+  if (!buddyActive() || buddyAsleep || (!poked && Date.now() < buddyBusyUntil)) {
     scheduleBuddyIdle();
     return;
   }
 
+  if (!poked && Date.now() - buddyLastInput > BUDDY_NAP_AFTER_MS) {
+    buddySleep();
+    return;
+  }
+
   const antic = BUDDY_IDLE_ANTICS[Math.floor(Math.random() * BUDDY_IDLE_ANTICS.length)];
-  const tip = antic.tip && (poked || Math.random() < 0.6) ? buddyPick("buddy.tip", BUDDY_TIP_COUNT) : "";
-  buddyAct(antic.mood, antic.move, tip, 2400);
+  let text = "";
+  if (antic.say) {
+    text = textFor(antic.say);
+  } else if (antic.tip && (poked || Math.random() < 0.6)) {
+    text = buddyPick("buddy.tip", BUDDY_TIP_COUNT);
+  }
+  buddyAct(antic.mood, antic.move, text, 2400);
+  if (antic.particles) {
+    buddyParticles(antic.particles);
+  }
+}
+
+function buddySleep() {
+  buddyAsleep = true;
+  buddy.querySelector(".pybot-wrap").dataset.mood = "happy";
+  buddy.dataset.move = "sleep";
+  buddy.querySelector(".buddy-bubble").classList.remove("is-visible");
+  buddyParticles("z", 3);
+  window.clearTimeout(buddyIdleTimer);
+  // Little snores while napping.
+  buddyIdleTimer = window.setInterval(() => buddyParticles("z", 3), 4000);
+}
+
+function buddyWake(greet = true) {
+  if (!buddyAsleep) {
+    return;
+  }
+  buddyAsleep = false;
+  window.clearInterval(buddyIdleTimer);
+  buddy.dataset.move = "";
+  if (greet) {
+    buddyAct("surprised", "hop", textFor("buddy.wake"), 2400);
+  } else {
+    scheduleBuddyIdle();
+  }
 }
 
 function scheduleBuddyIdle() {
+  if (buddyAsleep) {
+    return;
+  }
   window.clearTimeout(buddyIdleTimer);
   if (!buddyActive()) {
     return;
   }
 
   // Calmer when the learner prefers less motion.
-  const delay = (reducedMotionQuery.matches ? 22000 : 11000) + Math.random() * 9000;
+  const delay = (reducedMotionQuery.matches ? 22000 : 9000) + Math.random() * 8000;
   buddyIdleTimer = window.setTimeout(buddyIdleAntic, delay);
+}
+
+// PyBot's eyes follow the pointer.
+function buddyLookAt(clientX, clientY) {
+  if (!buddyActive() || buddy.hidden || buddyLookFrame) {
+    return;
+  }
+  buddyLookFrame = window.requestAnimationFrame(() => {
+    buddyLookFrame = 0;
+    const box = buddy.querySelector(".buddy-body").getBoundingClientRect();
+    const dx = clientX - (box.left + box.width / 2);
+    const dy = clientY - (box.top + box.height * 0.3);
+    const distance = Math.hypot(dx, dy) || 1;
+    const reach = Math.min(1, distance / 160);
+    buddy.style.setProperty("--look-x", `${((dx / distance) * 11 * reach).toFixed(1)}px`);
+    buddy.style.setProperty("--look-y", `${((dy / distance) * 8 * reach).toFixed(1)}px`);
+  });
+}
+
+function noteBuddyInput(event) {
+  buddyLastInput = Date.now();
+  // A tap on PyBot itself wakes it through the poke.
+  if (buddyAsleep && buddyActive() && !buddy.contains(event.target)) {
+    buddyWake();
+  }
 }
 
 // Called from the places that already tell the learner how they did.
@@ -13305,16 +13569,19 @@ function buddyReact(event, activity = null) {
   if (!buddyActive()) {
     return;
   }
+  buddyWake(false);
 
   if (event === "correct") {
     const pageDone = stepActivities.length > 0 && [...stepActivities].every((item) => item.classList.contains("is-complete"));
     if (pageDone) {
       buddyAct("celebrating", "dance", learnerName ? textWithName("buddy.pageDoneNamed") : textFor("buddy.pageDone"), 4200);
+      buddyParticles("✦", 8);
       return;
     }
     const text = learnerName && Math.random() < 0.3 ? textWithName("buddy.correctNamed") : buddyPick("buddy.correct", 4);
     const mood = ["celebrating", "starry", "proud"][Math.floor(Math.random() * 3)];
     buddyAct(mood, activity?.classList.contains("fix-activity") ? "spin" : "hop", text, 3000);
+    buddyParticles("✦", 4);
   } else if (event === "wrong") {
     buddyAct("encouraging", "nod", buddyPick("buddy.wrong", 4), 3000);
   } else if (event === "running") {
@@ -13325,6 +13592,7 @@ function buddyReact(event, activity = null) {
     buddyAct("curious", "look", textFor("buddy.runError"), 3200);
   } else if (event === "nameSaved") {
     buddyAct("welcoming", "wave", textWithName("buddy.nameSaved"), 3200);
+    buddyParticles("♥", 4);
   }
 }
 
@@ -13335,11 +13603,14 @@ function syncBuddy() {
 
   const visible = buddyEnabled && buddyScreenQuery.matches;
   buddy.hidden = !visible;
-  if (!visible) {
+  if (!visible || document.hidden) {
     window.clearTimeout(buddyIdleTimer);
+    window.clearInterval(buddyIdleTimer);
     window.clearTimeout(buddyRestTimer);
+    buddyAsleep = false;
     return;
   }
+  restoreBuddyPosition();
   scheduleBuddyIdle();
 }
 
@@ -13366,6 +13637,12 @@ function startBuddy() {
   syncBuddy();
   buddyScreenQuery.addEventListener("change", syncBuddy);
   document.addEventListener("visibilitychange", syncBuddy);
+  window.addEventListener("resize", restoreBuddyPosition);
+  document.addEventListener("pointermove", (event) => {
+    noteBuddyInput(event);
+    buddyLookAt(event.clientX, event.clientY);
+  }, { passive: true });
+  ["keydown", "scroll", "pointerdown"].forEach((type) => document.addEventListener(type, noteBuddyInput, { passive: true }));
   // Say hello once per visit, not on every page.
   let greeted = false;
   try {
