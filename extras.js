@@ -124,6 +124,9 @@ const glossaryTerms = [
   ["🔁", "loop", "bucle (ciclo)", "Code that repeats. for repeats a number of times; while repeats while something is true.", "Código que se repite. for repite un número de veces; while repite mientras algo sea verdad.", ["for i in range(3):\n    print(\"Hop\")", "for i in range(3):\n    print(\"Salta\")"]],
   ["↹", "indentation", "sangría", "The spaces at the start of a line. They show which lines belong inside if, for or def.", "Los espacios al inicio de una línea. Muestran qué líneas van dentro de if, for o def.", ["if ok:\n    print(\"inside\")", "if listo:\n    print(\"adentro\")"]],
   ["⚙️", "function", "función", "A box with a name that does a job. You give it values and it can give one back.", "Una caja con nombre que hace un trabajo. Le das valores y te puede devolver uno.", ["def double(n):\n    return n * 2", "def doble(n):\n    return n * 2"]],
+  ["🏷️", "method", "método", "A job that belongs to a value. You call it with a dot.", "Un trabajo que le pertenece a un valor. Lo llamas con un punto.", ["name.upper()", "nombre.upper()"]],
+  ["🤖", "object", "objeto", "A thing that knows data and can do actions (methods).", "Una cosa que sabe datos y puede hacer acciones (métodos).", ["bolt = Robot(\"Bolt\")", "bolt = Robot(\"Bolt\")"]],
+  ["🍪", "class", "clase", "A mold for making objects. Each object made with it keeps its own data.", "Un molde para hacer objetos. Cada objeto hecho con él guarda sus propios datos.", ["class Robot:\n    def __init__(self, name):\n        self.name = name", "class Robot:\n    def __init__(self, nombre):\n        self.nombre = nombre"]],
   ["🖨️", "print", "mostrar (print)", "Shows something on the screen.", "Muestra algo en la pantalla.", ["print(\"Hi!\")", "print(\"¡Hola!\")"]],
   ["🎤", "input", "entrada (input)", "Asks the person a question and waits for the answer.", "Le hace una pregunta a la persona y espera la respuesta.", ["name = input(\"Name? \")", "nombre = input(\"¿Nombre? \")"]],
   ["🎲", "random", "al azar (random)", "Picks something by chance, like rolling a die.", "Escoge algo por suerte, como lanzar un dado.", "random.randint(1, 6)"],
@@ -197,6 +200,10 @@ const guideZones = {
   turtleMoves: {
     en: ["1 hour", "Drawing with Python's turtle: moving and turning, shapes made with loops, and pictures made with functions.", "Be the turtle: the child gives you orders like “forward 3 steps, turn right” to walk a square in the living room.", "On squared paper, follow: forward 4, turn right, forward 4, turn right, forward 4, turn right, forward 4. What did you draw?"],
     es: ["1 hora", "Dibujar con la tortuga de Python: avanzar y girar, figuras hechas con bucles y dibujos hechos con funciones.", "Sea la tortuga: el niño le da órdenes como “adelante 3 pasos, gira a la derecha” para caminar un cuadrado en la sala.", "En papel cuadriculado sigue: adelante 4, gira a la derecha, adelante 4, gira a la derecha, adelante 4, gira a la derecha, adelante 4. ¿Qué dibujaste?"],
+  },
+  objectsThings: {
+    en: ["45 minutes", "A gentle first look at objects: things that know (data) and do (methods), a class as a mold for making robots, and many robots from one mold.", "Pick a toy and ask: what does it know (its color, its name) and what can it do? Then use a cookie cutter: one cutter, many cookies, each decorated differently.", "Draw a robot mold card with empty spaces for name and color. Then draw two robots made from it, each with its own name and color."],
+    es: ["45 minutos", "Una primera mirada suave a los objetos: cosas que saben (datos) y hacen (métodos), una clase como molde para hacer robots y muchos robots de un solo molde.", "Escojan un juguete y pregunten: ¿qué sabe (su color, su nombre) y qué sabe hacer? Luego usen un cortador de galletas: un cortador, muchas galletas, cada una decorada distinto.", "Dibuja una tarjeta-molde de robot con espacios vacíos para nombre y color. Luego dibuja dos robots hechos con ella, cada uno con su propio nombre y color."],
   },
 };
 

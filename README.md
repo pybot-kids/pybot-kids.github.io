@@ -209,7 +209,7 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.buddy.position` | Two numbers from 0 to 1, comma-separated (for example `1.000,1.000`) | Where the learner dragged the companion, as fractions of the free screen space; this device only | No |
 | `pybot.buddy.greeted` | `true` (session storage, cleared when the tab closes) | Lets the companion say hello once per visit instead of on every page | No |
 | `pybot.learner.name` | A trimmed name or nickname of 1–24 characters | Lets PyBot address the learner; stored only in this browser | Yes |
-| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `changingBoxes`, `operatorsMath`, `operatorsCompare`, `operatorsOrder`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loopsPatterns`, `loops`, `loopsWhile`, `loopsUntil`, `loopsText`, `loopsNested`, `comparisons`, `comparisonsAnd`, `comparisonsOr`, `comparisonsNot`, `comparisonsIn`, `comparisonsLogic`, `functionsDo`, `functions`, `functionsMethods`, `checkpoint1`, `bugs`, `bugsCode`, `bugsDetective`, `powersInput`, `powersRandom`, `powersDict`, `thinkSplit`, `thinkPlan`, `thinkTest`, `cleanNames`, `cleanComments`, `cleanRepeat`, `checkpoint2`, `projectGuess`, `projectCalculator`, `projectRps`, `projectAdventure`, `projectQuiz`, `projectEightBall`, `turtleMoves`, `turtleShapes`, or `turtleArt` | Highlights the learner's current place across the complete small path | Yes |
+| `pybot.path.current` | `world`, `thinking`, `language`, `keyboard`, `environment`, `symbols`, `variables`, `boxes`, `changingBoxes`, `operatorsMath`, `operatorsCompare`, `operatorsOrder`, `conditionals`, `conditionalsElif`, `conditionalsMatch`, `loopsPatterns`, `loops`, `loopsWhile`, `loopsUntil`, `loopsText`, `loopsNested`, `comparisons`, `comparisonsAnd`, `comparisonsOr`, `comparisonsNot`, `comparisonsIn`, `comparisonsLogic`, `functionsDo`, `functions`, `functionsMethods`, `checkpoint1`, `bugs`, `bugsCode`, `bugsDetective`, `powersInput`, `powersRandom`, `powersDict`, `thinkSplit`, `thinkPlan`, `thinkTest`, `cleanNames`, `cleanComments`, `cleanRepeat`, `checkpoint2`, `projectGuess`, `projectCalculator`, `projectRps`, `projectAdventure`, `projectQuiz`, `projectEightBall`, `turtleMoves`, `turtleShapes`, or `turtleArt`, `objectsThings`, `objectsClass`, `objectsMany` | Highlights the learner's current place across the complete small path | Yes |
 | `pybot.path.visited` | Comma-separated step ids from `pybot.path.current` | Remembers which pages the learner has opened, so steps added to the path later show as new and pending | Yes |
 | `pybot.path.done` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps the learner finished, so a finished step that later gains activities shows **NEW ACTIVITIES** | Yes |
 | `pybot.path.known` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps were on the path when the learner started, so a step added later shows as new even when it is ahead of the learner | Yes |
@@ -274,6 +274,9 @@ Registered activity IDs:
 - Turtle drawing, moves and turns: `turtle-predict`, `turtle-everyday`, `turtle-start`, `turtle-turn`, `turtle-face`, `turtle-right`, `turtle-penup`, `turtle-back`, `turtle-style`, `turtle-fix-step`, `turtle-fix-road`, and `turtle-fix-flag`
 - Turtle drawing, shapes with loops: `shapes-predict`, `shapes-everyday`, `shapes-square`, `shapes-sides`, `shapes-hexagon`, `shapes-star`, `shapes-close`, `shapes-circle`, `shapes-row`, `shapes-end`, `shapes-fix-hexagon`, `shapes-fix-star`, and `shapes-fix-flower`
 - Turtle drawing, art with functions: `art-predict`, `art-everyday`, `art-def`, `art-size`, `art-colors`, `art-nofill`, `art-goto`, `art-pen`, `art-bgcolor`, `art-calls`, `art-fix-fill`, `art-fix-sun`, and `art-fix-trees`
+- Robots from a mold, things that know and do: `object-predict`, `object-everyday`, `object-data`, `object-dot`, `object-parens`, `object-type`, `object-own`, `object-fix`.
+- Robots from a mold, the robot mold: `class-predict`, `class-everyday`, `class-start`, `class-nothing`, `class-make`, `class-self`, `class-data`, `class-fix`.
+- Robots from a mold, many robots: `many-predict`, `many-everyday`, `many-count`, `many-greet`, `many-own`, `many-self`, `many-call`, `many-fix`, `many-fix-self`.
 
 Storage rules:
 
@@ -477,8 +480,9 @@ The Python zones (2–6) also get a **Run it** block that follows the standard z
 | 🏁 **Licence exam** (pit stop 2) | Theory questions and real-code challenges that mix zones 9–11 with earlier ones, then a self-check. | Answer quick questions, write bigger programs with input() and random, and rate each zone. |
 | 12 **Game projects** (six pages) | Guided mini games that join everything: guess the number, calculator, rock paper scissors, text adventure, quiz, magic 8-ball. Each starts with a plan of small steps. | Predict how a game ends with given answers, then build and repair parts of each game. |
 | 13 **Turtle drawing** (three pages: moves, shapes, art) | A turtle draws as it moves: forward and turns, shapes from loops (360 / sides), and scenes from functions with colors and fills. | Predict the shape, then fix wrong angles, missing turns, a missing `penup` or `end_fill`, and a function that is never called. |
+| 14 **Robots from a mold** (three pages: things, the mold, many robots) | A gentle first look at objects: things that know (data) and do (methods), `class` as a robot mold with `__init__` and `self`, and many robots from one mold, each with its own data. | Predict what a robot knows, then fix a missing `( )`, a robot made without its name, a robot that worked twice, and an action without `self`. |
 
-The path stops here for now. Classes, files, packages, databases, large projects, and open-ended assignments are outside the current course. They must not be added merely to make the curriculum look more complete.
+The path stops here for now. Zone 14 is only a gentle introduction to objects and classes (no inheritance). Files, packages, databases, large projects, and open-ended assignments are outside the current course. They must not be added merely to make the curriculum look more complete.
 
 Keyboard examples must not teach browser-reserved combinations such as Save unless they can be practiced safely without triggering browser behavior. A future keypress lab must respond to the browser event value instead of assuming a physical key position, so different keyboard layouts remain usable.
 
@@ -597,7 +601,10 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |   |-- 18-project-8ball.html
 |   |-- 19-turtle.html
 |   |-- 19-turtle-shapes.html
-|   `-- 19-turtle-art.html
+|   |-- 19-turtle-art.html
+|   |-- 20-objects.html
+|   |-- 20-objects-class.html
+|   `-- 20-objects-many.html
 |-- pyodide-worker.mjs # Isolated browser worker for the live Python runner
 |-- pybot-turtle.py # Recording turtle module the worker installs as turtle
 |-- THIRD_PARTY_NOTICES.md # Runtime credits, license, and pinned version

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta id="meta-description" name="description" content="Make your own mold with class: __init__ sets up each new robot, self means this robot, and a dot reads its data." data-i18n-content="meta.objectsClassDescription" /><meta name="theme-color" content="#fff8ec" /><title>The robot mold: class — PyBot</title><link rel="icon" href="../favicon.svg" type="image/svg+xml" /><link rel="stylesheet" href="../styles.css" /><script src="../script.js" defer></script></head>
+  <body class="lesson-page topic-page" data-page="objectsClass">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+    <header class="site-header lesson-site-header"><a class="brand" href="../index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home"><span class="brand-mark"><span></span></span><span>PyBot</span></a><div class="lesson-header-tools"><span class="lesson-progress" data-i18n="topic.progressObjectsClass">ZONE 14 · 2 OF 3</span><div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria-label="a11y.language"><button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button><button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button></div></div></header>
+    <main class="lesson-main" id="main-content">
+      <a class="lesson-back" href="20-objects.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a>
+      <section class="topic-hero"><div class="topic-hero-copy"><p class="eyebrow"><span>14</span><b data-i18n="objectsClass.eyebrow">OBJECTS · THE MOLD</b></p><h1 data-i18n="objectsClass.title">Make your own mold with class.</h1><p data-i18n="objectsClass.intro">A class is a mold. It says what every robot made with it will know. Then you use it to make real robots.</p></div>
+        <aside class="lesson-pybot-scene topic-pybot-scene scene-objects">
+          <div class="lesson-pybot-bubble">
+            <span class="speech-kicker" data-i18n="pybot.says">PYBOT SAYS</span>
+            <p data-i18n="objectsClass.pybot" data-pybot-message="objectsClass.pybot">With a cookie cutter you make cookies. With a class you make robots!</p>
+          </div>
+
+          <div class="scene-objects-prop" aria-hidden="true"><div class="object-card object-card-mold object-card-card"><b data-i18n="objectsClass.cardTitle">🍪 class Robot</b><span data-i18n="objectsClass.cardData">name</span><span data-i18n="objectsClass.cardAction">battery</span></div></div>
+
+          <div class="pybot-wrap lesson-pybot-figure" data-mood="focused">
+            <div class="pybot" role="img" aria-label="PyBot concentrates next to a dashed mold card called Robot, with empty spaces for a name and a battery" data-i18n-aria-label="objectsClass.robotLabel">
+              <div class="antenna" aria-hidden="true"><span></span></div>
+              <div class="ear ear-left" aria-hidden="true"></div>
+              <div class="ear ear-right" aria-hidden="true"></div>
+              <div class="bot-head">
+                <div class="bot-screen">
+                  <div class="brow brow-left" aria-hidden="true"></div>
+                  <div class="brow brow-right" aria-hidden="true"></div>
+                  <div class="eye eye-left" aria-hidden="true"><span></span></div>
+                  <div class="eye eye-right" aria-hidden="true"><span></span></div>
+                  <div class="cheek cheek-left" aria-hidden="true"></div>
+                  <div class="cheek cheek-right" aria-hidden="true"></div>
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="bot-neck" aria-hidden="true"></div>
+              <div class="arm arm-left" aria-hidden="true"><span class="hand"></span></div>
+              <div class="arm arm-right" aria-hidden="true"><span class="hand"></span></div>
+              <div class="bot-body">
+                <div class="chest-light" aria-hidden="true"></div>
+                <span class="chest-code" aria-hidden="true">&lt;/&gt;</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="topic-overview" aria-labelledby="objectsClass-life-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lifeEyebrow">IN REAL LIFE</p><h2 id="objectsClass-life-title" data-i18n="objectsClass.lifeTitle">A mold is not the thing.</h2><p class="practice-intro" data-i18n="objectsClass.lifeIntro">A mold is the plan. You use it to make the real things.</p></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">🍪</span><h3 data-i18n="objectsClass.life1Title">A cookie cutter</h3><p data-i18n="objectsClass.life1Text">The cutter is not a cookie. You use it to make cookies.</p></article><article class="topic-info-card"><span aria-hidden="true">🧊</span><h3 data-i18n="objectsClass.life2Title">An ice tray</h3><p data-i18n="objectsClass.life2Text">The tray has the shape. Water goes in, ice cubes come out.</p></article><article class="topic-info-card"><span aria-hidden="true">📝</span><h3 data-i18n="objectsClass.life3Title">A blank form</h3><p data-i18n="objectsClass.life3Text">Every form asks for a name. Each person writes their own.</p></article>
+      </div></section>
+
+      <section class="topic-overview" aria-labelledby="objectsClass-look-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.lookEyebrow">LOOK FIRST</p><h2 id="objectsClass-look-title" data-i18n="objectsClass.lookTitle">Three new words, one at a time.</h2></div><div class="topic-card-grid">
+        <article class="topic-info-card"><span aria-hidden="true">🍪</span><h3 data-i18n="objectsClass.look1Title">class</h3><p data-i18n="objectsClass.look1Text">class Robot: starts the mold. Mold names start with a capital letter.</p></article><article class="topic-info-card"><span aria-hidden="true">🛠️</span><h3 data-i18n="objectsClass.look2Title">__init__</h3><p data-i18n="objectsClass.look2Text">The mold's setup job. It runs by itself each time a new robot is made. Two _ before and two after.</p></article><article class="topic-info-card"><span aria-hidden="true">🪞</span><h3 data-i18n="objectsClass.look3Title">self</h3><p data-i18n="objectsClass.look3Text">self means “this robot itself”. self.name = name writes the name inside this robot.</p></article>
+      </div></section>
+
+      <section class="topic-overview" aria-labelledby="objectsClass-steps-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="conditionals.stepsEyebrow">STEP BY STEP</p><h2 id="objectsClass-steps-title" data-i18n="objectsClass.stepsTitle">Read the mold line by line.</h2><p class="practice-intro" data-i18n="objectsClass.stepsIntro">Take it slow. The first 4 lines are only the plan. Line 5 makes a real robot.</p></div>
+        <div class="function-open-grid function-open-single"><div class="function-open"><div class="function-line"><code data-i18n="objectsClass.walk1">class Robot:</code><small data-i18n="objectsClass.walk1Tag">Starts the mold called Robot. No robot exists yet.</small></div><div class="function-line"><code data-i18n="objectsClass.walk2">    def __init__(self, name):</code><small data-i18n="objectsClass.walk2Tag">The setup job. It gets the new robot (self) and a name.</small></div><div class="function-line"><code data-i18n="objectsClass.walk3">        self.name = name</code><small data-i18n="objectsClass.walk3Tag">Writes the name inside this robot.</small></div><div class="function-line"><code data-i18n="objectsClass.walk4">        self.battery = 100</code><small data-i18n="objectsClass.walk4Tag">Every new robot starts full: 100.</small></div><div class="function-line"><code data-i18n="objectsClass.walk5">bolt = Robot("Bolt")</code><small data-i18n="objectsClass.walk5Tag">Use the mold! Now a real robot exists. You do not write self: Python fills it in.</small></div><div class="function-line"><code data-i18n="objectsClass.walk6">print(bolt.name)</code><small data-i18n="objectsClass.walk6Tag">Read its data with a dot: Bolt</small></div><div class="function-line"><code data-i18n="objectsClass.walk7">print(bolt.battery)</code><small data-i18n="objectsClass.walk7Tag">Shows 100</small></div></div></div>
+        <p class="topic-try"><b data-i18n="objectsClass.walkNoteTitle">Remember the turtle?</b> <span data-i18n="objectsClass.walkNoteText">turtle.Turtle is a mold too. t = turtle.Turtle() used it to make one turtle.</span></p>
+      </section>
+
+      <section class="topic-run" aria-labelledby="objectsClass-run-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.runEyebrow">RUN IT</p><h2 id="objectsClass-run-title" data-i18n="objectsClass.runTitle">Make your first robot.</h2><p class="practice-intro" data-i18n="topic.runIntro">Guess first. Then run real Python and check.</p></div>
+        <div class="topic-run-grid">
+          <article class="step-activity" data-activity-id="class-predict"><header class="step-activity-header"><span>1</span><h3 data-i18n="topic.predictTitle">Guess the result</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="objectsClass.runCode">class Robot:
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+rita = Robot("Rita", "green")
+print(rita.name)
+print(rita.color)</code></div><p class="activity-question" data-i18n="objectsClass.predictQuestion">What will Python show?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="objectsClass.predictOption1">Rita, then green</button><button type="button" data-i18n="objectsClass.predictOption2">name, then color</button><button type="button" data-i18n="objectsClass.predictOption3">Nothing: a class never makes robots</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <div class="topic-runner">
+            <div class="code-window" aria-label="Python exercise" data-i18n-aria-label="a11y.codePreview" data-python-runner>
+              <div class="window-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>robot.py</span><span class="preview-tag" data-i18n="preview.tag">REAL PYTHON</span></div>
+              <div class="code-area"><span class="line-number" aria-hidden="true">1<br />2<br />3<br />4<br />5<br />6<br />7<br />8</span><label class="visually-hidden" for="python-code" data-i18n="preview.editorLabel">Python code</label><textarea id="python-code" data-python-editor data-code-key="objectsClass.runCode" rows="9" spellcheck="false" autocapitalize="off" autocomplete="off">class Robot:
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+rita = Robot("Rita", "green")
+print(rita.name)
+print(rita.color)</textarea></div>
+              <div class="output-area" role="status" aria-live="polite"><span class="output-label" data-i18n="preview.output">OUTPUT</span><p class="python-hint" data-python-hint hidden><strong data-i18n="preview.hintLabel">PyBot's hint</strong><span data-python-hint-text></span></p><pre data-python-output data-i18n="topic.runReady">Ready. Press Run Python.</pre></div>
+              <div class="runner-actions"><button class="run-button" type="button" data-python-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="stop-button" type="button" data-python-stop disabled><span aria-hidden="true">■</span><span data-i18n="preview.stop">Stop</span></button></div>
+              <details class="runtime-credit"><summary data-i18n="preview.creditSummary">Python runs here thanks to Pyodide ♥</summary><p data-i18n="preview.creditText">Pyodide 314.0.3 runs CPython in your browser with WebAssembly.</p><p><span data-i18n="preview.creditLicense">Open-source under the Mozilla Public License 2.0.</span> <a href="https://github.com/pyodide/pyodide/blob/314.0.3/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="preview.license">License</a></p></details>
+            </div>
+            <p class="topic-try"><b data-i18n="topic.tryLabel">Now change one thing:</b> <span data-i18n="objectsClass.tryText">Change "green" to your favorite color. Then add: print(rita.name, "is", rita.color)</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic-practice" aria-labelledby="objectsClass-practice-title"><div class="lesson-section-heading"><p class="eyebrow eyebrow-blue" data-i18n="topic.practiceEyebrow">YOUR TURN</p><h2 id="objectsClass-practice-title" data-i18n="objectsClass.practiceTitle">Mold or robot?</h2><p class="practice-intro" data-i18n="topic.practiceIntro">Try each tiny question. A wrong answer becomes something to review.</p></div>
+        <div class="plan-progress-summary" aria-label="Activity progress" data-i18n-aria-label="progress.activitySummaryLabel" aria-live="polite"><div class="progress-complete"><strong data-progress-complete>0</strong><span data-i18n="progress.completed">Completed</span></div><div class="progress-remaining"><strong data-progress-remaining>8</strong><span data-i18n="progress.remaining">Not tried</span></div><div class="progress-review"><strong data-progress-review>0</strong><span data-i18n="progress.review">Review</span></div></div>
+        <div class="all-plans"><div class="step-activity-grid">
+          <article class="step-activity" data-activity-id="class-everyday"><header class="step-activity-header"><span>01</span><h3 data-i18n="objectsClass.quizEverydayTitle">Like a class</h3></header><div class="quiz-scene" data-i18n="objectsClass.quizEverydayScene">A class is the plan to make things, not the thing.</div><p class="activity-question" data-i18n="objectsClass.quizEverydayQuestion">Which one is like a class?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="objectsClass.quizEverydayOption1">A cookie cutter</button><button type="button" data-i18n="objectsClass.quizEverydayOption2">One cookie</button><button type="button" data-i18n="objectsClass.quizEverydayOption3">A plate</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="class-start"><header class="step-activity-header"><span>02</span><h3 data-i18n="objectsClass.quizStartTitle">Start the mold</h3></header><p class="activity-question" data-i18n="objectsClass.quizStartQuestion">Which line starts a mold the right way?</p><div class="activity-options"><button type="button" data-i18n="objectsClass.quizStartOption1">class Robot</button><button type="button" data-correct="true" data-i18n="objectsClass.quizStartOption2">class Robot:</button><button type="button" data-i18n="objectsClass.quizStartOption3">Robot = class</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="class-nothing"><header class="step-activity-header"><span>03</span><h3 data-i18n="objectsClass.quizNothingTitle">Only the mold</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="objectsClass.quizNothingCode">class Cat:
+    def __init__(self, name):
+        self.name = name</code></div><p class="activity-question" data-i18n="objectsClass.quizNothingQuestion">How many cats exist after this code?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="objectsClass.quizNothingOption1">0: it is only the mold</button><button type="button" data-i18n="objectsClass.quizNothingOption2">1</button><button type="button" data-i18n="objectsClass.quizNothingOption3">Many</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="class-make"><header class="step-activity-header"><span>04</span><h3 data-i18n="objectsClass.quizMakeTitle">A real cat</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="objectsClass.quizMakeCode">class Cat:
+    def __init__(self, name):
+        self.name = name
+
+tom = Cat("Tom")
+print(tom.name)</code></div><p class="activity-question" data-i18n="objectsClass.quizMakeQuestion">What does Python show?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="objectsClass.quizMakeOption1">Tom</button><button type="button" data-i18n="objectsClass.quizMakeOption2">name</button><button type="button" data-i18n="objectsClass.quizMakeOption3">Cat</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="class-self"><header class="step-activity-header"><span>05</span><h3 data-i18n="objectsClass.quizSelfTitle">Who is self?</h3></header><p class="activity-question" data-i18n="objectsClass.quizSelfQuestion">Inside the mold, what does self mean?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="objectsClass.quizSelfOption1">This robot itself</button><button type="button" data-i18n="objectsClass.quizSelfOption2">The person typing</button><button type="button" data-i18n="objectsClass.quizSelfOption3">A mistake</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity" data-activity-id="class-data"><header class="step-activity-header"><span>06</span><h3 data-i18n="objectsClass.quizDataTitle">Full battery</h3></header><div class="quiz-scene"><code class="code-lines" data-i18n="objectsClass.quizDataCode">class Robot:
+    def __init__(self, name):
+        self.name = name
+        self.battery = 100
+
+zap = Robot("Zap")
+print(zap.battery)</code></div><p class="activity-question" data-i18n="objectsClass.quizDataQuestion">What does Python show?</p><div class="activity-options"><button type="button" data-correct="true" data-i18n="objectsClass.quizDataOption1">100</button><button type="button" data-i18n="objectsClass.quizDataOption2">Zap</button><button type="button" data-i18n="objectsClass.quizDataOption3">battery</button></div><p class="activity-feedback" aria-live="polite"></p></article>
+          <article class="step-activity fix-activity" data-activity-id="class-fix" data-fix-expected-key="objectsClass.fixMainExpected"><header class="step-activity-header"><span>07</span><h3 data-i18n="fix.title">Fix PyBot's code</h3></header><p class="activity-question" data-i18n="objectsClass.fixMainTask">PyBot made a robot but forgot its name. The mold needs a name inside the ( ). Make it show: Pip</p><div class="fix-columns"><div class="fix-editor-wrap"><label class="fix-label" for="class-fix-code" data-i18n="fix.codeLabel">PyBot's code</label><textarea class="fix-editor" id="class-fix-code" data-fix-code-key="objectsClass.fixMainCode" rows="7" spellcheck="false" autocapitalize="off" autocomplete="off">class Robot:
+    def __init__(self, name):
+        self.name = name
+
+pip = Robot()
+print(pip.name)</textarea><div class="fix-actions"><button class="run-button" type="button" data-fix-run><span aria-hidden="true">▶</span><span data-i18n="preview.run">Run Python</span></button><button class="fix-restart" type="button" data-fix-restart><span aria-hidden="true">↺</span><span data-i18n="fix.restart">Start over</span></button></div></div><div class="fix-results"><span class="fix-label" data-i18n="fix.goal">Goal output</span><pre class="fix-goal" data-i18n="objectsClass.fixMainExpected">Pip</pre><span class="fix-label" data-i18n="preview.output">OUTPUT</span><pre class="fix-output" data-fix-output aria-live="polite"></pre></div></div><p class="activity-feedback" aria-live="polite"></p></article>
+        </div></div>
+        <div class="page-progress-tools"><div><strong data-i18n="progress.savedTitle">Your work is saved here.</strong><p data-i18n="progress.savedText">Want a fresh start? Clear only this page.</p></div><button type="button" data-reset-activities><span>↺</span><span data-i18n="progress.resetPage">Clear this page's progress</span></button><p class="progress-reset-status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-big-idea"><span class="big-idea-mark">!</span><div><span class="big-idea-label" data-i18n="lesson.bigIdea">BIG IDEA</span><h2 data-i18n="objectsClass.bigTitle">A class is a mold. An object is a thing made with it.</h2><p data-i18n="objectsClass.bigText">class names the mold, __init__ sets up each new robot, and self means “this robot”. Next: many robots from one mold!</p></div></section>
+      <nav class="lesson-actions" aria-label="Lesson navigation" data-i18n-aria-label="a11y.lessonNav"><a class="button button-secondary" href="20-objects.html"><span>←</span><span data-i18n="lesson.previous">Previous page</span></a><a class="button button-primary" href="20-objects-many.html"><span data-i18n="objectsClass.next">Many robots</span><span>→</span></a></nav>
+    </main>
+  </body>
+</html>
