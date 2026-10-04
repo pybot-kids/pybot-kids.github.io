@@ -10334,3 +10334,74 @@ button[hidden] {
     display: none !important;
   }
 }
+
+/* Robots from a mold zone: little object cards next to PyBot (what it knows, what it does). */
+.scene-objects::before {
+  background: var(--yellow-soft);
+}
+
+.scene-objects-prop {
+  position: absolute;
+  right: -14px;
+  bottom: 26px;
+  z-index: 8;
+}
+
+.object-cards {
+  display: grid;
+  gap: 10px;
+}
+
+.object-card {
+  display: grid;
+  min-width: 150px;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 4px solid var(--blue-dark);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 5px 6px 0 rgba(23, 59, 130, 0.16);
+  color: var(--blue-dark);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+.object-card b {
+  font-size: 1rem;
+}
+
+.object-card span:last-child {
+  color: var(--orange);
+  font-weight: 900;
+}
+
+/* The mold is a plan, so its card is dashed with empty spaces. */
+.object-card-mold {
+  border-style: dashed;
+  background: var(--yellow-soft);
+}
+
+.object-card-mold span::after {
+  content: " = ___";
+}
+
+.object-card-mold span:last-child {
+  color: var(--blue-dark);
+  font-weight: 400;
+}
+
+.object-card-card2 {
+  transform: translateX(-24px);
+}
+
+/* Two robot cards stay small so PyBot's face shows. */
+.object-cards .object-card {
+  min-width: 132px;
+  gap: 2px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+
+.scene-objects-prop:has(.object-cards) {
+  bottom: 4px;
+}
