@@ -382,6 +382,14 @@ Still planned:
 - The application avoids advertising, behavioral tracking, and unnecessary third-party requests. The one exception is anonymous page-visit analytics, described below.
 - Links that leave the learning environment should be deliberate and clearly identified.
 
+### License
+
+PyBot is copyright (c) 2026 Sorey Garcia. Anyone who reuses it must give credit.
+
+- **Code** (HTML, CSS, JavaScript, Python, and tooling): [MIT License](LICENSE). Copies must keep the copyright and permission notice.
+- **Course content** (lesson text, exercises, quiz questions, PyBot dialogue, the PyBot character, illustrations, and images): [CC BY 4.0](LICENSE-CONTENT.md). Reuse must credit Sorey Garcia, link to the license, and say what changed.
+- Third-party components keep their own licenses, listed in `THIRD_PARTY_NOTICES.md`.
+
 ### Analytics
 
 The site uses Google Analytics 4 (web stream "Pybot For Kids") to count anonymous page visits. It is set up in one place, `GA_MEASUREMENT_ID` near the top of the page setup in `script.js`; every page loads that script, and an empty ID turns analytics off.
@@ -588,6 +596,8 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |-- pyodide-worker.mjs # Isolated browser worker for the live Python runner
 |-- pybot-turtle.py # Recording turtle module the worker installs as turtle
 |-- THIRD_PARTY_NOTICES.md # Runtime credits, license, and pinned version
+|-- LICENSE      # MIT License for the code
+|-- LICENSE-CONTENT.md # CC BY 4.0 for the course content, with a credit line
 |-- styles.css   # Brand system, layout, mascot, and responsive styles
 |-- script.js    # Shared bilingual UI, progress, audio, activities, and runner controls
 `-- README.md    # Product, design, technical, and roadmap plan
