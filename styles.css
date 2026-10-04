@@ -9233,6 +9233,8 @@ button[hidden] {
 @media (prefers-reduced-motion: reduce) {
   .order-check.is-wrong {
     animation: none;
+  }
+}
 
 /* Join text: small steps with text tiles */
 .join-steps {
@@ -9354,4 +9356,31 @@ button[hidden] {
   .join-step {
     padding: 64px 14px 16px;
   }
+}
+
+/* Assignment steps: which side is which, and the old value leaving */
+.assign-part {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.assign-tag {
+  color: var(--blue-dark);
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.assign-swap {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.assign-old {
+  background: var(--white);
+  color: var(--muted);
+  text-decoration: line-through;
+  opacity: 0.6;
 }

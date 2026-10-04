@@ -225,7 +225,7 @@ Registered activity IDs:
 - Keyboard: `keyboard-backspace`, `keyboard-undo`, `keyboard-copy`, `keyboard-enter`, `keyboard-shift`, `keyboard-paste`, and `keyboard-fix`
 - Environment: `environment-editor`, `environment-engine`, `environment-version`, `environment-stop`, `environment-output`, `environment-browser`, and `environment-fix`
 - Symbols: `symbol-text`, `symbol-assign`, `symbol-block`, `symbol-parens`, `symbol-note`, `symbol-join`, and `symbol-fix`
-- Memory and variables: `memory-ram`, `variable-name`, `variable-value`, `variable-predict`, `variable-change`, `variable-label`, and `variable-fix`
+- Memory and variables: `memory-ram`, `variable-name`, `variable-value`, `variable-predict`, `variable-change`, `variable-label`, `variable-left`, `variable-math`, `variable-copy`, and `variable-fix`
 - Boxes of all kinds: `boxes-text`, `boxes-yesno`, `boxes-list`, `boxes-grid`, `boxes-predict`, `boxes-decimal`, and `boxes-fix`
 - Changing boxes: `changing-predict`, `changing-plus`, `changing-short`, `changing-minus`, `changing-times`, `changing-math`, `changing-join`, `changing-space`, `changing-text-numbers`, and `changing-fix`
 - Operators (math): `math-everyday`, `math-divide`, `math-floor`, `math-remainder`, `math-even`, `math-power`, `math-power-three`, `math-sign`, `math-predict`, and `math-fix`
