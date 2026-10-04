@@ -219,7 +219,7 @@ Every browser-storage key must be added to this registry before it is released. 
 Registered activity IDs:
 
 - Code in the real world: `world-hunt`, `world-coin`, `world-rover`, `world-vacuum`, `world-song`, `world-nocode`, `world-who`, and `world-big`
-- Everyday plans: `water`, `bag`, `hands`, `teeth`, `dressed`, `cereal`, `drawing`, `bedtime`, `reading`, and `photo`
+- Everyday plans: `water`, `bag`, `hands`, `teeth`, `dressed`, `cereal`, `drawing`, `bedtime`, `reading`, and `photo`; drag-to-order plans: `order-plant`, `order-sandwich`, and `order-gift`
 - Keyboard: `keyboard-backspace`, `keyboard-undo`, `keyboard-copy`, `keyboard-enter`, `keyboard-shift`, `keyboard-paste`, and `keyboard-fix`
 - Environment: `environment-editor`, `environment-engine`, `environment-version`, `environment-stop`, `environment-output`, `environment-browser`, and `environment-fix`
 - Symbols: `symbol-text`, `symbol-assign`, `symbol-block`, `symbol-parens`, `symbol-note`, `symbol-join`, and `symbol-fix`

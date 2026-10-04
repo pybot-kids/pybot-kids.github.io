@@ -8812,3 +8812,107 @@ button[hidden] {
     display: none;
   }
 }
+
+/* Thinking in steps: goal line on PyBot's water algorithm */
+.algorithm-listing .algorithm-goal {
+  margin: 8px 0 0;
+  color: #bfe3ff;
+  font-weight: 800;
+}
+
+/* Thinking in steps: "Put the steps in order" drag activities */
+.order-heading {
+  margin-top: 46px;
+}
+
+.order-heading h3 {
+  margin: 6px 0 8px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.03em;
+}
+
+.order-heading p:not(.eyebrow) {
+  max-width: 560px;
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.order-grid {
+  margin-top: 22px;
+}
+
+.order-list {
+  margin-top: 12px;
+}
+
+.order-list li {
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  position: relative;
+  border-color: #cbd8e5;
+  background: var(--white);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.order-list li:hover,
+.order-list li:focus-visible {
+  border-color: var(--blue);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--blue-soft);
+}
+
+.order-list li.is-dragging {
+  z-index: 2;
+  border-color: var(--blue-dark);
+  box-shadow: 0 12px 24px rgba(35, 68, 114, 0.2);
+  cursor: grabbing;
+}
+
+.order-grip {
+  color: #9fb2c6;
+  font-size: 1.1rem;
+  letter-spacing: -0.2em;
+}
+
+.order-check {
+  min-height: 48px;
+  margin-top: 16px;
+  padding: 10px 20px;
+  border: 3px solid var(--blue-dark);
+  border-radius: 14px;
+  background: var(--yellow);
+  color: var(--blue-dark);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.order-check.is-wrong {
+  animation: answer-shake 330ms ease-in-out;
+}
+
+.order-activity.is-complete .order-list li {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  cursor: default;
+}
+
+.order-activity.is-complete .order-grip {
+  visibility: hidden;
+}
+
+.order-check:disabled {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .order-check.is-wrong {
+    animation: none;
+  }
+}
