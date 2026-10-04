@@ -210,6 +210,46 @@ const translations = {
     "meta.faqDescription": "Short answers about PyBot: no accounts, progress saved in your browser, backups, languages, and privacy.",
     "faq.nav": "FAQ",
     "faq.navAria": "Questions and answers",
+    "album.nav": "Album",
+    "album.navAria": "My album: stickers and diplomas",
+    "reward.new": "New sticker: {name}!",
+    "reward.newMany": "{count} new stickers in your album!",
+    "reward.open": "Open my album",
+    "diploma.link": "🎓 Your diploma",
+    "streak.days": "You have learned with PyBot on {count} days.",
+    "streak.oneDay": "You have learned with PyBot on 1 day.",
+    "streak.run": "{count} days in a row!",
+    "badge.firstStep": "First step",
+    "badge.firstStepHint": "Finish your first activity.",
+    "badge.days3": "Three days in a row",
+    "badge.days3Hint": "Learn on 3 days in a row.",
+    "badge.days7": "A whole week",
+    "badge.days7Hint": "Learn on 7 days in a row.",
+    "badge.days10": "Ten learning days",
+    "badge.days10Hint": "Learn on 10 different days. They don't need to be in a row.",
+    "badge.zoneHint": "Finish this zone to earn it.",
+    "badge.allZones": "PyBot trophy",
+    "badge.allZonesHint": "Finish every zone.",
+    "extras.eyebrow": "MORE FOR YOU",
+    "extras.title": "Stickers, words and ideas",
+    "extras.album": "My album",
+    "extras.albumText": "Your stickers, diplomas and learning days.",
+    "extras.glossary": "Word list",
+    "extras.glossaryText": "Python words in English and Spanish, with drawings.",
+    "extras.guide": "For parents and teachers",
+    "extras.guideText": "What each zone teaches, plus activities without screens.",
+    "faq.albumQ": "Where are my stickers and diplomas?",
+    "faq.albumA": "In your album. Press ★ Album at the top of any page. Each finished zone gives you a sticker and a diploma with your name that you can print.",
+    "faq.albumLink": "Open my album",
+    "faq.glossaryQ": "What does a word like “loop” mean?",
+    "faq.glossaryA": "Look it up in the word list. Each word has a drawing, a short meaning, the word in English and Spanish, and a tiny Python example.",
+    "faq.glossaryLink": "Open the word list",
+    "faq.guideQ": "Is there a guide for parents and teachers?",
+    "faq.guideA": "Yes. It says what each zone teaches and about how long it takes, with an activity without screens for home and a paper challenge you can print.",
+    "faq.guideLink": "Open the guide",
+    "faq.helpQ": "Is there help or support if something goes wrong?",
+    "faq.helpA": "Not for now. PyBot is a free contribution for whoever finds it useful, so there is no support service. If you have an idea for a new feature, you can send it to us on Patreon.",
+    "faq.helpLink": "Suggest an idea on Patreon (new tab)",
     "faq.eyebrow": "QUESTIONS AND ANSWERS",
     "faq.title": "Got a question?",
     "faq.intro": "Tap a question to see the answer.",
@@ -6367,6 +6407,46 @@ const translations = {
     "meta.faqDescription": "Respuestas cortas sobre PyBot: sin cuentas, el avance se guarda en tu navegador, copias, idiomas y privacidad.",
     "faq.nav": "Preguntas",
     "faq.navAria": "Preguntas y respuestas",
+    "album.nav": "Álbum",
+    "album.navAria": "Mi álbum: stickers y diplomas",
+    "reward.new": "¡Sticker nuevo: {name}!",
+    "reward.newMany": "¡{count} stickers nuevos en tu álbum!",
+    "reward.open": "Abrir mi álbum",
+    "diploma.link": "🎓 Tu diploma",
+    "streak.days": "Has aprendido con PyBot {count} días.",
+    "streak.oneDay": "Has aprendido con PyBot 1 día.",
+    "streak.run": "¡{count} días seguidos!",
+    "badge.firstStep": "Primer paso",
+    "badge.firstStepHint": "Termina tu primera actividad.",
+    "badge.days3": "Tres días seguidos",
+    "badge.days3Hint": "Aprende 3 días seguidos.",
+    "badge.days7": "Una semana entera",
+    "badge.days7Hint": "Aprende 7 días seguidos.",
+    "badge.days10": "Diez días de aprender",
+    "badge.days10Hint": "Aprende 10 días distintos. No tienen que ser seguidos.",
+    "badge.zoneHint": "Termina esta zona para ganarlo.",
+    "badge.allZones": "Copa de PyBot",
+    "badge.allZonesHint": "Termina todas las zonas.",
+    "extras.eyebrow": "MÁS PARA TI",
+    "extras.title": "Stickers, palabras e ideas",
+    "extras.album": "Mi álbum",
+    "extras.albumText": "Tus stickers, diplomas y días de aprender.",
+    "extras.glossary": "Palabras",
+    "extras.glossaryText": "Palabras de Python en inglés y español, con dibujos.",
+    "extras.guide": "Para papás y profes",
+    "extras.guideText": "Qué enseña cada zona y actividades sin pantalla.",
+    "faq.albumQ": "¿Dónde están mis stickers y diplomas?",
+    "faq.albumA": "En tu álbum. Presiona ★ Álbum arriba en cualquier página. Cada zona terminada te da un sticker y un diploma con tu nombre que puedes imprimir.",
+    "faq.albumLink": "Abrir mi álbum",
+    "faq.glossaryQ": "¿Qué quiere decir una palabra como “bucle”?",
+    "faq.glossaryA": "Búscala en la lista de palabras. Cada palabra tiene un dibujo, un significado corto, la palabra en inglés y español, y un ejemplo pequeño de Python.",
+    "faq.glossaryLink": "Abrir la lista de palabras",
+    "faq.guideQ": "¿Hay una guía para papás y profes?",
+    "faq.guideA": "Sí. Dice qué enseña cada zona y cuánto toma más o menos, con una actividad sin pantalla para la casa y un reto en papel para imprimir.",
+    "faq.guideLink": "Abrir la guía",
+    "faq.helpQ": "¿Hay ayuda o soporte si algo falla?",
+    "faq.helpA": "Por ahora no. PyBot es un aporte gratuito para quien le sirva, así que no hay servicio de soporte. Si tienes una idea para algo nuevo, puedes enviárnosla por Patreon.",
+    "faq.helpLink": "Sugerir una idea en Patreon (nueva pestaña)",
     "faq.eyebrow": "PREGUNTAS Y RESPUESTAS",
     "faq.title": "¿Tienes una pregunta?",
     "faq.intro": "Toca una pregunta para ver la respuesta.",
@@ -13158,6 +13238,157 @@ function zoneProgress() {
 
 const zoneOfStep = (id) => pathZones.find((zone) => zone.steps.includes(id));
 
+// Rewards: a sticker album, zone diplomas and a gentle count of learning days.
+// Stickers are saved with the day they were earned, so a backup keeps them.
+const BADGES_KEY = "pybot.badges";
+const DAYS_KEY = "pybot.days";
+const DAYS_KEPT = 400;
+const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
+// One sticker per zone, in the order of pathZones.
+const zoneBadgeIcons = ["🌱", "⌨️", "📦", "➗", "🔀", "🔁", "⚖️", "⚙️", "🔧", "🐞", "⚡", "🧠", "🧹", "🏁", "🎮", "🐢"];
+
+const zoneBadgeId = (zone) => `zone-${zone.steps[0]}`;
+const todayString = (date = new Date()) => date.toLocaleDateString("en-CA");
+
+function badgeList() {
+  return [
+    { id: "first-step", icon: "👣", title: "badge.firstStep", hint: "badge.firstStepHint", earned: (stats) => stats.activities > 0 },
+    { id: "days-3", icon: "🔥", title: "badge.days3", hint: "badge.days3Hint", earned: (stats) => stats.bestRun >= 3 },
+    { id: "days-7", icon: "🌈", title: "badge.days7", hint: "badge.days7Hint", earned: (stats) => stats.bestRun >= 7 },
+    { id: "days-10", icon: "📅", title: "badge.days10", hint: "badge.days10Hint", earned: (stats) => stats.days.length >= 10 },
+    ...pathZones.map((zone, index) => ({
+      id: zoneBadgeId(zone),
+      icon: zoneBadgeIcons[index] ?? "⭐",
+      title: zone.title,
+      zone,
+      earned: (stats) => stats.doneZones.has(zone),
+    })),
+    { id: "all-zones", icon: "🏆", title: "badge.allZones", hint: "badge.allZonesHint", earned: (stats) => pathZones.every((zone) => stats.doneZones.has(zone)) },
+  ];
+}
+
+function badgeHint(badge) {
+  return badge.zone ? textFor("badge.zoneHint").replace("{name}", textFor(badge.zone.title)) : textFor(badge.hint);
+}
+
+function learningDays() {
+  try {
+    return (localStorage.getItem(DAYS_KEY) ?? "").split(",").filter((day) => DATE_PATTERN.test(day));
+  } catch {
+    return [];
+  }
+}
+
+// Counts a day the learner opened a lesson. Missing a day is never punished:
+// the map only celebrates runs and the total.
+function noteLearningDay() {
+  const days = learningDays();
+  const today = todayString();
+  if (days.includes(today)) {
+    return;
+  }
+  try {
+    localStorage.setItem(DAYS_KEY, [...days, today].sort().slice(-DAYS_KEPT).join(","));
+  } catch {
+    // Lessons still work when browser storage is unavailable.
+  }
+}
+
+function learningStreak() {
+  const days = learningDays().sort();
+  const dayNumber = (day) => Math.round(Date.parse(`${day}T12:00:00Z`) / 86_400_000);
+  let run = 0;
+  let bestRun = 0;
+  days.forEach((day, index) => {
+    run = index > 0 && dayNumber(day) - dayNumber(days[index - 1]) === 1 ? run + 1 : 1;
+    bestRun = Math.max(bestRun, run);
+  });
+  const last = days.at(-1);
+  const sinceLast = last ? dayNumber(todayString()) - dayNumber(last) : Infinity;
+  return { days, bestRun, currentRun: sinceLast <= 1 ? run : 0 };
+}
+
+function storedBadges() {
+  const badges = new Map();
+  try {
+    (localStorage.getItem(BADGES_KEY) ?? "").split(",").forEach((pair) => {
+      const [id, date] = pair.split(":");
+      if (id && DATE_PATTERN.test(date ?? "")) {
+        badges.set(id, date);
+      }
+    });
+  } catch {
+    // An empty album is fine.
+  }
+  return badges;
+}
+
+// Saves any sticker the learner just earned and says so once.
+function checkRewards() {
+  const stats = {
+    ...learningStreak(),
+    activities: activityIds.filter((id) => storedActivityState(id) === "complete").length,
+    doneZones: zoneProgress().done,
+  };
+  const badges = storedBadges();
+  const earned = badgeList().filter((badge) => !badges.has(badge.id) && badge.earned(stats));
+  if (earned.length === 0) {
+    return;
+  }
+  earned.forEach((badge) => badges.set(badge.id, todayString()));
+  try {
+    localStorage.setItem(BADGES_KEY, [...badges].map(([id, date]) => `${id}:${date}`).join(","));
+  } catch {
+    return;
+  }
+  showRewardToast(earned);
+}
+
+function showRewardToast(earned) {
+  document.querySelector(".reward-toast")?.remove();
+  const toast = document.createElement("p");
+  toast.className = "reward-toast";
+  toast.setAttribute("role", "status");
+  const text = earned.length === 1
+    ? textFor("reward.new").replace("{name}", textFor(earned[0].title))
+    : textFor("reward.newMany").replace("{count}", String(earned.length));
+  toast.innerHTML = `<span class="reward-toast-icon" aria-hidden="true"></span><span></span><a></a>`;
+  toast.querySelector(".reward-toast-icon").textContent = earned[0].icon;
+  toast.querySelector("span:not([aria-hidden])").textContent = text;
+  toast.querySelector("a").href = new URL("album.html", scriptBaseUrl).href;
+  toast.querySelector("a").textContent = textFor("reward.open");
+  document.body.append(toast);
+  window.setTimeout(() => toast.classList.add("is-leaving"), 7000);
+  window.setTimeout(() => toast.remove(), 7600);
+}
+
+function renderStreak() {
+  document.querySelectorAll("[data-streak]").forEach((element) => {
+    const { days, currentRun } = learningStreak();
+    element.hidden = days.length === 0;
+    const total = days.length === 1 ? textFor("streak.oneDay") : textFor("streak.days").replace("{count}", String(days.length));
+    element.textContent = currentRun >= 2 ? `🔥 ${textFor("streak.run").replace("{count}", String(currentRun))} ${total}` : total;
+  });
+}
+
+// Adds the album link to the shared header, so every page shows it.
+function createAlbumLink() {
+  const tools = document.querySelector(".lesson-header-tools, .site-nav");
+  if (!tools) {
+    return;
+  }
+
+  const link = document.createElement("a");
+  link.className = "faq-nav-link album-nav-link";
+  link.href = new URL("album.html", scriptBaseUrl).href;
+  link.dataset.i18nAriaLabel = "album.navAria";
+  if (document.body.dataset.page === "album") {
+    link.setAttribute("aria-current", "page");
+  }
+  link.innerHTML = '<span class="faq-nav-icon" aria-hidden="true">★</span><span class="faq-nav-label" data-i18n="album.nav"></span>';
+  tools.insertBefore(link, tools.querySelector(".faq-nav-link, .support-link, .sound-toggle, .language-switch"));
+}
+
 // A lesson page in a locked zone shows a friendly note instead of the lesson.
 function renderLessonLock() {
   const step = pathSteps.find((candidate) => candidate.page === document.body.dataset.page);
@@ -13215,6 +13446,23 @@ function updateZoneSkip(card, zone, { canSkip, isSkipped }) {
   skip.querySelector("button").textContent = textFor("skip.button");
   skip.querySelector("span").hidden = !isSkipped;
   skip.querySelector("span").textContent = textFor("skip.done");
+}
+
+// A finished zone card links to its printable diploma.
+function updateZoneDiploma(card, zone, isDone) {
+  let link = card.querySelector("[data-zone-diploma]");
+  if (!isDone) {
+    link?.remove();
+    return;
+  }
+  if (!link) {
+    link = document.createElement("a");
+    link.className = "zone-diploma";
+    link.dataset.zoneDiploma = "";
+    link.href = `diploma.html?zone=${encodeURIComponent(zone.steps[0])}`;
+    card.querySelector(".mission-copy").append(link);
+  }
+  link.textContent = textFor("diploma.link");
 }
 
 function updateCoursePath() {
@@ -13311,6 +13559,7 @@ function updateCoursePath() {
     let note = card.querySelector("[data-zone-lock-note]");
 
     card.classList.toggle("is-locked", Boolean(lock));
+    updateZoneDiploma(card, zone, doneZones.has(zone));
     updateZoneSkip(card, zone, {
       canSkip: Boolean(zone) && !lock && !doneZones.has(zone) && !skippedZones.has(zone) && zone !== pathZones.at(-1) && !zone.noSkip,
       isSkipped: skippedZones.has(zone),
@@ -14408,6 +14657,7 @@ function setLanguage(language, persist = true) {
   renderLessonLock();
   renderSelfCheck();
   renderReviewNote();
+  renderStreak();
 
   if (persist) {
     try {
@@ -14446,6 +14696,11 @@ function backupValidators() {
       const [id, rating] = pair.split(":");
       return pathSteps.some((step) => step.id === id) && SELF_CHECK_RATINGS.includes(rating);
     }),
+    [BADGES_KEY]: (value) => value === "" || value.split(",").every((pair) => {
+      const [id, date] = pair.split(":");
+      return badgeList().some((badge) => badge.id === id) && DATE_PATTERN.test(date ?? "");
+    }),
+    [DAYS_KEY]: (value) => value === "" || value.split(",").every((day) => DATE_PATTERN.test(day)),
   };
 
   activityIds.forEach((activityId) => {
@@ -14667,6 +14922,7 @@ function progressAfterReset() {
 }
 
 function updatePlanProgressSummary() {
+  checkRewards();
   if (!planProgressSummary) {
     return;
   }
@@ -15842,6 +16098,9 @@ saveKnownPathSteps();
 // A locked page does not count as visited, so it cannot open its own zone.
 if (!renderLessonLock()) {
   saveCurrentPathStep();
+  if (pathSteps.some((step) => step.page === document.body.dataset.page)) {
+    noteLearningDay();
+  }
 }
 saveDoneSteps();
 soundToggle = createSoundToggle();
@@ -15849,7 +16108,9 @@ startBuddy();
 createSupportLink();
 createFaqLink();
 createPathLink();
+createAlbumLink();
 setLanguage(storedLanguage(), false);
 updateLearnerNamePanel(!learnerName);
 restoreStepActivities();
+checkRewards();
 armStoredAudioPreference();

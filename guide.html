@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="What each PyBot zone teaches, how long it takes, an activity without screens and a paper challenge." />
+    <meta name="theme-color" content="#fff8ec" />
+    <title>Guide for parents and teachers — PyBot</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <script src="extras.js" defer></script>
+  </head>
+  <body class="guide-page" data-page="guide">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+
+    <header class="site-header lesson-site-header">
+      <a class="brand" href="index.html" aria-label="PyBot, home" data-i18n-aria-label="a11y.home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>PyBot</span>
+      </a>
+      <div class="lesson-header-tools">
+        <a class="meet-home-link" href="index.html" data-i18n="course.home">Home</a>
+        <div
+          class="language-switch"
+          role="group"
+          aria-label="Choose language"
+          data-i18n-aria-label="a11y.language"
+        >
+          <button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button>
+          <button class="language-button" type="button" data-language="es" aria-pressed="false">ES</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="extras-main" id="main-content">
+      <header class="meet-intro faq-intro">
+        <p class="eyebrow eyebrow-blue" data-i18n="guide.eyebrow"></p>
+        <h1 data-i18n="guide.title"></h1>
+        <p data-i18n="guide.intro"></p>
+      </header>
+
+      <p class="guide-tips" data-i18n="guide.tip1"></p>
+      <p class="extras-actions">
+        <button class="is-primary" type="button" data-print="guide" data-i18n="guide.print">Print the guide</button>
+        <button type="button" data-print="challenges" data-i18n="guide.printChallenges">Print only the paper challenges</button>
+      </p>
+      <ol class="guide-list" data-guide-list></ol>
+    </main>
+  </body>
+</html>

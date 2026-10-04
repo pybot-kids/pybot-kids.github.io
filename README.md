@@ -214,6 +214,8 @@ Every browser-storage key must be added to this registry before it is released. 
 | `pybot.path.done` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps the learner finished, so a finished step that later gains activities shows **NEW ACTIVITIES** | Yes |
 | `pybot.path.known` | Comma-separated step ids from `pybot.path.current` (may be empty) | Remembers which steps were on the path when the learner started, so a step added later shows as new even when it is ahead of the learner | Yes |
 | `pybot.selfcheck` | Comma-separated `<step-id>:<rating>` pairs, rating `good`, `okay`, or `review` (may be empty) | The learner's own answer to "How did it go?" at a pit stop; zones rated `review` show **TO REVIEW** on the map | Yes |
+| `pybot.badges` | Comma-separated `<badge-id>:<YYYY-MM-DD>` pairs (may be empty) | Stickers in the album and the day each was earned; a finished zone's sticker (`zone-<first-step-id>`) also unlocks its printable diploma | Yes |
+| `pybot.days` | Comma-separated `YYYY-MM-DD` local dates, sorted, last 400 kept (may be empty) | Days the learner opened a lesson, for the gentle "days in a row" count; a missed day is never shown as lost | Yes |
 | `pybot.activity.<activity-id>` | `complete` or `review` | Marks a completed activity or one that should be reviewed | Yes |
 | `pybot.progress.version` | A whole number up to `PROGRESS_VERSION` | The course content version the saved progress was last upgraded to (see **Progress versions**) | No; the file carries `progressVersion` instead |
 
