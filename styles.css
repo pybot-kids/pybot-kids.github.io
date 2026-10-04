@@ -2510,6 +2510,18 @@ a {
   text-align: center;
 }
 
+.site-footer .footer-credit {
+  grid-column: 1 / -1;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.footer-credit a {
+  margin-left: 6px;
+  color: inherit;
+}
+
 .footer-status {
   justify-self: end;
   padding: 6px 11px;
