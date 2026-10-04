@@ -156,8 +156,6 @@ const translations = {
     "buddy.turnOn": "Show the little PyBot in the corner",
     "buddy.turnOff": "Hide the little PyBot in the corner",
     "buddy.hide": "Hide the little PyBot",
-    "buddy.hello": "Hi! I'll cheer for you while you learn.",
-    "buddy.helloNamed": "Hi, {name}! I'll cheer for you while you learn.",
     "buddy.correct1": "You got it!",
     "buddy.correct2": "Yes! Great thinking!",
     "buddy.correct3": "Beep boop! Correct!",
@@ -204,6 +202,76 @@ const translations = {
     "buddy.poke2": "Beep! You found me!",
     "buddy.poke3": "Hi again, friend!",
     "buddy.wake": "Oh! I took a little nap. I'm back!",
+    "buddy.joke1Q": "Why was the computer cold?",
+    "buddy.joke1A": "It left its Windows open!",
+    "buddy.joke2Q": "What do robots eat for a snack?",
+    "buddy.joke2A": "Micro-chips!",
+    "buddy.joke3Q": "Why did the robot cross the road?",
+    "buddy.joke3A": "Because it was programmed to!",
+    "buddy.joke4Q": "What is a snake's favorite programming language?",
+    "buddy.joke4A": "Python, of course! Sssss!",
+    "buddy.joke5Q": "Why did the computer go to the doctor?",
+    "buddy.joke5A": "It had a virus! (Don't worry, I'm healthy.)",
+    "buddy.joke6Q": "What is a robot's favorite music?",
+    "buddy.joke6A": "Heavy metal!",
+    "buddy.joke7Q": "Why are robots never scared?",
+    "buddy.joke7A": "They have nerves of steel!",
+    "buddy.joke8Q": "What did the loop say to the program?",
+    "buddy.joke8A": "Again! Again! Again!",
+    "buddy.joke9Q": "What do you call a sleepy robot?",
+    "buddy.joke9A": "A nap-top!",
+    "buddy.joke10Q": "What is PyBot's favorite game?",
+    "buddy.joke10A": "Hide and seek... with bugs!",
+    "buddy.joke11Q": "What did 0 say to 8?",
+    "buddy.joke11A": "Nice belt!",
+    "buddy.joke12Q": "Why do robots love the beach?",
+    "buddy.joke12A": "They recharge in the sun!",
+    "buddy.riddle1Q": "I have keys but I open no doors. What am I?",
+    "buddy.riddle1A": "A keyboard!",
+    "buddy.riddle2Q": "The more you take, the more you leave behind. What are they?",
+    "buddy.riddle2A": "Footsteps!",
+    "buddy.riddle3Q": "What goes up but never comes down?",
+    "buddy.riddle3A": "Your age!",
+    "buddy.riddle4Q": "I have hands but I can't clap. What am I?",
+    "buddy.riddle4A": "A clock!",
+    "buddy.riddle5Q": "What gets wetter the more it dries?",
+    "buddy.riddle5A": "A towel!",
+    "buddy.riddle6Q": "I am full of holes but I hold water. What am I?",
+    "buddy.riddle6A": "A sponge!",
+    "buddy.riddle7Q": "What has a head and a tail but no body?",
+    "buddy.riddle7A": "A coin!",
+    "buddy.riddle8Q": "What can you catch but not throw?",
+    "buddy.riddle8A": "A cold!",
+    "buddy.fact1": "Fun fact: the first computer bug was a real moth, found in 1947!",
+    "buddy.fact2": "Fun fact: Python was created by Guido van Rossum in 1991.",
+    "buddy.fact3": "Fun fact: octopuses have three hearts!",
+    "buddy.fact4": "Fun fact: honey never spoils. Bees are amazing!",
+    "buddy.fact5": "Fun fact: computers think with only two numbers, 0 and 1.",
+    "buddy.fact6": "Fun fact: there are robots exploring Mars right now!",
+    "buddy.fact7": "Fun fact: hummingbirds can fly backwards! Colombia has more than 160 kinds.",
+    "buddy.fact8": "Fun fact: Ada Lovelace wrote one of the first programs, almost 200 years ago.",
+    "buddy.fact9": "Fun fact: your brain uses about as much power as a small light bulb.",
+    "buddy.fact10": "Fun fact: a day on Venus is longer than its year!",
+    "buddy.cheer1": "You are a super learner!",
+    "buddy.cheer2": "I'm proud to be your robot friend.",
+    "buddy.cheer3": "Your ideas are awesome!",
+    "buddy.cheer4": "Keep going, you are doing great!",
+    "buddy.cheer5": "Thank you for learning with me!",
+    "buddy.cheer6": "You make my antenna glow!",
+    "buddy.greet": "{greet}! Shall we learn something together?",
+    "buddy.greetNamed": "{greet}, {name}! Shall we learn something together?",
+    "buddy.greetMorning": "Good morning",
+    "buddy.greetAfternoon": "Good afternoon",
+    "buddy.greetEvening": "Good evening",
+    "buddy.hover1": "Hi there!",
+    "buddy.hover2": "Boop!",
+    "buddy.hover3": "Want a joke? Click me!",
+    "buddy.pokeLots": "Hee hee! Okay, okay, you win!",
+    "buddy.bottom": "You made it to the end of the page!",
+    "buddy.typing1": "Ooh, you're writing code!",
+    "buddy.typing2": "Click, clack, coding time!",
+    "buddy.typing3": "I love watching you code!",
+    "buddy.laugh": "Ha ha!",
     "support.label": "Support PyBot",
     "support.aria": "Support PyBot on Patreon (opens in a new tab)",
     "meta.faqTitle": "Questions and answers — PyBot",
@@ -328,6 +396,7 @@ const translations = {
     "nav.pathShort": "Path",
     "nav.pathAria": "Learning path: see your course map",
     "nav.meet": "Meet PyBot",
+    "nav.menu": "Menu",
     "hero.eyebrow": "A Python adventure",
     "hero.titleStart": "Python, one small",
     "hero.titleEnd": "step at a time.",
@@ -6670,8 +6739,6 @@ const translations = {
     "buddy.turnOn": "Mostrar al pequeño PyBot en la esquina",
     "buddy.turnOff": "Ocultar al pequeño PyBot de la esquina",
     "buddy.hide": "Ocultar al pequeño PyBot",
-    "buddy.hello": "¡Hola! Te voy a animar mientras aprendes.",
-    "buddy.helloNamed": "¡Hola, {name}! Te voy a animar mientras aprendes.",
     "buddy.correct1": "¡Lo lograste!",
     "buddy.correct2": "¡Sí! ¡Muy bien pensado!",
     "buddy.correct3": "¡Bip bup! ¡Correcto!",
@@ -6718,6 +6785,76 @@ const translations = {
     "buddy.poke2": "¡Bip! ¡Me encontraste!",
     "buddy.poke3": "¡Hola otra vez!",
     "buddy.wake": "¡Oh! Me eché una siestica. ¡Ya volví!",
+    "buddy.joke1Q": "¿Por qué el computador tenía frío?",
+    "buddy.joke1A": "¡Porque dejó las ventanas abiertas!",
+    "buddy.joke2Q": "¿Qué comen los robots de merienda?",
+    "buddy.joke2A": "¡Microchips!",
+    "buddy.joke3Q": "¿Por qué el robot cruzó la calle?",
+    "buddy.joke3A": "¡Porque así lo programaron!",
+    "buddy.joke4Q": "¿Cuál es el lenguaje favorito de las serpientes?",
+    "buddy.joke4A": "¡Python, claro! Sssss.",
+    "buddy.joke5Q": "¿Por qué el computador fue al médico?",
+    "buddy.joke5A": "¡Tenía un virus! (Tranqui, yo estoy sano.)",
+    "buddy.joke6Q": "¿Cuál es la música favorita de los robots?",
+    "buddy.joke6A": "¡El heavy metal!",
+    "buddy.joke7Q": "¿Por qué los robots nunca tienen miedo?",
+    "buddy.joke7A": "¡Porque tienen nervios de acero!",
+    "buddy.joke8Q": "¿Qué le dijo un bucle al programa?",
+    "buddy.joke8A": "¡Otra vez! ¡Otra vez! ¡Otra vez!",
+    "buddy.joke9Q": "¿Cómo se llama un robot que siempre tiene sueño?",
+    "buddy.joke9A": "¡Un dormi-bot!",
+    "buddy.joke10Q": "¿Cuál es el juego favorito de PyBot?",
+    "buddy.joke10A": "¡Las escondidas... con los errores!",
+    "buddy.joke11Q": "¿Qué le dijo el 0 al 8?",
+    "buddy.joke11A": "¡Qué lindo cinturón!",
+    "buddy.joke12Q": "¿Por qué a los robots les encanta la playa?",
+    "buddy.joke12A": "¡Porque se recargan con el sol!",
+    "buddy.riddle1Q": "Tengo teclas pero no abro puertas. ¿Qué soy?",
+    "buddy.riddle1A": "¡Un teclado!",
+    "buddy.riddle2Q": "Mientras más das, más dejas atrás. ¿Qué son?",
+    "buddy.riddle2A": "¡Los pasos!",
+    "buddy.riddle3Q": "¿Qué sube y nunca baja?",
+    "buddy.riddle3A": "¡La edad!",
+    "buddy.riddle4Q": "Tengo agujas pero no sé coser. ¿Qué soy?",
+    "buddy.riddle4A": "¡Un reloj!",
+    "buddy.riddle5Q": "¿Qué se moja mientras más seca?",
+    "buddy.riddle5A": "¡La toalla!",
+    "buddy.riddle6Q": "Estoy lleno de huecos pero guardo agua. ¿Qué soy?",
+    "buddy.riddle6A": "¡Una esponja!",
+    "buddy.riddle7Q": "Tiene cara y sello pero no tiene cuerpo. ¿Qué es?",
+    "buddy.riddle7A": "¡Una moneda!",
+    "buddy.riddle8Q": "¿Qué puedes atrapar pero no lanzar?",
+    "buddy.riddle8A": "¡Un resfriado!",
+    "buddy.fact1": "Dato curioso: ¡el primer «bug» de computador fue una polilla de verdad, en 1947!",
+    "buddy.fact2": "Dato curioso: Python lo creó Guido van Rossum en 1991.",
+    "buddy.fact3": "Dato curioso: ¡los pulpos tienen tres corazones!",
+    "buddy.fact4": "Dato curioso: la miel nunca se daña. ¡Las abejas son increíbles!",
+    "buddy.fact5": "Dato curioso: los computadores piensan con solo dos números, 0 y 1.",
+    "buddy.fact6": "Dato curioso: ¡ahora mismo hay robots explorando Marte!",
+    "buddy.fact7": "Dato curioso: ¡los colibríes pueden volar hacia atrás! Colombia tiene más de 160 especies.",
+    "buddy.fact8": "Dato curioso: Ada Lovelace escribió uno de los primeros programas hace casi 200 años.",
+    "buddy.fact9": "Dato curioso: tu cerebro usa más o menos la energía de un bombillo pequeño.",
+    "buddy.fact10": "Dato curioso: ¡en Venus un día dura más que un año!",
+    "buddy.cheer1": "¡Aprendes súper bien!",
+    "buddy.cheer2": "Me siento orgulloso de ser tu amigo robot.",
+    "buddy.cheer3": "¡Tus ideas son geniales!",
+    "buddy.cheer4": "¡Sigue así, vas muy bien!",
+    "buddy.cheer5": "¡Gracias por aprender conmigo!",
+    "buddy.cheer6": "¡Haces brillar mi antena!",
+    "buddy.greet": "¡{greet}! ¿Aprendemos algo juntos?",
+    "buddy.greetNamed": "¡{greet}, {name}! ¿Aprendemos algo juntos?",
+    "buddy.greetMorning": "Buenos días",
+    "buddy.greetAfternoon": "Buenas tardes",
+    "buddy.greetEvening": "Buenas noches",
+    "buddy.hover1": "¡Hola!",
+    "buddy.hover2": "¡Bup!",
+    "buddy.hover3": "¿Quieres un chiste? ¡Dame clic!",
+    "buddy.pokeLots": "¡Ji ji! ¡Bueno, bueno, me ganaste!",
+    "buddy.bottom": "¡Llegaste al final de la página!",
+    "buddy.typing1": "¡Uy, estás escribiendo código!",
+    "buddy.typing2": "¡Clic, clac, a programar!",
+    "buddy.typing3": "¡Me encanta verte programar!",
+    "buddy.laugh": "¡Ja ja!",
     "support.label": "Apoya a PyBot",
     "support.aria": "Apoya a PyBot en Patreon (se abre en una pestaña nueva)",
     "meta.faqTitle": "Preguntas y respuestas — PyBot",
@@ -6842,6 +6979,7 @@ const translations = {
     "nav.pathShort": "Ruta",
     "nav.pathAria": "Ruta de aprendizaje: mira tu mapa del curso",
     "nav.meet": "Conoce a PyBot",
+    "nav.menu": "Menú",
     "hero.eyebrow": "Una aventura con Python",
     "hero.titleStart": "Python, un paso",
     "hero.titleEnd": "pequeño a la vez.",
@@ -14025,24 +14163,6 @@ function renderStreak() {
   });
 }
 
-// Adds the album link to the shared header, so every page shows it.
-function createAlbumLink() {
-  const tools = document.querySelector(".lesson-header-tools, .site-nav");
-  if (!tools) {
-    return;
-  }
-
-  const link = document.createElement("a");
-  link.className = "faq-nav-link album-nav-link";
-  link.href = new URL("album.html", scriptBaseUrl).href;
-  link.dataset.i18nAriaLabel = "album.navAria";
-  if (document.body.dataset.page === "album") {
-    link.setAttribute("aria-current", "page");
-  }
-  link.innerHTML = '<span class="faq-nav-icon" aria-hidden="true">★</span><span class="faq-nav-label" data-i18n="album.nav"></span>';
-  tools.insertBefore(link, tools.querySelector(".faq-nav-link, .support-link, .sound-toggle, .language-switch"));
-}
-
 // A lesson page in a locked zone shows a friendly note instead of the lesson.
 function renderLessonLock() {
   const step = pathSteps.find((candidate) => candidate.page === document.body.dataset.page);
@@ -14465,57 +14585,88 @@ function createSoundToggle() {
   return button;
 }
 
-// Adds the Patreon link to the shared header, so every page shows it.
-function createSupportLink() {
-  const tools = document.querySelector(".lesson-header-tools, .site-nav");
-  if (!tools) {
-    return;
-  }
-
+// The shared header: page links on the left, compact controls on the right,
+// and a menu button that holds the links on small screens.
+function headerLink(page, href, icon, labelKey, ariaKey) {
   const link = document.createElement("a");
-  link.className = "support-link";
-  link.href = "https://www.patreon.com/pybot";
-  link.target = "_blank";
-  link.rel = "noopener";
-  link.dataset.i18nAriaLabel = "support.aria";
-  link.innerHTML = '<span class="support-link-icon" aria-hidden="true">♥</span><span class="support-link-label" data-i18n="support.label"></span>';
-  tools.insertBefore(link, tools.querySelector(".sound-toggle, .language-switch"));
-}
-
-// Adds the learning path link to the shared header, so every page has a way back to the course map.
-function createPathLink() {
-  const tools = document.querySelector(".lesson-header-tools, .site-nav");
-  if (!tools) {
-    return;
+  link.className = `header-link header-link-${page}`;
+  link.href = new URL(href, scriptBaseUrl).href;
+  if (ariaKey) {
+    link.dataset.i18nAriaLabel = ariaKey;
   }
-
-  const link = document.createElement("a");
-  link.className = "path-nav-link";
-  link.href = new URL("course.html", scriptBaseUrl).href;
-  link.dataset.i18nAriaLabel = "nav.pathAria";
-  if (document.body.dataset.page === "course") {
+  if (document.body.dataset.page === page) {
     link.setAttribute("aria-current", "page");
   }
-  link.innerHTML = '<span class="path-nav-icon" aria-hidden="true">🗺️</span><span class="path-nav-label" data-i18n="nav.path"></span><span class="path-nav-short" data-i18n="nav.pathShort"></span>';
-  tools.insertBefore(link, tools.querySelector(".faq-nav-link, .support-link, .sound-toggle, .language-switch"));
+  link.innerHTML = `<span class="header-link-icon" aria-hidden="true">${icon}</span><span class="header-link-label" data-i18n="${labelKey}"></span>`;
+  return link;
 }
 
-// Adds the FAQ link to the shared header, so every page shows it.
-function createFaqLink() {
-  const tools = document.querySelector(".lesson-header-tools, .site-nav");
+function arrangeHeader() {
+  const header = document.querySelector(".site-header");
+  const tools = header?.querySelector(".lesson-header-tools, .site-nav");
   if (!tools) {
     return;
   }
 
-  const link = document.createElement("a");
-  link.className = "faq-nav-link";
-  link.href = new URL("faq.html", scriptBaseUrl).href;
-  link.dataset.i18nAriaLabel = "faq.navAria";
-  if (document.body.dataset.page === "faq") {
-    link.setAttribute("aria-current", "page");
-  }
-  link.innerHTML = '<span class="faq-nav-icon" aria-hidden="true">?</span><span class="faq-nav-label" data-i18n="faq.nav"></span>';
-  tools.insertBefore(link, tools.querySelector(".support-link, .sound-toggle, .language-switch"));
+  const links = document.createElement("nav");
+  links.className = "header-links";
+  links.id = "header-links";
+  links.dataset.i18nAriaLabel = "a11y.mainNav";
+  links.append(
+    headerLink("course", "course.html", "🗺️", "nav.pathShort", "nav.pathAria"),
+    headerLink("meet", "meet-pybot.html", "👋", "nav.meet"),
+    headerLink("album", "album.html", "★", "album.nav", "album.navAria"),
+    headerLink("faq", "faq.html", "?", "faq.nav", "faq.navAria"),
+  );
+
+  const support = document.createElement("a");
+  support.className = "header-icon-button support-link";
+  support.href = "https://www.patreon.com/pybot";
+  support.target = "_blank";
+  support.rel = "noopener";
+  support.dataset.i18nAriaLabel = "support.aria";
+  support.innerHTML = '<span class="support-link-icon" aria-hidden="true">♥</span>';
+
+  const menuButton = document.createElement("button");
+  menuButton.className = "header-icon-button header-menu-button";
+  menuButton.type = "button";
+  menuButton.dataset.i18nAriaLabel = "nav.menu";
+  menuButton.setAttribute("aria-controls", links.id);
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.innerHTML = '<span class="header-menu-icon" aria-hidden="true"></span>';
+
+  [soundToggle, buddyToggle].forEach((button) => button?.classList.add("header-icon-button"));
+
+  const actions = document.createElement("div");
+  actions.className = "header-actions";
+  actions.append(
+    ...[tools.querySelector(".lesson-progress"), support, soundToggle, buddyToggle, tools.querySelector(".language-switch"), menuButton].filter(Boolean),
+  );
+  tools.replaceWith(links, actions);
+
+  const setMenuOpen = (open) => {
+    header.classList.toggle("is-menu-open", open);
+    menuButton.setAttribute("aria-expanded", String(open));
+  };
+  menuButton.addEventListener("click", () => setMenuOpen(!header.classList.contains("is-menu-open")));
+  document.addEventListener("click", (event) => {
+    if (event.target instanceof Node && !header.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && header.classList.contains("is-menu-open")) {
+      setMenuOpen(false);
+      menuButton.focus();
+    }
+  });
+}
+
+// Icon-only header buttons show their name as a tooltip.
+function syncHeaderTooltips() {
+  document.querySelectorAll(".header-icon-button[aria-label]").forEach((button) => {
+    button.title = button.getAttribute("aria-label");
+  });
 }
 
 function updateAudioButton() {
@@ -14530,6 +14681,7 @@ function updateAudioButton() {
   if (label) {
     label.textContent = textFor(audioEnabled ? "audio.on" : "audio.off");
   }
+  syncHeaderTooltips();
 }
 
 function ensureAudioContext() {
@@ -14667,7 +14819,7 @@ document.addEventListener("click", (event) => {
   if (!(event.target instanceof Element)) {
     return;
   }
-  const control = event.target.closest("button, a.button, a.nav-pill");
+  const control = event.target.closest("button, a.button, a.header-link");
   if (control && !control.classList.contains("sound-toggle")) {
     playRobotButtonClick();
   }
@@ -14692,6 +14844,10 @@ const BUDDY_POSITION_KEY = "pybot.buddy.position";
 const buddyScreenQuery = window.matchMedia("(min-width: 761px) and (min-height: 481px)");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const BUDDY_TIP_COUNT = 16;
+const BUDDY_JOKE_COUNT = 12;
+const BUDDY_RIDDLE_COUNT = 8;
+const BUDDY_FACT_COUNT = 10;
+const BUDDY_CHEER_COUNT = 6;
 const BUDDY_MARGIN = 14;
 // After this long without the learner moving or typing, PyBot takes a nap.
 const BUDDY_NAP_AFTER_MS = 75_000;
@@ -14714,6 +14870,12 @@ const BUDDY_IDLE_ANTICS = [
   { mood: "focused", move: "scan", say: "buddy.scan" },
   { mood: "celebrating", move: "flip" },
   { mood: "wink", move: "wiggle", tip: true },
+  { mood: "wink", move: "hop", joke: true },
+  { mood: "happy", move: "", joke: true },
+  { mood: "thinking", move: "", riddle: true },
+  { mood: "curious", move: "look", fact: true },
+  { mood: "starry", move: "", fact: true },
+  { mood: "proud", move: "wave", cheer: true, particles: "♥" },
 ];
 let buddyToggle = null;
 let buddy = null;
@@ -14728,6 +14890,11 @@ let buddyAsleep = false;
 let buddyLastInput = Date.now();
 let buddyPosition = null;
 let buddyLookFrame = 0;
+let buddySpeechId = 0;
+let buddyHoverAfter = 0;
+let buddyPokes = [];
+let buddySaidBottom = false;
+let buddySaidTyping = false;
 
 function storedBuddyPreference() {
   try {
@@ -14811,6 +14978,7 @@ function updateBuddyButton() {
   buddyToggle.setAttribute("aria-label", textFor(buddyEnabled ? "buddy.turnOff" : "buddy.turnOn"));
   buddyToggle.querySelector(".buddy-toggle-label").textContent = textFor(buddyEnabled ? "buddy.on" : "buddy.off");
   buddy?.querySelector(".buddy-hide")?.setAttribute("aria-label", textFor("buddy.hide"));
+  syncHeaderTooltips();
 }
 
 function createBuddy() {
@@ -14854,6 +15022,7 @@ function createBuddy() {
   element.addEventListener("pointerenter", () => {
     buddyHovered = true;
     window.clearTimeout(buddyBubbleTimer);
+    buddyHoverHello();
   });
   element.addEventListener("pointerleave", () => {
     buddyHovered = false;
@@ -14969,6 +15138,7 @@ function buddyShowBubble(text) {
   }
 
   const duration = buddyReadingTime(text);
+  buddySpeechId += 1;
   bubble.textContent = text;
   bubble.classList.remove("is-visible");
   void bubble.offsetWidth;
@@ -15026,12 +15196,80 @@ function buddyPoke() {
     buddyWake();
     return;
   }
-  if (Math.random() < 0.5) {
-    buddyAct("wink", "wiggle", buddyPick("buddy.poke", 3), 2200);
-    buddyParticles("♥", 3);
+  // Lots of quick pokes in a row: PyBot gives up, giggling.
+  const now = Date.now();
+  buddyPokes = buddyPokes.filter((time) => now - time < 4000).concat(now);
+  if (buddyPokes.length >= 5) {
+    buddyPokes = [];
+    buddyAct("celebrating", "dance", textFor("buddy.pokeLots"), 3000);
+    buddyParticles("♥", 6);
     return;
   }
-  buddyIdleAntic(true);
+  const roll = Math.random();
+  if (roll < 0.3) {
+    buddyAct("wink", "wiggle", buddyPick("buddy.poke", 3), 2200);
+    buddyParticles("♥", 3);
+  } else if (roll < 0.6) {
+    buddyTellTwoPart("buddy.joke", BUDDY_JOKE_COUNT, "wink");
+  } else if (roll < 0.75) {
+    buddyTellTwoPart("buddy.riddle", BUDDY_RIDDLE_COUNT, "thinking");
+  } else {
+    buddyIdleAntic(true);
+  }
+}
+
+// A joke or riddle: the question first, the answer once there was time to think.
+function buddyTellTwoPart(prefix, count, mood) {
+  const number = 1 + Math.floor(Math.random() * count);
+  const question = textFor(`${prefix}${number}Q`);
+  const wait = Math.max(3500, buddyReadingTime(question) - 500);
+  buddyAct(mood, "", question, wait + 2000);
+  const speech = buddySpeechId;
+  window.setTimeout(() => {
+    // Skip the answer when something else already took the bubble.
+    if (speech !== buddySpeechId || !buddyActive() || buddyAsleep) {
+      return;
+    }
+    buddyAct("celebrating", "hop", textFor(`${prefix}${number}A`), 3000);
+    buddyParticles(prefix === "buddy.joke" ? "♪" : "✦", 4);
+  }, wait);
+}
+
+function buddyHoverHello() {
+  const now = Date.now();
+  if (!buddyActive() || buddyAsleep || now < buddyBusyUntil || now < buddyHoverAfter || buddy.classList.contains("is-dragging")) {
+    return;
+  }
+  buddyHoverAfter = now + 30_000;
+  if (Math.random() < 0.6) {
+    buddyAct("happy", "wave", buddyPick("buddy.hover", 3), 2000);
+  }
+}
+
+function buddyGreeting() {
+  const hour = new Date().getHours();
+  const part = hour < 12 ? "Morning" : hour < 18 ? "Afternoon" : "Evening";
+  const greet = textFor(`buddy.greet${part}`);
+  const text = learnerName ? textWithName("buddy.greetNamed") : textFor("buddy.greet");
+  return text.replaceAll("{greet}", greet);
+}
+
+// Small one-time reactions to what the learner does on the page.
+function buddyNoticePage(event) {
+  if (!buddyActive() || buddyAsleep || Date.now() < buddyBusyUntil) {
+    return;
+  }
+  if (event.type === "scroll" && !buddySaidBottom) {
+    const page = document.documentElement;
+    if (page.scrollHeight > window.innerHeight * 1.5 && window.innerHeight + window.scrollY >= page.scrollHeight - 40) {
+      buddySaidBottom = true;
+      buddyAct("starry", "spin", textFor("buddy.bottom"), 2600);
+      buddyParticles("✦", 5);
+    }
+  } else if (event.type === "input" && !buddySaidTyping && event.target.matches?.("textarea")) {
+    buddySaidTyping = true;
+    buddyAct("focused", "", buddyPick("buddy.typing", 3), 2200);
+  }
 }
 
 function buddyIdleAntic(poked = false) {
@@ -15046,9 +15284,17 @@ function buddyIdleAntic(poked = false) {
   }
 
   const antic = BUDDY_IDLE_ANTICS[Math.floor(Math.random() * BUDDY_IDLE_ANTICS.length)];
+  if (antic.joke || antic.riddle) {
+    buddyTellTwoPart(antic.joke ? "buddy.joke" : "buddy.riddle", antic.joke ? BUDDY_JOKE_COUNT : BUDDY_RIDDLE_COUNT, antic.mood);
+    return;
+  }
   let text = "";
   if (antic.say) {
     text = textFor(antic.say);
+  } else if (antic.fact) {
+    text = buddyPick("buddy.fact", BUDDY_FACT_COUNT);
+  } else if (antic.cheer) {
+    text = buddyPick("buddy.cheer", BUDDY_CHEER_COUNT);
   } else if (antic.tip && (poked || Math.random() < 0.6)) {
     text = buddyPick("buddy.tip", BUDDY_TIP_COUNT);
   }
@@ -15136,7 +15382,13 @@ function buddyReact(event, activity = null) {
       buddyParticles("✦", 8);
       return;
     }
-    const text = learnerName && Math.random() < 0.3 ? textWithName("buddy.correctNamed") : buddyPick("buddy.correct", 4);
+    const roll = Math.random();
+    let text = buddyPick("buddy.correct", 4);
+    if (learnerName && roll < 0.25) {
+      text = textWithName("buddy.correctNamed");
+    } else if (roll > 0.8) {
+      text = buddyPick("buddy.cheer", BUDDY_CHEER_COUNT);
+    }
     const mood = ["celebrating", "starry", "proud"][Math.floor(Math.random() * 3)];
     buddyAct(mood, activity?.classList.contains("fix-activity") ? "spin" : "hop", text, 3000);
     buddyParticles("✦", 4);
@@ -15183,7 +15435,7 @@ function setBuddyEnabled(enabled) {
   updateBuddyButton();
   syncBuddy();
   if (enabled) {
-    buddyAct("welcoming", "wave", learnerName ? textWithName("buddy.helloNamed") : textFor("buddy.hello"), 2800);
+    buddyAct("welcoming", "wave", buddyGreeting(), 2800);
   }
 }
 
@@ -15201,6 +15453,7 @@ function startBuddy() {
     buddyLookAt(event.clientX, event.clientY);
   }, { passive: true });
   ["keydown", "scroll", "pointerdown"].forEach((type) => document.addEventListener(type, noteBuddyInput, { passive: true }));
+  ["scroll", "input"].forEach((type) => document.addEventListener(type, buddyNoticePage, { passive: true }));
   // Say hello once per visit, not on every page.
   let greeted = false;
   try {
@@ -15210,7 +15463,7 @@ function startBuddy() {
     // Without storage PyBot greets on every page.
   }
   if (!greeted) {
-    window.setTimeout(() => buddyAct("welcoming", "wave", learnerName ? textWithName("buddy.helloNamed") : textFor("buddy.hello"), 3000), 900);
+    window.setTimeout(() => buddyAct("welcoming", "wave", buddyGreeting(), 3000), 900);
   }
 }
 
@@ -16762,10 +17015,7 @@ if (!renderLessonLock()) {
 saveDoneSteps();
 soundToggle = createSoundToggle();
 startBuddy();
-createSupportLink();
-createFaqLink();
-createPathLink();
-createAlbumLink();
+arrangeHeader();
 setLanguage(storedLanguage(), false);
 updateLearnerNamePanel(!learnerName);
 restoreStepActivities();
