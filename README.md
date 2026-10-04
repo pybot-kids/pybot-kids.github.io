@@ -543,6 +543,7 @@ Examples may name familiar apps in plain text when that helps a child connect an
 |-- index.html   # Landing page content and accessible structure
 |-- meet-pybot.html # Dedicated gallery of PyBot's teaching expressions
 |-- course.html  # Short bilingual index of the learning path
+|-- picks.html   # "Our picks": tools María Ángel learns with, linked from meet-pybot.html
 |-- faq.html     # Easy-to-read questions and answers for learners and grown-ups; script.js adds its link to every page header
 |-- lessons/     # Three foundation pages, seven focused learning zones, and a pit stop
 |   |-- 01-real-world.html
