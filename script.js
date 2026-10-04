@@ -666,30 +666,30 @@ const translations = {
     "thinking.confidenceText": "When you get ready, play, or make something, your brain quietly chooses what happens first, next, and last.",
     "thinking.confidenceNote": "Coding uses that same skill. You do not have to know everything at once.",
     "thinking.practiceEyebrow": "YOUR TURN",
-    "thinking.practiceTitle": "Finish the plan.",
-    "thinking.practiceIntro": "Pick the last step. PyBot will check it.",
+    "thinking.practiceTitle": "Find the missing step.",
+    "thinking.practiceIntro": "A step is missing. It can be first, in the middle or last. Pick it, and PyBot will check it.",
     "thinking.waterTitle": "Get a glass of water",
     "thinking.waterStep1": "Take a glass.",
     "thinking.waterStep2": "Put it under the tap.",
-    "thinking.waterStep3": "Fill it with water.",
+    "thinking.waterStep3": "Turn off the tap.",
     "thinking.bagTitle": "Pack your school bag",
-    "thinking.bagStep1": "Check what you need.",
-    "thinking.bagStep2": "Add your notebooks.",
-    "thinking.bagStep3": "Add your pencil case.",
+    "thinking.bagStep1": "Add your notebooks.",
+    "thinking.bagStep2": "Add your pencil case.",
+    "thinking.bagStep3": "Close the bag.",
     "thinking.missingStep": "Missing step",
-    "thinking.question": "What comes next?",
-    "thinking.chooseLabel": "Choose the last step",
-    "thinking.waterCorrect": "Turn off the tap",
-    "thinking.waterWrong1": "Put on your shoes",
+    "thinking.question": "Which step is missing?",
+    "thinking.chooseLabel": "Choose the missing step",
+    "thinking.waterCorrect": "Fill it with water",
+    "thinking.waterWrong1": "Drink the water",
     "thinking.waterWrong2": "Open your backpack",
-    "thinking.bagCorrect": "Close the bag",
+    "thinking.bagCorrect": "Check what you need",
     "thinking.bagWrong1": "Turn on the tap",
     "thinking.bagWrong2": "Brush your teeth",
     "thinking.handsTitle": "Wash your hands",
     "thinking.handsStep1": "Wet your hands.",
-    "thinking.handsStep2": "Add soap.",
-    "thinking.handsStep3": "Scrub and rinse.",
-    "thinking.handsCorrect": "Turn off the tap",
+    "thinking.handsStep2": "Scrub and rinse.",
+    "thinking.handsStep3": "Turn off the tap.",
+    "thinking.handsCorrect": "Add soap",
     "thinking.handsWrong1": "Close your backpack",
     "thinking.handsWrong2": "Open a book",
     "thinking.teethTitle": "Brush your teeth",
@@ -702,22 +702,22 @@ const translations = {
     "thinking.dressedTitle": "Get dressed",
     "thinking.dressedStep1": "Put on your shirt.",
     "thinking.dressedStep2": "Put on your pants.",
-    "thinking.dressedStep3": "Put on your socks.",
-    "thinking.dressedCorrect": "Put on your shoes",
+    "thinking.dressedStep3": "Put on your shoes.",
+    "thinking.dressedCorrect": "Put on your socks",
     "thinking.dressedWrong1": "Close a book",
     "thinking.dressedWrong2": "Pour cereal",
     "thinking.cerealTitle": "Make a bowl of cereal",
     "thinking.cerealStep1": "Get a bowl.",
-    "thinking.cerealStep2": "Pour in the cereal.",
-    "thinking.cerealStep3": "Add milk.",
-    "thinking.cerealCorrect": "Get a spoon",
+    "thinking.cerealStep2": "Add milk.",
+    "thinking.cerealStep3": "Get a spoon.",
+    "thinking.cerealCorrect": "Pour in the cereal",
     "thinking.cerealWrong1": "Turn off the light",
     "thinking.cerealWrong2": "Open the camera",
     "thinking.drawingTitle": "Draw a picture",
-    "thinking.drawingStep1": "Get a sheet of paper.",
-    "thinking.drawingStep2": "Choose your crayons.",
-    "thinking.drawingStep3": "Draw your picture.",
-    "thinking.drawingCorrect": "Put the crayons away",
+    "thinking.drawingStep1": "Choose your crayons.",
+    "thinking.drawingStep2": "Draw your picture.",
+    "thinking.drawingStep3": "Put the crayons away.",
+    "thinking.drawingCorrect": "Get a sheet of paper",
     "thinking.drawingWrong1": "Put on your socks",
     "thinking.drawingWrong2": "Fill a glass",
     "thinking.bedtimeTitle": "Get ready for bed",
@@ -730,23 +730,23 @@ const translations = {
     "thinking.readingTitle": "Read a book",
     "thinking.readingStep1": "Choose a book.",
     "thinking.readingStep2": "Sit somewhere comfortable.",
-    "thinking.readingStep3": "Open the book.",
-    "thinking.readingCorrect": "Start reading",
+    "thinking.readingStep3": "Start reading.",
+    "thinking.readingCorrect": "Open the book",
     "thinking.readingWrong1": "Turn on the tap",
     "thinking.readingWrong2": "Put on your shoes",
     "thinking.photoTitle": "Take a photo",
     "thinking.photoStep1": "Open the camera.",
-    "thinking.photoStep2": "Point at your subject.",
-    "thinking.photoStep3": "Hold the device still.",
-    "thinking.photoCorrect": "Tap the photo button",
+    "thinking.photoStep2": "Hold the device still.",
+    "thinking.photoStep3": "Tap the photo button.",
+    "thinking.photoCorrect": "Point at your subject",
     "thinking.photoWrong1": "Close your bag",
     "thinking.photoWrong2": "Get a spoon",
-    "thinking.success": "Yes! Your last step completes the plan.",
-    "thinking.hint": "Try again. Which step makes the plan feel finished?",
-    "thinking.waterSuccess": "Yes! Turn off the tap. The plan is complete.",
-    "thinking.waterHint": "Almost. What should happen before you walk away?",
-    "thinking.bagSuccess": "Yes! Close the bag. Now it is ready.",
-    "thinking.bagHint": "Try again. What keeps everything inside?",
+    "thinking.success": "Yes! Now every step is in its place.",
+    "thinking.hint": "Try again. Look at the step before and after the empty spot.",
+    "thinking.waterSuccess": "Yes! Fill the glass, then turn off the tap.",
+    "thinking.waterHint": "Almost. The glass is under the tap. What has to happen before you turn it off?",
+    "thinking.bagSuccess": "Yes! First check what you need. Then pack it.",
+    "thinking.bagHint": "Try again. What do you do before you put things in the bag?",
     "thinking.algoEyebrow": "A NEW WORD",
     "thinking.algoTitle": "Your plans have a name: algorithms.",
     "thinking.algoIntro": "An algorithm is a list of clear steps, in order, that solves a problem. Every plan you just finished is an algorithm!",
@@ -760,13 +760,45 @@ const translations = {
     "thinking.algoCodeTitle": "Code is an algorithm for a computer.",
     "thinking.algoCodeText": "When you write code, you write the steps. The computer reads them one at a time, from top to bottom, and does exactly what each line says.",
     "thinking.algoCodeNote": "The computer never guesses. If a step is missing or in the wrong place, it will not fix it for you.",
-    "thinking.algoListingTitle": "PyBot gets a glass of water",
+    "thinking.algoListingTitle": "PyBot fills a glass of water",
     "thinking.algoLine1": "take a glass",
     "thinking.algoLine2": "put the glass under the tap",
     "thinking.algoLine3": "open the tap",
     "thinking.algoLine4": "wait until the glass is full",
     "thinking.algoLine5": "close the tap",
-    "thinking.algoListingOops": "Swap lines 2 and 3, and PyBot pours water on the floor!",
+    "thinking.algoListingOops": "Swap lines 2 and 3: the tap opens before the glass is under it, and the water runs down the drain. Wasted!",
+    "thinking.algoListingGoal": "Goal: a full glass, and not one drop of water wasted.",
+    "thinking.algoListingOops2": "Swap lines 4 and 5: the tap closes first, the glass never fills, and PyBot waits forever!",
+    "thinking.orderEyebrow": "NEW CHALLENGE",
+    "thinking.orderTitle": "Put the steps in order.",
+    "thinking.orderIntro": "The steps got mixed up. Drag them up or down, then check your plan.",
+    "thinking.orderQuestion": "Drag the steps into the right order.",
+    "thinking.orderKeys": "Drag a step, or select it and use the up and down arrow keys.",
+    "thinking.orderCheck": "Check my order",
+    "thinking.orderListLabel": "Steps to put in order",
+    "thinking.orderMoved": "Moved to step {n}: {step}",
+    "thinking.plantTitle": "Plant a seed",
+    "thinking.plantStep1": "Dig a small hole.",
+    "thinking.plantStep2": "Drop the seed in.",
+    "thinking.plantStep3": "Cover it with soil.",
+    "thinking.plantStep4": "Water it.",
+    "thinking.order-plantSuccess": "Yes! Hole, seed, soil, water. Now it can grow.",
+    "thinking.order-plantHint": "Not yet. Where does the seed go before you cover it?",
+    "thinking.sandwichTitle": "Make a sandwich",
+    "thinking.sandwichStep1": "Take two slices of bread.",
+    "thinking.sandwichStep2": "Spread butter on one slice.",
+    "thinking.sandwichStep3": "Add the cheese.",
+    "thinking.sandwichStep4": "Put the other slice on top.",
+    "thinking.order-sandwichSuccess": "Yes! The bread goes on top last, so the cheese stays inside.",
+    "thinking.order-sandwichHint": "Not yet. What do you need before you can spread the butter?",
+    "thinking.giftTitle": "Wrap a gift",
+    "thinking.giftStep1": "Put the gift in a box.",
+    "thinking.giftStep2": "Close the box.",
+    "thinking.giftStep3": "Wrap the box in paper.",
+    "thinking.giftStep4": "Hold the paper with tape.",
+    "thinking.giftStep5": "Stick a bow on top.",
+    "thinking.order-giftSuccess": "Yes! Five steps in order. The gift is ready.",
+    "thinking.order-giftHint": "Not yet. Can you wrap the box before the gift is inside?",
     "thinking.bigTitle": "Order helps a plan work.",
     "thinking.bigText": "Clear steps in order make an algorithm. Computers follow algorithms one step at a time.",
     "thinking.next": "What is a programming language?",
@@ -6619,30 +6651,30 @@ const translations = {
     "thinking.confidenceText": "Cuando te alistas, juegas o creas algo, tu cerebro elige en silencio qué pasa primero, después y al final.",
     "thinking.confidenceNote": "Programar usa esa misma habilidad. No tienes que saberlo todo de una vez.",
     "thinking.practiceEyebrow": "TU TURNO",
-    "thinking.practiceTitle": "Completa el plan.",
-    "thinking.practiceIntro": "Elige el último paso. PyBot lo revisará.",
+    "thinking.practiceTitle": "Encuentra el paso que falta.",
+    "thinking.practiceIntro": "Falta un paso. Puede ser el primero, uno del medio o el último. Elígelo y PyBot lo revisará.",
     "thinking.waterTitle": "Sirve un vaso de agua",
     "thinking.waterStep1": "Toma un vaso.",
     "thinking.waterStep2": "Ponlo bajo la llave.",
-    "thinking.waterStep3": "Llénalo con agua.",
+    "thinking.waterStep3": "Cierra la llave.",
     "thinking.bagTitle": "Prepara tu mochila",
-    "thinking.bagStep1": "Revisa qué necesitas.",
-    "thinking.bagStep2": "Guarda tus cuadernos.",
-    "thinking.bagStep3": "Guarda tu cartuchera.",
+    "thinking.bagStep1": "Guarda tus cuadernos.",
+    "thinking.bagStep2": "Guarda tu cartuchera.",
+    "thinking.bagStep3": "Cierra la mochila.",
     "thinking.missingStep": "Paso faltante",
-    "thinking.question": "¿Qué sigue?",
-    "thinking.chooseLabel": "Elige el último paso",
-    "thinking.waterCorrect": "Cierra la llave",
-    "thinking.waterWrong1": "Ponte los zapatos",
+    "thinking.question": "¿Qué paso falta?",
+    "thinking.chooseLabel": "Elige el paso que falta",
+    "thinking.waterCorrect": "Llénalo de agua",
+    "thinking.waterWrong1": "Tómate el agua",
     "thinking.waterWrong2": "Abre tu mochila",
-    "thinking.bagCorrect": "Cierra la mochila",
+    "thinking.bagCorrect": "Revisa qué necesitas",
     "thinking.bagWrong1": "Abre la llave",
     "thinking.bagWrong2": "Cepíllate los dientes",
     "thinking.handsTitle": "Lávate las manos",
     "thinking.handsStep1": "Mójate las manos.",
-    "thinking.handsStep2": "Usa jabón.",
-    "thinking.handsStep3": "Frótalas y enjuágalas.",
-    "thinking.handsCorrect": "Cierra la llave",
+    "thinking.handsStep2": "Frótalas y enjuágalas.",
+    "thinking.handsStep3": "Cierra la llave.",
+    "thinking.handsCorrect": "Usa jabón",
     "thinking.handsWrong1": "Cierra tu mochila",
     "thinking.handsWrong2": "Abre un libro",
     "thinking.teethTitle": "Cepíllate los dientes",
@@ -6655,22 +6687,22 @@ const translations = {
     "thinking.dressedTitle": "Vístete",
     "thinking.dressedStep1": "Ponte la camiseta.",
     "thinking.dressedStep2": "Ponte el pantalón.",
-    "thinking.dressedStep3": "Ponte las medias.",
-    "thinking.dressedCorrect": "Ponte los zapatos",
+    "thinking.dressedStep3": "Ponte los zapatos.",
+    "thinking.dressedCorrect": "Ponte las medias",
     "thinking.dressedWrong1": "Cierra un libro",
     "thinking.dressedWrong2": "Sirve cereal",
     "thinking.cerealTitle": "Prepara un tazón de cereal",
     "thinking.cerealStep1": "Toma un tazón.",
-    "thinking.cerealStep2": "Sirve el cereal.",
-    "thinking.cerealStep3": "Agrega leche.",
-    "thinking.cerealCorrect": "Toma una cuchara",
+    "thinking.cerealStep2": "Agrega leche.",
+    "thinking.cerealStep3": "Toma una cuchara.",
+    "thinking.cerealCorrect": "Sirve el cereal",
     "thinking.cerealWrong1": "Apaga la luz",
     "thinking.cerealWrong2": "Abre la cámara",
     "thinking.drawingTitle": "Haz un dibujo",
-    "thinking.drawingStep1": "Toma una hoja de papel.",
-    "thinking.drawingStep2": "Elige tus colores.",
-    "thinking.drawingStep3": "Haz tu dibujo.",
-    "thinking.drawingCorrect": "Guarda los colores",
+    "thinking.drawingStep1": "Elige tus colores.",
+    "thinking.drawingStep2": "Haz tu dibujo.",
+    "thinking.drawingStep3": "Guarda los colores.",
+    "thinking.drawingCorrect": "Toma una hoja de papel",
     "thinking.drawingWrong1": "Ponte las medias",
     "thinking.drawingWrong2": "Llena un vaso",
     "thinking.bedtimeTitle": "Prepárate para dormir",
@@ -6683,23 +6715,23 @@ const translations = {
     "thinking.readingTitle": "Lee un libro",
     "thinking.readingStep1": "Elige un libro.",
     "thinking.readingStep2": "Siéntate en un lugar cómodo.",
-    "thinking.readingStep3": "Abre el libro.",
-    "thinking.readingCorrect": "Empieza a leer",
+    "thinking.readingStep3": "Empieza a leer.",
+    "thinking.readingCorrect": "Abre el libro",
     "thinking.readingWrong1": "Abre la llave",
     "thinking.readingWrong2": "Ponte los zapatos",
     "thinking.photoTitle": "Toma una foto",
     "thinking.photoStep1": "Abre la cámara.",
-    "thinking.photoStep2": "Apunta hacia lo que quieres fotografiar.",
-    "thinking.photoStep3": "Sostén el dispositivo sin moverlo.",
-    "thinking.photoCorrect": "Toca el botón de foto",
+    "thinking.photoStep2": "Sostén el dispositivo sin moverlo.",
+    "thinking.photoStep3": "Toca el botón de foto.",
+    "thinking.photoCorrect": "Apunta hacia lo que quieres fotografiar",
     "thinking.photoWrong1": "Cierra tu mochila",
     "thinking.photoWrong2": "Toma una cuchara",
-    "thinking.success": "¡Sí! Tu último paso completa el plan.",
-    "thinking.hint": "Inténtalo otra vez. ¿Qué paso hace que el plan quede terminado?",
-    "thinking.waterSuccess": "¡Sí! Cierra la llave. El plan está completo.",
-    "thinking.waterHint": "Casi. ¿Qué debe pasar antes de que te alejes?",
-    "thinking.bagSuccess": "¡Sí! Cierra la mochila. Ya está lista.",
-    "thinking.bagHint": "Inténtalo otra vez. ¿Qué mantiene todo adentro?",
+    "thinking.success": "¡Sí! Ahora cada paso está en su lugar.",
+    "thinking.hint": "Inténtalo otra vez. Mira el paso de antes y el de después del espacio vacío.",
+    "thinking.waterSuccess": "¡Sí! Llenas el vaso y luego cierras la llave.",
+    "thinking.waterHint": "Casi. El vaso ya está bajo la llave. ¿Qué debe pasar antes de cerrarla?",
+    "thinking.bagSuccess": "¡Sí! Primero revisas qué necesitas. Luego lo guardas.",
+    "thinking.bagHint": "Inténtalo otra vez. ¿Qué haces antes de guardar cosas en la mochila?",
     "thinking.algoEyebrow": "UNA PALABRA NUEVA",
     "thinking.algoTitle": "Tus planes tienen nombre: algoritmos.",
     "thinking.algoIntro": "Un algoritmo es una lista de pasos claros, en orden, que resuelve un problema. ¡Cada plan que acabas de terminar es un algoritmo!",
@@ -6713,13 +6745,45 @@ const translations = {
     "thinking.algoCodeTitle": "El código es un algoritmo para una computadora.",
     "thinking.algoCodeText": "Cuando escribes código, tú escribes los pasos. La computadora los lee uno por uno, de arriba hacia abajo, y hace exactamente lo que dice cada línea.",
     "thinking.algoCodeNote": "La computadora nunca adivina. Si falta un paso o está en el lugar equivocado, no lo va a arreglar por ti.",
-    "thinking.algoListingTitle": "PyBot se sirve un vaso de agua",
+    "thinking.algoListingTitle": "PyBot llena un vaso de agua",
     "thinking.algoLine1": "toma un vaso",
     "thinking.algoLine2": "pon el vaso debajo de la llave",
     "thinking.algoLine3": "abre la llave",
     "thinking.algoLine4": "espera hasta que el vaso esté lleno",
     "thinking.algoLine5": "cierra la llave",
-    "thinking.algoListingOops": "¡Cambia las líneas 2 y 3, y PyBot riega el agua en el piso!",
+    "thinking.algoListingOops": "Cambia las líneas 2 y 3: la llave se abre antes de que el vaso esté debajo y el agua se va por el desagüe. ¡Agua desperdiciada!",
+    "thinking.algoListingGoal": "Meta: un vaso lleno, sin desperdiciar ni una gota de agua.",
+    "thinking.algoListingOops2": "Cambia las líneas 4 y 5: la llave se cierra primero, el vaso nunca se llena ¡y PyBot se queda esperando para siempre!",
+    "thinking.orderEyebrow": "RETO NUEVO",
+    "thinking.orderTitle": "Pon los pasos en orden.",
+    "thinking.orderIntro": "Los pasos se mezclaron. Arrástralos hacia arriba o hacia abajo y luego revisa tu plan.",
+    "thinking.orderQuestion": "Arrastra los pasos hasta que queden en orden.",
+    "thinking.orderKeys": "Arrastra un paso, o selecciónalo y usa las flechas arriba y abajo.",
+    "thinking.orderCheck": "Revisar mi orden",
+    "thinking.orderListLabel": "Pasos para ordenar",
+    "thinking.orderMoved": "Movido al paso {n}: {step}",
+    "thinking.plantTitle": "Siembra una semilla",
+    "thinking.plantStep1": "Haz un hoyito en la tierra.",
+    "thinking.plantStep2": "Pon la semilla adentro.",
+    "thinking.plantStep3": "Tápala con tierra.",
+    "thinking.plantStep4": "Riégala.",
+    "thinking.order-plantSuccess": "¡Sí! Hoyo, semilla, tierra y agua. Ahora puede crecer.",
+    "thinking.order-plantHint": "Todavía no. ¿Dónde va la semilla antes de taparla?",
+    "thinking.sandwichTitle": "Prepara un sándwich",
+    "thinking.sandwichStep1": "Toma dos tajadas de pan.",
+    "thinking.sandwichStep2": "Úntale mantequilla a una tajada.",
+    "thinking.sandwichStep3": "Ponle el queso.",
+    "thinking.sandwichStep4": "Pon la otra tajada encima.",
+    "thinking.order-sandwichSuccess": "¡Sí! El pan de encima va al final, así el queso queda adentro.",
+    "thinking.order-sandwichHint": "Todavía no. ¿Qué necesitas antes de untar la mantequilla?",
+    "thinking.giftTitle": "Envuelve un regalo",
+    "thinking.giftStep1": "Mete el regalo en una caja.",
+    "thinking.giftStep2": "Cierra la caja.",
+    "thinking.giftStep3": "Envuelve la caja con papel.",
+    "thinking.giftStep4": "Sujeta el papel con cinta.",
+    "thinking.giftStep5": "Pégale un moño encima.",
+    "thinking.order-giftSuccess": "¡Sí! Cinco pasos en orden. El regalo está listo.",
+    "thinking.order-giftHint": "Todavía no. ¿Puedes envolver la caja antes de meter el regalo?",
     "thinking.bigTitle": "El orden ayuda a que un plan funcione.",
     "thinking.bigText": "Pasos claros en orden forman un algoritmo. Las computadoras siguen algoritmos paso a paso.",
     "thinking.next": "¿Qué es un lenguaje de programación?",
@@ -12075,7 +12139,7 @@ const BACKUP_SCHEMA_VERSION = 1;
 // (`node tools/progress-version.mjs --bump`), and add a migration below when an
 // id is renamed or removed. Backups carry it, so support can tell where an old
 // backup stopped and upgrade it to the current course.
-const PROGRESS_VERSION = 13;
+const PROGRESS_VERSION = 14;
 const PROGRESS_VERSION_KEY = "pybot.progress.version";
 const BACKUP_MAX_BYTES = 100_000;
 // Preferences and the name survive an emergency progress reset.
@@ -12093,7 +12157,10 @@ const pathSteps = [
   },
   {
     id: "thinking", page: "thinking", href: "lessons/02-thinking-in-steps.html",
-    activities: ["water", "bag", "hands", "teeth", "dressed", "cereal", "drawing", "bedtime", "reading", "photo"],
+    activities: [
+      "water", "bag", "hands", "teeth", "dressed", "cereal", "drawing", "bedtime", "reading", "photo",
+      "order-plant", "order-sandwich", "order-gift",
+    ],
   },
   { id: "language", page: "language", href: "lessons/03-programming-language.html", activities: [] },
   {
@@ -14630,6 +14697,132 @@ function resetPatternActivity(activity) {
 
 document.querySelectorAll(".pattern-fix").forEach(resetPatternActivity);
 
+// "Put the steps in order": drag a step up or down (or select it and use the
+// arrow keys), then check. The activity is complete when every step is in order.
+function orderItems(activity) {
+  return [...activity.querySelectorAll(".order-list > li")];
+}
+
+function numberOrderItems(activity) {
+  orderItems(activity).forEach((item, index) => {
+    item.querySelector("span").textContent = String(index + 1);
+  });
+}
+
+function setOrderItems(activity, order) {
+  const list = activity.querySelector(".order-list");
+  const items = orderItems(activity);
+  order.forEach((position) => list.appendChild(items.find((item) => item.dataset.order === position)));
+  numberOrderItems(activity);
+}
+
+function finishOrderActivity(activity) {
+  setOrderItems(activity, orderItems(activity).map((item) => item.dataset.order).sort((a, b) => a - b));
+  orderItems(activity).forEach((item) => item.removeAttribute("tabindex"));
+  activity.querySelector(".order-check").disabled = true;
+}
+
+function resetOrderActivity(activity) {
+  if (!activity.classList.contains("order-activity")) {
+    return;
+  }
+  setOrderItems(activity, activity.dataset.orderStart.split(","));
+  orderItems(activity).forEach((item) => item.setAttribute("tabindex", "0"));
+  activity.querySelector(".order-check").disabled = false;
+}
+
+function checkOrderActivity(activity) {
+  const order = orderItems(activity).map((item) => Number(item.dataset.order));
+  if (order.every((position, index) => position === index + 1)) {
+    playRobotChime();
+    finishOrderActivity(activity);
+    completeActivity(activity, null);
+    return;
+  }
+
+  const check = activity.querySelector(".order-check");
+  check.classList.remove("is-wrong");
+  void check.offsetWidth;
+  check.classList.add("is-wrong");
+  activity.classList.add("needs-review");
+  showActivityFeedback(activity, "hint");
+  buddyReact("wrong");
+  try {
+    localStorage.setItem(activityStorageKey(activity.dataset.activityId), "review");
+  } catch {
+    // The review counter still works for the current page.
+  }
+  updatePlanProgressSummary();
+}
+
+document.querySelectorAll(".order-activity").forEach((activity) => {
+  const list = activity.querySelector(".order-list");
+  const feedback = activity.querySelector(".activity-feedback");
+  activity.dataset.orderStart = orderItems(activity).map((item) => item.dataset.order).join(",");
+
+  orderItems(activity).forEach((item) => {
+    let grabOffset = 0;
+
+    const followPointer = (event) => {
+      const others = orderItems(activity).filter((other) => other !== item);
+      const before = others.find((other) => {
+        const box = other.getBoundingClientRect();
+        return event.clientY < box.top + box.height / 2;
+      });
+      if ((before ?? null) !== item.nextElementSibling) {
+        list.insertBefore(item, before ?? null);
+        numberOrderItems(activity);
+      }
+      item.style.transform = "";
+      const shift = event.clientY - grabOffset - item.getBoundingClientRect().top;
+      item.style.transform = `translateY(${shift}px)`;
+    };
+
+    const drop = () => {
+      item.classList.remove("is-dragging");
+      item.style.transform = "";
+      item.removeEventListener("pointermove", followPointer);
+    };
+
+    item.addEventListener("pointerdown", (event) => {
+      if (activity.classList.contains("is-complete") || event.button > 0) {
+        return;
+      }
+      event.preventDefault();
+      item.focus({ preventScroll: true });
+      grabOffset = event.clientY - item.getBoundingClientRect().top;
+      item.setPointerCapture(event.pointerId);
+      item.classList.add("is-dragging");
+      item.addEventListener("pointermove", followPointer);
+    });
+    item.addEventListener("pointerup", drop);
+    item.addEventListener("pointercancel", drop);
+
+    item.addEventListener("keydown", (event) => {
+      if (activity.classList.contains("is-complete") || !["ArrowUp", "ArrowDown"].includes(event.key)) {
+        return;
+      }
+      event.preventDefault();
+      const target = event.key === "ArrowUp" ? item.previousElementSibling : item.nextElementSibling?.nextElementSibling ?? null;
+      if (event.key === "ArrowUp" && !target) {
+        return;
+      }
+      if (event.key === "ArrowDown" && !item.nextElementSibling) {
+        return;
+      }
+      list.insertBefore(item, target);
+      numberOrderItems(activity);
+      item.focus();
+      feedback.removeAttribute("data-i18n");
+      feedback.textContent = textFor("thinking.orderMoved")
+        .replace("{step}", item.querySelector("p").textContent)
+        .replace("{n}", orderItems(activity).indexOf(item) + 1);
+    });
+  });
+
+  activity.querySelector(".order-check").addEventListener("click", () => checkOrderActivity(activity));
+});
+
 // "Code hunt": tap every object that has code inside. A wrong tap asks for a
 // review; finding them all completes the activity.
 function huntItems(activity) {
@@ -14717,6 +14910,9 @@ function restoreStepActivities() {
       } else if (activity.classList.contains("code-hunt")) {
         completeActivity(activity, null, false);
         finishCodeHunt(activity);
+      } else if (activity.classList.contains("order-activity")) {
+        completeActivity(activity, null, false);
+        finishOrderActivity(activity);
       }
     } else if (storedState === "review") {
       activity.classList.add("needs-review");
@@ -14737,6 +14933,7 @@ function resetStepActivity(activity) {
   resetFixActivity(activity);
   resetPatternActivity(activity);
   resetCodeHunt(activity);
+  resetOrderActivity(activity);
   buttons.forEach((button) => {
     button.disabled = false;
     button.classList.remove("is-correct", "is-wrong");
