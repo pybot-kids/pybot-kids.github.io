@@ -306,6 +306,21 @@ const translations = {
     "extras.glossaryText": "Python words in English and Spanish, with drawings.",
     "extras.guide": "For parents and teachers",
     "extras.guideText": "What each zone teaches, plus activities without screens.",
+    "family.eyebrow": "THE PYBOT FAMILY",
+    "family.title": "Want to learn something else?",
+    "family.pythonAsk": "Want to learn Python?",
+    "family.pythonText": "real code, one step at a time.",
+    "family.englishAsk": "Want to learn English?",
+    "family.englishText": "one word at a time, with PyBot.",
+    "family.blocksAsk": "Want to learn to use Scratch?",
+    "family.blocksText": "a simple guide for kids and parents.",
+    "family.visit": "Visit →",
+    "family.soon": "Coming soon",
+    "family.newTab": "(new tab)",
+    "faq.familyQ": "Are there other PyBot sites?",
+    "faq.familyA": "Yes. PyBot English teaches English to Spanish-speaking kids, one word at a time: PyBot shows how words sound and never grades how you speak. PyBot Blocks is a simple guide for kids and parents to learn Scratch, and everything is made in the real Scratch. It is an independent guide, not affiliated with the Scratch Foundation. Both are free, with no account, and keep their progress apart from this site.",
+    "faq.familyEnglishLink": "Open PyBot English (new tab)",
+    "faq.familyBlocksLink": "Open PyBot Blocks (new tab)",
     "faq.albumQ": "Where are my stickers and diplomas?",
     "faq.albumA": "In your album. Press ★ Album at the top of any page. Each finished zone gives you a sticker and a diploma with your name that you can print.",
     "faq.albumLink": "Open my album",
@@ -6889,6 +6904,21 @@ const translations = {
     "extras.glossaryText": "Palabras de Python en inglés y español, con dibujos.",
     "extras.guide": "Para papás y profes",
     "extras.guideText": "Qué enseña cada zona y actividades sin pantalla.",
+    "family.eyebrow": "LA FAMILIA PYBOT",
+    "family.title": "¿Quieres aprender algo más?",
+    "family.pythonAsk": "¿Quieres aprender Python?",
+    "family.pythonText": "programa de verdad, un paso a la vez.",
+    "family.englishAsk": "¿Quieres aprender inglés?",
+    "family.englishText": "una palabra a la vez, con PyBot.",
+    "family.blocksAsk": "¿Quieres aprender a usar Scratch?",
+    "family.blocksText": "una guía sencilla para niños y papás.",
+    "family.visit": "Visitar →",
+    "family.soon": "Muy pronto",
+    "family.newTab": "(nueva pestaña)",
+    "faq.familyQ": "¿Hay otros sitios PyBot?",
+    "faq.familyA": "Sí. PyBot English enseña inglés a niños que hablan español, una palabra a la vez: PyBot muestra cómo suenan las palabras y nunca califica cómo hablas. PyBot Blocks es una guía sencilla para que niños y papás aprendan Scratch, y todo se crea en el Scratch real. Es una guía independiente, sin afiliación con la Scratch Foundation. Los dos son gratis, sin cuenta, y guardan su progreso aparte de este sitio.",
+    "faq.familyEnglishLink": "Abrir PyBot English (nueva pestaña)",
+    "faq.familyBlocksLink": "Abrir PyBot Blocks (nueva pestaña)",
     "faq.albumQ": "¿Dónde están mis stickers y diplomas?",
     "faq.albumA": "En tu álbum. Presiona ★ Álbum arriba en cualquier página. Cada zona terminada te da un sticker y un diploma con tu nombre que puedes imprimir.",
     "faq.albumLink": "Abrir mi álbum",
@@ -14163,6 +14193,54 @@ function renderStreak() {
   });
 }
 
+// The PyBot family: the same list in every sibling site. Each site hides
+// itself with THIS_SITE; a sibling with soon: true shows without a link.
+const THIS_SITE = "python";
+const pybotFamily = [
+  { id: "python", name: "PyBot", url: "https://pybot-kids.github.io/", icon: "</>", ask: "family.pythonAsk", text: "family.pythonText" },
+  { id: "english", name: "PyBot English", url: "https://pybot-kids.github.io/pybot-english/", icon: "Aa", ask: "family.englishAsk", text: "family.englishText" },
+  { id: "blocks", name: "PyBot Blocks", url: "https://pybot-kids.github.io/pybot-blocks/", icon: "🧩", ask: "family.blocksAsk", text: "family.blocksText" },
+];
+
+function renderPybotFamily() {
+  document.querySelectorAll("[data-pybot-family]").forEach((list) => {
+    list.replaceChildren(
+      ...pybotFamily
+        .filter((site) => site.id !== THIS_SITE)
+        .map((site) => {
+          const item = document.createElement("li");
+          const card = document.createElement(site.soon ? "div" : "a");
+          const icon = document.createElement("span");
+          const ask = document.createElement("b");
+          const text = document.createElement("span");
+          const action = document.createElement("span");
+
+          card.className = `family-card family-${site.id}`;
+          icon.className = "family-icon";
+          icon.setAttribute("aria-hidden", "true");
+          icon.textContent = site.icon;
+          ask.textContent = textFor(site.ask);
+          text.textContent = `${site.name}: ${textFor(site.text)}`;
+          action.className = "family-action";
+          action.textContent = textFor(site.soon ? "family.soon" : "family.visit");
+
+          if (site.soon) {
+            card.classList.add("is-soon");
+          } else {
+            card.href = site.url;
+            card.target = "_blank";
+            card.rel = "noopener noreferrer";
+            card.setAttribute("aria-label", `${textFor(site.ask)} ${site.name}: ${textFor(site.text)} ${textFor("family.newTab")}`);
+          }
+
+          card.append(icon, ask, text, action);
+          item.append(card);
+          return item;
+        }),
+    );
+  });
+}
+
 // A lesson page in a locked zone shows a friendly note instead of the lesson.
 function renderLessonLock() {
   const step = pathSteps.find((candidate) => candidate.page === document.body.dataset.page);
@@ -15568,6 +15646,7 @@ function setLanguage(language, persist = true) {
   renderSelfCheck();
   renderReviewNote();
   renderStreak();
+  renderPybotFamily();
 
   if (persist) {
     try {

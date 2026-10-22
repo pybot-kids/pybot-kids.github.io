@@ -542,6 +542,38 @@ Examples may name familiar apps in plain text when that helps a child connect an
 - Configure and publish through GitHub Pages
 - Create a lightweight feedback process that does not collect child data
 
+## The PyBot family
+
+PyBot has two sibling sites built with the same strategy: static, bilingual
+EN/ES, local progress, the HTML/CSS mascot, zones, album, diplomas, FAQ, the
+small buddy and the same Patreon. The home page of each site ends with a small
+"The PyBot family / La familia PyBot" section that points to the others.
+
+| Site | Address | Repository | Storage prefix |
+| --- | --- | --- | --- |
+| PyBot (Python) | https://pybot-kids.github.io/ | `pybot-kids/pybot-kids.github.io` | `pybot.` |
+| PyBot English | https://pybot-kids.github.io/pybot-english/ | `pybot-kids/pybot-english` | `pybotenglish.` |
+| PyBot Blocks | https://pybot-kids.github.io/pybot-blocks/ | `pybot-kids/pybot-blocks` | `pybotblocks.` |
+
+The three sites share a domain, so each keeps its own storage prefix and never
+reads the others' progress. PyBot Blocks is an independent guide to Scratch,
+not affiliated with the Scratch Foundation; it does not use the Scratch logo or
+cat.
+
+Rules for the section:
+
+- The list lives in `script.js` as `pybotFamily` and is the same in the three
+  sites. Each site sets `THIS_SITE` to its own id (`python` here) and hides its
+  own card.
+- A sibling that is not published yet carries `soon: true`: its card shows
+  "Coming soon / Muy pronto" and has no link. Remove the flag once the site is
+  live and the card becomes a link that opens in a new tab.
+- `renderPybotFamily()` draws the cards into `[data-pybot-family]` and runs
+  from `setLanguage`, so it redraws when the language changes. Texts use the
+  `family.*` keys; the FAQ answer is `faq.family*`.
+- The section does not touch `pathSteps` or activities, so it needs no
+  `PROGRESS_VERSION` change.
+
 ## Current project structure
 
 ```text
