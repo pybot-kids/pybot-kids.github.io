@@ -55,6 +55,7 @@ A child should be able to enter the site alone, see where to begin, and know wha
 - PyBot speech should normally stay under approximately fifteen words.
 - Extra explanation appears only after the learner asks for a hint or opens “Why?”.
 - Back and Next controls remain in the same place throughout the course.
+- Under the Back link, every lesson shows where it sits in the path, such as "ZONE 00 · START HERE · PAGE 2 OF 3" or "PIT STOP 1 · CHECK THE ENGINE". `renderLessonCrumb()` builds it from `pathZones` and `pathSteps`, numbered like `course.html`, so a new page or zone needs no extra text.
 - The course index always marks the learner's current mission and the next available step.
 - English and Spanish copy follow the same brevity limits; translations should preserve meaning, not mirror sentence structure mechanically.
 
